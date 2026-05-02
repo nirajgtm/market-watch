@@ -54,7 +54,7 @@
       .tt::after { max-width: 220px; }
     }
     .tab-btn { transition: color .15s ease, background-color .15s ease; }
-    .tab-btn[aria-selected="true"] { color: #fafafa; background: rgba(82, 82, 91, .45); }
+    .tab-btn[aria-selected="true"] { color: #fafafa; background: rgba(113, 113, 122, .55); }
     .tab-btn[aria-selected="false"] { color: #a1a1aa; }
     .tab-btn:hover { color: #fafafa; }
     .fade-in { animation: fade .25s ease both; }
@@ -66,18 +66,18 @@
     .no-scrollbar { scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-zinc-900 text-zinc-100 font-sans antialiased min-h-screen">
+<body class="bg-zinc-800 text-zinc-100 font-sans antialiased min-h-screen">
 
   <!-- ============== STICKY HEADER ============== -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-900/80 border-b border-zinc-700/50">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-800/80 border-b border-zinc-600/50">
     <div class="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
       <div class="flex items-baseline gap-3">
         <h1 class="text-[15px] font-semibold tracking-tight2">Market Watch</h1>
         <p id="last-updated" class="text-[11px] text-zinc-500 num">—</p>
       </div>
       <div class="flex items-center gap-2">
-        <span id="regime-badge" class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-700 text-zinc-200">—</span>
-        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-700 flex items-center justify-center text-[13px] font-medium">?</button>
+        <span id="regime-badge" class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-600 text-zinc-100">—</span>
+        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center text-[13px] font-medium">?</button>
       </div>
     </div>
   </header>
@@ -90,7 +90,7 @@
   </section>
 
   <!-- ============== TAB NAV ============== -->
-  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-900/80 border-b border-zinc-700/50">
+  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-800/80 border-b border-zinc-600/50">
     <div class="max-w-5xl mx-auto px-6">
       <div role="tablist" class="flex gap-1 overflow-x-auto no-scrollbar">
         <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="macro" aria-selected="true">Macro</button>
@@ -112,16 +112,16 @@
   </main>
 
   <!-- ============== FOOTER ============== -->
-  <footer class="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-700/50 text-[12px] text-zinc-500">
+  <footer class="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-600/50 text-[12px] text-zinc-500">
     <p>Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Do your own research; markets can lose money fast.</p>
   </footer>
 
   <!-- ============== GLOSSARY DRAWER ============== -->
-  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-800/95 backdrop-blur-xl border-l border-zinc-700/50 z-[60] transition-transform duration-200 overflow-y-auto">
+  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-700/95 backdrop-blur-xl border-l border-zinc-600/50 z-[60] transition-transform duration-200 overflow-y-auto">
     <div class="p-6">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-lg font-semibold">Glossary</h3>
-        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-700 flex items-center justify-center">×</button>
+        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center">×</button>
       </div>
       <div id="glossary-list" class="space-y-5"></div>
     </div>
@@ -218,7 +218,7 @@
         'TRIGGERED':   'bg-emerald-500/15 text-emerald-300 ring-emerald-500/30',
         'IN_ZONE':     'bg-amber-500/15 text-amber-300 ring-amber-500/30',
         'NEAR':        'bg-amber-500/10 text-amber-200/90 ring-amber-500/20',
-        'FAR':         'bg-zinc-700/40 text-zinc-400 ring-zinc-600/40',
+        'FAR':         'bg-zinc-600/40 text-zinc-400 ring-zinc-600/40',
         'INVALIDATED': 'bg-red-500/15 text-red-300 ring-red-500/30',
       };
       const cls = map[status] || map.FAR;
@@ -233,7 +233,7 @@
       </header>`;
     }
     function card(inner) {
-      return `<div class="rounded-2xl border border-zinc-700/60 bg-zinc-800/50 p-6">${inner}</div>`;
+      return `<div class="rounded-2xl border border-zinc-600/50 bg-zinc-600/40 p-6">${inner}</div>`;
     }
     function fmtPct(n) {
       if (n == null) return '';
@@ -250,7 +250,7 @@
     function renderMacro(b) {
       const m = b.macro || {};
       const indices = (m.indices || []).map(i => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(i.ticker)}</p>
             ${i.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${i.note}</p>` : ''}
@@ -263,7 +263,7 @@
 
       const vy = m.vol_yields || {};
       const volRow = (label, val, suffix='') => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
           <p class="text-[13px] text-zinc-400">${label}</p>
           <p class="font-mono num text-[14px] text-zinc-100">${val}${suffix}</p>
         </div>`;
@@ -276,13 +276,13 @@
         </div>`).join('');
 
       const events = (m.events_14d || []).map(e => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
           <p class="text-[13px] text-zinc-300">${e.event}</p>
           <p class="font-mono num text-[12px] text-zinc-500">${e.date}</p>
         </div>`).join('');
 
       const earnings = (m.earnings_7d || []).map(e => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100">${e.ticker}</p>
             ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
@@ -320,7 +320,7 @@
     function renderStocks(b) {
       const s = b.stocks || {};
       const wl = (s.watchlist || []).map(w => `
-        <tr class="border-b border-zinc-700/50 last:border-0">
+        <tr class="border-b border-zinc-600/50 last:border-0">
           <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${w.ticker}</td>
           <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${fmtNum(w.last)}</td>
           <td class="py-3 pr-4 font-mono num text-[12px]">${w.change_pct != null ? fmtPct(w.change_pct) : ''}</td>
@@ -336,7 +336,7 @@
           <p class="font-mono num text-[12px] text-zinc-500">${w.score}</p>
         </div>`).join('');
 
-      const clusters = (s.smart_money_clusters || []).map(t => `<span class="inline-block font-mono text-[12px] bg-zinc-700/60 text-zinc-200 px-2 py-1 rounded-md mr-1.5 mb-1.5">${t}</span>`).join('');
+      const clusters = (s.smart_money_clusters || []).map(t => `<span class="inline-block font-mono text-[12px] bg-zinc-600/50 text-zinc-200 px-2 py-1 rounded-md mr-1.5 mb-1.5">${t}</span>`).join('');
 
       return `
         ${sectionTitle('Stocks', 'Watchlist, smart-money clusters, retail sentiment.')}
@@ -361,14 +361,14 @@
     function renderOptions(b) {
       const o = b.options || {};
       const unusual = (o.unusual || []).map(u => `
-        <tr class="border-b border-zinc-700/50 last:border-0">
+        <tr class="border-b border-zinc-600/50 last:border-0">
           <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${u.ticker}</td>
           <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${u.vol_oi != null ? abbr('V/OI') + ' ' + u.vol_oi : ''}</td>
           <td class="py-3 text-[12px] text-zinc-400">${u.context || ''}</td>
         </tr>`).join('');
 
       const eiv = (o.earnings_iv || []).map(e => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${e.ticker}</p>
             ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
@@ -377,7 +377,7 @@
         </div>`).join('');
 
       const leaps = (o.leaps || []).map(l => `
-        <div class="py-2.5 border-b border-zinc-700/50 last:border-0">
+        <div class="py-2.5 border-b border-zinc-600/50 last:border-0">
           <p class="font-mono text-[13px] text-zinc-100">${l.ticker} <span class="text-zinc-500">${l.thesis_window || ''}</span></p>
           ${l.note ? `<p class="text-[12px] text-zinc-400 mt-0.5">${l.note}</p>` : ''}
         </div>`).join('');
@@ -414,7 +414,7 @@
         `;
       }
       const coins = (c.coins || []).map(co => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-700/50 last:border-0">
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(co.symbol)}</p>
             ${co.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${co.note}</p>` : ''}
@@ -439,12 +439,12 @@
         return `${sectionTitle('Archive')}${card(`<p class="text-zinc-500 text-sm">Past briefs will appear here.</p>`)}`;
       }
       const items = others.map(b => `
-        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-700/60 bg-zinc-800/50 hover:bg-zinc-700/60 px-5 py-4 flex items-baseline justify-between gap-4">
+        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-600/50 bg-zinc-600/40 hover:bg-zinc-600/50 px-5 py-4 flex items-baseline justify-between gap-4">
           <div>
             <p class="font-mono num text-[12px] text-zinc-500">${b.date}</p>
             <p class="text-[15px] text-zinc-200 mt-1">${b.headline || ''}</p>
           </div>
-          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-700/40 text-zinc-400'}">${b.regime || '—'}</span>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-600/40 text-zinc-400'}">${b.regime || '—'}</span>
         </button>`).join('');
       return `${sectionTitle('Archive', 'Past briefs.')}<div class="grid gap-3">${items}</div>`;
     }
@@ -496,7 +496,7 @@
       document.getElementById('last-updated').textContent = '';
       // Regime badge → preview pill
       const badge = document.getElementById('regime-badge');
-      badge.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-700 text-zinc-300';
+      badge.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-600 text-zinc-100';
       badge.textContent = 'preview';
 
       const preview = (title, sub, items) => `
