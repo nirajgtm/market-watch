@@ -54,9 +54,28 @@
       .tt::after { max-width: 220px; }
     }
     .tab-btn { transition: color .15s ease, background-color .15s ease; }
-    .tab-btn[aria-selected="true"] { color: #fafafa; background: rgba(113, 113, 122, .55); }
-    .tab-btn[aria-selected="false"] { color: #a1a1aa; }
+    .tab-btn[aria-selected="true"] { color: #fafafa; }
+    .tab-btn[aria-selected="false"] { color: #d4d4d8; }
     .tab-btn:hover { color: #fafafa; }
+    /* Active tab gets a colored bottom rail per category */
+    .tab-btn[data-tab="macro"][aria-selected="true"]   { box-shadow: inset 0 -2px 0 #38bdf8; }
+    .tab-btn[data-tab="stocks"][aria-selected="true"]  { box-shadow: inset 0 -2px 0 #34d399; }
+    .tab-btn[data-tab="options"][aria-selected="true"] { box-shadow: inset 0 -2px 0 #a78bfa; }
+    .tab-btn[data-tab="crypto"][aria-selected="true"]  { box-shadow: inset 0 -2px 0 #fbbf24; }
+    .tab-btn[data-tab="archive"][aria-selected="true"] { box-shadow: inset 0 -2px 0 #d4d4d8; }
+    /* Per-tab eyebrow color for card labels */
+    #tab-macro   .eyebrow { color: #7dd3fc; }   /* sky-300 */
+    #tab-stocks  .eyebrow { color: #6ee7b7; }   /* emerald-300 */
+    #tab-options .eyebrow { color: #c4b5fd; }   /* violet-300 */
+    #tab-crypto  .eyebrow { color: #fcd34d; }   /* amber-300 */
+    #tab-archive .eyebrow { color: #d4d4d8; }   /* zinc-300 */
+    /* Section accent bar */
+    .accent-bar { width: 3px; border-radius: 3px; align-self: stretch; }
+    #tab-macro   .accent-bar { background: #38bdf8; }
+    #tab-stocks  .accent-bar { background: #34d399; }
+    #tab-options .accent-bar { background: #a78bfa; }
+    #tab-crypto  .accent-bar { background: #fbbf24; }
+    #tab-archive .accent-bar { background: #a1a1aa; }
     .fade-in { animation: fade .25s ease both; }
     @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
     .glossary-open { transform: translateX(0); }
@@ -236,9 +255,12 @@
 
     // ----- SECTION HELPERS -----
     function sectionTitle(t, sub) {
-      return `<header class="mb-5">
-        <h3 class="text-[24px] font-semibold tracking-tight2 text-white">${t}</h3>
-        ${sub ? `<p class="mt-1 text-[14px] text-zinc-300">${sub}</p>` : ''}
+      return `<header class="mb-6 flex gap-4 items-stretch">
+        <span class="accent-bar"></span>
+        <div>
+          <h3 class="text-[26px] font-semibold tracking-tight2 text-white leading-tight">${t}</h3>
+          ${sub ? `<p class="mt-1 text-[14px] text-zinc-300">${sub}</p>` : ''}
+        </div>
       </header>`;
     }
     function card(inner) {
@@ -302,24 +324,24 @@
       return `
         ${sectionTitle('Macro & Regime', 'Where the broad market sits today.')}
         <div class="grid md:grid-cols-2 gap-5">
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Index regime</p>${indices || '<p class="text-zinc-300 text-sm">No data.</p>'}`)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Volatility &amp; rates</p>
+          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Index regime</p>${indices || '<p class="text-zinc-300 text-sm">No data.</p>'}`)}
+          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Volatility &amp; rates</p>
             ${vy.vix != null ? volRow(abbr('VIX'), fmtNum(vy.vix), vy.vix_term ? ` · ${vy.vix_term.replace('_',' ').toLowerCase()}` : '') : ''}
             ${vy.ten_year != null ? volRow(abbr('10Y'), fmtNum(vy.ten_year), '%') : ''}
             ${vy.dxy != null ? volRow(abbr('DXY'), fmtNum(vy.dxy)) : ''}
             ${vy.oil != null ? volRow('Oil', '$' + fmtNum(vy.oil)) : ''}
             ${vy.gold != null ? volRow('Gold', '$' + fmtNum(vy.gold)) : ''}
           `)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Sector rotation · 5d</p>
+          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Sector rotation · 5d</p>
             <div class="grid grid-cols-2 gap-6">
               <div><p class="text-[11px] text-zinc-300 mb-2">Leaders</p>${sectorList(sr.leaders_5d)}</div>
               <div><p class="text-[11px] text-zinc-300 mb-2">Laggards</p>${sectorList(sr.laggards_5d)}</div>
             </div>
             ${sr.read ? `<p class="mt-4 text-[13px] text-zinc-300 leading-relaxed">${sr.read}</p>` : ''}
           `)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Calendar · next 14d</p>
+          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Calendar · next 14d</p>
             ${events || '<p class="text-zinc-300 text-sm">No flagged events.</p>'}
-            ${earnings ? `<p class="text-[12px] uppercase tracking-wider text-zinc-300 mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
+            ${earnings ? `<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
           `)}
         </div>
         ${actionCallout(m.action)}
@@ -350,17 +372,17 @@
       return `
         ${sectionTitle('Stocks', 'Watchlist, smart-money clusters, retail sentiment.')}
         <div class="grid gap-5">
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Watchlist</p>
+          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Watchlist</p>
             <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-300">
+              <thead><tr class="eyebrow text-[10px] font-semibold uppercase tracking-[0.12em]">
                 <th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Last</th><th class="pb-3 pr-4">Δ</th><th class="pb-3 pr-4">Trigger</th><th class="pb-3 pr-4">Status</th>
               </tr></thead>
               <tbody>${wl || `<tr><td class="py-4 text-zinc-300 text-sm" colspan="5">No active watchlist names.</td></tr>`}</tbody>
             </table></div>
           `)}
           <div class="grid md:grid-cols-2 gap-5">
-            ${clusters ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-300">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
-            ${wsb ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
+            ${clusters ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-300">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
+            ${wsb ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
           </div>
         </div>
         ${actionCallout(s.action)}
@@ -394,14 +416,14 @@
       return `
         ${sectionTitle('Options', 'Unusual flow, ' + abbr('IV') + ' setups, ' + abbr('LEAP') + ' theses.')}
         <div class="grid gap-5">
-          ${unusual ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Unusual options activity</p>
+          ${unusual ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Unusual options activity</p>
             <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-300"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
+              <thead><tr class="eyebrow text-[10px] font-semibold uppercase tracking-[0.12em]"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
               <tbody>${unusual}</tbody>
             </table></div>`) : ''}
           <div class="grid md:grid-cols-2 gap-5">
-            ${eiv ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
-            ${leaps ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
+            ${eiv ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
+            ${leaps ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
           </div>
           ${!unusual && !eiv && !leaps ? card(`<p class="text-zinc-300 text-sm">No qualifying options setups today.</p>`) : ''}
         </div>
@@ -436,7 +458,7 @@
       return `
         ${sectionTitle('Crypto')}
         <div class="grid gap-5">
-          ${coins ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-300 text-sm">No crypto data today.</p>`)}
+          ${coins ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-300 text-sm">No crypto data today.</p>`)}
         </div>
         ${actionCallout(c.action)}
       `;
