@@ -66,10 +66,10 @@
     .no-scrollbar { scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-zinc-800 text-zinc-100 font-sans antialiased min-h-screen">
+<body class="bg-zinc-700 text-zinc-100 font-sans antialiased min-h-screen">
 
   <!-- ============== STICKY HEADER ============== -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-800/80 border-b border-zinc-600/50">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-700/80 border-b border-zinc-600/50">
     <div class="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
       <div class="flex items-baseline gap-3">
         <h1 class="text-[15px] font-semibold tracking-tight2">Market Watch</h1>
@@ -83,14 +83,21 @@
   </header>
 
   <!-- ============== HERO ============== -->
-  <section class="max-w-5xl mx-auto px-6 pt-14 pb-10">
-    <p id="brief-date" class="text-[13px] text-zinc-500 mb-3 num">—</p>
-    <h2 id="headline" class="text-[40px] md:text-[56px] leading-[1.05] font-semibold tracking-tight2 text-zinc-50 max-w-3xl">Loading the latest brief…</h2>
-    <ul id="top-actions" class="mt-8 space-y-2.5 text-[17px] text-zinc-300 max-w-3xl"></ul>
+  <section class="relative max-w-5xl mx-auto px-6 pt-14 pb-10 overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-0">
+      <div class="absolute -top-24 left-1/4 w-[520px] h-[520px] bg-violet-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute -top-12 right-1/4 w-[420px] h-[420px] bg-cyan-400/15 rounded-full blur-3xl"></div>
+      <div class="absolute top-32 left-1/2 w-[360px] h-[360px] bg-emerald-400/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative">
+      <p id="brief-date" class="text-[13px] text-zinc-400 mb-3 num">—</p>
+      <h2 id="headline" class="text-[40px] md:text-[56px] leading-[1.05] font-semibold tracking-tight2 max-w-3xl bg-gradient-to-br from-white via-violet-100 to-cyan-100 bg-clip-text text-transparent">Loading the latest brief…</h2>
+      <ul id="top-actions" class="mt-8 space-y-2.5 text-[17px] text-zinc-200 max-w-3xl"></ul>
+    </div>
   </section>
 
   <!-- ============== TAB NAV ============== -->
-  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-800/80 border-b border-zinc-600/50">
+  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-700/80 border-b border-zinc-600/50">
     <div class="max-w-5xl mx-auto px-6">
       <div role="tablist" class="flex gap-1 overflow-x-auto no-scrollbar">
         <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="macro" aria-selected="true">Macro</button>
@@ -117,7 +124,7 @@
   </footer>
 
   <!-- ============== GLOSSARY DRAWER ============== -->
-  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-700/95 backdrop-blur-xl border-l border-zinc-600/50 z-[60] transition-transform duration-200 overflow-y-auto">
+  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-600/95 backdrop-blur-xl border-l border-zinc-600/50 z-[60] transition-transform duration-200 overflow-y-auto">
     <div class="p-6">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-lg font-semibold">Glossary</h3>
@@ -233,7 +240,7 @@
       </header>`;
     }
     function card(inner) {
-      return `<div class="rounded-2xl border border-zinc-600/50 bg-zinc-600/40 p-6">${inner}</div>`;
+      return `<div class="rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-600/40 to-zinc-700/30 p-6 shadow-sm shadow-black/10">${inner}</div>`;
     }
     function fmtPct(n) {
       if (n == null) return '';
@@ -439,7 +446,7 @@
         return `${sectionTitle('Archive')}${card(`<p class="text-zinc-500 text-sm">Past briefs will appear here.</p>`)}`;
       }
       const items = others.map(b => `
-        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-600/50 bg-zinc-600/40 hover:bg-zinc-600/50 px-5 py-4 flex items-baseline justify-between gap-4">
+        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-500/40 bg-gradient-to-br from-zinc-600/40 to-zinc-700/30 hover:from-zinc-500/40 hover:to-zinc-600/30 px-5 py-4 flex items-baseline justify-between gap-4">
           <div>
             <p class="font-mono num text-[12px] text-zinc-500">${b.date}</p>
             <p class="text-[15px] text-zinc-200 mt-1">${b.headline || ''}</p>
@@ -471,7 +478,14 @@
       document.getElementById('brief-date').textContent = brief.date;
       document.getElementById('headline').textContent = brief.headline || '';
       const ta = document.getElementById('top-actions');
-      ta.innerHTML = (brief.top_actions || []).map(a => `<li class="flex gap-3"><span class="mt-2.5 w-1 h-1 rounded-full bg-zinc-500 shrink-0"></span><span>${a}</span></li>`).join('');
+      ta.innerHTML = (brief.top_actions || []).map(a => {
+        const w = (a.split(' ')[0] || '').toUpperCase();
+        const dot = w === 'ACTION' ? 'bg-emerald-400 shadow-[0_0_12px] shadow-emerald-400/50'
+                  : w === 'WATCH'  ? 'bg-amber-400 shadow-[0_0_12px] shadow-amber-400/50'
+                  : w === 'NO'     ? 'bg-zinc-400'
+                  : 'bg-zinc-500';
+        return `<li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full ${dot} shrink-0"></span><span>${a}</span></li>`;
+      }).join('');
       // Updated
       document.getElementById('last-updated').textContent = brief.updated_at ? new Date(brief.updated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : brief.date;
       // Regime
