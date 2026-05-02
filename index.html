@@ -25,6 +25,34 @@
     body { font-feature-settings: "ss01", "cv11"; }
     abbr[title] { text-decoration: none; border-bottom: 1px dotted rgba(161, 161, 170, 0.6); cursor: help; }
     .num { font-variant-numeric: tabular-nums; }
+    /* Custom tooltip — appears instantly with proper styling */
+    .tt { position: relative; border-bottom: 1px dotted rgba(161, 161, 170, 0.6); cursor: help; }
+    .tt::after {
+      content: attr(data-tt);
+      position: absolute; bottom: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #1f1f23; color: #fafafa;
+      padding: 10px 14px; border-radius: 10px;
+      font-size: 12px; line-height: 1.5; font-weight: 400;
+      white-space: normal; width: max-content; max-width: 280px;
+      border: 1px solid rgba(113, 113, 122, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      opacity: 0; pointer-events: none;
+      transition: opacity 120ms ease, transform 120ms ease;
+      z-index: 70;
+    }
+    .tt::before {
+      content: ""; position: absolute; bottom: calc(100% + 2px); left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent; border-top-color: #1f1f23;
+      opacity: 0; transition: opacity 120ms ease;
+      z-index: 70;
+    }
+    .tt:hover::after, .tt:focus::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .tt:hover::before, .tt:focus::before { opacity: 1; }
+    @media (max-width: 480px) {
+      .tt::after { max-width: 220px; }
+    }
     .tab-btn { transition: color .15s ease, background-color .15s ease; }
     .tab-btn[aria-selected="true"] { color: #fafafa; background: rgba(82, 82, 91, .45); }
     .tab-btn[aria-selected="false"] { color: #a1a1aa; }
@@ -148,7 +176,8 @@
     function abbr(term) {
       const g = GLOSSARY[term];
       if (!g) return term;
-      return `<abbr title="${g.full} — ${g.desc.replace(/"/g, '&quot;')}">${term}</abbr>`;
+      const tip = `${g.full}. ${g.desc}`.replace(/"/g, '&quot;');
+      return `<span class="tt" tabindex="0" data-tt="${tip}" title="${tip}">${term}</span>`;
     }
 
     // ----- ACTION CALLOUT -----
