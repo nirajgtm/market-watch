@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Watch</title>
+  <meta name="description" content="Daily market briefs: macro, stocks, options, crypto. General commentary, not investment advice." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'system-ui', 'Inter', 'sans-serif'],
+            mono: ['"SF Mono"', '"JetBrains Mono"', 'Menlo', 'Consolas', 'monospace'],
+          },
+          letterSpacing: { tight2: '-0.022em' },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-feature-settings: "ss01", "cv11"; }
+    abbr[title] { text-decoration: none; border-bottom: 1px dotted rgba(161, 161, 170, 0.6); cursor: help; }
+    .num { font-variant-numeric: tabular-nums; }
+    .tab-btn { transition: color .15s ease, background-color .15s ease; }
+    .tab-btn[aria-selected="true"] { color: #fafafa; background: rgba(63, 63, 70, .35); }
+    .tab-btn[aria-selected="false"] { color: #a1a1aa; }
+    .tab-btn:hover { color: #fafafa; }
+    .fade-in { animation: fade .25s ease both; }
+    @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+    .glossary-open { transform: translateX(0); }
+    .glossary-closed { transform: translateX(100%); }
+    /* Hide scrollbar on tabnav for slick look */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen">
+
+  <!-- ============== STICKY HEADER ============== -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-950/70 border-b border-zinc-800/60">
+    <div class="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-baseline gap-3">
+        <h1 class="text-[15px] font-semibold tracking-tight2">Market Watch</h1>
+        <p id="last-updated" class="text-[11px] text-zinc-500 num">—</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="regime-badge" class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-800 text-zinc-300">—</span>
+        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-800 flex items-center justify-center text-[13px] font-medium">?</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="max-w-5xl mx-auto px-6 pt-14 pb-10">
+    <p id="brief-date" class="text-[13px] text-zinc-500 mb-3 num">—</p>
+    <h2 id="headline" class="text-[40px] md:text-[56px] leading-[1.05] font-semibold tracking-tight2 text-zinc-50 max-w-3xl">Loading the latest brief…</h2>
+    <ul id="top-actions" class="mt-8 space-y-2.5 text-[17px] text-zinc-300 max-w-3xl"></ul>
+  </section>
+
+  <!-- ============== TAB NAV ============== -->
+  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-950/70 border-b border-zinc-800/60">
+    <div class="max-w-5xl mx-auto px-6">
+      <div role="tablist" class="flex gap-1 overflow-x-auto no-scrollbar">
+        <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="macro" aria-selected="true">Macro</button>
+        <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="stocks" aria-selected="false">Stocks</button>
+        <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="options" aria-selected="false">Options</button>
+        <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="crypto" aria-selected="false">Crypto</button>
+        <button class="tab-btn px-4 py-3 text-[14px] font-medium rounded-md whitespace-nowrap" role="tab" data-tab="archive" aria-selected="false">Archive</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============== MAIN ============== -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <section id="tab-macro" class="tab-panel fade-in"></section>
+    <section id="tab-stocks" class="tab-panel hidden"></section>
+    <section id="tab-options" class="tab-panel hidden"></section>
+    <section id="tab-crypto" class="tab-panel hidden"></section>
+    <section id="tab-archive" class="tab-panel hidden"></section>
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-800/60 text-[12px] text-zinc-500">
+    <p>Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Do your own research; markets can lose money fast.</p>
+  </footer>
+
+  <!-- ============== GLOSSARY DRAWER ============== -->
+  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-900/95 backdrop-blur-xl border-l border-zinc-800 z-[60] transition-transform duration-200 overflow-y-auto">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-lg font-semibold">Glossary</h3>
+        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-800 flex items-center justify-center">×</button>
+      </div>
+      <div id="glossary-list" class="space-y-5"></div>
+    </div>
+  </aside>
+  <div id="glossary-overlay" class="hidden fixed inset-0 bg-black/40 z-[55]"></div>
+
+  <!-- ============== DATA + RENDER ============== -->
+  <script>
+    // ----- GLOSSARY -----
+    const GLOSSARY = {
+      "RSI": { full: "Relative Strength Index", desc: "Momentum oscillator scaled 0–100. Readings above 70 are typically considered stretched (overbought); below 30, oversold." },
+      "VIX": { full: "Volatility Index (CBOE)", desc: "Measures expected 30-day S&P 500 volatility. Below 15 = calm, 15–20 = normal, 20–30 = elevated, above 30 = fearful." },
+      "MA": { full: "Moving Average", desc: "The average closing price over N days. 'Above all MAs' means price sits above the 20-, 50-, and 200-day averages — strong trend." },
+      "ATR": { full: "Average True Range", desc: "Average size of a daily price swing. Used to size stops and define how far is 'too far' from a moving average." },
+      "FOMO": { full: "Fear Of Missing Out", desc: "When price has run too far above its average, chasing into it usually leads to bad entries. The system blocks new long entries when this fires." },
+      "DXY": { full: "US Dollar Index", desc: "Tracks the US dollar versus a basket of major currencies. Rising DXY tends to pressure stocks and commodities; falling DXY supports them." },
+      "10Y": { full: "10-Year Treasury Yield", desc: "Benchmark long-term interest rate. Rising yields tend to pressure long-duration tech and growth stocks." },
+      "V/OI": { full: "Volume / Open Interest", desc: "Options flow signal. V/OI >> 1 means today's volume far exceeds existing open contracts — often a sign of fresh positioning." },
+      "IV": { full: "Implied Volatility", desc: "The volatility level priced into options. Spikes before earnings (premium gets expensive); 'IV crush' is the post-event collapse." },
+      "LEAP": { full: "Long-term Equity AnticiPation Securities", desc: "Long-dated options, typically expiring 9+ months out. Used to express multi-quarter directional theses with leverage." },
+      "PEAD": { full: "Post-Earnings Announcement Drift", desc: "Tendency for stocks that beat earnings to keep drifting in the direction of the surprise for weeks." },
+      "ETF": { full: "Exchange-Traded Fund", desc: "A basket of securities trading like a single stock. SPY tracks the S&P 500; QQQ tracks the Nasdaq-100." },
+      "SPY": { full: "S&P 500 ETF", desc: "Tracks the 500 largest US companies — the market's headline gauge." },
+      "QQQ": { full: "Nasdaq-100 ETF", desc: "Tracks the 100 largest non-financial Nasdaq names — heavily tech-weighted." },
+      "IWM": { full: "Russell 2000 ETF", desc: "Tracks 2,000 small-cap US companies — the 'risk-on' breadth read." },
+      "XLE": { full: "Energy Sector ETF", desc: "Tracks S&P 500 energy companies (Exxon, Chevron, etc.)." },
+      "XLK": { full: "Technology Sector ETF", desc: "Tracks S&P 500 tech companies (Apple, Microsoft, Nvidia, etc.)." },
+      "XLV": { full: "Health Care Sector ETF", desc: "Tracks S&P 500 health care companies." },
+      "XLU": { full: "Utilities Sector ETF", desc: "Tracks S&P 500 utility companies — defensive, yield-oriented." },
+      "XLY": { full: "Consumer Discretionary Sector ETF", desc: "Tracks S&P 500 consumer-discretionary names (Amazon, Tesla, etc.)." },
+      "XLRE": { full: "Real Estate Sector ETF", desc: "Tracks S&P 500 real estate / REIT names." },
+      "WSB": { full: "r/WallStreetBets", desc: "Reddit retail-trader community. High mention scores often correlate with squeezes and momentum chasing." },
+      "ATH": { full: "All-Time High", desc: "Highest price the security has ever reached." },
+      "MoM": { full: "Month-over-Month", desc: "A change measured against the prior month." },
+      "JOLTS": { full: "Job Openings and Labor Turnover Survey", desc: "Monthly US labor data release watched by the Fed for hiring strength." },
+      "ISM": { full: "Institute for Supply Management", desc: "Monthly surveys of manufacturing and services activity. Above 50 = expansion, below 50 = contraction." },
+      "BTC": { full: "Bitcoin", desc: "The largest cryptocurrency by market cap." },
+      "ETH": { full: "Ethereum", desc: "The second-largest cryptocurrency; the leading smart-contract platform." },
+    };
+
+    function renderGlossary() {
+      const el = document.getElementById('glossary-list');
+      const entries = Object.entries(GLOSSARY).sort((a, b) => a[0].localeCompare(b[0]));
+      el.innerHTML = entries.map(([k, v]) => `
+        <div>
+          <p class="font-mono text-[13px] font-semibold text-zinc-100">${k} <span class="font-sans font-normal text-zinc-400">— ${v.full}</span></p>
+          <p class="mt-1 text-[14px] text-zinc-400 leading-relaxed">${v.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    function abbr(term) {
+      const g = GLOSSARY[term];
+      if (!g) return term;
+      return `<abbr title="${g.full} — ${g.desc.replace(/"/g, '&quot;')}">${term}</abbr>`;
+    }
+
+    // ----- ACTION CALLOUT -----
+    function actionCallout(action) {
+      if (!action) return '';
+      const tier = (action.tier || 'NO_ACTION').toUpperCase();
+      const styles = {
+        'ACTION':    { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', dot: 'bg-emerald-400', label: 'text-emerald-300', tag: 'ACTION' },
+        'WATCH':     { bg: 'bg-amber-500/10',   border: 'border-amber-500/30',   dot: 'bg-amber-400',   label: 'text-amber-300',   tag: 'WATCH'  },
+        'NO_ACTION': { bg: 'bg-zinc-500/10',    border: 'border-zinc-700',       dot: 'bg-zinc-500',    label: 'text-zinc-400',    tag: 'NO ACTION' },
+      };
+      const s = styles[tier] || styles.NO_ACTION;
+      return `
+        <div class="mt-6 rounded-2xl border ${s.border} ${s.bg} px-5 py-4 flex gap-3 items-start">
+          <span class="mt-1.5 w-2 h-2 rounded-full ${s.dot} shrink-0"></span>
+          <div>
+            <p class="text-[11px] font-semibold tracking-wider ${s.label}">${s.tag}</p>
+            <p class="mt-1 text-[15px] text-zinc-200 leading-relaxed">${action.text || ''}</p>
+          </div>
+        </div>`;
+    }
+
+    // ----- REGIME BADGE -----
+    function setRegimeBadge(regime, note) {
+      const el = document.getElementById('regime-badge');
+      const map = {
+        'BULL':    'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30',
+        'BEAR':    'bg-red-500/15 text-red-300 ring-1 ring-red-500/30',
+        'NEUTRAL': 'bg-zinc-500/15 text-zinc-300 ring-1 ring-zinc-500/30',
+      };
+      el.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium ' + (map[regime] || map.NEUTRAL);
+      el.textContent = regime + (note ? ` · ${note}` : '');
+    }
+
+    // ----- STATUS PILL -----
+    function statusPill(status) {
+      const map = {
+        'TRIGGERED':   'bg-emerald-500/15 text-emerald-300 ring-emerald-500/30',
+        'IN_ZONE':     'bg-amber-500/15 text-amber-300 ring-amber-500/30',
+        'NEAR':        'bg-amber-500/10 text-amber-200/90 ring-amber-500/20',
+        'FAR':         'bg-zinc-700/40 text-zinc-400 ring-zinc-600/40',
+        'INVALIDATED': 'bg-red-500/15 text-red-300 ring-red-500/30',
+      };
+      const cls = map[status] || map.FAR;
+      return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-mono font-semibold ring-1 ${cls}">${status.replace('_', ' ')}</span>`;
+    }
+
+    // ----- SECTION HELPERS -----
+    function sectionTitle(t, sub) {
+      return `<header class="mb-5">
+        <h3 class="text-[22px] font-semibold tracking-tight2 text-zinc-50">${t}</h3>
+        ${sub ? `<p class="mt-1 text-[13px] text-zinc-500">${sub}</p>` : ''}
+      </header>`;
+    }
+    function card(inner) {
+      return `<div class="rounded-2xl border border-zinc-800/80 bg-zinc-900/40 p-6">${inner}</div>`;
+    }
+    function fmtPct(n) {
+      if (n == null) return '';
+      const sign = n > 0 ? '+' : '';
+      const cls = n > 0 ? 'text-emerald-400' : n < 0 ? 'text-red-400' : 'text-zinc-400';
+      return `<span class="${cls} num">${sign}${n.toFixed(2)}%</span>`;
+    }
+    function fmtNum(n, dp=2) {
+      if (n == null) return '—';
+      return Number(n).toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+
+    // ----- TAB RENDERERS -----
+    function renderMacro(b) {
+      const m = b.macro || {};
+      const indices = (m.indices || []).map(i => `
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-800/60 last:border-0">
+          <div>
+            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(i.ticker)}</p>
+            ${i.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${i.note}</p>` : ''}
+          </div>
+          <div class="text-right">
+            <p class="font-mono num text-[15px]">${fmtNum(i.last)}</p>
+            ${i.rsi != null ? `<p class="text-[11px] text-zinc-500 num mt-0.5">${abbr('RSI')} ${i.rsi}</p>` : ''}
+          </div>
+        </div>`).join('');
+
+      const vy = m.vol_yields || {};
+      const volRow = (label, val, suffix='') => `
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-800/60 last:border-0">
+          <p class="text-[13px] text-zinc-400">${label}</p>
+          <p class="font-mono num text-[14px] text-zinc-100">${val}${suffix}</p>
+        </div>`;
+
+      const sr = m.sector_rotation || {};
+      const sectorList = (arr) => (arr || []).map(s => `
+        <div class="flex items-baseline justify-between py-1.5">
+          <p class="font-mono text-[13px] text-zinc-100">${abbr(s.etf)}</p>
+          <p class="font-mono num text-[13px] ${s.score > 0 ? 'text-emerald-400' : 'text-red-400'}">${s.score > 0 ? '+' : ''}${s.score}</p>
+        </div>`).join('');
+
+      const events = (m.events_14d || []).map(e => `
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-800/60 last:border-0">
+          <p class="text-[13px] text-zinc-300">${e.event}</p>
+          <p class="font-mono num text-[12px] text-zinc-500">${e.date}</p>
+        </div>`).join('');
+
+      const earnings = (m.earnings_7d || []).map(e => `
+        <div class="flex items-baseline justify-between py-2 border-b border-zinc-800/60 last:border-0">
+          <div>
+            <p class="font-mono text-[13px] text-zinc-100">${e.ticker}</p>
+            ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
+          </div>
+          <p class="font-mono num text-[12px] text-zinc-400">${e.date}</p>
+        </div>`).join('');
+
+      return `
+        ${sectionTitle('Macro & Regime', 'Where the broad market sits today.')}
+        <div class="grid md:grid-cols-2 gap-5">
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Index regime</p>${indices || '<p class="text-zinc-500 text-sm">No data.</p>'}`)}
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Volatility &amp; rates</p>
+            ${vy.vix != null ? volRow(abbr('VIX'), fmtNum(vy.vix), vy.vix_term ? ` · ${vy.vix_term.replace('_',' ').toLowerCase()}` : '') : ''}
+            ${vy.ten_year != null ? volRow(abbr('10Y'), fmtNum(vy.ten_year), '%') : ''}
+            ${vy.dxy != null ? volRow(abbr('DXY'), fmtNum(vy.dxy)) : ''}
+            ${vy.oil != null ? volRow('Oil', '$' + fmtNum(vy.oil)) : ''}
+            ${vy.gold != null ? volRow('Gold', '$' + fmtNum(vy.gold)) : ''}
+          `)}
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Sector rotation · 5d</p>
+            <div class="grid grid-cols-2 gap-6">
+              <div><p class="text-[11px] text-zinc-500 mb-2">Leaders</p>${sectorList(sr.leaders_5d)}</div>
+              <div><p class="text-[11px] text-zinc-500 mb-2">Laggards</p>${sectorList(sr.laggards_5d)}</div>
+            </div>
+            ${sr.read ? `<p class="mt-4 text-[13px] text-zinc-300 leading-relaxed">${sr.read}</p>` : ''}
+          `)}
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Calendar · next 14d</p>
+            ${events || '<p class="text-zinc-500 text-sm">No flagged events.</p>'}
+            ${earnings ? `<p class="text-[12px] uppercase tracking-wider text-zinc-500 mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
+          `)}
+        </div>
+        ${actionCallout(m.action)}
+      `;
+    }
+
+    function renderStocks(b) {
+      const s = b.stocks || {};
+      const wl = (s.watchlist || []).map(w => `
+        <tr class="border-b border-zinc-800/60 last:border-0">
+          <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${w.ticker}</td>
+          <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${fmtNum(w.last)}</td>
+          <td class="py-3 pr-4 font-mono num text-[12px]">${w.change_pct != null ? fmtPct(w.change_pct) : ''}</td>
+          <td class="py-3 pr-4 text-[12px] text-zinc-400">${w.trigger_zone || ''}</td>
+          <td class="py-3 pr-4">${statusPill(w.status || 'FAR')}</td>
+        </tr>
+        ${w.note ? `<tr><td colspan="5" class="pb-3 pl-0 text-[12px] text-zinc-500">${w.note}</td></tr>` : ''}
+      `).join('');
+
+      const wsb = (s.wsb_top || []).map(w => `
+        <div class="flex items-baseline justify-between py-1.5">
+          <p class="font-mono text-[13px] text-zinc-100">${w.ticker}</p>
+          <p class="font-mono num text-[12px] text-zinc-500">${w.score}</p>
+        </div>`).join('');
+
+      const clusters = (s.smart_money_clusters || []).map(t => `<span class="inline-block font-mono text-[12px] bg-zinc-800/60 text-zinc-200 px-2 py-1 rounded-md mr-1.5 mb-1.5">${t}</span>`).join('');
+
+      return `
+        ${sectionTitle('Stocks', 'Watchlist, smart-money clusters, retail sentiment.')}
+        <div class="grid gap-5">
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Watchlist</p>
+            <div class="overflow-x-auto"><table class="w-full text-left">
+              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-500">
+                <th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Last</th><th class="pb-3 pr-4">Δ</th><th class="pb-3 pr-4">Trigger</th><th class="pb-3 pr-4">Status</th>
+              </tr></thead>
+              <tbody>${wl || `<tr><td class="py-4 text-zinc-500 text-sm" colspan="5">No active watchlist names.</td></tr>`}</tbody>
+            </table></div>
+          `)}
+          <div class="grid md:grid-cols-2 gap-5">
+            ${clusters ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-500">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
+            ${wsb ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
+          </div>
+        </div>
+        ${actionCallout(s.action)}
+      `;
+    }
+
+    function renderOptions(b) {
+      const o = b.options || {};
+      const unusual = (o.unusual || []).map(u => `
+        <tr class="border-b border-zinc-800/60 last:border-0">
+          <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${u.ticker}</td>
+          <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${u.vol_oi != null ? abbr('V/OI') + ' ' + u.vol_oi : ''}</td>
+          <td class="py-3 text-[12px] text-zinc-400">${u.context || ''}</td>
+        </tr>`).join('');
+
+      const eiv = (o.earnings_iv || []).map(e => `
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-800/60 last:border-0">
+          <div>
+            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${e.ticker}</p>
+            ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
+          </div>
+          <p class="font-mono num text-[12px] text-zinc-400">${e.date}</p>
+        </div>`).join('');
+
+      const leaps = (o.leaps || []).map(l => `
+        <div class="py-2.5 border-b border-zinc-800/60 last:border-0">
+          <p class="font-mono text-[13px] text-zinc-100">${l.ticker} <span class="text-zinc-500">${l.thesis_window || ''}</span></p>
+          ${l.note ? `<p class="text-[12px] text-zinc-400 mt-0.5">${l.note}</p>` : ''}
+        </div>`).join('');
+
+      return `
+        ${sectionTitle('Options', 'Unusual flow, ' + abbr('IV') + ' setups, ' + abbr('LEAP') + ' theses.')}
+        <div class="grid gap-5">
+          ${unusual ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Unusual options activity</p>
+            <div class="overflow-x-auto"><table class="w-full text-left">
+              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-500"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
+              <tbody>${unusual}</tbody>
+            </table></div>`) : ''}
+          <div class="grid md:grid-cols-2 gap-5">
+            ${eiv ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
+            ${leaps ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
+          </div>
+          ${!unusual && !eiv && !leaps ? card(`<p class="text-zinc-500 text-sm">No qualifying options setups today.</p>`) : ''}
+        </div>
+        ${actionCallout(o.action)}
+      `;
+    }
+
+    function renderCrypto(b) {
+      const c = b.crypto || {};
+      if (c.status === 'coming_soon') {
+        return `
+          ${sectionTitle('Crypto', 'BTC, ETH, SOL, XRP regime tracking.')}
+          ${card(`
+            <div class="text-center py-6">
+              <p class="text-[13px] uppercase tracking-wider text-zinc-500">Coming soon</p>
+              <p class="mt-3 text-[15px] text-zinc-300 max-w-md mx-auto leading-relaxed">${c.note || 'Crypto regime coverage launches once the daily brief begins producing it.'}</p>
+            </div>
+          `)}
+        `;
+      }
+      const coins = (c.coins || []).map(co => `
+        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-800/60 last:border-0">
+          <div>
+            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(co.symbol)}</p>
+            ${co.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${co.note}</p>` : ''}
+          </div>
+          <div class="text-right">
+            <p class="font-mono num text-[14px]">$${fmtNum(co.last)}</p>
+            ${co.change_5d_pct != null ? `<p class="text-[11px] num mt-0.5">${fmtPct(co.change_5d_pct)} <span class="text-zinc-500">5d</span></p>` : ''}
+          </div>
+        </div>`).join('');
+      return `
+        ${sectionTitle('Crypto')}
+        <div class="grid gap-5">
+          ${coins ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-500 text-sm">No crypto data today.</p>`)}
+        </div>
+        ${actionCallout(c.action)}
+      `;
+    }
+
+    function renderArchive(briefs, currentDate) {
+      const others = briefs.filter(b => b.date !== currentDate);
+      if (!others.length) {
+        return `${sectionTitle('Archive')}${card(`<p class="text-zinc-500 text-sm">Past briefs will appear here.</p>`)}`;
+      }
+      const items = others.map(b => `
+        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/70 px-5 py-4 flex items-baseline justify-between gap-4">
+          <div>
+            <p class="font-mono num text-[12px] text-zinc-500">${b.date}</p>
+            <p class="text-[15px] text-zinc-200 mt-1">${b.headline || ''}</p>
+          </div>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-700/40 text-zinc-400'}">${b.regime || '—'}</span>
+        </button>`).join('');
+      return `${sectionTitle('Archive', 'Past briefs.')}<div class="grid gap-3">${items}</div>`;
+    }
+
+    // ----- TAB SWITCHING -----
+    function showTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === name)));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+      const panel = document.getElementById('tab-' + name);
+      if (panel) {
+        panel.classList.remove('hidden');
+        panel.classList.remove('fade-in'); void panel.offsetWidth; panel.classList.add('fade-in');
+      }
+      if (history.replaceState) history.replaceState(null, '', '#' + name);
+    }
+
+    // ----- MAIN RENDER -----
+    let DATA = null;
+    let activeBrief = null;
+
+    function renderAll(brief) {
+      activeBrief = brief;
+      // Hero
+      document.getElementById('brief-date').textContent = brief.date;
+      document.getElementById('headline').textContent = brief.headline || '';
+      const ta = document.getElementById('top-actions');
+      ta.innerHTML = (brief.top_actions || []).map(a => `<li class="flex gap-3"><span class="mt-2.5 w-1 h-1 rounded-full bg-zinc-500 shrink-0"></span><span>${a}</span></li>`).join('');
+      // Updated
+      document.getElementById('last-updated').textContent = brief.updated_at ? new Date(brief.updated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : brief.date;
+      // Regime
+      setRegimeBadge(brief.regime || 'NEUTRAL', brief.regime_note);
+      // Tabs
+      document.getElementById('tab-macro').innerHTML = renderMacro(brief);
+      document.getElementById('tab-stocks').innerHTML = renderStocks(brief);
+      document.getElementById('tab-options').innerHTML = renderOptions(brief);
+      document.getElementById('tab-crypto').innerHTML = renderCrypto(brief);
+      document.getElementById('tab-archive').innerHTML = renderArchive(DATA.briefs, brief.date);
+    }
+
+    function renderWelcome() {
+      // Hero
+      document.getElementById('brief-date').textContent = 'Launching soon';
+      document.getElementById('headline').textContent = 'Daily market briefs, built for clarity.';
+      document.getElementById('top-actions').innerHTML = [
+        'Macro, stocks, options, and crypto — one page, four tabs.',
+        'Every section ends with a clear ACTION, WATCH, or NO ACTION.',
+        'Acronyms expand on hover, glossary always one click away.',
+      ].map(t => `<li class="flex gap-3"><span class="mt-2.5 w-1 h-1 rounded-full bg-zinc-500 shrink-0"></span><span>${t}</span></li>`).join('');
+      document.getElementById('last-updated').textContent = '';
+      // Regime badge → preview pill
+      const badge = document.getElementById('regime-badge');
+      badge.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-800 text-zinc-400';
+      badge.textContent = 'preview';
+
+      const preview = (title, sub, items) => `
+        ${sectionTitle(title, sub)}
+        <div class="grid md:grid-cols-2 gap-5">
+          ${items.map(([h, body]) => card(`
+            <p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-2">${h}</p>
+            <p class="text-[14px] text-zinc-300 leading-relaxed">${body}</p>
+          `)).join('')}
+        </div>
+        ${actionCallout({ tier: 'NO_ACTION', text: 'First brief publishes shortly. This page will refresh with live data each morning and during market hours.' })}
+      `;
+
+      document.getElementById('tab-macro').innerHTML = preview('Macro &amp; Regime', 'Where the broad market sits today.', [
+        ['Index regime', `${abbr('SPY')}, ${abbr('QQQ')}, ${abbr('IWM')} — last price, ${abbr('RSI')}, position vs moving averages, 52-week context.`],
+        ['Volatility &amp; rates', `${abbr('VIX')} bucket, ${abbr('10Y')} yield, ${abbr('DXY')}, oil, gold — the regime backdrop.`],
+        ['Sector rotation', 'Five-day ETF leaders and laggards, with a one-line plain-English read of what they imply.'],
+        ['Calendar', 'Fed speakers, key data releases (next 14 days), and earnings within 7 days that matter for the tape.'],
+      ]);
+      document.getElementById('tab-stocks').innerHTML = preview('Stocks', 'Watchlist, smart-money clusters, retail sentiment.', [
+        ['Watchlist table', 'Tickers with trigger zones and a status pill — TRIGGERED, IN ZONE, NEAR, FAR, or INVALIDATED.'],
+        ['Smart-money clusters', 'Names flagged by ≥2 independent scanners (flow, insiders, breakout, social) on the same day.'],
+        [`${abbr('WSB')} top mentions`, 'What retail is talking about, with mention scores. Useful for spotting squeezes and momentum chasing.'],
+        ['Friday losers + volume', 'Distribution prints — high-volume down days that often precede continuation moves.'],
+      ]);
+      document.getElementById('tab-options').innerHTML = preview('Options', `Unusual flow, ${abbr('IV')} setups, ${abbr('LEAP')} theses.`, [
+        ['Unusual options activity', `Tickers with ${abbr('V/OI')} multiples flagging fresh positioning, plus context (breakout, earnings, etc.).`],
+        [`Earnings ${abbr('IV')} plays`, `Names reporting within ${abbr('IV')} crush range — what's worth a defined-risk play vs. what's a coin flip.`],
+        [`${abbr('LEAP')} theses`, 'Long-dated directional ideas (9+ months out) — the "I believe X over the next year" trades.'],
+        ['Income setups', 'Covered calls and cash-secured puts on names with the right combination of price and IV.'],
+      ]);
+      document.getElementById('tab-crypto').innerHTML = renderCrypto({ crypto: { status: 'coming_soon', note: 'Crypto regime tracking begins after a few weeks of data collection. Watch this tab.' } });
+      document.getElementById('tab-archive').innerHTML = `${sectionTitle('Archive', 'Past briefs.')}${card(`<p class="text-zinc-500 text-sm">Briefs will appear here as they publish.</p>`)}`;
+    }
+
+    function init(data) {
+      DATA = data;
+      const briefs = (data.briefs || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+      DATA.briefs = briefs;
+      if (!briefs.length) {
+        renderWelcome();
+      } else {
+        renderAll(briefs[0]);
+      }
+      // Tab clicks
+      document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+      // Archive item clicks
+      document.addEventListener('click', (e) => {
+        const t = e.target.closest('.archive-item');
+        if (!t) return;
+        const b = DATA.briefs.find(x => x.date === t.dataset.date);
+        if (b) { renderAll(b); showTab('macro'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      });
+      // Hash routing
+      const initial = (location.hash || '#macro').replace('#', '');
+      if (['macro', 'stocks', 'options', 'crypto', 'archive'].includes(initial)) showTab(initial);
+    }
+
+    // ----- GLOSSARY DRAWER -----
+    function openGlossary() {
+      document.getElementById('glossary').classList.remove('glossary-closed');
+      document.getElementById('glossary').classList.add('glossary-open');
+      document.getElementById('glossary-overlay').classList.remove('hidden');
+    }
+    function closeGlossary() {
+      document.getElementById('glossary').classList.add('glossary-closed');
+      document.getElementById('glossary').classList.remove('glossary-open');
+      document.getElementById('glossary-overlay').classList.add('hidden');
+    }
+    document.getElementById('glossary-btn').addEventListener('click', openGlossary);
+    document.getElementById('glossary-close').addEventListener('click', closeGlossary);
+    document.getElementById('glossary-overlay').addEventListener('click', closeGlossary);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGlossary(); });
+    renderGlossary();
+
+    // ----- BOOT -----
+    fetch('briefs.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+      .then(init)
+      .catch(err => {
+        document.getElementById('headline').textContent = 'Could not load briefs.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
