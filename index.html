@@ -31,12 +31,12 @@
       content: attr(data-tt);
       position: absolute; bottom: calc(100% + 8px); left: 50%;
       transform: translateX(-50%) translateY(4px);
-      background: #1f1f23; color: #fafafa;
+      background: #18181b; color: #ffffff;
       padding: 10px 14px; border-radius: 10px;
       font-size: 12px; line-height: 1.5; font-weight: 400;
       white-space: normal; width: max-content; max-width: 280px;
-      border: 1px solid rgba(113, 113, 122, 0.4);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(113, 113, 122, 0.5);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
       opacity: 0; pointer-events: none;
       transition: opacity 120ms ease, transform 120ms ease;
       z-index: 70;
@@ -44,7 +44,7 @@
     .tt::before {
       content: ""; position: absolute; bottom: calc(100% + 2px); left: 50%;
       transform: translateX(-50%);
-      border: 6px solid transparent; border-top-color: #1f1f23;
+      border: 6px solid transparent; border-top-color: #18181b;
       opacity: 0; transition: opacity 120ms ease;
       z-index: 70;
     }
@@ -73,27 +73,20 @@
     <div class="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
       <div class="flex items-baseline gap-3">
         <h1 class="text-[15px] font-semibold tracking-tight2">Market Watch</h1>
-        <p id="last-updated" class="text-[11px] text-zinc-500 num">—</p>
+        <p id="last-updated" class="text-[11px] text-zinc-300 num">—</p>
       </div>
       <div class="flex items-center gap-2">
         <span id="regime-badge" class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-600 text-zinc-100">—</span>
-        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center text-[13px] font-medium">?</button>
+        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-200 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center text-[13px] font-medium">?</button>
       </div>
     </div>
   </header>
 
   <!-- ============== HERO ============== -->
-  <section class="relative max-w-5xl mx-auto px-6 pt-14 pb-10 overflow-hidden">
-    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-0">
-      <div class="absolute -top-24 left-1/4 w-[520px] h-[520px] bg-violet-500/20 rounded-full blur-3xl"></div>
-      <div class="absolute -top-12 right-1/4 w-[420px] h-[420px] bg-cyan-400/15 rounded-full blur-3xl"></div>
-      <div class="absolute top-32 left-1/2 w-[360px] h-[360px] bg-emerald-400/10 rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative">
-      <p id="brief-date" class="text-[13px] text-zinc-400 mb-3 num">—</p>
-      <h2 id="headline" class="text-[40px] md:text-[56px] leading-[1.05] font-semibold tracking-tight2 max-w-3xl bg-gradient-to-br from-white via-violet-100 to-cyan-100 bg-clip-text text-transparent">Loading the latest brief…</h2>
-      <ul id="top-actions" class="mt-8 space-y-2.5 text-[17px] text-zinc-200 max-w-3xl"></ul>
-    </div>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p id="brief-date" class="text-[13px] text-zinc-300 mb-4 num font-medium">—</p>
+    <h2 id="headline" class="text-[42px] md:text-[60px] leading-[1.05] font-medium tracking-tight2 text-white max-w-3xl">Loading the latest brief…</h2>
+    <ul id="top-actions" class="mt-9 space-y-3 text-[18px] text-zinc-100 max-w-3xl"></ul>
   </section>
 
   <!-- ============== TAB NAV ============== -->
@@ -120,15 +113,15 @@
 
   <!-- ============== FEEDBACK + FOOTER ============== -->
   <section class="max-w-5xl mx-auto px-6 pt-6 pb-2">
-    <div class="rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-violet-500/10 via-zinc-700/20 to-cyan-400/10 p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div class="rounded-2xl border border-zinc-500/40 bg-zinc-600/25 p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
       <div>
-        <p class="text-[16px] font-semibold text-zinc-100">Spotted something off, or have an idea?</p>
-        <p class="mt-1 text-[13px] text-zinc-300">Quick, anonymous, no signup required. Bug reports, missing tickers, layout gripes all welcome.</p>
+        <p class="text-[16px] font-semibold text-white">Spotted something off, or have an idea?</p>
+        <p class="mt-1 text-[13px] text-zinc-300">Quick, no signup required. Bug reports, missing tickers, and layout notes all welcome.</p>
       </div>
-      <a href="https://form.jotform.com/261215968266061" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto inline-flex items-center rounded-full bg-zinc-100 text-zinc-900 px-5 py-2.5 text-[13px] font-medium hover:bg-white transition shrink-0">Send feedback</a>
+      <a href="https://form.jotform.com/261215968266061" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto inline-flex items-center rounded-full bg-white text-zinc-900 px-5 py-2.5 text-[13px] font-semibold hover:bg-zinc-100 transition shrink-0">Send feedback</a>
     </div>
   </section>
-  <footer class="max-w-5xl mx-auto px-6 py-10 mt-2 border-t border-zinc-600/50 text-[12px] text-zinc-400">
+  <footer class="max-w-5xl mx-auto px-6 py-10 mt-2 border-t border-zinc-600/50 text-[12px] text-zinc-200">
     <p>Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Do your own research; markets can lose money fast.</p>
   </footer>
 
@@ -137,7 +130,7 @@
     <div class="p-6">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-lg font-semibold">Glossary</h3>
-        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-400 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center">×</button>
+        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-200 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center">×</button>
       </div>
       <div id="glossary-list" class="space-y-5"></div>
     </div>
@@ -183,8 +176,8 @@
       const entries = Object.entries(GLOSSARY).sort((a, b) => a[0].localeCompare(b[0]));
       el.innerHTML = entries.map(([k, v]) => `
         <div>
-          <p class="font-mono text-[13px] font-semibold text-zinc-100">${k} <span class="font-sans font-normal text-zinc-400">— ${v.full}</span></p>
-          <p class="mt-1 text-[14px] text-zinc-400 leading-relaxed">${v.desc}</p>
+          <p class="font-mono text-[13px] font-semibold text-zinc-100">${k} <span class="font-sans font-normal text-zinc-200">— ${v.full}</span></p>
+          <p class="mt-1 text-[14px] text-zinc-200 leading-relaxed">${v.desc}</p>
         </div>
       `).join('');
     }
@@ -203,7 +196,7 @@
       const styles = {
         'ACTION':    { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', dot: 'bg-emerald-400', label: 'text-emerald-300', tag: 'ACTION' },
         'WATCH':     { bg: 'bg-amber-500/10',   border: 'border-amber-500/30',   dot: 'bg-amber-400',   label: 'text-amber-300',   tag: 'WATCH'  },
-        'NO_ACTION': { bg: 'bg-zinc-500/10',    border: 'border-zinc-700',       dot: 'bg-zinc-500',    label: 'text-zinc-400',    tag: 'NO ACTION' },
+        'NO_ACTION': { bg: 'bg-zinc-500/10',    border: 'border-zinc-700',       dot: 'bg-zinc-500',    label: 'text-zinc-200',    tag: 'NO ACTION' },
       };
       const s = styles[tier] || styles.NO_ACTION;
       return `
@@ -234,7 +227,7 @@
         'TRIGGERED':   'bg-emerald-500/15 text-emerald-300 ring-emerald-500/30',
         'IN_ZONE':     'bg-amber-500/15 text-amber-300 ring-amber-500/30',
         'NEAR':        'bg-amber-500/10 text-amber-200/90 ring-amber-500/20',
-        'FAR':         'bg-zinc-600/40 text-zinc-400 ring-zinc-600/40',
+        'FAR':         'bg-zinc-600/40 text-zinc-200 ring-zinc-600/40',
         'INVALIDATED': 'bg-red-500/15 text-red-300 ring-red-500/30',
       };
       const cls = map[status] || map.FAR;
@@ -244,17 +237,17 @@
     // ----- SECTION HELPERS -----
     function sectionTitle(t, sub) {
       return `<header class="mb-5">
-        <h3 class="text-[22px] font-semibold tracking-tight2 text-zinc-50">${t}</h3>
-        ${sub ? `<p class="mt-1 text-[13px] text-zinc-500">${sub}</p>` : ''}
+        <h3 class="text-[24px] font-semibold tracking-tight2 text-white">${t}</h3>
+        ${sub ? `<p class="mt-1 text-[14px] text-zinc-300">${sub}</p>` : ''}
       </header>`;
     }
     function card(inner) {
-      return `<div class="rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-600/40 to-zinc-700/30 p-6 shadow-sm shadow-black/10">${inner}</div>`;
+      return `<div class="rounded-2xl border border-zinc-500/40 bg-zinc-600/25 p-6">${inner}</div>`;
     }
     function fmtPct(n) {
       if (n == null) return '';
       const sign = n > 0 ? '+' : '';
-      const cls = n > 0 ? 'text-emerald-400' : n < 0 ? 'text-red-400' : 'text-zinc-400';
+      const cls = n > 0 ? 'text-emerald-400' : n < 0 ? 'text-red-400' : 'text-zinc-200';
       return `<span class="${cls} num">${sign}${n.toFixed(2)}%</span>`;
     }
     function fmtNum(n, dp=2) {
@@ -269,18 +262,18 @@
         <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(i.ticker)}</p>
-            ${i.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${i.note}</p>` : ''}
+            ${i.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${i.note}</p>` : ''}
           </div>
           <div class="text-right">
             <p class="font-mono num text-[15px]">${fmtNum(i.last)}</p>
-            ${i.rsi != null ? `<p class="text-[11px] text-zinc-500 num mt-0.5">${abbr('RSI')} ${i.rsi}</p>` : ''}
+            ${i.rsi != null ? `<p class="text-[11px] text-zinc-300 num mt-0.5">${abbr('RSI')} ${i.rsi}</p>` : ''}
           </div>
         </div>`).join('');
 
       const vy = m.vol_yields || {};
       const volRow = (label, val, suffix='') => `
         <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
-          <p class="text-[13px] text-zinc-400">${label}</p>
+          <p class="text-[13px] text-zinc-200">${label}</p>
           <p class="font-mono num text-[14px] text-zinc-100">${val}${suffix}</p>
         </div>`;
 
@@ -294,39 +287,39 @@
       const events = (m.events_14d || []).map(e => `
         <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
           <p class="text-[13px] text-zinc-300">${e.event}</p>
-          <p class="font-mono num text-[12px] text-zinc-500">${e.date}</p>
+          <p class="font-mono num text-[12px] text-zinc-300">${e.date}</p>
         </div>`).join('');
 
       const earnings = (m.earnings_7d || []).map(e => `
         <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100">${e.ticker}</p>
-            ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
+            ${e.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${e.note}</p>` : ''}
           </div>
-          <p class="font-mono num text-[12px] text-zinc-400">${e.date}</p>
+          <p class="font-mono num text-[12px] text-zinc-200">${e.date}</p>
         </div>`).join('');
 
       return `
         ${sectionTitle('Macro & Regime', 'Where the broad market sits today.')}
         <div class="grid md:grid-cols-2 gap-5">
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Index regime</p>${indices || '<p class="text-zinc-500 text-sm">No data.</p>'}`)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Volatility &amp; rates</p>
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Index regime</p>${indices || '<p class="text-zinc-300 text-sm">No data.</p>'}`)}
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Volatility &amp; rates</p>
             ${vy.vix != null ? volRow(abbr('VIX'), fmtNum(vy.vix), vy.vix_term ? ` · ${vy.vix_term.replace('_',' ').toLowerCase()}` : '') : ''}
             ${vy.ten_year != null ? volRow(abbr('10Y'), fmtNum(vy.ten_year), '%') : ''}
             ${vy.dxy != null ? volRow(abbr('DXY'), fmtNum(vy.dxy)) : ''}
             ${vy.oil != null ? volRow('Oil', '$' + fmtNum(vy.oil)) : ''}
             ${vy.gold != null ? volRow('Gold', '$' + fmtNum(vy.gold)) : ''}
           `)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Sector rotation · 5d</p>
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Sector rotation · 5d</p>
             <div class="grid grid-cols-2 gap-6">
-              <div><p class="text-[11px] text-zinc-500 mb-2">Leaders</p>${sectorList(sr.leaders_5d)}</div>
-              <div><p class="text-[11px] text-zinc-500 mb-2">Laggards</p>${sectorList(sr.laggards_5d)}</div>
+              <div><p class="text-[11px] text-zinc-300 mb-2">Leaders</p>${sectorList(sr.leaders_5d)}</div>
+              <div><p class="text-[11px] text-zinc-300 mb-2">Laggards</p>${sectorList(sr.laggards_5d)}</div>
             </div>
             ${sr.read ? `<p class="mt-4 text-[13px] text-zinc-300 leading-relaxed">${sr.read}</p>` : ''}
           `)}
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Calendar · next 14d</p>
-            ${events || '<p class="text-zinc-500 text-sm">No flagged events.</p>'}
-            ${earnings ? `<p class="text-[12px] uppercase tracking-wider text-zinc-500 mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Calendar · next 14d</p>
+            ${events || '<p class="text-zinc-300 text-sm">No flagged events.</p>'}
+            ${earnings ? `<p class="text-[12px] uppercase tracking-wider text-zinc-300 mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
           `)}
         </div>
         ${actionCallout(m.action)}
@@ -340,16 +333,16 @@
           <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${w.ticker}</td>
           <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${fmtNum(w.last)}</td>
           <td class="py-3 pr-4 font-mono num text-[12px]">${w.change_pct != null ? fmtPct(w.change_pct) : ''}</td>
-          <td class="py-3 pr-4 text-[12px] text-zinc-400">${w.trigger_zone || ''}</td>
+          <td class="py-3 pr-4 text-[12px] text-zinc-200">${w.trigger_zone || ''}</td>
           <td class="py-3 pr-4">${statusPill(w.status || 'FAR')}</td>
         </tr>
-        ${w.note ? `<tr><td colspan="5" class="pb-3 pl-0 text-[12px] text-zinc-500">${w.note}</td></tr>` : ''}
+        ${w.note ? `<tr><td colspan="5" class="pb-3 pl-0 text-[12px] text-zinc-300">${w.note}</td></tr>` : ''}
       `).join('');
 
       const wsb = (s.wsb_top || []).map(w => `
         <div class="flex items-baseline justify-between py-1.5">
           <p class="font-mono text-[13px] text-zinc-100">${w.ticker}</p>
-          <p class="font-mono num text-[12px] text-zinc-500">${w.score}</p>
+          <p class="font-mono num text-[12px] text-zinc-300">${w.score}</p>
         </div>`).join('');
 
       const clusters = (s.smart_money_clusters || []).map(t => `<span class="inline-block font-mono text-[12px] bg-zinc-600/50 text-zinc-200 px-2 py-1 rounded-md mr-1.5 mb-1.5">${t}</span>`).join('');
@@ -357,17 +350,17 @@
       return `
         ${sectionTitle('Stocks', 'Watchlist, smart-money clusters, retail sentiment.')}
         <div class="grid gap-5">
-          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Watchlist</p>
+          ${card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Watchlist</p>
             <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-500">
+              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-300">
                 <th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Last</th><th class="pb-3 pr-4">Δ</th><th class="pb-3 pr-4">Trigger</th><th class="pb-3 pr-4">Status</th>
               </tr></thead>
-              <tbody>${wl || `<tr><td class="py-4 text-zinc-500 text-sm" colspan="5">No active watchlist names.</td></tr>`}</tbody>
+              <tbody>${wl || `<tr><td class="py-4 text-zinc-300 text-sm" colspan="5">No active watchlist names.</td></tr>`}</tbody>
             </table></div>
           `)}
           <div class="grid md:grid-cols-2 gap-5">
-            ${clusters ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-500">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
-            ${wsb ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
+            ${clusters ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-300">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
+            ${wsb ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
           </div>
         </div>
         ${actionCallout(s.action)}
@@ -380,37 +373,37 @@
         <tr class="border-b border-zinc-600/50 last:border-0">
           <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${u.ticker}</td>
           <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${u.vol_oi != null ? abbr('V/OI') + ' ' + u.vol_oi : ''}</td>
-          <td class="py-3 text-[12px] text-zinc-400">${u.context || ''}</td>
+          <td class="py-3 text-[12px] text-zinc-200">${u.context || ''}</td>
         </tr>`).join('');
 
       const eiv = (o.earnings_iv || []).map(e => `
         <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${e.ticker}</p>
-            ${e.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${e.note}</p>` : ''}
+            ${e.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${e.note}</p>` : ''}
           </div>
-          <p class="font-mono num text-[12px] text-zinc-400">${e.date}</p>
+          <p class="font-mono num text-[12px] text-zinc-200">${e.date}</p>
         </div>`).join('');
 
       const leaps = (o.leaps || []).map(l => `
         <div class="py-2.5 border-b border-zinc-600/50 last:border-0">
-          <p class="font-mono text-[13px] text-zinc-100">${l.ticker} <span class="text-zinc-500">${l.thesis_window || ''}</span></p>
-          ${l.note ? `<p class="text-[12px] text-zinc-400 mt-0.5">${l.note}</p>` : ''}
+          <p class="font-mono text-[13px] text-zinc-100">${l.ticker} <span class="text-zinc-300">${l.thesis_window || ''}</span></p>
+          ${l.note ? `<p class="text-[12px] text-zinc-200 mt-0.5">${l.note}</p>` : ''}
         </div>`).join('');
 
       return `
         ${sectionTitle('Options', 'Unusual flow, ' + abbr('IV') + ' setups, ' + abbr('LEAP') + ' theses.')}
         <div class="grid gap-5">
-          ${unusual ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Unusual options activity</p>
+          ${unusual ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Unusual options activity</p>
             <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-500"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
+              <thead><tr class="text-[11px] uppercase tracking-wider text-zinc-300"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
               <tbody>${unusual}</tbody>
             </table></div>`) : ''}
           <div class="grid md:grid-cols-2 gap-5">
-            ${eiv ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
-            ${leaps ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
+            ${eiv ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
+            ${leaps ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
           </div>
-          ${!unusual && !eiv && !leaps ? card(`<p class="text-zinc-500 text-sm">No qualifying options setups today.</p>`) : ''}
+          ${!unusual && !eiv && !leaps ? card(`<p class="text-zinc-300 text-sm">No qualifying options setups today.</p>`) : ''}
         </div>
         ${actionCallout(o.action)}
       `;
@@ -423,7 +416,7 @@
           ${sectionTitle('Crypto', 'BTC, ETH, SOL, XRP regime tracking.')}
           ${card(`
             <div class="text-center py-6">
-              <p class="text-[13px] uppercase tracking-wider text-zinc-500">Coming soon</p>
+              <p class="text-[13px] uppercase tracking-wider text-zinc-300">Coming soon</p>
               <p class="mt-3 text-[15px] text-zinc-300 max-w-md mx-auto leading-relaxed">${c.note || 'Crypto regime coverage launches once the daily brief begins producing it.'}</p>
             </div>
           `)}
@@ -433,17 +426,17 @@
         <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
           <div>
             <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(co.symbol)}</p>
-            ${co.note ? `<p class="text-[12px] text-zinc-500 mt-0.5">${co.note}</p>` : ''}
+            ${co.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${co.note}</p>` : ''}
           </div>
           <div class="text-right">
             <p class="font-mono num text-[14px]">$${fmtNum(co.last)}</p>
-            ${co.change_5d_pct != null ? `<p class="text-[11px] num mt-0.5">${fmtPct(co.change_5d_pct)} <span class="text-zinc-500">5d</span></p>` : ''}
+            ${co.change_5d_pct != null ? `<p class="text-[11px] num mt-0.5">${fmtPct(co.change_5d_pct)} <span class="text-zinc-300">5d</span></p>` : ''}
           </div>
         </div>`).join('');
       return `
         ${sectionTitle('Crypto')}
         <div class="grid gap-5">
-          ${coins ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-500 text-sm">No crypto data today.</p>`)}
+          ${coins ? card(`<p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-300 text-sm">No crypto data today.</p>`)}
         </div>
         ${actionCallout(c.action)}
       `;
@@ -452,15 +445,15 @@
     function renderArchive(briefs, currentDate) {
       const others = briefs.filter(b => b.date !== currentDate);
       if (!others.length) {
-        return `${sectionTitle('Archive')}${card(`<p class="text-zinc-500 text-sm">Past briefs will appear here.</p>`)}`;
+        return `${sectionTitle('Archive')}${card(`<p class="text-zinc-300 text-sm">Past briefs will appear here.</p>`)}`;
       }
       const items = others.map(b => `
-        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-500/40 bg-gradient-to-br from-zinc-600/40 to-zinc-700/30 hover:from-zinc-500/40 hover:to-zinc-600/30 px-5 py-4 flex items-baseline justify-between gap-4">
+        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-500/40 bg-zinc-600/25 hover:bg-zinc-600/40 transition-colors px-5 py-4 flex items-baseline justify-between gap-4">
           <div>
-            <p class="font-mono num text-[12px] text-zinc-500">${b.date}</p>
+            <p class="font-mono num text-[12px] text-zinc-300">${b.date}</p>
             <p class="text-[15px] text-zinc-200 mt-1">${b.headline || ''}</p>
           </div>
-          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-600/40 text-zinc-400'}">${b.regime || '—'}</span>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-600/40 text-zinc-200'}">${b.regime || '—'}</span>
         </button>`).join('');
       return `${sectionTitle('Archive', 'Past briefs.')}<div class="grid gap-3">${items}</div>`;
     }
@@ -489,10 +482,10 @@
       const ta = document.getElementById('top-actions');
       ta.innerHTML = (brief.top_actions || []).map(a => {
         const w = (a.split(' ')[0] || '').toUpperCase();
-        const dot = w === 'ACTION' ? 'bg-emerald-400 shadow-[0_0_12px] shadow-emerald-400/50'
-                  : w === 'WATCH'  ? 'bg-amber-400 shadow-[0_0_12px] shadow-amber-400/50'
+        const dot = w === 'ACTION' ? 'bg-emerald-400'
+                  : w === 'WATCH'  ? 'bg-amber-400'
                   : w === 'NO'     ? 'bg-zinc-400'
-                  : 'bg-zinc-500';
+                  : 'bg-zinc-400';
         return `<li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full ${dot} shrink-0"></span><span>${a}</span></li>`;
       }).join('');
       // Updated
@@ -526,7 +519,7 @@
         ${sectionTitle(title, sub)}
         <div class="grid md:grid-cols-2 gap-5">
           ${items.map(([h, body]) => card(`
-            <p class="text-[12px] uppercase tracking-wider text-zinc-500 mb-2">${h}</p>
+            <p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-2">${h}</p>
             <p class="text-[14px] text-zinc-300 leading-relaxed">${body}</p>
           `)).join('')}
         </div>
@@ -552,7 +545,7 @@
         ['Income setups', 'Covered calls and cash-secured puts on names with the right combination of price and IV.'],
       ]);
       document.getElementById('tab-crypto').innerHTML = renderCrypto({ crypto: { status: 'coming_soon', note: 'Crypto regime tracking begins after a few weeks of data collection. Watch this tab.' } });
-      document.getElementById('tab-archive').innerHTML = `${sectionTitle('Archive', 'Past briefs.')}${card(`<p class="text-zinc-500 text-sm">Briefs will appear here as they publish.</p>`)}`;
+      document.getElementById('tab-archive').innerHTML = `${sectionTitle('Archive', 'Past briefs.')}${card(`<p class="text-zinc-300 text-sm">Briefs will appear here as they publish.</p>`)}`;
     }
 
     function init(data) {
