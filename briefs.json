@@ -1,4 +1,221 @@
 {
   "version": 1,
-  "briefs": []
+  "briefs": [
+    {
+      "date": "2026-05-02",
+      "updated_at": "2026-05-02T13:04:36-07:00",
+      "regime": "BULL",
+      "regime_note": "FOMO-extended",
+      "vix_bucket": "normal",
+      "headline": "Indices at 52-week highs, breadth narrow, ARM earnings Wednesday.",
+      "top_actions": [
+        "WATCH PODD for a rejection candle in the $170 to $175 short zone Monday.",
+        "WATCH ARM into Wednesday earnings. AMD prints the same day and sets the AI semiconductor tone.",
+        "NO ACTION on indices. FOMO blocks new long entries while SPY and QQQ sit above 20MA plus 2 ATR."
+      ],
+      "macro": {
+        "indices": [
+          {
+            "ticker": "SPY",
+            "last": 720.65,
+            "rsi": 79.1,
+            "note": "above all moving averages, at 52-week high"
+          },
+          {
+            "ticker": "QQQ",
+            "last": 674.15,
+            "rsi": 82.8,
+            "note": "at 52-week high"
+          },
+          {
+            "ticker": "IWM",
+            "last": 279.28,
+            "rsi": 72.3,
+            "note": "at 52-week high"
+          }
+        ],
+        "vol_yields": {
+          "vix": 16.99,
+          "vix_term": "STEEP_CONTANGO",
+          "ten_year": 4.38,
+          "dxy": 98.21,
+          "oil": 101.94,
+          "gold": 4629.90
+        },
+        "sector_rotation": {
+          "leaders_5d": [
+            {
+              "etf": "XLE",
+              "score": 13.1
+            },
+            {
+              "etf": "XLV",
+              "score": 10.75
+            },
+            {
+              "etf": "XLU",
+              "score": 9.29
+            }
+          ],
+          "laggards_5d": [
+            {
+              "etf": "XLK",
+              "score": -9.06
+            },
+            {
+              "etf": "XLY",
+              "score": -0.8
+            },
+            {
+              "etf": "XLRE",
+              "score": 3.55
+            }
+          ],
+          "read": "Late cycle pattern. Energy, healthcare, and utilities lead. Tech and discretionary lag despite indices at all-time highs."
+        },
+        "events_14d": [
+          {
+            "date": "2026-05-04",
+            "event": "Fed Williams speech"
+          },
+          {
+            "date": "2026-05-04",
+            "event": "Factory Orders MoM (March)"
+          },
+          {
+            "date": "2026-05-05",
+            "event": "JOLTS, ISM Services, Fed Barr"
+          }
+        ],
+        "earnings_7d": [
+          {
+            "ticker": "AMD",
+            "date": "2026-05-06",
+            "note": "Wednesday print, AI semiconductor sentiment driver."
+          },
+          {
+            "ticker": "ARM",
+            "date": "2026-05-06",
+            "note": "Wednesday print."
+          }
+        ],
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "Saturday, US market closed. Next live session Monday, May 4."
+        }
+      },
+      "stocks": {
+        "watchlist": [
+          {
+            "ticker": "PODD",
+            "last": 175.04,
+            "change_pct": 1.68,
+            "trigger_zone": "$170 to $175 short zone",
+            "status": "IN_ZONE",
+            "note": "Friday closed green, not red. Need a rejection candle Monday to confirm the short."
+          },
+          {
+            "ticker": "HUM",
+            "last": 233.63,
+            "change_pct": -1.19,
+            "trigger_zone": "above FOMO ceiling $228.79",
+            "status": "NEAR",
+            "note": "Cooling but still stretched. Waiting for a deeper pullback."
+          },
+          {
+            "ticker": "XLE",
+            "last": 58.85,
+            "change_pct": -1.34,
+            "trigger_zone": "long entry at $56.50",
+            "status": "FAR",
+            "note": "Energy is leading, but a flush below the 20MA is needed before adding."
+          },
+          {
+            "ticker": "INTC",
+            "last": 99.62,
+            "trigger_zone": "$31 gap-fill long thesis",
+            "status": "INVALIDATED",
+            "note": "Price ran far past the original setup. Archiving Monday."
+          }
+        ],
+        "smart_money_clusters": [
+          "NIO",
+          "AAPL",
+          "CLX",
+          "SYK",
+          "TSLA",
+          "TEAM",
+          "STX"
+        ],
+        "wsb_top": [
+          {
+            "ticker": "SNDK",
+            "score": 95
+          },
+          {
+            "ticker": "SPY",
+            "score": 93
+          },
+          {
+            "ticker": "AMD",
+            "score": 85
+          },
+          {
+            "ticker": "SOUN",
+            "score": 74
+          },
+          {
+            "ticker": "NVDA",
+            "score": 73
+          }
+        ],
+        "action": {
+          "tier": "WATCH",
+          "text": "PODD entered the short trigger zone but Friday closed green. Wait for a rejection candle Monday before acting."
+        }
+      },
+      "options": {
+        "unusual": [
+          {
+            "ticker": "AAPL",
+            "vol_oi": 1243,
+            "context": "breakout and active, strongest cluster, but above the FOMO ceiling"
+          },
+          {
+            "ticker": "TSLA",
+            "context": "flagged on volume"
+          },
+          {
+            "ticker": "SPY",
+            "context": "index hedging flow"
+          },
+          {
+            "ticker": "QQQ",
+            "context": "index hedging flow"
+          }
+        ],
+        "earnings_iv": [
+          {
+            "ticker": "AMD",
+            "date": "2026-05-06",
+            "note": "Wednesday print. AI semi sentiment driver. IV elevated."
+          },
+          {
+            "ticker": "ARM",
+            "date": "2026-05-06",
+            "note": "Wednesday print. IV elevated."
+          }
+        ],
+        "leaps": [],
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "No clean options setup. AAPL flow strong but FOMO blocks. AMD and ARM IV plays are better evaluated Tuesday close."
+        }
+      },
+      "crypto": {
+        "status": "coming_soon",
+        "note": "Crypto regime tracking starts once daily coverage expands to BTC, ETH, SOL, and XRP."
+      }
+    }
+  ]
 }
