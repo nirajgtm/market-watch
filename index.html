@@ -76,6 +76,19 @@ function setMode(m) {
   try { localStorage.setItem("mw_detail_mode", m); } catch {}
 }
 
+let THEME = (function() {
+  try { return localStorage.getItem("mw_theme") || "dark"; }
+  catch { return "dark"; }
+})();
+
+function setTheme(t) {
+  THEME = t;
+  try { localStorage.setItem("mw_theme", t); } catch {}
+  document.documentElement.dataset.theme = t;
+}
+// Apply on first load
+document.documentElement.dataset.theme = THEME;
+
 // ============================================================
 //  HELPERS
 // ============================================================
@@ -311,6 +324,10 @@ function renderMasthead(b) {
         <button data-mode="plain" class="${MODE === 'plain' ? 'is-active' : ''}">Plain</button>
         <button data-mode="pro" class="${MODE === 'pro' ? 'is-active' : ''}">Pro</button>
       </div>
+      <div class="mw-theme-toggle" role="group" aria-label="Theme">
+        <button data-theme="dark" class="${THEME === 'dark' ? 'is-active' : ''}" title="Dark theme">Dark</button>
+        <button data-theme="light" class="${THEME === 'light' ? 'is-active' : ''}" title="Light theme">Light</button>
+      </div>
       <span class="mw-meta-dot">·</span>
       <button class="mw-meta-btn" data-modal="glossary">Glossary</button>
       <span class="mw-meta-dot">·</span>
@@ -437,6 +454,7 @@ function sentClass(s) {
   const v = String(s || "").toUpperCase();
   if (v === "BULLISH") return "is-up";
   if (v === "BEARISH") return "is-down";
+  if (v === "NEUTRAL" || v === "MIXED") return "is-neutral";
   return "mw-dim";
 }
 
@@ -897,6 +915,8 @@ function bindEvents() {
     b.addEventListener("click", e => { if (e.target === b) { MODAL = null; render(); } }));
   document.querySelectorAll("[data-mode]").forEach(b =>
     b.addEventListener("click", () => { setMode(b.dataset.mode); render(); }));
+  document.querySelectorAll("[data-theme]").forEach(b =>
+    b.addEventListener("click", () => { setTheme(b.dataset.theme); render(); }));
   document.querySelectorAll(".mw-archive-item").forEach(item =>
     item.addEventListener("click", () => {
       const d = item.dataset.archiveDate;

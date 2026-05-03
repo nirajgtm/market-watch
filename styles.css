@@ -3,7 +3,8 @@
    Single warm-dark theme. Generous serif type, hairline rules.
    ============================================================ */
 
-:root {
+:root,
+:root[data-theme="dark"] {
   --mw-bg:        #15110a;
   --mw-bg-2:      #1c1810;
   --mw-bg-3:      #221d14;
@@ -25,6 +26,38 @@
   --mw-up-soft:   rgba(95, 200, 138, 0.18);
   --mw-down:      #e07a6a;
   --mw-down-soft: rgba(224, 122, 106, 0.18);
+}
+
+/* Light theme: muted off-white parchment, soft on eyes. Not pure white. */
+:root[data-theme="light"] {
+  --mw-bg:        #f3eedf;            /* warm parchment */
+  --mw-bg-2:      #ebe4d0;            /* card surface, slightly deeper */
+  --mw-bg-3:      #ddd3b8;            /* hover/active surface */
+  --mw-rule:      #cbc0a0;
+  --mw-rule-2:    #b8ac88;
+  --mw-ink:       #2a2418;            /* near-black warm */
+  --mw-ink-2:     #5a5238;
+  --mw-ink-3:     #88806a;
+  --mw-ink-4:     #b0a888;
+
+  --mw-money:     #2f6e4f;            /* deeper dollar green for contrast on cream */
+  --mw-money-dim: #4f8f6c;
+
+  --mw-accent:        #b8801f;        /* deeper amber */
+  --mw-accent-soft:   rgba(184, 128, 31, 0.18);
+  --mw-accent-faint:  rgba(184, 128, 31, 0.10);
+
+  --mw-up:        #2d8f5a;            /* forest green */
+  --mw-up-soft:   rgba(45, 143, 90, 0.16);
+  --mw-down:      #c9573f;            /* rust red */
+  --mw-down-soft: rgba(201, 87, 63, 0.16);
+
+  --mw-c-ticker:  #4a3f1f;
+  --mw-c-num:     #2a2418;
+  --mw-c-date:    #4a5878;
+  --mw-c-zone:    #7a5a1c;
+  --mw-c-event:   #4a6a3a;
+  --mw-c-context: #7a4a3c;
 
   --mw-c-ticker:  #e0d6b0;
   --mw-c-num:     #ece5c8;
@@ -64,6 +97,9 @@ body::before {
   background-image: radial-gradient(rgba(255,230,180,0.018) 1px, transparent 1px);
   background-size: 3px 3px;
   z-index: 0;
+}
+:root[data-theme="light"] body::before {
+  background-image: radial-gradient(rgba(50,40,20,0.025) 1px, transparent 1px);
 }
 
 .mw-mono { font-family: var(--mw-mono); font-feature-settings: "tnum" 1, "zero" 1; letter-spacing: -0.01em; }
@@ -116,8 +152,8 @@ body::before {
 }
 .mw-meta-btn-accent:hover { background: var(--mw-ink); color: var(--mw-bg); }
 
-/* Plain / Pro mode toggle */
-.mw-mode-toggle {
+/* Plain / Pro mode + Dark / Light theme toggles share the same pill style */
+.mw-mode-toggle, .mw-theme-toggle {
   display: inline-flex;
   border: 1px solid var(--mw-rule-2);
   border-radius: 999px;
@@ -127,15 +163,20 @@ body::before {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.mw-mode-toggle button {
+.mw-mode-toggle button, .mw-theme-toggle button {
   border: 0; background: transparent; color: var(--mw-ink-3);
   padding: 4px 12px; border-radius: 999px; cursor: pointer;
   font: inherit; letter-spacing: inherit; text-transform: inherit;
   transition: background-color 140ms ease, color 140ms ease;
 }
-.mw-mode-toggle button:hover { color: var(--mw-ink); }
+.mw-mode-toggle button:hover, .mw-theme-toggle button:hover { color: var(--mw-ink); }
 .mw-mode-toggle button.is-active {
   background: var(--mw-money);
+  color: var(--mw-bg);
+  font-weight: 700;
+}
+.mw-theme-toggle button.is-active {
+  background: var(--mw-accent);
   color: var(--mw-bg);
   font-weight: 700;
 }
@@ -896,9 +937,10 @@ body::before {
   padding: 2px 7px; border-radius: 2px;
   background: var(--mw-bg-3);
 }
-.mw-soc-sentiment.is-up   { color: var(--mw-up);   background: var(--mw-up-soft); }
-.mw-soc-sentiment.is-down { color: var(--mw-down); background: var(--mw-down-soft); }
-.mw-soc-sentiment.mw-dim  { color: var(--mw-ink-3); }
+.mw-soc-sentiment.is-up      { color: var(--mw-up);     background: var(--mw-up-soft); }
+.mw-soc-sentiment.is-down    { color: var(--mw-down);   background: var(--mw-down-soft); }
+.mw-soc-sentiment.is-neutral { color: var(--mw-accent); background: var(--mw-accent-soft); }
+.mw-soc-sentiment.mw-dim     { color: var(--mw-ink-3); }
 .mw-soc-sources {
   font-size: 11px;
   color: var(--mw-ink-3);
