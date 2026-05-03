@@ -350,7 +350,7 @@ function renderMasthead(b) {
       <span class="mw-meta-dot">·</span>
       <button class="mw-meta-btn" data-modal="archive">Archive</button>
       <span class="mw-meta-dot">·</span>
-      <a class="mw-meta-btn mw-meta-btn-accent" href="https://form.jotform.com/261215968266061" target="_blank" rel="noopener noreferrer">Feedback</a>
+      <button class="mw-meta-btn mw-meta-btn-accent" data-modal="feedback">Feedback</button>
     </div>
     <p class="mw-tagline">The Daily Tape</p>
     <div class="mw-tagline-rule"></div>
@@ -840,8 +840,65 @@ function renderModal() {
     return modalShell("Glossary", "Hover any underlined term in the brief to see this inline.",
       `<dl class="mw-glossary-list">${GLOSSARY_HTML}</dl>`);
   }
+  if (MODAL === "feedback") {
+    return modalShell("Feedback",
+      "Bug, missing ticker, or layout note. Email is optional but lets us reply.",
+      `<form id="mw-feedback-form" class="mw-feedback-form" novalidate>
+        <label class="mw-feedback-label" for="mw-fb-email">Email (optional)</label>
+        <input class="mw-feedback-input" id="mw-fb-email" name="email" type="email" autocomplete="email">
+        <label class="mw-feedback-label" for="mw-fb-message">Message</label>
+        <textarea class="mw-feedback-input" id="mw-fb-message" name="message" rows="5" required placeholder="What's off, missing, or could be better?"></textarea>
+        <input type="hidden" name="page" value="market-watch">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+        <div class="mw-feedback-row">
+          <button type="submit" class="mw-feedback-send">Send</button>
+          <span class="mw-feedback-status" aria-live="polite"></span>
+        </div>
+      </form>`);
+  }
   return "";
 }
+
+// Formspree submission: AJAX so the user stays on the page.
+async function submitFeedback(form) {
+  const status = form.querySelector(".mw-feedback-status");
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  status.textContent = "Sending...";
+  status.className = "mw-feedback-status";
+  try {
+    const res = await fetch("https://formspree.io/f/xdabeoyz", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+    if (res.ok) {
+      form.innerHTML = `<p class="mw-feedback-thanks">Thanks. Logged.</p>`;
+      return;
+    }
+    let msg = "Send failed. Try again.";
+    try {
+      const json = await res.json();
+      if (json && json.errors && json.errors.length) {
+        msg = json.errors.map(e => e.message || "").filter(Boolean).join(" ") || msg;
+      }
+    } catch {}
+    status.textContent = msg;
+    status.classList.add("is-down");
+    btn.disabled = false;
+  } catch (err) {
+    status.textContent = "Network error. Try again.";
+    status.classList.add("is-down");
+    btn.disabled = false;
+  }
+}
+
+document.addEventListener("submit", e => {
+  if (e.target && e.target.id === "mw-feedback-form") {
+    e.preventDefault();
+    submitFeedback(e.target);
+  }
+});
 
 function modalShell(title, intro, body) {
   return `<div class="mw-overlay" data-modal-close>
