@@ -3,7 +3,7 @@
   "briefs": [
     {
       "date": "2026-05-03",
-      "updated_at": "2026-05-03T12:24:47-07:00",
+      "updated_at": "2026-05-03T15:11:23-07:00",
       "regime": "BULL",
       "regime_note": "FOMO-extended",
       "vix_bucket": "normal",
@@ -343,11 +343,12 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 136,
+            "mentions": 163,
             "sources": [
               "all_stocks",
               "daytrading",
               "options",
+              "race1m",
               "wallstreetbets"
             ],
             "sentiment": "NEUTRAL",
@@ -363,59 +364,21 @@
               {
                 "sub": "options",
                 "title": "$QQQ / $SPY earnings + FOMC calendar spread",
-                "score": 21,
+                "score": 19,
                 "flair": "",
                 "body_excerpt": "* Thesis: $MSFT, $AMZN, $META, $GOOG all report tonight into the FOMC decision window, and $QQQ / $SPY options are bid in the front week while back-month vol is relatively calmer.\n* Strategy: Buy a short-dated $QQQ or $SPY call calendar (se..."
               },
               {
                 "sub": "Daytrading",
                 "title": "SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking",
-                "score": 10,
+                "score": 13,
                 "flair": "Software Sunday",
                 "body_excerpt": "Built a live market command system that tracks pressure alignment, continuation control, structure breaks, and expansion phases in real time.\n\nThis clip shows the system escalating from early warning, alignment, elevator lock, and continuat..."
               }
             ],
             "detail": {
-              "plain": "On r/options, the top discussion (22 upvotes) is: \"Advice on VOO covered call strategy\". Also: r/options discussing \"$QQQ / $SPY earnings + FOMC calendar spread\"; r/Daytrading discussing \"SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking\". Attention is falling sharply versus yesterday.",
-              "pro": "4-source cluster (all_stocks, daytrading, options, wallstreetbets). Total mentions 136. Sentiment NEUTRAL. 24h mention delta -37%. r/options 22up: \"Advice on VOO covered call strategy\". r/options 21up: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
-            }
-          },
-          {
-            "ticker": "QQQ",
-            "mentions": 35,
-            "sources": [
-              "all_stocks",
-              "options",
-              "thetagang"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "50% annual return on smart wheeling",
-                "score": 72,
-                "flair": "Question",
-                "body_excerpt": "In a local forum somebody claimed \"With a 1 million \\[dollar\\] portfolio, I usually make a 50-100% annual return. It\u2019s actually not difficult at all. By using the QQQ wheel strategy and utilizing weekly compounding, getting over 50% a year ..."
-              },
-              {
-                "sub": "options",
-                "title": "$QQQ / $SPY earnings + FOMC calendar spread",
-                "score": 21,
-                "flair": "",
-                "body_excerpt": "* Thesis: $MSFT, $AMZN, $META, $GOOG all report tonight into the FOMC decision window, and $QQQ / $SPY options are bid in the front week while back-month vol is relatively calmer.\n* Strategy: Buy a short-dated $QQQ or $SPY call calendar (se..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "March Short Put Verticals",
-                "score": 13,
-                "flair": "",
-                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
-              }
-            ],
-            "detail": {
-              "plain": "On r/thetagang, the top discussion (72 upvotes) is: \"50% annual return on smart wheeling\". Also: r/options discussing \"$QQQ / $SPY earnings + FOMC calendar spread\"; r/thetagang discussing \"March Short Put Verticals\".",
-              "pro": "3-source cluster (all_stocks, options, thetagang). Total mentions 35. Sentiment NEUTRAL. 24h mention delta -6%. r/thetagang 72up: \"50% annual return on smart wheeling\". r/options 21up: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
+              "plain": "On r/options, the top discussion (22 upvotes) is: \"Advice on VOO covered call strategy\". Also: r/options discussing \"$QQQ / $SPY earnings + FOMC calendar spread\"; r/Daytrading discussing \"SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking\". Attention is rising sharply versus yesterday.",
+              "pro": "5-source cluster (all_stocks, daytrading, options, race1m, wallstreetbets). Total mentions 163. Sentiment NEUTRAL. 24h mention delta +56%. r/options 22up: \"Advice on VOO covered call strategy\". r/options 19up: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
             }
           },
           {
@@ -423,7 +386,8 @@
             "mentions": 38,
             "sources": [
               "all_stocks",
-              "options"
+              "options",
+              "race1m"
             ],
             "sentiment": "NEUTRAL",
             "summary": "",
@@ -434,11 +398,63 @@
                 "score": 22,
                 "flair": "",
                 "body_excerpt": "I chose VOO because of the lower expense ratio over SPY. However, I'm finding it very hard to find a good price to sell covered calls on VOO because of the liquidity. What options do we have here? I have a lot of unrealized gains so moving ..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "100k at 33",
+                "score": 9,
+                "flair": "UPDATE",
+                "body_excerpt": "I finally crossed my 100k mark this year. I'm one of the COVID investors, so I only started this journey about 5 years ago and did everything silly that one might do. \n\nGot in and out of crypto, invested heavy in some tech stocks that were ..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "I turned $500 into $56k in one month, and I plan on doing it again this month",
+                "score": 0,
+                "flair": "",
+                "body_excerpt": "In the last month I was able to turn $500 into over $50k. But it was really fucking crazy. My trading style is aggressive, high risk, and very reliant on momentum. But it worked.\n\nIn April, I finally found a structured way of trading instea..."
               }
             ],
             "detail": {
-              "plain": "On r/options, the top discussion (22 upvotes) is: \"Advice on VOO covered call strategy\".",
-              "pro": "2-source cluster (all_stocks, options). Total mentions 38. Sentiment NEUTRAL. 24h mention delta +9%. r/options 22up: \"Advice on VOO covered call strategy\"."
+              "plain": "On r/options, the top discussion (22 upvotes) is: \"Advice on VOO covered call strategy\". Also: r/TheRaceTo1Million discussing \"100k at 33\"; r/TheRaceTo1Million discussing \"I turned $500 into $56k in one month, and I plan on doing it again this month\".",
+              "pro": "3-source cluster (all_stocks, options, race1m). Total mentions 38. Sentiment NEUTRAL. 24h mention delta -3%. r/options 22up: \"Advice on VOO covered call strategy\". r/TheRaceTo1Million 9up: \"100k at 33\"."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "mentions": 8,
+            "sources": [
+              "options",
+              "race1m",
+              "thetagang"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "50% annual return on smart wheeling",
+                "score": 69,
+                "flair": "Question",
+                "body_excerpt": "In a local forum somebody claimed \"With a 1 million \\[dollar\\] portfolio, I usually make a 50-100% annual return. It\u2019s actually not difficult at all. By using the QQQ wheel strategy and utilizing weekly compounding, getting over 50% a year ..."
+              },
+              {
+                "sub": "options",
+                "title": "$QQQ / $SPY earnings + FOMC calendar spread",
+                "score": 19,
+                "flair": "",
+                "body_excerpt": "* Thesis: $MSFT, $AMZN, $META, $GOOG all report tonight into the FOMC decision window, and $QQQ / $SPY options are bid in the front week while back-month vol is relatively calmer.\n* Strategy: Buy a short-dated $QQQ or $SPY call calendar (se..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 12,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+              }
+            ],
+            "detail": {
+              "plain": "On r/thetagang, the top discussion (69 upvotes) is: \"50% annual return on smart wheeling\". Also: r/options discussing \"$QQQ / $SPY earnings + FOMC calendar spread\"; r/thetagang discussing \"March Short Put Verticals\".",
+              "pro": "3-source cluster (options, race1m, thetagang). Total mentions 8. Sentiment NEUTRAL. r/thetagang 69up: \"50% annual return on smart wheeling\". r/options 19up: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
             }
           },
           {
@@ -470,7 +486,7 @@
           {
             "ticker": "PODD",
             "last": 175.04,
-            "change_pct": 0.02,
+            "change_pct": 1.68,
             "trigger_zone": "$170 to $175 short zone",
             "status": "TRIGGERED",
             "note": "Friday closed green. Need a rejection candle Monday to confirm.",
@@ -482,7 +498,7 @@
           {
             "ticker": "HUM",
             "last": 233.63,
-            "change_pct": -1.43,
+            "change_pct": -1.19,
             "trigger_zone": "long entry below $228",
             "status": "NEAR",
             "note": "Cooling but still stretched. Wait for a deeper pullback to $228 then $222 stop.",
@@ -494,7 +510,7 @@
           {
             "ticker": "XLE",
             "last": 58.85,
-            "change_pct": -1.56,
+            "change_pct": -1.34,
             "trigger_zone": "long entry $56.50 (20-day MA)",
             "status": "FAR",
             "note": "Leading sector but extended. Need a flush to the 20MA before adding.",
@@ -506,7 +522,7 @@
           {
             "ticker": "TER",
             "last": 345.42,
-            "change_pct": -0.17,
+            "change_pct": 0,
             "trigger_zone": "fade short above $365",
             "status": "FAR",
             "note": "Post-earnings reversal setup. Short the bounce, not the drop.",
@@ -518,7 +534,7 @@
           {
             "ticker": "GEHC",
             "last": 61.03,
-            "change_pct": -0.6,
+            "change_pct": 0,
             "trigger_zone": "fade short above $63",
             "status": "FAR",
             "note": "Failed-bounce short setup. Wait for the retest.",
@@ -530,7 +546,7 @@
           {
             "ticker": "MO",
             "last": 74.55,
-            "change_pct": 2.64,
+            "change_pct": 0,
             "trigger_zone": "long entry below $70",
             "status": "FAR",
             "note": "Defensive PEAD long on a pullback.",
@@ -643,7 +659,7 @@
                 96.44,
                 87.11
               ],
-              "note": "CLX Q1 Deep Dive: Margin Gains Offset by Cautious Outlook and Guidance Reduction",
+              "note": "Is The Clorox Company (CLX) A Good Stock To Buy Now?",
               "detail": {
                 "plain": "Clorox (CLX) makes bleach, Pine-Sol, and household cleaners. Dropped almost 10% Friday after the company cut its full-year outlook, blaming weak consumer spending. When even a safe name like Clorox falls this much on a guidance cut, it's a warning that consumers are tightening. Don't try to catch the falling knife. Let it base.",
                 "pro": "Print OK, mgmt cut FY guide on weak consumer demand. Defensive name losing 10% on guide is a consumer-spending warning, not a CLX-specific story. Yellow flag for staples even though XLP led the week. Let it base."
@@ -723,23 +739,23 @@
         "wsb_top": [
           {
             "ticker": "SPY",
-            "score": 51
+            "score": 64
+          },
+          {
+            "ticker": "SOUN",
+            "score": 60
           },
           {
             "ticker": "AMD",
-            "score": 48
+            "score": 59
           },
           {
             "ticker": "NVDA",
-            "score": 47
-          },
-          {
-            "ticker": "INTC",
-            "score": 32
+            "score": 51
           },
           {
             "ticker": "SNDK",
-            "score": 28
+            "score": 40
           }
         ],
         "action": {
@@ -875,7 +891,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 108,
+            "mentions": 103,
             "sources": [
               "all_stocks",
               "options",
@@ -898,26 +914,26 @@
               {
                 "sub": "options",
                 "title": "Micron Up 60% in 4 Weeks. Writing Puts.",
-                "score": 62,
+                "score": 66,
                 "flair": "",
                 "body_excerpt": "After Micron surged 60%+ in 4 weeks, cash-secured puts are generating rich premium right now. This week I break down how to use high IV to get paid to wait for a pullback on $MU."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "SNDK vs MU vs WDC vs STX",
-                "score": 47,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Data storage is going parabolic. Clearly these are the current powerhouses and are ripping beyond belief, to unfathomable heights. \n\nHate being that guy- but if you hold a position, what\u2019s your current position out of these 4, and why? And ..."
               }
             ],
             "detail": {
-              "plain": "On r/TheRaceTo10Million, the top discussion (137 upvotes) is: \"$MU is in a strong uptrend with good growth\". Also: r/options discussing \"Micron Up 60% in 4 Weeks. Writing Puts.\"; r/TheRaceTo10Million discussing \"SNDK vs MU vs WDC vs STX\". Attention is rising sharply versus yesterday. Overall tone in the chatter reads optimistic.",
-              "pro": "7-source cluster (all_stocks, options, race10m, stocks, thetagang, vitards, wallstreetbets). Total mentions 108. Sentiment BULLISH. 24h mention delta +133%. r/TheRaceTo10Million 137up: \"$MU is in a strong uptrend with good growth\". r/options 62up: \"Micron Up 60% in 4 Weeks. Writing Puts.\"."
+              "plain": "On r/TheRaceTo10Million, the top discussion (137 upvotes) is: \"$MU is in a strong uptrend with good growth\". Also: r/options discussing \"Micron Up 60% in 4 Weeks. Writing Puts.\"; r/TheRaceTo10Million discussing \"SNDK vs MU vs WDC vs STX\". Attention is falling sharply versus yesterday. Overall tone in the chatter reads optimistic.",
+              "pro": "7-source cluster (all_stocks, options, race10m, stocks, thetagang, vitards, wallstreetbets). Total mentions 103. Sentiment BULLISH. 24h mention delta -36%. r/TheRaceTo10Million 137up: \"$MU is in a strong uptrend with good growth\". r/options 66up: \"Micron Up 60% in 4 Weeks. Writing Puts.\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 161,
+            "mentions": 170,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -939,7 +955,7 @@
               {
                 "sub": "Vitards",
                 "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
-                "score": 95,
+                "score": 94,
                 "flair": "YOLO",
                 "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
               },
@@ -953,12 +969,12 @@
             ],
             "detail": {
               "plain": "On r/TheRaceTo1Million, the top discussion (234 upvotes) is: \"34M crossed $1M+ today. ~25% in cash.\". Also: r/Vitards discussing \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report.\"; r/Daytrading discussing \"spent the last 7 months building a quantitative stock analysis platform with 3 engines: wyckoff, mean reversion, and crypto\". Attention is rising sharply versus yesterday. Overall tone in the chatter reads optimistic.",
-              "pro": "6-source cluster (all_stocks, daytrading, race1m, stocks, vitards, wallstreetbets). Total mentions 161. Sentiment BULLISH. 24h mention delta +157%. r/TheRaceTo1Million 234up: \"34M crossed $1M+ today. ~25% in cash.\". r/Vitards 95up: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report.\"."
+              "pro": "6-source cluster (all_stocks, daytrading, race1m, stocks, vitards, wallstreetbets). Total mentions 170. Sentiment BULLISH. 24h mention delta +100%. r/TheRaceTo1Million 234up: \"34M crossed $1M+ today. ~25% in cash.\". r/Vitards 94up: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report.\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 168,
+            "mentions": 179,
             "sources": [
               "all_stocks",
               "race10m",
@@ -979,90 +995,76 @@
               {
                 "sub": "thetagang",
                 "title": "March Short Put Verticals",
-                "score": 13,
+                "score": 12,
                 "flair": "",
                 "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 11,
+                "score": 10,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
             ],
             "detail": {
-              "plain": "On r/TheRaceTo10Million, the top discussion (25 upvotes) is: \"The list of companies that are related to AI and Computer manofacture\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"GOOG and IBIT wheel are smooth as butter\". Attention is rising sharply versus yesterday.",
-              "pro": "5-source cluster (all_stocks, race10m, stocks, thetagang, wallstreetbets). Total mentions 168. Sentiment NEUTRAL. 24h mention delta +700%. r/TheRaceTo10Million 25up: \"The list of companies that are related to AI and Computer manofacture\". r/thetagang 13up: \"March Short Put Verticals\"."
+              "plain": "On r/TheRaceTo10Million, the top discussion (25 upvotes) is: \"The list of companies that are related to AI and Computer manofacture\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"GOOG and IBIT wheel are smooth as butter\".",
+              "pro": "5-source cluster (all_stocks, race10m, stocks, thetagang, wallstreetbets). Total mentions 179. Sentiment NEUTRAL. 24h mention delta +30%. r/TheRaceTo10Million 25up: \"The list of companies that are related to AI and Computer manofacture\". r/thetagang 12up: \"March Short Put Verticals\"."
             }
           },
           {
-            "ticker": "INTC",
-            "mentions": 72,
+            "ticker": "NOW",
+            "mentions": 27,
             "sources": [
-              "all_stocks",
+              "race10m",
+              "stocks",
               "thetagang",
-              "wallstreetbets"
+              "vitards"
             ],
             "sentiment": "NEUTRAL",
             "summary": "",
             "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price",
+                "score": 43,
+                "flair": "Wheel",
+                "body_excerpt": ""
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Is ServiceNow $NOW due for a comeback?",
+                "score": 26,
+                "flair": "Due Diligence",
+                "body_excerpt": ""
+              },
               {
                 "sub": "thetagang",
                 "title": "March Short Put Verticals",
-                "score": 13,
+                "score": 12,
                 "flair": "",
                 "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "Covered call strategy",
-                "score": 5,
-                "flair": "Discussion",
-                "body_excerpt": "Picture is AAPL chain for 11 may 2026 for discussion purposes\n\nI want to start selling CC on AAPL, INTC, and PLTR. Goal is to increase returns, and raise capital to increase my position in other stocks to &gt;100 shares, and start selling C..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "May Short Put Verticals",
-                "score": 2,
-                "flair": "",
-                "body_excerpt": "Here are results from the first week in May (1 day) of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nGood start as I closed 13 Trades on 8 tickers for a profit of **$1864.**\n\nHere are the highlights:\n\n* **1 losing trad..."
               }
             ],
             "detail": {
-              "plain": "On r/thetagang, the top discussion (13 upvotes) is: \"March Short Put Verticals\". Also: r/thetagang discussing \"Covered call strategy\"; r/thetagang discussing \"May Short Put Verticals\". Attention is falling sharply versus yesterday.",
-              "pro": "3-source cluster (all_stocks, thetagang, wallstreetbets). Total mentions 72. Sentiment NEUTRAL. 24h mention delta -44%. r/thetagang 13up: \"March Short Put Verticals\". r/thetagang 5up: \"Covered call strategy\"."
+              "plain": "On r/thetagang, the top discussion (43 upvotes) is: \"Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price\". Also: r/TheRaceTo10Million discussing \"Is ServiceNow $NOW due for a comeback?\"; r/thetagang discussing \"March Short Put Verticals\". Attention is rising sharply versus yesterday.",
+              "pro": "4-source cluster (race10m, stocks, thetagang, vitards). Total mentions 27. Sentiment NEUTRAL. 24h mention delta +2200%. r/thetagang 43up: \"Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price\". r/TheRaceTo10Million 26up: \"Is ServiceNow $NOW due for a comeback?\"."
             }
           },
           {
-            "ticker": "SNDK",
-            "mentions": 65,
+            "ticker": "SOUN",
+            "mentions": 125,
             "sources": [
               "all_stocks",
-              "race10m",
+              "stocktwits",
               "wallstreetbets"
             ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "SNDK vs MU vs WDC vs STX",
-                "score": 47,
-                "flair": "",
-                "body_excerpt": "Data storage is going parabolic. Clearly these are the current powerhouses and are ripping beyond belief, to unfathomable heights. \n\nHate being that guy- but if you hold a position, what\u2019s your current position out of these 4, and why? And ..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "$SNDK, Sandisk, The Mirage of the Order Book (RPO - Remaining Performance Obligation)",
-                "score": 7,
-                "flair": "General",
-                "body_excerpt": "The company boasts of having $42 billion in pending orders. It's impressive, but these contracts have variable pricing. As soon as the overall supply of NAND flash memory chips on the market increases, selling prices could automatically fal..."
-              }
-            ],
+            "sentiment": "BULLISH",
+            "summary": "SoundHound AI is experiencing significant upward momentum driven by heavy institutional buying and intense speculative interest regarding a potential short s...",
+            "top_posts": [],
             "detail": {
-              "plain": "On r/TheRaceTo10Million, the top discussion (47 upvotes) is: \"SNDK vs MU vs WDC vs STX\". Also: r/TheRaceTo10Million discussing \"$SNDK, Sandisk, The Mirage of the Order Book (RPO - Remaining Performance Obligation)\". Attention is falling sharply versus yesterday.",
-              "pro": "3-source cluster (all_stocks, race10m, wallstreetbets). Total mentions 65. Sentiment NEUTRAL. 24h mention delta -69%. r/TheRaceTo10Million 47up: \"SNDK vs MU vs WDC vs STX\". r/TheRaceTo10Million 7up: \"$SNDK, Sandisk, The Mirage of the Order Book (RPO - Remaining Performance Obligation)\"."
+              "plain": "SoundHound AI is experiencing significant upward momentum driven by heavy institutional buying and intense speculative interest regarding a potential short s... Attention is rising sharply versus yesterday. Overall tone in the chatter reads optimistic.",
+              "pro": "3-source cluster (all_stocks, stocktwits, wallstreetbets). Total mentions 125. Sentiment BULLISH. 24h mention delta +140%. ST summary: SoundHound AI is experiencing significant upward momentum driven by heavy institutional buying and intense speculative interest regarding a potential short s..."
             }
           }
         ]
@@ -1209,7 +1211,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 108,
+            "mentions": 103,
             "sources": [
               "all_stocks",
               "options",
@@ -1232,26 +1234,26 @@
               {
                 "sub": "options",
                 "title": "Micron Up 60% in 4 Weeks. Writing Puts.",
-                "score": 62,
+                "score": 66,
                 "flair": "",
                 "body_excerpt": "After Micron surged 60%+ in 4 weeks, cash-secured puts are generating rich premium right now. This week I break down how to use high IV to get paid to wait for a pullback on $MU."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "SNDK vs MU vs WDC vs STX",
-                "score": 47,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Data storage is going parabolic. Clearly these are the current powerhouses and are ripping beyond belief, to unfathomable heights. \n\nHate being that guy- but if you hold a position, what\u2019s your current position out of these 4, and why? And ..."
               }
             ],
             "detail": {
-              "plain": "On r/TheRaceTo10Million, the top discussion (137 upvotes) is: \"$MU is in a strong uptrend with good growth\". Also: r/options discussing \"Micron Up 60% in 4 Weeks. Writing Puts.\"; r/TheRaceTo10Million discussing \"SNDK vs MU vs WDC vs STX\". Attention is rising sharply versus yesterday. Overall tone in the chatter reads optimistic.",
-              "pro": "7-source cluster (all_stocks, options, race10m, stocks, thetagang, vitards, wallstreetbets). Total mentions 108. Sentiment BULLISH. 24h mention delta +133%. r/TheRaceTo10Million 137up: \"$MU is in a strong uptrend with good growth\". r/options 62up: \"Micron Up 60% in 4 Weeks. Writing Puts.\"."
+              "plain": "On r/TheRaceTo10Million, the top discussion (137 upvotes) is: \"$MU is in a strong uptrend with good growth\". Also: r/options discussing \"Micron Up 60% in 4 Weeks. Writing Puts.\"; r/TheRaceTo10Million discussing \"SNDK vs MU vs WDC vs STX\". Attention is falling sharply versus yesterday. Overall tone in the chatter reads optimistic.",
+              "pro": "7-source cluster (all_stocks, options, race10m, stocks, thetagang, vitards, wallstreetbets). Total mentions 103. Sentiment BULLISH. 24h mention delta -36%. r/TheRaceTo10Million 137up: \"$MU is in a strong uptrend with good growth\". r/options 66up: \"Micron Up 60% in 4 Weeks. Writing Puts.\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 168,
+            "mentions": 179,
             "sources": [
               "all_stocks",
               "race10m",
@@ -1272,26 +1274,103 @@
               {
                 "sub": "thetagang",
                 "title": "March Short Put Verticals",
-                "score": 13,
+                "score": 12,
                 "flair": "",
                 "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 11,
+                "score": 10,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
             ],
             "detail": {
-              "plain": "On r/TheRaceTo10Million, the top discussion (25 upvotes) is: \"The list of companies that are related to AI and Computer manofacture\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"GOOG and IBIT wheel are smooth as butter\". Attention is rising sharply versus yesterday.",
-              "pro": "5-source cluster (all_stocks, race10m, stocks, thetagang, wallstreetbets). Total mentions 168. Sentiment NEUTRAL. 24h mention delta +700%. r/TheRaceTo10Million 25up: \"The list of companies that are related to AI and Computer manofacture\". r/thetagang 13up: \"March Short Put Verticals\"."
+              "plain": "On r/TheRaceTo10Million, the top discussion (25 upvotes) is: \"The list of companies that are related to AI and Computer manofacture\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"GOOG and IBIT wheel are smooth as butter\".",
+              "pro": "5-source cluster (all_stocks, race10m, stocks, thetagang, wallstreetbets). Total mentions 179. Sentiment NEUTRAL. 24h mention delta +30%. r/TheRaceTo10Million 25up: \"The list of companies that are related to AI and Computer manofacture\". r/thetagang 12up: \"March Short Put Verticals\"."
+            }
+          },
+          {
+            "ticker": "NOW",
+            "mentions": 27,
+            "sources": [
+              "race10m",
+              "stocks",
+              "thetagang",
+              "vitards"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price",
+                "score": 43,
+                "flair": "Wheel",
+                "body_excerpt": ""
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Is ServiceNow $NOW due for a comeback?",
+                "score": 26,
+                "flair": "Due Diligence",
+                "body_excerpt": ""
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 12,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+              }
+            ],
+            "detail": {
+              "plain": "On r/thetagang, the top discussion (43 upvotes) is: \"Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price\". Also: r/TheRaceTo10Million discussing \"Is ServiceNow $NOW due for a comeback?\"; r/thetagang discussing \"March Short Put Verticals\". Attention is rising sharply versus yesterday.",
+              "pro": "4-source cluster (race10m, stocks, thetagang, vitards). Total mentions 27. Sentiment NEUTRAL. 24h mention delta +2200%. r/thetagang 43up: \"Sold 5 puts on NOW stock $91 5/1 exp. for about $1500 premium. I want to get assigned I think its a great value at its current price\". r/TheRaceTo10Million 26up: \"Is ServiceNow $NOW due for a comeback?\"."
+            }
+          },
+          {
+            "ticker": "RDDT",
+            "mentions": 89,
+            "sources": [
+              "all_stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "RDDT DD, 2026 Earnings",
+                "score": 28,
+                "flair": "DD",
+                "body_excerpt": "I'll be examining RDDT's 2025 revenues, expenses, EBITDA, and give a 2026 EBITDA estimate with this data. Later in the post, we'll take a deeper dive into current user growth, ARPU growth, and compare this to the initial 2026 estimates and ..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 12,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "The case for under cost basis Covered Short Strangles - not recommended but may work out for me",
+                "score": 0,
+                "flair": "Strangle",
+                "body_excerpt": "RDDT and HOOD. \n\nChipping away the cost basis like a mofo but yes no ideal adding to exposure with the short puts and under cost basis for the calls.\n\nBut reducing the cost basis by $20,000 in three months helps. Pl Ytd captures the premium..."
+              }
+            ],
+            "detail": {
+              "plain": "On r/thetagang, the top discussion (28 upvotes) is: \"RDDT DD, 2026 Earnings\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"The case for under cost basis Covered Short Strangles - not recommended but may work out for me\". Attention is rising sharply versus yesterday.",
+              "pro": "3-source cluster (all_stocks, thetagang, wallstreetbets). Total mentions 89. Sentiment NEUTRAL. 24h mention delta +50%. r/thetagang 28up: \"RDDT DD, 2026 Earnings\". r/thetagang 12up: \"March Short Put Verticals\"."
             }
           },
           {
             "ticker": "INTC",
-            "mentions": 72,
+            "mentions": 79,
             "sources": [
               "all_stocks",
               "thetagang",
@@ -1303,7 +1382,7 @@
               {
                 "sub": "thetagang",
                 "title": "March Short Put Verticals",
-                "score": 13,
+                "score": 12,
                 "flair": "",
                 "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
               },
@@ -1323,70 +1402,8 @@
               }
             ],
             "detail": {
-              "plain": "On r/thetagang, the top discussion (13 upvotes) is: \"March Short Put Verticals\". Also: r/thetagang discussing \"Covered call strategy\"; r/thetagang discussing \"May Short Put Verticals\". Attention is falling sharply versus yesterday.",
-              "pro": "3-source cluster (all_stocks, thetagang, wallstreetbets). Total mentions 72. Sentiment NEUTRAL. 24h mention delta -44%. r/thetagang 13up: \"March Short Put Verticals\". r/thetagang 5up: \"Covered call strategy\"."
-            }
-          },
-          {
-            "ticker": "RDDT",
-            "mentions": 65,
-            "sources": [
-              "all_stocks",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "RDDT DD, 2026 Earnings",
-                "score": 25,
-                "flair": "DD",
-                "body_excerpt": "I'll be examining RDDT's 2025 revenues, expenses, EBITDA, and give a 2026 EBITDA estimate with this data. Later in the post, we'll take a deeper dive into current user growth, ARPU growth, and compare this to the initial 2026 estimates and ..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "March Short Put Verticals",
-                "score": 13,
-                "flair": "",
-                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "The case for under cost basis Covered Short Strangles - not recommended but may work out for me",
-                "score": 0,
-                "flair": "Strangle",
-                "body_excerpt": "RDDT and HOOD. \n\nChipping away the cost basis like a mofo but yes no ideal adding to exposure with the short puts and under cost basis for the calls.\n\nBut reducing the cost basis by $20,000 in three months helps. Pl Ytd captures the premium..."
-              }
-            ],
-            "detail": {
-              "plain": "On r/thetagang, the top discussion (25 upvotes) is: \"RDDT DD, 2026 Earnings\". Also: r/thetagang discussing \"March Short Put Verticals\"; r/thetagang discussing \"The case for under cost basis Covered Short Strangles - not recommended but may work out for me\". Attention is falling sharply versus yesterday.",
-              "pro": "3-source cluster (all_stocks, thetagang, wallstreetbets). Total mentions 65. Sentiment NEUTRAL. 24h mention delta -51%. r/thetagang 25up: \"RDDT DD, 2026 Earnings\". r/thetagang 13up: \"March Short Put Verticals\"."
-            }
-          },
-          {
-            "ticker": "MSFT",
-            "mentions": 57,
-            "sources": [
-              "all_stocks",
-              "options",
-              "stocks"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "options",
-                "title": "$QQQ / $SPY earnings + FOMC calendar spread",
-                "score": 21,
-                "flair": "",
-                "body_excerpt": "* Thesis: $MSFT, $AMZN, $META, $GOOG all report tonight into the FOMC decision window, and $QQQ / $SPY options are bid in the front week while back-month vol is relatively calmer.\n* Strategy: Buy a short-dated $QQQ or $SPY call calendar (se..."
-              }
-            ],
-            "detail": {
-              "plain": "On r/options, the top discussion (21 upvotes) is: \"$QQQ / $SPY earnings + FOMC calendar spread\".",
-              "pro": "3-source cluster (all_stocks, options, stocks). Total mentions 57. Sentiment NEUTRAL. 24h mention delta -27%. r/options 21up: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
+              "plain": "On r/thetagang, the top discussion (12 upvotes) is: \"March Short Put Verticals\". Also: r/thetagang discussing \"Covered call strategy\"; r/thetagang discussing \"May Short Put Verticals\".",
+              "pro": "3-source cluster (all_stocks, thetagang, wallstreetbets). Total mentions 79. Sentiment NEUTRAL. 24h mention delta -22%. r/thetagang 12up: \"March Short Put Verticals\". r/thetagang 5up: \"Covered call strategy\"."
             }
           }
         ]
@@ -1426,7 +1443,7 @@
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 11,
+                "score": 10,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
@@ -1437,22 +1454,134 @@
             }
           },
           {
-            "ticker": "MSTR",
-            "mentions": 24,
+            "ticker": "CLSK",
+            "mentions": 0,
             "sources": [
-              "wallstreetbets"
+              "stocktwits"
             ],
-            "sentiment": "MIXED",
-            "summary": "",
+            "sentiment": "NEUTRAL",
+            "summary": "CleanSpark is currently drawing intense investor interest as it navigates a volatile transition from a pure-play Bitcoin miner to an AI and high-performance ...",
             "top_posts": [],
             "detail": {
-              "plain": "MSTR is showing up across 1 community sources but no specific discussion content surfaced. Treat as observation, not a signal. Attention is rising sharply versus yesterday. Tone is split, some optimistic and some cautious.",
-              "pro": "1-source cluster (wallstreetbets). Total mentions 24. Sentiment MIXED. 24h mention delta +85%. No post content cached. Apewisdom-only signal; treat as ranking, not thesis."
+              "plain": "CleanSpark is currently drawing intense investor interest as it navigates a volatile transition from a pure-play Bitcoin miner to an AI and high-performance ...",
+              "pro": "1-source cluster (stocktwits). Total mentions 0. Sentiment NEUTRAL. ST summary: CleanSpark is currently drawing intense investor interest as it navigates a volatile transition from a pure-play Bitcoin miner to an AI and high-performance ..."
             }
           }
         ]
       },
       "sparks": {
+        "HUM": [
+          196.21,
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63
+        ],
+        "TER": [
+          365.51,
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42
+        ],
+        "QQQ": [
+          628.6,
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15
+        ],
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4644.5
+        ],
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4644.5
+        ],
+        "MO": [
+          65.62,
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55
+        ],
+        "IWM": [
+          268.72,
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28
+        ],
         "PODD": [
           201.49,
           202.5,
@@ -1485,150 +1614,6 @@
           718.66,
           720.65
         ],
-        "XLE": [
-          55.95,
-          55.76,
-          56.58,
-          55.02,
-          55.07,
-          55.87,
-          56.54,
-          56.98,
-          56.87,
-          56.77,
-          57.71,
-          59.03,
-          59.65,
-          58.85
-        ],
-        "IWM": [
-          268.72,
-          269.39,
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28
-        ],
-        "CL=F": [
-          91.28,
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94
-        ],
-        "oil": [
-          91.28,
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94
-        ],
-        "MO": [
-          65.62,
-          64.42,
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55
-        ],
-        "GC=F": [
-          4825.0,
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4644.5
-        ],
-        "gold": [
-          4825.0,
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4644.5
-        ],
-        "TER": [
-          365.51,
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42
-        ],
-        "HUM": [
-          196.21,
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63
-        ],
         "GEHC": [
           74.67,
           73.51,
@@ -1644,6 +1629,70 @@
           59.485,
           60.84,
           61.03
+        ],
+        "CL=F": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          101.94
+        ],
+        "oil": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          101.94
+        ],
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.085
+        ],
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.085
         ],
         "^VIX": [
           18.36,
@@ -1677,53 +1726,21 @@
           16.89,
           16.99
         ],
-        "QQQ": [
-          628.6,
-          637.4,
-          640.47,
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15
-        ],
-        "DX-Y.NYB": [
-          98.12,
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21
-        ],
-        "dxy": [
-          98.12,
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21
+        "XLE": [
+          55.95,
+          55.76,
+          56.58,
+          55.02,
+          55.07,
+          55.87,
+          56.54,
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85
         ],
         "^TNX": [
           4.256,
@@ -1757,8 +1774,7 @@
           4.39,
           4.378
         ]
-      },
-      "last_refreshed_at": "2026-05-03T12:30:05-07:00"
+      }
     },
     {
       "date": "2026-05-02",
