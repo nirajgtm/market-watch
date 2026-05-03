@@ -431,12 +431,47 @@ function card({ title, count, body, action, span }) {
 }
 
 // ──────────────── RECOMMENDATIONS ────────────────
+function confidenceMeta(n) {
+  if (n == null || n === "") return null;
+  if (n >= 70)      return { label: "HIGH", klass: "high", score: n,
+    short: "Strong, decision-grade call.",
+    full: "The trader has strong evidence behind this call and considers it actionable today. 70 and above is the threshold for a real-money decision per the trader's own rulebook." };
+  if (n >= 40)      return { label: "MED",  klass: "med",  score: n,
+    short: "Medium conviction.",
+    full: "The setup is real but missing one or two confirmations. Worth watching this week, not necessarily acting on yet. Wait for a corroborating signal (volume, sector strength, news catalyst) before sizing." };
+  return { label: "LOW", klass: "low", score: n,
+    short: "Low conviction, observation only.",
+    full: "Logged for tracking purposes. Do not act on this alone. The trader is flagging it as a name to watch in case more signals line up later." };
+}
+
+function confidenceBadge(n) {
+  const m = confidenceMeta(n);
+  if (!m) return "";
+  const tip = `Confidence ${m.score} of 100. ${m.short}`;
+  return `<span class="mw-rec-conf mw-rec-conf-${m.klass}" data-tt="${escAttr(tip)}">Conf ${m.label}</span>`;
+}
+
+function confidenceRow(n) {
+  const m = confidenceMeta(n);
+  if (!m) return "";
+  return `<div class="mw-rec-debate-row">
+    <span class="mw-rec-debate-label mw-rec-debate-label-${m.klass}">Confidence</span>
+    <p class="mw-rec-debate-text">
+      <span class="mw-rec-conf mw-rec-conf-${m.klass}" style="margin-right:8px">${m.label}</span>
+      <span class="mw-mono mw-dim">${m.score} of 100.</span>
+      ${escHtml(m.full)}
+    </p>
+  </div>`;
+}
+
 function renderRecCard(rec, side, prefix) {
   const id = `rec-${prefix}-${side}-${rec.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
-  const conf = rec.confidence != null ? `${rec.confidence}` : "";
+  const confHtml = confidenceBadge(rec.confidence);
+  const confDetail = confidenceRow(rec.confidence);
   const action = getRecAction(rec);
   const detailBlocks = `
     <div class="mw-rec-debate">
+      ${confDetail}
       <div class="mw-rec-debate-row">
         <span class="mw-rec-debate-label is-up">Pros</span>
         <p class="mw-rec-debate-text">${escHtml(rec.pros || "")}</p>
@@ -454,7 +489,7 @@ function renderRecCard(rec, side, prefix) {
     <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
       <span class="mw-rec-tk">${escHtml(rec.ticker)}</span>
       ${actionPill(rec.verdict, "sm")}
-      ${conf ? `<span class="mw-mono mw-rec-conf">${conf}</span>` : ""}
+      ${confHtml}
       ${rec.vehicle ? `<span class="mw-rec-vehicle mw-mono">${escHtml(rec.vehicle)}</span>` : ""}
       <span class="mw-rec-summary-text">${escHtml((rec.pros || "").split(".")[0])}.</span>
       <span class="mw-caret" aria-hidden="true">v</span>
@@ -593,7 +628,7 @@ function renderMacroPane(b) {
     return expandLi(id, summary, renderDetail(s), "mw-rot-li");
   };
   const rot = card({
-    title: "Sector rotation · 5d",
+    title: "Sector rotation · 5d", span: "3",
     body: `<div class="mw-rot">
       <div><div class="mw-rot-head">Leaders</div><ul class="mw-rot-list">${m.leaders.map(s => rotRow(s, "lead")).join("")}</ul></div>
       <div><div class="mw-rot-head">Laggards</div><ul class="mw-rot-list">${m.laggards.map(s => rotRow(s, "lag")).join("")}</ul></div>

@@ -103,6 +103,8 @@ Single file, public, served as static asset. Versioned via `version` integer.
 
 ## Recommendation object
 
+Every field is REQUIRED. The page renders all of them; missing fields produce a broken row.
+
 ```json
 {
   "ticker": "TICKER or short trade name (e.g. 'AMD 5/16 365/380 call spread')",
@@ -118,7 +120,16 @@ Single file, public, served as static asset. Versioned via `version` integer.
 }
 ```
 
+**Confidence renders as a colored badge plus an explanatory row in the expansion:**
+- 70-100 → "Conf HIGH" (green). Decision-grade.
+- 40-69 → "Conf MED" (amber). Medium conviction, watch.
+- 0-39 → "Conf LOW" (gray). Observation only.
+
 Cap each `recommendations.{buy, sell}` at 5 entries. Empty arrays are fine on slow days; never pad to 5.
+
+## Idempotent overwrite
+
+`publish_site.sh` merges by `date`, not by field. Re-publishing today's date REPLACES the prior brief in `briefs.json`. Every staging.json write must include the FULL schema above. The page reads from a single brief object; missing fields render as broken UI, not as preserved-from-prior. Auto-enriched fields (sparks, market_status, movers, wsb_top, unusual flow, *.social) are the only exception — those get refreshed by the publisher itself.
 
 ## Auto-enrichment
 
