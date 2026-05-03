@@ -1,638 +1,747 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market Watch</title>
-  <meta name="description" content="Daily market briefs: macro, stocks, options, crypto. General commentary, not investment advice." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'system-ui', 'Inter', 'sans-serif'],
-            mono: ['"SF Mono"', '"JetBrains Mono"', 'Menlo', 'Consolas', 'monospace'],
-          },
-          letterSpacing: { tight2: '-0.022em' },
-        },
-      },
-    };
-  </script>
-  <style>
-    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    body { font-feature-settings: "ss01", "cv11"; }
-    abbr[title] { text-decoration: none; border-bottom: 1px dotted rgba(161, 161, 170, 0.6); cursor: help; }
-    .num { font-variant-numeric: tabular-nums; }
-    /* Custom tooltip — appears instantly with proper styling */
-    .tt { position: relative; border-bottom: 1px dotted rgba(161, 161, 170, 0.6); cursor: help; }
-    .tt::after {
-      content: attr(data-tt);
-      position: absolute; bottom: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%) translateY(4px);
-      background: #18181b; color: #ffffff;
-      padding: 10px 14px; border-radius: 10px;
-      font-size: 12px; line-height: 1.5; font-weight: 400;
-      white-space: normal; width: max-content; max-width: 280px;
-      border: 1px solid rgba(113, 113, 122, 0.5);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
-      opacity: 0; pointer-events: none;
-      transition: opacity 120ms ease, transform 120ms ease;
-      z-index: 70;
-    }
-    .tt::before {
-      content: ""; position: absolute; bottom: calc(100% + 2px); left: 50%;
-      transform: translateX(-50%);
-      border: 6px solid transparent; border-top-color: #18181b;
-      opacity: 0; transition: opacity 120ms ease;
-      z-index: 70;
-    }
-    .tt:hover::after, .tt:focus::after { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .tt:hover::before, .tt:focus::before { opacity: 1; }
-    @media (max-width: 480px) {
-      .tt::after { max-width: 220px; }
-    }
-    /* Tab pill — universal LLM/console pattern: rounded fill, no fancy underline */
-    .tab-btn {
-      border-radius: 9999px;
-      padding: 7px 16px;
-      font-size: 14px;
-      font-weight: 500;
-      transition: background-color .18s ease, color .18s ease;
-      letter-spacing: -0.005em;
-    }
-    .tab-btn[aria-selected="true"]  { color: #ffffff; background: rgba(255, 255, 255, 0.10); }
-    .tab-btn[aria-selected="false"] { color: #d4d4d8; background: transparent; }
-    .tab-btn:hover                  { color: #ffffff; background: rgba(255, 255, 255, 0.06); }
-    .tab-btn[aria-selected="true"]:hover { background: rgba(255, 255, 255, 0.13); }
-    /* Per-tab eyebrow color for card labels */
-    #tab-macro   .eyebrow { color: #7dd3fc; }   /* sky-300 */
-    #tab-stocks  .eyebrow { color: #6ee7b7; }   /* emerald-300 */
-    #tab-options .eyebrow { color: #c4b5fd; }   /* violet-300 */
-    #tab-crypto  .eyebrow { color: #fcd34d; }   /* amber-300 */
-    #tab-archive .eyebrow { color: #d4d4d8; }   /* zinc-300 */
-    /* Section accent bar */
-    .accent-bar { width: 3px; border-radius: 3px; align-self: stretch; }
-    #tab-macro   .accent-bar { background: #38bdf8; }
-    #tab-stocks  .accent-bar { background: #34d399; }
-    #tab-options .accent-bar { background: #a78bfa; }
-    #tab-crypto  .accent-bar { background: #fbbf24; }
-    #tab-archive .accent-bar { background: #a1a1aa; }
-    .fade-in { animation: fade .25s ease both; }
-    @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-    .glossary-open { transform: translateX(0); }
-    .glossary-closed { transform: translateX(100%); }
-    /* Hide scrollbar on tabnav for slick look */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { scrollbar-width: none; }
-  </style>
+  <meta name="description" content="Daily market briefs: macro, stocks, options, crypto. General commentary, not investment advice.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-zinc-700 text-zinc-100 font-sans antialiased min-h-screen">
+<body>
+  <div class="mw-page" id="root">
+    <p class="mw-empty">Loading the latest brief…</p>
+  </div>
 
-  <!-- ============== STICKY HEADER ============== -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-700/80 border-b border-zinc-600/50">
-    <div class="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
-      <div class="flex items-baseline gap-3">
-        <h1 class="text-[15px] font-semibold tracking-tight2">Market Watch</h1>
-        <p id="last-updated" class="text-[11px] text-zinc-300 num">—</p>
-      </div>
-      <div class="flex items-center gap-2">
-        <span id="regime-badge" class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-600 text-zinc-100">—</span>
-        <button id="glossary-btn" aria-label="Open glossary" class="text-zinc-200 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center text-[13px] font-medium">?</button>
-      </div>
-    </div>
-  </header>
+<script>
+"use strict";
 
-  <!-- ============== HERO ============== -->
-  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
-    <p id="brief-date" class="text-[13px] text-zinc-300 mb-4 num font-medium">—</p>
-    <h2 id="headline" class="text-[42px] md:text-[60px] leading-[1.05] font-medium tracking-tight2 text-white max-w-3xl">Loading the latest brief…</h2>
-    <ul id="top-actions" class="mt-9 space-y-3 text-[18px] text-zinc-100 max-w-3xl"></ul>
-  </section>
+// ============================================================
+//  GLOSSARY
+// ============================================================
+const GLOSSARY = {
+  "RSI": "Relative Strength Index. Above 70 is stretched, below 30 is oversold. Momentum gauge, not a timing signal.",
+  "VIX": "S&P 500 30-day implied volatility. Below 15 calm, 15–20 normal, 20–30 elevated, 30+ fearful.",
+  "MA": "Moving Average. The N-day average closing price; trend reference.",
+  "20MA": "20-day moving average. Short-term trend reference. Price too far above is statistically late.",
+  "ATR": "Average True Range. Average daily price swing; used to size stops.",
+  "FOMO ceiling": "Price more than 2 ATR above the 20MA. Entries above it are statistically late.",
+  "DXY": "US Dollar Index vs a basket of major currencies. Rising DXY pressures stocks and commodities.",
+  "10Y": "10-year Treasury yield. Rising yields tend to pressure long-duration tech.",
+  "V/OI": "Volume divided by Open Interest. Above 1 is fresh positioning, not roll activity.",
+  "vol/OI": "Same as V/OI. Above 1 means today's volume far exceeds existing open contracts.",
+  "IV": "Implied Volatility. Market's forward vol estimate baked into option prices. Spikes pre-earnings.",
+  "LEAP": "Long-dated option, expiry typically 9+ months out. For multi-quarter directional theses.",
+  "LEAPS": "Long-dated options. Expiry > 9 months out.",
+  "PEAD": "Post-Earnings Announcement Drift. Beats tend to keep drifting in the surprise direction for weeks.",
+  "ETF": "Exchange-Traded Fund. A basket of securities trading like a single stock.",
+  "SPY": "S&P 500 ETF — the market's headline gauge.",
+  "QQQ": "Nasdaq-100 ETF — heavily tech-weighted.",
+  "IWM": "Russell 2000 ETF — the small-cap, risk-on breadth read.",
+  "XLE": "Energy Sector ETF.",
+  "XLK": "Technology Sector ETF.",
+  "XLV": "Health Care Sector ETF.",
+  "XLU": "Utilities Sector ETF — defensive, yield-oriented.",
+  "XLY": "Consumer Discretionary Sector ETF.",
+  "XLRE": "Real Estate Sector ETF.",
+  "WSB": "r/WallStreetBets. High mention scores often correlate with squeezes and momentum chasing.",
+  "ATH": "All-Time High.",
+  "MoM": "Month over Month — change vs prior month.",
+  "JOLTS": "Job Openings and Labor Turnover Survey. Monthly US hiring read.",
+  "ISM": "Institute for Supply Management. Above 50 expansion, below 50 contraction.",
+  "BTC": "Bitcoin — the largest cryptocurrency.",
+  "ETH": "Ethereum — second-largest crypto, leading smart-contract platform.",
+  "contango": "Futures curve sloping up — later contracts cost more than nearer ones.",
+};
 
-  <!-- ============== TAB NAV ============== -->
-  <nav class="sticky top-[57px] z-40 backdrop-blur-xl bg-zinc-700/80 border-b border-zinc-600/50">
-    <div class="max-w-5xl mx-auto px-6">
-      <div role="tablist" class="flex gap-1 py-2 overflow-x-auto no-scrollbar">
-        <button class="tab-btn whitespace-nowrap" role="tab" data-tab="macro" aria-selected="true">Macro</button>
-        <button class="tab-btn whitespace-nowrap" role="tab" data-tab="stocks" aria-selected="false">Stocks</button>
-        <button class="tab-btn whitespace-nowrap" role="tab" data-tab="options" aria-selected="false">Options</button>
-        <button class="tab-btn whitespace-nowrap" role="tab" data-tab="crypto" aria-selected="false">Crypto</button>
-        <button class="tab-btn whitespace-nowrap" role="tab" data-tab="archive" aria-selected="false">Archive</button>
-      </div>
-    </div>
-  </nav>
+// ============================================================
+//  STATE
+// ============================================================
+let DATA = null;
+let ACTIVE_BRIEF = null;
+let TAB = "macro";
+let OPEN_ID = null;
+let MODAL = null;     // 'archive' | 'glossary' | 'feedback' | null
 
-  <!-- ============== MAIN ============== -->
-  <main class="max-w-5xl mx-auto px-6 py-10">
-    <section id="tab-macro" class="tab-panel fade-in"></section>
-    <section id="tab-stocks" class="tab-panel hidden"></section>
-    <section id="tab-options" class="tab-panel hidden"></section>
-    <section id="tab-crypto" class="tab-panel hidden"></section>
-    <section id="tab-archive" class="tab-panel hidden"></section>
-  </main>
+// ============================================================
+//  HELPERS
+// ============================================================
+const escHtml = s => String(s == null ? "" : s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-  <!-- ============== FEEDBACK + FOOTER ============== -->
-  <section class="max-w-5xl mx-auto px-6 pt-6 pb-2">
-    <div class="rounded-2xl border border-zinc-500/40 bg-zinc-600/25 p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <div>
-        <p class="text-[16px] font-semibold text-white">Spotted something off, or have an idea?</p>
-        <p class="mt-1 text-[13px] text-zinc-300">Quick, no signup required. Bug reports, missing tickers, and layout notes all welcome.</p>
-      </div>
-      <a href="https://form.jotform.com/261215968266061" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto inline-flex items-center rounded-full bg-white text-zinc-900 px-5 py-2.5 text-[13px] font-semibold hover:bg-zinc-100 transition shrink-0">Send feedback</a>
-    </div>
-  </section>
-  <footer class="max-w-5xl mx-auto px-6 py-10 mt-2 border-t border-zinc-600/50 text-[12px] text-zinc-200">
-    <p>Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Do your own research; markets can lose money fast.</p>
-  </footer>
+const escAttr = s => escHtml(s);
 
-  <!-- ============== GLOSSARY DRAWER ============== -->
-  <aside id="glossary" class="glossary-closed fixed inset-y-0 right-0 w-full sm:w-[420px] bg-zinc-600/95 backdrop-blur-xl border-l border-zinc-600/50 z-[60] transition-transform duration-200 overflow-y-auto">
-    <div class="p-6">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-lg font-semibold">Glossary</h3>
-        <button id="glossary-close" aria-label="Close glossary" class="text-zinc-200 hover:text-zinc-100 w-8 h-8 rounded-full hover:bg-zinc-600 flex items-center justify-center">×</button>
-      </div>
-      <div id="glossary-list" class="space-y-5"></div>
-    </div>
-  </aside>
-  <div id="glossary-overlay" class="hidden fixed inset-0 bg-black/40 z-[55]"></div>
+function fmtNum(n, dp = 2) {
+  if (n == null || isNaN(n)) return "—";
+  if (Math.abs(n) >= 1000) return Number(n).toLocaleString("en-US", { maximumFractionDigits: dp });
+  return Number(n).toFixed(dp);
+}
 
-  <!-- ============== DATA + RENDER ============== -->
-  <script>
-    // ----- GLOSSARY -----
-    const GLOSSARY = {
-      "RSI": { full: "Relative Strength Index", desc: "Momentum oscillator scaled 0–100. Readings above 70 are typically considered stretched (overbought); below 30, oversold." },
-      "VIX": { full: "Volatility Index (CBOE)", desc: "Measures expected 30-day S&P 500 volatility. Below 15 = calm, 15–20 = normal, 20–30 = elevated, above 30 = fearful." },
-      "MA": { full: "Moving Average", desc: "The average closing price over N days. 'Above all MAs' means price sits above the 20-, 50-, and 200-day averages — strong trend." },
-      "ATR": { full: "Average True Range", desc: "Average size of a daily price swing. Used to size stops and define how far is 'too far' from a moving average." },
-      "FOMO": { full: "Fear Of Missing Out", desc: "When price has run too far above its average, chasing into it usually leads to bad entries. The system blocks new long entries when this fires." },
-      "DXY": { full: "US Dollar Index", desc: "Tracks the US dollar versus a basket of major currencies. Rising DXY tends to pressure stocks and commodities; falling DXY supports them." },
-      "10Y": { full: "10-Year Treasury Yield", desc: "Benchmark long-term interest rate. Rising yields tend to pressure long-duration tech and growth stocks." },
-      "V/OI": { full: "Volume / Open Interest", desc: "Options flow signal. V/OI >> 1 means today's volume far exceeds existing open contracts — often a sign of fresh positioning." },
-      "IV": { full: "Implied Volatility", desc: "The volatility level priced into options. Spikes before earnings (premium gets expensive); 'IV crush' is the post-event collapse." },
-      "LEAP": { full: "Long-term Equity AnticiPation Securities", desc: "Long-dated options, typically expiring 9+ months out. Used to express multi-quarter directional theses with leverage." },
-      "PEAD": { full: "Post-Earnings Announcement Drift", desc: "Tendency for stocks that beat earnings to keep drifting in the direction of the surprise for weeks." },
-      "ETF": { full: "Exchange-Traded Fund", desc: "A basket of securities trading like a single stock. SPY tracks the S&P 500; QQQ tracks the Nasdaq-100." },
-      "SPY": { full: "S&P 500 ETF", desc: "Tracks the 500 largest US companies — the market's headline gauge." },
-      "QQQ": { full: "Nasdaq-100 ETF", desc: "Tracks the 100 largest non-financial Nasdaq names — heavily tech-weighted." },
-      "IWM": { full: "Russell 2000 ETF", desc: "Tracks 2,000 small-cap US companies — the 'risk-on' breadth read." },
-      "XLE": { full: "Energy Sector ETF", desc: "Tracks S&P 500 energy companies (Exxon, Chevron, etc.)." },
-      "XLK": { full: "Technology Sector ETF", desc: "Tracks S&P 500 tech companies (Apple, Microsoft, Nvidia, etc.)." },
-      "XLV": { full: "Health Care Sector ETF", desc: "Tracks S&P 500 health care companies." },
-      "XLU": { full: "Utilities Sector ETF", desc: "Tracks S&P 500 utility companies — defensive, yield-oriented." },
-      "XLY": { full: "Consumer Discretionary Sector ETF", desc: "Tracks S&P 500 consumer-discretionary names (Amazon, Tesla, etc.)." },
-      "XLRE": { full: "Real Estate Sector ETF", desc: "Tracks S&P 500 real estate / REIT names." },
-      "WSB": { full: "r/WallStreetBets", desc: "Reddit retail-trader community. High mention scores often correlate with squeezes and momentum chasing." },
-      "ATH": { full: "All-Time High", desc: "Highest price the security has ever reached." },
-      "MoM": { full: "Month-over-Month", desc: "A change measured against the prior month." },
-      "JOLTS": { full: "Job Openings and Labor Turnover Survey", desc: "Monthly US labor data release watched by the Fed for hiring strength." },
-      "ISM": { full: "Institute for Supply Management", desc: "Monthly surveys of manufacturing and services activity. Above 50 = expansion, below 50 = contraction." },
-      "BTC": { full: "Bitcoin", desc: "The largest cryptocurrency by market cap." },
-      "ETH": { full: "Ethereum", desc: "The second-largest cryptocurrency; the leading smart-contract platform." },
-    };
+function fmtPct(n) {
+  if (n == null || isNaN(n)) return "";
+  const sign = n > 0 ? "+" : n < 0 ? "−" : "";
+  return `${sign}${Math.abs(n).toFixed(2)}%`;
+}
 
-    function renderGlossary() {
-      const el = document.getElementById('glossary-list');
-      const entries = Object.entries(GLOSSARY).sort((a, b) => a[0].localeCompare(b[0]));
-      el.innerHTML = entries.map(([k, v]) => `
-        <div>
-          <p class="font-mono text-[13px] font-semibold text-zinc-100">${k} <span class="font-sans font-normal text-zinc-200">— ${v.full}</span></p>
-          <p class="mt-1 text-[14px] text-zinc-200 leading-relaxed">${v.desc}</p>
-        </div>
-      `).join('');
-    }
+function pctClass(n) {
+  if (n == null) return "";
+  return n > 0 ? "is-up" : n < 0 ? "is-down" : "";
+}
 
-    function abbr(term) {
-      const g = GLOSSARY[term];
-      if (!g) return term;
-      const tip = `${g.full}. ${g.desc}`.replace(/"/g, '&quot;');
-      return `<span class="tt" tabindex="0" data-tt="${tip}" title="${tip}">${term}</span>`;
-    }
+function abbr(term, label) {
+  const def = GLOSSARY[term];
+  const text = escHtml(label || term);
+  if (!def) return text;
+  return `<span class="mw-glossy" tabindex="0" data-tt="${escAttr(def)}">${text}</span>`;
+}
 
-    // ----- ACTION CALLOUT -----
-    function actionCallout(action) {
-      if (!action) return '';
-      const tier = (action.tier || 'NO_ACTION').toUpperCase();
-      const styles = {
-        'ACTION':    { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', dot: 'bg-emerald-400', label: 'text-emerald-300', tag: 'ACTION' },
-        'WATCH':     { bg: 'bg-amber-500/10',   border: 'border-amber-500/30',   dot: 'bg-amber-400',   label: 'text-amber-300',   tag: 'WATCH'  },
-        'NO_ACTION': { bg: 'bg-zinc-500/10',    border: 'border-zinc-700',       dot: 'bg-zinc-500',    label: 'text-zinc-200',    tag: 'NO ACTION' },
+function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
+  if (!data || data.length < 2) return "";
+  const min = Math.min(...data), max = Math.max(...data);
+  const range = (max - min) || 1;
+  const stepX = w / (data.length - 1);
+  const pts = data.map((v, i) =>
+    `${(i * stepX).toFixed(2)},${(h - (v - min) / range * h).toFixed(2)}`
+  ).join(" ");
+  const trend = data[data.length - 1] > data[0] ? "up"
+              : data[data.length - 1] < data[0] ? "down" : "flat";
+  return `<svg class="mw-spark mw-spark-${trend}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+    <polyline fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" points="${pts}"/>
+  </svg>`;
+}
+
+function tickerPill(sym, size) {
+  return `<span class="mw-tpill ${size === "sm" ? "mw-tpill-sm" : ""} mw-mono">${escHtml(sym)}</span>`;
+}
+
+function actionPill(verb, size) {
+  const v = String(verb || "").toUpperCase();
+  const tone = v.includes("WATCH") ? "watch"
+             : v.includes("NO ACTION") || v === "NONE" ? "none"
+             : v.includes("LONG") ? "long"
+             : v.includes("SHORT") ? "short"
+             : v.includes("ACTION") ? "action"
+             : v.includes("OPEN") ? "open"
+             : v.includes("PRE-MARKET") || v.includes("AFTER-HOURS") ? "watch"
+             : v.includes("CLOSED") ? "none"
+             : "neutral";
+  return `<span class="mw-pill mw-pill-${tone} ${size === "sm" ? "mw-pill-sm" : ""}">${escHtml(v)}</span>`;
+}
+
+function statusDot(status) {
+  const s = String(status || "FAR").toUpperCase();
+  const map = {
+    "TRIGGERED": "trig", "IN_ZONE": "in", "NEAR": "near",
+    "FAR": "far", "INVALIDATED": "inv"
+  };
+  return `<span class="mw-status mw-status-${map[s] || "near"}">${s.replace(/_/g, " ")}</span>`;
+}
+
+function caret(detail) {
+  return detail ? `<span class="mw-caret" aria-hidden="true">▾</span>` : "";
+}
+
+function isOpen(id) { return OPEN_ID === id; }
+
+function expandLi(id, summary, detail, extraClass) {
+  const open = isOpen(id);
+  const cls = `mw-li ${extraClass || ""} ${open ? "is-open" : ""} ${detail ? "is-clickable" : ""}`.trim();
+  const det = open && detail ? `<div class="mw-li-detail">${detail}</div>` : "";
+  const handler = detail ? `data-toggle="${escAttr(id)}"` : "";
+  return `<li class="${cls}"><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
+}
+
+function expandRow(id, cells, detail, cols, extraClass) {
+  const open = isOpen(id);
+  const cls = `mw-row ${extraClass || ""} ${open ? "is-open" : ""} ${detail ? "is-clickable" : ""}`.trim();
+  const handler = detail ? `data-toggle="${escAttr(id)}"` : "";
+  const detRow = open && detail
+    ? `<tr class="mw-row-detail"><td colspan="${cols}"><div class="mw-detail-inner">${detail}</div></td></tr>`
+    : "";
+  return `<tr class="${cls}" ${handler}>${cells}</tr>${detRow}`;
+}
+
+// ============================================================
+//  DATA NORMALIZATION
+//   Map current briefs.json shape → render-time shape.
+// ============================================================
+function normalize(brief) {
+  // top_actions: array of strings → array of {verb, target, text, detail}
+  const actions = (brief.top_actions || []).map(a => {
+    if (typeof a === "object" && a !== null) {
+      return {
+        verb: a.verb || "WATCH",
+        target: a.target || "",
+        text: a.text || "",
+        detail: a.detail || ""
       };
-      const s = styles[tier] || styles.NO_ACTION;
-      return `
-        <div class="mt-6 rounded-2xl border ${s.border} ${s.bg} px-5 py-4 flex gap-3 items-start">
-          <span class="mt-1.5 w-2 h-2 rounded-full ${s.dot} shrink-0"></span>
-          <div>
-            <p class="text-[11px] font-semibold tracking-wider ${s.label}">${s.tag}</p>
-            <p class="mt-1 text-[15px] text-zinc-200 leading-relaxed">${action.text || ''}</p>
-          </div>
-        </div>`;
     }
+    const s = String(a);
+    let verb = "WATCH", rest = s;
+    const m = s.match(/^(ACTION|WATCH|NO ACTION|NONE|LONG|SHORT)\s+(.*)$/i);
+    if (m) { verb = m[1].toUpperCase(); rest = m[2]; }
+    // Try to lift first ALL-CAPS word as target
+    const t = rest.match(/^([A-Z]{2,6})\s+(.*)$/);
+    let target = "", text = rest;
+    if (t) { target = t[1]; text = t[2]; }
+    return { verb, target, text, detail: "" };
+  });
 
-    // ----- REGIME BADGE -----
-    function setRegimeBadge(regime, note) {
-      const el = document.getElementById('regime-badge');
-      const map = {
-        'BULL':    'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30',
-        'BEAR':    'bg-red-500/15 text-red-300 ring-1 ring-red-500/30',
-        'NEUTRAL': 'bg-zinc-500/15 text-zinc-300 ring-1 ring-zinc-500/30',
-      };
-      el.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium ' + (map[regime] || map.NEUTRAL);
-      el.textContent = regime + (note ? ` · ${note}` : '');
-    }
+  // sector_rotation may be nested or flat
+  const sr = brief.macro?.sector_rotation || {};
+  const leaders = sr.leaders_5d || brief.macro?.leaders_5d || [];
+  const laggards = sr.laggards_5d || brief.macro?.laggards_5d || [];
+  const rotation_read = sr.read || brief.macro?.rotation_read || "";
 
-    // ----- STATUS PILL -----
-    function statusPill(status) {
-      const map = {
-        'TRIGGERED':   'bg-emerald-500/15 text-emerald-300 ring-emerald-500/30',
-        'IN_ZONE':     'bg-amber-500/15 text-amber-300 ring-amber-500/30',
-        'NEAR':        'bg-amber-500/10 text-amber-200/90 ring-amber-500/20',
-        'FAR':         'bg-zinc-600/40 text-zinc-200 ring-zinc-600/40',
-        'INVALIDATED': 'bg-red-500/15 text-red-300 ring-red-500/30',
-      };
-      const cls = map[status] || map.FAR;
-      return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-mono font-semibold ring-1 ${cls}">${status.replace('_', ' ')}</span>`;
-    }
+  // watchlist normalize: change_pct/chg, trigger_zone/zone
+  const watchlist = (brief.stocks?.watchlist || []).map(w => ({
+    ticker: w.ticker,
+    last: w.last,
+    chg: w.chg ?? w.change_pct,
+    zone: w.zone ?? w.trigger_zone,
+    status: w.status,
+    note: w.note,
+    detail: w.detail
+  }));
 
-    // ----- SECTION HELPERS -----
-    function sectionTitle(t, sub) {
-      return `<header class="mb-6 flex gap-4 items-stretch">
-        <span class="accent-bar"></span>
-        <div>
-          <h3 class="text-[26px] font-semibold tracking-tight2 text-white leading-tight">${t}</h3>
-          ${sub ? `<p class="mt-1 text-[14px] text-zinc-300">${sub}</p>` : ''}
+  const smart_money = brief.stocks?.smart_money || brief.stocks?.smart_money_clusters || [];
+
+  return {
+    date: brief.date,
+    updated: brief.updated_at || brief.last_refreshed_at,
+    regime: brief.regime || "NEUTRAL",
+    regime_note: brief.regime_note || "",
+    headline: brief.headline || "",
+    actions,
+    market_status: brief.market_status,
+    sparks: brief.sparks || {},
+    macro: {
+      indices: brief.macro?.indices || [],
+      vol_yields: brief.macro?.vol_yields || {},
+      leaders, laggards, rotation_read,
+      events_14d: brief.macro?.events_14d || [],
+      earnings_7d: brief.macro?.earnings_7d || [],
+      action: brief.macro?.action
+    },
+    stocks: {
+      watchlist,
+      movers: brief.stocks?.movers || { gainers: [], losers: [] },
+      smart_money,
+      wsb_top: brief.stocks?.wsb_top || [],
+      action: brief.stocks?.action
+    },
+    options: {
+      unusual: brief.options?.unusual || [],
+      earnings_iv: brief.options?.earnings_iv || [],
+      leaps: brief.options?.leaps || [],
+      action: brief.options?.action
+    },
+    crypto: brief.crypto || { status: "coming_soon" }
+  };
+}
+
+// ============================================================
+//  RENDER PIECES
+// ============================================================
+function renderMasthead(b) {
+  const dt = b.date ? formatDate(b.date) : "";
+  const upd = b.updated ? "Updated " + formatTime(b.updated) : "";
+  const meta = [dt, upd].filter(Boolean).join(" · ");
+
+  return `<header class="mw-masthead">
+    <div class="mw-meta-row">
+      <span class="mw-mono mw-meta-item">${escHtml(meta)}</span>
+      <span class="mw-meta-spacer"></span>
+      <button class="mw-meta-btn" data-modal="glossary">Glossary</button>
+      <span class="mw-meta-dot">·</span>
+      <button class="mw-meta-btn" data-modal="archive">Archive</button>
+      <span class="mw-meta-dot">·</span>
+      <a class="mw-meta-btn mw-meta-btn-accent" href="https://form.jotform.com/261215968266061" target="_blank" rel="noopener noreferrer">Feedback</a>
+    </div>
+    <p class="mw-tagline">The Daily Tape</p>
+    <div class="mw-tagline-rule"></div>
+    <h1 class="mw-wordmark">
+      <span class="mw-wordmark-word">MARKET</span><span class="mw-wordmark-word">WATCH</span>
+    </h1>
+    <div class="mw-tagline-rule"></div>
+    <div class="mw-regime-wrap">
+      <span class="mw-regime-label">REGIME</span>
+      <span class="mw-regime mw-regime-${b.regime}">${escHtml(b.regime)}</span>
+      ${b.regime_note ? `<span class="mw-regime-note">· ${escHtml(b.regime_note)}</span>` : ""}
+    </div>
+    ${b.headline ? `<p class="mw-headline">${escHtml(b.headline)}</p>` : ""}
+  </header>`;
+}
+
+function renderMarketStatus(s) {
+  if (!s) return "";
+  const tier = String(s.tier || "").toUpperCase();
+  const cls = tier.includes("OPEN") ? "mw-mstatus-open"
+            : tier.includes("PRE")  ? "mw-mstatus-pre"
+            : tier.includes("AFTER") ? "mw-mstatus-post"
+            : "mw-mstatus-closed";
+  return `<div class="mw-mstatus ${cls}">
+    ${actionPill(s.tier, "sm")}
+    <span class="mw-mstatus-text">${escHtml(s.text || "")}</span>
+  </div>`;
+}
+
+function renderTopActions(actions) {
+  if (!actions || !actions.length) return "";
+  const rows = actions.map((a, i) => {
+    const id = `action-${i}`;
+    const summary = `
+      <span class="mw-mono mw-action-num">${String(i + 1).padStart(2, "0")}</span>
+      ${actionPill(a.verb)}
+      ${a.target ? tickerPill(a.target) : `<span></span>`}
+      <span class="mw-action-text">${escHtml(a.text)}</span>
+      ${caret(a.detail)}`;
+    return expandLi(id, summary, a.detail ? escHtml(a.detail) : null, "mw-action-item");
+  }).join("");
+  return `<section class="mw-top-actions">
+    <div class="mw-eyebrow">
+      <span class="mw-eyebrow-mark mw-mono">↳</span>
+      <span class="mw-eyebrow-text mw-mono">Today's actions</span>
+      <span class="mw-eyebrow-rule"></span>
+      <span class="mw-mono mw-eyebrow-count">${actions.length}</span>
+    </div>
+    <ul class="mw-action-list">${rows}</ul>
+  </section>`;
+}
+
+const TABS = [
+  { id: "macro",   label: "Macro",   kicker: "regime · vol · yields" },
+  { id: "stocks",  label: "Stocks",  kicker: "watchlist · movers" },
+  { id: "options", label: "Options", kicker: "unusual · IV · LEAPS" },
+  { id: "crypto",  label: "Crypto",  kicker: "soon" },
+];
+
+function renderTabs(active) {
+  return `<nav class="mw-tabs" role="tablist">${TABS.map(t => `
+    <button class="mw-tab ${active === t.id ? "is-active" : ""}" role="tab" aria-selected="${active === t.id}" data-tab="${t.id}">
+      <span class="mw-tab-label">${t.label}</span>
+      <span class="mw-tab-kicker mw-mono">${t.kicker}</span>
+    </button>`).join("")}</nav>`;
+}
+
+function card({ title, count, body, action, span }) {
+  const head = `<div class="mw-card-head">
+    <h3 class="mw-card-title">${title}</h3>
+    ${count != null ? `<span class="mw-card-count">${count}</span>` : ""}
+  </div>`;
+  const foot = action ? `<div class="mw-card-footer mw-card-footer-${String(action.tier || "").toLowerCase().replace(/\s/g, "-")}">
+      ${actionPill(action.tier, "sm")}
+      <span class="mw-card-action-text">${escHtml(action.text || "")}</span>
+    </div>` : "";
+  return `<section class="mw-card ${span ? `mw-card-span-${span}` : ""}">${head}<div class="mw-card-body">${body}</div>${foot}</section>`;
+}
+
+// ──────────────── MACRO ────────────────
+function renderMacroPane(b) {
+  const m = b.macro;
+  const sparks = b.sparks || {};
+
+  const idxRows = m.indices.map(r => {
+    const id = `mi-${r.ticker}`;
+    const spark = sparks[r.ticker] || [];
+    const cells = `
+      <td>${tickerPill(r.ticker)}</td>
+      <td>${sparkSvg(spark, 88, 22)}</td>
+      <td class="mw-mono r">${fmtNum(r.last)}</td>
+      <td class="mw-mono r ${r.rsi > 70 ? "is-down" : r.rsi < 30 ? "is-up" : ""}">${r.rsi != null ? abbr("RSI", r.rsi.toFixed(1)) : "—"}</td>
+      <td class="mw-dim">${escHtml(r.note || "")}${caret(r.detail)}</td>`;
+    return expandRow(id, cells, r.detail ? escHtml(r.detail) : null, 5);
+  }).join("");
+
+  const indices = card({
+    title: "Indices", count: m.indices.length, span: "2",
+    body: `<table class="mw-table">
+      <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">RSI</th><th>Note</th></tr></thead>
+      <tbody>${idxRows}</tbody>
+    </table>`
+  });
+
+  const vy = m.vol_yields;
+  const volRow = (label, val, cls) => `<div><dt>${label}</dt><dd class="mw-mono ${cls || ""}">${val}</dd></div>`;
+  const volBody = `<dl class="mw-kv">
+    ${vy.vix != null ? volRow(abbr("VIX"), fmtNum(vy.vix)) : ""}
+    ${vy.vix_term ? volRow("Term", `<span class="mw-dim">${escHtml(String(vy.vix_term).replace(/_/g, " ").toLowerCase())}</span>`) : ""}
+    ${vy.ten_year != null ? volRow(abbr("10Y"), fmtNum(vy.ten_year) + "%") : ""}
+    ${vy.dxy != null ? volRow(abbr("DXY"), fmtNum(vy.dxy)) : ""}
+    ${vy.oil != null ? volRow("Oil", "$" + fmtNum(vy.oil)) : ""}
+    ${vy.gold != null ? volRow("Gold", "$" + fmtNum(vy.gold)) : ""}
+  </dl>`;
+  const vol = card({ title: "Vol &amp; Yields", body: volBody });
+
+  const rotRow = (s, dir) => {
+    const id = `${dir}-${s.etf}`;
+    const score = Number(s.score) || 0;
+    const summary = `<div class="mw-rot-row">
+      ${tickerPill(s.etf, "sm")}
+      <span class="mw-rot-bar"><span class="mw-rot-fill ${score < 0 ? "mw-down" : "mw-up"}" style="width:${Math.min(Math.abs(score) * 5, 100)}%"></span></span>
+      <span class="mw-mono ${score < 0 ? "is-down" : "is-up"}">${score > 0 ? "+" : ""}${score.toFixed(1)}</span>
+    </div>`;
+    return expandLi(id, summary, s.detail ? escHtml(s.detail) : null, "mw-rot-li");
+  };
+  const rot = card({
+    title: "Sector rotation · 5d",
+    body: `<div class="mw-rot">
+      <div><div class="mw-rot-head">Leaders</div><ul class="mw-rot-list">${m.leaders.map(s => rotRow(s, "lead")).join("")}</ul></div>
+      <div><div class="mw-rot-head">Laggards</div><ul class="mw-rot-list">${m.laggards.map(s => rotRow(s, "lag")).join("")}</ul></div>
+    </div>${m.rotation_read ? `<p class="mw-rot-read">${escHtml(m.rotation_read)}</p>` : ""}`
+  });
+
+  const calRows = m.events_14d.map((e, i) => {
+    const id = `cal-${i}`;
+    const summary = `<div class="mw-cal-row">
+      <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
+      <span class="mw-cal-event">${escHtml(e.event || "")}${caret(e.detail)}</span>
+    </div>`;
+    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+  }).join("");
+  const cal = card({
+    title: "Calendar · 14d", count: m.events_14d.length, span: "2",
+    body: m.events_14d.length ? `<ul class="mw-cal">${calRows}</ul>` : `<p class="mw-empty">No flagged events.</p>`
+  });
+
+  const earRows = m.earnings_7d.map(e => {
+    const id = `ear-${e.ticker}`;
+    const summary = `<div class="mw-cal-row mw-cal-row-3">
+      <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
+      ${tickerPill(e.ticker, "sm")}
+      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(e.detail)}</span>
+    </div>`;
+    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+  }).join("");
+  const ear = card({
+    title: "Earnings · 7d", count: m.earnings_7d.length,
+    body: m.earnings_7d.length ? `<ul class="mw-cal">${earRows}</ul>` : `<p class="mw-empty">None within 7 days.</p>`
+  });
+
+  const macroAction = m.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
+    <div class="mw-card-footer mw-card-footer-${String(m.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
+      ${actionPill(m.action.tier, "sm")}
+      <span class="mw-card-action-text">${escHtml(m.action.text || "")}</span>
+    </div>
+  </section>` : "";
+
+  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}</div>`;
+}
+
+// ──────────────── STOCKS ────────────────
+function renderStocksPane(b) {
+  const s = b.stocks;
+  const sparks = b.sparks || {};
+
+  const wlRows = s.watchlist.map(w => {
+    const id = `w-${w.ticker}`;
+    const klass = String(w.status).toUpperCase() === "INVALIDATED" ? "is-strike" : "";
+    const cells = `
+      <td>${tickerPill(w.ticker)}</td>
+      <td>${sparkSvg(sparks[w.ticker] || [])}</td>
+      <td class="mw-mono r">${fmtNum(w.last)}</td>
+      <td class="mw-mono r ${pctClass(w.chg)}">${fmtPct(w.chg)}</td>
+      <td class="mw-mono mw-trigger">${abbr("FOMO ceiling", w.zone || "")}</td>
+      <td>${statusDot(w.status)}</td>
+      <td class="mw-dim">${escHtml(w.note || "")}${caret(w.detail)}</td>`;
+    return expandRow(id, cells, w.detail ? escHtml(w.detail) : null, 7, klass);
+  }).join("");
+
+  const watchlist = card({
+    title: "Watchlist · Triggers", count: s.watchlist.length, span: "3",
+    body: `<table class="mw-table mw-table-watch">
+      <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">Δ</th><th>Trigger</th><th>Status</th><th>Note</th></tr></thead>
+      <tbody>${wlRows}</tbody>
+    </table>`
+  });
+
+  const moverRow = (r, dir) => {
+    const id = `mv-${dir}-${r.ticker}`;
+    const summary = `<div class="mw-mover-row">
+      ${tickerPill(r.ticker)}
+      ${sparkSvg(r.spark || [], 70, 22, 1.5)}
+      <span class="mw-mono mw-mover-pct ${dir === "up" ? "is-up" : "is-down"}">${fmtPct(r.chg)}</span>
+      <span class="mw-mono mw-mover-last">${fmtNum(r.last)}</span>
+      <span class="mw-mover-note">${escHtml(r.note || "")}${caret(r.detail)}</span>
+    </div>`;
+    return expandLi(id, summary, r.detail ? escHtml(r.detail) : null);
+  };
+  const movers = card({
+    title: "Big movers · 5d",
+    count: (s.movers.gainers.length || 0) + (s.movers.losers.length || 0),
+    span: "3",
+    body: `<div class="mw-movers">
+      <div class="mw-movers-col">
+        <div class="mw-movers-head mw-movers-head-up">▲ Gainers</div>
+        <ul class="mw-mover-list">${s.movers.gainers.length ? s.movers.gainers.map(r => moverRow(r, "up")).join("") : `<li class="mw-empty-pad">No gainers in scan.</li>`}</ul>
+      </div>
+      <div class="mw-movers-col">
+        <div class="mw-movers-head mw-movers-head-down">▼ Losers</div>
+        <ul class="mw-mover-list">${s.movers.losers.length ? s.movers.losers.map(r => moverRow(r, "down")).join("") : `<li class="mw-empty-pad">No losers in scan.</li>`}</ul>
+      </div>
+    </div>`
+  });
+
+  const sm = card({
+    title: "Smart-money clusters", count: s.smart_money.length,
+    body: s.smart_money.length
+      ? `<div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm")).join("")}</div>`
+      : `<p class="mw-empty">No clusters today.</p>`
+  });
+
+  const wsbTop = s.wsb_top || [];
+  const wsbMax = wsbTop.reduce((a, b) => Math.max(a, b.score || 0), 1) || 1;
+  const wsbRows = wsbTop.map((r, i) => `<li class="mw-rank-row">
+    <span class="mw-mono mw-rank-i">${String(i + 1).padStart(2, "0")}</span>
+    ${tickerPill(r.ticker, "sm")}
+    <span class="mw-rank-bar"><span class="mw-rank-fill" style="width:${Math.min(100, (r.score || 0) / wsbMax * 100)}%"></span></span>
+    <span class="mw-mono mw-dim">${r.score || 0}</span>
+  </li>`).join("");
+  const wsb = card({
+    title: `${abbr("WSB")} · top ${wsbTop.length || 5}`,
+    body: wsbTop.length ? `<ul class="mw-rank">${wsbRows}</ul>` : `<p class="mw-empty">No WSB data.</p>`
+  });
+
+  const statusCounts = ["IN_ZONE", "TRIGGERED", "NEAR", "FAR", "INVALIDATED"].map(st => ({
+    st, n: s.watchlist.filter(w => String(w.status).toUpperCase() === st).length
+  })).filter(x => x.n > 0);
+  const mix = card({
+    title: "Status mix",
+    body: statusCounts.length ? `<ul class="mw-statmix">${statusCounts.map(x => `
+      <li class="mw-statmix-row">${statusDot(x.st)}<span class="mw-mono mw-statmix-n">${x.n}</span></li>
+    `).join("")}</ul>` : `<p class="mw-empty">No watchlist activity.</p>`
+  });
+
+  const stocksAction = s.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
+    <div class="mw-card-footer mw-card-footer-${String(s.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
+      ${actionPill(s.action.tier, "sm")}
+      <span class="mw-card-action-text">${escHtml(s.action.text || "")}</span>
+    </div>
+  </section>` : "";
+
+  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}</div>`;
+}
+
+// ──────────────── OPTIONS ────────────────
+function renderOptionsPane(b) {
+  const o = b.options;
+
+  const uRows = o.unusual.map(r => {
+    const id = `u-${r.ticker}`;
+    const cells = `
+      <td>${tickerPill(r.ticker)}</td>
+      <td class="mw-mono r">${r.vol_oi != null ? abbr("vol/OI", r.vol_oi + "×") : "—"}</td>
+      <td class="mw-dim">${escHtml(r.context || "")}${caret(r.detail)}</td>`;
+    return expandRow(id, cells, r.detail ? escHtml(r.detail) : null, 3);
+  }).join("");
+  const unusual = card({
+    title: "Unusual flow", count: o.unusual.length, span: "2",
+    body: o.unusual.length ? `<table class="mw-table">
+      <thead><tr><th>Ticker</th><th class="r">${abbr("vol/OI", "Vol/OI")}</th><th>Context</th></tr></thead>
+      <tbody>${uRows}</tbody>
+    </table>` : `<p class="mw-empty">No unusual flow today.</p>`
+  });
+
+  const eivRows = o.earnings_iv.map(e => {
+    const id = `eiv-${e.ticker}`;
+    const summary = `<div class="mw-cal-row mw-cal-row-3">
+      <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
+      ${tickerPill(e.ticker, "sm")}
+      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(e.detail)}</span>
+    </div>`;
+    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+  }).join("");
+  const eiv = card({
+    title: `Earnings · ${abbr("IV")} elevated`, count: o.earnings_iv.length,
+    body: o.earnings_iv.length ? `<ul class="mw-cal">${eivRows}</ul>` : `<p class="mw-empty">None this week.</p>`
+  });
+
+  const lpRows = o.leaps.map((l, i) => {
+    const id = `leap-${i}`;
+    const summary = `<div style="display:flex;align-items:baseline;gap:10px;padding:8px 0">
+      ${tickerPill(l.ticker, "sm")}
+      <span class="mw-dim mw-mono" style="font-size:11px">${escHtml(l.thesis_window || "")}</span>
+      <span class="mw-cal-event">${escHtml(l.note || "")}${caret(l.detail)}</span>
+    </div>`;
+    return expandLi(id, summary, l.detail ? escHtml(l.detail) : null);
+  }).join("");
+  const leaps = card({
+    title: abbr("LEAPS"), span: "3",
+    body: o.leaps.length ? `<ul class="mw-cal">${lpRows}</ul>` : `<p class="mw-empty-pad">No LEAP setups today.</p>`
+  });
+
+  const optAction = o.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
+    <div class="mw-card-footer mw-card-footer-${String(o.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
+      ${actionPill(o.action.tier, "sm")}
+      <span class="mw-card-action-text">${escHtml(o.action.text || "")}</span>
+    </div>
+  </section>` : "";
+
+  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}</div>`;
+}
+
+// ──────────────── CRYPTO ────────────────
+function renderCryptoPane(b) {
+  const c = b.crypto;
+  if (c.status === "coming_soon" || !c.coins || !c.coins.length) {
+    return `<div class="mw-grid">${card({
+      title: "Crypto", span: "3",
+      body: `<div class="mw-soon">
+        <span class="mw-soon-tag">COMING SOON</span>
+        <p class="mw-soon-text">${escHtml(c.note || "Crypto regime tracking begins after a few weeks of data collection.")}</p>
+        <div class="mw-soon-list">
+          ${tickerPill("BTC", "sm")} ${tickerPill("ETH", "sm")} ${tickerPill("SOL", "sm")} ${tickerPill("XRP", "sm")}
         </div>
-      </header>`;
-    }
-    function card(inner) {
-      return `<div class="rounded-2xl border border-zinc-500/40 bg-zinc-600/25 p-6">${inner}</div>`;
-    }
-    function fmtPct(n) {
-      if (n == null) return '';
-      const sign = n > 0 ? '+' : '';
-      const cls = n > 0 ? 'text-emerald-400' : n < 0 ? 'text-red-400' : 'text-zinc-200';
-      return `<span class="${cls} num">${sign}${n.toFixed(2)}%</span>`;
-    }
-    function fmtNum(n, dp=2) {
-      if (n == null) return '—';
-      return Number(n).toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp });
-    }
+      </div>`
+    })}</div>`;
+  }
+  const rows = c.coins.map(co => `<div class="mw-cal-row mw-cal-row-3" style="border-bottom:1px solid var(--mw-rule)">
+    ${tickerPill(co.symbol, "sm")}
+    <span class="mw-mono r">$${fmtNum(co.last)}</span>
+    <span class="mw-mono ${pctClass(co.change_5d_pct)}">${fmtPct(co.change_5d_pct)} <span class="mw-dim">5d</span></span>
+  </div>`).join("");
+  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}</div>`;
+}
 
-    // ----- TAB RENDERERS -----
-    function renderMacro(b) {
-      const m = b.macro || {};
-      const indices = (m.indices || []).map(i => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
-          <div>
-            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(i.ticker)}</p>
-            ${i.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${i.note}</p>` : ''}
-          </div>
-          <div class="text-right">
-            <p class="font-mono num text-[15px]">${fmtNum(i.last)}</p>
-            ${i.rsi != null ? `<p class="text-[11px] text-zinc-300 num mt-0.5">${abbr('RSI')} ${i.rsi}</p>` : ''}
-          </div>
-        </div>`).join('');
+// ──────────────── MODALS ────────────────
+function renderModal() {
+  if (!MODAL) return "";
+  if (MODAL === "archive") {
+    const others = (DATA.briefs || []).filter(b => b.date !== ACTIVE_BRIEF.date);
+    const items = others.map(b => `<li class="mw-archive-item" data-archive-date="${escAttr(b.date)}">
+      <span class="mw-archive-date">${escHtml(formatDate(b.date))}</span>
+      <span class="mw-regime mw-regime-sm mw-regime-${escHtml(b.regime || "NEUTRAL")}">${escHtml(b.regime || "—")}</span>
+      <span class="mw-archive-headline">${escHtml(b.headline || "")}</span>
+    </li>`).join("");
+    return modalShell("Archive", `${others.length} prior briefs.`,
+      others.length ? `<ul class="mw-archive-list">${items}</ul>` : `<p class="mw-empty">No prior briefs yet.</p>`);
+  }
+  if (MODAL === "glossary") {
+    const entries = Object.entries(GLOSSARY).sort((a, b) => a[0].localeCompare(b[0]));
+    return modalShell("Glossary", "Hover any underlined term in the brief to see this inline.", `
+      <dl class="mw-glossary-list">${entries.map(([k, v]) => `
+        <div class="mw-glossary-row">
+          <dt class="mw-glossary-term">${escHtml(k)}</dt>
+          <dd class="mw-glossary-def">${escHtml(v)}</dd>
+        </div>`).join("")}</dl>`);
+  }
+  return "";
+}
 
-      const vy = m.vol_yields || {};
-      const volRow = (label, val, suffix='') => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
-          <p class="text-[13px] text-zinc-200">${label}</p>
-          <p class="font-mono num text-[14px] text-zinc-100">${val}${suffix}</p>
-        </div>`;
+function modalShell(title, intro, body) {
+  return `<div class="mw-overlay" data-modal-close>
+    <div class="mw-modal">
+      <div class="mw-modal-head">
+        <h2 class="mw-modal-title">${escHtml(title)}</h2>
+        <button class="mw-modal-close" data-modal-close aria-label="Close">×</button>
+      </div>
+      ${intro ? `<p class="mw-modal-intro">${escHtml(intro)}</p>` : ""}
+      ${body}
+    </div>
+  </div>`;
+}
 
-      const sr = m.sector_rotation || {};
-      const sectorList = (arr) => (arr || []).map(s => `
-        <div class="flex items-baseline justify-between py-1.5">
-          <p class="font-mono text-[13px] text-zinc-100">${abbr(s.etf)}</p>
-          <p class="font-mono num text-[13px] ${s.score > 0 ? 'text-emerald-400' : 'text-red-400'}">${s.score > 0 ? '+' : ''}${s.score}</p>
-        </div>`).join('');
+// ──────────────── DATE HELPERS ────────────────
+function formatDate(s) {
+  // accepts "2026-05-03" or "Saturday · May 2, 2026" — passthrough fallback
+  if (!s) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+    const [y, m, d] = s.split("-").map(Number);
+    const dt = new Date(y, m - 1, d);
+    return dt.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" });
+  }
+  return s;
+}
 
-      const events = (m.events_14d || []).map(e => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
-          <p class="text-[13px] text-zinc-300">${e.event}</p>
-          <p class="font-mono num text-[12px] text-zinc-300">${e.date}</p>
-        </div>`).join('');
+function formatTime(s) {
+  if (!s) return "";
+  try {
+    const dt = new Date(s);
+    if (isNaN(dt)) return s;
+    return dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  } catch { return s; }
+}
 
-      const earnings = (m.earnings_7d || []).map(e => `
-        <div class="flex items-baseline justify-between py-2 border-b border-zinc-600/50 last:border-0">
-          <div>
-            <p class="font-mono text-[13px] text-zinc-100">${e.ticker}</p>
-            ${e.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${e.note}</p>` : ''}
-          </div>
-          <p class="font-mono num text-[12px] text-zinc-200">${e.date}</p>
-        </div>`).join('');
+// ============================================================
+//  RENDER + EVENTS
+// ============================================================
+function render() {
+  const root = document.getElementById("root");
+  if (!ACTIVE_BRIEF) {
+    root.innerHTML = `<p class="mw-empty">No brief loaded.</p>`;
+    return;
+  }
+  const b = normalize(ACTIVE_BRIEF);
 
-      return `
-        ${sectionTitle('Macro & Regime', 'Where the broad market sits today.')}
-        <div class="grid md:grid-cols-2 gap-5">
-          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Index regime</p>${indices || '<p class="text-zinc-300 text-sm">No data.</p>'}`)}
-          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Volatility &amp; rates</p>
-            ${vy.vix != null ? volRow(abbr('VIX'), fmtNum(vy.vix), vy.vix_term ? ` · ${vy.vix_term.replace('_',' ').toLowerCase()}` : '') : ''}
-            ${vy.ten_year != null ? volRow(abbr('10Y'), fmtNum(vy.ten_year), '%') : ''}
-            ${vy.dxy != null ? volRow(abbr('DXY'), fmtNum(vy.dxy)) : ''}
-            ${vy.oil != null ? volRow('Oil', '$' + fmtNum(vy.oil)) : ''}
-            ${vy.gold != null ? volRow('Gold', '$' + fmtNum(vy.gold)) : ''}
-          `)}
-          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Sector rotation · 5d</p>
-            <div class="grid grid-cols-2 gap-6">
-              <div><p class="text-[11px] text-zinc-300 mb-2">Leaders</p>${sectorList(sr.leaders_5d)}</div>
-              <div><p class="text-[11px] text-zinc-300 mb-2">Laggards</p>${sectorList(sr.laggards_5d)}</div>
-            </div>
-            ${sr.read ? `<p class="mt-4 text-[13px] text-zinc-300 leading-relaxed">${sr.read}</p>` : ''}
-          `)}
-          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Calendar · next 14d</p>
-            ${events || '<p class="text-zinc-300 text-sm">No flagged events.</p>'}
-            ${earnings ? `<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mt-5 mb-3">Earnings · ≤7d</p>${earnings}` : ''}
-          `)}
-        </div>
-        ${actionCallout(m.action)}
-      `;
-    }
+  let pane = "";
+  if (TAB === "macro")   pane = renderMacroPane(b);
+  if (TAB === "stocks")  pane = renderStocksPane(b);
+  if (TAB === "options") pane = renderOptionsPane(b);
+  if (TAB === "crypto")  pane = renderCryptoPane(b);
 
-    function renderStocks(b) {
-      const s = b.stocks || {};
-      const wl = (s.watchlist || []).map(w => `
-        <tr class="border-b border-zinc-600/50 last:border-0">
-          <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${w.ticker}</td>
-          <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${fmtNum(w.last)}</td>
-          <td class="py-3 pr-4 font-mono num text-[12px]">${w.change_pct != null ? fmtPct(w.change_pct) : ''}</td>
-          <td class="py-3 pr-4 text-[12px] text-zinc-200">${w.trigger_zone || ''}</td>
-          <td class="py-3 pr-4">${statusPill(w.status || 'FAR')}</td>
-        </tr>
-        ${w.note ? `<tr><td colspan="5" class="pb-3 pl-0 text-[12px] text-zinc-300">${w.note}</td></tr>` : ''}
-      `).join('');
+  root.innerHTML = `
+    ${renderMasthead(b)}
+    ${renderMarketStatus(b.market_status)}
+    ${renderTopActions(b.actions)}
+    ${renderTabs(TAB)}
+    <main class="mw-main">${pane}</main>
+    <footer class="mw-footer">
+      <div class="mw-footer-rule"></div>
+      <div class="mw-footer-row">
+        <span class="mw-footer-label">Disclaimer</span>
+        <p class="mw-footer-text">Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Markets can lose money fast.</p>
+      </div>
+    </footer>
+    ${renderModal()}
+  `;
+  bindEvents();
+}
 
-      const wsb = (s.wsb_top || []).map(w => `
-        <div class="flex items-baseline justify-between py-1.5">
-          <p class="font-mono text-[13px] text-zinc-100">${w.ticker}</p>
-          <p class="font-mono num text-[12px] text-zinc-300">${w.score}</p>
-        </div>`).join('');
+function bindEvents() {
+  document.querySelectorAll(".mw-tab").forEach(b =>
+    b.addEventListener("click", () => { TAB = b.dataset.tab; OPEN_ID = null; render(); }));
+  document.querySelectorAll("[data-toggle]").forEach(el =>
+    el.addEventListener("click", e => {
+      const id = el.dataset.toggle;
+      OPEN_ID = OPEN_ID === id ? null : id;
+      render();
+    }));
+  document.querySelectorAll("[data-modal]").forEach(b =>
+    b.addEventListener("click", () => { MODAL = b.dataset.modal; render(); }));
+  document.querySelectorAll("[data-modal-close]").forEach(b =>
+    b.addEventListener("click", e => { if (e.target === b) { MODAL = null; render(); } }));
+  document.querySelectorAll(".mw-archive-item").forEach(item =>
+    item.addEventListener("click", () => {
+      const d = item.dataset.archiveDate;
+      const found = (DATA.briefs || []).find(x => x.date === d);
+      if (found) { ACTIVE_BRIEF = found; MODAL = null; TAB = "macro"; OPEN_ID = null; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+    }));
+}
 
-      const clusters = (s.smart_money_clusters || []).map(t => `<span class="inline-block font-mono text-[12px] bg-zinc-600/50 text-zinc-200 px-2 py-1 rounded-md mr-1.5 mb-1.5">${t}</span>`).join('');
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && MODAL) { MODAL = null; render(); }
+});
 
-      return `
-        ${sectionTitle('Stocks', 'Watchlist, smart-money clusters, retail sentiment.')}
-        <div class="grid gap-5">
-          ${card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Watchlist</p>
-            <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="eyebrow text-[10px] font-semibold uppercase tracking-[0.12em]">
-                <th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Last</th><th class="pb-3 pr-4">Δ</th><th class="pb-3 pr-4">Trigger</th><th class="pb-3 pr-4">Status</th>
-              </tr></thead>
-              <tbody>${wl || `<tr><td class="py-4 text-zinc-300 text-sm" colspan="5">No active watchlist names.</td></tr>`}</tbody>
-            </table></div>
-          `)}
-          <div class="grid md:grid-cols-2 gap-5">
-            ${clusters ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Cross-scanner clusters</p><div>${clusters}</div><p class="mt-3 text-[12px] text-zinc-300">Names flagged by ≥2 independent scanners (flow, insiders, breakout, social).</p>`) : ''}
-            ${wsb ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">${abbr('WSB')} · top mentions</p>${wsb}`) : ''}
-          </div>
-        </div>
-        ${actionCallout(s.action)}
-      `;
-    }
-
-    function renderOptions(b) {
-      const o = b.options || {};
-      const unusual = (o.unusual || []).map(u => `
-        <tr class="border-b border-zinc-600/50 last:border-0">
-          <td class="py-3 pr-4 font-mono text-[13px] text-zinc-100 font-semibold">${u.ticker}</td>
-          <td class="py-3 pr-4 font-mono num text-[13px] text-zinc-200">${u.vol_oi != null ? abbr('V/OI') + ' ' + u.vol_oi : ''}</td>
-          <td class="py-3 text-[12px] text-zinc-200">${u.context || ''}</td>
-        </tr>`).join('');
-
-      const eiv = (o.earnings_iv || []).map(e => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
-          <div>
-            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${e.ticker}</p>
-            ${e.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${e.note}</p>` : ''}
-          </div>
-          <p class="font-mono num text-[12px] text-zinc-200">${e.date}</p>
-        </div>`).join('');
-
-      const leaps = (o.leaps || []).map(l => `
-        <div class="py-2.5 border-b border-zinc-600/50 last:border-0">
-          <p class="font-mono text-[13px] text-zinc-100">${l.ticker} <span class="text-zinc-300">${l.thesis_window || ''}</span></p>
-          ${l.note ? `<p class="text-[12px] text-zinc-200 mt-0.5">${l.note}</p>` : ''}
-        </div>`).join('');
-
-      return `
-        ${sectionTitle('Options', 'Unusual flow, ' + abbr('IV') + ' setups, ' + abbr('LEAP') + ' theses.')}
-        <div class="grid gap-5">
-          ${unusual ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Unusual options activity</p>
-            <div class="overflow-x-auto"><table class="w-full text-left">
-              <thead><tr class="eyebrow text-[10px] font-semibold uppercase tracking-[0.12em]"><th class="pb-3 pr-4">Ticker</th><th class="pb-3 pr-4">Signal</th><th class="pb-3">Context</th></tr></thead>
-              <tbody>${unusual}</tbody>
-            </table></div>`) : ''}
-          <div class="grid md:grid-cols-2 gap-5">
-            ${eiv ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Earnings · ${abbr('IV')} plays</p>${eiv}`) : ''}
-            ${leaps ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">${abbr('LEAP')} theses</p>${leaps}`) : ''}
-          </div>
-          ${!unusual && !eiv && !leaps ? card(`<p class="text-zinc-300 text-sm">No qualifying options setups today.</p>`) : ''}
-        </div>
-        ${actionCallout(o.action)}
-      `;
-    }
-
-    function renderCrypto(b) {
-      const c = b.crypto || {};
-      if (c.status === 'coming_soon') {
-        return `
-          ${sectionTitle('Crypto', 'BTC, ETH, SOL, XRP regime tracking.')}
-          ${card(`
-            <div class="text-center py-6">
-              <p class="text-[13px] uppercase tracking-wider text-zinc-300">Coming soon</p>
-              <p class="mt-3 text-[15px] text-zinc-300 max-w-md mx-auto leading-relaxed">${c.note || 'Crypto regime coverage launches once the daily brief begins producing it.'}</p>
-            </div>
-          `)}
-        `;
-      }
-      const coins = (c.coins || []).map(co => `
-        <div class="flex items-baseline justify-between py-2.5 border-b border-zinc-600/50 last:border-0">
-          <div>
-            <p class="font-mono text-[13px] text-zinc-100 font-semibold">${abbr(co.symbol)}</p>
-            ${co.note ? `<p class="text-[12px] text-zinc-300 mt-0.5">${co.note}</p>` : ''}
-          </div>
-          <div class="text-right">
-            <p class="font-mono num text-[14px]">$${fmtNum(co.last)}</p>
-            ${co.change_5d_pct != null ? `<p class="text-[11px] num mt-0.5">${fmtPct(co.change_5d_pct)} <span class="text-zinc-300">5d</span></p>` : ''}
-          </div>
-        </div>`).join('');
-      return `
-        ${sectionTitle('Crypto')}
-        <div class="grid gap-5">
-          ${coins ? card(`<p class="eyebrow text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">Levels</p>${coins}`) : card(`<p class="text-zinc-300 text-sm">No crypto data today.</p>`)}
-        </div>
-        ${actionCallout(c.action)}
-      `;
-    }
-
-    function renderArchive(briefs, currentDate) {
-      const others = briefs.filter(b => b.date !== currentDate);
-      if (!others.length) {
-        return `${sectionTitle('Archive')}${card(`<p class="text-zinc-300 text-sm">Past briefs will appear here.</p>`)}`;
-      }
-      const items = others.map(b => `
-        <button data-date="${b.date}" class="archive-item w-full text-left rounded-xl border border-zinc-500/40 bg-zinc-600/25 hover:bg-zinc-600/40 transition-colors px-5 py-4 flex items-baseline justify-between gap-4">
-          <div>
-            <p class="font-mono num text-[12px] text-zinc-300">${b.date}</p>
-            <p class="text-[15px] text-zinc-200 mt-1">${b.headline || ''}</p>
-          </div>
-          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full ${b.regime === 'BULL' ? 'bg-emerald-500/15 text-emerald-300' : b.regime === 'BEAR' ? 'bg-red-500/15 text-red-300' : 'bg-zinc-600/40 text-zinc-200'}">${b.regime || '—'}</span>
-        </button>`).join('');
-      return `${sectionTitle('Archive', 'Past briefs.')}<div class="grid gap-3">${items}</div>`;
-    }
-
-    // ----- TAB SWITCHING -----
-    function showTab(name) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === name)));
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
-      const panel = document.getElementById('tab-' + name);
-      if (panel) {
-        panel.classList.remove('hidden');
-        panel.classList.remove('fade-in'); void panel.offsetWidth; panel.classList.add('fade-in');
-      }
-      if (history.replaceState) history.replaceState(null, '', '#' + name);
-    }
-
-    // ----- MAIN RENDER -----
-    let DATA = null;
-    let activeBrief = null;
-
-    function renderAll(brief) {
-      activeBrief = brief;
-      // Hero
-      document.getElementById('brief-date').textContent = brief.date;
-      document.getElementById('headline').textContent = brief.headline || '';
-      const ta = document.getElementById('top-actions');
-      ta.innerHTML = (brief.top_actions || []).map(a => {
-        const w = (a.split(' ')[0] || '').toUpperCase();
-        const dot = w === 'ACTION' ? 'bg-emerald-400'
-                  : w === 'WATCH'  ? 'bg-amber-400'
-                  : w === 'NO'     ? 'bg-zinc-400'
-                  : 'bg-zinc-400';
-        return `<li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full ${dot} shrink-0"></span><span>${a}</span></li>`;
-      }).join('');
-      // Updated indicator: prefer the live price refresh timestamp when present
-      const lu = document.getElementById('last-updated');
-      if (brief.last_refreshed_at) {
-        const ts = new Date(brief.last_refreshed_at);
-        const t = ts.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-        const ageM = (Date.now() - ts.getTime()) / 60000;
-        const live = ageM < 60;
-        const dotColor = live ? '#34d399' : '#a1a1aa';
-        lu.innerHTML = `<span style="color:${dotColor}">●</span> prices ${t}`;
-      } else if (brief.updated_at) {
-        lu.textContent = new Date(brief.updated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
-      } else {
-        lu.textContent = brief.date;
-      }
-      // Regime
-      setRegimeBadge(brief.regime || 'NEUTRAL', brief.regime_note);
-      // Tabs
-      document.getElementById('tab-macro').innerHTML = renderMacro(brief);
-      document.getElementById('tab-stocks').innerHTML = renderStocks(brief);
-      document.getElementById('tab-options').innerHTML = renderOptions(brief);
-      document.getElementById('tab-crypto').innerHTML = renderCrypto(brief);
-      document.getElementById('tab-archive').innerHTML = renderArchive(DATA.briefs, brief.date);
-    }
-
-    function renderWelcome() {
-      // Hero
-      document.getElementById('brief-date').textContent = 'Launching soon';
-      document.getElementById('headline').textContent = 'Daily market briefs, built for clarity.';
-      document.getElementById('top-actions').innerHTML = [
-        'Macro, stocks, options, and crypto — one page, four tabs.',
-        'Every section ends with a clear ACTION, WATCH, or NO ACTION.',
-        'Acronyms expand on hover, glossary always one click away.',
-      ].map(t => `<li class="flex gap-3"><span class="mt-2.5 w-1 h-1 rounded-full bg-zinc-500 shrink-0"></span><span>${t}</span></li>`).join('');
-      document.getElementById('last-updated').textContent = '';
-      // Regime badge → preview pill
-      const badge = document.getElementById('regime-badge');
-      badge.className = 'px-2.5 py-1 rounded-full text-[11px] font-medium bg-zinc-600 text-zinc-100';
-      badge.textContent = 'preview';
-
-      const preview = (title, sub, items) => `
-        ${sectionTitle(title, sub)}
-        <div class="grid md:grid-cols-2 gap-5">
-          ${items.map(([h, body]) => card(`
-            <p class="text-[12px] uppercase tracking-wider text-zinc-300 mb-2">${h}</p>
-            <p class="text-[14px] text-zinc-300 leading-relaxed">${body}</p>
-          `)).join('')}
-        </div>
-        ${actionCallout({ tier: 'NO_ACTION', text: 'First brief publishes shortly. This page will refresh with live data each morning and during market hours.' })}
-      `;
-
-      document.getElementById('tab-macro').innerHTML = preview('Macro &amp; Regime', 'Where the broad market sits today.', [
-        ['Index regime', `${abbr('SPY')}, ${abbr('QQQ')}, ${abbr('IWM')} — last price, ${abbr('RSI')}, position vs moving averages, 52-week context.`],
-        ['Volatility &amp; rates', `${abbr('VIX')} bucket, ${abbr('10Y')} yield, ${abbr('DXY')}, oil, gold — the regime backdrop.`],
-        ['Sector rotation', 'Five-day ETF leaders and laggards, with a one-line plain-English read of what they imply.'],
-        ['Calendar', 'Fed speakers, key data releases (next 14 days), and earnings within 7 days that matter for the tape.'],
-      ]);
-      document.getElementById('tab-stocks').innerHTML = preview('Stocks', 'Watchlist, smart-money clusters, retail sentiment.', [
-        ['Watchlist table', 'Tickers with trigger zones and a status pill — TRIGGERED, IN ZONE, NEAR, FAR, or INVALIDATED.'],
-        ['Smart-money clusters', 'Names flagged by ≥2 independent scanners (flow, insiders, breakout, social) on the same day.'],
-        [`${abbr('WSB')} top mentions`, 'What retail is talking about, with mention scores. Useful for spotting squeezes and momentum chasing.'],
-        ['Friday losers + volume', 'Distribution prints — high-volume down days that often precede continuation moves.'],
-      ]);
-      document.getElementById('tab-options').innerHTML = preview('Options', `Unusual flow, ${abbr('IV')} setups, ${abbr('LEAP')} theses.`, [
-        ['Unusual options activity', `Tickers with ${abbr('V/OI')} multiples flagging fresh positioning, plus context (breakout, earnings, etc.).`],
-        [`Earnings ${abbr('IV')} plays`, `Names reporting within ${abbr('IV')} crush range — what's worth a defined-risk play vs. what's a coin flip.`],
-        [`${abbr('LEAP')} theses`, 'Long-dated directional ideas (9+ months out) — the "I believe X over the next year" trades.'],
-        ['Income setups', 'Covered calls and cash-secured puts on names with the right combination of price and IV.'],
-      ]);
-      document.getElementById('tab-crypto').innerHTML = renderCrypto({ crypto: { status: 'coming_soon', note: 'Crypto regime tracking begins after a few weeks of data collection. Watch this tab.' } });
-      document.getElementById('tab-archive').innerHTML = `${sectionTitle('Archive', 'Past briefs.')}${card(`<p class="text-zinc-300 text-sm">Briefs will appear here as they publish.</p>`)}`;
-    }
-
-    function init(data) {
-      DATA = data;
-      const briefs = (data.briefs || []).slice().sort((a, b) => b.date.localeCompare(a.date));
-      DATA.briefs = briefs;
-      if (!briefs.length) {
-        renderWelcome();
-      } else {
-        renderAll(briefs[0]);
-      }
-      // Tab clicks
-      document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
-      // Archive item clicks
-      document.addEventListener('click', (e) => {
-        const t = e.target.closest('.archive-item');
-        if (!t) return;
-        const b = DATA.briefs.find(x => x.date === t.dataset.date);
-        if (b) { renderAll(b); showTab('macro'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-      });
-      // Hash routing
-      const initial = (location.hash || '#macro').replace('#', '');
-      if (['macro', 'stocks', 'options', 'crypto', 'archive'].includes(initial)) showTab(initial);
-    }
-
-    // ----- GLOSSARY DRAWER -----
-    function openGlossary() {
-      document.getElementById('glossary').classList.remove('glossary-closed');
-      document.getElementById('glossary').classList.add('glossary-open');
-      document.getElementById('glossary-overlay').classList.remove('hidden');
-    }
-    function closeGlossary() {
-      document.getElementById('glossary').classList.add('glossary-closed');
-      document.getElementById('glossary').classList.remove('glossary-open');
-      document.getElementById('glossary-overlay').classList.add('hidden');
-    }
-    document.getElementById('glossary-btn').addEventListener('click', openGlossary);
-    document.getElementById('glossary-close').addEventListener('click', closeGlossary);
-    document.getElementById('glossary-overlay').addEventListener('click', closeGlossary);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGlossary(); });
-    renderGlossary();
-
-    // ----- BOOT -----
-    fetch('briefs.json', { cache: 'no-store' })
-      .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
-      .then(init)
-      .catch(err => {
-        document.getElementById('headline').textContent = 'Could not load briefs.';
-        console.error(err);
-      });
-  </script>
+// ============================================================
+//  BOOT
+// ============================================================
+fetch("briefs.json", { cache: "no-store" })
+  .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+  .then(data => {
+    DATA = data;
+    const briefs = (data.briefs || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+    DATA.briefs = briefs;
+    ACTIVE_BRIEF = briefs[0] || null;
+    render();
+  })
+  .catch(err => {
+    document.getElementById("root").innerHTML = `<p class="mw-empty">Could not load briefs: ${escHtml(err)}</p>`;
+    console.error(err);
+  });
+</script>
 </body>
 </html>
