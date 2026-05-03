@@ -103,21 +103,21 @@ html, body {
   line-height: var(--mw-line);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1, "ss01" 1;
 }
 
-body::before {
-  content: "";
-  position: fixed; inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(255,230,180,0.018) 1px, transparent 1px);
-  background-size: 3px 3px;
-  z-index: 0;
-}
-:root[data-theme="light"] body::before {
-  background-image: radial-gradient(rgba(40,30,15,0.025) 1px, transparent 1px);
-}
+/* ============================================================
+   Always-rendered detail blocks. Hidden until the parent gets .is-open.
+   This avoids a full re-render on every expand/collapse click.
+   ============================================================ */
+.mw-li > .mw-li-detail,
+.mw-soc-row > .mw-soc-detail,
+.mw-rec > .mw-rec-debate { display: none; }
+.mw-li.is-open > .mw-li-detail,
+.mw-soc-row.is-open > .mw-soc-detail { display: block; }
+.mw-rec.is-open > .mw-rec-debate { display: flex; }
+.mw-row-detail { display: none; }
+.mw-row-detail.is-open { display: table-row; }
 
 .mw-mono {
   font-family: var(--mw-mono);

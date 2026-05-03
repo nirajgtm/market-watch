@@ -58,6 +58,18 @@ const GLOSSARY = {
   "contango": "Futures curve sloping up. Later contracts cost more than nearer ones.",
 };
 
+// Pre-build the sorted glossary HTML once at module load (modal reuses it).
+const GLOSSARY_HTML = (function() {
+  const escapeHtml = s => String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  return Object.entries(GLOSSARY)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([k, v]) => `<div class="mw-glossary-row">
+      <dt class="mw-glossary-term">${escapeHtml(k)}</dt>
+      <dd class="mw-glossary-def">${escapeHtml(v)}</dd>
+    </div>`).join("");
+})();
+
 // ============================================================
 //  STATE
 // ============================================================
@@ -123,14 +135,22 @@ function abbr(term, label) {
 
 function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
   if (!data || data.length < 2) return "";
-  const min = Math.min(...data), max = Math.max(...data);
+  // Loop-based min/max instead of spread (avoids large-array stack pressure)
+  let min = data[0], max = data[0];
+  for (let i = 1; i < data.length; i++) {
+    const v = data[i];
+    if (v < min) min = v;
+    else if (v > max) max = v;
+  }
   const range = (max - min) || 1;
   const stepX = w / (data.length - 1);
-  const pts = data.map((v, i) =>
-    `${(i * stepX).toFixed(2)},${(h - (v - min) / range * h).toFixed(2)}`
-  ).join(" ");
-  const trend = data[data.length - 1] > data[0] ? "up"
-              : data[data.length - 1] < data[0] ? "down" : "flat";
+  let pts = "";
+  for (let i = 0; i < data.length; i++) {
+    if (i) pts += " ";
+    pts += (i * stepX).toFixed(2) + "," + (h - (data[i] - min) / range * h).toFixed(2);
+  }
+  const last = data[data.length - 1], first = data[0];
+  const trend = last > first ? "up" : last < first ? "down" : "flat";
   return `<svg class="mw-spark mw-spark-${trend}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
     <polyline fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" points="${pts}"/>
   </svg>`;
@@ -196,22 +216,24 @@ function getRecAction(rec) {
 
 function isOpen(id) { return OPEN_ID === id; }
 
+// Always emit the detail block. CSS hides it unless the parent has .is-open.
+// Click-to-toggle is handled by a single delegated handler in mount().
 function expandLi(id, summary, detailHtml, extraClass) {
-  const open = isOpen(id);
-  const cls = `mw-li ${extraClass || ""} ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`.trim();
-  const det = open && detailHtml ? `<div class="mw-li-detail">${detailHtml}</div>` : "";
+  const cls = `mw-li ${extraClass || ""} ${detailHtml ? "is-clickable" : ""}`.trim();
+  const det = detailHtml ? `<div class="mw-li-detail">${detailHtml}</div>` : "";
   const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
-  return `<li class="${cls}"><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
+  const row = detailHtml ? `data-row="${escAttr(id)}"` : "";
+  return `<li class="${cls}" ${row}><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
 }
 
 function expandRow(id, cells, detailHtml, cols, extraClass) {
-  const open = isOpen(id);
-  const cls = `mw-row ${extraClass || ""} ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`.trim();
+  const cls = `mw-row ${extraClass || ""} ${detailHtml ? "is-clickable" : ""}`.trim();
   const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
-  const detRow = open && detailHtml
-    ? `<tr class="mw-row-detail"><td colspan="${cols}"><div class="mw-detail-inner">${detailHtml}</div></td></tr>`
+  const row = detailHtml ? `data-row="${escAttr(id)}"` : "";
+  const detRow = detailHtml
+    ? `<tr class="mw-row-detail" ${row}><td colspan="${cols}"><div class="mw-detail-inner">${detailHtml}</div></td></tr>`
     : "";
-  return `<tr class="${cls}" ${handler}>${cells}</tr>${detRow}`;
+  return `<tr class="${cls}" ${handler} ${row}>${cells}</tr>${detRow}`;
 }
 
 // Render the inline detail block — picks the right text based on MODE.
@@ -259,21 +281,16 @@ function normalize(brief) {
 
   const smart_money = brief.stocks?.smart_money || brief.stocks?.smart_money_clusters || [];
 
-  // Headline can be a string (legacy) or {plain, pro} object.
-  let headline = "";
-  if (brief.headline) {
-    if (typeof brief.headline === "string") headline = brief.headline;
-    else if (typeof brief.headline === "object") {
-      headline = brief.headline[MODE] || brief.headline.plain || brief.headline.pro || "";
-    }
-  }
+  // Keep headline raw (string or {plain,pro} object). Mode-pick happens in
+  // renderMasthead so normalize stays a pure function of brief identity and
+  // its memo survives MODE toggles.
 
   return {
     date: brief.date,
     updated: brief.updated_at || brief.last_refreshed_at,
     regime: brief.regime || "NEUTRAL",
     regime_note: brief.regime_note || "",
-    headline,
+    headline: brief.headline,
     actions,
     market_status: brief.market_status,
     sparks: brief.sparks || {},
@@ -346,7 +363,7 @@ function renderMasthead(b) {
       <span class="mw-regime mw-regime-${b.regime}">${escHtml(b.regime)}</span>
       ${b.regime_note ? `<span class="mw-regime-note">· ${escHtml(b.regime_note)}</span>` : ""}
     </div>
-    ${b.headline ? `<p class="mw-headline">${escHtml(b.headline)}</p>` : ""}
+    ${b.headline ? `<p class="mw-headline">${escHtml(pickModeText(b.headline))}</p>` : ""}
   </header>`;
 }
 
@@ -433,11 +450,8 @@ function renderRecCard(rec, side, prefix) {
         <p class="mw-rec-debate-text">${escHtml(action)}</p>
       </div>` : ""}
     </div>`;
-  const open = isOpen(id);
-  const cls = `mw-rec ${open ? "is-open" : ""}`;
-  const handler = `data-toggle="${escAttr(id)}"`;
-  return `<li class="${cls}">
-    <div class="mw-rec-summary" ${handler}>
+  return `<li class="mw-rec" data-row="${escAttr(id)}">
+    <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
       <span class="mw-rec-tk">${escHtml(rec.ticker)}</span>
       ${actionPill(rec.verdict, "sm")}
       ${conf ? `<span class="mw-mono mw-rec-conf">${conf}</span>` : ""}
@@ -445,7 +459,7 @@ function renderRecCard(rec, side, prefix) {
       <span class="mw-rec-summary-text">${escHtml((rec.pros || "").split(".")[0])}.</span>
       <span class="mw-caret" aria-hidden="true">v</span>
     </div>
-    ${open ? detailBlocks : ""}
+    ${detailBlocks}
   </li>`;
 }
 
@@ -460,13 +474,12 @@ function sentClass(s) {
 
 function renderSocialItem(item, prefix) {
   const id = `soc-${prefix}-${item.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
-  const open = isOpen(id);
   const detailHtml = renderDetail(item);
-  const cls = `mw-soc-row ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`;
+  const cls = `mw-soc-row ${detailHtml ? "is-clickable" : ""}`;
   const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
+  const row = detailHtml ? `data-row="${escAttr(id)}"` : "";
   const sources = (item.sources || []).join(", ");
-  const summary = (item.summary || "").trim();
-  return `<li class="${cls}">
+  return `<li class="${cls}" ${row}>
     <div class="mw-soc-summary" ${handler}>
       ${tickerPill(item.ticker, "sm")}
       <span class="mw-soc-mentions mw-mono">${item.mentions || 0}</span>
@@ -474,7 +487,7 @@ function renderSocialItem(item, prefix) {
       <span class="mw-soc-sources mw-mono">${escHtml(sources)}</span>
       ${caret(hasDetail(item))}
     </div>
-    ${open && detailHtml ? `<div class="mw-soc-detail">${detailHtml}</div>` : ""}
+    ${detailHtml ? `<div class="mw-soc-detail">${detailHtml}</div>` : ""}
   </li>`;
 }
 
@@ -824,13 +837,8 @@ function renderModal() {
       others.length ? `<ul class="mw-archive-list">${items}</ul>` : `<p class="mw-empty">No prior briefs yet.</p>`);
   }
   if (MODAL === "glossary") {
-    const entries = Object.entries(GLOSSARY).sort((a, b) => a[0].localeCompare(b[0]));
-    return modalShell("Glossary", "Hover any underlined term in the brief to see this inline.", `
-      <dl class="mw-glossary-list">${entries.map(([k, v]) => `
-        <div class="mw-glossary-row">
-          <dt class="mw-glossary-term">${escHtml(k)}</dt>
-          <dd class="mw-glossary-def">${escHtml(v)}</dd>
-        </div>`).join("")}</dl>`);
+    return modalShell("Glossary", "Hover any underlined term in the brief to see this inline.",
+      `<dl class="mw-glossary-list">${GLOSSARY_HTML}</dl>`);
   }
   return "";
 }
@@ -868,78 +876,211 @@ function formatTime(s) {
   } catch { return s; }
 }
 
+// Read string-or-{plain,pro} text per the active MODE.
+function pickModeText(v) {
+  if (v == null) return "";
+  if (typeof v === "string") return v;
+  if (typeof v === "object") return v[MODE] || v.plain || v.pro || "";
+  return "";
+}
+
 // ============================================================
-//  RENDER + EVENTS
+//  RENDER + EVENTS — single mount, then targeted DOM updates
 // ============================================================
-function render() {
+const PANE_CACHE = new Map();             // key "${tab}|${MODE}" -> html string
+let NORMALIZED = null;
+let NORMALIZED_REF = null;
+
+function getNormalized() {
+  if (NORMALIZED_REF !== ACTIVE_BRIEF) {
+    NORMALIZED = normalize(ACTIVE_BRIEF);
+    NORMALIZED_REF = ACTIVE_BRIEF;
+    PANE_CACHE.clear();
+  }
+  return NORMALIZED;
+}
+
+function paneHtmlFor(tab) {
+  const key = tab + "|" + MODE;
+  let html = PANE_CACHE.get(key);
+  if (html === undefined) {
+    const b = getNormalized();
+    if (tab === "macro")        html = renderMacroPane(b);
+    else if (tab === "stocks")  html = renderStocksPane(b);
+    else if (tab === "options") html = renderOptionsPane(b);
+    else if (tab === "crypto")  html = renderCryptoPane(b);
+    else html = "";
+    PANE_CACHE.set(key, html);
+  }
+  return html;
+}
+
+// Initial mount: build the page DOM once. After this, all interactions are
+// targeted updates (class toggles, single-section innerHTML swaps).
+function mount() {
   const root = document.getElementById("root");
   if (!ACTIVE_BRIEF) {
     root.innerHTML = `<p class="mw-empty">No brief loaded.</p>`;
     return;
   }
-  const b = normalize(ACTIVE_BRIEF);
-
-  let pane = "";
-  if (TAB === "macro")   pane = renderMacroPane(b);
-  if (TAB === "stocks")  pane = renderStocksPane(b);
-  if (TAB === "options") pane = renderOptionsPane(b);
-  if (TAB === "crypto")  pane = renderCryptoPane(b);
-
+  const b = getNormalized();
   root.innerHTML = `
-    ${renderMasthead(b)}
-    ${renderMarketStatus(b.market_status)}
-    ${renderTopActions(b.actions)}
-    ${renderTabs(TAB)}
-    <main class="mw-main">${pane}</main>
-    <footer class="mw-footer">
-      <div class="mw-footer-rule"></div>
-      <p class="mw-footer-text">Not investment advice.</p>
-    </footer>
-    ${renderModal()}
+    <div id="mw-shell">
+      <div id="mw-masthead">${renderMasthead(b)}</div>
+      <div id="mw-mstatus">${renderMarketStatus(b.market_status)}</div>
+      <div id="mw-topactions">${renderTopActions(b.actions)}</div>
+      <div id="mw-tabs">${renderTabs(TAB)}</div>
+      <main id="mw-main" class="mw-main">${paneHtmlFor(TAB)}</main>
+      <footer class="mw-footer">
+        <div class="mw-footer-rule"></div>
+        <p class="mw-footer-text">Not investment advice.</p>
+      </footer>
+    </div>
+    <div id="mw-modal-host"></div>
   `;
-  bindEvents();
+  // Single delegated click handler at root.
+  root.addEventListener("click", onRootClick);
 }
 
-function bindEvents() {
-  document.querySelectorAll(".mw-tab").forEach(b =>
-    b.addEventListener("click", () => { TAB = b.dataset.tab; OPEN_ID = null; render(); }));
-  document.querySelectorAll("[data-toggle]").forEach(el =>
-    el.addEventListener("click", e => {
-      const id = el.dataset.toggle;
-      OPEN_ID = OPEN_ID === id ? null : id;
-      render();
-    }));
-  document.querySelectorAll("[data-modal]").forEach(b =>
-    b.addEventListener("click", () => { MODAL = b.dataset.modal; render(); }));
-  document.querySelectorAll("[data-modal-close]").forEach(b =>
-    b.addEventListener("click", e => { if (e.target === b) { MODAL = null; render(); } }));
+// One click handler. Walk closest-by-attribute to find the action.
+function onRootClick(e) {
+  const t = e.target;
+  let el;
+
+  // Modal close (overlay click or close button)
+  el = t.closest("[data-modal-close]");
+  if (el && (t === el || t.classList.contains("mw-overlay") || t.classList.contains("mw-modal-close"))) {
+    closeModal();
+    return;
+  }
+
+  el = t.closest("[data-tab]");
+  if (el) { showTab(el.dataset.tab); return; }
+
+  el = t.closest("[data-toggle]");
+  if (el) { toggleDetail(el.dataset.toggle); return; }
+
+  el = t.closest("[data-modal]");
+  if (el) { openModal(el.dataset.modal); return; }
+
+  el = t.closest("[data-mode]");
+  if (el) { setMode(el.dataset.mode); return; }
+
+  el = t.closest("[data-theme]");
+  if (el) { setTheme(el.dataset.theme); return; }
+
+  el = t.closest("[data-archive-date]");
+  if (el) { selectArchive(el.dataset.archiveDate); return; }
+}
+
+function showTab(name) {
+  if (TAB === name) return;
+  TAB = name;
+  // Update pill state on tab buttons in place.
+  const tabs = document.querySelectorAll("#mw-tabs .mw-tab");
+  tabs.forEach(b => {
+    const active = b.dataset.tab === name;
+    b.classList.toggle("is-active", active);
+    b.setAttribute("aria-selected", String(active));
+  });
+  document.getElementById("mw-main").innerHTML = paneHtmlFor(name);
+  OPEN_ID = null;
+}
+
+function setMode(m) {
+  if (MODE === m) return;
+  MODE = m;
+  try { localStorage.setItem("mw_detail_mode", m); } catch {}
+  PANE_CACHE.clear();   // detail strings depend on MODE
+  // Update mode toggle buttons
   document.querySelectorAll("[data-mode]").forEach(b =>
-    b.addEventListener("click", () => { setMode(b.dataset.mode); render(); }));
+    b.classList.toggle("is-active", b.dataset.mode === m));
+  // Refresh the only mode-sensitive parts: masthead headline, top actions, current pane.
+  const b = getNormalized();
+  const masthead = document.getElementById("mw-masthead");
+  if (masthead) masthead.innerHTML = renderMasthead(b);
+  const topa = document.getElementById("mw-topactions");
+  if (topa) topa.innerHTML = renderTopActions(b.actions);
+  document.getElementById("mw-main").innerHTML = paneHtmlFor(TAB);
+  OPEN_ID = null;
+}
+
+function setTheme(t) {
+  if (THEME === t) return;
+  THEME = t;
+  try { localStorage.setItem("mw_theme", t); } catch {}
+  document.documentElement.dataset.theme = t;
+  // Pure CSS theme switch — no re-render. Just update toggle buttons.
   document.querySelectorAll("[data-theme]").forEach(b =>
-    b.addEventListener("click", () => { setTheme(b.dataset.theme); render(); }));
-  document.querySelectorAll(".mw-archive-item").forEach(item =>
-    item.addEventListener("click", () => {
-      const d = item.dataset.archiveDate;
-      const found = (DATA.briefs || []).find(x => x.date === d);
-      if (found) { ACTIVE_BRIEF = found; MODAL = null; TAB = "macro"; OPEN_ID = null; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
-    }));
+    b.classList.toggle("is-active", b.dataset.theme === t));
+}
+
+// One detail open at a time. Toggle the .is-open class on every element with
+// matching data-row (covers the summary row + detail row for tables, and the
+// li/section wrapper for everything else). Detail visibility is driven by CSS.
+function toggleDetail(id) {
+  if (OPEN_ID && OPEN_ID !== id) {
+    document.querySelectorAll('[data-row="' + cssEscape(OPEN_ID) + '"]')
+      .forEach(el => el.classList.remove("is-open"));
+  }
+  const willOpen = OPEN_ID !== id;
+  OPEN_ID = willOpen ? id : null;
+  document.querySelectorAll('[data-row="' + cssEscape(id) + '"]')
+    .forEach(el => el.classList.toggle("is-open", willOpen));
+}
+
+function cssEscape(s) {
+  if (window.CSS && CSS.escape) return CSS.escape(s);
+  return String(s).replace(/(["\\])/g, "\\$1");
+}
+
+function openModal(name) {
+  MODAL = name;
+  const host = document.getElementById("mw-modal-host");
+  if (host) host.innerHTML = renderModal();
+}
+
+function closeModal() {
+  MODAL = null;
+  const host = document.getElementById("mw-modal-host");
+  if (host) host.innerHTML = "";
+}
+
+function selectArchive(date) {
+  const found = (DATA.briefs || []).find(x => x.date === date);
+  if (!found) return;
+  ACTIVE_BRIEF = found;
+  closeModal();
+  TAB = "macro";
+  OPEN_ID = null;
+  // Brief changed -> normalize cache invalidates -> pane cache clears in getNormalized
+  const b = getNormalized();
+  document.getElementById("mw-masthead").innerHTML = renderMasthead(b);
+  document.getElementById("mw-mstatus").innerHTML = renderMarketStatus(b.market_status);
+  document.getElementById("mw-topactions").innerHTML = renderTopActions(b.actions);
+  document.getElementById("mw-tabs").innerHTML = renderTabs(TAB);
+  document.getElementById("mw-main").innerHTML = paneHtmlFor(TAB);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && MODAL) { MODAL = null; render(); }
+  if (e.key === "Escape" && MODAL) closeModal();
 });
 
 // ============================================================
 //  BOOT
 // ============================================================
-fetch("briefs.json", { cache: "no-store" })
+// Drop cache:no-store so the browser uses its HTTP cache + ETag/Last-Modified
+// revalidation. GitHub Pages serves both, so returning visitors get an instant
+// 304 instead of re-downloading the full briefs.json.
+fetch("briefs.json")
   .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
   .then(data => {
     DATA = data;
     const briefs = (data.briefs || []).slice().sort((a, b) => b.date.localeCompare(a.date));
     DATA.briefs = briefs;
     ACTIVE_BRIEF = briefs[0] || null;
-    render();
+    mount();
   })
   .catch(err => {
     document.getElementById("root").innerHTML = `<p class="mw-empty">Could not load briefs: ${escHtml(err)}</p>`;
