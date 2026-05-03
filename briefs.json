@@ -17,19 +17,19 @@
           "verb": "WATCH",
           "target": "PODD",
           "text": "Short setup is live in the $170 to $175 zone. Need a Monday rejection candle before sizing.",
-          "detail": "PODD makes insulin pumps and reports earnings Wednesday before the open. It crossed into our short trigger zone Friday but closed green, not red, so the setup is unconfirmed. What to watch Monday: a candle with a long upper wick that closes in the lower third of the range — that is the rejection. If it prints, the trade is short on the close. Robinhood: search PODD, Trade Options, pick the May 8 weekly $170 put, Buy to Open, Limit at the mid quote, Good for day. Stop is a price alert at $176.50 on the underlying — close the put if PODD touches it. Skip the trade if Monday closes green again."
+          "detail": "PODD makes insulin pumps and reports earnings Wednesday before the open. It crossed into our short trigger zone Friday but closed green, not red, so the setup is unconfirmed. What to watch Monday: a candle with a long upper wick that closes in the lower third of the range \u2014 that is the rejection. If it prints, the trade is short on the close. Robinhood: search PODD, Trade Options, pick the May 8 weekly $170 put, Buy to Open, Limit at the mid quote, Good for day. Stop is a price alert at $176.50 on the underlying \u2014 close the put if PODD touches it. Skip the trade if Monday closes green again."
         },
         {
           "verb": "WATCH",
           "target": "ARM",
-          "text": "Wednesday earnings after the close. AMD prints same evening — together they set the AI semi tone for the week.",
+          "text": "Wednesday earnings after the close. AMD prints same evening \u2014 together they set the AI semi tone for the week.",
           "detail": "ARM designs the chips inside iPhones and most Android devices and licenses the architecture to AI companies. Stock is up 8.7% on the week into the print. Implied move on the option chain is roughly +/-11%, so options premium is rich. Two ways to play: buy a defined-risk debit call spread for upside, or sit out and wait for the post-earnings reaction. Robinhood for a directional bull bet: search ARM, Trade Options, May 16 expiry, build a vertical: Buy the $215 call, Sell the $230 call, Limit a small net debit, Good for day. Max loss is the debit you pay, max profit is $15 per spread minus debit. Don't size larger than 1% of your account."
         },
         {
           "verb": "NO ACTION",
           "target": "Indices",
           "text": "SPY and QQQ both more than 2 ATR above their 20-day MA. New long entries are statistically late.",
-          "detail": "SPY at 720, QQQ at 674 — both at fresh 52-week highs with RSI above 79. When indices are this extended, entries from here historically underperform a pullback entry by 60 to 80 percent over the next 10 sessions. Action is to wait, not to chase. If you already hold index ETFs, the FOMO gate does not say sell — it says don't add. What would change the read: a 3 to 5 percent index pullback that touches the 20-day MA (around SPY 698, QQQ 638). That is the reset that gets new longs back on."
+          "detail": "SPY at 720, QQQ at 674 \u2014 both at fresh 52-week highs with RSI above 79. When indices are this extended, entries from here historically underperform a pullback entry by 60 to 80 percent over the next 10 sessions. Action is to wait, not to chase. If you already hold index ETFs, the FOMO gate does not say sell \u2014 it says don't add. What would change the read: a 3 to 5 percent index pullback that touches the 20-day MA (around SPY 698, QQQ 638). That is the reset that gets new longs back on."
         }
       ],
       "macro": {
@@ -39,21 +39,21 @@
             "last": 720.65,
             "rsi": 79.1,
             "note": "above all moving averages, at 52-week high",
-            "detail": "SPY tracks the S&P 500 — the 500 largest US companies. RSI of 79 is the highest reading since November 2024. The last three times SPY crossed RSI 78, the index pulled back 3 to 5 percent within 10 sessions. This is not a sell signal — it is a position-sizing signal. New buys here are statistically late. What to watch: the 20-day moving average at 698 — a touch there is the first logical support and where a fresh entry resets."
+            "detail": "SPY tracks the S&P 500 \u2014 the 500 largest US companies. RSI of 79 is the highest reading since November 2024. The last three times SPY crossed RSI 78, the index pulled back 3 to 5 percent within 10 sessions. This is not a sell signal \u2014 it is a position-sizing signal. New buys here are statistically late. What to watch: the 20-day moving average at 698 \u2014 a touch there is the first logical support and where a fresh entry resets."
           },
           {
             "ticker": "QQQ",
             "last": 674.15,
             "rsi": 82.8,
             "note": "at 52-week high",
-            "detail": "QQQ tracks the 100 largest non-financial Nasdaq names — heavy in Apple, Microsoft, Nvidia, Google, Amazon, Meta. RSI 82.8 is more extreme than SPY. Tech leadership is intact but stretched. Watch the 668 level Monday — it is the rising 5-day MA and the first logical support if profit-taking starts. Strong holds here are usually fine; new entries are not."
+            "detail": "QQQ tracks the 100 largest non-financial Nasdaq names \u2014 heavy in Apple, Microsoft, Nvidia, Google, Amazon, Meta. RSI 82.8 is more extreme than SPY. Tech leadership is intact but stretched. Watch the 668 level Monday \u2014 it is the rising 5-day MA and the first logical support if profit-taking starts. Strong holds here are usually fine; new entries are not."
           },
           {
             "ticker": "IWM",
             "last": 279.28,
             "rsi": 72.3,
             "note": "at 52-week high",
-            "detail": "IWM tracks the Russell 2000 — 2000 small-cap US companies. Small caps finally joining the rally is a breadth-positive read. But IWM at RSI 72 with only 4 sessions of leadership is fragile. Need 2 weeks of relative strength versus SPY to confirm a real rotation into small caps. Until then, treat the move as suspect. No new IWM entries above $280."
+            "detail": "IWM tracks the Russell 2000 \u2014 2000 small-cap US companies. Small caps finally joining the rally is a breadth-positive read. But IWM at RSI 72 with only 4 sessions of leadership is fragile. Need 2 weeks of relative strength versus SPY to confirm a real rotation into small caps. Until then, treat the move as suspect. No new IWM entries above $280."
           }
         ],
         "vol_yields": {
@@ -69,34 +69,34 @@
             {
               "etf": "XLE",
               "score": 13.1,
-              "detail": "XLE is the energy sector ETF — Exxon, Chevron, ConocoPhillips. Energy outperforming while indices print all-time highs is unusual and typical of late-cycle rotation. Watch crude above $103 to confirm the bid is real, not a one-week head fake. If you want exposure: XLE pullback to $56.50 (the rising 20-day MA) is the cleaner entry, not chasing $58.85."
+              "detail": "XLE is the energy sector ETF \u2014 Exxon, Chevron, ConocoPhillips. Energy outperforming while indices print all-time highs is unusual and typical of late-cycle rotation. Watch crude above $103 to confirm the bid is real, not a one-week head fake. If you want exposure: XLE pullback to $56.50 (the rising 20-day MA) is the cleaner entry, not chasing $58.85."
             },
             {
               "etf": "XLP",
               "score": 10.75,
-              "detail": "XLP is consumer staples — Procter & Gamble, Coca-Cola, Walmart. Defensive group leading at indices ATHs is a textbook risk-off tell. Money rotating out of growth into safety, even as the tape stays bid. Treat XLP leadership as a yellow flag for the broader risk trade, not a reason to chase staples here."
+              "detail": "XLP is consumer staples \u2014 Procter & Gamble, Coca-Cola, Walmart. Defensive group leading at indices ATHs is a textbook risk-off tell. Money rotating out of growth into safety, even as the tape stays bid. Treat XLP leadership as a yellow flag for the broader risk trade, not a reason to chase staples here."
             },
             {
               "etf": "XLRE",
               "score": 9.29,
-              "detail": "XLRE is real estate / REITs. Rate-sensitive group bidding up means rates are expected to fall. Real estate up but lagging fundamentals — caught between the rate tailwind and weak commercial demand. More signal about the bond market's expectation than about real estate itself."
+              "detail": "XLRE is real estate / REITs. Rate-sensitive group bidding up means rates are expected to fall. Real estate up but lagging fundamentals \u2014 caught between the rate tailwind and weak commercial demand. More signal about the bond market's expectation than about real estate itself."
             }
           ],
           "laggards_5d": [
             {
               "etf": "XLK",
               "score": -9.06,
-              "detail": "XLK is the tech sector ETF. Tech weakness while QQQ prints highs means mega-caps (Apple, Microsoft, Nvidia) are carrying. Equal-weight tech is selling off underneath. The dispersion is the story — narrow leadership rallies historically don't last. Watch breadth Monday: if the equal-weight sells more, expect mega-caps to follow within 5 sessions."
+              "detail": "XLK is the tech sector ETF. Tech weakness while QQQ prints highs means mega-caps (Apple, Microsoft, Nvidia) are carrying. Equal-weight tech is selling off underneath. The dispersion is the story \u2014 narrow leadership rallies historically don't last. Watch breadth Monday: if the equal-weight sells more, expect mega-caps to follow within 5 sessions."
             },
             {
               "etf": "XLY",
               "score": -0.8,
-              "detail": "XLY is consumer discretionary — Amazon, Tesla, Home Depot. Flat-to-down at ATHs while staples lead is a consumer-spending warning. Watch UMich Sentiment print Friday for confirmation. If sentiment slips and discretionary keeps lagging, that is a recession-tilt signal."
+              "detail": "XLY is consumer discretionary \u2014 Amazon, Tesla, Home Depot. Flat-to-down at ATHs while staples lead is a consumer-spending warning. Watch UMich Sentiment print Friday for confirmation. If sentiment slips and discretionary keeps lagging, that is a recession-tilt signal."
             },
             {
               "etf": "XLU",
               "score": -3.55,
-              "detail": "XLU is utilities. Utilities lagging while real estate leads is unusual — both are rate-sensitive. Likely a function of the AI-power-demand narrative cooling. Not actionable on its own."
+              "detail": "XLU is utilities. Utilities lagging while real estate leads is unusual \u2014 both are rate-sensitive. Likely a function of the AI-power-demand narrative cooling. Not actionable on its own."
             }
           ],
           "read": "Late-cycle rotation. Energy and staples leading, tech and discretionary lagging despite ATHs is a defensive tilt under the surface."
@@ -105,7 +105,7 @@
           {
             "date": "Mon May 4",
             "event": "Fed Williams speech",
-            "detail": "John Williams is NY Fed President and a core-Fed centrist. Watch for any pushback on the market's three-cuts-by-year-end pricing. If he sounds hawkish (pushes back on cut count), expect a brief equity dip and a bond-yield pop. If he sounds dovish (validates cuts), the bid continues. No trade on this — just calibrate expectations for Tuesday's data."
+            "detail": "John Williams is NY Fed President and a core-Fed centrist. Watch for any pushback on the market's three-cuts-by-year-end pricing. If he sounds hawkish (pushes back on cut count), expect a brief equity dip and a bond-yield pop. If he sounds dovish (validates cuts), the bid continues. No trade on this \u2014 just calibrate expectations for Tuesday's data."
           },
           {
             "date": "Mon May 4",
@@ -114,18 +114,18 @@
           },
           {
             "date": "Tue May 5",
-            "event": "JOLTS · ISM Services · Fed Barr",
+            "event": "JOLTS \u00b7 ISM Services \u00b7 Fed Barr",
             "detail": "Triple-event day. JOLTS (Job Openings and Labor Turnover Survey) consensus 7.6M; ISM Services consensus 53.4. Either coming in soft and the dovish bid returns. Both hot and rate-cut pricing gets pulled forward. These prints typically move SPY 0.5 to 1 percent in the first 30 minutes."
           },
           {
             "date": "Wed May 6",
-            "event": "AMD · ARM earnings (after close)",
+            "event": "AMD \u00b7 ARM earnings (after close)",
             "detail": "The print of the week for AI semis. AMD reports first, ARM follows. AMD beat and ARM matched: semis bid through Thursday open. Both miss: the AI-capex narrative cracks visibly. Expect 5 to 10 percent moves on each name post-print. NVDA and AVGO will trade in sympathy."
           },
           {
             "date": "Thu May 7",
             "event": "Initial Jobless Claims",
-            "detail": "Weekly labor read. Consensus 220K. A spike above 240K would shift the labor narrative from 'tight' to 'softening' — rate cuts get pulled forward, growth stocks bid. A print under 210K and the Fed's hawkish pause logic strengthens."
+            "detail": "Weekly labor read. Consensus 220K. A spike above 240K would shift the labor narrative from 'tight' to 'softening' \u2014 rate cuts get pulled forward, growth stocks bid. A print under 210K and the Fed's hawkish pause logic strengthens."
           },
           {
             "date": "Fri May 8",
@@ -138,13 +138,13 @@
             "ticker": "AMD",
             "date": "Wed May 6",
             "note": "AI semi sentiment driver. Implied move ~9.5%.",
-            "detail": "Advanced Micro Devices — Nvidia's main AI-GPU competitor. Reports after the close Wednesday. Whisper number is above consensus on data-center segment. Implied move is ±9.5% by Friday. If you want directional exposure into the print: a debit call spread (Buy 5/16 365C / Sell 5/16 380C) caps risk to the debit. Better setup is to wait for the post-print reaction — chase strength only on a >5% move with volume confirmation Thursday morning. Avoid naked options into earnings; IV crush eats the long-call premium even on a beat."
+            "detail": "Advanced Micro Devices \u2014 Nvidia's main AI-GPU competitor. Reports after the close Wednesday. Whisper number is above consensus on data-center segment. Implied move is \u00b19.5% by Friday. If you want directional exposure into the print: a debit call spread (Buy 5/16 365C / Sell 5/16 380C) caps risk to the debit. Better setup is to wait for the post-print reaction \u2014 chase strength only on a >5% move with volume confirmation Thursday morning. Avoid naked options into earnings; IV crush eats the long-call premium even on a beat."
           },
           {
             "ticker": "ARM",
             "date": "Wed May 6",
             "note": "Wednesday print. Implied move ~11%.",
-            "detail": "ARM Holdings — chip architecture licensor (every iPhone runs an ARM design). First print since the licensing model concerns. Watch royalty rate guidance — that is the swing variable for the multiple. Implied move is ±11% so options premium is expensive. Best risk/reward is a debit vertical or sitting out. Robinhood call-spread example: search ARM > Trade Options > May 16 > Buy 215C, Sell 230C, Limit a small net debit, Good for day."
+            "detail": "ARM Holdings \u2014 chip architecture licensor (every iPhone runs an ARM design). First print since the licensing model concerns. Watch royalty rate guidance \u2014 that is the swing variable for the multiple. Implied move is \u00b111% so options premium is expensive. Best risk/reward is a debit vertical or sitting out. Robinhood call-spread example: search ARM > Trade Options > May 16 > Buy 215C, Sell 230C, Limit a small net debit, Good for day."
           }
         ],
         "action": {
@@ -161,7 +161,7 @@
             "trigger_zone": "$170 to $175 short zone",
             "status": "TRIGGERED",
             "note": "Friday closed green, not red. Need a rejection candle Monday to confirm.",
-            "detail": "Insulet Corp makes the Omnipod insulin pump. Reports earnings Wednesday before the open, so this trade has a 2-day window. Setup is short on a rejection at the $170 to $175 supply zone. Friday closed green inside the zone — that is a yellow light, not a red light. What confirms: Monday opens, runs into the zone, and prints a candle with a long upper wick closing in the lower third of the range. Robinhood execution if the rejection prints: search PODD > Trade Options > May 8 expiry > $170 put > Buy to Open > Limit at mid > Good for day. Set a price alert at $176.50 on PODD — close the put if it triggers. Target is $158 (38.2% retracement of the run). Skip the trade entirely if Monday closes green again — wait for the print."
+            "detail": "Insulet Corp makes the Omnipod insulin pump. Reports earnings Wednesday before the open, so this trade has a 2-day window. Setup is short on a rejection at the $170 to $175 supply zone. Friday closed green inside the zone \u2014 that is a yellow light, not a red light. What confirms: Monday opens, runs into the zone, and prints a candle with a long upper wick closing in the lower third of the range. Robinhood execution if the rejection prints: search PODD > Trade Options > May 8 expiry > $170 put > Buy to Open > Limit at mid > Good for day. Set a price alert at $176.50 on PODD \u2014 close the put if it triggers. Target is $158 (38.2% retracement of the run). Skip the trade entirely if Monday closes green again \u2014 wait for the print."
           },
           {
             "ticker": "HUM",
@@ -170,7 +170,7 @@
             "trigger_zone": "long entry below $228",
             "status": "NEAR",
             "note": "Cooling but still stretched. Wait for a deeper pullback to $228 then $222 stop.",
-            "detail": "Humana — health insurer, defensive earnings winner. Friday's down day is a start but $233 is still 2 ATR above the 20-day MA. Want to see $228 or below before re-engaging long. The setup is a defensive-rotation play: when growth pulls back, money rotates to healthcare insurers. Robinhood: set a price alert at $228 on HUM. When it triggers, search HUM > Buy > Limit $228 > GTC. Stop loss at $222 (Stop Limit, GTC). Target $267."
+            "detail": "Humana \u2014 health insurer, defensive earnings winner. Friday's down day is a start but $233 is still 2 ATR above the 20-day MA. Want to see $228 or below before re-engaging long. The setup is a defensive-rotation play: when growth pulls back, money rotates to healthcare insurers. Robinhood: set a price alert at $228 on HUM. When it triggers, search HUM > Buy > Limit $228 > GTC. Stop loss at $222 (Stop Limit, GTC). Target $267."
           },
           {
             "ticker": "XLE",
@@ -179,7 +179,7 @@
             "trigger_zone": "long entry $56.50 (20-day MA)",
             "status": "FAR",
             "note": "Leading sector but extended. Need a flush to the 20MA before adding.",
-            "detail": "Energy Select Sector ETF — Exxon, Chevron, ConocoPhillips. Sector tape is bid (5-day RS leader) but XLE itself is extended after the run. Patience here. The setup is a pullback long to the rising 20-day MA at $56.50. Robinhood: price alert at $57. When it fires, search XLE > Buy > Limit $56.50 > GTC. Stop $55.10 (Stop Limit, GTC). Target $59.50. Energy can run for weeks once it gets going — adding at the wrong level is how you give back the trend before it works."
+            "detail": "Energy Select Sector ETF \u2014 Exxon, Chevron, ConocoPhillips. Sector tape is bid (5-day RS leader) but XLE itself is extended after the run. Patience here. The setup is a pullback long to the rising 20-day MA at $56.50. Robinhood: price alert at $57. When it fires, search XLE > Buy > Limit $56.50 > GTC. Stop $55.10 (Stop Limit, GTC). Target $59.50. Energy can run for weeks once it gets going \u2014 adding at the wrong level is how you give back the trend before it works."
           },
           {
             "ticker": "TER",
@@ -188,7 +188,7 @@
             "trigger_zone": "fade short above $365",
             "status": "FAR",
             "note": "Post-earnings reversal setup. Short the bounce, not the drop.",
-            "detail": "Teradyne — semiconductor test equipment maker. Last earnings was a miss; the stock bounced but the bounce is selling off. Setup is a short on a failed retest of $365 (the post-earnings high). Currently 5% below the trigger — observation only. If TER rallies to $365 and prints a rejection candle: short via the May 16 $345 put. Stop $385, target $306."
+            "detail": "Teradyne \u2014 semiconductor test equipment maker. Last earnings was a miss; the stock bounced but the bounce is selling off. Setup is a short on a failed retest of $365 (the post-earnings high). Currently 5% below the trigger \u2014 observation only. If TER rallies to $365 and prints a rejection candle: short via the May 16 $345 put. Stop $385, target $306."
           },
           {
             "ticker": "GEHC",
@@ -197,7 +197,7 @@
             "trigger_zone": "fade short above $63",
             "status": "FAR",
             "note": "Failed-bounce short setup. Wait for the retest.",
-            "detail": "GE HealthCare — medical imaging equipment spin-off. Recent earnings reaction was negative; tape is grinding lower. Setup needs a bounce to $63 followed by rejection. Currently 3% below the trigger. No action until it rallies into the zone."
+            "detail": "GE HealthCare \u2014 medical imaging equipment spin-off. Recent earnings reaction was negative; tape is grinding lower. Setup needs a bounce to $63 followed by rejection. Currently 3% below the trigger. No action until it rallies into the zone."
           },
           {
             "ticker": "MO",
@@ -206,42 +206,82 @@
             "trigger_zone": "long entry below $70",
             "status": "FAR",
             "note": "Defensive PEAD long on a pullback.",
-            "detail": "Altria — Marlboro maker. Defensive name, 7%+ dividend yield. Last earnings was a beat; setup is a buy-the-dip into the prior breakout level around $70. Currently 6.5% above the trigger. Just observe — if MO pulls back to $70 in the next two weeks, that is the long entry. Robinhood: price alert at $70.50, then Buy Limit $70, GTC."
+            "detail": "Altria \u2014 Marlboro maker. Defensive name, 7%+ dividend yield. Last earnings was a beat; setup is a buy-the-dip into the prior breakout level around $70. Currently 6.5% above the trigger. Just observe \u2014 if MO pulls back to $70 in the next two weeks, that is the long entry. Robinhood: price alert at $70.50, then Buy Limit $70, GTC."
           }
         ],
         "movers": {
           "gainers": [
             {
               "ticker": "INTC",
-              "last": 99.62,
+              "last": 99.61,
               "chg": 5.42,
               "vol": 158502811,
-              "note": "Highest volume on the tape Friday.",
-              "detail": "Intel — long-suffering CPU maker pivoting to AI/foundry. Up 5.4% Friday on 158M shares (3x average volume). Recent move has been a multi-month base breakout. The reason it is moving: foundry customer wins and rumored AI-chip partnership. Trend is up, sentiment has flipped from bearish to optimistic but still cautious. If you are looking for entry, do not chase $99 — wait for a pullback to $94 (the breakout level it just cleared)."
+              "spark": [
+                65.27,
+                66.78,
+                82.54,
+                84.99,
+                84.52,
+                94.75,
+                94.48,
+                99.62
+              ],
+              "detail": "Intel \u2014 long-suffering CPU maker pivoting to AI/foundry. Up 5.4% Friday on 158M shares (3x average volume). Recent move has been a multi-month base breakout. The reason it is moving: foundry customer wins and rumored AI-chip partnership. Trend is up, sentiment has flipped from bearish to optimistic but still cautious. If you are looking for entry, do not chase $99 \u2014 wait for a pullback to $94 (the breakout level it just cleared).",
+              "note": "Highest volume on the tape Friday."
             },
             {
               "ticker": "AAPL",
               "last": 280.25,
               "chg": 3.32,
               "vol": 79915442,
-              "note": "Volume well above average.",
-              "detail": "Apple — iPhone, services, mac, all of it. Up 3.3% Friday on 80M shares. The move is breakout from a multi-week consolidation. Massive call-option volume Friday (vol/OI 1243 on the 5/4 282.5 puts and other strikes — that is hedging, not a directional bet). Trend is up, sentiment is constructive but extended. AAPL is too far above its 20-day MA to be a clean new long here. Wait for a $268 to $272 pullback if you want shares."
-            },
-            {
-              "ticker": "TSLA",
-              "last": 390.82,
-              "chg": 2.41,
-              "vol": 65338257,
-              "note": "Continued momentum.",
-              "detail": "Tesla — EVs, energy, robotaxi narrative. Up 2.4% Friday on 65M shares. Trend is up over the past month after a deep correction. Sentiment still very polarized — heavy short interest, retail loyalty divided. Watch this week's deliveries data and the unusual put activity at the $397.50 strike (5/4 expiry, vol/OI 743) — that is a hedge against a sell-off. Not a clean entry here either."
+              "spark": [
+                273.17,
+                273.43,
+                271.06,
+                267.61,
+                270.71,
+                270.17,
+                271.35,
+                280.14
+              ],
+              "detail": "Apple \u2014 iPhone, services, mac, all of it. Up 3.3% Friday on 80M shares. The move is breakout from a multi-week consolidation. Massive call-option volume Friday (vol/OI 1243 on the 5/4 282.5 puts and other strikes \u2014 that is hedging, not a directional bet). Trend is up, sentiment is constructive but extended. AAPL is too far above its 20-day MA to be a clean new long here. Wait for a $268 to $272 pullback if you want shares.",
+              "note": "Volume well above average."
             },
             {
               "ticker": "SOFI",
               "last": 16.43,
               "chg": 2.05,
               "vol": 79288511,
-              "note": "Above-average volume.",
-              "detail": "SoFi Technologies — digital bank and student-loan refi. Up 2% Friday on 79M shares (very heavy for SoFi). Trend is sideways-to-up after a long base. Sentiment is mixed — analysts skeptical, retail bullish. Watch for either a clean break above $17 (next resistance) or a fade back to $15.50 (support). Both are tradeable, but only above $17 with volume."
+              "spark": [
+                19.06,
+                18.32,
+                18.44,
+                18.76,
+                18.36,
+                15.53,
+                16.1,
+                16.43
+              ],
+              "detail": "SoFi Technologies \u2014 digital bank and student-loan refi. Up 2% Friday on 79M shares (very heavy for SoFi). Trend is sideways-to-up after a long base. Sentiment is mixed \u2014 analysts skeptical, retail bullish. Watch for either a clean break above $17 (next resistance) or a fade back to $15.50 (support). Both are tradeable, but only above $17 with volume.",
+              "note": "Above-average volume."
+            },
+            {
+              "ticker": "TSLA",
+              "last": 390.82,
+              "chg": 2.41,
+              "vol": 65338257,
+              "spark": [
+                387.51,
+                373.72,
+                376.3,
+                378.67,
+                376.02,
+                372.8,
+                381.63,
+                390.82
+              ],
+              "detail": "Tesla \u2014 EVs, energy, robotaxi narrative. Up 2.4% Friday on 65M shares. Trend is up over the past month after a deep correction. Sentiment still very polarized \u2014 heavy short interest, retail loyalty divided. Watch this week's deliveries data and the unusual put activity at the $397.50 strike (5/4 expiry, vol/OI 743) \u2014 that is a hedge against a sell-off. Not a clean entry here either.",
+              "note": "Continued momentum."
             }
           ],
           "losers": [
@@ -250,32 +290,72 @@
               "last": 87.11,
               "chg": -9.67,
               "vol": 13233915,
-              "note": "Q1 deep dive — margin gains offset by cautious outlook and guidance cut.",
-              "detail": "Clorox — bleach, Pine-Sol, Burt's Bees. Down 9.7% Friday on the earnings reaction. The print itself was OK but management cut full-year guidance citing weak consumer demand. Trend just broke to the downside — defensive name losing -10% on guide is a consumer-spending warning, not just a CLX story. Read this as a yellow flag for staples even though XLP led the week. Don't try to catch the falling knife — let it base."
+              "spark": [
+                96.85,
+                97.66,
+                98.68,
+                96.66,
+                96.6,
+                94.77,
+                96.44,
+                87.11
+              ],
+              "note": "CLX Q1 Deep Dive: Margin Gains Offset by Cautious Outlook and Guidance Reduction",
+              "detail": "Clorox \u2014 bleach, Pine-Sol, Burt's Bees. Down 9.7% Friday on the earnings reaction. The print itself was OK but management cut full-year guidance citing weak consumer demand. Trend just broke to the downside \u2014 defensive name losing -10% on guide is a consumer-spending warning, not just a CLX story. Read this as a yellow flag for staples even though XLP led the week. Don't try to catch the falling knife \u2014 let it base."
             },
             {
               "ticker": "RIVN",
               "last": 15.02,
               "chg": -8.41,
               "vol": 53120980,
-              "note": "Q1 results — analysts cutting full-year forecasts.",
-              "detail": "Rivian — EV maker, mostly trucks. Down 8.4% Friday on 53M shares after Q1 results came in below the lowered bar. Cash burn is the problem, not the product. Trend is down, sentiment is fully bearish. This is a 'wait for capitulation' chart — no setup here. If RIVN flushes below $14 on heavy volume, that is the level to revisit for a bounce trade."
+              "spark": [
+                17.74,
+                16.95,
+                16.52,
+                16.72,
+                16.14,
+                16.06,
+                16.4,
+                15.02
+              ],
+              "note": "Rivian Automotive, Inc. (NASDAQ:RIVN) First-Quarter Results: Here's What Analysts Are Forecasting For This Year",
+              "detail": "Rivian \u2014 EV maker, mostly trucks. Down 8.4% Friday on 53M shares after Q1 results came in below the lowered bar. Cash burn is the problem, not the product. Trend is down, sentiment is fully bearish. This is a 'wait for capitulation' chart \u2014 no setup here. If RIVN flushes below $14 on heavy volume, that is the level to revisit for a bounce trade."
             },
             {
               "ticker": "NIO",
               "last": 5.91,
               "chg": -7.51,
               "vol": 60943851,
-              "note": "Cooling after recent gains.",
-              "detail": "NIO — China EV maker. Down 7.5% Friday on 60M shares. Recent run-up was hope-based; this is the give-back. Trend is sideways with high volatility. China EV names trade as a basket — XPEV, LI, NIO move together. Sentiment is bearish on China demand. Setup needs a flush to $5.50 followed by a base before any long is interesting."
+              "spark": [
+                6.48,
+                6.28,
+                6.21,
+                6.23,
+                6.36,
+                6.39,
+                6.39,
+                5.91
+              ],
+              "note": "Assessing NIO (NIO) Valuation As Shares Cool After Recent Gains",
+              "detail": "NIO \u2014 China EV maker. Down 7.5% Friday on 60M shares. Recent run-up was hope-based; this is the give-back. Trend is sideways with high volatility. China EV names trade as a basket \u2014 XPEV, LI, NIO move together. Sentiment is bearish on China demand. Setup needs a flush to $5.50 followed by a base before any long is interesting."
             },
             {
               "ticker": "SYK",
               "last": 294.73,
               "chg": -6.47,
               "vol": 3969275,
-              "note": "No headline catalyst flagged.",
-              "detail": "Stryker — orthopedic and surgical devices. Down 6.5% Friday on light volume relative to size — likely a sympathy move with healthcare names. No specific catalyst surfaced in the news scan. Trend was up, this is the first material down day. If SYK holds the $290 level Monday, the trend is intact. Below $290 and the read changes — wait for the close."
+              "spark": [
+                329.35,
+                329.65,
+                327.51,
+                329.01,
+                321.43,
+                315.13,
+                315.13,
+                294.73
+              ],
+              "detail": "Stryker \u2014 orthopedic and surgical devices. Down 6.5% Friday on light volume relative to size \u2014 likely a sympathy move with healthcare names. No specific catalyst surfaced in the news scan. Trend was up, this is the first material down day. If SYK holds the $290 level Monday, the trend is intact. Below $290 and the read changes \u2014 wait for the close.",
+              "note": "No headline catalyst flagged."
             }
           ]
         },
@@ -317,31 +397,31 @@
           {
             "ticker": "SPY",
             "vol_oi": 5618,
-            "context": "May 4 puts $732 — index hedging flow",
-            "detail": "Vol/OI of 5618× on the May 4 $732 puts is extreme. Spot is $720.65, so this is an out-of-the-money put. Read this as portfolio managers buying short-dated downside hedges into Monday — protection, not a directional bet. Standard month-end hedge behavior with indices at ATHs. Not a tradeable signal on its own; just confirms the market is nervous up here."
+            "context": "May 4 puts $732.0 \u00b7 4 unusual strike(s)",
+            "detail": "Vol/OI of 5618\u00d7 on the May 4 $732 puts is extreme. Spot is $720.65, so this is an out-of-the-money put. Read this as portfolio managers buying short-dated downside hedges into Monday \u2014 protection, not a directional bet. Standard month-end hedge behavior with indices at ATHs. Not a tradeable signal on its own; just confirms the market is nervous up here."
           },
           {
             "ticker": "NVDA",
             "vol_oi": 4932,
-            "context": "May 6 calls $202.50 — pre-earnings positioning",
-            "detail": "Nvidia — the AI chip leader. Vol/OI 4932× on the May 6 $202.50 calls. Spot is $198.45. AMD reports Wednesday and AI-semi sentiment moves NVDA in sympathy. This flow is bullish positioning into Wednesday's print. If you want a play: a small May 16 debit call spread (Buy 200C / Sell 210C). Don't naked-long NVDA calls into AMD's print — IV crush will eat the premium even if NVDA goes up."
+            "context": "May 6 calls $202.5 \u00b7 8 unusual strike(s)",
+            "detail": "Nvidia \u2014 the AI chip leader. Vol/OI 4932\u00d7 on the May 6 $202.50 calls. Spot is $198.45. AMD reports Wednesday and AI-semi sentiment moves NVDA in sympathy. This flow is bullish positioning into Wednesday's print. If you want a play: a small May 16 debit call spread (Buy 200C / Sell 210C). Don't naked-long NVDA calls into AMD's print \u2014 IV crush will eat the premium even if NVDA goes up."
           },
           {
             "ticker": "QQQ",
             "vol_oi": 3083,
-            "context": "May 5 puts $676 — index hedging flow",
-            "detail": "Same pattern as SPY puts. QQQ tech-specific hedge buying ahead of Monday open. Spot $674, hedge at $676 puts is near-the-money — institutional protection on the long-only book. Not a directional signal."
+            "context": "May 5 puts $676.0 \u00b7 3 unusual strike(s)",
+            "detail": "Same pattern as SPY puts. QQQ tech-specific hedge buying ahead of Monday open. Spot $674, hedge at $676 puts is near-the-money \u2014 institutional protection on the long-only book. Not a directional signal."
           },
           {
             "ticker": "AAPL",
             "vol_oi": 2109,
-            "context": "May 4 puts $287.50 — defensive after Friday's run",
+            "context": "May 4 puts $287.5 \u00b7 4 unusual strike(s)",
             "detail": "Apple ran 3.3% Friday and put volume is heavy at the $287.50 strike for Monday. Spot is $280. Read: hedging the gain, not betting on a crash. Probably fund managers locking in profits without selling shares. Confirms AAPL is overbought near-term."
           },
           {
             "ticker": "TSLA",
             "vol_oi": 742,
-            "context": "May 4 puts $397.50 — single-strike protection",
+            "context": "May 4 puts $397.5 \u00b7 1 unusual strike(s)",
             "detail": "Tesla put flow concentrated in one strike for Monday expiry. Spot $390.82, strike $397.50. Likely a hedge against an unexpected delivery-data print Monday or a general profit-protection trade. Not actionable alone."
           }
         ],
@@ -350,24 +430,330 @@
             "ticker": "AMD",
             "date": "Wed May 6",
             "note": "AI semi sentiment driver. IV elevated. Implied move ~9.5%.",
-            "detail": "AMD options are pricing a ±9.5% move by Friday close. That is rich vs. AMD's average earnings move (~6%). Best vehicles: debit call spread (Buy 5/16 365C / Sell 5/16 380C) for upside, or a short iron condor if you think the move stays within the implied range. Avoid naked long calls — IV crush will eat 30-50% of the premium even on a beat."
+            "detail": "AMD options are pricing a \u00b19.5% move by Friday close. That is rich vs. AMD's average earnings move (~6%). Best vehicles: debit call spread (Buy 5/16 365C / Sell 5/16 380C) for upside, or a short iron condor if you think the move stays within the implied range. Avoid naked long calls \u2014 IV crush will eat 30-50% of the premium even on a beat."
           },
           {
             "ticker": "ARM",
             "date": "Wed May 6",
             "note": "Wednesday print. IV elevated. Implied move ~11%.",
-            "detail": "ARM options pricing ±11%. Tighter spreads in the weekly options than the monthlies — worth checking the May 8 weekly versus May 16 monthly for any spread idea. Calendar play (sell 5/8 weekly, buy 5/16 monthly) makes sense if you have a directional view and want IV-crush exposure."
+            "detail": "ARM options pricing \u00b111%. Tighter spreads in the weekly options than the monthlies \u2014 worth checking the May 8 weekly versus May 16 monthly for any spread idea. Calendar play (sell 5/8 weekly, buy 5/16 monthly) makes sense if you have a directional view and want IV-crush exposure."
           }
         ],
         "leaps": [],
         "action": {
           "tier": "WATCH",
-          "text": "AMD/ARM IV is rich Wednesday. Defined-risk debit spreads only — naked options bleed to IV crush even on a beat."
+          "text": "AMD/ARM IV is rich Wednesday. Defined-risk debit spreads only \u2014 naked options bleed to IV crush even on a beat."
         }
       },
       "crypto": {
         "status": "coming_soon",
         "note": "Crypto regime tracking starts after the next data-collection sprint covers BTC, ETH, SOL, XRP."
+      },
+      "sparks": {
+        "^VIX": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
+        ],
+        "vix": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
+        ],
+        "GEHC": [
+          74.67,
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03
+        ],
+        "SPY": [
+          694.46,
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65
+        ],
+        "QQQ": [
+          628.6,
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15
+        ],
+        "HUM": [
+          196.21,
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63
+        ],
+        "CL=F": [
+          91.28,
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94
+        ],
+        "oil": [
+          91.28,
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94
+        ],
+        "^TNX": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "ten_year": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "DX-Y.NYB": [
+          98.12,
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21
+        ],
+        "dxy": [
+          98.12,
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21
+        ],
+        "MO": [
+          65.62,
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55
+        ],
+        "XLE": [
+          55.95,
+          55.76,
+          56.58,
+          55.02,
+          55.07,
+          55.87,
+          56.54,
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85
+        ],
+        "GC=F": [
+          4825.0,
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4644.5
+        ],
+        "gold": [
+          4825.0,
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4644.5
+        ],
+        "TER": [
+          365.51,
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42
+        ],
+        "PODD": [
+          201.49,
+          202.5,
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04
+        ],
+        "IWM": [
+          268.72,
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28
+        ]
       }
     },
     {
