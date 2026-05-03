@@ -454,15 +454,16 @@ function confidenceBadge(n) {
 function confidenceRow(n, reason) {
   const m = confidenceMeta(n);
   if (!m) return "";
-  const reasonHtml = reason
-    ? `<span class="mw-rec-conf-reason"> Why this score: ${escHtml(reason)}</span>`
-    : "";
+  // Per-rec reason is the actually-useful text. Fall back to the generic
+  // bucket meaning only if no per-rec reason was supplied. The bucket meaning
+  // is also reachable by hovering the badge in the summary row.
+  const text = (reason && reason.trim()) ? reason : m.full;
   return `<div class="mw-rec-debate-row">
     <span class="mw-rec-debate-label mw-rec-debate-label-${m.klass}">Confidence</span>
     <p class="mw-rec-debate-text">
       <span class="mw-rec-conf mw-rec-conf-${m.klass}" style="margin-right:8px">${m.label}</span>
       <span class="mw-mono mw-dim">${m.score} of 100.</span>
-      ${escHtml(m.full)}${reasonHtml}
+      ${escHtml(text)}
     </p>
   </div>`;
 }
