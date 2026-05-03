@@ -329,9 +329,19 @@ function normalize(brief) {
 //  RENDER PIECES
 // ============================================================
 function renderMasthead(b) {
-  const dt = b.date ? formatDate(b.date) : "";
+  // Today's wall-clock date (dynamic). When the brief is from a different
+  // day, surface both so a stale brief is visually obvious.
+  const todayLabel = todayString();
+  const todayKey = todayISO();
+  const briefLabel = b.date ? formatDate(b.date) : "";
+  const isStale = b.date && b.date !== todayKey;
+  const datePart = !briefLabel
+    ? todayLabel
+    : isStale
+      ? `${todayLabel} · Brief from ${briefLabel}`
+      : briefLabel;
   const upd = b.updated ? "Updated " + formatTime(b.updated) : "";
-  const meta = [dt, upd].filter(Boolean).join(" · ");
+  const meta = [datePart, upd].filter(Boolean).join(" · ");
 
   return `<header class="mw-masthead">
     <div class="mw-meta-row">
@@ -972,6 +982,20 @@ function formatTime(s) {
   } catch { return s; }
 }
 
+// Wall-clock helpers for the dynamic "today" label in the masthead.
+function todayISO() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+function todayString() {
+  return new Date().toLocaleDateString("en-US", {
+    weekday: "long", month: "short", day: "numeric", year: "numeric"
+  });
+}
+
 // Read string-or-{plain,pro} text per the active MODE.
 function pickModeText(v) {
   if (v == null) return "";
@@ -1011,6 +1035,18 @@ function paneHtmlFor(tab) {
   return html;
 }
 
+// Re-render the masthead if the wall-clock date has rolled over (i.e. the
+// page has been open across midnight). Cheap one-minute interval, no churn.
+let _lastTodayKey = todayISO();
+function maybeRefreshDate() {
+  const t = todayISO();
+  if (t === _lastTodayKey) return;
+  _lastTodayKey = t;
+  if (!ACTIVE_BRIEF) return;
+  const masthead = document.getElementById("mw-masthead");
+  if (masthead) masthead.innerHTML = renderMasthead(getNormalized());
+}
+
 // Initial mount: build the page DOM once. After this, all interactions are
 // targeted updates (class toggles, single-section innerHTML swaps).
 function mount() {
@@ -1036,6 +1072,8 @@ function mount() {
   `;
   // Single delegated click handler at root.
   root.addEventListener("click", onRootClick);
+  // Tick every minute to catch midnight rollover so the date stays accurate.
+  setInterval(maybeRefreshDate, 60 * 1000);
 }
 
 // One click handler. Walk closest-by-attribute to find the action.
