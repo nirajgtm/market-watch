@@ -230,8 +230,43 @@
         }
       },
       "crypto": {
-        "status": "coming_soon",
-        "note": "Crypto regime tracking starts once daily coverage expands to BTC, ETH, SOL, and XRP."
+        "status": "live",
+        "coins": [
+          {
+            "symbol": "BTC",
+            "last": 78728.43,
+            "change_5d_pct": 3.11,
+            "note": "RSI 70, above 20-day moving average but still below the 200-day. Trend reclaim has not happened yet."
+          },
+          {
+            "symbol": "ETH",
+            "last": 2331.29,
+            "change_5d_pct": 1.83,
+            "note": "RSI 58, above 20-day, below 200-day. Tracking BTC; needs a close above the 200-day to confirm a real trend turn."
+          },
+          {
+            "symbol": "SOL",
+            "last": 84.2,
+            "change_5d_pct": 0.19,
+            "note": "RSI 53, below both 20-day and 200-day. On the Robinhood trending list this weekend."
+          },
+          {
+            "symbol": "XRP",
+            "last": 1.39,
+            "change_5d_pct": 1.04,
+            "note": "RSI 50, below both 20-day and 200-day. Chopping sideways, no clean trigger."
+          },
+          {
+            "symbol": "DOGE",
+            "last": 0.11,
+            "change_5d_pct": 9.22,
+            "note": "RSI 95 — overheated. Mean-revert risk if BTC stalls."
+          }
+        ],
+        "action": {
+          "tier": "WATCH",
+          "text": "BTC and ETH need to reclaim their 200-day moving averages before any real trend trade. DOGE at RSI 95 is technically overheated. No clean entry today."
+        }
       }
     },
     {
