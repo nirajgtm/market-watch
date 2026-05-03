@@ -513,8 +513,20 @@
                   : 'bg-zinc-400';
         return `<li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full ${dot} shrink-0"></span><span>${a}</span></li>`;
       }).join('');
-      // Updated
-      document.getElementById('last-updated').textContent = brief.updated_at ? new Date(brief.updated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : brief.date;
+      // Updated indicator: prefer the live price refresh timestamp when present
+      const lu = document.getElementById('last-updated');
+      if (brief.last_refreshed_at) {
+        const ts = new Date(brief.last_refreshed_at);
+        const t = ts.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+        const ageM = (Date.now() - ts.getTime()) / 60000;
+        const live = ageM < 60;
+        const dotColor = live ? '#34d399' : '#a1a1aa';
+        lu.innerHTML = `<span style="color:${dotColor}">●</span> prices ${t}`;
+      } else if (brief.updated_at) {
+        lu.textContent = new Date(brief.updated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+      } else {
+        lu.textContent = brief.date;
+      }
       // Regime
       setRegimeBadge(brief.regime || 'NEUTRAL', brief.regime_note);
       // Tabs
