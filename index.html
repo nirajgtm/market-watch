@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market Watch</title>
-  <meta name="description" content="Daily market briefs: macro, stocks, options, crypto. General commentary, not investment advice.">
+  <meta name="description" content="Daily market briefs: macro, stocks, options, crypto. Not investment advice.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="mw-page" id="root">
-    <p class="mw-empty">Loading the latest brief…</p>
+    <p class="mw-empty">Loading the latest brief.</p>
   </div>
 
 <script>
@@ -24,38 +24,38 @@
 //  GLOSSARY
 // ============================================================
 const GLOSSARY = {
-  "RSI": "Relative Strength Index. Above 70 is stretched, below 30 is oversold. Momentum gauge, not a timing signal.",
-  "VIX": "S&P 500 30-day implied volatility. Below 15 calm, 15–20 normal, 20–30 elevated, 30+ fearful.",
-  "MA": "Moving Average. The N-day average closing price; trend reference.",
+  "RSI": "Relative Strength Index. Above 70 is stretched, below 30 is oversold. A momentum gauge, not a timing signal.",
+  "VIX": "S&P 500 30-day implied volatility. Below 15 calm, 15 to 20 normal, 20 to 30 elevated, 30+ fearful.",
+  "MA": "Moving Average. The N-day average closing price. Trend reference.",
   "20MA": "20-day moving average. Short-term trend reference. Price too far above is statistically late.",
-  "ATR": "Average True Range. Average daily price swing; used to size stops.",
+  "ATR": "Average True Range. Average daily price swing, used to size stops.",
   "FOMO ceiling": "Price more than 2 ATR above the 20MA. Entries above it are statistically late.",
-  "DXY": "US Dollar Index vs a basket of major currencies. Rising DXY pressures stocks and commodities.",
+  "DXY": "US Dollar Index versus a basket of major currencies. Rising DXY pressures stocks and commodities.",
   "10Y": "10-year Treasury yield. Rising yields tend to pressure long-duration tech.",
   "V/OI": "Volume divided by Open Interest. Above 1 is fresh positioning, not roll activity.",
   "vol/OI": "Same as V/OI. Above 1 means today's volume far exceeds existing open contracts.",
-  "IV": "Implied Volatility. Market's forward vol estimate baked into option prices. Spikes pre-earnings.",
+  "IV": "Implied Volatility. The market's forward vol estimate baked into option prices. Spikes pre-earnings.",
   "LEAP": "Long-dated option, expiry typically 9+ months out. For multi-quarter directional theses.",
-  "LEAPS": "Long-dated options. Expiry > 9 months out.",
+  "LEAPS": "Long-dated options. Expiry over 9 months out.",
   "PEAD": "Post-Earnings Announcement Drift. Beats tend to keep drifting in the surprise direction for weeks.",
   "ETF": "Exchange-Traded Fund. A basket of securities trading like a single stock.",
-  "SPY": "S&P 500 ETF — the market's headline gauge.",
-  "QQQ": "Nasdaq-100 ETF — heavily tech-weighted.",
-  "IWM": "Russell 2000 ETF — the small-cap, risk-on breadth read.",
+  "SPY": "S&P 500 ETF. The market's headline gauge.",
+  "QQQ": "Nasdaq-100 ETF. Heavily tech-weighted.",
+  "IWM": "Russell 2000 ETF. The small-cap, risk-on breadth read.",
   "XLE": "Energy Sector ETF.",
   "XLK": "Technology Sector ETF.",
   "XLV": "Health Care Sector ETF.",
-  "XLU": "Utilities Sector ETF — defensive, yield-oriented.",
+  "XLU": "Utilities Sector ETF. Defensive, yield-oriented.",
   "XLY": "Consumer Discretionary Sector ETF.",
   "XLRE": "Real Estate Sector ETF.",
   "WSB": "r/WallStreetBets. High mention scores often correlate with squeezes and momentum chasing.",
   "ATH": "All-Time High.",
-  "MoM": "Month over Month — change vs prior month.",
+  "MoM": "Month over Month. Change versus prior month.",
   "JOLTS": "Job Openings and Labor Turnover Survey. Monthly US hiring read.",
   "ISM": "Institute for Supply Management. Above 50 expansion, below 50 contraction.",
-  "BTC": "Bitcoin — the largest cryptocurrency.",
-  "ETH": "Ethereum — second-largest crypto, leading smart-contract platform.",
-  "contango": "Futures curve sloping up — later contracts cost more than nearer ones.",
+  "BTC": "Bitcoin. The largest cryptocurrency.",
+  "ETH": "Ethereum. Second-largest crypto, leading smart-contract platform.",
+  "contango": "Futures curve sloping up. Later contracts cost more than nearer ones.",
 };
 
 // ============================================================
@@ -65,7 +65,16 @@ let DATA = null;
 let ACTIVE_BRIEF = null;
 let TAB = "macro";
 let OPEN_ID = null;
-let MODAL = null;     // 'archive' | 'glossary' | 'feedback' | null
+let MODAL = null;
+let MODE = (function() {
+  try { return localStorage.getItem("mw_detail_mode") || "plain"; }
+  catch { return "plain"; }
+})();
+
+function setMode(m) {
+  MODE = m;
+  try { localStorage.setItem("mw_detail_mode", m); } catch {}
+}
 
 // ============================================================
 //  HELPERS
@@ -76,14 +85,14 @@ const escHtml = s => String(s == null ? "" : s)
 const escAttr = s => escHtml(s);
 
 function fmtNum(n, dp = 2) {
-  if (n == null || isNaN(n)) return "—";
+  if (n == null || isNaN(n)) return "-";
   if (Math.abs(n) >= 1000) return Number(n).toLocaleString("en-US", { maximumFractionDigits: dp });
   return Number(n).toFixed(dp);
 }
 
 function fmtPct(n) {
   if (n == null || isNaN(n)) return "";
-  const sign = n > 0 ? "+" : n < 0 ? "−" : "";
+  const sign = n > 0 ? "+" : n < 0 ? "-" : "";
   return `${sign}${Math.abs(n).toFixed(2)}%`;
 }
 
@@ -122,12 +131,13 @@ function actionPill(verb, size) {
   const v = String(verb || "").toUpperCase();
   const tone = v.includes("WATCH") ? "watch"
              : v.includes("NO ACTION") || v === "NONE" ? "none"
-             : v.includes("LONG") ? "long"
-             : v.includes("SHORT") ? "short"
+             : v.includes("LONG") || v.includes("BUY") ? "long"
+             : v.includes("SHORT") || v.includes("SELL") || v.includes("AVOID") ? "short"
              : v.includes("ACTION") ? "action"
              : v.includes("OPEN") ? "open"
              : v.includes("PRE-MARKET") || v.includes("AFTER-HOURS") ? "watch"
              : v.includes("CLOSED") ? "none"
+             : v.includes("TRIM") || v.includes("HOLD") ? "neutral"
              : "neutral";
   return `<span class="mw-pill mw-pill-${tone} ${size === "sm" ? "mw-pill-sm" : ""}">${escHtml(v)}</span>`;
 }
@@ -141,36 +151,65 @@ function statusDot(status) {
   return `<span class="mw-status mw-status-${map[s] || "near"}">${s.replace(/_/g, " ")}</span>`;
 }
 
-function caret(detail) {
-  return detail ? `<span class="mw-caret" aria-hidden="true">▾</span>` : "";
+function caret(present) {
+  return present ? `<span class="mw-caret" aria-hidden="true">v</span>` : "";
+}
+
+// detail can be a plain string (legacy) or an object {plain, pro}.
+function getDetail(item) {
+  if (!item) return "";
+  const d = item.detail;
+  if (!d) return "";
+  if (typeof d === "string") return d;
+  if (typeof d === "object") return d[MODE] || d.plain || d.pro || "";
+  return "";
+}
+function hasDetail(item) {
+  if (!item) return false;
+  const d = item.detail;
+  if (!d) return false;
+  if (typeof d === "string") return true;
+  return !!(d.plain || d.pro);
+}
+
+// rec.action is similarly {plain, pro}
+function getRecAction(rec) {
+  if (!rec) return "";
+  const a = rec.action;
+  if (!a) return "";
+  if (typeof a === "string") return a;
+  return a[MODE] || a.plain || a.pro || "";
 }
 
 function isOpen(id) { return OPEN_ID === id; }
 
-function expandLi(id, summary, detail, extraClass) {
+function expandLi(id, summary, detailHtml, extraClass) {
   const open = isOpen(id);
-  const cls = `mw-li ${extraClass || ""} ${open ? "is-open" : ""} ${detail ? "is-clickable" : ""}`.trim();
-  const det = open && detail ? `<div class="mw-li-detail">${detail}</div>` : "";
-  const handler = detail ? `data-toggle="${escAttr(id)}"` : "";
+  const cls = `mw-li ${extraClass || ""} ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`.trim();
+  const det = open && detailHtml ? `<div class="mw-li-detail">${detailHtml}</div>` : "";
+  const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
   return `<li class="${cls}"><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
 }
 
-function expandRow(id, cells, detail, cols, extraClass) {
+function expandRow(id, cells, detailHtml, cols, extraClass) {
   const open = isOpen(id);
-  const cls = `mw-row ${extraClass || ""} ${open ? "is-open" : ""} ${detail ? "is-clickable" : ""}`.trim();
-  const handler = detail ? `data-toggle="${escAttr(id)}"` : "";
-  const detRow = open && detail
-    ? `<tr class="mw-row-detail"><td colspan="${cols}"><div class="mw-detail-inner">${detail}</div></td></tr>`
+  const cls = `mw-row ${extraClass || ""} ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`.trim();
+  const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
+  const detRow = open && detailHtml
+    ? `<tr class="mw-row-detail"><td colspan="${cols}"><div class="mw-detail-inner">${detailHtml}</div></td></tr>`
     : "";
   return `<tr class="${cls}" ${handler}>${cells}</tr>${detRow}`;
 }
 
+// Render the inline detail block — picks the right text based on MODE.
+function renderDetail(item) {
+  return hasDetail(item) ? escHtml(getDetail(item)) : null;
+}
+
 // ============================================================
 //  DATA NORMALIZATION
-//   Map current briefs.json shape → render-time shape.
 // ============================================================
 function normalize(brief) {
-  // top_actions: array of strings → array of {verb, target, text, detail}
   const actions = (brief.top_actions || []).map(a => {
     if (typeof a === "object" && a !== null) {
       return {
@@ -184,20 +223,17 @@ function normalize(brief) {
     let verb = "WATCH", rest = s;
     const m = s.match(/^(ACTION|WATCH|NO ACTION|NONE|LONG|SHORT)\s+(.*)$/i);
     if (m) { verb = m[1].toUpperCase(); rest = m[2]; }
-    // Try to lift first ALL-CAPS word as target
     const t = rest.match(/^([A-Z]{2,6})\s+(.*)$/);
     let target = "", text = rest;
     if (t) { target = t[1]; text = t[2]; }
     return { verb, target, text, detail: "" };
   });
 
-  // sector_rotation may be nested or flat
   const sr = brief.macro?.sector_rotation || {};
   const leaders = sr.leaders_5d || brief.macro?.leaders_5d || [];
   const laggards = sr.laggards_5d || brief.macro?.laggards_5d || [];
   const rotation_read = sr.read || brief.macro?.rotation_read || "";
 
-  // watchlist normalize: change_pct/chg, trigger_zone/zone
   const watchlist = (brief.stocks?.watchlist || []).map(w => ({
     ticker: w.ticker,
     last: w.last,
@@ -225,20 +261,23 @@ function normalize(brief) {
       leaders, laggards, rotation_read,
       events_14d: brief.macro?.events_14d || [],
       earnings_7d: brief.macro?.earnings_7d || [],
-      action: brief.macro?.action
+      action: brief.macro?.action,
+      recommendations: brief.macro?.recommendations
     },
     stocks: {
       watchlist,
       movers: brief.stocks?.movers || { gainers: [], losers: [] },
       smart_money,
       wsb_top: brief.stocks?.wsb_top || [],
-      action: brief.stocks?.action
+      action: brief.stocks?.action,
+      recommendations: brief.stocks?.recommendations
     },
     options: {
       unusual: brief.options?.unusual || [],
       earnings_iv: brief.options?.earnings_iv || [],
       leaps: brief.options?.leaps || [],
-      action: brief.options?.action
+      action: brief.options?.action,
+      recommendations: brief.options?.recommendations
     },
     crypto: brief.crypto || { status: "coming_soon" }
   };
@@ -256,6 +295,11 @@ function renderMasthead(b) {
     <div class="mw-meta-row">
       <span class="mw-mono mw-meta-item">${escHtml(meta)}</span>
       <span class="mw-meta-spacer"></span>
+      <div class="mw-mode-toggle" role="group" aria-label="Detail level">
+        <button data-mode="plain" class="${MODE === 'plain' ? 'is-active' : ''}">Plain</button>
+        <button data-mode="pro" class="${MODE === 'pro' ? 'is-active' : ''}">Pro</button>
+      </div>
+      <span class="mw-meta-dot">·</span>
       <button class="mw-meta-btn" data-modal="glossary">Glossary</button>
       <span class="mw-meta-dot">·</span>
       <button class="mw-meta-btn" data-modal="archive">Archive</button>
@@ -299,12 +343,12 @@ function renderTopActions(actions) {
       ${actionPill(a.verb)}
       ${a.target ? tickerPill(a.target) : `<span></span>`}
       <span class="mw-action-text">${escHtml(a.text)}</span>
-      ${caret(a.detail)}`;
-    return expandLi(id, summary, a.detail ? escHtml(a.detail) : null, "mw-action-item");
+      ${caret(hasDetail(a))}`;
+    return expandLi(id, summary, renderDetail(a), "mw-action-item");
   }).join("");
   return `<section class="mw-top-actions">
     <div class="mw-eyebrow">
-      <span class="mw-eyebrow-mark mw-mono">↳</span>
+      <span class="mw-eyebrow-mark mw-mono">&gt;</span>
       <span class="mw-eyebrow-text mw-mono">Today's actions</span>
       <span class="mw-eyebrow-rule"></span>
       <span class="mw-mono mw-eyebrow-count">${actions.length}</span>
@@ -340,6 +384,75 @@ function card({ title, count, body, action, span }) {
   return `<section class="mw-card ${span ? `mw-card-span-${span}` : ""}">${head}<div class="mw-card-body">${body}</div>${foot}</section>`;
 }
 
+// ──────────────── RECOMMENDATIONS ────────────────
+function renderRecCard(rec, side, prefix) {
+  const id = `rec-${prefix}-${side}-${rec.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
+  const conf = rec.confidence != null ? `${rec.confidence}` : "";
+  const action = getRecAction(rec);
+  const detailBlocks = `
+    <div class="mw-rec-debate">
+      <div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label is-up">Pros</span>
+        <p class="mw-rec-debate-text">${escHtml(rec.pros || "")}</p>
+      </div>
+      <div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label is-down">Cons</span>
+        <p class="mw-rec-debate-text">${escHtml(rec.cons || "")}</p>
+      </div>
+      ${action ? `<div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label">${MODE === 'pro' ? 'Robinhood' : 'How to act'}</span>
+        <p class="mw-rec-debate-text">${escHtml(action)}</p>
+      </div>` : ""}
+    </div>`;
+  const open = isOpen(id);
+  const cls = `mw-rec ${open ? "is-open" : ""}`;
+  const handler = `data-toggle="${escAttr(id)}"`;
+  return `<li class="${cls}">
+    <div class="mw-rec-summary" ${handler}>
+      <span class="mw-rec-tk">${escHtml(rec.ticker)}</span>
+      ${actionPill(rec.verdict, "sm")}
+      ${conf ? `<span class="mw-mono mw-rec-conf">${conf}</span>` : ""}
+      ${rec.vehicle ? `<span class="mw-rec-vehicle mw-mono">${escHtml(rec.vehicle)}</span>` : ""}
+      <span class="mw-rec-summary-text">${escHtml((rec.pros || "").split(".")[0])}.</span>
+      <span class="mw-caret" aria-hidden="true">v</span>
+    </div>
+    ${open ? detailBlocks : ""}
+  </li>`;
+}
+
+function renderRecommendations(recs, prefix) {
+  if (!recs) return "";
+  const buys = (recs.buy || []);
+  const sells = (recs.sell || []);
+  if (!buys.length && !sells.length) return "";
+
+  const buyBody = buys.length
+    ? `<ul class="mw-rec-list">${buys.map(r => renderRecCard(r, "buy", prefix)).join("")}</ul>`
+    : `<p class="mw-empty-pad">No buy ideas with conviction today.</p>`;
+  const sellBody = sells.length
+    ? `<ul class="mw-rec-list">${sells.map(r => renderRecCard(r, "sell", prefix)).join("")}</ul>`
+    : `<p class="mw-empty-pad">No sell ideas with conviction today.</p>`;
+
+  return `<section class="mw-card mw-card-span-3 mw-rec-card">
+    <div class="mw-card-head">
+      <h3 class="mw-card-title">Top picks today</h3>
+      <span class="mw-card-count">${buys.length} buy · ${sells.length} sell</span>
+    </div>
+    <div class="mw-card-body">
+      <div class="mw-rec-grid">
+        <div>
+          <div class="mw-rec-head mw-rec-head-up">Best to buy</div>
+          ${buyBody}
+        </div>
+        <div>
+          <div class="mw-rec-head mw-rec-head-down">Best to sell or avoid</div>
+          ${sellBody}
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 // ──────────────── MACRO ────────────────
 function renderMacroPane(b) {
   const m = b.macro;
@@ -352,9 +465,9 @@ function renderMacroPane(b) {
       <td>${tickerPill(r.ticker)}</td>
       <td>${sparkSvg(spark, 88, 22)}</td>
       <td class="mw-mono r">${fmtNum(r.last)}</td>
-      <td class="mw-mono r ${r.rsi > 70 ? "is-down" : r.rsi < 30 ? "is-up" : ""}">${r.rsi != null ? abbr("RSI", r.rsi.toFixed(1)) : "—"}</td>
-      <td class="mw-dim">${escHtml(r.note || "")}${caret(r.detail)}</td>`;
-    return expandRow(id, cells, r.detail ? escHtml(r.detail) : null, 5);
+      <td class="mw-mono r ${r.rsi > 70 ? "is-down" : r.rsi < 30 ? "is-up" : ""}">${r.rsi != null ? abbr("RSI", r.rsi.toFixed(1)) : "-"}</td>
+      <td class="mw-dim">${escHtml(r.note || "")}${caret(hasDetail(r))}</td>`;
+    return expandRow(id, cells, renderDetail(r), 5);
   }).join("");
 
   const indices = card({
@@ -366,7 +479,7 @@ function renderMacroPane(b) {
   });
 
   const vy = m.vol_yields;
-  const volRow = (label, val, cls) => `<div><dt>${label}</dt><dd class="mw-mono ${cls || ""}">${val}</dd></div>`;
+  const volRow = (label, val) => `<div><dt>${label}</dt><dd class="mw-mono">${val}</dd></div>`;
   const volBody = `<dl class="mw-kv">
     ${vy.vix != null ? volRow(abbr("VIX"), fmtNum(vy.vix)) : ""}
     ${vy.vix_term ? volRow("Term", `<span class="mw-dim">${escHtml(String(vy.vix_term).replace(/_/g, " ").toLowerCase())}</span>`) : ""}
@@ -385,7 +498,7 @@ function renderMacroPane(b) {
       <span class="mw-rot-bar"><span class="mw-rot-fill ${score < 0 ? "mw-down" : "mw-up"}" style="width:${Math.min(Math.abs(score) * 5, 100)}%"></span></span>
       <span class="mw-mono ${score < 0 ? "is-down" : "is-up"}">${score > 0 ? "+" : ""}${score.toFixed(1)}</span>
     </div>`;
-    return expandLi(id, summary, s.detail ? escHtml(s.detail) : null, "mw-rot-li");
+    return expandLi(id, summary, renderDetail(s), "mw-rot-li");
   };
   const rot = card({
     title: "Sector rotation · 5d",
@@ -399,9 +512,9 @@ function renderMacroPane(b) {
     const id = `cal-${i}`;
     const summary = `<div class="mw-cal-row">
       <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
-      <span class="mw-cal-event">${escHtml(e.event || "")}${caret(e.detail)}</span>
+      <span class="mw-cal-event">${escHtml(e.event || "")}${caret(hasDetail(e))}</span>
     </div>`;
-    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+    return expandLi(id, summary, renderDetail(e));
   }).join("");
   const cal = card({
     title: "Calendar · 14d", count: m.events_14d.length, span: "2",
@@ -413,9 +526,9 @@ function renderMacroPane(b) {
     const summary = `<div class="mw-cal-row mw-cal-row-3">
       <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
       ${tickerPill(e.ticker, "sm")}
-      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(e.detail)}</span>
+      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(hasDetail(e))}</span>
     </div>`;
-    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+    return expandLi(id, summary, renderDetail(e));
   }).join("");
   const ear = card({
     title: "Earnings · 7d", count: m.earnings_7d.length,
@@ -429,7 +542,9 @@ function renderMacroPane(b) {
     </div>
   </section>` : "";
 
-  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}</div>`;
+  const recs = renderRecommendations(m.recommendations, "macro");
+
+  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}</div>`;
 }
 
 // ──────────────── STOCKS ────────────────
@@ -447,14 +562,14 @@ function renderStocksPane(b) {
       <td class="mw-mono r ${pctClass(w.chg)}">${fmtPct(w.chg)}</td>
       <td class="mw-mono mw-trigger">${abbr("FOMO ceiling", w.zone || "")}</td>
       <td>${statusDot(w.status)}</td>
-      <td class="mw-dim">${escHtml(w.note || "")}${caret(w.detail)}</td>`;
-    return expandRow(id, cells, w.detail ? escHtml(w.detail) : null, 7, klass);
+      <td class="mw-dim">${escHtml(w.note || "")}${caret(hasDetail(w))}</td>`;
+    return expandRow(id, cells, renderDetail(w), 7, klass);
   }).join("");
 
   const watchlist = card({
     title: "Watchlist · Triggers", count: s.watchlist.length, span: "3",
     body: `<table class="mw-table mw-table-watch">
-      <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">Δ</th><th>Trigger</th><th>Status</th><th>Note</th></tr></thead>
+      <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">&Delta;</th><th>Trigger</th><th>Status</th><th>Note</th></tr></thead>
       <tbody>${wlRows}</tbody>
     </table>`
   });
@@ -466,9 +581,9 @@ function renderStocksPane(b) {
       ${sparkSvg(r.spark || [], 70, 22, 1.5)}
       <span class="mw-mono mw-mover-pct ${dir === "up" ? "is-up" : "is-down"}">${fmtPct(r.chg)}</span>
       <span class="mw-mono mw-mover-last">${fmtNum(r.last)}</span>
-      <span class="mw-mover-note">${escHtml(r.note || "")}${caret(r.detail)}</span>
+      <span class="mw-mover-note">${escHtml(r.note || "")}${caret(hasDetail(r))}</span>
     </div>`;
-    return expandLi(id, summary, r.detail ? escHtml(r.detail) : null);
+    return expandLi(id, summary, renderDetail(r));
   };
   const movers = card({
     title: "Big movers · 5d",
@@ -476,11 +591,11 @@ function renderStocksPane(b) {
     span: "3",
     body: `<div class="mw-movers">
       <div class="mw-movers-col">
-        <div class="mw-movers-head mw-movers-head-up">▲ Gainers</div>
+        <div class="mw-movers-head mw-movers-head-up">Gainers</div>
         <ul class="mw-mover-list">${s.movers.gainers.length ? s.movers.gainers.map(r => moverRow(r, "up")).join("") : `<li class="mw-empty-pad">No gainers in scan.</li>`}</ul>
       </div>
       <div class="mw-movers-col">
-        <div class="mw-movers-head mw-movers-head-down">▼ Losers</div>
+        <div class="mw-movers-head mw-movers-head-down">Losers</div>
         <ul class="mw-mover-list">${s.movers.losers.length ? s.movers.losers.map(r => moverRow(r, "down")).join("") : `<li class="mw-empty-pad">No losers in scan.</li>`}</ul>
       </div>
     </div>`
@@ -523,7 +638,9 @@ function renderStocksPane(b) {
     </div>
   </section>` : "";
 
-  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}</div>`;
+  const recs = renderRecommendations(s.recommendations, "stocks");
+
+  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
@@ -534,9 +651,9 @@ function renderOptionsPane(b) {
     const id = `u-${r.ticker}`;
     const cells = `
       <td>${tickerPill(r.ticker)}</td>
-      <td class="mw-mono r">${r.vol_oi != null ? abbr("vol/OI", r.vol_oi + "×") : "—"}</td>
-      <td class="mw-dim">${escHtml(r.context || "")}${caret(r.detail)}</td>`;
-    return expandRow(id, cells, r.detail ? escHtml(r.detail) : null, 3);
+      <td class="mw-mono r">${r.vol_oi != null ? abbr("vol/OI", r.vol_oi + "x") : "-"}</td>
+      <td class="mw-dim">${escHtml(r.context || "")}${caret(hasDetail(r))}</td>`;
+    return expandRow(id, cells, renderDetail(r), 3);
   }).join("");
   const unusual = card({
     title: "Unusual flow", count: o.unusual.length, span: "2",
@@ -551,9 +668,9 @@ function renderOptionsPane(b) {
     const summary = `<div class="mw-cal-row mw-cal-row-3">
       <span class="mw-mono mw-cal-date">${escHtml(e.date)}</span>
       ${tickerPill(e.ticker, "sm")}
-      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(e.detail)}</span>
+      <span class="mw-cal-event mw-dim">${escHtml(e.note || "")}${caret(hasDetail(e))}</span>
     </div>`;
-    return expandLi(id, summary, e.detail ? escHtml(e.detail) : null);
+    return expandLi(id, summary, renderDetail(e));
   }).join("");
   const eiv = card({
     title: `Earnings · ${abbr("IV")} elevated`, count: o.earnings_iv.length,
@@ -565,9 +682,9 @@ function renderOptionsPane(b) {
     const summary = `<div style="display:flex;align-items:baseline;gap:10px;padding:8px 0">
       ${tickerPill(l.ticker, "sm")}
       <span class="mw-dim mw-mono" style="font-size:11px">${escHtml(l.thesis_window || "")}</span>
-      <span class="mw-cal-event">${escHtml(l.note || "")}${caret(l.detail)}</span>
+      <span class="mw-cal-event">${escHtml(l.note || "")}${caret(hasDetail(l))}</span>
     </div>`;
-    return expandLi(id, summary, l.detail ? escHtml(l.detail) : null);
+    return expandLi(id, summary, renderDetail(l));
   }).join("");
   const leaps = card({
     title: abbr("LEAPS"), span: "3",
@@ -581,12 +698,15 @@ function renderOptionsPane(b) {
     </div>
   </section>` : "";
 
-  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}</div>`;
+  const recs = renderRecommendations(o.recommendations, "options");
+
+  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}</div>`;
 }
 
 // ──────────────── CRYPTO ────────────────
 function renderCryptoPane(b) {
   const c = b.crypto;
+  const recs = renderRecommendations(c.recommendations, "crypto");
   if (c.status === "coming_soon" || !c.coins || !c.coins.length) {
     return `<div class="mw-grid">${card({
       title: "Crypto", span: "3",
@@ -597,14 +717,14 @@ function renderCryptoPane(b) {
           ${tickerPill("BTC", "sm")} ${tickerPill("ETH", "sm")} ${tickerPill("SOL", "sm")} ${tickerPill("XRP", "sm")}
         </div>
       </div>`
-    })}</div>`;
+    })}${recs}</div>`;
   }
   const rows = c.coins.map(co => `<div class="mw-cal-row mw-cal-row-3" style="border-bottom:1px solid var(--mw-rule)">
     ${tickerPill(co.symbol, "sm")}
     <span class="mw-mono r">$${fmtNum(co.last)}</span>
     <span class="mw-mono ${pctClass(co.change_5d_pct)}">${fmtPct(co.change_5d_pct)} <span class="mw-dim">5d</span></span>
   </div>`).join("");
-  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}</div>`;
+  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}</div>`;
 }
 
 // ──────────────── MODALS ────────────────
@@ -614,7 +734,7 @@ function renderModal() {
     const others = (DATA.briefs || []).filter(b => b.date !== ACTIVE_BRIEF.date);
     const items = others.map(b => `<li class="mw-archive-item" data-archive-date="${escAttr(b.date)}">
       <span class="mw-archive-date">${escHtml(formatDate(b.date))}</span>
-      <span class="mw-regime mw-regime-sm mw-regime-${escHtml(b.regime || "NEUTRAL")}">${escHtml(b.regime || "—")}</span>
+      <span class="mw-regime mw-regime-sm mw-regime-${escHtml(b.regime || "NEUTRAL")}">${escHtml(b.regime || "-")}</span>
       <span class="mw-archive-headline">${escHtml(b.headline || "")}</span>
     </li>`).join("");
     return modalShell("Archive", `${others.length} prior briefs.`,
@@ -637,7 +757,7 @@ function modalShell(title, intro, body) {
     <div class="mw-modal">
       <div class="mw-modal-head">
         <h2 class="mw-modal-title">${escHtml(title)}</h2>
-        <button class="mw-modal-close" data-modal-close aria-label="Close">×</button>
+        <button class="mw-modal-close" data-modal-close aria-label="Close">x</button>
       </div>
       ${intro ? `<p class="mw-modal-intro">${escHtml(intro)}</p>` : ""}
       ${body}
@@ -647,7 +767,6 @@ function modalShell(title, intro, body) {
 
 // ──────────────── DATE HELPERS ────────────────
 function formatDate(s) {
-  // accepts "2026-05-03" or "Saturday · May 2, 2026" — passthrough fallback
   if (!s) return "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
     const [y, m, d] = s.split("-").map(Number);
@@ -691,10 +810,7 @@ function render() {
     <main class="mw-main">${pane}</main>
     <footer class="mw-footer">
       <div class="mw-footer-rule"></div>
-      <div class="mw-footer-row">
-        <span class="mw-footer-label">Disclaimer</span>
-        <p class="mw-footer-text">Market Watch is general market commentary and educational content. Nothing here is investment advice, a recommendation, or a solicitation. Markets can lose money fast.</p>
-      </div>
+      <p class="mw-footer-text">Not investment advice.</p>
     </footer>
     ${renderModal()}
   `;
@@ -714,6 +830,8 @@ function bindEvents() {
     b.addEventListener("click", () => { MODAL = b.dataset.modal; render(); }));
   document.querySelectorAll("[data-modal-close]").forEach(b =>
     b.addEventListener("click", e => { if (e.target === b) { MODAL = null; render(); } }));
+  document.querySelectorAll("[data-mode]").forEach(b =>
+    b.addEventListener("click", () => { setMode(b.dataset.mode); render(); }));
   document.querySelectorAll(".mw-archive-item").forEach(item =>
     item.addEventListener("click", () => {
       const d = item.dataset.archiveDate;
