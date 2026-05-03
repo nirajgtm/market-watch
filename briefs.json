@@ -156,7 +156,7 @@
           },
           {
             "date": "Tue May 5",
-            "event": "JOLTS · ISM Services · Fed Barr",
+            "event": "JOLTS \u00b7 ISM Services \u00b7 Fed Barr",
             "detail": {
               "plain": "Three reports landing on the same day: how many job openings there are, how busy the services side of the economy is, and a Fed official's speech. Usually a volatile morning. Expect S&P to swing 0.5% to 1% in the first 30 minutes after these come out. If you're trading, just know it's a noisy open.",
               "pro": "Triple-event day. JOLTS consensus 7.6M; ISM Services 53.4. Soft prints, dovish bid returns. Hot prints, cut pricing pulled forward. Typically moves SPY 0.5 to 1 percent in first 30 minutes."
@@ -164,7 +164,7 @@
           },
           {
             "date": "Wed May 6",
-            "event": "AMD · ARM earnings (after close)",
+            "event": "AMD \u00b7 ARM earnings (after close)",
             "detail": {
               "plain": "AMD and Arm Holdings both report quarterly results Wednesday after the market closes. Both are major chip companies riding the AI wave. If both deliver good results, AI-related stocks like Nvidia likely rally Thursday. If both disappoint, the AI rally may take a hit. Best to wait until Thursday's open to see how it shakes out.",
               "pro": "The print of the week for AI semis. AMD beat plus ARM match: semis bid through Thursday open. Both miss: AI-capex narrative cracks. Expect 5 to 10 percent moves. NVDA, AVGO trade in sympathy."
@@ -417,47 +417,87 @@
           "gainers": [
             {
               "ticker": "INTC",
-              "last": 99.62,
+              "last": 99.61,
               "chg": 5.42,
               "vol": 158502811,
-              "note": "Highest volume on the tape Friday.",
+              "spark": [
+                65.27,
+                66.78,
+                82.54,
+                84.99,
+                84.52,
+                94.75,
+                94.48,
+                99.62
+              ],
               "detail": {
                 "plain": "Intel (INTC) is the chip company everyone has heard of, behind a slow turnaround. It jumped 5% Friday on heavy buying. The story: rumors of new manufacturing customers and an AI chip partnership. Don't chase here. If it pulls back to around $94, that would be a much better entry.",
                 "pro": "Up 5.4% on 158M (3x avg). Multi-month base breakout, foundry wins plus rumored AI partnership. Don't chase $99, wait for pullback to $94 (the breakout level just cleared)."
-              }
+              },
+              "note": "Highest volume on the tape Friday."
             },
             {
               "ticker": "AAPL",
               "last": 280.25,
               "chg": 3.32,
               "vol": 79915442,
-              "note": "Volume well above average.",
+              "spark": [
+                273.17,
+                273.43,
+                271.06,
+                267.61,
+                270.71,
+                270.17,
+                271.35,
+                280.14
+              ],
               "detail": {
                 "plain": "Apple (AAPL) is the iPhone maker. Up 3.3% Friday on heavy volume. The stock broke out of a quiet sideways pattern. If you want to add Apple, wait for it to dip back to $268 to $272 first. The current price is too extended.",
-                "pro": "Multi-week consolidation breakout. Massive Friday put activity (vol/OI 1243× on 5/4 282.5P) is hedging, not directional. Too far above 20MA for a clean new long. Wait for $268 to $272 pullback for shares."
-              }
-            },
-            {
-              "ticker": "TSLA",
-              "last": 390.82,
-              "chg": 2.41,
-              "vol": 65338257,
-              "note": "Continued momentum.",
-              "detail": {
-                "plain": "Tesla (TSLA) is electric cars and the robotaxi story. Up 2.4% on heavy volume. Stock is in an uptrend after a deep correction. Watch for delivery numbers and any robotaxi news this week.",
-                "pro": "Trend up over the past month after a deep correction. Sentiment polarized, heavy short interest, retail divided. Watch this week's deliveries plus the unusual put activity at $397.50 5/4 (vol/OI 743×). Not a clean entry here."
-              }
+                "pro": "Multi-week consolidation breakout. Massive Friday put activity (vol/OI 1243\u00d7 on 5/4 282.5P) is hedging, not directional. Too far above 20MA for a clean new long. Wait for $268 to $272 pullback for shares."
+              },
+              "note": "Volume well above average."
             },
             {
               "ticker": "SOFI",
               "last": 16.43,
               "chg": 2.05,
               "vol": 79288511,
-              "note": "Above-average volume.",
+              "spark": [
+                19.06,
+                18.32,
+                18.44,
+                18.76,
+                18.36,
+                15.53,
+                16.1,
+                16.43
+              ],
               "detail": {
                 "plain": "SoFi (SOFI) is an online bank focused on student-loan refinancing and digital finance. Up 2% on very heavy volume. Stock is at a key level. If it can break above $17 with strong volume, it could run higher. Below $15.50, it stalls.",
                 "pro": "Trend sideways-to-up after a long base. Sentiment mixed: analysts skeptical, retail bullish. Tradeable on a clean break above $17 with volume, OR a fade back to $15.50 support, but only above $17 triggers a long."
-              }
+              },
+              "note": "Above-average volume."
+            },
+            {
+              "ticker": "TSLA",
+              "last": 390.82,
+              "chg": 2.41,
+              "vol": 65338257,
+              "spark": [
+                387.51,
+                373.72,
+                376.3,
+                378.67,
+                376.02,
+                372.8,
+                381.63,
+                390.82
+              ],
+              "detail": {
+                "plain": "Tesla (TSLA) is electric cars and the robotaxi story. Up 2.4% on heavy volume. Stock is in an uptrend after a deep correction. Watch for delivery numbers and any robotaxi news this week.",
+                "pro": "Trend up over the past month after a deep correction. Sentiment polarized, heavy short interest, retail divided. Watch this week's deliveries plus the unusual put activity at $397.50 5/4 (vol/OI 743\u00d7). Not a clean entry here."
+              },
+              "note": "Continued momentum."
             }
           ],
           "losers": [
@@ -466,7 +506,17 @@
               "last": 87.11,
               "chg": -9.67,
               "vol": 13233915,
-              "note": "Q1 deep dive. Margin gains offset by cautious outlook and guidance cut.",
+              "spark": [
+                96.85,
+                97.66,
+                98.68,
+                96.66,
+                96.6,
+                94.77,
+                96.44,
+                87.11
+              ],
+              "note": "CLX Q1 Deep Dive: Margin Gains Offset by Cautious Outlook and Guidance Reduction",
               "detail": {
                 "plain": "Clorox (CLX) makes bleach, Pine-Sol, and household cleaners. Dropped almost 10% Friday after the company cut its full-year outlook, blaming weak consumer spending. When even a safe name like Clorox falls this much on a guidance cut, it's a warning that consumers are tightening. Don't try to catch the falling knife. Let it base.",
                 "pro": "Print OK, mgmt cut FY guide on weak consumer demand. Defensive name losing 10% on guide is a consumer-spending warning, not a CLX-specific story. Yellow flag for staples even though XLP led the week. Let it base."
@@ -477,7 +527,17 @@
               "last": 15.02,
               "chg": -8.41,
               "vol": 53120980,
-              "note": "Q1 results. Analysts cutting full-year forecasts.",
+              "spark": [
+                17.74,
+                16.95,
+                16.52,
+                16.72,
+                16.14,
+                16.06,
+                16.4,
+                15.02
+              ],
+              "note": "Rivian Automotive, Inc. (NASDAQ:RIVN) First-Quarter Results: Here's What Analysts Are Forecasting For This Year",
               "detail": {
                 "plain": "Rivian (RIVN) is an electric truck maker. Dropped 8% on weak quarterly results. The company is burning cash faster than it makes it. That's the core problem, not the trucks themselves. No buy here, just watch.",
                 "pro": "Q1 below the lowered bar. Cash burn is the problem, not the product. Trend down, sentiment fully bearish. Wait-for-capitulation chart, no setup. Below $14 on heavy volume is the level to revisit for a bounce trade."
@@ -488,7 +548,17 @@
               "last": 5.91,
               "chg": -7.51,
               "vol": 60943851,
-              "note": "Cooling after recent gains.",
+              "spark": [
+                6.48,
+                6.28,
+                6.21,
+                6.23,
+                6.36,
+                6.39,
+                6.39,
+                5.91
+              ],
+              "note": "Assessing NIO (NIO) Valuation As Shares Cool After Recent Gains",
               "detail": {
                 "plain": "NIO is a Chinese electric car company. Dropped 7.5% Friday giving back some recent gains. Chinese EV stocks tend to move together based on demand expectations from China. Sentiment is currently negative.",
                 "pro": "Trend sideways with high vol. China EV names trade as a basket (XPEV, LI, NIO). Sentiment bearish on China demand. Setup needs a flush to $5.50 followed by a base before any long is interesting."
@@ -499,11 +569,21 @@
               "last": 294.73,
               "chg": -6.47,
               "vol": 3969275,
-              "note": "No headline catalyst flagged.",
+              "spark": [
+                329.35,
+                329.65,
+                327.51,
+                329.01,
+                321.43,
+                315.13,
+                315.13,
+                294.73
+              ],
               "detail": {
                 "plain": "Stryker (SYK) makes medical devices and surgical equipment. Down 6.5% Friday with no clear news catalyst, likely just selling pressure in the broader healthcare sector. If it holds $290 Monday, the larger uptrend is intact. Below $290 changes the picture.",
                 "pro": "Light volume relative to size, likely sympathy with healthcare names. No specific catalyst. Trend was up, this is the first material down day. Holds $290 Monday means trend intact. Below $290 wait for the close."
-              }
+              },
+              "note": "No headline catalyst flagged."
             }
           ]
         },
@@ -516,7 +596,7 @@
         "wsb_top": [
           {
             "ticker": "SPY",
-            "score": 51
+            "score": 52
           },
           {
             "ticker": "AMD",
@@ -524,14 +604,14 @@
           },
           {
             "ticker": "NVDA",
-            "score": 39
-          },
-          {
-            "ticker": "DTE",
-            "score": 30
+            "score": 44
           },
           {
             "ticker": "INTC",
+            "score": 30
+          },
+          {
+            "ticker": "DTE",
             "score": 29
           }
         ],
@@ -657,7 +737,7 @@
               "confidence": 35,
               "vehicle": "stock",
               "pros": "Up 2.4% Friday on continued momentum. Robotaxi narrative still has legs.",
-              "cons": "Heavy put activity at $397.50 (vol/OI 743×) is positioning for a pullback. Sentiment polarized.",
+              "cons": "Heavy put activity at $397.50 (vol/OI 743\u00d7) is positioning for a pullback. Sentiment polarized.",
               "action": {
                 "plain": "If you bought TSLA recently and it's up 10%+, consider trimming a third here. Let the rest run.",
                 "pro": "Robinhood: if you hold and want to trim, sell a third of your shares at the limit price you want."
@@ -671,16 +751,16 @@
           {
             "ticker": "SPY",
             "vol_oi": 5618,
-            "context": "May 4 puts $732. Index hedging flow.",
+            "context": "May 4 puts $732.0 \u00b7 4 unusual strike(s)",
             "detail": {
               "plain": "Big investors bought a huge amount of put options on the S&P 500 fund Friday. Puts pay off if the market goes down. This is mostly insurance. They're protecting their large stock holdings, not betting on a crash. But it shows nerves at the top.",
-              "pro": "Vol/OI 5618× on 5/4 $732P, spot 720.65. OTM put hedging into Monday, protection not directional. Standard month-end hedge with indices at ATHs. Confirms the market is nervous up here, not a tradeable signal alone."
+              "pro": "Vol/OI 5618\u00d7 on 5/4 $732P, spot 720.65. OTM put hedging into Monday, protection not directional. Standard month-end hedge with indices at ATHs. Confirms the market is nervous up here, not a tradeable signal alone."
             }
           },
           {
             "ticker": "NVDA",
             "vol_oi": 4932,
-            "context": "May 6 calls $202.50. Pre-earnings positioning.",
+            "context": "May 6 calls $202.5 \u00b7 8 unusual strike(s)",
             "detail": {
               "plain": "Heavy options buying on Nvidia call options expiring this Friday at the $202.50 strike. Calls pay off if the stock goes up. This is bullish positioning ahead of AMD's report Wednesday. Nvidia tends to move with AMD on AI news. Don't copy this trade if you're new, too short-dated and risky.",
               "pro": "Bullish positioning into AMD's Wed print (NVDA moves in sympathy on AI semi tone). Play: small May 16 debit call spread (Buy 200C / Sell 210C). Don't naked-long NVDA calls into AMD's print, IV crush will eat the premium even if NVDA goes up."
@@ -689,7 +769,7 @@
           {
             "ticker": "QQQ",
             "vol_oi": 3083,
-            "context": "May 5 puts $676. Index hedging flow.",
+            "context": "May 5 puts $676.0 \u00b7 3 unusual strike(s)",
             "detail": {
               "plain": "Same story as the SPY put activity above. Large players buying near-the-money insurance on the Nasdaq 100. Defensive, not predictive.",
               "pro": "Tech-specific hedge buying ahead of Monday open. Spot $674, hedge at $676P is near-the-money, institutional protection on the long-only book. Not directional."
@@ -698,7 +778,7 @@
           {
             "ticker": "AAPL",
             "vol_oi": 2109,
-            "context": "May 4 puts $287.50. Defensive after Friday's run.",
+            "context": "May 4 puts $287.5 \u00b7 4 unusual strike(s)",
             "detail": {
               "plain": "After Apple ran 3.3% Friday, big holders bought protective options to lock in the gain without selling shares. Sign that even insiders think AAPL is short-term overbought.",
               "pro": "Hedging the gain, not betting on a crash. Probably fund managers locking in profits without selling shares. Confirms AAPL is overbought near-term."
@@ -707,7 +787,7 @@
           {
             "ticker": "TSLA",
             "vol_oi": 742,
-            "context": "May 4 puts $397.50. Single-strike protection.",
+            "context": "May 4 puts $397.5 \u00b7 1 unusual strike(s)",
             "detail": {
               "plain": "Concentrated put activity on Tesla for Monday expiry. Probably a single large hedge against unexpected delivery data, not a directional bet.",
               "pro": "Single-strike Monday put concentration. Likely hedge against an unexpected delivery print or a general profit-protection trade. Not actionable alone."
@@ -813,6 +893,312 @@
           "buy": [],
           "sell": []
         }
+      },
+      "sparks": {
+        "^VIX": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
+        ],
+        "vix": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
+        ],
+        "XLE": [
+          55.95,
+          55.76,
+          56.58,
+          55.02,
+          55.07,
+          55.87,
+          56.54,
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85
+        ],
+        "GEHC": [
+          74.67,
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03
+        ],
+        "GC=F": [
+          4825.0,
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4644.5
+        ],
+        "gold": [
+          4825.0,
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4644.5
+        ],
+        "PODD": [
+          201.49,
+          202.5,
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04
+        ],
+        "QQQ": [
+          628.6,
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15
+        ],
+        "DX-Y.NYB": [
+          98.12,
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21
+        ],
+        "dxy": [
+          98.12,
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21
+        ],
+        "SPY": [
+          694.46,
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65
+        ],
+        "TER": [
+          365.51,
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42
+        ],
+        "HUM": [
+          196.21,
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63
+        ],
+        "IWM": [
+          268.72,
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28
+        ],
+        "MO": [
+          65.62,
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55
+        ],
+        "^TNX": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "ten_year": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "CL=F": [
+          91.28,
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94
+        ],
+        "oil": [
+          91.28,
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94
+        ]
       }
     },
     {

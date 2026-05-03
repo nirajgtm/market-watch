@@ -116,6 +116,30 @@ body::before {
 }
 .mw-meta-btn-accent:hover { background: var(--mw-ink); color: var(--mw-bg); }
 
+/* Plain / Pro mode toggle */
+.mw-mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--mw-rule-2);
+  border-radius: 999px;
+  padding: 2px;
+  font-family: var(--mw-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mw-mode-toggle button {
+  border: 0; background: transparent; color: var(--mw-ink-3);
+  padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.mw-mode-toggle button:hover { color: var(--mw-ink); }
+.mw-mode-toggle button.is-active {
+  background: var(--mw-money);
+  color: var(--mw-bg);
+  font-weight: 700;
+}
+
 .mw-tagline {
   text-align: center;
   margin: 28px 0 8px;
@@ -831,6 +855,116 @@ body::before {
   .mw-glossary-row { grid-template-columns: 1fr; gap: 4px; }
   .mw-modal { padding: 24px 22px; }
   .mw-rot { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   RECOMMENDATIONS (Top picks: buy / sell)
+   ============================================================ */
+.mw-rec-card { background: var(--mw-bg-2); }
+.mw-rec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--mw-rule-2);
+}
+.mw-rec-grid > div + div { border-left: 1px solid var(--mw-rule-2); }
+.mw-rec-head {
+  padding: 8px 14px;
+  font-family: var(--mw-mono);
+  font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 1px solid var(--mw-rule);
+  background: var(--mw-bg-2);
+}
+.mw-rec-head-up   { color: var(--mw-up); }
+.mw-rec-head-down { color: var(--mw-down); }
+
+.mw-rec-list { list-style: none; margin: 0; padding: 0; }
+.mw-rec { border-bottom: 1px solid var(--mw-rule); }
+.mw-rec:last-child { border-bottom: 0; }
+.mw-rec-summary {
+  display: grid;
+  grid-template-columns: auto auto auto auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+.mw-rec.is-open .mw-rec-summary,
+.mw-rec-summary:hover { background: var(--mw-bg-3); }
+.mw-rec-tk {
+  font-family: var(--mw-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--mw-c-ticker);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.mw-rec-conf {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--mw-ink-3);
+  background: var(--mw-bg-3);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+.mw-rec.is-open .mw-rec-conf { background: var(--mw-bg-2); }
+.mw-rec-vehicle {
+  font-size: 10.5px;
+  color: var(--mw-ink-3);
+}
+.mw-rec-summary-text {
+  color: var(--mw-ink-2);
+  font-size: 12.5px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mw-rec.is-open .mw-rec-summary-text { white-space: normal; }
+.mw-rec.is-open .mw-caret { transform: rotate(180deg); color: var(--mw-money); }
+
+.mw-rec-debate {
+  padding: 10px 14px 14px;
+  background: var(--mw-bg-3);
+  border-left: 2px solid var(--mw-money-dim);
+  margin-left: 4px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.mw-rec-debate-row {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+.mw-rec-debate-label {
+  font-family: var(--mw-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mw-ink-3);
+}
+.mw-rec-debate-label.is-up   { color: var(--mw-up); }
+.mw-rec-debate-label.is-down { color: var(--mw-down); }
+.mw-rec-debate-text {
+  margin: 0;
+  font-family: var(--mw-serif);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--mw-ink);
+}
+
+@media (max-width: 720px) {
+  .mw-rec-grid { grid-template-columns: 1fr; }
+  .mw-rec-grid > div + div { border-left: 0; border-top: 1px solid var(--mw-rule-2); }
+  .mw-rec-summary {
+    grid-template-columns: auto auto auto 1fr;
+    gap: 8px;
+  }
+  .mw-rec-vehicle { display: none; }
+  .mw-rec-conf { display: none; }
+  .mw-rec-debate-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
 ::selection { background: var(--mw-accent-soft); color: var(--mw-ink); }
