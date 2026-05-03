@@ -858,6 +858,88 @@ body::before {
 }
 
 /* ============================================================
+   SOCIAL SENTIMENT (per tab)
+   ============================================================ */
+.mw-soc-card { background: var(--mw-bg-2); }
+.mw-soc-head {
+  display: grid;
+  grid-template-columns: 88px 80px 90px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 0 14px 8px;
+  border-bottom: 1px solid var(--mw-rule);
+  font-family: var(--mw-mono);
+  font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--mw-ink-4);
+}
+.mw-soc-h-mentions { text-align: right; }
+.mw-soc-list { list-style: none; margin: 0; padding: 0; }
+.mw-soc-row {
+  border-bottom: 1px solid var(--mw-rule);
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+.mw-soc-row:last-child { border-bottom: 0; }
+.mw-soc-row.is-open,
+.mw-soc-row:hover { background: var(--mw-bg-3); }
+.mw-soc-summary {
+  display: grid;
+  grid-template-columns: 88px 80px 90px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.mw-soc-mentions { text-align: right; color: var(--mw-c-num); font-size: 13px; }
+.mw-soc-sentiment {
+  font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 2px;
+  background: var(--mw-bg-3);
+}
+.mw-soc-sentiment.is-up   { color: var(--mw-up);   background: var(--mw-up-soft); }
+.mw-soc-sentiment.is-down { color: var(--mw-down); background: var(--mw-down-soft); }
+.mw-soc-sentiment.mw-dim  { color: var(--mw-ink-3); }
+.mw-soc-sources {
+  font-size: 11px;
+  color: var(--mw-ink-3);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mw-soc-row.is-open .mw-soc-sources { white-space: normal; }
+.mw-soc-row.is-open .mw-caret { transform: rotate(180deg); color: var(--mw-money); }
+.mw-soc-detail {
+  padding: 10px 14px 14px;
+  background: var(--mw-bg-3);
+  border-left: 2px solid var(--mw-money-dim);
+  margin-left: 4px;
+  font-family: var(--mw-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--mw-ink);
+}
+.mw-soc-foot {
+  margin: 12px 14px 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--mw-rule);
+  font-size: 11px;
+  color: var(--mw-ink-4);
+  font-style: italic;
+  font-family: var(--mw-serif);
+  line-height: 1.5;
+}
+@media (max-width: 720px) {
+  .mw-soc-head, .mw-soc-summary {
+    grid-template-columns: 64px 60px 80px 1fr auto;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .mw-soc-h-sources, .mw-soc-sources { display: none; }
+}
+
+/* ============================================================
    RECOMMENDATIONS (Top picks: buy / sell)
    ============================================================ */
 .mw-rec-card { background: var(--mw-bg-2); }

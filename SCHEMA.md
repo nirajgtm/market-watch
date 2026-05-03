@@ -18,7 +18,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "regime": "BULL | BEAR | NEUTRAL",
   "regime_note": "short qualifier, e.g. 'FOMO-extended', 'breadth narrow'",
   "vix_bucket": "calm | normal | elevated | fearful",
-  "headline": "one sentence, beginner-readable, no jargon without expansion",
+  "headline": { "plain": "zero-jargon, expand acronyms", "pro": "analyst shorthand OK" },
 
   "market_status": {
     "tier": "MARKET CLOSED | PRE-MARKET | MARKET OPEN | AFTER-HOURS",

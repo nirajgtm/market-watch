@@ -246,12 +246,21 @@ function normalize(brief) {
 
   const smart_money = brief.stocks?.smart_money || brief.stocks?.smart_money_clusters || [];
 
+  // Headline can be a string (legacy) or {plain, pro} object.
+  let headline = "";
+  if (brief.headline) {
+    if (typeof brief.headline === "string") headline = brief.headline;
+    else if (typeof brief.headline === "object") {
+      headline = brief.headline[MODE] || brief.headline.plain || brief.headline.pro || "";
+    }
+  }
+
   return {
     date: brief.date,
     updated: brief.updated_at || brief.last_refreshed_at,
     regime: brief.regime || "NEUTRAL",
     regime_note: brief.regime_note || "",
-    headline: brief.headline || "",
+    headline,
     actions,
     market_status: brief.market_status,
     sparks: brief.sparks || {},
@@ -262,7 +271,8 @@ function normalize(brief) {
       events_14d: brief.macro?.events_14d || [],
       earnings_7d: brief.macro?.earnings_7d || [],
       action: brief.macro?.action,
-      recommendations: brief.macro?.recommendations
+      recommendations: brief.macro?.recommendations,
+      social: brief.macro?.social || []
     },
     stocks: {
       watchlist,
@@ -270,16 +280,18 @@ function normalize(brief) {
       smart_money,
       wsb_top: brief.stocks?.wsb_top || [],
       action: brief.stocks?.action,
-      recommendations: brief.stocks?.recommendations
+      recommendations: brief.stocks?.recommendations,
+      social: brief.stocks?.social || []
     },
     options: {
       unusual: brief.options?.unusual || [],
       earnings_iv: brief.options?.earnings_iv || [],
       leaps: brief.options?.leaps || [],
       action: brief.options?.action,
-      recommendations: brief.options?.recommendations
+      recommendations: brief.options?.recommendations,
+      social: brief.options?.social || []
     },
-    crypto: brief.crypto || { status: "coming_soon" }
+    crypto: { ...(brief.crypto || { status: "coming_soon" }), social: brief.crypto?.social || [] }
   };
 }
 
@@ -420,6 +432,55 @@ function renderRecCard(rec, side, prefix) {
   </li>`;
 }
 
+// ──────────────── SOCIAL SENTIMENT (per tab) ────────────────
+function sentClass(s) {
+  const v = String(s || "").toUpperCase();
+  if (v === "BULLISH") return "is-up";
+  if (v === "BEARISH") return "is-down";
+  return "mw-dim";
+}
+
+function renderSocialItem(item, prefix) {
+  const id = `soc-${prefix}-${item.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
+  const open = isOpen(id);
+  const detailHtml = renderDetail(item);
+  const cls = `mw-soc-row ${open ? "is-open" : ""} ${detailHtml ? "is-clickable" : ""}`;
+  const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
+  const sources = (item.sources || []).join(", ");
+  const summary = (item.summary || "").trim();
+  return `<li class="${cls}">
+    <div class="mw-soc-summary" ${handler}>
+      ${tickerPill(item.ticker, "sm")}
+      <span class="mw-soc-mentions mw-mono">${item.mentions || 0}</span>
+      <span class="mw-soc-sentiment ${sentClass(item.sentiment)} mw-mono">${escHtml(item.sentiment || "NEUTRAL")}</span>
+      <span class="mw-soc-sources mw-mono">${escHtml(sources)}</span>
+      ${caret(hasDetail(item))}
+    </div>
+    ${open && detailHtml ? `<div class="mw-soc-detail">${detailHtml}</div>` : ""}
+  </li>`;
+}
+
+function renderSocial(socialItems, prefix, tabLabel) {
+  if (!socialItems || !socialItems.length) return "";
+  const body = `<ul class="mw-soc-list">${socialItems.map(s => renderSocialItem(s, prefix)).join("")}</ul>`;
+  return `<section class="mw-card mw-card-span-3 mw-soc-card">
+    <div class="mw-card-head">
+      <h3 class="mw-card-title">Social chatter ${tabLabel ? "&middot; " + tabLabel : ""}</h3>
+      <span class="mw-card-count">${socialItems.length} ${socialItems.length === 1 ? "ticker" : "tickers"}</span>
+    </div>
+    <div class="mw-card-body">
+      <div class="mw-soc-head">
+        <span class="mw-soc-h-tk">Ticker</span>
+        <span class="mw-soc-h-mentions">Mentions</span>
+        <span class="mw-soc-h-sent">Read</span>
+        <span class="mw-soc-h-sources">Where</span>
+      </div>
+      ${body}
+      <p class="mw-soc-foot">Pulled from r/wallstreetbets, r/stocks, r/all-stocks, r/cryptocurrency, r/TheRaceTo10Million, r/TheRaceTo1Million, r/Vitards, r/thetagang, r/Daytrading, r/options, and StockTwits trending.</p>
+    </div>
+  </section>`;
+}
+
 function renderRecommendations(recs, prefix) {
   if (!recs) return "";
   const buys = (recs.buy || []);
@@ -543,8 +604,9 @@ function renderMacroPane(b) {
   </section>` : "";
 
   const recs = renderRecommendations(m.recommendations, "macro");
+  const social = renderSocial(m.social, "macro", "Macro");
 
-  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}</div>`;
+  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}${social}</div>`;
 }
 
 // ──────────────── STOCKS ────────────────
@@ -639,8 +701,9 @@ function renderStocksPane(b) {
   </section>` : "";
 
   const recs = renderRecommendations(s.recommendations, "stocks");
+  const social = renderSocial(s.social, "stocks", "Stocks");
 
-  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}</div>`;
+  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}${social}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
@@ -699,14 +762,16 @@ function renderOptionsPane(b) {
   </section>` : "";
 
   const recs = renderRecommendations(o.recommendations, "options");
+  const social = renderSocial(o.social, "options", "Options");
 
-  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}</div>`;
+  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}${social}</div>`;
 }
 
 // ──────────────── CRYPTO ────────────────
 function renderCryptoPane(b) {
   const c = b.crypto;
   const recs = renderRecommendations(c.recommendations, "crypto");
+  const social = renderSocial(c.social, "crypto", "Crypto");
   if (c.status === "coming_soon" || !c.coins || !c.coins.length) {
     return `<div class="mw-grid">${card({
       title: "Crypto", span: "3",
@@ -717,14 +782,14 @@ function renderCryptoPane(b) {
           ${tickerPill("BTC", "sm")} ${tickerPill("ETH", "sm")} ${tickerPill("SOL", "sm")} ${tickerPill("XRP", "sm")}
         </div>
       </div>`
-    })}${recs}</div>`;
+    })}${recs}${social}</div>`;
   }
   const rows = c.coins.map(co => `<div class="mw-cal-row mw-cal-row-3" style="border-bottom:1px solid var(--mw-rule)">
     ${tickerPill(co.symbol, "sm")}
     <span class="mw-mono r">$${fmtNum(co.last)}</span>
     <span class="mw-mono ${pctClass(co.change_5d_pct)}">${fmtPct(co.change_5d_pct)} <span class="mw-dim">5d</span></span>
   </div>`).join("");
-  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}</div>`;
+  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}${social}</div>`;
 }
 
 // ──────────────── MODALS ────────────────
