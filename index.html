@@ -451,15 +451,18 @@ function confidenceBadge(n) {
   return `<span class="mw-rec-conf mw-rec-conf-${m.klass}" data-tt="${escAttr(tip)}">Conf ${m.label}</span>`;
 }
 
-function confidenceRow(n) {
+function confidenceRow(n, reason) {
   const m = confidenceMeta(n);
   if (!m) return "";
+  const reasonHtml = reason
+    ? `<span class="mw-rec-conf-reason"> Why this score: ${escHtml(reason)}</span>`
+    : "";
   return `<div class="mw-rec-debate-row">
     <span class="mw-rec-debate-label mw-rec-debate-label-${m.klass}">Confidence</span>
     <p class="mw-rec-debate-text">
       <span class="mw-rec-conf mw-rec-conf-${m.klass}" style="margin-right:8px">${m.label}</span>
       <span class="mw-mono mw-dim">${m.score} of 100.</span>
-      ${escHtml(m.full)}
+      ${escHtml(m.full)}${reasonHtml}
     </p>
   </div>`;
 }
@@ -467,7 +470,7 @@ function confidenceRow(n) {
 function renderRecCard(rec, side, prefix) {
   const id = `rec-${prefix}-${side}-${rec.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
   const confHtml = confidenceBadge(rec.confidence);
-  const confDetail = confidenceRow(rec.confidence);
+  const confDetail = confidenceRow(rec.confidence, rec.confidence_reason);
   const action = getRecAction(rec);
   const detailBlocks = `
     <div class="mw-rec-debate">

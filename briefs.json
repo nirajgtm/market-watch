@@ -3,7 +3,7 @@
   "briefs": [
     {
       "date": "2026-05-03",
-      "updated_at": "2026-05-03T15:11:23-07:00",
+      "updated_at": "2026-05-03T15:13:53-07:00",
       "regime": "BULL",
       "regime_note": "FOMO-extended",
       "vix_bucket": "normal",
@@ -226,7 +226,8 @@
               "action": {
                 "plain": "Set a price alert at $57 on XLE. When it hits, buy at the $56.50 level. That's the 20-day average. Don't chase $58.85.",
                 "pro": "Robinhood: search XLE, set price alert $57. Buy Limit $56.50 GTC. Stop Limit $55.10 GTC. Target $59.50."
-              }
+              },
+              "confidence_reason": "Score reflects 5-day sector RS leadership at +13.1 and a clean 20-day MA pullback level, capped because the run is mature and the entry is not yet hit."
             },
             {
               "ticker": "HUM",
@@ -238,7 +239,8 @@
               "action": {
                 "plain": "Wait for it to drop to $228 before buying. Set a price alert. Don't pay $233 today.",
                 "pro": "Robinhood: alert $228. Buy Limit $228 GTC, Stop Limit $222 GTC, target $267."
-              }
+              },
+              "confidence_reason": "Defensive earnings winner with healthcare rotation underway is a real medium-conviction setup; capped because the price is still 2 ATR above the 20MA and waiting for $228 risks missing the move."
             },
             {
               "ticker": "MO",
@@ -250,7 +252,8 @@
               "action": {
                 "plain": "Set a price alert at $70.50. If MO drops to $70, buy. The dividend pays you to wait.",
                 "pro": "Robinhood: alert $70.50. Buy Limit $70 GTC."
-              }
+              },
+              "confidence_reason": "Monthly chart is a clean uptrend with a 7%+ dividend cushion paying you to wait, capped by limited upside if growth keeps ripping and ever-present tobacco regulation tail risk."
             },
             {
               "ticker": "INTC",
@@ -262,7 +265,8 @@
               "action": {
                 "plain": "Don't chase $99. If it pulls back to $94, that's the breakout level. That's the cleaner entry.",
                 "pro": "Robinhood: alert $95. Buy Limit $94 GTC. Stop $89 (5% under entry). Target $110."
-              }
+              },
+              "confidence_reason": "Multi-month base breakout on 3x average volume confirms real institutional interest, capped because Friday's 5.4% rip means today's price is already extended off the breakout level."
             },
             {
               "ticker": "AMD",
@@ -274,7 +278,8 @@
               "action": {
                 "plain": "If you trade options and want exposure: a defined-risk debit call spread caps your loss. Don't size larger than 1% of your account.",
                 "pro": "Robinhood: search AMD, Trade Options, May 16, Buy 365C and Sell 380C, Limit small net debit, GFD. Max loss is the debit."
-              }
+              },
+              "confidence_reason": "Earnings-week catalyst is real and AI-semi sentiment driver, but score capped at 45 because the implied 9.5% move is binary and IV crush hits even on a beat."
             }
           ],
           "sell": [
@@ -288,7 +293,8 @@
               "action": {
                 "plain": "If Monday opens, runs to $170 to $175, then closes weak with a long upper wick: that's the sell signal. Buy May 8 weekly $170 puts.",
                 "pro": "Robinhood: search PODD, Trade Options, May 8 weekly, Buy 170P, Limit at mid, GFD. Stop alert $176.50, target $158."
-              }
+              },
+              "confidence_reason": "Score reflects a textbook short trigger zone live with GLP-1 category headwind, capped because Friday closed green inside the zone and the rejection candle has not printed yet."
             },
             {
               "ticker": "CLX",
@@ -300,7 +306,8 @@
               "action": {
                 "plain": "Don't try to catch the falling knife. Wait for the stock to base for at least a week before considering a buy.",
                 "pro": "Robinhood: skip. If you already own CLX and were on the fence, this is the cue to trim."
-              }
+              },
+              "confidence_reason": "Defensive name losing 10% on a guidance cut is a high-conviction warning about consumer spending, capped only by the relief-bounce risk a 7% dividend yield will eventually attract."
             },
             {
               "ticker": "RIVN",
@@ -312,7 +319,8 @@
               "action": {
                 "plain": "Wait for capitulation. If RIVN flushes below $14 on heavy volume, that's the level to revisit for a bounce trade. Otherwise skip.",
                 "pro": "Robinhood: skip. No setup until $14 with volume."
-              }
+              },
+              "confidence_reason": "Cash-burn problem is structural and Q1 missed the lowered bar, capped only by squeeze risk on M&A rumor or a sudden EV-cycle turn."
             },
             {
               "ticker": "TER",
@@ -324,7 +332,8 @@
               "action": {
                 "plain": "Don't short here. Wait for TER to rally to $365, then watch for a rejection candle before sizing.",
                 "pro": "Robinhood: alert $363. If rejection prints: Trade Options, May 16, Buy 345P, Limit at mid, GFD. Stop $385, target $306."
-              }
+              },
+              "confidence_reason": "Post-earnings miss with bounce already selling off is a real failed-rally setup, capped because it is 5% below the trigger and a sympathy rip on AMD beat could squeeze it."
             },
             {
               "ticker": "GEHC",
@@ -336,7 +345,8 @@
               "action": {
                 "plain": "Just observation. No action until GEHC bounces to $63 and rejects.",
                 "pro": "Robinhood: alert $62.50. If rejection prints: short via May 16 $62 put."
-              }
+              },
+              "confidence_reason": "Failed-bounce short setup with negative earnings reaction confirmed, capped because it is 3% below the trigger and the broader healthcare rotation could lift the boat."
             }
           ]
         },
@@ -774,7 +784,8 @@
               "action": {
                 "plain": "Set a price alert at $95. If INTC pulls back to $94, that's the cleaner entry. Don't pay $99 today.",
                 "pro": "Robinhood: alert $95. Buy Limit $94 GTC, Stop $89 (5% below), target $110."
-              }
+              },
+              "confidence_reason": "Multi-month base breakout on 3x average volume confirms real institutional interest, capped because Friday's 5.4% rip means today's price is already extended off the breakout level."
             },
             {
               "ticker": "HUM",
@@ -786,7 +797,8 @@
               "action": {
                 "plain": "Wait for HUM to drop to $228 before buying. The setup needs the deeper pullback first.",
                 "pro": "Robinhood: alert $228. Buy Limit $228 GTC, Stop $222 GTC, target $267."
-              }
+              },
+              "confidence_reason": "Defensive earnings winner with healthcare rotation underway is a real medium-conviction setup; capped because the price is still 2 ATR above the 20MA and waiting for $228 risks missing the move."
             },
             {
               "ticker": "MO",
@@ -798,7 +810,8 @@
               "action": {
                 "plain": "Set a price alert at $70.50. If MO drops to $70, buy. Hold for the dividend plus modest upside.",
                 "pro": "Robinhood: alert $70.50. Buy Limit $70 GTC."
-              }
+              },
+              "confidence_reason": "Monthly chart is a clean uptrend with a 7%+ dividend cushion paying you to wait, capped by limited upside if growth keeps ripping and ever-present tobacco regulation tail risk."
             },
             {
               "ticker": "AMD",
@@ -810,7 +823,8 @@
               "action": {
                 "plain": "If you trade options, a defined-risk debit call spread caps your loss. Size small (under 1% of account).",
                 "pro": "Robinhood: search AMD, Trade Options, May 16, Buy 365C and Sell 380C, Limit small net debit, GFD."
-              }
+              },
+              "confidence_reason": "Earnings-week catalyst is real and AI-semi sentiment driver, but score capped at 45 because the implied 9.5% move is binary and IV crush hits even on a beat."
             },
             {
               "ticker": "ARM",
@@ -822,7 +836,8 @@
               "action": {
                 "plain": "Same logic as AMD: defined-risk only. Sit out if you don't trade options regularly.",
                 "pro": "Robinhood: search ARM, Trade Options, May 16, Buy 215C and Sell 230C, Limit small net debit, GFD."
-              }
+              },
+              "confidence_reason": "Score reflects pre-earnings strength (up 8.7% on the week) and AI-semi tailwind, capped by 11% implied move and first print since licensing concerns being unresolved."
             }
           ],
           "sell": [
@@ -836,7 +851,8 @@
               "action": {
                 "plain": "If Monday opens, runs to $170 to $175, then closes weak with a long upper wick: that's the sell signal. Buy May 8 weekly $170 puts.",
                 "pro": "Robinhood: search PODD, Trade Options, May 8 weekly $170P, Buy to Open, Limit at mid, GFD. Stop alert $176.50, target $158."
-              }
+              },
+              "confidence_reason": "Score reflects a textbook short trigger zone live with GLP-1 category headwind, capped because Friday closed green inside the zone and the rejection candle has not printed yet."
             },
             {
               "ticker": "CLX",
@@ -848,7 +864,8 @@
               "action": {
                 "plain": "Don't catch the falling knife. Let CLX base for at least a week before considering anything.",
                 "pro": "Robinhood: skip. If you already own CLX, this is the cue to trim."
-              }
+              },
+              "confidence_reason": "Defensive name losing 10% on a guidance cut is a high-conviction warning about consumer spending, capped only by the relief-bounce risk a 7% dividend yield will eventually attract."
             },
             {
               "ticker": "RIVN",
@@ -860,7 +877,8 @@
               "action": {
                 "plain": "Wait for capitulation. Below $14 on heavy volume is the next level to consider a bounce trade.",
                 "pro": "Robinhood: skip. No setup until $14 with volume."
-              }
+              },
+              "confidence_reason": "Cash-burn problem is structural and Q1 missed the lowered bar, capped only by squeeze risk on M&A rumor or a sudden EV-cycle turn."
             },
             {
               "ticker": "NIO",
@@ -872,7 +890,8 @@
               "action": {
                 "plain": "Setup needs a flush to $5.50 followed by a base before any long is interesting. Skip until then.",
                 "pro": "Robinhood: skip."
-              }
+              },
+              "confidence_reason": "Score reflects China EV demand-bearish sentiment plus 7.5% Friday drop on heavy volume, capped by potential China stimulus tailwind that lifts the whole sector overnight."
             },
             {
               "ticker": "TSLA",
@@ -884,7 +903,8 @@
               "action": {
                 "plain": "If you bought TSLA recently and it's up 10%+, consider trimming a third here. Let the rest run.",
                 "pro": "Robinhood: if you hold and want to trim, sell a third of your shares at the limit price you want."
-              }
+              },
+              "confidence_reason": "Score is low because the trim signal is soft (just heavy put activity at 397.50 5/4 vol/OI 743 hedging) without a real fundamental crack; the robotaxi narrative still has legs."
             }
           ]
         },
@@ -1154,7 +1174,8 @@
               "action": {
                 "plain": "Buy the spread for a small debit ($2 to $4 typical for these widths). Max loss is what you pay. Max profit is $15 minus the debit per spread.",
                 "pro": "Robinhood: search AMD, Trade Options, May 16 expiry, tap 365 (Buy to Open Call), tap 380 (Sell to Open Call), Limit your net debit, GFD. Size under 1% of account."
-              }
+              },
+              "confidence_reason": "Defined-risk structure caps loss to debit and the data-center whisper is above consensus, capped because IV crush hits the long leg even on a beat and the bar is already priced high."
             },
             {
               "ticker": "ARM 5/16 215/230 call spread",
@@ -1166,7 +1187,8 @@
               "action": {
                 "plain": "Same setup as AMD. Buy the spread for a small debit, size small.",
                 "pro": "Robinhood: search ARM, Trade Options, May 16, Buy 215C and Sell 230C, Limit small net debit, GFD."
-              }
+              },
+              "confidence_reason": "Same defined-risk logic as AMD with pre-earnings strength supporting the bull thesis, capped because 11% implied move is rich and royalty-rate guidance is unresolved."
             },
             {
               "ticker": "NVDA 5/16 200/210 call spread",
@@ -1178,7 +1200,8 @@
               "action": {
                 "plain": "Smaller-size spread. If AMD beats Wednesday after-hours, NVDA gaps up Thursday. The spread captures part of that move with capped loss.",
                 "pro": "Robinhood: search NVDA, Trade Options, May 16, Buy 200C and Sell 210C, Limit small net debit, GFD. Size under 0.5% of account given the indirect setup."
-              }
+              },
+              "confidence_reason": "Sympathy play on AMD's print with two layers of risk (AMD has to beat AND NVDA has to follow), so the score stays low."
             }
           ],
           "sell": [
@@ -1192,7 +1215,8 @@
               "action": {
                 "plain": "Wait for Monday rejection candle. If it prints, buy the put. If Monday closes green again, skip the trade entirely.",
                 "pro": "Robinhood: search PODD, Trade Options, May 8 weekly, Buy 170P, Limit at mid, GFD. Stop alert $176.50."
-              }
+              },
+              "confidence_reason": "Watchlist short trigger live with earnings catalyst Wed before open, capped because Monday closed green inside the zone and the 5-day option decays fast."
             },
             {
               "ticker": "Avoid naked long calls into earnings (any ticker)",
@@ -1204,7 +1228,8 @@
               "action": {
                 "plain": "Convert any naked-call earnings idea into a debit spread (buy a closer call, sell a further-out call). Or just trade the day after.",
                 "pro": "Robinhood: when you build any earnings options trade, always pick the multi-leg view, not the single-leg, to build a spread."
-              }
+              },
+              "confidence_reason": "Universal rule rather than a single setup; IV crush on naked options post-earnings is mathematically guaranteed regardless of direction, so the confidence is high."
             }
           ]
         },
@@ -1470,37 +1495,37 @@
         ]
       },
       "sparks": {
-        "HUM": [
-          196.21,
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63
+        "^VIX": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
         ],
-        "TER": [
-          365.51,
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42
+        "vix": [
+          18.36,
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99
         ],
         "QQQ": [
           628.6,
@@ -1517,54 +1542,6 @@
           661.57,
           667.74,
           674.15
-        ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4644.5
-        ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4644.5
-        ],
-        "MO": [
-          65.62,
-          64.42,
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55
         ],
         "IWM": [
           268.72,
@@ -1614,21 +1591,149 @@
           718.66,
           720.65
         ],
-        "GEHC": [
-          74.67,
-          73.51,
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03
+        "TER": [
+          365.51,
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42
+        ],
+        "MO": [
+          65.62,
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55
+        ],
+        "HUM": [
+          196.21,
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63
+        ],
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.073
+        ],
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.073
+        ],
+        "^TNX": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "ten_year": [
+          4.256,
+          4.282,
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378
+        ],
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4644.5
+        ],
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4644.5
         ],
         "CL=F": [
           91.29,
@@ -1662,69 +1767,21 @@
           101.94,
           101.94
         ],
-        "DX-Y.NYB": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.085
-        ],
-        "dxy": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.085
-        ],
-        "^VIX": [
-          18.36,
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99
-        ],
-        "vix": [
-          18.36,
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99
+        "GEHC": [
+          74.67,
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03
         ],
         "XLE": [
           55.95,
@@ -1741,38 +1798,6 @@
           59.03,
           59.65,
           58.85
-        ],
-        "^TNX": [
-          4.256,
-          4.282,
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378
-        ],
-        "ten_year": [
-          4.256,
-          4.282,
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378
         ]
       }
     },

@@ -1032,6 +1032,15 @@ html, body {
 .mw-rec-debate-label-high { color: var(--mw-up); }
 .mw-rec-debate-label-med  { color: var(--mw-accent); }
 .mw-rec-debate-label-low  { color: var(--mw-ink-3); }
+
+/* The "Why this score" reason text inside the confidence row */
+.mw-rec-conf-reason {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--mw-size-small);
+  color: var(--mw-ink-2);
+  font-weight: 500;
+}
 .mw-rec-vehicle {
   font-size: var(--mw-size-xs);
   color: var(--mw-ink-3);

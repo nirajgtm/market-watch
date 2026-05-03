@@ -110,6 +110,7 @@ Every field is REQUIRED. The page renders all of them; missing fields produce a 
   "ticker": "TICKER or short trade name (e.g. 'AMD 5/16 365/380 call spread')",
   "verdict": "BUY ON DIP | BUY ON BREAKOUT | BUY VIA SPREAD | SHORT ON CONFIRMATION | SHORT ON BOUNCE | AVOID | TRIM IF EXTENDED | HOLD",
   "confidence": 0,
+  "confidence_reason": "One sentence explaining WHY this exact score. Cite specific evidence + specific limiter.",
   "vehicle": "stock | ETF | put option | debit call spread | put debit spread | LEAP call | crypto",
   "pros": "Strongest evidence-grounded argument for the verdict. 2-3 sentences. Lead with catalyst + setup.",
   "cons": "Strongest evidence-grounded counter. 2-3 sentences. Lead with what could invalidate.",
