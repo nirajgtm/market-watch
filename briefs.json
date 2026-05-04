@@ -78,12 +78,12 @@
           }
         ],
         "vol_yields": {
-          "vix": 17.38,
+          "vix": 16.99,
           "vix_term": "STEEP_CONTANGO",
           "ten_year": 4.38,
-          "dxy": 98.19,
-          "oil": 102.63,
-          "gold": 4599.1
+          "dxy": 98.21,
+          "oil": 101.94,
+          "gold": 4644.5
         },
         "sector_rotation": {
           "leaders_5d": [
@@ -353,11 +353,10 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 240,
+            "mentions": 239,
             "sources": [
               "all_stocks",
               "daytrading",
-              "options",
               "race1m",
               "stocks",
               "thetagang",
@@ -366,13 +365,6 @@
             "sentiment": "NEUTRAL",
             "summary": "",
             "top_posts": [
-              {
-                "sub": "options",
-                "title": "$QQQ / $SPY earnings + FOMC calendar spread",
-                "score": 20,
-                "flair": "",
-                "body_excerpt": "* Thesis: $MSFT, $AMZN, $META, $GOOG all report tonight into the FOMC decision window, and $QQQ / $SPY options are bid in the front week while back-month vol is relatively calmer.\n* Strategy: Buy a short-dated $QQQ or $SPY call calendar (se..."
-              },
               {
                 "sub": "Daytrading",
                 "title": "SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking",
@@ -386,11 +378,18 @@
                 "score": 12,
                 "flair": "DD",
                 "body_excerpt": "What's up fellow degens and $1M racers.\n\nI've been meaning to write this up for a while now. With the incredible volatility in the markets recently (the VIX broke above 20 and into the highest level in 3 months,  and many SaaS companies got..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 11,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction and the Fed and rates backdrop. The loudest take is: \"$QQQ / $SPY earnings + FOMC calendar spread\".",
-              "pro": "240 mentions across 7 communities, +162% vs prior session. Sentiment neutral. Themes: the earnings reaction; the Fed and rates backdrop. Top thesis: \"$QQQ / $SPY earnings + FOMC calendar spread\"."
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and playing defined-risk spreads. The loudest take is: \"SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking\".",
+              "pro": "239 mentions across 6 communities, +162% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; playing defined-risk spreads. Top thesis: \"SPY Live Market Command System - Real-Time Pressure, Continuation, and Expansion Tracking\"."
             }
           },
           {
@@ -489,7 +488,7 @@
           {
             "ticker": "PODD",
             "last": 175.04,
-            "change_pct": 0.02,
+            "change_pct": 1.68,
             "trigger_zone": "$170 to $175 short zone",
             "status": "TRIGGERED",
             "note": "Friday closed green. Need a rejection candle Monday to confirm.",
@@ -501,7 +500,7 @@
           {
             "ticker": "HUM",
             "last": 233.63,
-            "change_pct": -1.43,
+            "change_pct": -1.19,
             "trigger_zone": "long entry below $228",
             "status": "NEAR",
             "note": "Cooling but still stretched. Wait for a deeper pullback to $228 then $222 stop.",
@@ -513,7 +512,7 @@
           {
             "ticker": "XLE",
             "last": 58.85,
-            "change_pct": -1.56,
+            "change_pct": -1.34,
             "trigger_zone": "long entry $56.50 (20-day MA)",
             "status": "FAR",
             "note": "Leading sector but extended. Need a flush to the 20MA before adding.",
@@ -525,7 +524,7 @@
           {
             "ticker": "TER",
             "last": 345.42,
-            "change_pct": -0.17,
+            "change_pct": 0,
             "trigger_zone": "fade short above $365",
             "status": "FAR",
             "note": "Post-earnings reversal setup. Short the bounce, not the drop.",
@@ -537,7 +536,7 @@
           {
             "ticker": "GEHC",
             "last": 61.03,
-            "change_pct": -0.6,
+            "change_pct": 0,
             "trigger_zone": "fade short above $63",
             "status": "FAR",
             "note": "Failed-bounce short setup. Wait for the retest.",
@@ -549,7 +548,7 @@
           {
             "ticker": "MO",
             "last": 74.55,
-            "change_pct": 2.64,
+            "change_pct": 0,
             "trigger_zone": "long entry below $70",
             "status": "FAR",
             "note": "Defensive PEAD long on a pullback.",
@@ -903,6 +902,47 @@
         },
         "social": [
           {
+            "ticker": "AMD",
+            "mentions": 216,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "The list of companies that are related to AI and Computer manofacture",
+                "score": 25,
+                "flair": "",
+                "body_excerpt": "Everyone knows that AI companies are booming and companies that are related to AI like Micron and Intel have an incredible rise this quarter.\n\nThis is a list of companies that are related to AI\n\n# The \"Big Three\" &amp; Core Processors\n\n1. *..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 13,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 11,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"The list of companies that are related to AI and Computer manofacture\".",
+              "pro": "216 mentions across 6 communities, +59% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"The list of companies that are related to AI and Computer manofacture\"."
+            }
+          },
+          {
             "ticker": "MU",
             "mentions": 191,
             "sources": [
@@ -941,46 +981,6 @@
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand, memory and storage upcycle, and a fresh breakout. Traders are writing puts to collect premium. The loudest take is: \"$MU is in a strong uptrend with good growth\".",
               "pro": "191 mentions across 6 communities, +464% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle; a fresh breakout. Strategy mix: writing puts to collect premium. Top thesis: \"$MU is in a strong uptrend with good growth\"."
-            }
-          },
-          {
-            "ticker": "AMD",
-            "mentions": 215,
-            "sources": [
-              "all_stocks",
-              "options",
-              "stocks",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 13,
-                "flair": "Discussion",
-                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "March Short Put Verticals",
-                "score": 11,
-                "flair": "",
-                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
-              },
-              {
-                "sub": "options",
-                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 9,
-                "flair": "",
-                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"GOOG and IBIT wheel are smooth as butter\".",
-              "pro": "215 mentions across 5 communities, +59% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"GOOG and IBIT wheel are smooth as butter\"."
             }
           },
           {
@@ -1217,7 +1217,165 @@
             }
           ]
         },
+        "wheel_candidates": [
+          {
+            "ticker": "AVGO",
+            "verdict": "STRONG WHEEL",
+            "confidence": 75,
+            "confidence_reason": "Top-quality AI semi with earnings 6/03 just outside the CSP expiry, 38.8% annualized on a 6.2% OTM put, and RSI 69.5 strong-not-parabolic: capped by 0.4% from 52w high.",
+            "spot": 421.28,
+            "csp_strike": 395.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 32,
+            "csp_premium": 13.44,
+            "csp_otm_pct": 6.24,
+            "annualized_yield_pct": 38.8,
+            "rsi14": 69.5,
+            "above_200dma": true,
+            "next_er_date": "2026-06-03",
+            "days_to_er": 30,
+            "pros": "Mega-cap AI/networking name with structural HBM and custom-silicon demand. Earnings on 6/03 land just outside the 6/05 CSP expiry, so no binary inside the trade. RSI 69.5 is strong but not parabolic, the 50DMA at 349 sits 17% below spot giving real cushion if assigned, and 38.8% annualized on a 6% OTM put is rich for a name this quality.",
+            "cons": "Spot is 0.4% from the 52-week high so the 'cushion' is theoretical until the chart confirms a higher low. Assignment at 395 is still owning a $40 billion-revenue semi at a premium multiple. AI-spend cycle wobble or a tariff headline could drive a sharp gap-down that blows through the 6% buffer in one day.",
+            "action": {
+              "plain": "Sell to open one June 5 $395 put on Broadcom for about $13.44 per share. That collects $1,344 today; if the stock stays above $395 by June 5 you keep all of it. If it drops below $395, you buy 100 shares at an effective cost of $381.56 (strike minus premium received).",
+              "pro": "STO 1 AVGO 2026-06-05 395P @ $13.44 mid (lim near mid, GFD). Collateral $39,500. 38.8% annualized, 6.24% OTM, 32 DTE. Roll the put down-and-out if AVGO closes < $400 with broken structure. If assigned, immediately STO covered call against the position at the next ~30 DTE 5% OTM strike."
+            }
+          },
+          {
+            "ticker": "ORCL",
+            "verdict": "STRONG WHEEL",
+            "confidence": 72,
+            "confidence_reason": "Cloud + AI infra story with no earnings inside the trade window, 46.7% annualized on 5.4% OTM, RSI 60.8 mid-band: capped by recent rerating volatility.",
+            "spot": 171.83,
+            "csp_strike": 162.5,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 32,
+            "csp_premium": 6.65,
+            "csp_otm_pct": 5.43,
+            "annualized_yield_pct": 46.7,
+            "rsi14": 60.8,
+            "above_200dma": false,
+            "next_er_date": "2026-06-10",
+            "days_to_er": 37,
+            "pros": "Oracle's cloud infrastructure + OpenAI capacity deals are the cleanest enterprise-AI revenue story right now. RSI 60.8 is mid-band so the trade isn't fading a parabola. ER on 6/10 sits five days outside the 6/05 expiry, so no print risk inside the CSP. 46.7% annualized on a 5.4% OTM strike is generous for a name this stable.",
+            "cons": "Spot trades below the 200DMA right now: that's the main wheel-quality concern. The post-rerating chart is still digesting and the 50DMA cluster at $155 is the realistic stop-out level if assigned. Capacity-deal headlines can chop violently in either direction during the 32-day window.",
+            "action": {
+              "plain": "Sell to open one June 5 $162.50 put on Oracle for about $6.65 per share, collecting $665. If Oracle stays above $162.50, you keep the cash. If assigned, your effective cost is $155.85: close to where the 50-day average sits.",
+              "pro": "STO 1 ORCL 2026-06-05 162.5P @ $6.65 mid (lim, GFD). Collateral $16,250. 46.7% annualized, 5.43% OTM, 32 DTE. Stop alert at $156 (close put if ORCL breaks 50DMA cluster). If assigned, sell 165 or 170 covered call ~30 DTE."
+            }
+          },
+          {
+            "ticker": "MU",
+            "verdict": "HIGH-PREMIUM, ELEVATED RISK",
+            "confidence": 60,
+            "confidence_reason": "76.5% annualized is exceptional, ER 51d outside the trade, but RSI 78 after a 5x run means the premium is pricing real assignment risk: score reflects that asymmetry.",
+            "spot": 542.21,
+            "csp_strike": 510.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 32,
+            "csp_premium": 34.21,
+            "csp_otm_pct": 5.94,
+            "annualized_yield_pct": 76.5,
+            "rsi14": 78.0,
+            "above_200dma": true,
+            "next_er_date": "2026-06-24",
+            "days_to_er": 51,
+            "pros": "Memory-cycle pure-play with HBM demand inflection driving the recent move. 76.5% annualized is the highest yield among quality names and the next earnings on 6/24 is well outside the 6/05 expiry. The 50DMA at 425 leaves real space below assignment.",
+            "cons": "RSI 78 is firmly parabolic and the chart has 5x'd from $96 over the past year. A normal 15-20% pullback in this kind of run lands you assigned $40-80 in the money, not $32 OTM. The 76.5% annualized premium isn't free money: the chain is pricing exactly this kind of mean-reversion risk. Best taken at half size or skipped if you already hold the stock outright (concentration on top of concentration).",
+            "action": {
+              "plain": "Sell to open one June 5 $510 put on Micron for about $34.21 per share, collecting $3,421. If Micron stays above $510 by June 5, you keep it all. Be aware that the strike is far enough below today's price that an assignment means owning Micron near $476, a level that requires the AI memory story to keep working.",
+              "pro": "STO 1 MU 2026-06-05 510P @ $34.21 mid (lim, GFD). Collateral $51,000. 76.5% annualized, 5.94% OTM, 32 DTE. Half-size if MU is already a top portfolio position. Roll down-and-out aggressively if MU closes < $500 with vol expansion. If assigned, write 525 or 540 CC ~30 DTE."
+            }
+          },
+          {
+            "ticker": "USO",
+            "verdict": "OK WHEEL: DIFFERENT RISK PROFILE",
+            "confidence": 55,
+            "confidence_reason": "60.9% annualized with no earnings ever (it's a commodity ETF) is appealing, but assignment means owning a contango-prone futures product: the carry math is different from a stock wheel.",
+            "spot": 142.8,
+            "csp_strike": 134.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 32,
+            "csp_premium": 7.15,
+            "csp_otm_pct": 6.16,
+            "annualized_yield_pct": 60.9,
+            "rsi14": 60.9,
+            "above_200dma": true,
+            "next_er_date": null,
+            "days_to_er": null,
+            "pros": "Crude oil ETF: no earnings risk by definition, no headline-driven binary. RSI 60.9 sits in the middle of the band. 60.9% annualized on a 6% OTM strike is rich because oil vol has been bid. The instrument has been ranging $115-$145 for 60 days, so the 134 strike sits near the lower band of established support.",
+            "cons": "USO tracks crude futures, not spot oil. In contango markets the negative roll yield bleeds the ETF over time even when oil is flat: assignment locks in that bleed. A geopolitical resolution (Iran deal, OPEC supply add) or a demand-shock recession headline can drop oil 8%+ in a session, blowing through the 6% buffer. Not a 'name you'd want to own forever' the way the wheel typically assumes.",
+            "action": {
+              "plain": "Sell to open one June 5 $134 put on the United States Oil Fund for about $7.15 per share, collecting $715. If oil holds and USO stays above $134, keep the premium. If assigned, you own a crude-tracking ETF at an effective $126.85: be ready to write covered calls aggressively to offset the contango drag.",
+              "pro": "STO 1 USO 2026-06-05 134P @ $7.15 mid (lim, GFD). Collateral $13,400. 60.9% annualized, 6.16% OTM. WTI catalyst calendar: OPEC June meeting falls inside the window: size accordingly. If assigned, write CCs aggressively (weekly 2-3% OTM) to fight contango."
+            }
+          },
+          {
+            "ticker": "INTC",
+            "verdict": "RICH PREMIUM, HIGH RISK",
+            "confidence": 45,
+            "confidence_reason": "82% annualized is the fattest yield on the board and ER is 80 days out, but RSI 87.2 means selling vol into a top: score reflects that the premium is fat for a reason.",
+            "spot": 99.62,
+            "csp_strike": 94.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 32,
+            "csp_premium": 6.76,
+            "csp_otm_pct": 5.64,
+            "annualized_yield_pct": 82.0,
+            "rsi14": 87.2,
+            "above_200dma": true,
+            "next_er_date": "2026-07-29",
+            "days_to_er": 80,
+            "pros": "82% annualized is the richest CSP yield in the universe right now. Earnings 7/29 sits well outside the trade window so no binary inside. The foundry-win narrative has been working: INTC is up substantially on real catalysts, not just multiple expansion. The 200DMA at $26 is laughably below spot.",
+            "cons": "RSI 87.2 is textbook parabolic-extension. The premium is fat because every option seller in the chain is pricing the same mean-reversion risk you should be. A normal cooldown to even RSI 60 would mark INTC ~$80, well below the 94 strike. Selling a CSP at the top of a 4x-in-3-months run is fading the trend, not riding it. The wheel premise is 'I'd happily own this': at $94 INTC means owning a fab-builder mid-thesis with ~25 PE.",
+            "action": {
+              "plain": "Selling a put on Intel here means collecting $676 in exchange for the obligation to buy 100 shares at $94 if Intel pulls back through that level by June 5. The premium is large because Intel has run hard and the market is pricing a real chance it cools. If you do this, size small: this is a momentum-fade trade dressed up as a wheel.",
+              "pro": "STO 1 INTC 2026-06-05 94P @ $6.76 mid (lim, GFD). Collateral $9,400. 82% annualized, 5.64% OTM. Treat as a 1/4-size position max. Hard stop on the put if INTC closes < $93 (likely cascade once parabolic break). Better setup: wait for an RSI < 70 reset, then re-evaluate."
+            }
+          }
+        ],
         "social": [
+          {
+            "ticker": "AMD",
+            "mentions": 216,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "The list of companies that are related to AI and Computer manofacture",
+                "score": 25,
+                "flair": "",
+                "body_excerpt": "Everyone knows that AI companies are booming and companies that are related to AI like Micron and Intel have an incredible rise this quarter.\n\nThis is a list of companies that are related to AI\n\n# The \"Big Three\" &amp; Core Processors\n\n1. *..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 13,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "March Short Put Verticals",
+                "score": 11,
+                "flair": "",
+                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"The list of companies that are related to AI and Computer manofacture\".",
+              "pro": "216 mentions across 6 communities, +59% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"The list of companies that are related to AI and Computer manofacture\"."
+            }
+          },
           {
             "ticker": "MU",
             "mentions": 191,
@@ -1257,46 +1415,6 @@
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand, memory and storage upcycle, and a fresh breakout. Traders are writing puts to collect premium. The loudest take is: \"$MU is in a strong uptrend with good growth\".",
               "pro": "191 mentions across 6 communities, +464% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle; a fresh breakout. Strategy mix: writing puts to collect premium. Top thesis: \"$MU is in a strong uptrend with good growth\"."
-            }
-          },
-          {
-            "ticker": "AMD",
-            "mentions": 215,
-            "sources": [
-              "all_stocks",
-              "options",
-              "stocks",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 13,
-                "flair": "Discussion",
-                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "March Short Put Verticals",
-                "score": 11,
-                "flair": "",
-                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
-              },
-              {
-                "sub": "options",
-                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 9,
-                "flair": "",
-                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"GOOG and IBIT wheel are smooth as butter\".",
-              "pro": "215 mentions across 5 communities, +59% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"GOOG and IBIT wheel are smooth as butter\"."
             }
           },
           {
@@ -1463,69 +1581,21 @@
         ]
       },
       "sparks": {
-        "CL=F": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          102.59
-        ],
-        "oil": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          102.59
-        ],
-        "DX-Y.NYB": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.189
-        ],
-        "dxy": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.189
+        "MO": [
+          65.62,
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55
         ],
         "ARM": [
           161.22,
@@ -1543,6 +1613,86 @@
           210.32,
           211.18
         ],
+        "TER": [
+          365.51,
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42
+        ],
+        "HUM": [
+          196.21,
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63
+        ],
+        "PODD": [
+          201.49,
+          202.5,
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04
+        ],
+        "CL=F": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          102.81
+        ],
+        "oil": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          102.81
+        ],
         "XLE": [
           55.95,
           55.76,
@@ -1559,21 +1709,101 @@
           59.65,
           58.85
         ],
-        "MO": [
-          65.62,
-          64.42,
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.214
+        ],
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.214
+        ],
+        "^VIX": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          17.34
+        ],
+        "vix": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          17.34
+        ],
+        "IWM": [
+          268.72,
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28
+        ],
+        "SPY": [
+          694.46,
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65
         ],
         "^TNX": [
           4.256,
@@ -1607,54 +1837,6 @@
           4.39,
           4.378
         ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4599.1001
-        ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4599.1001
-        ],
-        "TER": [
-          365.51,
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42
-        ],
         "GEHC": [
           74.67,
           73.51,
@@ -1670,70 +1852,6 @@
           59.485,
           60.84,
           61.03
-        ],
-        "PODD": [
-          201.49,
-          202.5,
-          201.47,
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04
-        ],
-        "SPY": [
-          694.46,
-          699.94,
-          701.66,
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65
-        ],
-        "IWM": [
-          268.72,
-          269.39,
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28
-        ],
-        "HUM": [
-          196.21,
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63
         ],
         "QQQ": [
           628.6,
@@ -1751,40 +1869,39 @@
           667.74,
           674.15
         ],
-        "^VIX": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          17.38
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4594.2998
         ],
-        "vix": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          17.38
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4594.2998
         ]
-      },
-      "last_refreshed_at": "2026-05-04T00:30:06-07:00"
+      }
     },
     {
       "date": "2026-05-02",

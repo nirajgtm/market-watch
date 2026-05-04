@@ -86,6 +86,29 @@ Single file, public, served as static asset. Versioned via `version` integer.
                       "detail": {"plain":"...","pro":"..."} }],
     "leaps": [{ "ticker": "...", "thesis_window": "Jan 2027", "note": "...",
                 "detail": {"plain":"...","pro":"..."} }],
+    "wheel_candidates": [{
+      "ticker": "AVGO",
+      "verdict": "STRONG WHEEL | OK WHEEL | HIGH-PREMIUM RISKY | RICH PREMIUM HIGH RISK",
+      "confidence": 75,
+      "confidence_reason": "One sentence: WHY this score, citing evidence + limiter.",
+      "spot": 421.28,
+      "csp_strike": 395.00,
+      "csp_expiry": "2026-06-05",
+      "csp_dte": 32,
+      "csp_premium": 13.44,
+      "csp_otm_pct": 6.24,
+      "annualized_yield_pct": 38.8,
+      "rsi14": 69.5,
+      "above_200dma": true,
+      "next_er_date": "2026-06-03 or null",
+      "days_to_er": 30,
+      "pros": "2-3 sentences arguing the wheel case for this name today.",
+      "cons": "2-3 sentences arguing the risk case. Symmetric.",
+      "action": {
+        "plain": "Beginner-friendly explanation of the CSP trade.",
+        "pro": "Robinhood-explicit: STO 1 AVGO 2026-06-05 395P @ $13.44 mid, GFD. Collateral $39,500. Stop alert at $X. If assigned, write CC."
+      }
+    }],
     "action": { "tier": "...", "text": "..." },
     "recommendations": { "buy": [...], "sell": [...] }
   },

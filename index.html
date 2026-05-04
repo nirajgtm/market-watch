@@ -156,8 +156,63 @@ function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
   </svg>`;
 }
 
-function tickerPill(sym, size) {
-  return `<span class="mw-tpill ${size === "sm" ? "mw-tpill-sm" : ""} mw-mono">${escHtml(sym)}</span>`;
+function tickerPill(sym, size, opts) {
+  const small = size === "sm";
+  const withLogo = !!(opts && opts.withLogo);
+  const chgPct = opts && typeof opts.chgPct === "number" && Number.isFinite(opts.chgPct) ? opts.chgPct : null;
+  const tone = chgPct === null ? "" : chgPct > 0 ? "up" : chgPct < 0 ? "down" : "";
+  const inner = withLogo
+    ? `${tickerLogo(sym)}<span class="mw-tpill-sym">${escHtml(sym)}</span>`
+    : escHtml(sym);
+  const cls = [
+    "mw-tpill", "mw-mono",
+    small ? "mw-tpill-sm" : "",
+    withLogo ? "mw-tpill-logo" : "",
+    tone ? `mw-tpill-${tone}` : ""
+  ].filter(Boolean).join(" ");
+  return `<span class="${cls}">${inner}</span>`;
+}
+
+// Compute today's % change for a ticker from the brief's sparks map.
+// Returns null if no/short series — so callers fall back to neutral color.
+function chgPctFromSparks(sparks, sym) {
+  const arr = sparks && sparks[sym];
+  if (!Array.isArray(arr) || arr.length < 2) return null;
+  const a = Number(arr[arr.length - 1]);
+  const b = Number(arr[arr.length - 2]);
+  if (!Number.isFinite(a) || !Number.isFinite(b) || b === 0) return null;
+  return ((a - b) / b) * 100;
+}
+
+// Returns an <img> for a US-listed ticker logo, with onerror fallback chain
+// FMP -> Parqet -> hide. Hiding leaves the ticker letters standing alone.
+function tickerLogo(sym) {
+  const s = escAttr(sym);
+  const primary = `https://financialmodelingprep.com/image-stock/${s}.png`;
+  const fallback = `https://assets.parqet.com/logos/symbol/${s}`;
+  return `<img class="mw-tlogo" src="${primary}" alt=""
+    loading="lazy" decoding="async"
+    onerror="if(this.dataset.f!='1'){this.dataset.f='1';this.src='${fallback}';}else{this.style.display='none';}">`;
+}
+
+// Renders the action target column for renderTopActions.
+// - If sym matches a ticker shape, emits [logo][TICKER colored by chg].
+// - Otherwise emits a neutral text span (e.g. "Indices").
+function actionTarget(sym, chgPct) {
+  const s = String(sym || "");
+  if (!s) return `<span class="mw-action-target-empty"></span>`;
+  const isTicker = /^[A-Z]{1,6}$/.test(s);
+  if (!isTicker) {
+    return `<span class="mw-action-target-text mw-mono">${escHtml(s)}</span>`;
+  }
+  let tone = "neutral";
+  if (typeof chgPct === "number" && Number.isFinite(chgPct)) {
+    if (chgPct > 0) tone = "up";
+    else if (chgPct < 0) tone = "down";
+  }
+  return `<span class="mw-action-target mw-action-target-${tone}">
+    ${tickerLogo(s)}<span class="mw-action-target-sym mw-mono">${escHtml(s)}</span>
+  </span>`;
 }
 
 function actionPill(verb, size) {
@@ -245,13 +300,23 @@ function renderDetail(item) {
 //  DATA NORMALIZATION
 // ============================================================
 function normalize(brief) {
+  const sparks = brief.sparks || {};
+  const chgFromSpark = (sym) => {
+    const arr = sparks[sym];
+    if (!Array.isArray(arr) || arr.length < 2) return null;
+    const a = Number(arr[arr.length - 1]);
+    const b = Number(arr[arr.length - 2]);
+    if (!Number.isFinite(a) || !Number.isFinite(b) || b === 0) return null;
+    return ((a - b) / b) * 100;
+  };
   const actions = (brief.top_actions || []).map(a => {
     if (typeof a === "object" && a !== null) {
       return {
         verb: a.verb || "WATCH",
         target: a.target || "",
         text: a.text || "",
-        detail: a.detail || ""
+        detail: a.detail || "",
+        chg_pct: chgFromSpark(a.target || "")
       };
     }
     const s = String(a);
@@ -261,7 +326,7 @@ function normalize(brief) {
     const t = rest.match(/^([A-Z]{2,6})\s+(.*)$/);
     let target = "", text = rest;
     if (t) { target = t[1]; text = t[2]; }
-    return { verb, target, text, detail: "" };
+    return { verb, target, text, detail: "", chg_pct: chgFromSpark(target) };
   });
 
   const sr = brief.macro?.sector_rotation || {};
@@ -317,6 +382,7 @@ function normalize(brief) {
       unusual: brief.options?.unusual || [],
       earnings_iv: brief.options?.earnings_iv || [],
       leaps: brief.options?.leaps || [],
+      wheel_candidates: brief.options?.wheel_candidates || [],
       action: brief.options?.action,
       recommendations: brief.options?.recommendations,
       social: brief.options?.social || []
@@ -392,12 +458,22 @@ function renderMarketStatus(s) {
 
 function renderTopActions(actions) {
   if (!actions || !actions.length) return "";
-  const rows = actions.map((a, i) => {
+  // Hide NO_ACTION / NONE rows. The brief still records them, but Today's
+  // actions only surfaces tickers the reader can do something about.
+  const visible = actions.filter(a => {
+    const v = String(a.verb || "").toUpperCase();
+    return v && !v.includes("NO ACTION") && v !== "NONE";
+  });
+  if (!visible.length) return "";
+  const rows = visible.map((a, i) => {
     const id = `action-${i}`;
+    const chgStr = (typeof a.chg_pct === "number" && Number.isFinite(a.chg_pct))
+      ? `<span class="mw-action-chg mw-mono">${a.chg_pct >= 0 ? "+" : ""}${a.chg_pct.toFixed(2)}%</span>`
+      : `<span class="mw-action-chg mw-action-chg-empty"></span>`;
     const summary = `
-      <span class="mw-mono mw-action-num">${String(i + 1).padStart(2, "0")}</span>
-      ${actionPill(a.verb)}
-      ${a.target ? tickerPill(a.target) : `<span></span>`}
+      ${actionTarget(a.target, a.chg_pct)}
+      ${chgStr}
+      ${actionPill(a.verb, "sm")}
       <span class="mw-action-text">${escHtml(a.text)}</span>
       ${caret(hasDetail(a))}`;
     return expandLi(id, summary, renderDetail(a), "mw-action-item");
@@ -407,7 +483,7 @@ function renderTopActions(actions) {
       <span class="mw-eyebrow-mark mw-mono">&gt;</span>
       <span class="mw-eyebrow-text mw-mono">Today's actions</span>
       <span class="mw-eyebrow-rule"></span>
-      <span class="mw-mono mw-eyebrow-count">${actions.length}</span>
+      <span class="mw-mono mw-eyebrow-count">${visible.length}</span>
     </div>
     <ul class="mw-action-list">${rows}</ul>
   </section>`;
@@ -478,11 +554,19 @@ function confidenceRow(n, reason) {
   </div>`;
 }
 
-function renderRecCard(rec, side, prefix) {
+function renderRecCard(rec, side, prefix, sparks) {
   const id = `rec-${prefix}-${side}-${rec.ticker.replace(/[^a-zA-Z0-9]/g, "_")}`;
   const confHtml = confidenceBadge(rec.confidence);
   const confDetail = confidenceRow(rec.confidence, rec.confidence_reason);
   const action = getRecAction(rec);
+  // For ticker-shaped rec.ticker (single-ticker recs, common in stocks/macro/crypto),
+  // promote the leading slot to a logo + colored ticker chip. Trade-name recs
+  // (e.g. "AMD 5/16 365/380 call spread") fall through to the original text.
+  const isTicker = /^[A-Z]{1,6}$/.test(String(rec.ticker || ""));
+  const chgPct = isTicker && sparks ? chgPctFromSparks(sparks, rec.ticker) : null;
+  const tickerEl = isTicker
+    ? tickerPill(rec.ticker, null, {withLogo: true, chgPct})
+    : `<span class="mw-rec-tk">${escHtml(rec.ticker)}</span>`;
   const detailBlocks = `
     <div class="mw-rec-debate">
       ${confDetail}
@@ -501,7 +585,7 @@ function renderRecCard(rec, side, prefix) {
     </div>`;
   return `<li class="mw-rec" data-row="${escAttr(id)}">
     <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
-      <span class="mw-rec-tk">${escHtml(rec.ticker)}</span>
+      ${tickerEl}
       ${actionPill(rec.verdict, "sm")}
       ${confHtml}
       ${rec.vehicle ? `<span class="mw-rec-vehicle mw-mono">${escHtml(rec.vehicle)}</span>` : ""}
@@ -561,17 +645,17 @@ function renderSocial(socialItems, prefix, tabLabel) {
   </section>`;
 }
 
-function renderRecommendations(recs, prefix) {
+function renderRecommendations(recs, prefix, sparks) {
   if (!recs) return "";
   const buys = (recs.buy || []);
   const sells = (recs.sell || []);
   if (!buys.length && !sells.length) return "";
 
   const buyBody = buys.length
-    ? `<ul class="mw-rec-list">${buys.map(r => renderRecCard(r, "buy", prefix)).join("")}</ul>`
+    ? `<ul class="mw-rec-list">${buys.map(r => renderRecCard(r, "buy", prefix, sparks)).join("")}</ul>`
     : `<p class="mw-empty-pad">No buy ideas with conviction today.</p>`;
   const sellBody = sells.length
-    ? `<ul class="mw-rec-list">${sells.map(r => renderRecCard(r, "sell", prefix)).join("")}</ul>`
+    ? `<ul class="mw-rec-list">${sells.map(r => renderRecCard(r, "sell", prefix, sparks)).join("")}</ul>`
     : `<p class="mw-empty-pad">No sell ideas with conviction today.</p>`;
 
   return `<section class="mw-card mw-card-span-3 mw-rec-card">
@@ -612,7 +696,7 @@ function renderMacroPane(b) {
   }).join("");
 
   const indices = card({
-    title: "Indices", count: m.indices.length, span: "2",
+    title: "ETFs", count: m.indices.length, span: "2",
     body: `<table class="mw-table">
       <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">RSI</th><th>Note</th></tr></thead>
       <tbody>${idxRows}</tbody>
@@ -693,12 +777,17 @@ function renderMacroPane(b) {
 function renderStocksPane(b) {
   const s = b.stocks;
   const sparks = b.sparks || {};
+  // Prefer w.chg (today's % from the brief) over spark-derived; spark fallback for chip clouds.
+  const chgFor = (sym, primary) => {
+    const n = Number(primary);
+    return Number.isFinite(n) ? n : chgPctFromSparks(sparks, sym);
+  };
 
   const wlRows = s.watchlist.map(w => {
     const id = `w-${w.ticker}`;
     const klass = String(w.status).toUpperCase() === "INVALIDATED" ? "is-strike" : "";
     const cells = `
-      <td>${tickerPill(w.ticker)}</td>
+      <td>${tickerPill(w.ticker, null, {withLogo: true, chgPct: chgFor(w.ticker, w.chg)})}</td>
       <td>${sparkSvg(sparks[w.ticker] || [])}</td>
       <td class="mw-mono r">${fmtNum(w.last)}</td>
       <td class="mw-mono r ${pctClass(w.chg)}">${fmtPct(w.chg)}</td>
@@ -719,7 +808,7 @@ function renderStocksPane(b) {
   const moverRow = (r, dir) => {
     const id = `mv-${dir}-${r.ticker}`;
     const summary = `<div class="mw-mover-row">
-      ${tickerPill(r.ticker)}
+      ${tickerPill(r.ticker, null, {withLogo: true, chgPct: chgFor(r.ticker, r.chg)})}
       ${sparkSvg(r.spark || [], 70, 22, 1.5)}
       <span class="mw-mono mw-mover-pct ${dir === "up" ? "is-up" : "is-down"}">${fmtPct(r.chg)}</span>
       <span class="mw-mono mw-mover-last">${fmtNum(r.last)}</span>
@@ -746,7 +835,7 @@ function renderStocksPane(b) {
   const sm = card({
     title: "Smart-money clusters", count: s.smart_money.length,
     body: s.smart_money.length
-      ? `<div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm")).join("")}</div>`
+      ? `<div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, t)})).join("")}</div>`
       : `<p class="mw-empty">No clusters today.</p>`
   });
 
@@ -754,7 +843,7 @@ function renderStocksPane(b) {
   const wsbMax = wsbTop.reduce((a, b) => Math.max(a, b.score || 0), 1) || 1;
   const wsbRows = wsbTop.map((r, i) => `<li class="mw-rank-row">
     <span class="mw-mono mw-rank-i">${String(i + 1).padStart(2, "0")}</span>
-    ${tickerPill(r.ticker, "sm")}
+    ${tickerPill(r.ticker, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, r.ticker)})}
     <span class="mw-rank-bar"><span class="mw-rank-fill" style="width:${Math.min(100, (r.score || 0) / wsbMax * 100)}%"></span></span>
     <span class="mw-mono mw-dim">${r.score || 0}</span>
   </li>`).join("");
@@ -780,15 +869,90 @@ function renderStocksPane(b) {
     </div>
   </section>` : "";
 
-  const recs = renderRecommendations(s.recommendations, "stocks");
+  const recs = renderRecommendations(s.recommendations, "stocks", sparks);
   const social = renderSocial(s.social, "stocks", "Stocks");
 
   return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}${social}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
+// Wheel candidates: cash-secured-put ideas with debate. Single-card per ticker
+// expands into pros/cons/action like recommendations. Each row leads with a
+// logo + colored ticker, then the suggested CSP (strike/expiry/premium/yield).
+function renderWheelCandidates(rows, sparks) {
+  if (!rows || !rows.length) return "";
+  const items = rows.map((r, i) => {
+    const id = `wheel-${r.ticker.replace(/[^a-zA-Z0-9]/g, "_")}-${i}`;
+    const isTicker = /^[A-Z]{1,6}$/.test(String(r.ticker || ""));
+    const chgPct = isTicker && sparks ? chgPctFromSparks(sparks, r.ticker) : null;
+    const tickerEl = isTicker
+      ? tickerPill(r.ticker, null, {withLogo: true, chgPct})
+      : `<span class="mw-rec-tk">${escHtml(r.ticker)}</span>`;
+    const confHtml = confidenceBadge(r.confidence);
+    const confDetail = confidenceRow(r.confidence, r.confidence_reason);
+    const action = getRecAction(r);
+    const yieldStr = r.annualized_yield_pct != null
+      ? `<span class="mw-mono mw-wheel-yield">${r.annualized_yield_pct.toFixed(1)}% APY</span>`
+      : "";
+    const cspStr = (r.csp_strike != null && r.csp_expiry)
+      ? `<span class="mw-mono mw-wheel-csp">$${fmtNum(r.csp_strike)}P · ${r.csp_expiry} · $${(r.csp_premium ?? 0).toFixed(2)}</span>`
+      : "";
+    const erWarn = (r.days_to_er != null && r.days_to_er < 14)
+      ? `<span class="mw-wheel-erwarn mw-mono">ER in ${r.days_to_er}d</span>` : "";
+    const detail = `<div class="mw-rec-debate">
+      ${confDetail}
+      <div class="mw-wheel-stats mw-mono">
+        <span>Spot $${fmtNum(r.spot)}</span>
+        <span>Strike $${fmtNum(r.csp_strike)} (${(r.csp_otm_pct ?? 0).toFixed(1)}% OTM)</span>
+        <span>Premium $${(r.csp_premium ?? 0).toFixed(2)}</span>
+        <span>Expiry ${r.csp_expiry} (${r.csp_dte}d)</span>
+        <span>Annualized ${(r.annualized_yield_pct ?? 0).toFixed(1)}%</span>
+        <span>RSI ${(r.rsi14 ?? 0).toFixed(1)}</span>
+        ${r.days_to_er != null ? `<span>Next ER: ${r.next_er_date} (${r.days_to_er}d)</span>` : "<span>No ER (ETF/commodity)</span>"}
+      </div>
+      <div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label is-up">Pros</span>
+        <p class="mw-rec-debate-text">${escHtml(r.pros || "")}</p>
+      </div>
+      <div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label is-down">Cons</span>
+        <p class="mw-rec-debate-text">${escHtml(r.cons || "")}</p>
+      </div>
+      ${action ? `<div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label">${MODE === 'pro' ? 'Robinhood' : 'How to act'}</span>
+        <p class="mw-rec-debate-text">${escHtml(action)}</p>
+      </div>` : ""}
+    </div>`;
+    return `<li class="mw-rec mw-wheel" data-row="${escAttr(id)}">
+      <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
+        ${tickerEl}
+        ${actionPill(r.verdict, "sm")}
+        ${confHtml}
+        ${cspStr}
+        ${yieldStr}
+        ${erWarn}
+        <span class="mw-caret" aria-hidden="true">v</span>
+      </div>
+      ${detail}
+    </li>`;
+  }).join("");
+  return `<section class="mw-card mw-card-span-3 mw-rec-card">
+    <div class="mw-card-head">
+      <h3 class="mw-card-title">Wheel candidates</h3>
+      <span class="mw-card-count">${rows.length} ideas · cash-secured puts</span>
+    </div>
+    <div class="mw-card-body">
+      <p class="mw-wheel-explainer">
+        Stocks suitable for the wheel: sell a cash-secured put, get paid premium today, take assignment if the price falls below the strike, then sell covered calls until called away. Best on names you'd be happy to own at the strike with no earnings inside the trade window.
+      </p>
+      <ul class="mw-rec-list">${items}</ul>
+    </div>
+  </section>`;
+}
+
 function renderOptionsPane(b) {
   const o = b.options;
+  const sparks = b.sparks || {};
 
   const uRows = o.unusual.map(r => {
     const id = `u-${r.ticker}`;
@@ -841,10 +1005,11 @@ function renderOptionsPane(b) {
     </div>
   </section>` : "";
 
-  const recs = renderRecommendations(o.recommendations, "options");
+  const wheel = renderWheelCandidates(o.wheel_candidates, sparks);
+  const recs = renderRecommendations(o.recommendations, "options", sparks);
   const social = renderSocial(o.social, "options", "Options");
 
-  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}${social}</div>`;
+  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}${wheel}${social}</div>`;
 }
 
 // ──────────────── CRYPTO ────────────────
