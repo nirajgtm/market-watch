@@ -422,6 +422,7 @@ function normalize(brief) {
     market_status: brief.market_status,
     sparks: brief.sparks || {},
     macro: {
+      tab_intro: brief.macro?.tab_intro || null,
       indices: brief.macro?.indices || [],
       vol_yields: brief.macro?.vol_yields || {},
       leaders, laggards, rotation_read,
@@ -432,6 +433,7 @@ function normalize(brief) {
       social: brief.macro?.social || []
     },
     stocks: {
+      tab_intro: brief.stocks?.tab_intro || null,
       watchlist,
       movers: brief.stocks?.movers || { gainers: [], losers: [] },
       smart_money,
@@ -441,6 +443,7 @@ function normalize(brief) {
       social: brief.stocks?.social || []
     },
     options: {
+      tab_intro: brief.options?.tab_intro || null,
       unusual: brief.options?.unusual || [],
       earnings_iv: brief.options?.earnings_iv || [],
       leaps: brief.options?.leaps || [],
@@ -449,7 +452,11 @@ function normalize(brief) {
       recommendations: brief.options?.recommendations,
       social: brief.options?.social || []
     },
-    crypto: { ...(brief.crypto || { status: "coming_soon" }), social: brief.crypto?.social || [] }
+    crypto: {
+      tab_intro: brief.crypto?.tab_intro || null,
+      ...(brief.crypto || { status: "coming_soon" }),
+      social: brief.crypto?.social || []
+    }
   };
 }
 
@@ -519,15 +526,33 @@ function renderMasthead(b) {
 }
 
 // Skill-authored bullets first; if absent (legacy briefs), derive from brief data.
+// Bullets can be strings (legacy) OR { plain, pro } objects (current); pickModeText
+// picks the right variant.
 function renderSummaryBullets(b) {
   const authored = Array.isArray(b.summary_bullets) ? b.summary_bullets.filter(Boolean) : [];
   if (authored.length) {
     return `<ul class="mw-headline-bullets">${authored
       .slice(0, 5)
-      .map(text => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(String(text))}</li>`)
+      .map(item => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(item))}</li>`)
       .join("")}</ul>`;
   }
   return renderHeadlineBullets(b);
+}
+
+// Render a tab-level intro: a small headline plus 3-5 bullets specific to the tab.
+// No-op if the tab has no tab_intro block.
+function renderTabIntro(intro) {
+  if (!intro || typeof intro !== "object") return "";
+  const head = intro.headline ? pickModeText(intro.headline) : "";
+  const bullets = Array.isArray(intro.bullets) ? intro.bullets.filter(Boolean) : [];
+  if (!head && !bullets.length) return "";
+  return `<section class="mw-tab-intro">
+    ${head ? `<h2 class="mw-tab-intro-head">${escHtml(head)}</h2>` : ""}
+    ${bullets.length ? `<ul class="mw-tab-intro-bullets">${bullets
+      .slice(0, 5)
+      .map(it => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`)
+      .join("")}</ul>` : ""}
+  </section>`;
 }
 
 // Pull 4-5 cross-site signals into a readable bulleted summary under the
@@ -947,8 +972,9 @@ function renderMacroPane(b) {
 
   const recs = renderRecommendations(m.recommendations, "macro");
   const social = renderSocial(m.social, "macro", "Macro");
+  const intro = renderTabIntro(m.tab_intro);
 
-  return `<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}${social}</div>`;
+  return `${intro}<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}${social}</div>`;
 }
 
 // ──────────────── STOCKS ────────────────
@@ -1050,7 +1076,8 @@ function renderStocksPane(b) {
   const recs = renderRecommendations(s.recommendations, "stocks", sparks);
   const social = renderSocial(s.social, "stocks", "Stocks");
 
-  return `<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}${social}</div>`;
+  const intro = renderTabIntro(s.tab_intro);
+  return `${intro}<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}${social}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
@@ -1187,7 +1214,8 @@ function renderOptionsPane(b) {
   const recs = renderRecommendations(o.recommendations, "options", sparks);
   const social = renderSocial(o.social, "options", "Options");
 
-  return `<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}${wheel}${social}</div>`;
+  const intro = renderTabIntro(o.tab_intro);
+  return `${intro}<div class="mw-grid">${unusual}${eiv}${leaps}${optAction}${recs}${wheel}${social}</div>`;
 }
 
 // ──────────────── CRYPTO ────────────────
@@ -1195,8 +1223,9 @@ function renderCryptoPane(b) {
   const c = b.crypto;
   const recs = renderRecommendations(c.recommendations, "crypto");
   const social = renderSocial(c.social, "crypto", "Crypto");
+  const intro = renderTabIntro(c.tab_intro);
   if (c.status === "coming_soon" || !c.coins || !c.coins.length) {
-    return `<div class="mw-grid">${card({
+    return `${intro}<div class="mw-grid">${card({
       title: "Crypto", span: "3",
       body: `<div class="mw-soon">
         <span class="mw-soon-tag">COMING SOON</span>
@@ -1212,7 +1241,7 @@ function renderCryptoPane(b) {
     <span class="mw-mono r">$${fmtNum(co.last)}</span>
     <span class="mw-mono ${pctClass(co.change_5d_pct)}">${fmtPct(co.change_5d_pct)} <span class="mw-dim">5d</span></span>
   </div>`).join("");
-  return `<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}${social}</div>`;
+  return `${intro}<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}${social}</div>`;
 }
 
 // ──────────────── MODALS ────────────────

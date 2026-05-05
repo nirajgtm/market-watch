@@ -370,18 +370,26 @@ html, body {
 .mw-regime-neutral, .mw-regime-NEUTRAL { color: var(--mw-bg); background: var(--mw-ink); border-color: var(--mw-ink); }
 .mw-regime-sm { font-size: 11px; padding: 3px 8px; }
 .mw-regime-note {
-  color: var(--mw-ink-2);
-  font-size: var(--mw-size-small);
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border: 1px solid var(--mw-rule-2);
+  border-radius: var(--mw-radius);
+  background: var(--mw-bg-2);
+  color: var(--mw-ink);
+  font-family: var(--mw-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .mw-headline {
   font-family: var(--mw-display);
-  font-size: clamp(22px, 3vw, 34px);
+  font-size: clamp(20px, 2.6vw, 28px);
   font-weight: 600;
-  line-height: 1.25;
-  margin: 32px auto 0;
-  max-width: 56ch;
+  line-height: 1.3;
+  margin: 28px 0 0;
+  max-width: none;
   text-align: center;
   color: var(--mw-ink);
   text-wrap: balance;
@@ -391,7 +399,49 @@ html, body {
   display: block;
   width: 36px; height: 1px;
   background: var(--mw-rule-2);
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
+}
+
+/* Per-tab intro: small headline + 3-5 bullets at the top of each pane */
+.mw-tab-intro {
+  margin: 0 0 18px;
+  padding: 16px 18px 18px;
+  background: var(--mw-bg-2);
+  border: 1px solid var(--mw-rule);
+  border-radius: 12px;
+}
+.mw-tab-intro-head {
+  margin: 0 0 10px;
+  font-family: var(--mw-display);
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--mw-ink);
+  text-wrap: balance;
+}
+.mw-tab-intro-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--mw-ink-2);
+}
+.mw-tab-intro-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+@media (max-width: 720px) {
+  .mw-tab-intro {
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+  }
+  .mw-tab-intro-head { font-size: 16px; }
+  .mw-tab-intro-bullets { font-size: 14px; }
 }
 
 /* ============================================================

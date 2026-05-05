@@ -21,11 +21,10 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "headline": { "plain": "zero-jargon, expand acronyms", "pro": "analyst shorthand OK" },
 
   "summary_bullets": [
-    "Required. 4 to 5 readable sentences pulled fresh on every brief run.",
-    "Each bullet is a full sentence (~80-120 chars) summarizing one important thing across the entire site.",
-    "Sources, in priority order: ACTION-tier top_action, watchlist transitions, earnings within 7d, sector rotation read, biggest mover, vol context.",
-    "Do not duplicate the headline sentence; bullets expand on it with specifics anyone can scan.",
-    "Plain mode tone (no jargon, no em-dashes, no abbreviations); this row reads like a friendly daily wrap."
+    { "plain": "Required. 4 to 5 readable sentences pulled fresh on every brief run.",
+      "pro":   "Same idea in analyst shorthand. ~80-120 chars each." },
+    { "plain": "Each bullet is a full sentence summarizing one important thing across the entire site.",
+      "pro":   "Sources: ACTION-tier top_action, watchlist transitions, ER ≤7d, sector rotation, biggest mover, vol context." }
   ],
 
   "market_status": {
@@ -48,6 +47,10 @@ Single file, public, served as static asset. Versioned via `version` integer.
   ],
 
   "macro": {
+    "tab_intro": {
+      "headline": { "plain": "...", "pro": "..." },
+      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
+    },
     "indices": [
       { "ticker": "SPY", "last": 720.65, "rsi": 79.1, "note": "above all MAs",
         "detail": { "plain": "...", "pro": "..." } }
@@ -71,6 +74,10 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "stocks": {
+    "tab_intro": {
+      "headline": { "plain": "...", "pro": "..." },
+      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
+    },
     "watchlist": [
       { "ticker": "PODD", "last": 175.04, "change_pct": 1.68,
         "trigger_zone": "$170-175 short", "status": "TRIGGERED|IN_ZONE|NEAR|FAR|INVALIDATED",
@@ -88,6 +95,10 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "options": {
+    "tab_intro": {
+      "headline": { "plain": "...", "pro": "..." },
+      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
+    },
     "unusual": [{ "ticker": "AAPL", "vol_oi": 1243, "context": "breakout + active",
                   "detail": {"plain":"...","pro":"..."} }],
     "earnings_iv": [{ "ticker": "AMD", "date": "Wed May 6", "note": "...",
@@ -122,6 +133,10 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "crypto": {
+    "tab_intro": {
+      "headline": { "plain": "...", "pro": "..." },
+      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
+    },
     "status": "coming_soon | live",
     "note": "string when status=coming_soon",
     "coins": [{ "symbol": "BTC", "last": 95000, "change_5d_pct": 1.2,
