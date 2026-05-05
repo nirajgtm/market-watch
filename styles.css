@@ -369,18 +369,28 @@ html, body {
 .mw-regime-bear, .mw-regime-BEAR { color: var(--mw-bg); background: var(--mw-down); border-color: var(--mw-down); }
 .mw-regime-neutral, .mw-regime-NEUTRAL { color: var(--mw-bg); background: var(--mw-ink); border-color: var(--mw-ink); }
 .mw-regime-sm { font-size: 11px; padding: 3px 8px; }
+/* regime_note now lives on its own row below the REGIME / BULL chips. */
+.mw-regime-note-row {
+  display: flex;
+  justify-content: center;
+  margin: 12px auto 0;
+  padding: 0 16px;
+}
 .mw-regime-note {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
+  display: inline-block;
+  max-width: 720px;
+  padding: 8px 16px;
   border: 1px solid var(--mw-rule-2);
   border-radius: var(--mw-radius);
   background: var(--mw-bg-2);
   color: var(--mw-ink);
-  font-family: var(--mw-mono);
-  font-size: 12px;
+  font-family: var(--mw-display);
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-wrap: balance;
 }
 /* Sentiment-tinted variants — match the regime badge palette */
 .mw-regime-note-BULL,

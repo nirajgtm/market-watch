@@ -518,8 +518,8 @@ function renderMasthead(b) {
     <div class="mw-regime-wrap">
       <span class="mw-regime-label">REGIME</span>
       <span class="mw-regime mw-regime-${b.regime}">${escHtml(b.regime)}</span>
-      ${b.regime_note ? `<span class="mw-regime-note mw-regime-note-${b.regime}">${escHtml(b.regime_note)}</span>` : ""}
     </div>
+    ${b.regime_note ? `<div class="mw-regime-note-row"><span class="mw-regime-note mw-regime-note-${b.regime}">${escHtml(b.regime_note)}</span></div>` : ""}
     ${b.headline ? `<p class="mw-headline">${escHtml(pickModeText(b.headline))}</p>` : ""}
     ${renderSummaryBullets(b)}
   </header>`;
