@@ -605,6 +605,7 @@ html, body {
   body { padding-bottom: 70px; }
   #mw-tabs {
     position: fixed;
+    top: auto;          /* reset desktop sticky's top:0 — without this the bar stretches to fill the screen */
     left: 0; right: 0; bottom: 0;
     z-index: 40;
     margin: 0;
