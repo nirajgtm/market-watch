@@ -159,6 +159,38 @@ Every field is REQUIRED. The page renders all of them; missing fields produce a 
 
 Cap each `recommendations.{buy, sell}` at 5 entries. Empty arrays are fine on slow days; never pad to 5.
 
+## Mobile rendering contract
+
+The page renders ticker-bearing rows as single-line iOS-style cells on phones:
+`[ticker logo + symbol] [numeric value, right-aligned] [chevron]`. Tap to expand
+the row and reveal the supplementary fields. For this to work cleanly, every
+row MUST carry the fields below (even if desktop could render without them):
+
+| Section | Required fields | Mobile cell shows | Reveal on tap |
+|---|---|---|---|
+| `stocks.watchlist[]` | ticker, last, change_pct, trigger_zone, status, note, detail | ticker · last · change_pct | trigger_zone, status, note, detail.{plain,pro} |
+| `stocks.movers.{gainers,losers}[]` | ticker, last, chg, vol, spark, detail | ticker · last · chg | note, detail.{plain,pro} |
+| `macro.indices[]` | ticker, last, rsi, note, detail | ticker · last | rsi, note, detail.{plain,pro} |
+| `macro.earnings_7d[]` | ticker, date, note, detail | ticker · date | note, detail.{plain,pro} |
+| `options.unusual[]` | ticker, vol_oi, context, detail | ticker · vol_oi | context, detail.{plain,pro} |
+| `options.earnings_iv[]` | ticker, date, note, detail | ticker · date | note, detail.{plain,pro} |
+| `options.leaps[]` | ticker, thesis_window, note, detail | ticker · thesis_window | note, detail.{plain,pro} |
+| `crypto.coins[]` | symbol, last, change_5d_pct, note, detail | symbol · last | change_5d_pct, note, detail.{plain,pro} |
+
+**Recommendation row preview.** The page slices the first sentence of `pros`
+and renders it as a 2-3 line preview under the verdict + confidence badges.
+Lead `pros` with a complete, self-contained first sentence that summarizes the
+trade thesis in plain English. The `vehicle` string is shown only inside the
+expanded detail panel (not on the summary row).
+
+**Ticker pill rendering.** Every ticker mention is borderless: just the logo
+plus the symbol, tinted red or green based on today's percent change. Color is
+auto-resolved from `sparks[TICKER]` (last two daily closes) when the
+surrounding row has no explicit `chg` or `change_pct`. Sparks are auto-enriched
+by the publisher, so the skill never needs to write them; however, every
+ticker the brief references should appear as a key in `sparks` so the color
+resolves on the page (the enricher fetches unknown tickers on first publish).
+
 ## Idempotent overwrite
 
 `publish_site.sh` merges by `date`, not by field. Re-publishing today's date REPLACES the prior brief in `briefs.json`. Every staging.json write must include the FULL schema above. The page reads from a single brief object; missing fields render as broken UI, not as preserved-from-prior. Auto-enriched fields (sparks, market_status, movers, wsb_top, unusual flow, *.social) are the only exception — those get refreshed by the publisher itself.
