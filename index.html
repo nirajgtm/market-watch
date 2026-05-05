@@ -531,9 +531,57 @@ function expandRow(id, cells, detailHtml, cols, extraClass) {
   return `<tr class="${cls}" ${handler} ${row}>${cells}</tr>${detRow}`;
 }
 
+// Per-ticker "no-action thesis" panel. Skill-provided structured stance:
+//   { stance: "WAIT|WATCH|HOLD",
+//     why: {plain, pro}, waiting_for: {plain, pro},
+//     watching: {plain, pro}, expecting: {plain, pro} }
+// Surfaces above the detail prose so users on a watchlist/mover/etc row
+// understand why we aren't trading it today, what would change that, and
+// what we're expecting next.
+function renderThesis(item) {
+  if (!item || !item.thesis || typeof item.thesis !== "object") return "";
+  const t = item.thesis;
+  const FIELDS = [
+    { key: "why",         label: "Why no action" },
+    { key: "waiting_for", label: "Waiting for"   },
+    { key: "watching",    label: "Watching"      },
+    { key: "expecting",   label: "Expecting"     },
+  ];
+  const rows = FIELDS.map(f => {
+    const v = t[f.key];
+    if (!v) return "";
+    const text = (typeof v === "string") ? v : pickModeText(v);
+    if (!text) return "";
+    return `<div class="mw-thesis-row">
+      <span class="mw-thesis-label mw-mono">${escHtml(f.label)}</span>
+      <p class="mw-thesis-text">${escHtml(text)}</p>
+    </div>`;
+  }).filter(Boolean).join("");
+  if (!rows && !t.stance) return "";
+  const stance = t.stance ? String(t.stance).toUpperCase() : "";
+  const stanceTone = stance.includes("HOLD")  ? "hold"
+                  : stance.includes("WAIT")  ? "wait"
+                  : stance.includes("WATCH") ? "watch"
+                  : "neutral";
+  const stanceHtml = stance
+    ? `<div class="mw-thesis-stance">
+         <span class="mw-thesis-stance-pill mw-thesis-stance-${stanceTone} mw-mono">${escHtml(stance)}</span>
+         <span class="mw-thesis-stance-note">No active trade. Decision below.</span>
+       </div>`
+    : "";
+  return `<div class="mw-thesis">${stanceHtml}${rows}</div>`;
+}
+
 // Render the inline detail block — picks the right text based on MODE.
+// When the item carries a `thesis` block (skill-provided no-action stance),
+// it renders above the detail prose.
 function renderDetail(item) {
-  return hasDetail(item) ? escHtml(getDetail(item)) : null;
+  if (!item) return null;
+  const has = hasDetail(item);
+  const thesisHtml = renderThesis(item);
+  if (!has && !thesisHtml) return null;
+  const detailHtml = has ? `<p class="mw-detail-text">${escHtml(getDetail(item))}</p>` : "";
+  return `${thesisHtml}${detailHtml}`;
 }
 
 // ============================================================

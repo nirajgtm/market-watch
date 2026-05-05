@@ -82,7 +82,18 @@ Single file, public, served as static asset. Versioned via `version` integer.
     "watchlist": [
       { "ticker": "PODD", "last": 175.04, "change_pct": 1.68,
         "trigger_zone": "$170-175 short", "status": "TRIGGERED|IN_ZONE|NEAR|FAR|INVALIDATED",
-        "note": "...", "detail": {"plain":"...","pro":"..."} }
+        "note": "...", "detail": {"plain":"...","pro":"..."},
+        // Optional `thesis` block: structured "no-action stance" rendered above
+        // detail in the per-ticker page. Use on any ticker we are NOT trading
+        // today so the user understands why and what would change that. See
+        // the "thesis contract" section below.
+        "thesis": {
+          "stance":      "WAIT",   // WAIT | WATCH | HOLD
+          "why":         {"plain":"...","pro":"..."},
+          "waiting_for": {"plain":"...","pro":"..."},
+          "watching":    {"plain":"...","pro":"..."},
+          "expecting":   {"plain":"...","pro":"..."}
+        } }
     ],
     "movers": {
       "gainers": [{ "ticker": "INTC", "last": 99.62, "chg": 5.42, "vol": 158502811,
@@ -206,6 +217,30 @@ surrounding row has no explicit `chg` or `change_pct`. Sparks are auto-enriched
 by the publisher, so the skill never needs to write them; however, every
 ticker the brief references should appear as a key in `sparks` so the color
 resolves on the page (the enricher fetches unknown tickers on first publish).
+
+## Per-ticker `thesis` contract (no-action stance)
+
+Any ticker-bearing item — `watchlist[]`, `movers.gainers[]/losers[]`, `smart_money_clusters[]`, `macro.indices[]`, `options.unusual[]`, `options.leaps[]`, `wheel_candidates[]` — MAY carry an optional `thesis` block. The page renders it above the existing `detail` prose on the per-ticker detail page. Use it on any ticker we are NOT actively trading today so the reader walks away with a decision, not just observation.
+
+```json
+"thesis": {
+  "stance":      "WAIT | WATCH | HOLD",
+  "why":         { "plain": "...", "pro": "..." },
+  "waiting_for": { "plain": "...", "pro": "..." },
+  "watching":    { "plain": "...", "pro": "..." },
+  "expecting":   { "plain": "...", "pro": "..." }
+}
+```
+
+- `stance` is the verdict pill at the top of the panel. `WAIT` = setup not ready (price/level/IV/event isn't there yet). `WATCH` = passively monitoring, no specific trigger. `HOLD` = position open or no scheduled change to current view.
+- `why` answers "why no action today" — the analytical reason we aren't trading.
+- `waiting_for` is the explicit trigger that would flip us to action ("close above $278", "VIX < 16", "ER print Wed").
+- `watching` is the signals/levels we're tracking that aren't trade triggers ("RSI <40", "sector rotation", "options flow").
+- `expecting` is the base case — what we think happens next absent a surprise.
+
+Each field is OPTIONAL. Skip a field rather than padding ("waiting_for: nothing specific" is worse than absence). When all four are absent and `stance` is also absent, omit `thesis` entirely.
+
+Plain mode reads like a friendly analyst writing for a non-pro; pro mode is tighter analyst notation. Both modes follow the same style rules as `detail.{plain, pro}` (no em-dashes, no LLM filler, etc.).
 
 ## tab_intro.bullets priority contract
 
