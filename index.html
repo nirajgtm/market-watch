@@ -1602,6 +1602,8 @@ function mount() {
   root.addEventListener("click", onRootClick);
   // Tick every minute to catch midnight rollover so the date stays accurate.
   setInterval(maybeRefreshDate, 60 * 1000);
+  // Trap browser back button + edge-swipe so the user stays in-app.
+  installBackTrap();
 }
 
 // One click handler. Walk closest-by-attribute to find the action.
@@ -1643,6 +1645,12 @@ function showTab(name) {
   // tab (acts as a "back to top" gesture, matching native iOS behavior).
   try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { window.scrollTo(0, 0); }
   if (TAB === name) return;
+  // Push a history entry per tab change so the back gesture walks tab-by-tab.
+  // SUPPRESS_HISTORY is set when this call is itself driven by a popstate
+  // (we're restoring tab state, not advancing it).
+  if (!SUPPRESS_HISTORY) {
+    try { history.pushState({ mwApp: true, kind: "tab", tab: name }, ""); } catch {}
+  }
   TAB = name;
   // Update pill state on tab buttons in place.
   const tabs = document.querySelectorAll("#mw-tabs .mw-tab");
@@ -1881,11 +1889,60 @@ function exitMobileDetail(skipHistory) {
   MOBILE_DETAIL_OPEN = false;
 }
 
-// Device back button / edge swipe / Mac trackpad swipe-back -> close overlay.
-window.addEventListener('popstate', () => {
+// ============================================================
+//  SPA back-button trap
+//
+//  The site is a single-page app, but the browser back button (and the
+//  iOS edge-swipe / Mac trackpad swipe-back gesture, which both fire
+//  popstate) would otherwise navigate the user off the site. We trap them:
+//
+//   - On boot, replace the current history entry with an "mwApp" home
+//     state, then push a "trap" entry above it. This guarantees there's
+//     always a same-origin entry behind the user, so back fires popstate
+//     instead of unloading the page.
+//   - showTab() pushes a tab-state on every change. Back walks tab-by-tab.
+//   - Detail overlays push their own state (mwDetail). Back closes the
+//     overlay before touching tab history.
+//   - When popstate lands on the home entry, we push a fresh trap above
+//     so the user can keep pressing back forever and never leave the app.
+// ============================================================
+function installBackTrap() {
+  try {
+    history.replaceState({ mwApp: true, kind: "home", tab: TAB }, "");
+    history.pushState({ mwApp: true, kind: "trap", tab: TAB }, "");
+  } catch {}
+}
+
+let SUPPRESS_HISTORY = false;  // set while a popstate-triggered showTab runs
+
+window.addEventListener("popstate", (e) => {
+  // 1. If a detail overlay is open, the back gesture closes it. The
+  //    history entry just popped was the overlay's own pushed state, so
+  //    the URL/state we landed on is the previous in-app state.
   if (MOBILE_DETAIL_OPEN) {
     exitMobileDetail(true);
+    return;
   }
+
+  const st = e.state;
+
+  // 2. Landed on one of our app states: sync the tab without re-pushing.
+  if (st && st.mwApp) {
+    if (st.tab && TAB !== st.tab) {
+      SUPPRESS_HISTORY = true;
+      try { showTab(st.tab); } finally { SUPPRESS_HISTORY = false; }
+    }
+    // 3. Re-arm the trap if we just landed on home so the user can press
+    //    back again without leaving the page.
+    if (st.kind === "home") {
+      try { history.pushState({ mwApp: true, kind: "trap", tab: TAB }, ""); } catch {}
+    }
+    return;
+  }
+
+  // 4. No state at all (user backed past our sentinels somehow). Push a
+  //    fresh trap to keep them in-app.
+  try { history.pushState({ mwApp: true, kind: "trap", tab: TAB }, ""); } catch {}
 });
 
 // If the user resizes from phone to desktop while overlay is open, close it.
