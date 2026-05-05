@@ -33,7 +33,14 @@ Single file, public, served as static asset. Versioned via `version` integer.
       "verb": "ACTION | WATCH | NO ACTION",
       "target": "TICKER",
       "text": "one-sentence summary",
-      "detail": { "plain": "...", "pro": "..." }
+      "detail": { "plain": "...", "pro": "..." },
+
+      // REQUIRED on ACTION-tier rows. Optional on WATCH (use when there's a
+      // standing income/hedge trade). Omit/null on NO ACTION rows.
+      // Each mode is 1-2 short sentences with explicit Robinhood UI verbs:
+      //   plain: "Sell to close 1 PODD 6/20 170/160 put spread, limit at mid, GFD."
+      //   pro:   "STC PODD 2026-06-20 170P / 160P spread @ net credit mid, GFD. Stop on close above 183."
+      "robinhood": { "plain": "...", "pro": "..." }
     }
   ],
 
