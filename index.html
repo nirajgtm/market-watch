@@ -540,9 +540,10 @@ function renderPerTabActions(actions) {
     const rhRow = rh
       ? `<div class="mw-action-rh"><span class="mw-action-rh-label">In Robinhood</span><span class="mw-action-rh-text">${escHtml(rh)}</span></div>`
       : "";
-    const detailHtml = (hasDetail(a) || rh)
-      ? `${rh ? `<p class="mw-action-rh-block"><strong>In Robinhood:</strong> ${escHtml(rh)}</p>` : ""}${hasDetail(a) ? `<p>${escHtml(getDetail(a))}</p>` : ""}`
-      : null;
+    // Detail shows ONLY the analytical context (a.detail). The Robinhood
+    // directive lives in the summary's rhRow above; repeating it in the
+    // detail panel is duplicate noise.
+    const detailHtml = hasDetail(a) ? `<p>${escHtml(getDetail(a))}</p>` : null;
     const summary = `
       ${actionTarget(a.target, a.chg_pct)}
       ${chgStr}
