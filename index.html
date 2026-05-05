@@ -472,19 +472,16 @@ function renderMasthead(b) {
 
   return `<header class="mw-masthead">
     <div class="mw-meta-row">
-      <span class="mw-mono mw-meta-item">${escHtml(meta)}</span>
       <span class="mw-meta-spacer"></span>
       ${settingsPop}
-      <span class="mw-meta-dot">·</span>
-      <button class="mw-meta-btn" data-modal="glossary">Glossary</button>
-      <span class="mw-meta-dot">·</span>
-      <button class="mw-meta-btn" data-modal="archive">Archive</button>
-      <span class="mw-meta-dot">·</span>
+      <button class="mw-meta-btn" data-modal="glossary" aria-label="Glossary" title="Glossary">Glossary</button>
+      <button class="mw-meta-btn" data-modal="archive" aria-label="Archive" title="Archive">Archive</button>
       <button class="mw-meta-btn mw-meta-btn-accent" data-modal="feedback">Feedback</button>
     </div>
     <h1 class="mw-wordmark">
       <span class="mw-wordmark-word">MARKET</span><span class="mw-wordmark-word">WATCH</span>
     </h1>
+    ${meta ? `<div class="mw-mast-date mw-mono">${escHtml(meta)}</div>` : ""}
     <div class="mw-tagline-rule"></div>
     <div class="mw-regime-wrap">
       <span class="mw-regime-label">REGIME</span>
