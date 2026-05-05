@@ -1394,14 +1394,21 @@ function mount() {
     return;
   }
   const b = getNormalized();
+  // Each section wrapped to prevent one broken renderer from killing the
+  // whole shell (which would also prevent tab switches from working since
+  // the click listener attaches AFTER innerHTML).
+  const tryRender = (fn, label) => {
+    try { return fn(); }
+    catch (err) { console.error(`${label} render failed:`, err); return ""; }
+  };
   root.innerHTML = `
     <div id="mw-shell">
-      <div id="mw-masthead">${renderMasthead(b)}</div>
-      <div id="mw-tabs">${renderTabs(TAB)}</div>
-      <div id="mw-mstatus">${renderMarketStatus(b.market_status)}</div>
-      <div id="mw-topactions">${renderTopActions(b.actions)}</div>
-      <div id="mw-toppicks">${renderGlobalTopPicks(b)}</div>
-      <main id="mw-main" class="mw-main">${paneHtmlFor(TAB)}</main>
+      <div id="mw-masthead">${tryRender(() => renderMasthead(b), "masthead")}</div>
+      <div id="mw-tabs">${tryRender(() => renderTabs(TAB), "tabs")}</div>
+      <div id="mw-mstatus">${tryRender(() => renderMarketStatus(b.market_status), "mstatus")}</div>
+      <div id="mw-topactions">${tryRender(() => renderTopActions(b.actions), "topactions")}</div>
+      <div id="mw-toppicks">${tryRender(() => renderGlobalTopPicks(b), "toppicks")}</div>
+      <main id="mw-main" class="mw-main">${tryRender(() => paneHtmlFor(TAB), "pane:" + TAB)}</main>
       <footer class="mw-footer">
         <div class="mw-footer-rule"></div>
         <p class="mw-footer-text">Not investment advice.</p>
@@ -1459,7 +1466,14 @@ function showTab(name) {
     b.classList.toggle("is-active", active);
     b.setAttribute("aria-selected", String(active));
   });
-  document.getElementById("mw-main").innerHTML = paneHtmlFor(name);
+  let html;
+  try { html = paneHtmlFor(name); }
+  catch (err) {
+    console.error("paneHtmlFor failed:", err);
+    html = `<p class="mw-empty">Could not render ${name}: ${escHtml(err.message || String(err))}</p>`;
+  }
+  const main = document.getElementById("mw-main");
+  if (main) main.innerHTML = html;
   OPEN_ID = null;
 }
 
