@@ -1554,21 +1554,29 @@ fetch("briefs.json")
 
 // ============================================================
 //  PWA — Install button + service worker registration
+//
+//  Install-button visibility rules (most-strict to least):
+//    1. Already running in standalone (i.e., opened from home screen) -> never show.
+//    2. localStorage flag mw_pwa_installed === "1" -> never show. Set on
+//       Chrome's appinstalled event, and on iOS when the user has either tapped
+//       through the share-sheet hint or marked the install banner as installed.
+//    3. localStorage flag mw_pwa_dismissed === "1" -> never show. Set when the
+//       user explicitly dismisses the banner with the x close button.
+//    4. Chrome/Edge: only after beforeinstallprompt fires (Chrome won't fire
+//       this event if the app is already installed, so we rely on it).
+//    5. iOS: shown on first visit unless one of the above flags is set.
 // ============================================================
 let DEFERRED_INSTALL_PROMPT = null;
 
-// Chrome / Edge / modern Android: capture the install prompt and surface a button.
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  DEFERRED_INSTALL_PROMPT = e;
-  showInstallButton();
-});
+const PWA_INSTALLED_KEY = "mw_pwa_installed";
+const PWA_DISMISSED_KEY = "mw_pwa_dismissed";
 
-window.addEventListener("appinstalled", () => {
-  DEFERRED_INSTALL_PROMPT = null;
-  hideInstallButton();
-  try { localStorage.setItem("mw_pwa_installed", "1"); } catch {}
-});
+function pwaFlag(key) {
+  try { return localStorage.getItem(key) === "1"; } catch { return false; }
+}
+function setPwaFlag(key) {
+  try { localStorage.setItem(key, "1"); } catch {}
+}
 
 function isStandalone() {
   return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches)
@@ -1580,16 +1588,50 @@ function isIos() {
   return /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
 }
 
+// Single guard: combine standalone, installed flag, dismissed flag.
+function shouldShowInstallButton() {
+  if (isStandalone()) {
+    setPwaFlag(PWA_INSTALLED_KEY);
+    return false;
+  }
+  if (pwaFlag(PWA_INSTALLED_KEY)) return false;
+  if (pwaFlag(PWA_DISMISSED_KEY)) return false;
+  return true;
+}
+
+// Chrome / Edge / modern Android: captures the install prompt and surfaces a button.
+// This event will NOT fire if the browser already considers the app installed.
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  DEFERRED_INSTALL_PROMPT = e;
+  if (shouldShowInstallButton()) showInstallButton();
+});
+
+window.addEventListener("appinstalled", () => {
+  DEFERRED_INSTALL_PROMPT = null;
+  setPwaFlag(PWA_INSTALLED_KEY);
+  hideInstallButton();
+});
+
 function showInstallButton() {
-  if (isStandalone()) return;
+  if (!shouldShowInstallButton()) return;
   let btn = document.getElementById("mw-install-btn");
   if (!btn) {
     btn = document.createElement("button");
     btn.id = "mw-install-btn";
     btn.className = "mw-install-btn";
     btn.type = "button";
-    btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Install app</span>`;
-    btn.addEventListener("click", triggerInstall);
+    btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Install app</span><span class="mw-install-x" role="button" aria-label="Dismiss">&times;</span>`;
+    btn.addEventListener("click", (ev) => {
+      // Click on the inner x dismisses; click anywhere else triggers install.
+      if (ev.target && ev.target.closest && ev.target.closest(".mw-install-x")) {
+        ev.stopPropagation();
+        setPwaFlag(PWA_DISMISSED_KEY);
+        hideInstallButton();
+        return;
+      }
+      triggerInstall();
+    });
     document.body.appendChild(btn);
   }
   btn.classList.add("is-visible");
@@ -1603,10 +1645,15 @@ async function triggerInstall() {
   if (DEFERRED_INSTALL_PROMPT) {
     DEFERRED_INSTALL_PROMPT.prompt();
     const { outcome } = await DEFERRED_INSTALL_PROMPT.userChoice;
-    if (outcome === "accepted") hideInstallButton();
+    if (outcome === "accepted") {
+      setPwaFlag(PWA_INSTALLED_KEY);
+      hideInstallButton();
+    }
     DEFERRED_INSTALL_PROMPT = null;
   } else if (isIos()) {
-    // iOS Safari has no programmatic prompt; show inline guidance instead.
+    // iOS Safari has no programmatic prompt; show inline guidance and treat
+    // a click on the iOS hint as "the user has acknowledged how to install" so
+    // we don't keep nagging them after they've seen it once.
     showIosInstallHint();
   }
 }
@@ -1619,18 +1666,39 @@ function showIosInstallHint() {
   hint.className = "mw-ios-hint is-visible";
   hint.innerHTML = `
     <button class="mw-ios-hint-close" aria-label="Close">x</button>
-    <p>To install Market Watch as an app, tap the <strong>Share</strong> icon below, then choose <strong>Add to Home Screen</strong>.</p>`;
-  hint.querySelector(".mw-ios-hint-close").addEventListener("click", () => hint.classList.remove("is-visible"));
+    <p>To install Market Watch as an app, tap the <strong>Share</strong> icon below, then choose <strong>Add to Home Screen</strong>.</p>
+    <button class="mw-ios-hint-done" type="button">Already installed</button>`;
+  hint.querySelector(".mw-ios-hint-close").addEventListener("click", () => {
+    setPwaFlag(PWA_DISMISSED_KEY);
+    hint.classList.remove("is-visible");
+    hideInstallButton();
+  });
+  hint.querySelector(".mw-ios-hint-done").addEventListener("click", () => {
+    setPwaFlag(PWA_INSTALLED_KEY);
+    hint.classList.remove("is-visible");
+    hideInstallButton();
+  });
   document.body.appendChild(hint);
 }
 
 // On iOS, the beforeinstallprompt event never fires; show a manual install button
-// the first time an iOS user lands on the page (unless already in standalone mode).
+// on first visit (unless already installed/dismissed/standalone).
 window.addEventListener("load", () => {
-  if (isIos() && !isStandalone()) {
+  if (isIos() && shouldShowInstallButton()) {
     showInstallButton();
   }
 });
+
+// Modern browsers can verify installation cross-app via getInstalledRelatedApps()
+// (Chrome on Android). Use it as an extra signal to mark installed and hide.
+if ("getInstalledRelatedApps" in navigator) {
+  navigator.getInstalledRelatedApps().then((apps) => {
+    if (Array.isArray(apps) && apps.length > 0) {
+      setPwaFlag(PWA_INSTALLED_KEY);
+      hideInstallButton();
+    }
+  }).catch(() => {});
+}
 
 // Register the service worker (gives Chrome the green light to install + works offline).
 if ("serviceWorker" in navigator) {
