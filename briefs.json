@@ -11,56 +11,6 @@
         "tier": "MARKET CLOSED",
         "text": "After-hours over. Next pre-market opens Tuesday, May 5 at 04:00 ET."
       },
-      "top_actions": [
-        {
-          "verb": "ACTION",
-          "target": "PODD",
-          "text": "Insulet (PODD) is finally rolling over after a weak bounce. The setup short traders were waiting for is here.",
-          "detail": {
-            "plain": "Insulet broke down on its earnings print, then bounced into the 170 to 175 zone. Today is the first red day of that bounce, down about 2 percent. That is the rollover signal short traders were waiting for, and the cleanest way to play it is a put spread expiring in late June. Stop out if Insulet closes back above 183, which would mean the breakdown level was reclaimed and the short idea is wrong.",
-            "pro": "PODD 171.78 -1.86 pct intraday, RSI 28.4, 20MA 191.40, ATR 7.51, FOMO ceiling 206.43. Mechanical TRIGGERED plus thesis-level confirmation: lower-high plus red intraday in 170-175 zone. Vehicle: debit put spread 6/20 170/160. Bid-ask must be under 10 pct of mid before fill. Stop on close above 183. Target 145, secondary 135. R:R approx 4:1. SYK -6.47 plus GEHC weakness confirm sector breakdown context."
-          },
-          "robinhood": {
-            "plain": "Watch for Insulet to print a red close below the open in the 170 to 175 zone, then buy a 170/160 put spread expiring late June. Stop on a close above 183.",
-            "pro": "If PODD prints rejection candle in 170-175 (red close below open), search PODD, Trade Options, expiry 2026-06-20. BTO 170P, STO 160P, Limit at net debit mid, GFD. Stop on close above 183. Target 50-75 pct of max profit."
-          }
-        },
-        {
-          "verb": "WATCH",
-          "target": "GRAB",
-          "text": "Grab earnings drop after the close at 1 PM Pacific. Long-dated call holders typically just hold through.",
-          "detail": {
-            "plain": "Grab is a Southeast Asian ride-hailing and payments company. Earnings drop right after the close at 1 PM Pacific. The stock often jumps 6 to 12 percent overnight on these prints. If you only own a long-dated call (a year or more out), the print is mostly a non-event because your position is leveraged to the multi-year story, not the quarter. If you want a small hedge, a short-dated 3.50 put is cheap. Otherwise just hold.",
-            "pro": "GRAB 3.61 -1.77 pct intraday, RSI 39.2. Q1 consensus revenue 921 to 950M, EPS 0.02 to 0.05. Implied move 6-12 pct. LEAP delta exposure low; downside bounded by position size. Tail hedge if needed: 5/15 3.50P. Income alternative if held in stock: covered call 3.80 5/15 for IV-pump premium."
-          },
-          "robinhood": {
-            "plain": "If you only hold the long-dated call (a year or more out), no action. If you want a small hedge, search GRAB, Trade Options, buy one short-dated 3.50 put expiring in 2-3 weeks at the limit mid.",
-            "pro": "LEAP holders: hold through. Tail-hedge optional: search GRAB, Trade Options 2026-05-15, BTO 3.50P, Limit at mid, GFD. Stock holders: covered call STO 3.80C 5/15 for IV-pump premium."
-          }
-        },
-        {
-          "verb": "WATCH",
-          "target": "ARM",
-          "text": "ARM reports earnings Wednesday after the close. Anyone holding ARM options should plan a move before then.",
-          "detail": {
-            "plain": "ARM is a major AI chip-design name. Earnings drop Wednesday after the close. Options premium runs up before the print and collapses right after, so long-call holders should consider taking some off into the run-up tomorrow. Another option: sell a covered call against your shares for income on the spike. Holding fully through the print is fine if you have conviction; just expect a sharp move either way.",
-            "pro": "ARM 204.24 -3.29 pct intraday, ER 5/06 AMC. IV crush risk 25-40 pct on options legs. Long-call holders: scale out 50 pct into IV expansion 24h pre-print or buy short-dated put hedge for tail. Income alternative: sell a covered call on the spike for premium."
-          },
-          "robinhood": {
-            "plain": "If you hold long calls on ARM, scale out half of your contracts into the run-up tomorrow before earnings. Use Sell to Close at limit mid, Good for day. Holding fully through is also fine if you have conviction.",
-            "pro": "ARM ER 5/06 AMC. Long-call holders: STC 50 pct of position 24h pre-print at IV expansion peak, Limit at mid, GFD. Tail-hedge alt: BTO short-dated put 5/09 ATM. Income alt for stock: STO covered call on the spike."
-          }
-        },
-        {
-          "verb": "NO ACTION",
-          "target": "INDEX",
-          "text": "The buying rule is paused: the S and P 500 and Nasdaq have run too far above their 20-day average to chase here.",
-          "detail": {
-            "plain": "Both major indexes have run too far too fast. The system pauses new long entries until prices cool back to their 20-day average. This is not a sell signal; existing holdings stay put. It just means do not chase breakouts at these stretched levels. The only directional trade allowed today is the VIX put spread for income.",
-            "pro": "SPY at ATH RSI 79, QQQ ATH RSI 82.8, both above 20MA plus 2 ATR. FOMO rule active: deterministic block on long entries until pullback to 20MA or below. LEAP signal WAIT for both, RSI extended. VIX put spread is the only regime-permitted directional today."
-          }
-        }
-      ],
       "macro": {
         "indices": [
           {
@@ -221,10 +171,6 @@
             }
           }
         ],
-        "action": {
-          "tier": "WATCH",
-          "text": "Big macro days Monday and Tuesday. Williams, Barr, and Services PMI together decide whether the rotation persists or reverses."
-        },
         "recommendations": {
           "buy": [
             {
@@ -294,6 +240,17 @@
             }
           ]
         },
+        "actions": [
+          {
+            "verb": "NO ACTION",
+            "target": "INDEX",
+            "text": "The buying rule is paused: the S and P 500 and Nasdaq have run too far above their 20-day average to chase here.",
+            "detail": {
+              "plain": "Both major indexes have run too far too fast. The system pauses new long entries until prices cool back to their 20-day average. This is not a sell signal; existing holdings stay put. It just means do not chase breakouts at these stretched levels. The only directional trade allowed today is the VIX put spread for income.",
+              "pro": "SPY at ATH RSI 79, QQQ ATH RSI 82.8, both above 20MA plus 2 ATR. FOMO rule active: deterministic block on long entries until pullback to 20MA or below. LEAP signal WAIT for both, RSI extended. VIX put spread is the only regime-permitted directional today."
+            }
+          }
+        ],
         "social": [
           {
             "ticker": "SPY",
@@ -749,10 +706,6 @@
             }
           }
         ],
-        "action": {
-          "tier": "ACTION",
-          "text": "Insulet rolling over intraday is the cleanest short setup of the day. Apple call spread waits for a pullback to 275."
-        },
         "recommendations": {
           "buy": [
             {
@@ -822,6 +775,21 @@
             }
           ]
         },
+        "actions": [
+          {
+            "verb": "ACTION",
+            "target": "PODD",
+            "text": "Insulet (PODD) is finally rolling over after a weak bounce. The setup short traders were waiting for is here.",
+            "detail": {
+              "plain": "Insulet broke down on its earnings print, then bounced into the 170 to 175 zone. Today is the first red day of that bounce, down about 2 percent. That is the rollover signal short traders were waiting for, and the cleanest way to play it is a put spread expiring in late June. Stop out if Insulet closes back above 183, which would mean the breakdown level was reclaimed and the short idea is wrong.",
+              "pro": "PODD 171.78 -1.86 pct intraday, RSI 28.4, 20MA 191.40, ATR 7.51, FOMO ceiling 206.43. Mechanical TRIGGERED plus thesis-level confirmation: lower-high plus red intraday in 170-175 zone. Vehicle: debit put spread 6/20 170/160. Bid-ask must be under 10 pct of mid before fill. Stop on close above 183. Target 145, secondary 135. R:R approx 4:1. SYK -6.47 plus GEHC weakness confirm sector breakdown context."
+            },
+            "robinhood": {
+              "plain": "Watch for Insulet to print a red close below the open in the 170 to 175 zone, then buy a 170/160 put spread expiring late June. Stop on a close above 183.",
+              "pro": "If PODD prints rejection candle in 170-175 (red close below open), search PODD, Trade Options, expiry 2026-06-20. BTO 170P, STO 160P, Limit at net debit mid, GFD. Stop on close above 183. Target 50-75 pct of max profit."
+            }
+          }
+        ],
         "social": [
           {
             "ticker": "MU",
@@ -1224,10 +1192,6 @@
             }
           }
         ],
-        "action": {
-          "tier": "WATCH",
-          "text": "Income trades only today: VIX put spread plus a cash-secured put on USO is the cleanest paired setup. Apple spread waits for a pullback."
-        },
         "recommendations": {
           "buy": [
             {
@@ -1284,6 +1248,34 @@
             }
           ]
         },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "GRAB",
+            "text": "Grab earnings drop after the close at 1 PM Pacific. Long-dated call holders typically just hold through.",
+            "detail": {
+              "plain": "Grab is a Southeast Asian ride-hailing and payments company. Earnings drop right after the close at 1 PM Pacific. The stock often jumps 6 to 12 percent overnight on these prints. If you only own a long-dated call (a year or more out), the print is mostly a non-event because your position is leveraged to the multi-year story, not the quarter. If you want a small hedge, a short-dated 3.50 put is cheap. Otherwise just hold.",
+              "pro": "GRAB 3.61 -1.77 pct intraday, RSI 39.2. Q1 consensus revenue 921 to 950M, EPS 0.02 to 0.05. Implied move 6-12 pct. LEAP delta exposure low; downside bounded by position size. Tail hedge if needed: 5/15 3.50P. Income alternative if held in stock: covered call 3.80 5/15 for IV-pump premium."
+            },
+            "robinhood": {
+              "plain": "If you only hold the long-dated call (a year or more out), no action. If you want a small hedge, search GRAB, Trade Options, buy one short-dated 3.50 put expiring in 2-3 weeks at the limit mid.",
+              "pro": "LEAP holders: hold through. Tail-hedge optional: search GRAB, Trade Options 2026-05-15, BTO 3.50P, Limit at mid, GFD. Stock holders: covered call STO 3.80C 5/15 for IV-pump premium."
+            }
+          },
+          {
+            "verb": "WATCH",
+            "target": "ARM",
+            "text": "ARM reports earnings Wednesday after the close. Anyone holding ARM options should plan a move before then.",
+            "detail": {
+              "plain": "ARM is a major AI chip-design name. Earnings drop Wednesday after the close. Options premium runs up before the print and collapses right after, so long-call holders should consider taking some off into the run-up tomorrow. Another option: sell a covered call against your shares for income on the spike. Holding fully through the print is fine if you have conviction; just expect a sharp move either way.",
+              "pro": "ARM 204.24 -3.29 pct intraday, ER 5/06 AMC. IV crush risk 25-40 pct on options legs. Long-call holders: scale out 50 pct into IV expansion 24h pre-print or buy short-dated put hedge for tail. Income alternative: sell a covered call on the spike for premium."
+            },
+            "robinhood": {
+              "plain": "If you hold long calls on ARM, scale out half of your contracts into the run-up tomorrow before earnings. Use Sell to Close at limit mid, Good for day. Holding fully through is also fine if you have conviction.",
+              "pro": "ARM ER 5/06 AMC. Long-call holders: STC 50 pct of position 24h pre-print at IV expansion peak, Limit at mid, GFD. Tail-hedge alt: BTO short-dated put 5/09 ATM. Income alt for stock: STO covered call on the spike."
+            }
+          }
+        ],
         "social": [
           {
             "ticker": "MU",
@@ -1520,10 +1512,6 @@
             }
           }
         ],
-        "action": {
-          "tier": "NO_ACTION",
-          "text": "Bitcoin dominance is bid, alts are on defense. No new entries until Bitcoin dominance rolls below 57."
-        },
         "recommendations": {
           "buy": [],
           "sell": []
@@ -1548,6 +1536,7 @@
             }
           ]
         },
+        "actions": [],
         "social": [
           {
             "ticker": "MSTR",
@@ -1596,21 +1585,133 @@
         ]
       },
       "sparks": {
-        "TER": [
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4548.7002
+        ],
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4548.7002
+        ],
+        "QQQ": [
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88
+        ],
+        "SPY": [
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01
+        ],
+        "GNRC": [
+          204.4,
+          207.41,
+          212.1,
+          217.26,
+          213.85,
+          213.69,
+          218.38,
+          220.93,
+          220.3,
+          217.12,
+          252.92,
+          259.23,
+          259.34,
+          257.07
+        ],
+        "HUM": [
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96
+        ],
+        "CL=F": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.29
+        ],
+        "oil": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.29
         ],
         "^TNX": [
           4.282,
@@ -1644,22 +1745,6 @@
           4.378,
           4.446
         ],
-        "ARM": [
-          159.34,
-          162.33,
-          166.73,
-          175.1,
-          175.49,
-          196.57,
-          204.61,
-          234.81,
-          215.88,
-          198.65,
-          201.69,
-          210.32,
-          211.18,
-          203.26
-        ],
         "PWR": [
           591.82,
           587.42,
@@ -1676,22 +1761,6 @@
           742.21,
           757.34
         ],
-        "QQQ": [
-          637.4,
-          640.47,
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88
-        ],
         "XLE": [
           55.76,
           56.58,
@@ -1707,6 +1776,54 @@
           59.65,
           58.85,
           59.39
+        ],
+        "TER": [
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44
+        ],
+        "MO": [
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41
+        ],
+        "GEHC": [
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0
         ],
         "^VIX": [
           18.17,
@@ -1740,22 +1857,6 @@
           16.99,
           18.29
         ],
-        "HUM": [
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96
-        ],
         "DX-Y.NYB": [
           98.06,
           98.22,
@@ -1788,86 +1889,6 @@
           98.21,
           98.494
         ],
-        "SPY": [
-          699.94,
-          701.66,
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01
-        ],
-        "IWM": [
-          269.39,
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88
-        ],
-        "CL=F": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.31
-        ],
-        "oil": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.31
-        ],
-        "INDEX": [
-          66.19,
-          66.36,
-          67.16,
-          67.0,
-          66.58,
-          67.27,
-          67.0,
-          67.53,
-          67.62,
-          67.28,
-          67.26,
-          67.95,
-          68.15,
-          67.87
-        ],
         "PODD": [
           202.5,
           201.47,
@@ -1884,101 +1905,21 @@
           175.04,
           171.39
         ],
-        "GEHC": [
-          73.51,
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0
-        ],
-        "GRAB": [
-          3.92,
-          4.02,
-          4.21,
-          4.21,
-          4.08,
-          4.06,
-          3.96,
-          3.9,
-          3.89,
-          3.86,
-          3.82,
-          3.82,
-          3.67,
-          3.62
-        ],
-        "GNRC": [
-          204.4,
-          207.41,
-          212.1,
-          217.26,
-          213.85,
-          213.69,
-          218.38,
-          220.93,
-          220.3,
-          217.12,
-          252.92,
-          259.23,
-          259.34,
-          257.07
-        ],
-        "MO": [
-          64.42,
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41
-        ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4550.0
-        ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4550.0
+        "IWM": [
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88
         ]
       }
     },
