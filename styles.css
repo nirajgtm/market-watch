@@ -1614,7 +1614,10 @@ html, body {
   html { scroll-behavior: auto; }
 }
 html { scroll-behavior: smooth; }
-button { -webkit-tap-highlight-color: transparent; }
+/* Disable double-tap-to-zoom on phones for a native-app feel. Pinch-zoom is
+   still allowed (accessibility-safe). */
+html, body { touch-action: manipulation; }
+button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
 /* ============================================================
    PWA INSTALL BUTTON + iOS HINT
