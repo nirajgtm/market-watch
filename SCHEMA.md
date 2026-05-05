@@ -240,6 +240,12 @@ Any ticker-bearing item — `watchlist[]`, `movers.gainers[]/losers[]`, `smart_m
 
 Each field is OPTIONAL. Skip a field rather than padding ("waiting_for: nothing specific" is worse than absence). When all four are absent and `stance` is also absent, omit `thesis` entirely.
 
+**Grounding rule (non-negotiable).** Every field MUST be derived from data the writer actually has — the row itself (last, change_pct, trigger_zone, status, rsi), the brief's scanners (sector_rotation, vol_yields, movers, smart_money_clusters, options.unusual), `prices.json` history, or live tool results from this session. Numbers and named rules (FOMO ceiling, buying-rule status, regime, VIX bucket, RSI thresholds, sector leader/laggard reads, options flow) get cited explicitly. `waiting_for` MUST be a falsifiable level or event with a concrete number/date — not a vague aspiration.
+
+Banned phrasings (LLM filler, not analyst writing): "being patient", "monitoring closely", "remains in focus", "could see continued volatility", "key support/resistance" without a level, "important to watch" without saying what, "needs more confirmation" without saying which signal.
+
+If the data isn't there for a field, omit it. Padding with generalizations is worse than absence.
+
 Plain mode reads like a friendly analyst writing for a non-pro; pro mode is tighter analyst notation. Both modes follow the same style rules as `detail.{plain, pro}` (no em-dashes, no LLM filler, etc.).
 
 ## tab_intro.bullets priority contract
