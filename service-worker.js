@@ -1,7 +1,7 @@
 // Market Watch service worker.
 // Strategy: cache the app shell on install; for everything else, network first
 // with a cache fallback. Briefs.json is fetched fresh-only (network bypass).
-const SHELL_CACHE = "mw-shell-v2";
+const SHELL_CACHE = "mw-shell-v3";
 const SHELL_FILES = [
   "./",
   "./index.html",

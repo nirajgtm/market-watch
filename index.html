@@ -520,8 +520,6 @@ function renderMasthead(b) {
       <span class="mw-regime mw-regime-${b.regime}">${escHtml(b.regime)}</span>
     </div>
     ${b.regime_note ? `<div class="mw-regime-note-row"><span class="mw-regime-note mw-regime-note-${b.regime}">${escHtml(b.regime_note)}</span></div>` : ""}
-    ${b.headline ? `<p class="mw-headline">${escHtml(pickModeText(b.headline))}</p>` : ""}
-    ${renderSummaryBullets(b)}
   </header>`;
 }
 
@@ -1432,9 +1430,9 @@ function mount() {
   root.innerHTML = `
     <div id="mw-shell">
       <div id="mw-masthead">${renderMasthead(b)}</div>
+      <div id="mw-tabs">${renderTabs(TAB)}</div>
       <div id="mw-mstatus">${renderMarketStatus(b.market_status)}</div>
       <div id="mw-topactions">${renderTopActions(b.actions)}</div>
-      <div id="mw-tabs">${renderTabs(TAB)}</div>
       <main id="mw-main" class="mw-main">${paneHtmlFor(TAB)}</main>
       <footer class="mw-footer">
         <div class="mw-footer-rule"></div>

@@ -18,14 +18,8 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "regime": "BULL | BEAR | NEUTRAL",
   "regime_note": "short qualifier, e.g. 'FOMO-extended', 'breadth narrow'",
   "vix_bucket": "calm | normal | elevated | fearful",
-  "headline": { "plain": "zero-jargon, expand acronyms", "pro": "analyst shorthand OK" },
-
-  "summary_bullets": [
-    { "plain": "Required. 4 to 5 readable sentences pulled fresh on every brief run.",
-      "pro":   "Same idea in analyst shorthand. ~80-120 chars each." },
-    { "plain": "Each bullet is a full sentence summarizing one important thing across the entire site.",
-      "pro":   "Sources: ACTION-tier top_action, watchlist transitions, ER ≤7d, sector rotation, biggest mover, vol context." }
-  ],
+  "headline":         { "plain": "...", "pro": "..." },        // OPTIONAL: not rendered on the page anymore. Per-tab tab_intro.headline replaces it.
+  "summary_bullets":  [],                                        // DEPRECATED: no surface renders this. Use per-tab tab_intro.bullets.
 
   "market_status": {
     "tier": "MARKET CLOSED | PRE-MARKET | MARKET OPEN | AFTER-HOURS",

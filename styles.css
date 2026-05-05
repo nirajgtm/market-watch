@@ -144,7 +144,7 @@ html, body {
 /* ============================================================
    MASTHEAD
    ============================================================ */
-.mw-masthead { margin-bottom: 32px; }
+.mw-masthead { margin-bottom: 16px; }
 
 /* Top of masthead: wordmark stays centered; gear pinned to the right edge */
 .mw-mast-top {
