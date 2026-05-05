@@ -520,19 +520,17 @@ function renderMasthead(b) {
   </header>`;
 }
 
-// Render a tab-level intro: a small headline plus 3-5 bullets specific to the tab.
-// No-op if the tab has no tab_intro block.
+// Render a tab-level intro: 3-5 bullets specific to the tab. No-op if the tab
+// has no tab_intro.bullets.
 function renderTabIntro(intro) {
   if (!intro || typeof intro !== "object") return "";
-  const head = intro.headline ? pickModeText(intro.headline) : "";
   const bullets = Array.isArray(intro.bullets) ? intro.bullets.filter(Boolean) : [];
-  if (!head && !bullets.length) return "";
+  if (!bullets.length) return "";
   return `<section class="mw-tab-intro">
-    ${head ? `<h2 class="mw-tab-intro-head">${escHtml(head)}</h2>` : ""}
-    ${bullets.length ? `<ul class="mw-tab-intro-bullets">${bullets
+    <ul class="mw-tab-intro-bullets">${bullets
       .slice(0, 5)
       .map(it => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`)
-      .join("")}</ul>` : ""}
+      .join("")}</ul>
   </section>`;
 }
 

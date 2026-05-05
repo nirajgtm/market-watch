@@ -364,22 +364,13 @@ html, body {
 .mw-regime-note-BEAR,    .mw-regime-note-bear    { color: var(--mw-down); }
 .mw-regime-note-NEUTRAL, .mw-regime-note-neutral { color: var(--mw-accent); }
 
-/* Per-tab intro: small headline + 3-5 bullets at the top of each pane */
+/* Per-tab intro: 3-5 bullets at the top of each pane */
 .mw-tab-intro {
   margin: 0 0 18px;
-  padding: 16px 18px 18px;
+  padding: 14px 18px;
   background: var(--mw-bg-2);
   border: 1px solid var(--mw-rule);
   border-radius: 12px;
-}
-.mw-tab-intro-head {
-  margin: 0 0 10px;
-  font-family: var(--mw-display);
-  font-size: clamp(16px, 1.8vw, 20px);
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--mw-ink);
-  text-wrap: balance;
 }
 .mw-tab-intro-bullets {
   list-style: none;
@@ -398,21 +389,20 @@ html, body {
 }
 @media (max-width: 720px) {
   .mw-tab-intro {
-    padding: 14px;
+    padding: 12px 14px;
     border-radius: 14px;
     margin-bottom: 14px;
   }
-  .mw-tab-intro-head { font-size: 16px; }
   .mw-tab-intro-bullets { font-size: 14px; }
 }
 
 /* Market status: caption-style strip, no card outline. A small color dot
-   (open=green, pre/post=amber, closed=gray) plus a single line of plain text. */
+   (open=green, pre/post=amber, closed=gray) plus a single line of plain text.
+   No border or margin — flows directly into Today's Actions below. */
 .mw-mstatus {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 0 14px;
-  margin: 0 0 8px;
-  border-bottom: 1px solid var(--mw-rule);
+  padding: 8px 0;
+  margin: 0;
   font-size: 13px;
   color: var(--mw-ink-2);
 }
@@ -507,9 +497,8 @@ html, body {
    TOP ACTIONS
    ============================================================ */
 .mw-top-actions {
-  margin: 32px 0 36px;
-  padding: 22px 0 6px;
-  border-top: 1px solid var(--mw-rule);
+  margin: 0 0 28px;
+  padding: 14px 0 6px;
   border-bottom: 1px solid var(--mw-rule);
 }
 .mw-eyebrow {

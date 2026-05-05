@@ -38,10 +38,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   ],
 
   "macro": {
-    "tab_intro": {
-      "headline": { "plain": "...", "pro": "..." },
-      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
-    },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
     "indices": [
       { "ticker": "SPY", "last": 720.65, "rsi": 79.1, "note": "above all MAs",
         "detail": { "plain": "...", "pro": "..." } }
@@ -65,10 +62,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "stocks": {
-    "tab_intro": {
-      "headline": { "plain": "...", "pro": "..." },
-      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
-    },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
     "watchlist": [
       { "ticker": "PODD", "last": 175.04, "change_pct": 1.68,
         "trigger_zone": "$170-175 short", "status": "TRIGGERED|IN_ZONE|NEAR|FAR|INVALIDATED",
@@ -86,10 +80,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "options": {
-    "tab_intro": {
-      "headline": { "plain": "...", "pro": "..." },
-      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
-    },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
     "unusual": [{ "ticker": "AAPL", "vol_oi": 1243, "context": "breakout + active",
                   "detail": {"plain":"...","pro":"..."} }],
     "earnings_iv": [{ "ticker": "AMD", "date": "Wed May 6", "note": "...",
@@ -124,10 +115,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "crypto": {
-    "tab_intro": {
-      "headline": { "plain": "...", "pro": "..." },
-      "bullets":  [{ "plain": "...", "pro": "..." }, ... 3 to 5 items]
-    },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
     "status": "coming_soon | live",
     "note": "string when status=coming_soon",
     "coins": [{ "symbol": "BTC", "last": 95000, "change_5d_pct": 1.2,
