@@ -272,7 +272,7 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 789,
+            "mentions": 793,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -295,21 +295,21 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 29,
+                "score": 31,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "I kept seeing posts here from people who didn't understand what their own contracts were doing so I built this",
-                "score": 18,
+                "score": 19,
                 "flair": "",
                 "body_excerpt": "I'm a CS student who's been trading options for a while, and I keep seeing the same pattern across r/options, r/thetagang, and the other options subs. A lot of beginners trying to figure out what their own contracts actually do. Not \"what's..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bearish. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "789 mentions across 7 communities, +379% vs prior session. Sentiment bearish. Top thesis: \"Time to Make Some Bearish Bets\"."
+              "pro": "793 mentions across 7 communities, +363% vs prior session. Sentiment bearish. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           },
           {
@@ -334,7 +334,7 @@
               {
                 "sub": "thetagang",
                 "title": "Why is it that I can fully use my available margin  when holding the shares and selling covered calls, but can't when selling puts?  Does that mean it is better to  sell covered calls on this case?  With margin i can use $122,000 to buy QQQ stock, but I can only use $56,000 to sell puts.",
-                "score": 17,
+                "score": 16,
                 "flair": "Covered Call",
                 "body_excerpt": ""
               },
@@ -386,14 +386,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 29,
+                "score": 31,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "Reducing Losses",
-                "score": 5,
+                "score": 4,
                 "flair": "",
                 "body_excerpt": "I love resiliency! Dow, S&amp;P and Nasdaq all down &gt; 0.1 - 1.1 ish.. meanwhile my portfolio break nearly even (only down 0.01%). Maybe it\u2019s a small thing but I love when my little portfolio is resilient, and is has been very resilient o..."
               }
@@ -642,23 +642,23 @@
         "wsb_top": [
           {
             "ticker": "SPY",
-            "score": 359
+            "score": 361
           },
           {
             "ticker": "PLTR",
-            "score": 282
+            "score": 279
           },
           {
             "ticker": "MU",
-            "score": 236
+            "score": 231
           },
           {
             "ticker": "SNDK",
-            "score": 215
+            "score": 213
           },
           {
             "ticker": "NVDA",
-            "score": 171
+            "score": 169
           }
         ],
         "action": {
@@ -713,7 +713,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 509,
+            "mentions": 499,
             "sources": [
               "all_stocks",
               "options",
@@ -729,33 +729,67 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 231,
+                "score": 237,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "options",
                 "title": "Micron Up 60% in 4 Weeks. Writing Puts.",
-                "score": 73,
+                "score": 72,
                 "flair": "",
                 "body_excerpt": "After Micron surged 60%+ in 4 weeks, cash-secured puts are generating rich premium right now. This week I break down how to use high IV to get paid to wait for a pullback on $MU."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "From 123k to 290k in 8months",
-                "score": 58,
+                "score": 62,
                 "flair": "GAIN$",
                 "body_excerpt": "Just focusing on long-term trends + tactical leverage via call options.\n\nMU \u2192 AI memory upswing cycle\n\nBE \u2192 Hydrogen energy + backup power for data centers.\n\nTSM \u2192 Enabler of AI wafer fabs.\n\nRKLB \u2192 My bet on space. It\u2019s down 50%, but the ex..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and rich option premium. Traders are writing puts to collect premium. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "509 mentions across 7 communities, +687% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; rich option premium. Strategy mix: writing puts to collect premium. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "499 mentions across 7 communities, +700% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; rich option premium. Strategy mix: writing puts to collect premium. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+            }
+          },
+          {
+            "ticker": "PLTR",
+            "mentions": 584,
+            "sources": [
+              "all_stocks",
+              "race10m",
+              "stocks",
+              "stocktwits",
+              "vitards",
+              "wallstreetbets"
+            ],
+            "sentiment": "BULLISH",
+            "summary": "Palantir is trending as the community debates a sharp disconnect between record-setting earnings and the stock's muted price reaction, with many investors di...",
+            "top_posts": [
+              {
+                "sub": "Vitards",
+                "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
+                "score": 95,
+                "flair": "YOLO",
+                "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "PLTR at $148 going into earnings tonight. Here's what matters.",
+                "score": 2,
+                "flair": "",
+                "body_excerpt": "Everyone's watching the headline numbers. $0.28 EPS, $1.5B revenue, 75% YoY growth. But that's the floor, not the ceiling.\n\nThe real test is whether Q2 guidance beats $1.68B consensus, whether full year US commercial revenue clears $3.14B, ..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "584 mentions across 6 communities, +615% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 377,
+            "mentions": 372,
             "sources": [
               "all_stocks",
               "race10m",
@@ -777,26 +811,26 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 231,
+                "score": 237,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "Vitards",
                 "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
-                "score": 96,
+                "score": 95,
                 "flair": "YOLO",
                 "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and the earnings reaction. The loudest take is: \"34M crossed $1M+ today. ~25% in cash\".",
-              "pro": "377 mentions across 6 communities, +185% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"34M crossed $1M+ today. ~25% in cash\"."
+              "pro": "372 mentions across 6 communities, +177% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"34M crossed $1M+ today. ~25% in cash\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 311,
+            "mentions": 307,
             "sources": [
               "all_stocks",
               "options",
@@ -811,14 +845,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 29,
+                "score": 31,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 15,
+                "score": 14,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               },
@@ -832,45 +866,12 @@
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"A 1/4 of the way there. 26yo\".",
-              "pro": "311 mentions across 6 communities, +94% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"A 1/4 of the way there. 26yo\"."
-            }
-          },
-          {
-            "ticker": "PLTR",
-            "mentions": 577,
-            "sources": [
-              "all_stocks",
-              "race10m",
-              "stocktwits",
-              "vitards",
-              "wallstreetbets"
-            ],
-            "sentiment": "BULLISH",
-            "summary": "Palantir is trending as the community debates a sharp disconnect between record-setting earnings and the stock's muted price reaction, with many investors di...",
-            "top_posts": [
-              {
-                "sub": "Vitards",
-                "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
-                "score": 96,
-                "flair": "YOLO",
-                "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "PLTR at $148 going into earnings tonight. Here's what matters.",
-                "score": 2,
-                "flair": "",
-                "body_excerpt": "Everyone's watching the headline numbers. $0.28 EPS, $1.5B revenue, 75% YoY growth. But that's the floor, not the ceiling.\n\nThe real test is whether Q2 guidance beats $1.68B consensus, whether full year US commercial revenue clears $3.14B, ..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "577 mentions across 5 communities, +605% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "pro": "307 mentions across 6 communities, +90% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"A 1/4 of the way there. 26yo\"."
             }
           },
           {
             "ticker": "SNDK",
-            "mentions": 442,
+            "mentions": 438,
             "sources": [
               "all_stocks",
               "race10m",
@@ -883,7 +884,7 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 231,
+                "score": 237,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
@@ -897,14 +898,14 @@
               {
                 "sub": "thetagang",
                 "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
-                "score": 10,
+                "score": 9,
                 "flair": "",
                 "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "442 mentions across 4 communities, +339% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "438 mentions across 4 communities, +326% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           }
         ]
@@ -1150,7 +1151,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 509,
+            "mentions": 499,
             "sources": [
               "all_stocks",
               "options",
@@ -1166,33 +1167,33 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 231,
+                "score": 237,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "options",
                 "title": "Micron Up 60% in 4 Weeks. Writing Puts.",
-                "score": 73,
+                "score": 72,
                 "flair": "",
                 "body_excerpt": "After Micron surged 60%+ in 4 weeks, cash-secured puts are generating rich premium right now. This week I break down how to use high IV to get paid to wait for a pullback on $MU."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "From 123k to 290k in 8months",
-                "score": 58,
+                "score": 62,
                 "flair": "GAIN$",
                 "body_excerpt": "Just focusing on long-term trends + tactical leverage via call options.\n\nMU \u2192 AI memory upswing cycle\n\nBE \u2192 Hydrogen energy + backup power for data centers.\n\nTSM \u2192 Enabler of AI wafer fabs.\n\nRKLB \u2192 My bet on space. It\u2019s down 50%, but the ex..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and rich option premium. Traders are writing puts to collect premium. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "509 mentions across 7 communities, +687% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; rich option premium. Strategy mix: writing puts to collect premium. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "499 mentions across 7 communities, +700% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; rich option premium. Strategy mix: writing puts to collect premium. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 311,
+            "mentions": 307,
             "sources": [
               "all_stocks",
               "options",
@@ -1207,14 +1208,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 29,
+                "score": 31,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 15,
+                "score": 14,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               },
@@ -1228,12 +1229,12 @@
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"A 1/4 of the way there. 26yo\".",
-              "pro": "311 mentions across 6 communities, +94% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"A 1/4 of the way there. 26yo\"."
+              "pro": "307 mentions across 6 communities, +90% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"A 1/4 of the way there. 26yo\"."
             }
           },
           {
             "ticker": "SNDK",
-            "mentions": 442,
+            "mentions": 438,
             "sources": [
               "all_stocks",
               "race10m",
@@ -1246,7 +1247,7 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 231,
+                "score": 237,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
@@ -1260,14 +1261,14 @@
               {
                 "sub": "thetagang",
                 "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
-                "score": 10,
+                "score": 9,
                 "flair": "",
                 "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "442 mentions across 4 communities, +339% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "438 mentions across 4 communities, +326% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
@@ -1283,7 +1284,7 @@
               {
                 "sub": "options",
                 "title": "CSSP vs. Put Spread",
-                "score": 7,
+                "score": 8,
                 "flair": "",
                 "body_excerpt": "Ok, so today, I made a dumb mistake.  I wanted to do a short put (CSSP) on META for May 15, but instead of doing one contract, I did 10.  It executed, so I guess I have enough margin to cover, but definitely not enough cash to buy 1000 shar..."
               },
@@ -1313,14 +1314,14 @@
               {
                 "sub": "thetagang",
                 "title": "10 weeks of wheeling: Up 24%",
-                "score": 40,
+                "score": 41,
                 "flair": "Wheel",
                 "body_excerpt": "Been lurking on this sub for years and have benefitted greatly from seeing other's gains/losses and their detailed analysis over their strategies. Figured I would post some of my own learnings.\n\nIn about 10 weeks of active trading, I have g..."
               },
               {
                 "sub": "thetagang",
                 "title": "RDDT DD, 2026 Earnings",
-                "score": 26,
+                "score": 24,
                 "flair": "DD",
                 "body_excerpt": "I'll be examining RDDT's 2025 revenues, expenses, EBITDA, and give a 2026 EBITDA estimate with this data. Later in the post, we'll take a deeper dive into current user growth, ARPU growth, and compare this to the initial 2026 estimates and ..."
               },
@@ -1344,8 +1345,8 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 79777.02,
-            "change_5d_pct": 1.6,
+            "last": 80388.0,
+            "change_5d_pct": 6.09,
             "note": "Bitcoin dominance 58.5 percent; consolidating",
             "detail": {
               "plain": "Bitcoin is in a tight range around 80,000 dollars. Bitcoin dominance is 58.5 percent, meaning Bitcoin is taking up over half of the total crypto market. No clean breakout setup right now.",
@@ -1354,8 +1355,8 @@
           },
           {
             "symbol": "ETH",
-            "last": null,
-            "change_5d_pct": null,
+            "last": 2366.96,
+            "change_5d_pct": 5.04,
             "note": "Trailing Bitcoin; rotation candidate if dominance falls",
             "detail": {
               "plain": "Ether typically rallies when Bitcoin dominance falls. Right now Bitcoin dominance is rising, which is a headwind for Ether.",
@@ -1364,8 +1365,8 @@
           },
           {
             "symbol": "SOL",
-            "last": null,
-            "change_5d_pct": null,
+            "last": 84.53,
+            "change_5d_pct": 1.81,
             "note": "Trending on Robinhood; alt-coin leader if alts catch a bid",
             "detail": {
               "plain": "Solana is trending among Robinhood crypto traders. It tends to be the strongest alt-coin during risk-on phases, but right now alts are on the defensive.",
@@ -1374,8 +1375,8 @@
           },
           {
             "symbol": "XRP",
-            "last": 15.57,
-            "change_5d_pct": null,
+            "last": 1.4,
+            "change_5d_pct": 2.13,
             "note": "Consolidating below the year high",
             "detail": {
               "plain": "Ripple is consolidating in the 15 dollar range after a major run. Daily price swings are elevated at about 0.48 dollars per day.",
@@ -1439,22 +1440,6 @@
         ]
       },
       "sparks": {
-        "INDEX": [
-          66.19,
-          66.36,
-          67.16,
-          67.0,
-          66.58,
-          67.27,
-          67.0,
-          67.53,
-          67.62,
-          67.28,
-          67.26,
-          67.95,
-          68.15,
-          67.87
-        ],
         "HUM": [
           198.37,
           200.76,
@@ -1471,85 +1456,37 @@
           233.63,
           237.96
         ],
-        "QQQ": [
-          637.4,
-          640.47,
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4548.5
         ],
-        "DX-Y.NYB": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.488
-        ],
-        "dxy": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.488
-        ],
-        "^VIX": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29
-        ],
-        "vix": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4548.5
         ],
         "SPY": [
           699.94,
@@ -1567,37 +1504,53 @@
           720.65,
           718.01
         ],
-        "GRAB": [
-          3.92,
-          4.02,
-          4.21,
-          4.21,
-          4.08,
-          4.06,
-          3.96,
-          3.9,
-          3.89,
-          3.86,
-          3.82,
-          3.82,
-          3.67,
-          3.62
+        "TER": [
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44
         ],
-        "PWR": [
-          591.82,
-          587.42,
-          601.88,
-          604.97,
-          605.89,
-          613.78,
-          633.44,
-          624.84,
-          637.28,
-          630.94,
-          628.6,
-          727.77,
-          742.21,
-          757.34
+        "GNRC": [
+          204.4,
+          207.41,
+          212.1,
+          217.26,
+          213.85,
+          213.69,
+          218.38,
+          220.93,
+          220.3,
+          217.12,
+          252.92,
+          259.23,
+          259.34,
+          257.07
+        ],
+        "XLE": [
+          55.76,
+          56.58,
+          55.02,
+          55.07,
+          55.87,
+          56.54,
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39
         ],
         "IWM": [
           269.39,
@@ -1615,37 +1568,53 @@
           279.28,
           277.88
         ],
-        "ARM": [
-          159.34,
-          162.33,
-          166.73,
-          175.1,
-          175.49,
-          196.57,
-          204.61,
-          234.81,
-          215.88,
-          198.65,
-          201.69,
-          210.32,
-          211.18,
-          203.26
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.499
         ],
-        "MO": [
-          64.42,
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.499
+        ],
+        "GEHC": [
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0
         ],
         "^TNX": [
           4.282,
@@ -1679,133 +1648,85 @@
           4.378,
           4.446
         ],
-        "GEHC": [
-          73.51,
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0
+        "QQQ": [
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88
         ],
-        "CL=F": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.76
+        "GRAB": [
+          3.92,
+          4.02,
+          4.21,
+          4.21,
+          4.08,
+          4.06,
+          3.96,
+          3.9,
+          3.89,
+          3.86,
+          3.82,
+          3.82,
+          3.67,
+          3.62
         ],
-        "oil": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.76
+        "MO": [
+          64.42,
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41
         ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4549.0
+        "INDEX": [
+          66.19,
+          66.36,
+          67.16,
+          67.0,
+          66.58,
+          67.27,
+          67.0,
+          67.53,
+          67.62,
+          67.28,
+          67.26,
+          67.95,
+          68.15,
+          67.87
         ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4549.0
-        ],
-        "GNRC": [
-          204.4,
-          207.41,
-          212.1,
-          217.26,
-          213.85,
-          213.69,
-          218.38,
-          220.93,
-          220.3,
-          217.12,
-          252.92,
-          259.23,
-          259.34,
-          257.07
-        ],
-        "TER": [
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44
-        ],
-        "XLE": [
-          55.76,
-          56.58,
-          55.02,
-          55.07,
-          55.87,
-          56.54,
-          56.98,
-          56.87,
-          56.77,
-          57.71,
-          59.03,
-          59.65,
-          58.85,
-          59.39
+        "ARM": [
+          159.34,
+          162.33,
+          166.73,
+          175.1,
+          175.49,
+          196.57,
+          204.61,
+          234.81,
+          215.88,
+          198.65,
+          201.69,
+          210.32,
+          211.18,
+          203.26
         ],
         "PODD": [
           202.5,
@@ -1822,6 +1743,86 @@
           172.14,
           175.04,
           171.39
+        ],
+        "CL=F": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.52
+        ],
+        "oil": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.52
+        ],
+        "PWR": [
+          591.82,
+          587.42,
+          601.88,
+          604.97,
+          605.89,
+          613.78,
+          633.44,
+          624.84,
+          637.28,
+          630.94,
+          628.6,
+          727.77,
+          742.21,
+          757.34
+        ],
+        "^VIX": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29
+        ],
+        "vix": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29
         ]
       }
     },
