@@ -421,37 +421,38 @@ function normalize(brief) {
     sparks: brief.sparks || {},
     macro: {
       tab_intro: brief.macro?.tab_intro || null,
+      actions:   brief.macro?.actions || [],
       indices: brief.macro?.indices || [],
       vol_yields: brief.macro?.vol_yields || {},
       leaders, laggards, rotation_read,
       events_14d: brief.macro?.events_14d || [],
       earnings_7d: brief.macro?.earnings_7d || [],
-      action: brief.macro?.action,
       recommendations: brief.macro?.recommendations,
       social: brief.macro?.social || []
     },
     stocks: {
       tab_intro: brief.stocks?.tab_intro || null,
+      actions:   brief.stocks?.actions || [],
       watchlist,
       movers: brief.stocks?.movers || { gainers: [], losers: [] },
       smart_money,
       wsb_top: brief.stocks?.wsb_top || [],
-      action: brief.stocks?.action,
       recommendations: brief.stocks?.recommendations,
       social: brief.stocks?.social || []
     },
     options: {
       tab_intro: brief.options?.tab_intro || null,
+      actions:   brief.options?.actions || [],
       unusual: brief.options?.unusual || [],
       earnings_iv: brief.options?.earnings_iv || [],
       leaps: brief.options?.leaps || [],
       wheel_candidates: brief.options?.wheel_candidates || [],
-      action: brief.options?.action,
       recommendations: brief.options?.recommendations,
       social: brief.options?.social || []
     },
     crypto: {
       tab_intro: brief.crypto?.tab_intro || null,
+      actions:   brief.crypto?.actions || [],
       ...(brief.crypto || { status: "coming_soon" }),
       social: brief.crypto?.social || []
     }
@@ -520,6 +521,48 @@ function renderMasthead(b) {
   </header>`;
 }
 
+// Render Today's Actions for a single tab. Reuses the same row shape as the
+// retired global renderTopActions but pulls from `tab.actions[]`. No-op if
+// the tab has no actions for today.
+function renderPerTabActions(actions) {
+  if (!Array.isArray(actions) || !actions.length) return "";
+  const visible = actions.filter(a => {
+    const v = String(a.verb || "").toUpperCase();
+    return v && !v.includes("NO ACTION") && v !== "NONE";
+  });
+  if (!visible.length) return "";
+  const rows = visible.map((a, i) => {
+    const id = `tabaction-${i}-${(a.target || "").replace(/[^a-zA-Z0-9]/g, "_")}`;
+    const chgStr = (typeof a.chg_pct === "number" && Number.isFinite(a.chg_pct))
+      ? `<span class="mw-action-chg mw-mono">${a.chg_pct >= 0 ? "+" : ""}${a.chg_pct.toFixed(2)}%</span>`
+      : `<span class="mw-action-chg mw-action-chg-empty"></span>`;
+    const rh = a.robinhood ? pickModeText(a.robinhood) : "";
+    const rhRow = rh
+      ? `<div class="mw-action-rh"><span class="mw-action-rh-label">In Robinhood</span><span class="mw-action-rh-text">${escHtml(rh)}</span></div>`
+      : "";
+    const detailHtml = (hasDetail(a) || rh)
+      ? `${rh ? `<p class="mw-action-rh-block"><strong>In Robinhood:</strong> ${escHtml(rh)}</p>` : ""}${hasDetail(a) ? `<p>${escHtml(getDetail(a))}</p>` : ""}`
+      : null;
+    const summary = `
+      ${actionTarget(a.target, a.chg_pct)}
+      ${chgStr}
+      ${actionPill(a.verb, "sm")}
+      <span class="mw-action-text">${escHtml(a.text)}</span>
+      ${caret(!!detailHtml)}
+      ${rhRow}`;
+    return expandLi(id, summary, detailHtml, "mw-action-item");
+  }).join("");
+  return `<section class="mw-top-actions mw-tab-actions">
+    <div class="mw-eyebrow">
+      <span class="mw-eyebrow-mark mw-mono">&gt;</span>
+      <span class="mw-eyebrow-text mw-mono">Today's actions</span>
+      <span class="mw-eyebrow-rule"></span>
+      <span class="mw-mono mw-eyebrow-count">${visible.length}</span>
+    </div>
+    <ul class="mw-action-list">${rows}</ul>
+  </section>`;
+}
+
 // Render a tab-level intro: 3-5 bullets specific to the tab. No-op if the tab
 // has no tab_intro.bullets.
 function renderTabIntro(intro) {
@@ -545,52 +588,6 @@ function renderMarketStatus(s) {
     ${actionPill(s.tier, "sm")}
     <span class="mw-mstatus-text">${escHtml(s.text || "")}</span>
   </div>`;
-}
-
-function renderTopActions(actions) {
-  if (!actions || !actions.length) return "";
-  // Hide NO_ACTION / NONE rows. The brief still records them, but Today's
-  // actions only surfaces tickers the reader can do something about.
-  const visible = actions.filter(a => {
-    const v = String(a.verb || "").toUpperCase();
-    return v && !v.includes("NO ACTION") && v !== "NONE";
-  });
-  if (!visible.length) return "";
-  const rows = visible.map((a, i) => {
-    const id = `action-${i}`;
-    const chgStr = (typeof a.chg_pct === "number" && Number.isFinite(a.chg_pct))
-      ? `<span class="mw-action-chg mw-mono">${a.chg_pct >= 0 ? "+" : ""}${a.chg_pct.toFixed(2)}%</span>`
-      : `<span class="mw-action-chg mw-action-chg-empty"></span>`;
-    // Robinhood directive — picks the right mode and renders prominently
-    // under the headline so the reader sees the literal trade. Falls through
-    // when the action has no robinhood block (WATCH-only / informational rows).
-    const rh = a.robinhood ? pickModeText(a.robinhood) : "";
-    const rhRow = rh
-      ? `<div class="mw-action-rh"><span class="mw-action-rh-label">In Robinhood</span><span class="mw-action-rh-text">${escHtml(rh)}</span></div>`
-      : "";
-    // Detail panel includes the rh directive at top + the original detail body
-    // so the overlay/expanded view always shows the action you can take.
-    const detailHtml = hasDetail(a) || rh
-      ? `${rh ? `<p class="mw-action-rh-block"><strong>In Robinhood:</strong> ${escHtml(rh)}</p>` : ""}${hasDetail(a) ? `<p>${escHtml(getDetail(a))}</p>` : ""}`
-      : null;
-    const summary = `
-      ${actionTarget(a.target, a.chg_pct)}
-      ${chgStr}
-      ${actionPill(a.verb, "sm")}
-      <span class="mw-action-text">${escHtml(a.text)}</span>
-      ${caret(!!detailHtml)}
-      ${rhRow}`;
-    return expandLi(id, summary, detailHtml, "mw-action-item");
-  }).join("");
-  return `<section class="mw-top-actions">
-    <div class="mw-eyebrow">
-      <span class="mw-eyebrow-mark mw-mono">&gt;</span>
-      <span class="mw-eyebrow-text mw-mono">Today's actions</span>
-      <span class="mw-eyebrow-rule"></span>
-      <span class="mw-mono mw-eyebrow-count">${visible.length}</span>
-    </div>
-    <ul class="mw-action-list">${rows}</ul>
-  </section>`;
 }
 
 // Inline SVG icons for each section. Used by the mobile bottom nav and as a
@@ -793,55 +790,6 @@ function renderRecommendations(recs, prefix, sparks) {
   </section>`;
 }
 
-// Global "Top picks today" — aggregates buy + sell recs across every tab and
-// renders a single section directly under Today's Actions. Each tab keeps its
-// own per-tab recs section in its pane (so a reader inside the Stocks tab can
-// still scan only stocks-side picks).
-function renderGlobalTopPicks(b) {
-  const sparks = b.sparks || {};
-  const tag = (rec, source) => Object.assign({}, rec, { _source: source });
-  const allBuys = [].concat(
-    ((b.macro?.recommendations?.buy) || []).map(r => tag(r, "macro")),
-    ((b.stocks?.recommendations?.buy) || []).map(r => tag(r, "stocks")),
-    ((b.options?.recommendations?.buy) || []).map(r => tag(r, "options")),
-    ((b.crypto?.recommendations?.buy) || []).map(r => tag(r, "crypto"))
-  );
-  const allSells = [].concat(
-    ((b.macro?.recommendations?.sell) || []).map(r => tag(r, "macro")),
-    ((b.stocks?.recommendations?.sell) || []).map(r => tag(r, "stocks")),
-    ((b.options?.recommendations?.sell) || []).map(r => tag(r, "options")),
-    ((b.crypto?.recommendations?.sell) || []).map(r => tag(r, "crypto"))
-  );
-  if (!allBuys.length && !allSells.length) return "";
-  const sortByConf = (a, b) => (b.confidence || 0) - (a.confidence || 0);
-  allBuys.sort(sortByConf);
-  allSells.sort(sortByConf);
-  const buyBody = allBuys.length
-    ? `<ul class="mw-rec-list">${allBuys.map(r => renderRecCard(r, "buy", "all-" + r._source, sparks)).join("")}</ul>`
-    : `<p class="mw-empty-pad">No buy ideas with conviction today.</p>`;
-  const sellBody = allSells.length
-    ? `<ul class="mw-rec-list">${allSells.map(r => renderRecCard(r, "sell", "all-" + r._source, sparks)).join("")}</ul>`
-    : `<p class="mw-empty-pad">No sell-or-avoid ideas with conviction today.</p>`;
-  return `<section class="mw-card mw-card-span-3 mw-rec-card mw-global-picks">
-    <div class="mw-card-head">
-      <h3 class="mw-card-title">Top picks today</h3>
-      <span class="mw-card-count">${allBuys.length} buy · ${allSells.length} sell</span>
-    </div>
-    <div class="mw-card-body">
-      <div class="mw-rec-grid">
-        <div>
-          <div class="mw-rec-head mw-rec-head-up">Best to buy</div>
-          ${buyBody}
-        </div>
-        <div>
-          <div class="mw-rec-head mw-rec-head-down">Best to sell or avoid</div>
-          ${sellBody}
-        </div>
-      </div>
-    </div>
-  </section>`;
-}
-
 // ──────────────── MACRO ────────────────
 function renderMacroPane(b) {
   const m = b.macro;
@@ -924,18 +872,12 @@ function renderMacroPane(b) {
     body: m.earnings_7d.length ? `<ul class="mw-cal">${earRows}</ul>` : `<p class="mw-empty">None within 7 days.</p>`
   });
 
-  const macroAction = m.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
-    <div class="mw-card-footer mw-card-footer-${String(m.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
-      ${actionPill(m.action.tier, "sm")}
-      <span class="mw-card-action-text">${escHtml(m.action.text || "")}</span>
-    </div>
-  </section>` : "";
-
   const recs = renderRecommendations(m.recommendations, "macro");
   const social = renderSocial(m.social, "macro", "Macro");
   const intro = renderTabIntro(m.tab_intro);
-
-  return `${intro}<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${macroAction}${recs}${social}</div>`;
+  const actions = renderPerTabActions(m.actions);
+  // Order: headlines, today's actions, top picks, then the rest
+  return `${intro}${actions}${recs}<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${social}</div>`;
 }
 
 // ──────────────── STOCKS ────────────────
@@ -1026,20 +968,14 @@ function renderStocksPane(b) {
       : `<p class="mw-empty">No WSB data.</p>`
   });
 
-  const stocksAction = s.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
-    <div class="mw-card-footer mw-card-footer-${String(s.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
-      ${actionPill(s.action.tier, "sm")}
-      <span class="mw-card-action-text">${escHtml(s.action.text || "")}</span>
-    </div>
-  </section>` : "";
-
   const recs = renderRecommendations(s.recommendations, "stocks", sparks);
   const social = renderSocial(s.social, "stocks", "Stocks");
 
   const intro = renderTabIntro(s.tab_intro);
-  // Order: action callout, headlines, top picks, watchlist, movers, social,
+  const actions = renderPerTabActions(s.actions);
+  // Order: headlines, today's actions, top picks, watchlist, movers, social,
   // then smart-money clusters and WSB at the end (lower-priority context).
-  return `${stocksAction}${intro}${recs}<div class="mw-grid">${watchlist}${movers}${social}${sm}${wsb}</div>`;
+  return `${intro}${actions}${recs}<div class="mw-grid">${watchlist}${movers}${social}${sm}${wsb}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
@@ -1165,22 +1101,15 @@ function renderOptionsPane(b) {
     body: o.leaps.length ? `<ul class="mw-cal">${lpRows}</ul>` : `<p class="mw-empty-pad">No LEAP setups today.</p>`
   });
 
-  const optAction = o.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
-    <div class="mw-card-footer mw-card-footer-${String(o.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
-      ${actionPill(o.action.tier, "sm")}
-      <span class="mw-card-action-text">${escHtml(o.action.text || "")}</span>
-    </div>
-  </section>` : "";
-
   const wheel = renderWheelCandidates(o.wheel_candidates, sparks);
   const recs = renderRecommendations(o.recommendations, "options", sparks);
   const social = renderSocial(o.social, "options", "Options");
 
   const intro = renderTabIntro(o.tab_intro);
-  // Order per user spec: actions, headlines, top picks, leaps, wheel candidates, rest.
-  // 'actions' = optAction callout. 'headlines' = tab_intro bullets.
-  // 'rest' = unusual flow + earnings IV + social chatter.
-  return `${optAction}${intro}${recs}${leaps}${wheel}<div class="mw-grid">${unusual}${eiv}${social}</div>`;
+  const actions = renderPerTabActions(o.actions);
+  // Order: headlines, today's actions, top picks, LEAPs, wheel candidates,
+  // rest (unusual flow + earnings IV + social chatter).
+  return `${intro}${actions}${recs}${leaps}${wheel}<div class="mw-grid">${unusual}${eiv}${social}</div>`;
 }
 
 // ──────────────── CRYPTO ────────────────
@@ -1206,7 +1135,8 @@ function renderCryptoPane(b) {
     <span class="mw-mono r">$${fmtNum(co.last)}</span>
     <span class="mw-mono ${pctClass(co.change_5d_pct)}">${fmtPct(co.change_5d_pct)} <span class="mw-dim">5d</span></span>
   </div>`).join("");
-  return `${intro}<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows, action: c.action })}${recs}${social}</div>`;
+  const actions = renderPerTabActions(c.actions);
+  return `${intro}${actions}${recs}<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows })}${social}</div>`;
 }
 
 // ──────────────── MODALS ────────────────
@@ -1406,8 +1336,6 @@ function mount() {
       <div id="mw-masthead">${tryRender(() => renderMasthead(b), "masthead")}</div>
       <div id="mw-tabs">${tryRender(() => renderTabs(TAB), "tabs")}</div>
       <div id="mw-mstatus">${tryRender(() => renderMarketStatus(b.market_status), "mstatus")}</div>
-      <div id="mw-topactions">${tryRender(() => renderTopActions(b.actions), "topactions")}</div>
-      <div id="mw-toppicks">${tryRender(() => renderGlobalTopPicks(b), "toppicks")}</div>
       <main id="mw-main" class="mw-main">${tryRender(() => paneHtmlFor(TAB), "pane:" + TAB)}</main>
       <footer class="mw-footer">
         <div class="mw-footer-rule"></div>
@@ -1485,12 +1413,11 @@ function setMode(m) {
   // Update mode toggle buttons
   document.querySelectorAll("[data-mode]").forEach(b =>
     b.classList.toggle("is-active", b.dataset.mode === m));
-  // Refresh the only mode-sensitive parts: masthead headline, top actions, current pane.
+  // Mode-sensitive parts: masthead and the current pane (which carries
+  // per-tab Today's Actions, top picks, intros, etc.).
   const b = getNormalized();
   const masthead = document.getElementById("mw-masthead");
   if (masthead) masthead.innerHTML = renderMasthead(b);
-  const topa = document.getElementById("mw-topactions");
-  if (topa) topa.innerHTML = renderTopActions(b.actions);
   document.getElementById("mw-main").innerHTML = paneHtmlFor(TAB);
   OPEN_ID = null;
 }
@@ -1659,7 +1586,6 @@ function selectArchive(date) {
   const b = getNormalized();
   document.getElementById("mw-masthead").innerHTML = renderMasthead(b);
   document.getElementById("mw-mstatus").innerHTML = renderMarketStatus(b.market_status);
-  document.getElementById("mw-topactions").innerHTML = renderTopActions(b.actions);
   document.getElementById("mw-tabs").innerHTML = renderTabs(TAB);
   document.getElementById("mw-main").innerHTML = paneHtmlFor(TAB);
   window.scrollTo({ top: 0, behavior: "smooth" });

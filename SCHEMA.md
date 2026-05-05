@@ -28,24 +28,23 @@ Single file, public, served as static asset. Versioned via `version` integer.
     "vix": [14 closes], "ten_year": [...], "dxy": [...], "oil": [...], "gold": [...]
   },
 
-  "top_actions": [
-    {
-      "verb": "ACTION | WATCH | NO ACTION",
-      "target": "TICKER",
-      "text": "one-sentence summary",
-      "detail": { "plain": "...", "pro": "..." },
-
-      // REQUIRED on ACTION-tier rows. Optional on WATCH (use when there's a
-      // standing income/hedge trade). Omit/null on NO ACTION rows.
-      // Each mode is 1-2 short sentences with explicit Robinhood UI verbs:
-      //   plain: "Sell to close 1 PODD 6/20 170/160 put spread, limit at mid, GFD."
-      //   pro:   "STC PODD 2026-06-20 170P / 160P spread @ net credit mid, GFD. Stop on close above 183."
-      "robinhood": { "plain": "...", "pro": "..." }
-    }
-  ],
+  // top_actions is OPTIONAL at the root (legacy). The page does NOT render it
+  // globally any more. Use per-tab `actions[]` instead (see each tab below).
+  "top_actions": [],
 
   "macro": {
     "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "actions": [
+      // Today's Actions for the macro tab. 0-3 items.
+      // Same shape as the legacy top_actions row plus the required `robinhood` field on ACTION-tier rows.
+      {
+        "verb": "ACTION | WATCH | NO ACTION",
+        "target": "TICKER or topic (e.g. INDEX, VIX)",
+        "text": "one-sentence summary",
+        "detail":    { "plain": "...", "pro": "..." },
+        "robinhood": { "plain": "...", "pro": "..." }   // required on ACTION; optional on WATCH; omit on NO ACTION
+      }
+    ],
     "indices": [
       { "ticker": "SPY", "last": 720.65, "rsi": 79.1, "note": "above all MAs",
         "detail": { "plain": "...", "pro": "..." } }
@@ -61,7 +60,6 @@ Single file, public, served as static asset. Versioned via `version` integer.
                      "detail": {"plain":"...","pro":"..."} }],
     "earnings_7d": [{ "ticker": "AMD", "date": "Wed May 6", "note": "Sets AI-semi tone",
                       "detail": {"plain":"...","pro":"..."} }],
-    "action": { "tier": "ACTION | WATCH | NO_ACTION", "text": "..." },
     "recommendations": {
       "buy":  [Recommendation, ...],
       "sell": [Recommendation, ...]
@@ -70,6 +68,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
 
   "stocks": {
     "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "actions": [/* per-tab Today's Actions, same shape as macro.actions */],
     "watchlist": [
       { "ticker": "PODD", "last": 175.04, "change_pct": 1.68,
         "trigger_zone": "$170-175 short", "status": "TRIGGERED|IN_ZONE|NEAR|FAR|INVALIDATED",
@@ -82,12 +81,12 @@ Single file, public, served as static asset. Versioned via `version` integer.
     },
     "smart_money_clusters": ["NIO", "AAPL"],
     "wsb_top": [{ "ticker": "SNDK", "score": 95 }],
-    "action": { "tier": "...", "text": "..." },
     "recommendations": { "buy": [...], "sell": [...] }
   },
 
   "options": {
     "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "actions": [/* per-tab Today's Actions */],
     "unusual": [{ "ticker": "AAPL", "vol_oi": 1243, "context": "breakout + active",
                   "detail": {"plain":"...","pro":"..."} }],
     "earnings_iv": [{ "ticker": "AMD", "date": "Wed May 6", "note": "...",
@@ -117,17 +116,16 @@ Single file, public, served as static asset. Versioned via `version` integer.
         "pro": "Robinhood-explicit: STO 1 AVGO 2026-06-05 395P @ $13.44 mid, GFD. Collateral $39,500. Stop alert at $X. If assigned, write CC."
       }
     }],
-    "action": { "tier": "...", "text": "..." },
     "recommendations": { "buy": [...], "sell": [...] }
   },
 
   "crypto": {
     "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "actions": [/* per-tab Today's Actions; can be empty when no specific crypto setup */],
     "status": "coming_soon | live",
     "note": "string when status=coming_soon",
     "coins": [{ "symbol": "BTC", "last": 95000, "change_5d_pct": 1.2,
                 "note": "...", "detail": {"plain":"...","pro":"..."} }],
-    "action": { "tier": "...", "text": "..." },
     "recommendations": { "buy": [...], "sell": [...] }
   }
 }
