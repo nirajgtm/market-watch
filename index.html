@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PWA: Chrome / Android install prompt -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#14110a">
+
+  <!-- iOS Safari "Add to Home Screen" -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Market Watch">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
   <div class="mw-page" id="root">
@@ -1541,6 +1551,95 @@ fetch("briefs.json")
     document.getElementById("root").innerHTML = `<p class="mw-empty">Could not load briefs: ${escHtml(err)}</p>`;
     console.error(err);
   });
+
+// ============================================================
+//  PWA — Install button + service worker registration
+// ============================================================
+let DEFERRED_INSTALL_PROMPT = null;
+
+// Chrome / Edge / modern Android: capture the install prompt and surface a button.
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  DEFERRED_INSTALL_PROMPT = e;
+  showInstallButton();
+});
+
+window.addEventListener("appinstalled", () => {
+  DEFERRED_INSTALL_PROMPT = null;
+  hideInstallButton();
+  try { localStorage.setItem("mw_pwa_installed", "1"); } catch {}
+});
+
+function isStandalone() {
+  return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches)
+    || window.navigator.standalone === true;
+}
+
+function isIos() {
+  const ua = window.navigator.userAgent;
+  return /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+}
+
+function showInstallButton() {
+  if (isStandalone()) return;
+  let btn = document.getElementById("mw-install-btn");
+  if (!btn) {
+    btn = document.createElement("button");
+    btn.id = "mw-install-btn";
+    btn.className = "mw-install-btn";
+    btn.type = "button";
+    btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Install app</span>`;
+    btn.addEventListener("click", triggerInstall);
+    document.body.appendChild(btn);
+  }
+  btn.classList.add("is-visible");
+}
+function hideInstallButton() {
+  const btn = document.getElementById("mw-install-btn");
+  if (btn) btn.classList.remove("is-visible");
+}
+
+async function triggerInstall() {
+  if (DEFERRED_INSTALL_PROMPT) {
+    DEFERRED_INSTALL_PROMPT.prompt();
+    const { outcome } = await DEFERRED_INSTALL_PROMPT.userChoice;
+    if (outcome === "accepted") hideInstallButton();
+    DEFERRED_INSTALL_PROMPT = null;
+  } else if (isIos()) {
+    // iOS Safari has no programmatic prompt; show inline guidance instead.
+    showIosInstallHint();
+  }
+}
+
+function showIosInstallHint() {
+  let hint = document.getElementById("mw-ios-hint");
+  if (hint) { hint.classList.add("is-visible"); return; }
+  hint = document.createElement("div");
+  hint.id = "mw-ios-hint";
+  hint.className = "mw-ios-hint is-visible";
+  hint.innerHTML = `
+    <button class="mw-ios-hint-close" aria-label="Close">x</button>
+    <p>To install Market Watch as an app, tap the <strong>Share</strong> icon below, then choose <strong>Add to Home Screen</strong>.</p>`;
+  hint.querySelector(".mw-ios-hint-close").addEventListener("click", () => hint.classList.remove("is-visible"));
+  document.body.appendChild(hint);
+}
+
+// On iOS, the beforeinstallprompt event never fires; show a manual install button
+// the first time an iOS user lands on the page (unless already in standalone mode).
+window.addEventListener("load", () => {
+  if (isIos() && !isStandalone()) {
+    showInstallButton();
+  }
+});
+
+// Register the service worker (gives Chrome the green light to install + works offline).
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch((err) => {
+      console.warn("Service worker registration failed:", err);
+    });
+  });
+}
 </script>
 </body>
 </html>

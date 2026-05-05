@@ -1529,6 +1529,84 @@ html { scroll-behavior: smooth; }
 button { -webkit-tap-highlight-color: transparent; }
 
 /* ============================================================
+   PWA INSTALL BUTTON + iOS HINT
+   ============================================================ */
+.mw-install-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border: 1px solid var(--mw-rule-2);
+  border-radius: 999px;
+  background: var(--mw-bg-2);
+  color: var(--mw-ink);
+  font-family: var(--mw-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 140ms ease, background-color 160ms ease;
+}
+.mw-install-btn.is-visible { display: inline-flex; }
+.mw-install-btn:hover { background: var(--mw-bg-3); }
+.mw-install-btn:active { transform: scale(0.97); }
+.mw-install-btn svg { color: var(--mw-money); }
+
+@media (max-width: 720px) {
+  .mw-install-btn {
+    right: 16px;
+    bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+}
+
+.mw-ios-hint {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 70;
+  display: none;
+  padding: 14px 38px 14px 16px;
+  background: var(--mw-bg-2);
+  border: 1px solid var(--mw-rule-2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.mw-ios-hint.is-visible { display: block; }
+.mw-ios-hint p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--mw-ink);
+}
+.mw-ios-hint strong { color: var(--mw-money); font-weight: 700; }
+.mw-ios-hint-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 26px; height: 26px;
+  border: 0; background: transparent;
+  color: var(--mw-ink-3);
+  font-family: var(--mw-mono);
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 999px;
+}
+.mw-ios-hint-close:hover { background: var(--mw-rule); color: var(--mw-ink); }
+@media (max-width: 720px) {
+  .mw-ios-hint {
+    bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .mw-footer { margin-top: 64px; }
