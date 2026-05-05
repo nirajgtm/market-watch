@@ -1427,7 +1427,15 @@ function setMode(m) {
 // One detail open at a time. Toggle the .is-open class on every element with
 // matching data-row (covers the summary row + detail row for tables, and the
 // li/section wrapper for everything else). Detail visibility is driven by CSS.
+//
+// On phones (≤720px) we route to a full-screen mobile detail overlay instead
+// of expanding inline. The overlay pushes a history state so the device's
+// hardware back button (Android) and edge-swipe gesture (iOS) both close it.
 function toggleDetail(id) {
+  if (isMobileViewport()) {
+    enterMobileDetail(id);
+    return;
+  }
   if (OPEN_ID && OPEN_ID !== id) {
     document.querySelectorAll('[data-row="' + cssEscape(OPEN_ID) + '"]')
       .forEach(el => el.classList.remove("is-open"));
@@ -1437,6 +1445,120 @@ function toggleDetail(id) {
   document.querySelectorAll('[data-row="' + cssEscape(id) + '"]')
     .forEach(el => el.classList.toggle("is-open", willOpen));
 }
+
+// ============================================================
+//  MOBILE DETAIL OVERLAY (phones only)
+//  Full-screen slide-in panel that hosts the row's expanded detail.
+//  Wired into history.pushState so the device back button + edge swipe
+//  close it without leaving the site.
+// ============================================================
+let MOBILE_DETAIL_OPEN = false;
+
+function isMobileViewport() {
+  return window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+}
+
+function findRowEls(id) {
+  return Array.from(document.querySelectorAll('[data-row="' + cssEscape(id) + '"]'));
+}
+
+function findSummaryFor(id) {
+  for (const el of findRowEls(id)) {
+    const inner = el.querySelector('[data-toggle]');
+    if (inner) return inner;
+    if (el.matches('[data-toggle]')) return el;
+  }
+  return null;
+}
+
+function findDetailFor(id) {
+  const els = findRowEls(id);
+  const selectors = ['.mw-li-detail', '.mw-rec-debate', '.mw-soc-detail', '.mw-detail-inner'];
+  for (const el of els) {
+    for (const sel of selectors) {
+      const d = el.querySelector(sel);
+      if (d) return d;
+    }
+    // Table row case: .mw-row's detail lives in a sibling .mw-row-detail
+    if (el.classList && el.classList.contains('mw-row')) {
+      const sibling = el.nextElementSibling;
+      if (sibling && sibling.classList && sibling.classList.contains('mw-row-detail')) {
+        const inner = sibling.querySelector('.mw-detail-inner') || sibling;
+        return inner;
+      }
+    }
+  }
+  return null;
+}
+
+function ensureDetailOverlay() {
+  let ov = document.getElementById('mw-detail-overlay');
+  if (ov) return ov;
+  ov = document.createElement('div');
+  ov.id = 'mw-detail-overlay';
+  ov.className = 'mw-detail-overlay';
+  ov.innerHTML = `
+    <div class="mw-detail-bar">
+      <button class="mw-detail-back" type="button" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Back</span>
+      </button>
+      <div class="mw-detail-title" id="mw-detail-title"></div>
+      <div class="mw-detail-bar-spacer"></div>
+    </div>
+    <div class="mw-detail-content" id="mw-detail-content"></div>
+  `;
+  ov.querySelector('.mw-detail-back').addEventListener('click', () => exitMobileDetail());
+  document.body.appendChild(ov);
+  return ov;
+}
+
+function enterMobileDetail(id) {
+  const summary = findSummaryFor(id);
+  const detail = findDetailFor(id);
+  if (!detail) return; // nothing to show; ignore the tap
+
+  const ov = ensureDetailOverlay();
+  document.getElementById('mw-detail-title').innerHTML = summary ? summary.innerHTML : '';
+  document.getElementById('mw-detail-content').innerHTML = `
+    <div class="mw-detail-summary-echo">${summary ? summary.innerHTML : ''}</div>
+    <div class="mw-detail-body">${detail.innerHTML}</div>
+  `;
+
+  // Push history state so back button works.
+  if (!MOBILE_DETAIL_OPEN) {
+    history.pushState({ mwDetail: true }, '', '');
+  }
+  MOBILE_DETAIL_OPEN = true;
+  document.body.classList.add('mw-detail-locked');
+  // Two RAFs let the browser apply the initial transform: translateX(100%)
+  // before flipping the .is-open class triggers the slide-in transition.
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    ov.classList.add('is-open');
+  }));
+}
+
+function exitMobileDetail(skipHistory) {
+  const ov = document.getElementById('mw-detail-overlay');
+  if (ov) ov.classList.remove('is-open');
+  document.body.classList.remove('mw-detail-locked');
+  if (MOBILE_DETAIL_OPEN && !skipHistory) {
+    if (history.state && history.state.mwDetail) history.back();
+  }
+  MOBILE_DETAIL_OPEN = false;
+}
+
+// Device back button / edge swipe / Mac trackpad swipe-back -> close overlay.
+window.addEventListener('popstate', () => {
+  if (MOBILE_DETAIL_OPEN) {
+    exitMobileDetail(true);
+  }
+});
+
+// If the user resizes from phone to desktop while overlay is open, close it.
+window.addEventListener('resize', () => {
+  if (MOBILE_DETAIL_OPEN && !isMobileViewport()) exitMobileDetail();
+});
 
 function cssEscape(s) {
   if (window.CSS && CSS.escape) return CSS.escape(s);

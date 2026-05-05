@@ -1578,6 +1578,102 @@ html, body { touch-action: manipulation; }
 button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
 /* ============================================================
+   MOBILE DETAIL OVERLAY
+   Phones only. Full-screen panel slides in from the right when the user
+   taps a row. Hardware back button and edge swipe close it via popstate.
+   ============================================================ */
+.mw-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: var(--mw-bg);
+  display: none;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  overscroll-behavior: contain;
+}
+.mw-detail-overlay.is-open {
+  transform: translateX(0);
+}
+@media (max-width: 720px) {
+  .mw-detail-overlay { display: flex; }
+}
+.mw-detail-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 14px 12px;
+  border-bottom: 1px solid var(--mw-rule);
+  background: var(--mw-bg);
+  flex: 0 0 auto;
+}
+.mw-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px 6px 4px;
+  background: transparent;
+  border: 0;
+  color: var(--mw-money);
+  font-family: var(--mw-display);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.mw-detail-back:active { background: var(--mw-bg-3); }
+.mw-detail-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--mw-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--mw-ink);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  /* The title slot inherits the row's summary innerHTML; truncate gracefully. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+/* Inside the title we only want the ticker pill, not the rest of the summary. */
+.mw-detail-title .mw-tpill { font-size: 14px; }
+.mw-detail-title :not(.mw-tpill):not(.mw-tlogo):not(.mw-tpill-sym):not(svg):not(path):not(image) {
+  display: none;
+}
+.mw-detail-bar-spacer { flex: 0 0 64px; }
+.mw-detail-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px calc(40px + env(safe-area-inset-bottom, 0px));
+  -webkit-overflow-scrolling: touch;
+}
+.mw-detail-summary-echo {
+  display: block;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: var(--mw-bg-2);
+  border: 1px solid var(--mw-rule);
+  border-radius: 12px;
+  font-size: 14.5px;
+  color: var(--mw-ink);
+  line-height: 1.5;
+}
+.mw-detail-summary-echo .mw-caret { display: none; }
+.mw-detail-body {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--mw-ink);
+}
+.mw-detail-body .mw-rec-debate-row + .mw-rec-debate-row { margin-top: 14px; }
+
+body.mw-detail-locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ============================================================
    PWA INSTALL BUTTON + iOS HINT
    ============================================================ */
 .mw-install-btn {
