@@ -163,7 +163,7 @@ html, body {
 
 .mw-mast-date {
   text-align: center;
-  margin: 6px 0 0;
+  margin: 0;
   font-size: 11.5px;
   color: var(--mw-ink-3);
   letter-spacing: 0.06em;
@@ -298,22 +298,20 @@ html, body {
   color: var(--mw-ink-3);
 }
 .mw-tagline-rule {
-  display: flex; align-items: center; justify-content: center;
-  gap: 14px; margin: 8px 0 12px;
-}
-.mw-tagline-rule::before, .mw-tagline-rule::after {
-  content: ""; flex: 0 0 80px; height: 1px;
+  height: 1px;
   background: var(--mw-rule-2);
+  margin: 12px auto 12px;
+  max-width: 320px;
 }
 .mw-wordmark {
   text-align: center;
   font-family: var(--mw-display);
   font-weight: 700;
-  font-size: clamp(30px, 4.8vw, 56px);
+  font-size: clamp(28px, 4vw, 44px);
   letter-spacing: 0.02em;
   line-height: 0.95;
   color: var(--mw-money);
-  margin: 16px 0 6px;
+  margin: 12px 0 0;
   font-feature-settings: "ss01" 1;
 }
 
@@ -328,23 +326,17 @@ html, body {
 .mw-wordmark-word { display: inline-block; }
 .mw-wordmark-word + .mw-wordmark-word { margin-left: 0.32em; }
 
-.mw-regime-wrap {
-  display: flex; align-items: center; justify-content: center;
-  gap: 14px; margin: 22px 0 0;
-  flex-wrap: wrap;
-}
-.mw-regime-label {
-  font-family: var(--mw-mono);
-  font-size: var(--mw-size-label);
-  font-weight: 700;
-  color: var(--mw-ink-3);
-  letter-spacing: 0.16em;
+/* Direction C: a single BULL/BEAR/NEUTRAL chip on its own row, no REGIME label,
+   then the regime_note as a tinted dek (no chip box) directly underneath. */
+.mw-regime-row {
+  display: flex; justify-content: center;
+  margin: 14px 0 0;
 }
 .mw-regime {
   font-family: var(--mw-mono);
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
   padding: 5px 14px;
   border: 1px solid;
   border-radius: var(--mw-radius);
@@ -353,48 +345,24 @@ html, body {
 .mw-regime-bear, .mw-regime-BEAR { color: var(--mw-bg); background: var(--mw-down); border-color: var(--mw-down); }
 .mw-regime-neutral, .mw-regime-NEUTRAL { color: var(--mw-bg); background: var(--mw-ink); border-color: var(--mw-ink); }
 .mw-regime-sm { font-size: 11px; padding: 3px 8px; }
-/* regime_note now lives on its own row below the REGIME / BULL chips. */
-.mw-regime-note-row {
-  display: flex;
-  justify-content: center;
-  margin: 12px auto 0;
-  padding: 0 16px;
-}
+
+/* regime_note: tinted dek under the BULL chip, no box. Color follows regime. */
 .mw-regime-note {
-  display: inline-block;
-  max-width: 720px;
-  padding: 8px 16px;
-  border: 1px solid var(--mw-rule-2);
-  border-radius: var(--mw-radius);
-  background: var(--mw-bg-2);
-  color: var(--mw-ink);
+  margin: 10px auto 0;
+  max-width: 640px;
+  padding: 0 16px;
   font-family: var(--mw-display);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: clamp(14px, 1.4vw, 16px);
+  font-weight: 600;
   line-height: 1.45;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-align: center;
   text-wrap: balance;
+  color: var(--mw-ink-2);
 }
-/* Sentiment-tinted variants — match the regime badge palette */
-.mw-regime-note-BULL,
-.mw-regime-note-bull {
-  background: var(--mw-up-soft);
-  border-color: var(--mw-up);
-  color: var(--mw-up);
-}
-.mw-regime-note-BEAR,
-.mw-regime-note-bear {
-  background: var(--mw-down-soft);
-  border-color: var(--mw-down);
-  color: var(--mw-down);
-}
-.mw-regime-note-NEUTRAL,
-.mw-regime-note-neutral {
-  background: var(--mw-accent-soft);
-  border-color: var(--mw-accent);
-  color: var(--mw-accent);
-}
+.mw-regime-note-BULL,    .mw-regime-note-bull    { color: var(--mw-up); }
+.mw-regime-note-BEAR,    .mw-regime-note-bear    { color: var(--mw-down); }
+.mw-regime-note-NEUTRAL, .mw-regime-note-neutral { color: var(--mw-accent); }
 
 /* Per-tab intro: small headline + 3-5 bullets at the top of each pane */
 .mw-tab-intro {
@@ -438,27 +406,34 @@ html, body {
   .mw-tab-intro-bullets { font-size: 14px; }
 }
 
-/* ============================================================
-   MARKET STATUS
-   ============================================================ */
+/* Market status: caption-style strip, no card outline. A small color dot
+   (open=green, pre/post=amber, closed=gray) plus a single line of plain text. */
 .mw-mstatus {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px 18px;
-  margin: 28px 0 26px;
-  background: var(--mw-bg-2);
-  border: 1px solid var(--mw-rule);
-  border-left: 3px solid var(--mw-ink-3);
-  border-radius: var(--mw-radius);
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 0 14px;
+  margin: 0 0 8px;
+  border-bottom: 1px solid var(--mw-rule);
+  font-size: 13px;
+  color: var(--mw-ink-2);
 }
+.mw-mstatus::before {
+  content: "";
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--mw-ink-4);
+  flex: 0 0 8px;
+}
+.mw-mstatus .mw-pill { display: none; }   /* the inline tier pill is redundant with the dot */
 .mw-mstatus-text {
-  font-size: var(--mw-size-base);
-  color: var(--mw-ink);
+  font-size: 13px;
+  color: var(--mw-ink-2);
   font-weight: 500;
 }
-.mw-mstatus-open  { border-left-color: var(--mw-up); }
-.mw-mstatus-pre   { border-left-color: var(--mw-accent); }
-.mw-mstatus-post  { border-left-color: var(--mw-accent); }
-.mw-mstatus-closed { border-left-color: var(--mw-ink-4); }
+.mw-mstatus-open::before    { background: var(--mw-up); }
+.mw-mstatus-pre::before     { background: var(--mw-accent); }
+.mw-mstatus-post::before    { background: var(--mw-accent); }
+.mw-mstatus-closed::before  { background: var(--mw-ink-4); }
 
 /* ============================================================
    PILLS / STATUS

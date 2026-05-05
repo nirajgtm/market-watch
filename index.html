@@ -511,13 +511,12 @@ function renderMasthead(b) {
       </h1>
       ${settingsPop}
     </div>
-    ${meta ? `<div class="mw-mast-date mw-mono">${escHtml(meta)}</div>` : ""}
     <div class="mw-tagline-rule"></div>
-    <div class="mw-regime-wrap">
-      <span class="mw-regime-label">REGIME</span>
+    ${meta ? `<div class="mw-mast-date mw-mono">${escHtml(meta)}</div>` : ""}
+    <div class="mw-regime-row">
       <span class="mw-regime mw-regime-${b.regime}">${escHtml(b.regime)}</span>
     </div>
-    ${b.regime_note ? `<div class="mw-regime-note-row"><span class="mw-regime-note mw-regime-note-${b.regime}">${escHtml(b.regime_note)}</span></div>` : ""}
+    ${b.regime_note ? `<p class="mw-regime-note mw-regime-note-${b.regime}">${escHtml(b.regime_note)}</p>` : ""}
   </header>`;
 }
 
