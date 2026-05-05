@@ -740,25 +740,36 @@ function renderPerTabActions(actions) {
 
 // Render a tab-level intro: 3-5 bullets specific to the tab, in priority order.
 // On phones only the first 2 render visibly; the rest sit behind a "Show N more"
-// toggle. Desktop sees all bullets (the toggle is CSS-hidden there). Skill-side
-// contract: bullets[0] and bullets[1] must be the highest-priority insights.
-function renderTabIntro(intro) {
+// button that routes into the mobile detail overlay (a separate page showing
+// every bullet). Desktop sees all bullets (the toggle is CSS-hidden there).
+// Skill-side contract: bullets[0] and bullets[1] must be the highest-priority
+// insights.
+function renderTabIntro(intro, tab) {
   if (!intro || typeof intro !== "object") return "";
   const bullets = (Array.isArray(intro.bullets) ? intro.bullets.filter(Boolean) : []).slice(0, 5);
   if (!bullets.length) return "";
-  const items = bullets.map((it, i) => {
+  const visible = bullets.map((it, i) => {
     const cls = i >= 2 ? "mw-bullet-extra" : "";
     return `<li class="${cls}"><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`;
   }).join("");
   const extra = Math.max(0, bullets.length - 2);
-  const toggle = extra > 0
-    ? `<button type="button" class="mw-tab-intro-more" data-action="intro-toggle"
-         data-more="Show ${extra} more"
-         data-less="Show less">Show ${extra} more</button>`
-    : "";
-  return `<section class="mw-tab-intro">
-    <ul class="mw-tab-intro-bullets">${items}</ul>
-    ${toggle}
+  if (!extra) {
+    return `<section class="mw-tab-intro">
+      <ul class="mw-tab-intro-bullets">${visible}</ul>
+    </section>`;
+  }
+  const id = `tabintro-${tab || "x"}`;
+  const tabLabel = (TABS.find(t => t.id === tab) || {}).label || "";
+  const overlayTitle = `${tabLabel} highlights`;
+  const allItems = bullets.map(it =>
+    `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`
+  ).join("");
+  return `<section class="mw-tab-intro" data-row="${escAttr(id)}" data-overlay-title="${escAttr(overlayTitle)}" data-overlay-no-echo>
+    <ul class="mw-tab-intro-bullets">${visible}</ul>
+    <button type="button" class="mw-tab-intro-more" data-toggle="${escAttr(id)}">Show ${extra} more</button>
+    <div class="mw-li-detail mw-tab-intro-detail">
+      <ul class="mw-tab-intro-bullets mw-tab-intro-bullets-all">${allItems}</ul>
+    </div>
   </section>`;
 }
 
@@ -1064,7 +1075,7 @@ function renderMacroPane(b) {
 
   const recs = renderRecommendations(m.recommendations, "macro");
   const social = renderSocial(m.social, "macro", "Macro");
-  const intro = renderTabIntro(m.tab_intro);
+  const intro = renderTabIntro(m.tab_intro, "macro");
   const actions = renderPerTabActions(m.actions);
   // Order: headlines, today's actions, top picks, then the rest
   return `${intro}${actions}${recs}<div class="mw-grid">${indices}${vol}${rot}${cal}${ear}${social}</div>`;
@@ -1161,7 +1172,7 @@ function renderStocksPane(b) {
   const recs = renderRecommendations(s.recommendations, "stocks", sparks);
   const social = renderSocial(s.social, "stocks", "Stocks");
 
-  const intro = renderTabIntro(s.tab_intro);
+  const intro = renderTabIntro(s.tab_intro, "stocks");
   const actions = renderPerTabActions(s.actions);
   // Order: headlines, today's actions, top picks, watchlist, movers, social,
   // then smart-money clusters and WSB at the end (lower-priority context).
@@ -1295,7 +1306,7 @@ function renderOptionsPane(b) {
   const recs = renderRecommendations(o.recommendations, "options", sparks);
   const social = renderSocial(o.social, "options", "Options");
 
-  const intro = renderTabIntro(o.tab_intro);
+  const intro = renderTabIntro(o.tab_intro, "options");
   const actions = renderPerTabActions(o.actions);
   // Order: headlines, today's actions, top picks, LEAPs, wheel candidates,
   // rest (unusual flow + earnings IV + social chatter).
@@ -1307,7 +1318,7 @@ function renderCryptoPane(b) {
   const c = b.crypto;
   const recs = renderRecommendations(c.recommendations, "crypto");
   const social = renderSocial(c.social, "crypto", "Crypto");
-  const intro = renderTabIntro(c.tab_intro);
+  const intro = renderTabIntro(c.tab_intro, "crypto");
   if (c.status === "coming_soon" || !c.coins || !c.coins.length) {
     return `${intro}<div class="mw-grid">${card({
       title: "Crypto", span: "3",
@@ -1559,16 +1570,6 @@ function onRootClick(e) {
   el = t.closest("[data-toggle]");
   if (el) { toggleDetail(el.dataset.toggle); return; }
 
-  el = t.closest('[data-action="intro-toggle"]');
-  if (el) {
-    const sec = el.closest('.mw-tab-intro');
-    if (sec) {
-      const on = sec.classList.toggle('is-expanded');
-      el.textContent = on ? el.dataset.less : el.dataset.more;
-    }
-    return;
-  }
-
   el = t.closest("[data-modal]");
   if (el) { openModal(el.dataset.modal); return; }
 
@@ -1586,6 +1587,9 @@ function onRootClick(e) {
 }
 
 function showTab(name) {
+  // Always scroll to top on tab tap, including when re-tapping the current
+  // tab (acts as a "back to top" gesture, matching native iOS behavior).
+  try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { window.scrollTo(0, 0); }
   if (TAB === name) return;
   TAB = name;
   // Update pill state on tab buttons in place.
@@ -1717,8 +1721,18 @@ function enterMobileDetail(id) {
   const detail = findDetailFor(id);
   if (!detail) return; // nothing to show; ignore the tap
 
+  // Some detail rows opt out of the default summary-echo + chart hero (e.g.
+  // the per-tab highlights overlay, where the row is a "Show N more" button
+  // and echoing its label would be noise). They set data-overlay-title for
+  // a meaningful header and data-overlay-no-echo to suppress the echo block.
+  const rowEl = (findRowEls(id) || [])[0] || null;
+  const overlayTitle = rowEl ? rowEl.getAttribute('data-overlay-title') : null;
+  const noEcho = rowEl ? rowEl.hasAttribute('data-overlay-no-echo') : false;
+
   const ov = ensureDetailOverlay();
-  document.getElementById('mw-detail-title').innerHTML = summary ? summary.innerHTML : '';
+  document.getElementById('mw-detail-title').innerHTML = overlayTitle
+    ? `<span class="mw-detail-title-text">${escHtml(overlayTitle)}</span>`
+    : (summary ? summary.innerHTML : '');
 
   // Resolve a ticker symbol from the tapped row. .mw-tpill-sym covers most
   // rows (watchlist, movers, recs, social); .mw-action-target-sym covers the
@@ -1779,7 +1793,7 @@ function enterMobileDetail(id) {
 
   document.getElementById('mw-detail-content').innerHTML = `
     ${heroHtml}
-    <div class="mw-detail-summary-echo">${summary ? summary.innerHTML : ''}</div>
+    ${noEcho ? '' : `<div class="mw-detail-summary-echo">${summary ? summary.innerHTML : ''}</div>`}
     <div class="mw-detail-body">${detail.innerHTML}</div>
   `;
 

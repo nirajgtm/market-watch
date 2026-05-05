@@ -406,6 +406,29 @@ html, body {
 }
 .mw-tab-intro-more:active { opacity: 0.6; }
 
+/* The full-bullets list lives inline as the row's .mw-li-detail so the
+   mobile overlay system can find it; it's hidden everywhere except inside
+   the slide-in overlay. */
+.mw-tab-intro > .mw-tab-intro-detail { display: none; }
+
+/* Overlay-side rendering of the full bullet list — comfortable reading
+   width and spacing for a "page of highlights". */
+.mw-tab-intro-bullets-all {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mw-ink);
+}
+.mw-tab-intro-bullets-all li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
 @media (max-width: 720px) {
   .mw-tab-intro {
     padding: 12px 14px;
@@ -413,8 +436,9 @@ html, body {
     margin-bottom: 14px;
   }
   .mw-tab-intro-bullets { font-size: 14px; }
-  /* Phones: hide bullets 3+ behind the toggle until the user expands. */
-  .mw-tab-intro:not(.is-expanded) .mw-bullet-extra { display: none; }
+  /* Phones: hide bullets 3+ inline. The toggle below routes to the overlay
+     which renders the full list. */
+  .mw-tab-intro .mw-bullet-extra { display: none; }
   .mw-tab-intro-more { display: inline-block; }
 }
 
@@ -1762,8 +1786,13 @@ button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 }
 /* Inside the title we only want the ticker pill, not the rest of the summary. */
 .mw-detail-title .mw-tpill { font-size: 14px; }
-.mw-detail-title :not(.mw-tpill):not(.mw-tlogo):not(.mw-tpill-sym):not(svg):not(path):not(image) {
+.mw-detail-title :not(.mw-tpill):not(.mw-tlogo):not(.mw-tpill-sym):not(.mw-detail-title-text):not(svg):not(path):not(image) {
   display: none;
+}
+.mw-detail-title-text {
+  font-family: var(--mw-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 .mw-detail-bar-spacer { flex: 0 0 64px; }
 .mw-detail-content {
