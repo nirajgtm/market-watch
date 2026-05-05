@@ -146,37 +146,20 @@ html, body {
    ============================================================ */
 .mw-masthead { margin-bottom: 32px; }
 
-.mw-meta-row {
-  display: flex; align-items: center; gap: 14px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  color: var(--mw-ink-3);
-  padding: 0 0 6px;
-  flex-wrap: wrap;
+/* Top of masthead: wordmark stays centered; gear pinned to the right edge */
+.mw-mast-top {
+  position: relative;
+  padding: 4px 0;
 }
-.mw-meta-spacer { flex: 1; min-width: 12px; }
-.mw-meta-btn {
-  border: 0; background: transparent;
-  color: var(--mw-ink-3);
-  font: inherit; text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 600;
-  padding: 0; cursor: pointer;
-  transition: color 160ms ease;
+.mw-mast-top .mw-wordmark {
+  margin: 4px 0;
 }
-.mw-meta-btn:hover { color: var(--mw-ink); }
-.mw-meta-btn-accent {
-  color: var(--mw-bg);
-  background: var(--mw-accent);
-  padding: 4px 11px;
-  border-radius: 999px;
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  text-decoration: none;
+.mw-mast-top .mw-settings-wrap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.mw-meta-btn-accent:hover { background: var(--mw-ink); color: var(--mw-bg); }
 
 .mw-mast-date {
   text-align: center;
@@ -186,6 +169,32 @@ html, body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+/* Glossary / Archive / Feedback links inside the gear popover */
+.mw-settings-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--mw-rule);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+.mw-settings-link {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 8px 4px;
+  color: var(--mw-ink-2);
+  font-family: var(--mw-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+.mw-settings-link:hover { color: var(--mw-ink); background: var(--mw-rule); }
 
 /* Plain/Pro and Dark/Light pill toggles */
 .mw-mode-toggle, .mw-theme-toggle {
@@ -428,30 +437,32 @@ html, body {
 .mw-pill-neutral { color: var(--mw-ink-2);  border-color: var(--mw-rule-2);      background: var(--mw-bg-2); }
 .mw-pill-open    { color: var(--mw-up);     border-color: var(--mw-up-soft);     background: var(--mw-up-soft); }
 
+/* Borderless ticker mentions — match the Today's Actions look. The logo sits
+   to the left, the symbol next to it, and the trend tone (red/green) colors
+   the symbol text. No outline, no fill. */
 .mw-tpill {
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--mw-mono);
   font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
-  padding: 4px 10px;
-  border: 1px solid var(--mw-rule-2);
-  background: var(--mw-bg-3);
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--mw-c-ticker);
-  border-radius: var(--mw-radius);
+  border-radius: 0;
   white-space: nowrap;
 }
-.mw-tpill-sm { font-size: 11.5px; padding: 3px 8px; }
+.mw-tpill-sm { font-size: 12px; }
 
-/* Logo + ticker variant: logo sits on the left inside the pill */
-.mw-tpill-logo { gap: 9px; padding: 3px 10px 3px 6px; }
+/* Logo + ticker variant: logo sits on the left next to the symbol. */
+.mw-tpill-logo { gap: 7px; }
 .mw-tpill-logo .mw-tlogo { width: 18px; height: 18px; }
-.mw-tpill-sm.mw-tpill-logo { padding: 2px 8px 2px 5px; gap: 7px; }
+.mw-tpill-sm.mw-tpill-logo { gap: 6px; }
 .mw-tpill-sm.mw-tpill-logo .mw-tlogo { width: 14px; height: 14px; }
 .mw-tpill-sym { letter-spacing: 0.04em; }
 
-/* Trend tone — colors the ticker text + pill border. Background unchanged
-   so dense surfaces (chips, table rows) stay readable. */
-.mw-tpill-up   { color: var(--mw-up);   border-color: var(--mw-up-soft); }
-.mw-tpill-down { color: var(--mw-down); border-color: var(--mw-down-soft); }
+/* Trend tone — colors the symbol text only (no border to recolor any more). */
+.mw-tpill-up   { color: var(--mw-up); }
+.mw-tpill-down { color: var(--mw-down); }
 
 .mw-status {
   font-family: var(--mw-mono);
@@ -1154,48 +1165,55 @@ html, body {
 .mw-rec-list { list-style: none; margin: 0; padding: 0; }
 .mw-rec { border-bottom: 1px solid var(--mw-rule); }
 .mw-rec:last-child { border-bottom: 0; }
+/* Recommendation row visual rhythm matches Today's Actions:
+   Row 1: ticker (logo+symbol, borderless) | verdict pill | confidence badge | caret
+   Row 2: pros first-sentence (full-width, dim, line-clamped)
+   Vehicle moves into the detail block. */
 .mw-rec-summary {
   display: grid;
-  /* Col 1 (ticker/trade-name) caps at 220px and wraps inside that cap.
-     Cols 2-4 are content-sized. Col 5 is the flexible spacer for the summary
-     text. Col 6 is the caret. */
-  grid-template-columns: minmax(min-content, 220px) auto auto auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, max-content) auto auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 8px 12px;
-  padding: 12px 16px;
+  column-gap: 12px;
+  row-gap: 6px;
+  padding: 14px 16px;
   font-size: var(--mw-size-small);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 140ms ease;
-  overflow: hidden;
 }
 .mw-rec-summary > * { min-width: 0; }
+.mw-rec-tk-cell  { grid-column: 1; grid-row: 1; display: inline-flex; align-items: center; }
+.mw-rec-summary > .mw-pill,
+.mw-rec-summary > .mw-rec-meta > .mw-pill { grid-column: 2; grid-row: 1; }
+.mw-rec-summary > .mw-rec-conf,
+.mw-rec-summary > .mw-rec-meta > .mw-rec-conf { grid-column: 3; grid-row: 1; }
+.mw-rec-meta {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 .mw-rec-summary-text {
-  color: var(--mw-ink-2);
+  margin: 0;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  color: var(--mw-ink-3);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-size: 13.5px;
 }
-.mw-rec-vehicle {
-  font-size: var(--mw-size-xs);
-  color: var(--mw-ink-3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
-}
-@media (max-width: 880px) {
-  /* Stack: ticker+verdict+conf on row 1, vehicle on row 2, summary text on row 3 */
-  .mw-rec-summary {
-    grid-template-columns: minmax(min-content, 1fr) auto auto auto auto;
-    row-gap: 6px;
-  }
-  .mw-rec-vehicle { grid-column: 1 / -1; max-width: 100%; }
-  .mw-rec-summary-text { grid-column: 1 / -1; -webkit-line-clamp: 3; }
+.mw-rec-summary > .mw-caret { grid-column: 5; grid-row: 1; color: var(--mw-ink-3); }
+
+@media (max-width: 720px) {
+  .mw-rec-summary { padding: 12px 4px; column-gap: 10px; }
+  .mw-rec-meta { gap: 6px; flex-wrap: wrap; }
+  .mw-rec-summary-text { -webkit-line-clamp: 3; }
 }
 .mw-rec.is-open .mw-rec-summary,
 .mw-rec-summary:hover { background: var(--mw-bg-3); }
@@ -1402,15 +1420,17 @@ html, body {
   .mw-card-body { padding: 0; }
   .mw-card-footer { padding: 10px 0 14px; }
 
-  /* Tables become stacked iOS-list cells: row = tappable cell. */
+  /* Tables become stacked iOS-list cells: row = tappable summary cell. The
+     supplemental columns (trigger/status/note for watchlist, context for
+     options-flow, etc.) are HIDDEN in the compact list. Tap to expand the
+     detail row, which holds the full info. */
   .mw-table, .mw-table tbody { display: block; width: 100%; }
   .mw-table thead { display: none; }
   .mw-table tr {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto;
     column-gap: 10px;
-    row-gap: 6px;
-    padding: 14px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--mw-rule);
     min-height: 56px;
     align-items: center;
@@ -1427,41 +1447,58 @@ html, body {
     word-break: break-word;
     min-width: 0;
   }
-  /* Ticker cell sits on row 1, column 1 (with logo) */
+  /* Ticker cell (col 1) — logo + symbol */
   .mw-table tr td:first-child {
     grid-column: 1;
-    grid-row: 1;
     font-size: 15px;
     font-weight: 600;
   }
   /* Sparkline hides on mobile (too small to read). */
   .mw-table tr td:nth-child(2) { display: none; }
-  /* Right-aligned numeric cells (Last, Δ) sit on row 1, columns 2-3 */
+  /* Right-aligned numeric cells (Last + Δ) line up on the right side. */
   .mw-table tr td.r {
     grid-column: auto;
-    grid-row: 1;
     text-align: right !important;
     font-size: 14px;
     font-variant-numeric: tabular-nums;
     color: var(--mw-c-num);
+    white-space: nowrap;
   }
-  /* Watchlist supplemental cells (Trigger / Status / Note) wrap below
-     spanning the full width of the row. */
-  .mw-table tr td:nth-child(n+5) {
-    grid-column: 1 / -1;
-    color: var(--mw-ink-2);
+  /* HIDE supplemental cells (Trigger / Status / Note / Context) on the list
+     view so each row stays single-line. The detail row below shows them
+     when the user taps. */
+  .mw-table tr td:nth-child(n+5) { display: none; }
+  /* Caret column at the end. Add a synthesized chevron after the last visible
+     cell so every row reads as tappable. */
+  .mw-row.is-clickable::after {
+    content: ">";
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--mw-mono);
+    color: var(--mw-ink-4);
     font-size: 13px;
-    line-height: 1.5;
+    pointer-events: none;
   }
-  .mw-table tr td:nth-child(n+5):empty { display: none; }
-  /* Detail rows: full-width, no grid */
-  .mw-table tr.mw-row-detail { display: block; padding: 0; min-height: 0; }
+  .mw-row.is-clickable {
+    position: relative;
+    padding-right: 22px !important;
+  }
+  /* Detail rows: full-width, no grid, normal flow */
+  .mw-table tr.mw-row-detail {
+    display: block;
+    padding: 0;
+    min-height: 0;
+    grid-template-columns: none;
+  }
   .mw-table tr.mw-row-detail td {
     display: block; grid-column: auto; grid-row: auto;
     padding: 0; font-size: 14px;
     color: var(--mw-ink);
   }
-  .mw-detail-inner { padding: 12px 14px 14px; margin-top: 4px; border-radius: 10px; }
+  .mw-table tr.mw-row-detail::after { display: none; }
+  .mw-detail-inner { padding: 14px 14px 16px; margin-top: 4px; border-radius: 10px; }
 
   /* Tappable rows: subtle press feedback like iOS */
   .mw-row.is-clickable { transition: background-color 120ms ease; }

@@ -474,8 +474,8 @@ function renderMasthead(b) {
   const gearSvg = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`;
 
   const settingsPop = `<div class="mw-settings-wrap">
-    <button class="mw-settings-btn" id="mw-settings-btn" aria-label="Settings" aria-haspopup="true">${gearSvg}</button>
-    <div class="mw-settings-pop" id="mw-settings-pop" role="menu" aria-label="Display settings">
+    <button class="mw-settings-btn" id="mw-settings-btn" aria-label="Menu" aria-haspopup="true">${gearSvg}</button>
+    <div class="mw-settings-pop" id="mw-settings-pop" role="menu" aria-label="Menu">
       <div class="mw-settings-section">
         <div class="mw-settings-label">Theme</div>
         <div class="mw-settings-options">
@@ -491,20 +491,21 @@ function renderMasthead(b) {
           <button data-mode="pro"   class="${MODE === 'pro' ? 'is-active' : ''}">Pro</button>
         </div>
       </div>
+      <div class="mw-settings-section mw-settings-links">
+        <button class="mw-settings-link" data-modal="glossary">Glossary</button>
+        <button class="mw-settings-link" data-modal="archive">Archive</button>
+        <button class="mw-settings-link" data-modal="feedback">Feedback</button>
+      </div>
     </div>
   </div>`;
 
   return `<header class="mw-masthead">
-    <div class="mw-meta-row">
-      <span class="mw-meta-spacer"></span>
+    <div class="mw-mast-top">
+      <h1 class="mw-wordmark">
+        <span class="mw-wordmark-word">MARKET</span><span class="mw-wordmark-word">WATCH</span>
+      </h1>
       ${settingsPop}
-      <button class="mw-meta-btn" data-modal="glossary" aria-label="Glossary" title="Glossary">Glossary</button>
-      <button class="mw-meta-btn" data-modal="archive" aria-label="Archive" title="Archive">Archive</button>
-      <button class="mw-meta-btn mw-meta-btn-accent" data-modal="feedback">Feedback</button>
     </div>
-    <h1 class="mw-wordmark">
-      <span class="mw-wordmark-word">MARKET</span><span class="mw-wordmark-word">WATCH</span>
-    </h1>
     ${meta ? `<div class="mw-mast-date mw-mono">${escHtml(meta)}</div>` : ""}
     <div class="mw-tagline-rule"></div>
     <div class="mw-regime-wrap">
@@ -742,6 +743,10 @@ function renderRecCard(rec, side, prefix, sparks) {
   const detailBlocks = `
     <div class="mw-rec-debate">
       ${confDetail}
+      ${rec.vehicle ? `<div class="mw-rec-debate-row">
+        <span class="mw-rec-debate-label">Vehicle</span>
+        <p class="mw-rec-debate-text">${escHtml(rec.vehicle)}</p>
+      </div>` : ""}
       <div class="mw-rec-debate-row">
         <span class="mw-rec-debate-label is-up">Pros</span>
         <p class="mw-rec-debate-text">${escHtml(rec.pros || "")}</p>
@@ -757,11 +762,12 @@ function renderRecCard(rec, side, prefix, sparks) {
     </div>`;
   return `<li class="mw-rec" data-row="${escAttr(id)}">
     <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
-      ${tickerEl}
-      ${actionPill(rec.verdict, "sm")}
-      ${confHtml}
-      ${rec.vehicle ? `<span class="mw-rec-vehicle mw-mono">${escHtml(rec.vehicle)}</span>` : ""}
-      <span class="mw-rec-summary-text">${escHtml((rec.pros || "").split(".")[0])}.</span>
+      <div class="mw-rec-tk-cell">${tickerEl}</div>
+      <div class="mw-rec-meta">
+        ${actionPill(rec.verdict, "sm")}
+        ${confHtml}
+      </div>
+      <p class="mw-rec-summary-text">${escHtml((rec.pros || "").split(".")[0])}.</p>
       <span class="mw-caret" aria-hidden="true">v</span>
     </div>
     ${detailBlocks}
