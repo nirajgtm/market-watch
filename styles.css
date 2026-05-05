@@ -1470,12 +1470,20 @@ html, body {
 @media (max-width: 720px) {
   .mw-rec-grid { grid-template-columns: 1fr; }
   .mw-rec-grid > div + div { border-left: 0; border-top: 1px solid var(--mw-rule-2); }
+  /* Mobile rec row: ticker | verdict pill | caret only. Confidence badge,
+     vehicle, and the pros first-sentence summary all move to the detail page.
+     Switch to flex so the caret sits flush right without a fixed grid column. */
   .mw-rec-summary {
-    grid-template-columns: auto auto auto 1fr;
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
+  .mw-rec-tk-cell { flex: 1 1 auto; min-width: 0; }
+  .mw-rec-meta { flex: 0 0 auto; }
+  .mw-rec-summary > .mw-caret { flex: 0 0 auto; margin-left: auto; }
   .mw-rec-vehicle { display: none; }
   .mw-rec-conf { display: none; }
+  .mw-rec-summary-text { display: none; }
   .mw-rec-debate-row { grid-template-columns: 1fr; gap: 4px; }
 
   /* Hard guarantee: nothing scrolls horizontally on phone. */
@@ -1558,6 +1566,11 @@ html, body {
   /* When two .r cells exist (Last + Δ) hide the first ($ price) — change %
      is the more useful signal at a glance. The full last price is in the detail. */
   .mw-table tr td.r:not(:last-of-type) { display: none; }
+  /* For non-watchlist tables (ETFs, options unusual flow, etc.) the last
+     numeric cell is RSI / vol-OI / similar — not a change %. The user's spec
+     for the row is icon, name, %, action, sparkline only, so hide every .r
+     cell on tables that don't carry a change %. Watchlist keeps its Δ. */
+  .mw-table:not(.mw-table-watch) tr td.r { display: none; }
   /* Trigger zone, note, context, RSI text cells — hidden. Status pill cell
      stays visible because it's a small action chip the user wants on the list. */
   .mw-table tr td:nth-child(5),
@@ -2051,6 +2064,43 @@ body.mw-detail-locked {
   .mw-glossary-row { grid-template-columns: 1fr; gap: 4px; }
   .mw-modal { padding: 28px 24px; }
   .mw-rot { grid-template-columns: 1fr; }
+}
+
+/* Phones only: action rows lose the inline blurb. The text (a.text) lives in
+   the per-ticker detail overlay via the summary echo. Row collapses to:
+   target (logo+name) | chg% | verb pill | caret. */
+@media (max-width: 720px) {
+  .mw-action-item .mw-li-summary {
+    grid-template-columns: minmax(110px, auto) auto auto auto;
+    row-gap: 0;
+  }
+  .mw-action-text { display: none; }
+}
+
+/* Mobile per-ticker detail overlay: restore everything we hid on the row
+   so the full info lives on the per-ticker page as expected. The summary
+   echo flips to a flex-wrap container so the cells/chips that were stripped
+   off the list row reflow naturally inside the detail panel. */
+@media (max-width: 720px) {
+  .mw-detail-summary-echo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+  }
+  .mw-detail-summary-echo .mw-rec-conf,
+  .mw-detail-summary-echo .mw-rec-vehicle,
+  .mw-detail-summary-echo .mw-mover-last { display: inline-flex !important; }
+  .mw-detail-summary-echo .mw-rec-summary-text,
+  .mw-detail-summary-echo .mw-action-text,
+  .mw-detail-summary-echo .mw-mover-note { display: block !important; flex-basis: 100%; margin: 4px 0 0; line-height: 1.5; color: var(--mw-ink-2); }
+  .mw-detail-summary-echo .mw-rec-summary-text { -webkit-line-clamp: unset; white-space: normal; }
+  /* Restore every <td> cell inside the summary echo (trigger zone, note,
+     RSI/vol-OI, full last price) — the table-row case the list view hid. */
+  .mw-detail-summary-echo td,
+  .mw-detail-summary-echo .mw-table:not(.mw-table-watch) tr td.r { display: inline-flex !important; }
+  .mw-detail-summary-echo td.mw-dim,
+  .mw-detail-summary-echo .mw-trigger { flex-basis: 100%; }
 }
 
 ::selection { background: var(--mw-accent-soft); color: var(--mw-ink); }
