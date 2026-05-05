@@ -1493,6 +1493,19 @@ html, body {
   .mw-card-body { min-width: 0; max-width: 100%; overflow-x: hidden; }
   .mw-spark { max-width: 100%; }
 
+  /* On desktop the .mw-grid is a 3-column container with shared internal
+     borders, so its own outer 1px border closes the frame. On phones the
+     cards stack vertically with their own rounded border + bg, which makes
+     the grid's outer border read as a redundant "box around the boxes". */
+  .mw-grid { border: 0; }
+
+  /* Mobile detail overlay (per-ticker subpages): vertical scroll only. The
+     content side blocks horizontal scroll the same way the main page does. */
+  .mw-detail-overlay,
+  .mw-detail-content { overflow-x: hidden; max-width: 100vw; }
+  .mw-detail-content > * { max-width: 100%; box-sizing: border-box; }
+  .mw-detail-summary-echo { box-sizing: border-box; }
+
   /* Cards feel like grouped lists in iOS Settings. */
   .mw-card {
     background: var(--mw-bg-2);
