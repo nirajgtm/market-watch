@@ -227,9 +227,10 @@ Separate static asset, served alongside `briefs.json`. Owned by `refresh_price_h
 ```
 
 - Prices are integers (whole dollars). The per-ticker chart on the page does not need decimal precision.
-- Each daily run appends new trading days. New tickers (anything that appears in today's brief and isn't already in the archive) seed with 1y of history. Existing tickers get a 30-day re-sweep so weekend/holiday gaps are filled.
+- The archive grows on every `enrich_briefs.py` run (i.e. every publish AND every 30-min `refresh_site_prices.py --skip-scanners` call) — no separate cron needed.
+- New tickers (anything that appears in today's brief and isn't already in the archive) seed with 1y of history. Existing tickers get a 30-day re-sweep so weekend/holiday gaps are filled.
 - Page-side aliases (`vix`, `ten_year`, `dxy`, `oil`, `gold`) are resolved to their yfinance symbol on read.
-- Cron suggestion: `30 17 * * 1-5 refresh_price_history.py` (after the 16:00 ET close, before the next pre-market bar).
+- Manual reseed (force a 1y refetch for every tracked ticker): `enrich_briefs.py --reseed-prices`.
 
 ## Hard rules (enforced by `publish_site.sh` redaction grep)
 
