@@ -193,10 +193,24 @@ function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
   </svg>`;
 }
 
+// Module-level sparks reference, set by paneHtmlFor / renderMasthead so
+// tickerPill can auto-resolve the chgPct color when callers don't pass one.
+// Keeps every ticker mention consistent (logo + colored pill) without threading
+// sparks through every render function.
+let CURRENT_SPARKS = {};
+
 function tickerPill(sym, size, opts) {
   const small = size === "sm";
-  const withLogo = !!(opts && opts.withLogo);
-  const chgPct = opts && typeof opts.chgPct === "number" && Number.isFinite(opts.chgPct) ? opts.chgPct : null;
+  // Default behavior: show logo, auto-resolve chgPct from CURRENT_SPARKS.
+  // Callers can opt out explicitly with {withLogo: false} or pass chgPct: null.
+  const withLogo = opts && opts.withLogo === false ? false : true;
+  let chgPct;
+  if (opts && opts.chgPct !== undefined) {
+    chgPct = (typeof opts.chgPct === "number" && Number.isFinite(opts.chgPct))
+      ? opts.chgPct : null;
+  } else {
+    chgPct = chgPctFromSparks(CURRENT_SPARKS, sym);
+  }
   const tone = chgPct === null ? "" : chgPct > 0 ? "up" : chgPct < 0 ? "down" : "";
   const inner = withLogo
     ? `${tickerLogo(sym)}<span class="mw-tpill-sym">${escHtml(sym)}</span>`
@@ -1328,6 +1342,7 @@ function getNormalized() {
   if (NORMALIZED_REF !== ACTIVE_BRIEF) {
     NORMALIZED = normalize(ACTIVE_BRIEF);
     NORMALIZED_REF = ACTIVE_BRIEF;
+    CURRENT_SPARKS = NORMALIZED.sparks || {};
     PANE_CACHE.clear();
   }
   return NORMALIZED;
