@@ -1478,7 +1478,7 @@ html, body {
     align-items: center;
     gap: 10px;
   }
-  .mw-rec-tk-cell { flex: 1 1 auto; min-width: 0; }
+  .mw-rec-tk-cell { flex: 0 0 auto; min-width: 0; }
   .mw-rec-meta { flex: 0 0 auto; }
   .mw-rec-summary > .mw-caret { flex: 0 0 auto; margin-left: auto; }
   .mw-rec-vehicle { display: none; }
@@ -1749,6 +1749,47 @@ button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   line-height: 1.5;
 }
 .mw-detail-summary-echo .mw-caret { display: none; }
+
+/* Robinhood-style 1y price chart at the top of the mobile detail overlay.
+   Compact (96px) but unmistakably a chart. Color follows trend. */
+.mw-detail-chart {
+  margin-bottom: 14px;
+  padding: 12px 14px 10px;
+  background: var(--mw-bg-2);
+  border: 1px solid var(--mw-rule);
+  border-radius: 12px;
+}
+.mw-detail-chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.mw-detail-chart-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mw-ink);
+  letter-spacing: 0.01em;
+}
+.mw-detail-chart-pct {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mw-ink-3);
+}
+.mw-detail-chart-pct.is-up   { color: var(--mw-up); }
+.mw-detail-chart-pct.is-down { color: var(--mw-down); }
+.mw-detail-chart-period {
+  margin-left: 6px;
+  color: var(--mw-ink-4);
+  font-weight: 500;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mw-pchart { display: block; width: 100%; height: 96px; }
+.mw-pchart-up   { color: var(--mw-up); }
+.mw-pchart-down { color: var(--mw-down); }
+.mw-pchart-flat { color: var(--mw-ink-3); }
 .mw-detail-body {
   font-size: 14.5px;
   line-height: 1.6;
@@ -2067,15 +2108,45 @@ body.mw-detail-locked {
 }
 
 /* Phones only: action rows lose the inline blurb. The text (a.text) lives in
-   the per-ticker detail overlay via the summary echo. Row collapses to:
-   target (logo+name) | chg% | verb pill | caret. */
+   the per-ticker detail overlay via the summary echo. Row collapses to a
+   simple flex line: target (logo+name) | sparkline | chg% | verb pill | caret. */
 @media (max-width: 720px) {
   .mw-action-item .mw-li-summary {
-    grid-template-columns: minmax(110px, auto) auto auto auto;
-    row-gap: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
   }
+  .mw-action-item .mw-action-target { flex: 0 0 auto; }
+  .mw-action-item .mw-action-target-text { flex: 1 1 auto; min-width: 0; }
   .mw-action-text { display: none; }
 }
+
+/* Inline sparklines on action + recommendation rows. Hidden on desktop —
+   those layouts are roomier and already carry richer per-row context. The
+   row-shape spec on phones is icon · name · sparkline · % · action. */
+.mw-action-spark, .mw-rec-spark { display: none; }
+@media (max-width: 720px) {
+  .mw-action-spark, .mw-rec-spark {
+    display: inline-flex;
+    flex: 0 0 56px;
+    align-items: center;
+    height: 18px;
+  }
+  .mw-action-spark .mw-spark, .mw-rec-spark .mw-spark { width: 100%; height: 100%; }
+}
+
+/* Row left-padding parity (mobile + desktop). Watchlist td has 0 left padding
+   so its ticker logo aligns to the card's inner edge. Big-movers and Social
+   chatter were each adding their own horizontal padding inside the card,
+   pushing those tickers ~16px further right. Strip the inner horizontal
+   padding so all card-list rows start flush. */
+.mw-soc-head    { padding-left: 0; padding-right: 0; }
+.mw-soc-summary { padding-left: 0; padding-right: 0; }
+/* Mover row uses flex with the tpill stretching to absorb slack — its
+   justify-content: center then visually centered the logo+symbol cluster.
+   Force start-alignment so the ticker hugs the left edge like watchlist. */
+.mw-mover-row > .mw-tpill { justify-content: flex-start; }
 
 /* Mobile per-ticker detail overlay: restore everything we hid on the row
    so the full info lives on the per-ticker page as expected. The summary

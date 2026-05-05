@@ -208,6 +208,56 @@ function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
 // Keeps every ticker mention consistent (logo + colored pill) without threading
 // sparks through every render function.
 let CURRENT_SPARKS = {};
+// 1-year daily closes per ticker. Populated by enrich_briefs.py and consumed
+// by the mobile detail overlay to draw a Robinhood-style price chart at the
+// top of each per-ticker page.
+let CURRENT_HISTORY_1Y = {};
+
+// Robinhood-style 1y price line chart. Larger than sparkSvg, with a soft
+// area fill under the line and start/end price labels. Designed for the
+// mobile detail overlay header. Returns "" when there isn't enough data.
+function priceChartSvg(data, w = 320, h = 96) {
+  if (!data || data.length < 2) return "";
+  let min = data[0], max = data[0];
+  for (let i = 1; i < data.length; i++) {
+    const v = data[i];
+    if (v < min) min = v;
+    else if (v > max) max = v;
+  }
+  const range = (max - min) || 1;
+  const padTop = 6, padBot = 6;
+  const innerH = h - padTop - padBot;
+  const stepX = w / (data.length - 1);
+  let line = "";
+  for (let i = 0; i < data.length; i++) {
+    if (i) line += " ";
+    const x = (i * stepX).toFixed(2);
+    const y = (padTop + innerH - (data[i] - min) / range * innerH).toFixed(2);
+    line += x + "," + y;
+  }
+  const first = data[0], last = data[data.length - 1];
+  const trend = last > first ? "up" : last < first ? "down" : "flat";
+  const lastY = (padTop + innerH - (last - min) / range * innerH).toFixed(2);
+  const firstY = (padTop + innerH - (first - min) / range * innerH).toFixed(2);
+  const fillId = "mw-pcg-" + Math.random().toString(36).slice(2, 8);
+  return `<svg class="mw-pchart mw-pchart-${trend}" width="100%" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="${fillId}" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="currentColor" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <polygon fill="url(#${fillId})" points="0,${h} ${line} ${w.toFixed(2)},${h}"/>
+    <polyline fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" points="${line}"/>
+    <circle cx="0" cy="${firstY}" r="2" fill="currentColor" opacity="0.5"/>
+    <circle cx="${w.toFixed(2)}" cy="${lastY}" r="2.5" fill="currentColor"/>
+  </svg>`;
+}
+
+function pctChange(first, last) {
+  if (!Number.isFinite(first) || !Number.isFinite(last) || first === 0) return null;
+  return (last - first) / first * 100;
+}
 
 function tickerPill(sym, size, opts) {
   const small = size === "sm";
@@ -542,8 +592,15 @@ function renderPerTabActions(actions) {
     const detailHtml = (hasDetail(a) || rh)
       ? `${rh ? `<p class="mw-action-rh-block"><strong>In Robinhood:</strong> ${escHtml(rh)}</p>` : ""}${hasDetail(a) ? `<p class="mw-action-detail-text">${escHtml(getDetail(a))}</p>` : ""}`
       : null;
+    const tgt = String(a.target || "");
+    const isTicker = /^[A-Z]{1,6}$/.test(tgt);
+    const sparkData = isTicker ? (CURRENT_SPARKS[tgt] || []) : [];
+    const sparkHtml = sparkData.length >= 2
+      ? `<span class="mw-action-spark">${sparkSvg(sparkData, 56, 18, 1.4)}</span>`
+      : "";
     const summary = `
       ${actionTarget(a.target, a.chg_pct)}
+      ${sparkHtml}
       ${chgStr}
       ${actionPill(a.verb, "sm")}
       <span class="mw-action-text">${escHtml(a.text)}</span>
@@ -695,9 +752,14 @@ function renderRecCard(rec, side, prefix, sparks) {
         <p class="mw-rec-debate-text">${escHtml(action)}</p>
       </div>` : ""}
     </div>`;
+  const sparkData = isTicker && sparks ? (sparks[rec.ticker] || []) : [];
+  const sparkHtml = sparkData.length >= 2
+    ? `<span class="mw-rec-spark">${sparkSvg(sparkData, 56, 18, 1.4)}</span>`
+    : "";
   return `<li class="mw-rec" data-row="${escAttr(id)}">
     <div class="mw-rec-summary" data-toggle="${escAttr(id)}">
       <div class="mw-rec-tk-cell">${tickerEl}</div>
+      ${sparkHtml}
       <div class="mw-rec-meta">
         ${actionPill(rec.verdict, "sm")}
         ${confHtml}
@@ -1281,6 +1343,7 @@ function getNormalized() {
     NORMALIZED = normalize(ACTIVE_BRIEF);
     NORMALIZED_REF = ACTIVE_BRIEF;
     CURRENT_SPARKS = NORMALIZED.sparks || {};
+    CURRENT_HISTORY_1Y = NORMALIZED.history_1y || {};
     PANE_CACHE.clear();
   }
   return NORMALIZED;
@@ -1516,7 +1579,31 @@ function enterMobileDetail(id) {
 
   const ov = ensureDetailOverlay();
   document.getElementById('mw-detail-title').innerHTML = summary ? summary.innerHTML : '';
+  // Robinhood-style 1y price chart at the top of the per-ticker page when we
+  // can resolve a ticker symbol from the row. The summary innerHTML carries
+  // a .mw-tpill-sym for any logo+ticker pill, so we read that.
+  let chartHtml = '';
+  if (summary) {
+    const symEl = summary.querySelector('.mw-tpill-sym, .mw-action-target-sym');
+    const sym = symEl ? symEl.textContent.trim() : '';
+    const series = sym ? CURRENT_HISTORY_1Y[sym] : null;
+    if (series && series.length >= 2) {
+      const first = series[0], last = series[series.length - 1];
+      const pct = pctChange(first, last);
+      const pctTxt = pct == null ? '' : (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+      const trendCls = pct == null ? '' : pct > 0 ? 'is-up' : pct < 0 ? 'is-down' : '';
+      chartHtml = `
+        <div class="mw-detail-chart">
+          <div class="mw-detail-chart-head">
+            <span class="mw-detail-chart-price mw-mono">$${last.toFixed(2)}</span>
+            <span class="mw-detail-chart-pct mw-mono ${trendCls}">${pctTxt} <span class="mw-detail-chart-period">1Y</span></span>
+          </div>
+          ${priceChartSvg(series, 320, 96)}
+        </div>`;
+    }
+  }
   document.getElementById('mw-detail-content').innerHTML = `
+    ${chartHtml}
     <div class="mw-detail-summary-echo">${summary ? summary.innerHTML : ''}</div>
     <div class="mw-detail-body">${detail.innerHTML}</div>
   `;

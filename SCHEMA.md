@@ -28,6 +28,11 @@ Single file, public, served as static asset. Versioned via `version` integer.
     "vix": [14 closes], "ten_year": [...], "dxy": [...], "oil": [...], "gold": [...]
   },
 
+  "history_1y": {
+    "TICKER": [~252 daily closes oldest first, rounded to 2dp],
+    "vix": [...], "ten_year": [...], "dxy": [...], "oil": [...], "gold": [...]
+  },
+
   // top_actions is OPTIONAL at the root (legacy). The page does NOT render it
   // globally any more. Use per-tab `actions[]` instead (see each tab below).
   "top_actions": [],
@@ -199,6 +204,7 @@ resolves on the page (the enricher fetches unknown tickers on first publish).
 `publish_site.sh` automatically calls `enrich_briefs.py` after merging staging.json into briefs.json. That script populates:
 
 - `sparks` (14-day price arrays per ticker)
+- `history_1y` (~252-day daily closes per ticker, rounded to 2dp; powers the per-ticker price chart on the mobile detail overlay)
 - `market_status` (computed from current ET time)
 - `stocks.movers` (refreshed live from `movers.py`)
 - `stocks.wsb_top` (refreshed from `social_sentiment.py`)
