@@ -196,8 +196,11 @@ function sparkSvg(data, w = 80, h = 22, sw = 1.25) {
     if (i) pts += " ";
     pts += (i * stepX).toFixed(2) + "," + (h - (data[i] - min) / range * h).toFixed(2);
   }
-  const last = data[data.length - 1], first = data[0];
-  const trend = last > first ? "up" : last < first ? "down" : "flat";
+  // Color follows TODAY's direction (last close vs previous close), not the
+  // 14-day delta — a name that's up over two weeks but down on the day reads
+  // as red in the row, matching the % chip beside it.
+  const last = data[data.length - 1], prev = data[data.length - 2];
+  const trend = last > prev ? "up" : last < prev ? "down" : "flat";
   return `<svg class="mw-spark mw-spark-${trend}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
     <polyline fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" points="${pts}"/>
   </svg>`;
@@ -262,7 +265,10 @@ function priceChartSvg(data, w = 320, h = 96) {
     line += x + "," + y;
   }
   const first = data[0], last = data[data.length - 1];
-  const trend = last > first ? "up" : last < first ? "down" : "flat";
+  // Trend color tracks TODAY's direction (last vs previous close) so the
+  // chart line on a "down today" name reads red even when the 1Y is positive.
+  const prev = data[data.length - 2];
+  const trend = last > prev ? "up" : last < prev ? "down" : "flat";
   const lastY = (padTop + innerH - (last - min) / range * innerH).toFixed(2);
   const firstY = (padTop + innerH - (first - min) / range * innerH).toFixed(2);
   const fillId = "mw-pcg-" + Math.random().toString(36).slice(2, 8);
@@ -504,12 +510,15 @@ function isOpen(id) { return OPEN_ID === id; }
 
 // Always emit the detail block. CSS hides it unless the parent has .is-open.
 // Click-to-toggle is handled by a single delegated handler in mount().
-function expandLi(id, summary, detailHtml, extraClass) {
+function expandLi(id, summary, detailHtml, extraClass, extraAttrs) {
   const cls = `mw-li ${extraClass || ""} ${detailHtml ? "is-clickable" : ""}`.trim();
   const det = detailHtml ? `<div class="mw-li-detail">${detailHtml}</div>` : "";
   const handler = detailHtml ? `data-toggle="${escAttr(id)}"` : "";
   const row = detailHtml ? `data-row="${escAttr(id)}"` : "";
-  return `<li class="${cls}" ${row}><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
+  const attrs = extraAttrs ? Object.entries(extraAttrs).map(([k, v]) =>
+    v == null || v === false ? "" : (v === true ? k : `${k}="${escAttr(v)}"`)
+  ).join(" ") : "";
+  return `<li class="${cls}" ${row} ${attrs}><div class="mw-li-summary" ${handler}>${summary}</div>${det}</li>`;
 }
 
 function expandRow(id, cells, detailHtml, cols, extraClass) {
@@ -1016,16 +1025,36 @@ function renderMacroPane(b) {
     </table>`
   });
 
-  const vy = m.vol_yields;
-  const volRow = (label, val) => `<div><dt>${label}</dt><dd class="mw-mono">${val}</dd></div>`;
-  const volBody = `<dl class="mw-kv">
-    ${vy.vix != null ? volRow(abbr("VIX"), fmtNum(vy.vix)) : ""}
-    ${vy.vix_term ? volRow("Term", `<span class="mw-dim">${escHtml(String(vy.vix_term).replace(/_/g, " ").toLowerCase())}</span>`) : ""}
-    ${vy.ten_year != null ? volRow(abbr("10Y"), fmtNum(vy.ten_year) + "%") : ""}
-    ${vy.dxy != null ? volRow(abbr("DXY"), fmtNum(vy.dxy)) : ""}
-    ${vy.oil != null ? volRow("Oil", "$" + fmtNum(vy.oil)) : ""}
-    ${vy.gold != null ? volRow("Gold", "$" + fmtNum(vy.gold)) : ""}
-  </dl>`;
+  const vy = m.vol_yields || {};
+  const vyDetails = vy.details || {};
+  const VOL_KEYS = [
+    {k: "vix",      label: "VIX",       fmt: v => fmtNum(v),                    proxy: "^VIX"},
+    {k: "vix_term", label: "VIX term",  fmt: v => String(v).replace(/_/g, " ").toLowerCase(), proxy: null},
+    {k: "ten_year", label: "10Y",       fmt: v => fmtNum(v) + "%",              proxy: "^TNX"},
+    {k: "dxy",      label: "DXY",       fmt: v => fmtNum(v),                    proxy: "DX-Y.NYB"},
+    {k: "oil",      label: "Oil",       fmt: v => "$" + fmtNum(v),              proxy: "CL=F"},
+    {k: "gold",     label: "Gold",      fmt: v => "$" + fmtNum(v),              proxy: "GC=F"},
+  ];
+  const volBody = `<ul class="mw-vol-list">${VOL_KEYS.map(spec => {
+    const v = vy[spec.k];
+    if (v == null) return "";
+    const id = `vy-${spec.k}`;
+    const detailObj = vyDetails[spec.k];
+    const detailText = detailObj ? pickModeText(detailObj) : "";
+    const detailHtml = detailText
+      ? `<p class="mw-detail-text">${escHtml(detailText)}</p>`
+      : `<p class="mw-empty-pad">Tap and drag the chart above to read the price on any day.</p>`;
+    const summary = `<div class="mw-vol-row">
+      <span class="mw-vol-label">${escHtml(spec.label)}</span>
+      <span class="mw-vol-value mw-mono">${spec.fmt(v)}</span>
+      ${caret(true)}
+    </div>`;
+    return expandLi(id, summary, detailHtml, null, {
+      "data-sym": spec.proxy || null,
+      "data-overlay-title": spec.label,
+      "data-overlay-no-echo": true,
+    });
+  }).filter(Boolean).join("")}</ul>`;
   const vol = card({ title: "Vol &amp; Yields", body: volBody });
 
   const rotRow = (s, dir) => {
@@ -1140,11 +1169,34 @@ function renderStocksPane(b) {
     </div>`
   });
 
+  // Smart-money entries are either a string (legacy: ticker only) or an
+  // object {ticker, signals?, detail?}. Both render as tappable rows.
+  const smItems = (s.smart_money || []).map(entry => {
+    const obj = (typeof entry === "string") ? {ticker: entry} : (entry || {});
+    const tk = obj.ticker;
+    if (!tk) return "";
+    const id = `sm-${tk}`;
+    const signals = Array.isArray(obj.signals) ? obj.signals.filter(Boolean) : [];
+    const sigChips = signals.length
+      ? `<div class="mw-sm-signals">${signals.map(s =>
+          `<span class="mw-sm-signal mw-mono">${escHtml(s)}</span>`).join("")}</div>`
+      : "";
+    const detailText = obj.detail ? pickModeText(obj.detail) : "";
+    const detailHtml = `${sigChips}${detailText
+      ? `<p class="mw-detail-text">${escHtml(detailText)}</p>`
+      : (sigChips ? "" : `<p class="mw-empty-pad">Tap and drag the chart above to read the price on any day.</p>`)}`;
+    const summary = `<div class="mw-sm-row">
+      ${tickerPill(tk, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, tk)})}
+      ${signals.length ? `<span class="mw-sm-count mw-mono">${signals.length} signal${signals.length === 1 ? "" : "s"}</span>` : ""}
+      ${caret(true)}
+    </div>`;
+    return expandLi(id, summary, detailHtml);
+  }).filter(Boolean).join("");
   const sm = card({
     title: "Smart-money clusters", count: s.smart_money.length,
     body: s.smart_money.length
       ? `<p class="mw-card-explainer">Names showing two or more independent scanner signals on the same day (active mover, unusual options flow, breakout, social breakout, insider buying, etc.). Cluster confirmation is the highest-quality directional read in the universe; price action still has to confirm.</p>
-         <div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, t)})).join("")}</div>`
+         <ul class="mw-sm-list">${smItems}</ul>`
       : `<p class="mw-empty">No clusters today.</p>`
   });
 
@@ -1734,11 +1786,14 @@ function enterMobileDetail(id) {
     ? `<span class="mw-detail-title-text">${escHtml(overlayTitle)}</span>`
     : (summary ? summary.innerHTML : '');
 
-  // Resolve a ticker symbol from the tapped row. .mw-tpill-sym covers most
-  // rows (watchlist, movers, recs, social); .mw-action-target-sym covers the
-  // Today's Actions logo+name pattern.
-  let sym = '';
-  if (summary) {
+  // Resolve the ticker (or proxy) symbol the chart should plot. Order:
+  //   1. Explicit data-sym on the [data-row] (e.g. vol_yields rows pass
+  //      "^VIX" so the chart loads from prices.json[^VIX] without showing
+  //      the raw symbol in the title).
+  //   2. .mw-tpill-sym text (watchlist, movers, recs, social).
+  //   3. .mw-action-target-sym text (Today's Actions logo+name pattern).
+  let sym = rowEl ? (rowEl.getAttribute('data-sym') || '') : '';
+  if (!sym && summary) {
     const symEl = summary.querySelector('.mw-tpill-sym, .mw-action-target-sym');
     sym = symEl ? symEl.textContent.trim() : '';
   }

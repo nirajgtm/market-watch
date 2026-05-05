@@ -1794,6 +1794,62 @@ button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+
+/* Vol & Yields list — tappable rows mirroring the watchlist row shape. */
+.mw-vol-list, .mw-sm-list { list-style: none; margin: 0; padding: 0; }
+.mw-vol-list .mw-li, .mw-sm-list .mw-li {
+  border-bottom: 1px solid var(--mw-rule);
+}
+.mw-vol-list .mw-li:last-child, .mw-sm-list .mw-li:last-child { border-bottom: 0; }
+.mw-vol-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0;
+  font-size: var(--mw-size-base);
+  font-weight: 500;
+}
+.mw-vol-label {
+  flex: 1 1 auto;
+  color: var(--mw-ink);
+  font-weight: 600;
+}
+.mw-vol-value {
+  flex: 0 0 auto;
+  color: var(--mw-c-num);
+  font-variant-numeric: tabular-nums;
+}
+.mw-sm-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0;
+}
+.mw-sm-row > .mw-tpill { flex: 1 1 auto; justify-content: flex-start; }
+.mw-sm-count {
+  flex: 0 0 auto;
+  color: var(--mw-ink-3);
+  font-size: var(--mw-size-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.mw-sm-signals {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 10px;
+}
+.mw-sm-signal {
+  display: inline-flex; align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--mw-radius);
+  background: var(--mw-bg-3);
+  color: var(--mw-ink-2);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.mw-detail-text {
+  margin: 0;
+  font-size: var(--mw-size-base);
+  line-height: 1.55;
+  color: var(--mw-ink);
+}
 .mw-detail-bar-spacer { flex: 0 0 64px; }
 .mw-detail-content {
   flex: 1;

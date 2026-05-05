@@ -50,8 +50,17 @@ Single file, public, served as static asset. Versioned via `version` integer.
       { "ticker": "SPY", "last": 720.65, "rsi": 79.1, "note": "above all MAs",
         "detail": { "plain": "...", "pro": "..." } }
     ],
-    "vol_yields": { "vix": 16.99, "vix_term": "STEEP_CONTANGO",
-                    "ten_year": 4.38, "dxy": 98.21, "oil": 101.94, "gold": 4629.90 },
+    "vol_yields": {
+      "vix": 16.99, "vix_term": "STEEP_CONTANGO",
+      "ten_year": 4.38, "dxy": 98.21, "oil": 101.94, "gold": 4629.90,
+      "details": {
+        "vix":      { "plain": "...", "pro": "..." },
+        "ten_year": { "plain": "...", "pro": "..." },
+        "dxy":      { "plain": "...", "pro": "..." },
+        "oil":      { "plain": "...", "pro": "..." },
+        "gold":     { "plain": "...", "pro": "..." }
+      }
+    },
     "sector_rotation": {
       "leaders_5d": [{ "etf": "XLE", "score": 13.1, "detail": {"plain":"...","pro":"..."} }],
       "laggards_5d": [{ "etf": "XLK", "score": -9.06, "detail": {"plain":"...","pro":"..."} }],
@@ -80,7 +89,14 @@ Single file, public, served as static asset. Versioned via `version` integer.
                     "spark": [8 closes], "note": "...", "detail": {"plain":"...","pro":"..."} }],
       "losers":  [...]
     },
-    "smart_money_clusters": ["NIO", "AAPL"],
+    "smart_money_clusters": [
+      // Either a string (legacy: ticker only — chart still renders, no per-row context) ...
+      "NIO",
+      // ... or an object with the signals that triggered the cluster + per-row analyst note.
+      { "ticker": "AAPL",
+        "signals": ["mover", "flow", "WSB"],   // 2+ scanner signals; free-form short labels
+        "detail": { "plain": "...", "pro": "..." } }
+    ],
     "wsb_top": [{ "ticker": "SNDK", "score": 95 }],
     "recommendations": { "buy": [...], "sell": [...] }
   },
