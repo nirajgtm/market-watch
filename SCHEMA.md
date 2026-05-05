@@ -27,11 +27,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
     "TICKER": [14 daily closes oldest first],
     "vix": [14 closes], "ten_year": [...], "dxy": [...], "oil": [...], "gold": [...]
   },
-
-  "history_1y": {
-    "TICKER": [~252 daily closes oldest first, rounded to 2dp],
-    "vix": [...], "ten_year": [...], "dxy": [...], "oil": [...], "gold": [...]
-  },
+  // (1y price history lives in prices.json, not in the brief — see below.)
 
   // top_actions is OPTIONAL at the root (legacy). The page does NOT render it
   // globally any more. Use per-tab `actions[]` instead (see each tab below).
@@ -204,7 +200,6 @@ resolves on the page (the enricher fetches unknown tickers on first publish).
 `publish_site.sh` automatically calls `enrich_briefs.py` after merging staging.json into briefs.json. That script populates:
 
 - `sparks` (14-day price arrays per ticker)
-- `history_1y` (~252-day daily closes per ticker, rounded to 2dp; powers the per-ticker price chart on the mobile detail overlay)
 - `market_status` (computed from current ET time)
 - `stocks.movers` (refreshed live from `movers.py`)
 - `stocks.wsb_top` (refreshed from `social_sentiment.py`)
@@ -213,6 +208,28 @@ resolves on the page (the enricher fetches unknown tickers on first publish).
 The `/trader` skill does NOT need to write these. If it does, the enricher merges by ticker and preserves any `detail` and `note` strings the skill wrote.
 
 The 30-min cron `refresh_site_prices.py` keeps prices and sparks fresh during US weekday extended hours (04:00-20:00 ET) without touching detail or recommendations.
+
+## prices.json (per-ticker price archive)
+
+Separate static asset, served alongside `briefs.json`. Owned by `refresh_price_history.py`. Format:
+
+```json
+{
+  "version": 1,
+  "updated_at": "2026-05-04T17:30:00-04:00",
+  "tickers": {
+    "AAPL":   [["2025-05-05", 198], ["2025-05-06", 199], ... ["2026-05-04", 277]],
+    "^VIX":   [["2025-05-05", 23],  ...],
+    "DX-Y.NYB": [...],
+    ...
+  }
+}
+```
+
+- Prices are integers (whole dollars). The per-ticker chart on the page does not need decimal precision.
+- Each daily run appends new trading days. New tickers (anything that appears in today's brief and isn't already in the archive) seed with 1y of history. Existing tickers get a 30-day re-sweep so weekend/holiday gaps are filled.
+- Page-side aliases (`vix`, `ten_year`, `dxy`, `oil`, `gold`) are resolved to their yfinance symbol on read.
+- Cron suggestion: `30 17 * * 1-5 refresh_price_history.py` (after the 16:00 ET close, before the next pre-market bar).
 
 ## Hard rules (enforced by `publish_site.sh` redaction grep)
 

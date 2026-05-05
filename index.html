@@ -213,6 +213,32 @@ let CURRENT_SPARKS = {};
 // top of each per-ticker page.
 let CURRENT_HISTORY_1Y = {};
 
+// Persistent per-ticker price archive, served as a separate static asset.
+// Format: { version, updated_at, tickers: { TICKER: [["YYYY-MM-DD", close], ...] } }
+// Closes are integers (whole dollars). Owned by refresh_price_history.py;
+// this file is the only writer. The detail-overlay chart reads from here.
+let PRICES = { tickers: {} };
+
+// Page-side aliases used in briefs (vix, ten_year, ...) that map to the
+// yfinance symbol the price archive stores under.
+const PRICE_ALIASES = {
+  vix:      "^VIX",
+  ten_year: "^TNX",
+  dxy:      "DX-Y.NYB",
+  oil:      "CL=F",
+  gold:     "GC=F",
+};
+
+function getPriceSeries(sym) {
+  if (!sym) return null;
+  const ts = PRICES.tickers || {};
+  let s = ts[sym];
+  if (s && s.length >= 2) return s;
+  const a = PRICE_ALIASES[sym];
+  if (a && (s = ts[a]) && s.length >= 2) return s;
+  return null;
+}
+
 // Robinhood-style 1y price line chart. Larger than sparkSvg, with a soft
 // area fill under the line and start/end price labels. Designed for the
 // mobile detail overlay header. Returns "" when there isn't enough data.
@@ -257,6 +283,100 @@ function priceChartSvg(data, w = 320, h = 96) {
 function pctChange(first, last) {
   if (!Number.isFinite(first) || !Number.isFinite(last) || first === 0) return null;
   return (last - first) / first * 100;
+}
+
+// Attaches Robinhood-style finger-scrub interaction to a hero chart.
+// Drag across the chart and the price/% pair + date label below the chart
+// snap to the day under the finger. Releasing restores the period summary.
+function attachChartScrub(heroEl, series) {
+  const svg = heroEl.querySelector('.mw-pchart');
+  if (!svg) return;
+  const priceEl  = heroEl.querySelector('.mw-hero-price');
+  const pctEl    = heroEl.querySelector('.mw-hero-pct');
+  const scrubEl  = heroEl.querySelector('.mw-hero-scrub');
+  if (!priceEl || !pctEl || !scrubEl) return;
+
+  const closes = series.map(p => Number(p[1]));
+  const dates  = series.map(p => p[0]);
+  const first = closes[0];
+  let min = closes[0], max = closes[0];
+  for (let i = 1; i < closes.length; i++) {
+    const v = closes[i];
+    if (v < min) min = v;
+    else if (v > max) max = v;
+  }
+  const range = (max - min) || 1;
+  const vb = (svg.getAttribute('viewBox') || '0 0 320 120').split(/\s+/).map(Number);
+  const viewW = vb[2], viewH = vb[3];
+  const padTop = 6, padBot = 6, innerH = viewH - padTop - padBot;
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const cross = document.createElementNS(NS, 'line');
+  cross.setAttribute('class', 'mw-pchart-cross');
+  cross.setAttribute('y1', '0');
+  cross.setAttribute('y2', String(viewH));
+  cross.setAttribute('stroke', 'currentColor');
+  cross.setAttribute('stroke-width', '0.6');
+  cross.setAttribute('stroke-dasharray', '2 3');
+  cross.setAttribute('opacity', '0');
+  svg.appendChild(cross);
+  const dot = document.createElementNS(NS, 'circle');
+  dot.setAttribute('class', 'mw-pchart-cursor');
+  dot.setAttribute('r', '3.5');
+  dot.setAttribute('fill', 'currentColor');
+  dot.setAttribute('opacity', '0');
+  svg.appendChild(dot);
+
+  const defaultPriceTxt = priceEl.textContent;
+  const defaultPctHtml  = pctEl.innerHTML;
+  const defaultPctClass = pctEl.className;
+
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function fmtDate(iso) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (!m) return iso || '';
+    return `${MONTHS[+m[2]-1]} ${+m[3]}, ${m[1]}`;
+  }
+
+  function show(clientX) {
+    const rect = svg.getBoundingClientRect();
+    if (rect.width <= 0) return;
+    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    const idx = Math.round(ratio * (closes.length - 1));
+    const close = closes[idx];
+    const date  = dates[idx];
+    const pct   = ((close - first) / first) * 100;
+    priceEl.textContent = '$' + Math.round(close);
+    const trend = pct > 0 ? 'is-up' : pct < 0 ? 'is-down' : '';
+    pctEl.className = 'mw-hero-pct mw-mono ' + trend;
+    pctEl.innerHTML = (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%<span class="mw-hero-period">1Y</span>';
+    scrubEl.textContent = fmtDate(date);
+    const x = (idx / (closes.length - 1)) * viewW;
+    const y = padTop + innerH - (close - min) / range * innerH;
+    cross.setAttribute('x1', x.toFixed(2));
+    cross.setAttribute('x2', x.toFixed(2));
+    cross.setAttribute('opacity', '0.45');
+    dot.setAttribute('cx', x.toFixed(2));
+    dot.setAttribute('cy', y.toFixed(2));
+    dot.setAttribute('opacity', '1');
+  }
+  function hide() {
+    priceEl.textContent = defaultPriceTxt;
+    pctEl.className = defaultPctClass;
+    pctEl.innerHTML = defaultPctHtml;
+    scrubEl.innerHTML = '&nbsp;';
+    cross.setAttribute('opacity', '0');
+    dot.setAttribute('opacity', '0');
+  }
+
+  svg.addEventListener('touchstart', e => { if (e.touches[0]) { show(e.touches[0].clientX); e.preventDefault(); } }, {passive:false});
+  svg.addEventListener('touchmove',  e => { if (e.touches[0]) { show(e.touches[0].clientX); e.preventDefault(); } }, {passive:false});
+  svg.addEventListener('touchend',    hide);
+  svg.addEventListener('touchcancel', hide);
+  svg.addEventListener('mousedown',  e => show(e.clientX));
+  svg.addEventListener('mousemove',  e => { if (e.buttons & 1) show(e.clientX); });
+  svg.addEventListener('mouseleave', hide);
+  svg.addEventListener('mouseup',    hide);
 }
 
 function tickerPill(sym, size, opts) {
@@ -1579,34 +1699,75 @@ function enterMobileDetail(id) {
 
   const ov = ensureDetailOverlay();
   document.getElementById('mw-detail-title').innerHTML = summary ? summary.innerHTML : '';
-  // Robinhood-style 1y price chart at the top of the per-ticker page when we
-  // can resolve a ticker symbol from the row. The summary innerHTML carries
-  // a .mw-tpill-sym for any logo+ticker pill, so we read that.
-  let chartHtml = '';
+
+  // Resolve a ticker symbol from the tapped row. .mw-tpill-sym covers most
+  // rows (watchlist, movers, recs, social); .mw-action-target-sym covers the
+  // Today's Actions logo+name pattern.
+  let sym = '';
   if (summary) {
     const symEl = summary.querySelector('.mw-tpill-sym, .mw-action-target-sym');
-    const sym = symEl ? symEl.textContent.trim() : '';
-    const series = sym ? CURRENT_HISTORY_1Y[sym] : null;
-    if (series && series.length >= 2) {
-      const first = series[0], last = series[series.length - 1];
-      const pct = pctChange(first, last);
-      const pctTxt = pct == null ? '' : (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
-      const trendCls = pct == null ? '' : pct > 0 ? 'is-up' : pct < 0 ? 'is-down' : '';
-      chartHtml = `
-        <div class="mw-detail-chart">
-          <div class="mw-detail-chart-head">
-            <span class="mw-detail-chart-price mw-mono">$${last.toFixed(2)}</span>
-            <span class="mw-detail-chart-pct mw-mono ${trendCls}">${pctTxt} <span class="mw-detail-chart-period">1Y</span></span>
-          </div>
-          ${priceChartSvg(series, 320, 96)}
-        </div>`;
-    }
+    sym = symEl ? symEl.textContent.trim() : '';
   }
+  // Prefer the persistent prices.json archive; fall back to the in-brief
+  // history_1y while older briefs are still being served.
+  let series = sym ? getPriceSeries(sym) : null;
+  let closesOnly = null;
+  if (!series && sym && CURRENT_HISTORY_1Y[sym]) {
+    const arr = CURRENT_HISTORY_1Y[sym];
+    if (arr && arr.length >= 2) closesOnly = arr;
+  }
+
+  // Robinhood-style hero panel: big ticker, current price, chart, scrub line.
+  // Layout per phone spec: ticker name → chart → rest of content.
+  let heroHtml = '';
+  if (series && series.length >= 2) {
+    const closes = series.map(p => Number(p[1]));
+    const first = closes[0], last = closes[closes.length - 1];
+    const pct = pctChange(first, last);
+    const pctTxt = pct == null ? '' : (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%';
+    const trendCls = pct == null ? '' : pct > 0 ? 'is-up' : pct < 0 ? 'is-down' : '';
+    heroHtml = `
+      <section class="mw-detail-hero" data-sym="${escAttr(sym)}">
+        <div class="mw-hero-head">
+          ${tickerLogo(sym)}<span class="mw-hero-sym mw-mono">${escHtml(sym)}</span>
+        </div>
+        <div class="mw-hero-prices">
+          <span class="mw-hero-price mw-mono">$${last}</span>
+          <span class="mw-hero-pct mw-mono ${trendCls}">${pctTxt}<span class="mw-hero-period">1Y</span></span>
+        </div>
+        ${priceChartSvg(closes, 320, 120)}
+        <div class="mw-hero-scrub mw-mono">&nbsp;</div>
+      </section>`;
+  } else if (closesOnly) {
+    const first = closesOnly[0], last = closesOnly[closesOnly.length - 1];
+    const pct = pctChange(first, last);
+    const pctTxt = pct == null ? '' : (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%';
+    const trendCls = pct == null ? '' : pct > 0 ? 'is-up' : pct < 0 ? 'is-down' : '';
+    heroHtml = `
+      <section class="mw-detail-hero">
+        <div class="mw-hero-head">
+          ${tickerLogo(sym)}<span class="mw-hero-sym mw-mono">${escHtml(sym)}</span>
+        </div>
+        <div class="mw-hero-prices">
+          <span class="mw-hero-price mw-mono">$${Math.round(last)}</span>
+          <span class="mw-hero-pct mw-mono ${trendCls}">${pctTxt}<span class="mw-hero-period">1Y</span></span>
+        </div>
+        ${priceChartSvg(closesOnly, 320, 120)}
+        <div class="mw-hero-scrub mw-mono">&nbsp;</div>
+      </section>`;
+  }
+
   document.getElementById('mw-detail-content').innerHTML = `
-    ${chartHtml}
+    ${heroHtml}
     <div class="mw-detail-summary-echo">${summary ? summary.innerHTML : ''}</div>
     <div class="mw-detail-body">${detail.innerHTML}</div>
   `;
+
+  // Wire up touch-scrub on the chart (Robinhood-style finger crosshair).
+  if (series && series.length >= 2) {
+    const heroEl = document.querySelector('.mw-detail-hero');
+    if (heroEl) attachChartScrub(heroEl, series);
+  }
 
   // Push history state so back button works.
   if (!MOBILE_DETAIL_OPEN) {
@@ -1686,6 +1847,14 @@ document.addEventListener("keydown", e => {
 // Drop cache:no-store so the browser uses its HTTP cache + ETag/Last-Modified
 // revalidation. GitHub Pages serves both, so returning visitors get an instant
 // 304 instead of re-downloading the full briefs.json.
+// prices.json (the persistent per-ticker price archive) loads in parallel.
+// If it fails or arrives late the chart simply won't render — the page still
+// works. Boot doesn't wait for it.
+fetch("prices.json")
+  .then(r => r.ok ? r.json() : null)
+  .then(p => { if (p && p.tickers) PRICES = p; })
+  .catch(() => {});
+
 fetch("briefs.json")
   .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
   .then(data => {
