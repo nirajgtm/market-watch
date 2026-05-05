@@ -12,11 +12,26 @@
         "pro": "PODD -1.86 intraday in 170-175 zone, rejection candle confirming. GRAB ER 4PM ET. ARM ER blackout active (5/06). VIX 18.3."
       },
       "summary_bullets": [
-        "Insulet (PODD) is printing the rejection candle short traders were waiting for in the 170 to 175 zone, with RSI 28 confirming the failed bounce.",
-        "Apple (AAPL) gave back its breakout, closing 276.83 below the 278 stop level, so the morning long-spread thesis is on the wobble.",
-        "ARM reports earnings Wednesday after the close, and the auto-blackout zone is active for any option position on it.",
-        "Energy is leading the tape this week with a 13.6 sector rotation score while technology continues rolling at minus 9.0.",
-        "Volatility stays calm at VIX 18.3 with futures in steep contango, keeping the short volatility income setup viable."
+        {
+          "plain": "Insulet (PODD) is printing the rejection candle short traders were waiting for in the 170 to 175 zone, with the overbought meter at 28 confirming the failed bounce.",
+          "pro": "PODD rejection candle in 170-175 zone, RSI 28, vol 4.9x avg on the 4/29 breakdown. Entry on red close below open."
+        },
+        {
+          "plain": "Apple (AAPL) gave back its breakout and closed at 276.83, just under the 278 stop level for the morning long-spread trade.",
+          "pro": "AAPL closed 276.83, below the 278 stop trigger. 5/29 285/300 spread approx 30-50% drawdown on debit."
+        },
+        {
+          "plain": "ARM reports earnings Wednesday after the close, and the buying-rule blackout is active for any options position on it.",
+          "pro": "ARM ER 5/06 AMC, auto-blackout active. IV crush risk 25-40 percent on long calls post-print."
+        },
+        {
+          "plain": "Energy is leading the tape this week with a 13.6 sector rotation score, while technology continues to roll at minus 9.0.",
+          "pro": "XLE rotation +13.6 5d (oil +7.2%) leads, XLK -9.0 5d laggard. Defensive plus energy bid persists."
+        },
+        {
+          "plain": "Volatility stays calm at VIX 18.3 with futures in steep contango, keeping the short volatility income setup viable.",
+          "pro": "VIX 18.3, contango +2.87pp, 6/17 17P/15P credit 0.38. Roll-down tailwind plus theta still working."
+        }
       ],
       "market_status": {
         "tier": "MARKET CLOSED",
@@ -266,6 +281,34 @@
                 "plain": "If you have a heavy tech position and have not trimmed in months, peel back 10 to 15 percent into strength. This is risk control, not a directional sell call.",
                 "pro": "If overweight XLK or NDX-style names: scale out 10-15 pct into Mon strength. Use Limit at last + 0.5 pct, GFD. Reassess on a close below 20MA. Hedge alternative: SQQQ debit call spread 30 DTE 35/40."
               }
+            }
+          ]
+        },
+        "tab_intro": {
+          "headline": {
+            "plain": "Stretched indices, energy and defensives leading, tech and logistics rolling over",
+            "pro": "SPY/QQQ ATH RSI 79/82, XLE +13.6 leads, XLK -9.0 lags, logistics breakdown intraday"
+          },
+          "bullets": [
+            {
+              "plain": "Both major indexes are at record highs but the overbought meter is well past 70, so the buying rule is paused for new long entries.",
+              "pro": "SPY 720 RSI 79, QQQ 674 RSI 82. Both above 20MA + 2 ATR. FOMO entry block active."
+            },
+            {
+              "plain": "Energy is the cleanest sector rotation winner this week, up 13.6 percent over 5 days with oil up 7 percent on the same window.",
+              "pro": "XLE rotation +13.6 5d, oil +7.2% 5d. Watchlist long entry below 56.50 still needs a flush."
+            },
+            {
+              "plain": "Tech is the worst-performing sector at minus 9, with money rotating into defensives and energy. Logistics also broke down today.",
+              "pro": "XLK -9.0 5d laggard. UPS/FDX/CHRW/EXPD/ODFL all -4 to -6.4% intraday on consumer demand fears."
+            },
+            {
+              "plain": "Volatility remains calm at VIX 18.3 with futures in steep contango, supporting short-volatility income trades.",
+              "pro": "VIX 18.3, contango +2.87 pp, 9d 14.15 / 3m 20.37. Calm regime, structural roll-down tailwind."
+            },
+            {
+              "plain": "Big macro days Monday and Tuesday: Fed Williams speaks today, Fed Barr plus Services PMI Tuesday set the rotation tone.",
+              "pro": "Mon: Williams + Factory Orders. Tue: Barr + ISM Services (cons 51.5) + EIA crude. ARM/AMD ER Wed AMC."
             }
           ]
         },
@@ -710,6 +753,34 @@
             }
           ]
         },
+        "tab_intro": {
+          "headline": {
+            "plain": "Insulet short setup confirmed; Apple spread under stress; logistics names breaking down",
+            "pro": "PODD rejection in 170-175, AAPL closed below stop 278, UPS/FDX -5 to -6% on demand fears"
+          },
+          "bullets": [
+            {
+              "plain": "Insulet (PODD) printed its first red day of the bounce in the 170 to 175 zone, the rejection signal short traders were waiting for. Vehicle: 170/160 put spread expiring late June.",
+              "pro": "PODD 171.78 -1.86 pct intraday, RSI 28.4, vol 4.9x on 4/29 BD. Trigger: red close below open in 170-175. Vehicle: 6/20 170/160 put spread, R:R approx 4:1, stop on close above 183."
+            },
+            {
+              "plain": "Apple (AAPL) closed 276.83, just under the 278 stop level for the morning long-call-spread trade. The breakout retest is wobbling but not invalidated yet.",
+              "pro": "AAPL closed 276.83 vs 287.08 entry on the 5/29 285/300 spread, BE 287.87. Stop signal: close below 278. Spread mid likely 1.50-2.00, 30-50% drawdown on the debit."
+            },
+            {
+              "plain": "Logistics names cratered intraday on consumer demand fears. UPS down 6.4 percent and FedEx down 5.6 percent led the breakdown alongside CHRW, EXPD, and ODFL.",
+              "pro": "UPS -6.37 (101), FDX -5.56 (372), CHRW -4.45 (169), EXPD -3.91 (141), ODFL -4.28 (197). XLI dropped from sector leadership. Watchlist for failed-bounce shorts in 1-3 sessions."
+            },
+            {
+              "plain": "Reddit retail attention is heavy on Palantir post-print, Micron parabolic, SOUN and SNDK in the top five. PLTR earnings reaction confirms positive sentiment.",
+              "pro": "WSB top 5: SOUN 103, SPY 98, SNDK 87, MU 81, AMD 78. PLTR jumped to #2 (279) post-ER. Social breakouts: MU, SNDK, EBAY."
+            },
+            {
+              "plain": "Watchlist names like Humana and Quanta Services have moved away from clean entry zones. Wait for pullbacks before chasing.",
+              "pro": "HUM 234.81 above FOMO ceiling 231; needs pullback below 228 for long-on-reversal. PWR 758 parabolic continuation, no entry. GNRC and MO finally cooling but not in trigger zone yet."
+            }
+          ]
+        },
         "social": [
           {
             "ticker": "MU",
@@ -1148,6 +1219,34 @@
             }
           ]
         },
+        "tab_intro": {
+          "headline": {
+            "plain": "VIX put spread is the only directional trade allowed today; wheel candidates show oil and AI semi premium",
+            "pro": "VIX 6/17 17/15P credit 0.38; USO 134P CSP 60.9% APY tops the wheel scan; ARM/AMD ER Wed AMC"
+          },
+          "bullets": [
+            {
+              "plain": "The buying rule blocks new long index entries today, so the only directional trade approved is selling a VIX put spread for the steady premium income.",
+              "pro": "FOMO rule active on SPY/QQQ. Only directional permitted: STO VIX 6/17 17P, BTO VIX 6/17 15P. Credit 0.38, max risk 200 per spread, exit at 50% of credit OR within 7 DTE."
+            },
+            {
+              "plain": "The cleanest cash-secured-put candidate is the United States Oil Fund at strike 134, paying about 715 dollars and yielding 60.9 percent annualized. Energy leadership backs it.",
+              "pro": "USO 134P 32 DTE @ 7.15, 6.16% OTM, 60.9% APY. RSI 60.9, ATR 4.89%, no ER catalyst. Strongest score-1.00 in the wheel scan; collateral 13,400."
+            },
+            {
+              "plain": "ARM and AMD report Wednesday after the close. Implied volatility on options will run up before, then collapse right after, so plan around the print.",
+              "pro": "ARM and AMD ER 5/06 AMC. IV expansion 24-48h pre-print, IV crush 25-40% post-print. Long-call holders: scale out half into the pump or tail-hedge with short-dated puts."
+            },
+            {
+              "plain": "The monthly long-dated index call buying signal says wait for a pullback. Both S and P 500 and Nasdaq are too overbought for a clean entry today.",
+              "pro": "LEAP signal WAIT on SPY (RSI 79.1) and QQQ (RSI 82.8). Skip reason: rsi_extended. Re-evaluate on pullback to 20MA."
+            },
+            {
+              "plain": "Apple, Nvidia, and Tesla all show unusual options activity today. AAPL is the cleanest setup once the underlying retests its 275 to 278 zone.",
+              "pro": "AAPL flow + breakout cluster: 5/29 285/300 spread on pullback to 275-278. NVDA flow + WSB cluster: pre-ER IV expansion dominant. TSLA flow only, no price confirm."
+            }
+          ]
+        },
         "social": [
           {
             "ticker": "MU",
@@ -1392,6 +1491,30 @@
           "buy": [],
           "sell": []
         },
+        "tab_intro": {
+          "headline": {
+            "plain": "Bitcoin dominance is bid; alt coins are on defense and waiting for a rotation cue",
+            "pro": "BTC.D 58.5%, BTC consolidating low 80k. ETH/SOL underperforming, XRP basing"
+          },
+          "bullets": [
+            {
+              "plain": "Bitcoin is consolidating in a tight range around 80,000 dollars, with no clean breakout setup yet.",
+              "pro": "BTC 80,388, +6.1% 5d, +2.4% 24h. RSI 68.6, above 20MA, below 200MA. No directional cluster signal."
+            },
+            {
+              "plain": "Bitcoin dominance is rising toward 59 percent, which keeps alt coins on the defensive. Wait for dominance to roll below 57 before considering alt rotations.",
+              "pro": "BTC.D 58.5%. Alt-rotation trigger historically below 57. Until then, no new alt entries."
+            },
+            {
+              "plain": "Ether and Solana are trailing Bitcoin this week. Solana is trending on Robinhood but the regime is not yet supportive.",
+              "pro": "ETH 2367, +5.0% 5d, RSI 56.4 below 200MA. SOL 84.5, +1.8% 5d, RSI 45.8 below 200MA. RH trending: BTC, SOL."
+            },
+            {
+              "plain": "Ripple is consolidating in a tight range with daily price swings of about 3 percent.",
+              "pro": "XRP 1.40, +2.1% 5d, RSI 40.9 below 200MA. ATR ~3% daily. No directional break."
+            }
+          ]
+        },
         "social": [
           {
             "ticker": "MSTR",
@@ -1440,85 +1563,37 @@
         ]
       },
       "sparks": {
-        "HUM": [
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96
+        "IWM": [
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88
         ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4548.5
-        ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4548.5
-        ],
-        "SPY": [
-          699.94,
-          701.66,
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01
-        ],
-        "TER": [
-          364.96,
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44
+        "PWR": [
+          591.82,
+          587.42,
+          601.88,
+          604.97,
+          605.89,
+          613.78,
+          633.44,
+          624.84,
+          637.28,
+          630.94,
+          628.6,
+          727.77,
+          742.21,
+          757.34
         ],
         "GNRC": [
           204.4,
@@ -1536,6 +1611,70 @@
           259.34,
           257.07
         ],
+        "PODD": [
+          202.5,
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39
+        ],
+        "ARM": [
+          159.34,
+          162.33,
+          166.73,
+          175.1,
+          175.49,
+          196.57,
+          204.61,
+          234.81,
+          215.88,
+          198.65,
+          201.69,
+          210.32,
+          211.18,
+          203.26
+        ],
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.494
+        ],
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.494
+        ],
         "XLE": [
           55.76,
           56.58,
@@ -1552,69 +1691,37 @@
           58.85,
           59.39
         ],
-        "IWM": [
-          269.39,
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88
+        "SPY": [
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01
         ],
-        "DX-Y.NYB": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.499
-        ],
-        "dxy": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.499
-        ],
-        "GEHC": [
-          73.51,
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0
+        "QQQ": [
+          637.4,
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88
         ],
         "^TNX": [
           4.282,
@@ -1648,21 +1755,117 @@
           4.378,
           4.446
         ],
-        "QQQ": [
-          637.4,
-          640.47,
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88
+        "TER": [
+          364.96,
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44
+        ],
+        "INDEX": [
+          66.19,
+          66.36,
+          67.16,
+          67.0,
+          66.58,
+          67.27,
+          67.0,
+          67.53,
+          67.62,
+          67.28,
+          67.26,
+          67.95,
+          68.15,
+          67.87
+        ],
+        "^VIX": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29
+        ],
+        "vix": [
+          18.17,
+          17.94,
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29
+        ],
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4545.6001
+        ],
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4545.6001
+        ],
+        "GEHC": [
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0
         ],
         "GRAB": [
           3.92,
@@ -1696,54 +1899,6 @@
           74.55,
           73.41
         ],
-        "INDEX": [
-          66.19,
-          66.36,
-          67.16,
-          67.0,
-          66.58,
-          67.27,
-          67.0,
-          67.53,
-          67.62,
-          67.28,
-          67.26,
-          67.95,
-          68.15,
-          67.87
-        ],
-        "ARM": [
-          159.34,
-          162.33,
-          166.73,
-          175.1,
-          175.49,
-          196.57,
-          204.61,
-          234.81,
-          215.88,
-          198.65,
-          201.69,
-          210.32,
-          211.18,
-          203.26
-        ],
-        "PODD": [
-          202.5,
-          201.47,
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39
-        ],
         "CL=F": [
           91.29,
           94.69,
@@ -1758,7 +1913,7 @@
           106.88,
           105.07,
           101.94,
-          104.52
+          104.41
         ],
         "oil": [
           91.29,
@@ -1774,55 +1929,23 @@
           106.88,
           105.07,
           101.94,
-          104.52
+          104.41
         ],
-        "PWR": [
-          591.82,
-          587.42,
-          601.88,
-          604.97,
-          605.89,
-          613.78,
-          633.44,
-          624.84,
-          637.28,
-          630.94,
-          628.6,
-          727.77,
-          742.21,
-          757.34
-        ],
-        "^VIX": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29
-        ],
-        "vix": [
-          18.17,
-          17.94,
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29
+        "HUM": [
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96
         ]
       }
     },
