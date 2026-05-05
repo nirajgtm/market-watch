@@ -722,7 +722,6 @@ function renderSocialItem(item, prefix) {
       ${tickerPill(item.ticker, "sm")}
       <span class="mw-soc-mentions mw-mono">${item.mentions || 0}</span>
       <span class="mw-soc-sentiment ${sentClass(item.sentiment)} mw-mono">${escHtml(item.sentiment || "NEUTRAL")}</span>
-      <span class="mw-soc-sources mw-mono">${escHtml(sources)}</span>
       ${caret(hasDetail(item))}
     </div>
     ${detailHtml ? `<div class="mw-soc-detail">${detailHtml}</div>` : ""}
@@ -742,10 +741,8 @@ function renderSocial(socialItems, prefix, tabLabel) {
         <span class="mw-soc-h-tk">Ticker</span>
         <span class="mw-soc-h-mentions">Mentions</span>
         <span class="mw-soc-h-sent">Read</span>
-        <span class="mw-soc-h-sources">Where</span>
       </div>
       ${body}
-      <p class="mw-soc-foot">Pulled from r/wallstreetbets, r/stocks, r/all-stocks, r/cryptocurrency, r/TheRaceTo10Million, r/TheRaceTo1Million, r/Vitards, r/thetagang, r/Daytrading, r/options, and StockTwits trending.</p>
     </div>
   </section>`;
 }
@@ -941,30 +938,40 @@ function renderStocksPane(b) {
   const sm = card({
     title: "Smart-money clusters", count: s.smart_money.length,
     body: s.smart_money.length
-      ? `<div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, t)})).join("")}</div>`
+      ? `<p class="mw-card-explainer">Names showing two or more independent scanner signals on the same day (active mover, unusual options flow, breakout, social breakout, insider buying, etc.). Cluster confirmation is the highest-quality directional read in the universe; price action still has to confirm.</p>
+         <div class="mw-chips">${s.smart_money.map(t => tickerPill(t, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, t)})).join("")}</div>`
       : `<p class="mw-empty">No clusters today.</p>`
   });
 
   const wsbTop = s.wsb_top || [];
   const wsbMax = wsbTop.reduce((a, b) => Math.max(a, b.score || 0), 1) || 1;
-  const wsbRows = wsbTop.map((r, i) => `<li class="mw-rank-row">
-    <span class="mw-mono mw-rank-i">${String(i + 1).padStart(2, "0")}</span>
-    ${tickerPill(r.ticker, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, r.ticker)})}
-    <span class="mw-rank-bar"><span class="mw-rank-fill" style="width:${Math.min(100, (r.score || 0) / wsbMax * 100)}%"></span></span>
-    <span class="mw-mono mw-dim">${r.score || 0}</span>
-  </li>`).join("");
+  const wsbRows = wsbTop.map((r, i) => {
+    const id = `wsb-${r.ticker}-${i}`;
+    const summary = `<div class="mw-rank-row">
+      <span class="mw-mono mw-rank-i">${String(i + 1).padStart(2, "0")}</span>
+      ${tickerPill(r.ticker, "sm", {withLogo: true, chgPct: chgPctFromSparks(sparks, r.ticker)})}
+      <span class="mw-rank-bar"><span class="mw-rank-fill" style="width:${Math.min(100, (r.score || 0) / wsbMax * 100)}%"></span></span>
+      <span class="mw-mono mw-dim">${r.score || 0}</span>
+      ${caret(hasDetail(r))}
+    </div>`;
+    return expandLi(id, summary, renderDetail(r));
+  }).join("");
   const wsb = card({
     title: `${abbr("WSB")} · top ${wsbTop.length || 5}`,
-    body: wsbTop.length ? `<ul class="mw-rank">${wsbRows}</ul>` : `<p class="mw-empty">No WSB data.</p>`
+    body: wsbTop.length
+      ? `<p class="mw-card-explainer">Reddit retail-attention leaderboard, refreshed live from r/wallstreetbets. The bar shows mentions in the last 24 hours; tap a row for context (rank change, mention delta).</p>
+         <ul class="mw-rank">${wsbRows}</ul>`
+      : `<p class="mw-empty">No WSB data.</p>`
   });
 
-  const statusCounts = ["IN_ZONE", "TRIGGERED", "NEAR", "FAR", "INVALIDATED"].map(st => ({
+  const statusLabels = { IN_ZONE: "In zone", TRIGGERED: "Triggered", NEAR: "Near", FAR: "Far", INVALIDATED: "Invalid" };
+  const statusCounts = ["TRIGGERED", "IN_ZONE", "NEAR", "FAR", "INVALIDATED"].map(st => ({
     st, n: s.watchlist.filter(w => String(w.status).toUpperCase() === st).length
   })).filter(x => x.n > 0);
   const mix = card({
-    title: "Status mix",
+    title: "Watchlist status",
     body: statusCounts.length ? `<ul class="mw-statmix">${statusCounts.map(x => `
-      <li class="mw-statmix-row">${statusDot(x.st)}<span class="mw-mono mw-statmix-n">${x.n}</span></li>
+      <li class="mw-statmix-row">${statusDot(x.st)}<span class="mw-statmix-label">${statusLabels[x.st] || x.st}</span><span class="mw-mono mw-statmix-n">${x.n}</span></li>
     `).join("")}</ul>` : `<p class="mw-empty">No watchlist activity.</p>`
   });
 

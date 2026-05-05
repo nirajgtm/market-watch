@@ -487,11 +487,11 @@ html, body {
   width: 6px; height: 6px; border-radius: 50%;
   background: currentColor;
 }
-.mw-status-in    { color: var(--mw-accent); background: var(--mw-accent-soft); }
-.mw-status-near  { color: var(--mw-ink-2);  background: var(--mw-bg-3); }
-.mw-status-far   { color: var(--mw-ink-3);  background: var(--mw-bg-2); }
-.mw-status-inv   { color: var(--mw-ink-4);  background: var(--mw-bg-2); }
-.mw-status-trig  { color: var(--mw-up);     background: var(--mw-up-soft); }
+.mw-status-in    { color: var(--mw-accent); background: var(--mw-accent-soft); border: 1px solid var(--mw-accent); }
+.mw-status-near  { color: var(--mw-ink-2);  background: var(--mw-bg-3);       border: 1px solid var(--mw-rule-2); }
+.mw-status-far   { color: var(--mw-ink-2);  background: transparent;          border: 1px solid var(--mw-rule-2); }
+.mw-status-inv   { color: var(--mw-ink-3);  background: transparent;          border: 1px dashed var(--mw-rule-2); }
+.mw-status-trig  { color: var(--mw-up);     background: var(--mw-up-soft);    border: 1px solid var(--mw-up); }
 
 /* ============================================================
    TOP ACTIONS
@@ -935,14 +935,36 @@ html, body {
 /* ============================================================
    STATUS MIX
    ============================================================ */
-.mw-statmix { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.mw-statmix { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .mw-statmix-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
   border-bottom: 1px solid var(--mw-rule);
 }
 .mw-statmix-row:last-child { border-bottom: 0; }
-.mw-statmix-n { color: var(--mw-ink); font-size: var(--mw-size-base); font-weight: 600; }
+.mw-statmix-label {
+  font-size: 13px;
+  color: var(--mw-ink-2);
+  font-weight: 500;
+}
+.mw-statmix-n {
+  color: var(--mw-ink);
+  font-family: var(--mw-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Reusable card-body explainer paragraph (the small grey text under a card title
+   that says what the card actually contains). */
+.mw-card-explainer {
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mw-ink-3);
+}
 
 /* ============================================================
    MOVERS
@@ -1063,7 +1085,7 @@ html, body {
 .mw-soc-card { background: var(--mw-bg-2); }
 .mw-soc-head {
   display: grid;
-  grid-template-columns: 100px 90px 100px 1fr auto;
+  grid-template-columns: 1fr 90px 100px auto;
   gap: 14px;
   align-items: center;
   padding: 0 16px 10px;
@@ -1074,6 +1096,7 @@ html, body {
   color: var(--mw-ink-3);
 }
 .mw-soc-h-mentions { text-align: right; }
+.mw-soc-h-sent { text-align: center; }
 .mw-soc-list { list-style: none; margin: 0; padding: 0; }
 .mw-soc-row {
   border-bottom: 1px solid var(--mw-rule);
@@ -1085,7 +1108,7 @@ html, body {
 .mw-soc-row:hover { background: var(--mw-bg-3); }
 .mw-soc-summary {
   display: grid;
-  grid-template-columns: 100px 90px 100px 1fr auto;
+  grid-template-columns: 1fr 90px 100px auto;
   gap: 14px;
   align-items: center;
   padding: 12px 16px;
@@ -1107,16 +1130,6 @@ html, body {
 .mw-soc-sentiment.is-down    { color: var(--mw-down);   background: var(--mw-down-soft); }
 .mw-soc-sentiment.is-neutral { color: var(--mw-accent); background: var(--mw-accent-soft); }
 .mw-soc-sentiment.mw-dim     { color: var(--mw-ink-3); }
-.mw-soc-sources {
-  font-size: var(--mw-size-xs);
-  color: var(--mw-ink-3);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.mw-soc-row.is-open .mw-soc-sources { white-space: normal; }
 .mw-soc-row.is-open .mw-caret { transform: rotate(180deg); color: var(--mw-money); }
 .mw-soc-detail {
   padding: 14px 18px 16px;
@@ -1128,22 +1141,12 @@ html, body {
   color: var(--mw-ink);
   font-weight: 500;
 }
-.mw-soc-foot {
-  margin: 14px 16px 0;
-  padding-top: 12px;
-  border-top: 1px solid var(--mw-rule);
-  font-size: var(--mw-size-xs);
-  color: var(--mw-ink-3);
-  line-height: 1.55;
-  font-weight: 500;
-}
 @media (max-width: 720px) {
   .mw-soc-head, .mw-soc-summary {
-    grid-template-columns: 70px 60px 90px 1fr auto;
+    grid-template-columns: 1fr 60px 80px auto;
     gap: 10px;
     font-size: var(--mw-size-xs);
   }
-  .mw-soc-h-sources, .mw-soc-sources { display: none; }
 }
 
 /* ============================================================
