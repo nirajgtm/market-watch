@@ -1005,8 +1005,21 @@ html, body {
 @media (max-width: 900px) {
   .mw-movers { grid-template-columns: 1fr; }
   .mw-movers-col + .mw-movers-col { border-left: 0; border-top: 1px solid var(--mw-rule-2); }
-  .mw-mover-row { grid-template-columns: auto 60px 60px 1fr; }
-  .mw-mover-note { grid-column: 1 / -1; padding-left: 0; }
+}
+@media (max-width: 720px) {
+  /* Mobile mover row: ticker · sparkline · change% · chevron only.
+     Last price and note move to the detail overlay. */
+  .mw-mover-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+  .mw-mover-row > .mw-tpill { flex: 1 1 auto; }
+  .mw-mover-row > .mw-spark { flex: 0 0 56px; height: 18px; }
+  .mw-mover-pct  { flex: 0 0 auto; font-size: 13.5px; }
+  .mw-mover-last { display: none; }
+  .mw-mover-note { display: none; }
 }
 
 .mw-empty {
@@ -1431,84 +1444,88 @@ html, body {
   .mw-card-body { padding: 0; }
   .mw-card-footer { padding: 10px 0 14px; }
 
-  /* Tables become stacked iOS-list cells: row = tappable summary cell. The
-     supplemental columns (trigger/status/note for watchlist, context for
-     options-flow, etc.) are HIDDEN in the compact list. Tap to expand the
-     detail row, which holds the full info. */
+  /* Mobile rows are reduced to the bare essentials. Tap routes to the
+     full-screen detail overlay — supplemental fields (trigger zone, note,
+     RSI, context, etc.) live there, not on the list. The list shows:
+        [ticker]  [sparkline]  [change %]  [status pill]  [chevron]
+     For tables that don't have all four, only what's present renders. */
   .mw-table, .mw-table tbody { display: block; width: 100%; }
   .mw-table thead { display: none; }
   .mw-table tr {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    column-gap: 10px;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--mw-rule);
-    min-height: 56px;
+    display: flex;
     align-items: center;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--mw-rule);
+    min-height: 52px;
   }
   .mw-table tr:last-child { border-bottom: 0; }
   .mw-table td {
-    display: block;
+    display: inline-flex;
+    align-items: center;
     padding: 0;
     border: 0;
     font-size: 14px;
-    line-height: 1.45;
+    line-height: 1.4;
     color: var(--mw-ink);
     text-align: left;
-    word-break: break-word;
     min-width: 0;
   }
-  /* Ticker cell (col 1) — logo + symbol */
+  /* Ticker — first cell, takes the available space on the left */
   .mw-table tr td:first-child {
-    grid-column: 1;
-    font-size: 15px;
+    flex: 1 1 auto;
+    font-size: 14.5px;
     font-weight: 600;
   }
-  /* Sparkline hides on mobile (too small to read). */
-  .mw-table tr td:nth-child(2) { display: none; }
-  /* Right-aligned numeric cells (Last + Δ) line up on the right side. */
+  /* Sparkline cell — visible on mobile (small inline graph). */
+  .mw-table tr td:nth-child(2) {
+    flex: 0 0 auto;
+    display: inline-flex;
+  }
+  .mw-table tr td:nth-child(2):empty { display: none; }
+  .mw-table tr td:nth-child(2) .mw-spark {
+    width: 56px;
+    height: 18px;
+  }
+  /* Numeric cells (Last + Δ): keep ONLY the last one on mobile (the change %)
+     since both share the right side and we want a single-line look. */
   .mw-table tr td.r {
-    grid-column: auto;
+    flex: 0 0 auto;
     text-align: right !important;
-    font-size: 14px;
+    font-size: 13.5px;
     font-variant-numeric: tabular-nums;
     color: var(--mw-c-num);
     white-space: nowrap;
   }
-  /* HIDE supplemental cells (Trigger / Status / Note / Context) on the list
-     view so each row stays single-line. The detail row below shows them
-     when the user taps. */
-  .mw-table tr td:nth-child(n+5) { display: none; }
-  /* Caret column at the end. Add a synthesized chevron after the last visible
-     cell so every row reads as tappable. */
+  /* When two .r cells exist (Last + Δ) hide the first ($ price) — change %
+     is the more useful signal at a glance. The full last price is in the detail. */
+  .mw-table tr td.r:not(:last-of-type) { display: none; }
+  /* Trigger zone, note, context, RSI text cells — hidden. Status pill cell
+     stays visible because it's a small action chip the user wants on the list. */
+  .mw-table tr td:nth-child(5),
+  .mw-table tr td:nth-child(7),
+  .mw-table tr td:last-child:not(.r):not(:first-child) {
+    display: none;
+  }
+  /* Status pill cell (watchlist col 6) keeps showing — it has the
+     TRIGGERED/FAR/NEAR/INVALID chip the user uses to scan. */
+  .mw-table tr td:nth-child(6) {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+  /* Append a chevron pseudo-element to every clickable row */
   .mw-row.is-clickable::after {
-    content: ">";
-    position: absolute;
-    right: 4px;
-    top: 50%;
-    transform: translateY(-50%);
+    content: "›";
+    flex: 0 0 auto;
     font-family: var(--mw-mono);
     color: var(--mw-ink-4);
-    font-size: 13px;
-    pointer-events: none;
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 2px;
   }
-  .mw-row.is-clickable {
-    position: relative;
-    padding-right: 22px !important;
-  }
-  /* Detail rows: full-width, no grid, normal flow */
-  .mw-table tr.mw-row-detail {
-    display: block;
-    padding: 0;
-    min-height: 0;
-    grid-template-columns: none;
-  }
-  .mw-table tr.mw-row-detail td {
-    display: block; grid-column: auto; grid-row: auto;
-    padding: 0; font-size: 14px;
-    color: var(--mw-ink);
-  }
-  .mw-table tr.mw-row-detail::after { display: none; }
+  /* Detail rows (inline expansion) are not used on mobile — tap routes to
+     the full-screen overlay instead. Hide the detail twin row entirely. */
+  .mw-table tr.mw-row-detail { display: none !important; }
   .mw-detail-inner { padding: 14px 14px 16px; margin-top: 4px; border-radius: 10px; }
 
   /* Tappable rows: subtle press feedback like iOS */

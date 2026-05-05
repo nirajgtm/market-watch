@@ -964,17 +964,6 @@ function renderStocksPane(b) {
       : `<p class="mw-empty">No WSB data.</p>`
   });
 
-  const statusLabels = { IN_ZONE: "In zone", TRIGGERED: "Triggered", NEAR: "Near", FAR: "Far", INVALIDATED: "Invalid" };
-  const statusCounts = ["TRIGGERED", "IN_ZONE", "NEAR", "FAR", "INVALIDATED"].map(st => ({
-    st, n: s.watchlist.filter(w => String(w.status).toUpperCase() === st).length
-  })).filter(x => x.n > 0);
-  const mix = card({
-    title: "Watchlist status",
-    body: statusCounts.length ? `<ul class="mw-statmix">${statusCounts.map(x => `
-      <li class="mw-statmix-row">${statusDot(x.st)}<span class="mw-statmix-label">${statusLabels[x.st] || x.st}</span><span class="mw-mono mw-statmix-n">${x.n}</span></li>
-    `).join("")}</ul>` : `<p class="mw-empty">No watchlist activity.</p>`
-  });
-
   const stocksAction = s.action ? `<section class="mw-card mw-card-span-3" style="padding:0">
     <div class="mw-card-footer mw-card-footer-${String(s.action.tier || "").toLowerCase().replace(/\s/g, "-")}" style="margin:0">
       ${actionPill(s.action.tier, "sm")}
@@ -986,7 +975,7 @@ function renderStocksPane(b) {
   const social = renderSocial(s.social, "stocks", "Stocks");
 
   const intro = renderTabIntro(s.tab_intro);
-  return `${intro}<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${mix}${stocksAction}${recs}${social}</div>`;
+  return `${intro}<div class="mw-grid">${watchlist}${movers}${sm}${wsb}${stocksAction}${recs}${social}</div>`;
 }
 
 // ──────────────── OPTIONS ────────────────
