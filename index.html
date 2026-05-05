@@ -738,17 +738,27 @@ function renderPerTabActions(actions) {
   </section>`;
 }
 
-// Render a tab-level intro: 3-5 bullets specific to the tab. No-op if the tab
-// has no tab_intro.bullets.
+// Render a tab-level intro: 3-5 bullets specific to the tab, in priority order.
+// On phones only the first 2 render visibly; the rest sit behind a "Show N more"
+// toggle. Desktop sees all bullets (the toggle is CSS-hidden there). Skill-side
+// contract: bullets[0] and bullets[1] must be the highest-priority insights.
 function renderTabIntro(intro) {
   if (!intro || typeof intro !== "object") return "";
-  const bullets = Array.isArray(intro.bullets) ? intro.bullets.filter(Boolean) : [];
+  const bullets = (Array.isArray(intro.bullets) ? intro.bullets.filter(Boolean) : []).slice(0, 5);
   if (!bullets.length) return "";
+  const items = bullets.map((it, i) => {
+    const cls = i >= 2 ? "mw-bullet-extra" : "";
+    return `<li class="${cls}"><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`;
+  }).join("");
+  const extra = Math.max(0, bullets.length - 2);
+  const toggle = extra > 0
+    ? `<button type="button" class="mw-tab-intro-more" data-action="intro-toggle"
+         data-more="Show ${extra} more"
+         data-less="Show less">Show ${extra} more</button>`
+    : "";
   return `<section class="mw-tab-intro">
-    <ul class="mw-tab-intro-bullets">${bullets
-      .slice(0, 5)
-      .map(it => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`)
-      .join("")}</ul>
+    <ul class="mw-tab-intro-bullets">${items}</ul>
+    ${toggle}
   </section>`;
 }
 
@@ -1548,6 +1558,16 @@ function onRootClick(e) {
 
   el = t.closest("[data-toggle]");
   if (el) { toggleDetail(el.dataset.toggle); return; }
+
+  el = t.closest('[data-action="intro-toggle"]');
+  if (el) {
+    const sec = el.closest('.mw-tab-intro');
+    if (sec) {
+      const on = sec.classList.toggle('is-expanded');
+      el.textContent = on ? el.dataset.less : el.dataset.more;
+    }
+    return;
+  }
 
   el = t.closest("[data-modal]");
   if (el) { openModal(el.dataset.modal); return; }

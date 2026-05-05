@@ -34,7 +34,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "top_actions": [],
 
   "macro": {
-    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items, IN PRIORITY ORDER — see below] },
     "actions": [
       // Today's Actions for the macro tab. 0-3 items.
       // Same shape as the legacy top_actions row plus the required `robinhood` field on ACTION-tier rows.
@@ -68,7 +68,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "stocks": {
-    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items, IN PRIORITY ORDER — see below] },
     "actions": [/* per-tab Today's Actions, same shape as macro.actions */],
     "watchlist": [
       { "ticker": "PODD", "last": 175.04, "change_pct": 1.68,
@@ -86,7 +86,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "options": {
-    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items, IN PRIORITY ORDER — see below] },
     "actions": [/* per-tab Today's Actions */],
     "unusual": [{ "ticker": "AAPL", "vol_oi": 1243, "context": "breakout + active",
                   "detail": {"plain":"...","pro":"..."} }],
@@ -121,7 +121,7 @@ Single file, public, served as static asset. Versioned via `version` integer.
   },
 
   "crypto": {
-    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items] },
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items, IN PRIORITY ORDER — see below] },
     "actions": [/* per-tab Today's Actions; can be empty when no specific crypto setup */],
     "status": "coming_soon | live",
     "note": "string when status=coming_soon",
@@ -190,6 +190,23 @@ surrounding row has no explicit `chg` or `change_pct`. Sparks are auto-enriched
 by the publisher, so the skill never needs to write them; however, every
 ticker the brief references should appear as a key in `sparks` so the color
 resolves on the page (the enricher fetches unknown tickers on first publish).
+
+## tab_intro.bullets priority contract
+
+`tab_intro.bullets` is an ordered list. **Bullets 0 and 1 must be the two highest-priority decision-relevant insights for the tab** — the things a user who only reads two lines today still walks away with the right read of the tape. Bullets 2-4 are supporting context (rotation detail, calendar, secondary setups, qualifications).
+
+The phone view only renders the first two by default; the rest sit behind a "Show N more" toggle. So the cost of misordering is real: a high-priority bullet stuck at index 4 won't be seen by mobile users until they expand. Order accordingly.
+
+Examples of priority-zero material:
+- Active trade gates (buying-rule status, regime change, vol tier shift)
+- Stops or trims that fire today
+- High-conviction setups whose entry zone is hot
+- Earnings or macro events with same-day impact
+
+Examples of priority-context material:
+- Secondary sector reads
+- Watchlist names that haven't reached entry zones yet
+- Background social/sentiment context
 
 ## Idempotent overwrite
 
