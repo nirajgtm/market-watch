@@ -393,6 +393,7 @@ function normalize(brief) {
     regime: brief.regime || "NEUTRAL",
     regime_note: brief.regime_note || "",
     headline: brief.headline,
+    summary_bullets: Array.isArray(brief.summary_bullets) ? brief.summary_bullets : null,
     actions,
     market_status: brief.market_status,
     sparks: brief.sparks || {},
@@ -491,76 +492,96 @@ function renderMasthead(b) {
       ${b.regime_note ? `<span class="mw-regime-note">· ${escHtml(b.regime_note)}</span>` : ""}
     </div>
     ${b.headline ? `<p class="mw-headline">${escHtml(pickModeText(b.headline))}</p>` : ""}
-    ${renderHeadlineBullets(b)}
+    ${renderSummaryBullets(b)}
   </header>`;
 }
 
-// Pull 4-5 cross-site signals into a compact bulleted summary under the headline.
-// Sources, in priority: ACTION-tier top_actions > watchlist TRIGGERED >
-// earnings within 7d > sector rotation read > biggest mover. Cap at 5.
+// Skill-authored bullets first; if absent (legacy briefs), derive from brief data.
+function renderSummaryBullets(b) {
+  const authored = Array.isArray(b.summary_bullets) ? b.summary_bullets.filter(Boolean) : [];
+  if (authored.length) {
+    return `<ul class="mw-headline-bullets">${authored
+      .slice(0, 5)
+      .map(text => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(String(text))}</li>`)
+      .join("")}</ul>`;
+  }
+  return renderHeadlineBullets(b);
+}
+
+// Pull 4-5 cross-site signals into a readable bulleted summary under the
+// headline. Each bullet is a full sentence anyone can scan. Priority:
+// ACTION-tier top_actions > watchlist triggered > earnings up > sector
+// rotation read > biggest mover > vol context. Cap at 5.
 function renderHeadlineBullets(b) {
   const bullets = [];
   const seen = new Set();
-  const push = (icon, text) => {
+  const push = (text) => {
+    if (!text) return;
     const key = String(text).toLowerCase();
     if (seen.has(key) || bullets.length >= 5) return;
     seen.add(key);
-    bullets.push({ icon, text });
+    bullets.push(String(text).replace(/\s+/g, " ").trim());
   };
+  const cap = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
-  // 1. ACTION-tier top_actions (most urgent)
+  // 1. ACTION-tier top_actions (most urgent) — already full sentences, surface as-is.
   for (const a of (b.actions || [])) {
-    if (bullets.length >= 3) break;
-    const verb = String(a.verb || "").toUpperCase();
-    if (verb === "ACTION" && a.text) {
-      push("!", `${a.target ? a.target + ": " : ""}${a.text}`);
+    if (bullets.length >= 2) break;
+    if (String(a.verb || "").toUpperCase() === "ACTION" && a.text) {
+      push(cap(String(a.text).replace(/\s+/g, " ")));
     }
   }
 
-  // 2. Watchlist TRIGGERED names
+  // 2. Watchlist TRIGGERED names → readable sentence.
   const triggered = (b.stocks?.watchlist || []).filter(
     w => String(w.status || "").toUpperCase() === "TRIGGERED"
   );
-  if (triggered.length) {
+  if (triggered.length === 1) {
+    const w = triggered[0];
+    push(`${w.ticker} watchlist setup is live in its trigger zone${w.trigger_zone ? " (" + w.trigger_zone + ")" : ""}.`);
+  } else if (triggered.length > 1) {
     const tk = triggered.map(w => w.ticker).slice(0, 3).join(", ");
-    push("o", `Watchlist triggered: ${tk}`);
+    push(`Watchlist setups are live on ${tk}.`);
   }
 
-  // 3. Earnings within 3 days (most pressing print)
-  const er = (b.macro?.earnings_7d || []).slice(0, 2);
+  // 3. Earnings within 7 days → human-friendly sentence.
+  const er = (b.macro?.earnings_7d || []).slice(0, 3);
   if (er.length) {
-    const t = er.map(e => `${e.ticker} ${e.date || ""}`.trim()).join(", ");
-    push("$", `Earnings up: ${t}`);
+    const list = er.map(e => `${e.ticker}${e.date ? " " + e.date : ""}`).join(", ");
+    push(`Earnings due this week: ${list}.`);
   }
 
-  // 4. Sector rotation read
+  // 4. Sector rotation read → already a full sentence; lower-case "OUT" etc kept.
   const rot = b.macro?.rotation_read || b.macro?.sector_rotation?.read || "";
-  if (rot) push("~", rot);
+  if (rot) push(cap(rot));
 
-  // 5. Biggest mover (gainer or loser, take whichever has the bigger absolute move)
+  // 5. Biggest mover (gainer or loser, whichever has the largest absolute move).
   const losers = b.stocks?.movers?.losers || [];
   const gainers = b.stocks?.movers?.gainers || [];
   const all = [...gainers, ...losers].filter(m => m && (m.chg != null || m.pct != null));
   if (all.length) {
-    all.sort((a, c) => Math.abs(c.chg ?? c.pct ?? 0) - Math.abs(a.chg ?? a.pct ?? 0));
+    all.sort((x, y) => Math.abs(y.chg ?? y.pct ?? 0) - Math.abs(x.chg ?? x.pct ?? 0));
     const m = all[0];
     const sym = m.ticker || m.tk || m.sym;
     const pct = m.chg ?? m.pct;
     if (sym && pct != null) {
-      push("^", `${sym} ${pct > 0 ? "+" : ""}${Number(pct).toFixed(2)}% intraday`);
+      const dir = pct > 0 ? "leading the tape, up" : "leading the losers, down";
+      push(`${sym} is ${dir} ${Math.abs(Number(pct)).toFixed(1)}% intraday.`);
     }
   }
 
-  // 6. ACTION VIX play if VIX bucket is meaningful
+  // 6. VIX volatility context.
   const vix = b.macro?.vol_yields?.vix;
   const term = b.macro?.vol_yields?.vix_term;
-  if (vix != null && term && bullets.length < 5) {
-    push("v", `VIX ${Number(vix).toFixed(1)}, ${String(term).replace(/_/g, " ").toLowerCase()}`);
+  if (vix != null && bullets.length < 5) {
+    const t = term ? String(term).replace(/_/g, " ").toLowerCase() : "";
+    const calmTag = vix < 15 ? "very calm" : vix < 20 ? "calm" : vix < 25 ? "elevated" : "stressed";
+    push(`Volatility is ${calmTag} (VIX ${Number(vix).toFixed(1)})${t ? ", futures in " + t : ""}.`);
   }
 
   if (!bullets.length) return "";
   return `<ul class="mw-headline-bullets">${bullets
-    .map(x => `<li><span class="mw-hb-icon">${escHtml(x.icon)}</span>${escHtml(x.text)}</li>`)
+    .map(text => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(text)}</li>`)
     .join("")}</ul>`;
 }
 
@@ -610,18 +631,27 @@ function renderTopActions(actions) {
   </section>`;
 }
 
+// Inline SVG icons for each section. Used by the mobile bottom nav and as a
+// visual cue on the desktop pill.
+const TAB_ICONS = {
+  macro: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>`,
+  stocks: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="4" height="7"/><rect x="10" y="9" width="4" height="11"/><rect x="17" y="5" width="4" height="15"/></svg>`,
+  options: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>`,
+  crypto: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8h5a2.5 2.5 0 0 1 0 5H9zM9 13h5.5a2.5 2.5 0 0 1 0 5H9zM10 6v2M10 18v2M14 6v2M14 18v2"/></svg>`,
+};
+
 const TABS = [
-  { id: "macro",   label: "Macro",   kicker: "regime · vol · yields" },
-  { id: "stocks",  label: "Stocks",  kicker: "watchlist · movers" },
-  { id: "options", label: "Options", kicker: "unusual · IV · LEAPS" },
-  { id: "crypto",  label: "Crypto",  kicker: "soon" },
+  { id: "macro",   label: "Macro" },
+  { id: "stocks",  label: "Stocks" },
+  { id: "options", label: "Options" },
+  { id: "crypto",  label: "Crypto" },
 ];
 
 function renderTabs(active) {
   return `<nav class="mw-tabs" role="tablist">${TABS.map(t => `
     <button class="mw-tab ${active === t.id ? "is-active" : ""}" role="tab" aria-selected="${active === t.id}" data-tab="${t.id}">
+      <span class="mw-tab-icon" aria-hidden="true">${TAB_ICONS[t.id] || ""}</span>
       <span class="mw-tab-label">${t.label}</span>
-      <span class="mw-tab-kicker mw-mono">${t.kicker}</span>
     </button>`).join("")}</nav>`;
 }
 

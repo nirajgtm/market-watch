@@ -20,6 +20,14 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "vix_bucket": "calm | normal | elevated | fearful",
   "headline": { "plain": "zero-jargon, expand acronyms", "pro": "analyst shorthand OK" },
 
+  "summary_bullets": [
+    "Required. 4 to 5 readable sentences pulled fresh on every brief run.",
+    "Each bullet is a full sentence (~80-120 chars) summarizing one important thing across the entire site.",
+    "Sources, in priority order: ACTION-tier top_action, watchlist transitions, earnings within 7d, sector rotation read, biggest mover, vol context.",
+    "Do not duplicate the headline sentence; bullets expand on it with specifics anyone can scan.",
+    "Plain mode tone (no jargon, no em-dashes, no abbreviations); this row reads like a friendly daily wrap."
+  ],
+
   "market_status": {
     "tier": "MARKET CLOSED | PRE-MARKET | MARKET OPEN | AFTER-HOURS",
     "text": "one sentence describing current session state and next transition"
