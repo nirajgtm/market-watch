@@ -18,9 +18,6 @@ Single file, public, served as static asset. Versioned via `version` integer.
   "regime": "BULL | BEAR | NEUTRAL",
   "regime_note": "short qualifier, e.g. 'FOMO-extended', 'breadth narrow'",
   "vix_bucket": "calm | normal | elevated | fearful",
-  "headline":         { "plain": "...", "pro": "..." },        // OPTIONAL: not rendered on the page anymore. Per-tab tab_intro.headline replaces it.
-  "summary_bullets":  [],                                        // DEPRECATED: no surface renders this. Use per-tab tab_intro.bullets.
-
   "market_status": {
     "tier": "MARKET CLOSED | PRE-MARKET | MARKET OPEN | AFTER-HOURS",
     "text": "one sentence describing current session state and next transition"

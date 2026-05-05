@@ -317,23 +317,7 @@ html, body {
   font-feature-settings: "ss01" 1;
 }
 
-.mw-headline-bullets {
-  list-style: none;
-  margin: 14px auto 0;
-  padding: 0;
-  max-width: 760px;
-  display: grid;
-  gap: 8px;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--mw-ink-2);
-  text-align: left;
-}
-.mw-headline-bullets li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
+/* Bullet-dot used by .mw-tab-intro-bullets and any future bulleted blocks */
 .mw-hb-dot {
   flex: 0 0 14px;
   color: var(--mw-accent);
@@ -410,25 +394,6 @@ html, body {
   background: var(--mw-accent-soft);
   border-color: var(--mw-accent);
   color: var(--mw-accent);
-}
-
-.mw-headline {
-  font-family: var(--mw-display);
-  font-size: clamp(20px, 2.6vw, 28px);
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 28px 0 0;
-  max-width: none;
-  text-align: center;
-  color: var(--mw-ink);
-  text-wrap: balance;
-}
-.mw-headline::before {
-  content: "";
-  display: block;
-  width: 36px; height: 1px;
-  background: var(--mw-rule-2);
-  margin: 0 auto 16px;
 }
 
 /* Per-tab intro: small headline + 3-5 bullets at the top of each pane */
@@ -1599,9 +1564,6 @@ html, body {
   }
 
   /* Headline / regime / hero copy gets a touch more breathing room */
-  .mw-headline { font-size: 16px; line-height: 1.5; padding: 0 4px; }
-  .mw-headline-bullets { font-size: 14.5px; padding: 0 2px; }
-
   /* No outline on tap; replaced by background flash above */
   button { -webkit-tap-highlight-color: transparent; }
 

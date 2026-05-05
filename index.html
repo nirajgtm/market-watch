@@ -416,8 +416,6 @@ function normalize(brief) {
     updated: brief.updated_at || brief.last_refreshed_at,
     regime: brief.regime || "NEUTRAL",
     regime_note: brief.regime_note || "",
-    headline: brief.headline,
-    summary_bullets: Array.isArray(brief.summary_bullets) ? brief.summary_bullets : null,
     actions,
     market_status: brief.market_status,
     sparks: brief.sparks || {},
@@ -523,20 +521,6 @@ function renderMasthead(b) {
   </header>`;
 }
 
-// Skill-authored bullets first; if absent (legacy briefs), derive from brief data.
-// Bullets can be strings (legacy) OR { plain, pro } objects (current); pickModeText
-// picks the right variant.
-function renderSummaryBullets(b) {
-  const authored = Array.isArray(b.summary_bullets) ? b.summary_bullets.filter(Boolean) : [];
-  if (authored.length) {
-    return `<ul class="mw-headline-bullets">${authored
-      .slice(0, 5)
-      .map(item => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(item))}</li>`)
-      .join("")}</ul>`;
-  }
-  return renderHeadlineBullets(b);
-}
-
 // Render a tab-level intro: a small headline plus 3-5 bullets specific to the tab.
 // No-op if the tab has no tab_intro block.
 function renderTabIntro(intro) {
@@ -551,83 +535,6 @@ function renderTabIntro(intro) {
       .map(it => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(pickModeText(it))}</li>`)
       .join("")}</ul>` : ""}
   </section>`;
-}
-
-// Pull 4-5 cross-site signals into a readable bulleted summary under the
-// headline. Each bullet is a full sentence anyone can scan. Priority:
-// ACTION-tier top_actions > watchlist triggered > earnings up > sector
-// rotation read > biggest mover > vol context. Cap at 5.
-function renderHeadlineBullets(b) {
-  const bullets = [];
-  const seen = new Set();
-  const push = (text) => {
-    if (!text) return;
-    const key = String(text).toLowerCase();
-    if (seen.has(key) || bullets.length >= 5) return;
-    seen.add(key);
-    bullets.push(String(text).replace(/\s+/g, " ").trim());
-  };
-  const cap = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
-
-  // 1. ACTION-tier top_actions (most urgent) — already full sentences, surface as-is.
-  for (const a of (b.actions || [])) {
-    if (bullets.length >= 2) break;
-    if (String(a.verb || "").toUpperCase() === "ACTION" && a.text) {
-      push(cap(String(a.text).replace(/\s+/g, " ")));
-    }
-  }
-
-  // 2. Watchlist TRIGGERED names → readable sentence.
-  const triggered = (b.stocks?.watchlist || []).filter(
-    w => String(w.status || "").toUpperCase() === "TRIGGERED"
-  );
-  if (triggered.length === 1) {
-    const w = triggered[0];
-    push(`${w.ticker} watchlist setup is live in its trigger zone${w.trigger_zone ? " (" + w.trigger_zone + ")" : ""}.`);
-  } else if (triggered.length > 1) {
-    const tk = triggered.map(w => w.ticker).slice(0, 3).join(", ");
-    push(`Watchlist setups are live on ${tk}.`);
-  }
-
-  // 3. Earnings within 7 days → human-friendly sentence.
-  const er = (b.macro?.earnings_7d || []).slice(0, 3);
-  if (er.length) {
-    const list = er.map(e => `${e.ticker}${e.date ? " " + e.date : ""}`).join(", ");
-    push(`Earnings due this week: ${list}.`);
-  }
-
-  // 4. Sector rotation read → already a full sentence; lower-case "OUT" etc kept.
-  const rot = b.macro?.rotation_read || b.macro?.sector_rotation?.read || "";
-  if (rot) push(cap(rot));
-
-  // 5. Biggest mover (gainer or loser, whichever has the largest absolute move).
-  const losers = b.stocks?.movers?.losers || [];
-  const gainers = b.stocks?.movers?.gainers || [];
-  const all = [...gainers, ...losers].filter(m => m && (m.chg != null || m.pct != null));
-  if (all.length) {
-    all.sort((x, y) => Math.abs(y.chg ?? y.pct ?? 0) - Math.abs(x.chg ?? x.pct ?? 0));
-    const m = all[0];
-    const sym = m.ticker || m.tk || m.sym;
-    const pct = m.chg ?? m.pct;
-    if (sym && pct != null) {
-      const dir = pct > 0 ? "leading the tape, up" : "leading the losers, down";
-      push(`${sym} is ${dir} ${Math.abs(Number(pct)).toFixed(1)}% intraday.`);
-    }
-  }
-
-  // 6. VIX volatility context.
-  const vix = b.macro?.vol_yields?.vix;
-  const term = b.macro?.vol_yields?.vix_term;
-  if (vix != null && bullets.length < 5) {
-    const t = term ? String(term).replace(/_/g, " ").toLowerCase() : "";
-    const calmTag = vix < 15 ? "very calm" : vix < 20 ? "calm" : vix < 25 ? "elevated" : "stressed";
-    push(`Volatility is ${calmTag} (VIX ${Number(vix).toFixed(1)})${t ? ", futures in " + t : ""}.`);
-  }
-
-  if (!bullets.length) return "";
-  return `<ul class="mw-headline-bullets">${bullets
-    .map(text => `<li><span class="mw-hb-dot" aria-hidden="true">·</span>${escHtml(text)}</li>`)
-    .join("")}</ul>`;
 }
 
 function renderMarketStatus(s) {
@@ -1250,7 +1157,7 @@ function renderModal() {
     const items = others.map(b => `<li class="mw-archive-item" data-archive-date="${escAttr(b.date)}">
       <span class="mw-archive-date">${escHtml(formatDate(b.date))}</span>
       <span class="mw-regime mw-regime-sm mw-regime-${escHtml(b.regime || "NEUTRAL")}">${escHtml(b.regime || "-")}</span>
-      <span class="mw-archive-headline">${escHtml(b.headline || "")}</span>
+      <span class="mw-archive-headline">${escHtml(b.regime_note || "")}</span>
     </li>`).join("");
     return modalShell("Archive", `${others.length} prior briefs.`,
       others.length ? `<ul class="mw-archive-list">${items}</ul>` : `<p class="mw-empty">No prior briefs yet.</p>`);
