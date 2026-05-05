@@ -5,10 +5,10 @@
       "date": "2026-05-04",
       "updated_at": "2026-05-04T12:50:00-07:00",
       "regime": "BULL",
-      "regime_note": "FOMO-extended; tech and logistics rolling, energy/healthcare/staples bid",
+      "regime_note": "Stretched at the highs; tech and logistics rolling, energy and healthcare leading",
       "vix_bucket": "normal",
       "headline": {
-        "plain": "Insulet (PODD) printing the rejection day shorts were waiting for. Grab earnings drop after the close.",
+        "plain": "Insulet (PODD) is finally rolling over in its short setup zone. Grab earnings drop right after the close.",
         "pro": "PODD -1.86 intraday in 170-175 zone, rejection candle confirming. GRAB ER 4PM ET. ARM ER blackout active (5/06). VIX 18.3."
       },
       "summary_bullets": [
@@ -26,36 +26,36 @@
         {
           "verb": "ACTION",
           "target": "PODD",
-          "text": "PODD printing the red rejection candle the short setup needed. In zone, RSI 28, first material red day of the bounce.",
+          "text": "Insulet (PODD) is finally rolling over after a weak bounce. The setup short traders were waiting for is here.",
           "detail": {
-            "plain": "Insulet broke down on earnings, bounced into the 170 to 175 zone, and is now printing its first red day of the bounce at minus 1.9 percent. That is the rejection signal short traders were waiting for. The cleanest expression is a defined-risk put spread expiring late June. Stop on a close above 183 (which would mean the breakdown level was reclaimed and the short thesis is wrong).",
+            "plain": "Insulet broke down on its earnings print, then bounced into the 170 to 175 zone. Today is the first red day of that bounce, down about 2 percent. That is the rollover signal short traders were waiting for, and the cleanest way to play it is a put spread expiring in late June. Stop out if Insulet closes back above 183, which would mean the breakdown level was reclaimed and the short idea is wrong.",
             "pro": "PODD 171.78 -1.86 pct intraday, RSI 28.4, 20MA 191.40, ATR 7.51, FOMO ceiling 206.43. Mechanical TRIGGERED plus thesis-level confirmation: lower-high plus red intraday in 170-175 zone. Vehicle: debit put spread 6/20 170/160. Bid-ask must be under 10 pct of mid before fill. Stop on close above 183. Target 145, secondary 135. R:R approx 4:1. SYK -6.47 plus GEHC weakness confirm sector breakdown context."
           }
         },
         {
           "verb": "WATCH",
           "target": "GRAB",
-          "text": "Grab earnings drop after the close at 4 PM ET. Long-dated LEAP holders typically hold through.",
+          "text": "Grab earnings drop after the close at 1 PM Pacific. Long-dated call holders typically just hold through.",
           "detail": {
-            "plain": "Grab is a Southeast Asian ride-hailing and payments company. The print drops at 4 PM Eastern. Stock has been chronically volatile around prints. For long-dated call holders the print is a non-event because the position is leveraged to the structural story, not the quarter. Short-term option holders should expect a 6 to 12 percent overnight move.",
+            "plain": "Grab is a Southeast Asian ride-hailing and payments company. Earnings drop right after the close at 1 PM Pacific. The stock often jumps 6 to 12 percent overnight on these prints. If you only own a long-dated call (a year or more out), the print is mostly a non-event because your position is leveraged to the multi-year story, not the quarter. If you want a small hedge, a short-dated 3.50 put is cheap. Otherwise just hold.",
             "pro": "GRAB 3.61 -1.77 pct intraday, RSI 39.2. Q1 consensus revenue 921 to 950M, EPS 0.02 to 0.05. Implied move 6-12 pct. LEAP delta exposure low; downside bounded by position size. Tail hedge if needed: 5/15 3.50P. Income alternative if held in stock: covered call 3.80 5/15 for IV-pump premium."
           }
         },
         {
           "verb": "WATCH",
           "target": "ARM",
-          "text": "ARM Holdings reports Wednesday after the close. Auto-blackout zone is active for option holders.",
+          "text": "ARM reports earnings Wednesday after the close. Anyone holding ARM options should plan a move before then.",
           "detail": {
-            "plain": "ARM Holdings is a major AI chip-design name. Earnings drop Wednesday after the close. Implied volatility on options will rise into the print and crash after. If you hold long calls, scale out half into the implied volatility pump or buy a tail put hedge.",
+            "plain": "ARM is a major AI chip-design name. Earnings drop Wednesday after the close. Options premium runs up before the print and collapses right after, so long-call holders should consider taking some off into the run-up tomorrow. Another option: sell a covered call against your shares for income on the spike. Holding fully through the print is fine if you have conviction; just expect a sharp move either way.",
             "pro": "ARM 204.24 -3.29 pct intraday, ER 5/06 AMC. IV crush risk 25-40 pct on options legs. Long-call holders: scale out 50 pct into IV expansion 24h pre-print or buy short-dated put hedge for tail. Income alternative: sell a covered call on the spike for premium."
           }
         },
         {
           "verb": "NO ACTION",
           "target": "INDEX",
-          "text": "Index rule blocks new long entries today: SPY and QQQ are above 20-day average plus 2 ATR.",
+          "text": "The buying rule is paused: the S and P 500 and Nasdaq have run too far above their 20-day average to chase here.",
           "detail": {
-            "plain": "Both major indexes have run too far too fast. The buying rule says wait for a pullback before adding new long positions. This is not a sell signal; existing holdings stay put. It just means do not chase breakouts at these levels.",
+            "plain": "Both major indexes have run too far too fast. The system pauses new long entries until prices cool back to their 20-day average. This is not a sell signal; existing holdings stay put. It just means do not chase breakouts at these stretched levels. The only directional trade allowed today is the VIX put spread for income.",
             "pro": "SPY at ATH RSI 79, QQQ ATH RSI 82.8, both above 20MA plus 2 ATR. FOMO rule active: deterministic block on long entries until pullback to 20MA or below. LEAP signal WAIT for both, RSI extended. VIX put spread is the only regime-permitted directional today."
           }
         }
@@ -66,9 +66,9 @@
             "ticker": "SPY",
             "last": 720.65,
             "rsi": 79.1,
-            "note": "ATH, above all MAs, RSI extreme",
+            "note": "At a record high, run too far",
             "detail": {
-              "plain": "S and P 500 ETF closed Friday at a record high. The relative strength index is 79, which is well above the 70 line that traders watch as overheated. Pullbacks of 3 to 5 percent are the typical reset from this level.",
+              "plain": "S and P 500 ETF closed Friday at a record high. The overbought meter is reading 79 out of 100, which is well past the 70 line traders watch as overheated. Pullbacks of 3 to 5 percent are the typical reset from levels this stretched, so wait for one before adding new long exposure.",
               "pro": "SPY 720.65, +0.94 pct 5d, RSI14 79.1, ATR14 6.73. All MAs aligned bullish but stretched. 20MA at 698.5, 1 ATR pullback target 713-714."
             }
           },
@@ -76,9 +76,9 @@
             "ticker": "QQQ",
             "last": 674.15,
             "rsi": 82.8,
-            "note": "ATH, RSI 82.8 most extreme of the three",
+            "note": "At a record high, the most stretched of the three",
             "detail": {
-              "plain": "Nasdaq 100 ETF is the most stretched of the major indexes. RSI at 82.8 is rare and historically precedes a cooling-off period. Tech stocks specifically have been rotating out at the sector level.",
+              "plain": "Nasdaq 100 ETF is the most stretched of the major indexes, with the overbought meter at 83. Tech stocks have actually been quietly rotating out at the sector level, even as the index hits highs. A snap back toward the 20-day average around 645 to 655 is the most likely path from here.",
               "pro": "QQQ 674.15, +1.55 pct 5d, RSI14 82.8, ATR14 9.0. 20MA 638.20. Sector rotation: XLK -9.06 5d, the worst leg in the wheel. Mean reversion target 645-655."
             }
           },
@@ -86,9 +86,9 @@
             "ticker": "IWM",
             "last": 279.28,
             "rsi": 72.3,
-            "note": "Small caps catching up but less stretched than QQQ",
+            "note": "Less stretched than tech",
             "detail": {
-              "plain": "Russell 2000 ETF is also overbought but less extreme than tech. Small caps usually move together with the broader market and respond strongly to interest rate moves.",
+              "plain": "Russell 2000 ETF is also overbought but less extreme than tech, with the meter at 72. Small caps tend to move with the broader market and react strongly to interest rates. Watch the ISM Services number Tuesday for the next big direction signal.",
               "pro": "IWM 279.28, +0.95 pct 5d, RSI14 72.3, ATR14 4.17. Less FOMO-extended than QQQ. Yield-sensitive: 10Y 4.38, watch ISM Services Tue."
             }
           }
@@ -107,7 +107,7 @@
               "etf": "XLE",
               "score": 13.1,
               "detail": {
-                "plain": "Energy sector ETF leads the market over the last week. Oil up 7 percent in 5 days is the underlying driver. This kind of rotation often persists for 2 to 4 weeks once it starts.",
+                "plain": "Energy stocks are leading the market over the last week, with the sector ETF score up 13.6. Oil up 7 percent in 5 days is the underlying driver. Rotations like this often run for 2 to 4 weeks once they start.",
                 "pro": "XLE rotation score plus 13.1, oil +7.19 pct 5d. Watchlist long entry below 56.50 still needs a flush; price 58.85 sits 4.2 pct above trigger. Confirms commodity bid against tech rollover."
               }
             },
@@ -115,7 +115,7 @@
               "etf": "XLV",
               "score": 10.75,
               "detail": {
-                "plain": "Healthcare sector ETF is second strongest. Defensive bid suggests money rotating out of risk and into stable cash-flow names.",
+                "plain": "Healthcare is the second strongest sector this week. A bid in defensive names usually means money is rotating out of riskier stocks and into stable cash-flow companies. Humana on the watchlist is the cleanest individual expression of this trend.",
                 "pro": "XLV rotation +10.75. Confirms defensive bid (XLP and XLU nearby). HUM watchlist setup is the cleanest defensive long expression: long-on-pullback below 228 with reversal candle, target 267, R:R 3.4 to 1."
               }
             },
@@ -123,7 +123,7 @@
               "etf": "XLU",
               "score": 9.29,
               "detail": {
-                "plain": "Utilities sector is bid alongside healthcare. This is a classic late-cycle defensive rotation pattern.",
+                "plain": "Utilities are getting bid alongside healthcare. Late in a market cycle, money typically rotates into these defensive sectors. No clean entry yet without a pullback.",
                 "pro": "XLU rotation +9.29. Yield-driven plus AI power-demand secular bid. No specific entry without pullback below 20MA."
               }
             }
@@ -133,7 +133,7 @@
               "etf": "XLK",
               "score": -9.06,
               "detail": {
-                "plain": "Tech sector ETF lags badly in the last 5 days. This is the loudest signal in the market right now: money is leaving tech and going to energy and defensives. Watch for whether it continues into next week or reverses.",
+                "plain": "Tech is by far the weakest sector this week, down 9 over 5 days. This is the loudest signal in the market right now: money is leaving tech and going to energy and defensives. If you have a heavy tech position and have not trimmed in a while, this is the warning shot.",
                 "pro": "XLK rotation -9.06, the largest single-sector laggard. Confirms 5d rotation regime. Tech-heavy holders: this is the early read on whether to trim or hedge. NDX-heavy equity portfolios face headwind unless XLK reclaims its 20MA."
               }
             },
@@ -141,19 +141,19 @@
               "etf": "XLY",
               "score": -0.8,
               "detail": {
-                "plain": "Consumer discretionary ETF is barely positive over 5 days. Slight rollover signals consumer caution.",
+                "plain": "Consumer discretionary is barely positive over 5 days, a slight rollover that signals consumer caution. Watch Rivian and Clorox today as early-warning examples.",
                 "pro": "XLY rotation -0.80. Modest weakness; not a primary signal. Watch RIVN -8.41 pct Friday and CLX -9.67 as discretionary distress markers."
               }
             }
           ],
-          "read": "Defensive plus energy bid against tech rollover is the cleanest 5-day signal. If it persists Mon-Wed, mean-revert trades into XLE and XLV outperform breakout chases."
+          "read": "Energy and defensive sectors are bid against a tech rollover. If this continues into Tuesday and Wednesday, mean-revert trades into energy and healthcare will outperform breakout chases."
         },
         "events_14d": [
           {
             "date": "Mon May 4",
             "event": "Fed Williams Speech, Factory Orders MoM (Mar)",
             "detail": {
-              "plain": "Fed President John Williams speaks Monday. Markets will scan for any change in tone about cuts. Factory orders is a mild data point.",
+              "plain": "Fed President John Williams speaks Monday. Markets will scan for any change in tone about rate cuts. Factory orders is a smaller data point on the same day.",
               "pro": "Williams typically dovish-leaning; if he flags labor softness it is a relief tape. Factory Orders consensus low single digit; Mar print marginal market mover."
             }
           },
@@ -161,7 +161,7 @@
             "date": "Tue May 5",
             "event": "ISM Services PMI (Apr), Fed Barr Speech, EIA Crude Inventories",
             "detail": {
-              "plain": "Tuesday is the bigger calendar day. Services PMI is the largest piece of US data this week. A reading above 52 means services growing strong; below 50 means contracting. Fed Barr also speaks.",
+              "plain": "Tuesday is the bigger calendar day. The Services PMI is the largest piece of US data this week. A reading above 52 means services are growing strong, below 50 means contracting. Fed Barr also speaks.",
               "pro": "ISM Services consensus 51.5 (last 51.7). Above 53 means yields up means tech selloff deepens. Below 50 means bond rally plus tech bid back. Watch 10Y reaction first. Crude inv: oil-sensitive; XLE setup hinges on it."
             }
           },
@@ -169,7 +169,7 @@
             "date": "Wed May 6",
             "event": "ARM and AMD earnings AMC, ALB/AMCR/APA earnings",
             "detail": {
-              "plain": "ARM Holdings and AMD report earnings after the close. Expect implied volatility to rise into the print and crash after. AI semiconductor names move on these reports.",
+              "plain": "ARM and AMD report earnings the same day, both after the close. AI semiconductor stocks tend to all move together on these prints. Expect a sharp options move up in premium before, then collapse right after.",
               "pro": "ARM and AMD ER 5/06 AMC, IV crush probable post-print. Pre-earnings IV expansion in AAPL/AVGO/SNDK chains likely from sympathy."
             }
           },
@@ -177,7 +177,7 @@
             "date": "Thu May 7",
             "event": "Initial Jobless Claims, AMGN/MCD earnings",
             "detail": {
-              "plain": "Weekly jobs data and a couple of large-cap names report Thursday.",
+              "plain": "Weekly jobless claims data and a couple of large-cap earnings reports drop Thursday. AMGN and McDonalds are the names to watch.",
               "pro": "Claims consensus high 200s; persistent uptick in claims has been the dovish-bias swing factor for weeks."
             }
           }
@@ -186,43 +186,43 @@
           {
             "ticker": "ARM",
             "date": "Wed May 6 AMC",
-            "note": "AI semi tone-setter; auto-blackout zone active for holders",
+            "note": "Sets the tone for AI semiconductor stocks; option holders should plan around it",
             "detail": {
-              "plain": "ARM Holdings is one of the biggest AI chip-design names. The reaction sets the tone for the whole AI semiconductor group. Holders should plan whether to hold through the print or trim into the spike in implied volatility.",
+              "plain": "ARM is one of the biggest AI chip-design names. The reaction to its earnings sets the tone for the entire AI semiconductor group. If you hold options on ARM, plan ahead: scale out half into the option premium spike before the print, or buy a small put as a tail hedge. Holding fully through is fine if you have conviction.",
               "pro": "ARM ER 5/06 AMC. IV crush risk sized at 25-40 pct on options legs. Long-call holders: scale out 50 pct into IV expansion 24h pre-print or buy short-dated put hedge for tail. Alternative: sell a covered call on the spike for income."
             }
           },
           {
             "ticker": "GRAB",
             "date": "Mon May 4 AMC (4 PM ET)",
-            "note": "Southeast Asia ride-hailing/payments; print drops in 15 min, expected move 6-12 pct overnight",
+            "note": "Print drops in 15 minutes; expected move 6 to 12 percent overnight",
             "detail": {
-              "plain": "Grab is a Southeast Asian ride-hailing and payments company. Earnings drop today at 4 PM Eastern. Q1 consensus revenue around 921 to 950 million dollars and earnings per share between 0.02 and 0.05. The stock has been chronically volatile around prints. LEAP holders typically hold through given the long-dated nature.",
+              "plain": "Grab is a Southeast Asian ride-hailing and payments company. The print drops today right after the close. Consensus has revenue around 921 to 950 million dollars and earnings per share between 2 and 5 cents. The stock typically moves 6 to 12 percent overnight on these prints.",
               "pro": "GRAB 3.61 -1.77 pct, RSI 39.2. ER 5/04 AMC 4PM ET. Q1 consensus rev 921-950M, EPS 0.02-0.05. Implied move 6-12 pct overnight. LEAP delta exposure low; downside bounded by position size. Tail hedge if needed: 5/15 3.50P. Income alternative: covered call 3.80 5/15 for IV-pump premium."
             }
           },
           {
             "ticker": "ALB",
             "date": "Wed May 6",
-            "note": "Lithium pure-play; EV demand read-through",
+            "note": "Largest US lithium producer; read-through to electric-vehicle demand",
             "detail": {
-              "plain": "Albemarle is the largest lithium producer in the US. Lithium prices have been compressed; any guidance on demand recovery moves the stock.",
+              "plain": "Albemarle is the largest lithium producer in the US. Lithium prices have been compressed for a while; any guidance on demand recovery moves the stock. Watch Rivian and Tesla after-hours reactions for sympathy moves.",
               "pro": "ALB cyclical lithium proxy. Watch RIVN/TSLA aftermarket reaction; sympathy through XLB and EV-supplier basket."
             }
           },
           {
             "ticker": "MCD",
             "date": "Thu May 7",
-            "note": "Consumer health bellwether",
+            "note": "Bellwether read on the global consumer",
             "detail": {
-              "plain": "McDonalds gives a read on the global consumer. Same-store sales and US traffic are the main numbers to watch.",
+              "plain": "McDonalds gives a read on the global consumer. The two numbers to watch are same-store sales and US traffic. A surprise either way moves consumer-discretionary names broadly.",
               "pro": "MCD consumer health read; defensive in name but cyclical in traffic. Same-store sales surprise drives XLY through-read."
             }
           }
         ],
         "action": {
           "tier": "WATCH",
-          "text": "Macro day Mon-Tue. Williams plus Barr plus ISM Services define whether the rotation persists or reverses."
+          "text": "Big macro days Monday and Tuesday. Williams, Barr, and Services PMI together decide whether the rotation persists or reverses."
         },
         "recommendations": {
           "buy": [
@@ -230,12 +230,12 @@
               "ticker": "XLE",
               "verdict": "BUY ON DIP",
               "confidence": 68,
-              "confidence_reason": "Energy is the cleanest 5-day rotation winner with oil up 7 pct, but entry is 4 pct above the trigger and a flush below 56.50 is still required.",
+              "confidence_reason": "Energy is the cleanest 5-day rotation winner with oil up 7 percent, but the entry is 4 percent above the trigger and a pullback below 56.50 is still required.",
               "vehicle": "ETF",
-              "pros": "Strongest sector rotation in the universe at +13.1, sustained two days. Oil leadership at +7.19 pct 5d confirms underlying commodity bid. XLE base built 54-55 holds and is bouncing toward 20MA reclaim, implying a clean 56.50 to 59.50 trade with R:R 2.14.",
-              "cons": "XLE last 58.85 is well above the 56.50 entry trigger; chasing here gives away most of the edge. Oil could reverse on unexpected inventory build Tuesday. A close below 54.50 invalidates the setup entirely.",
+              "pros": "Strongest sector rotation in the universe at plus 13.6, and it is sustained over two days. Oil leading at plus 7 percent over 5 days confirms the underlying commodity bid. The energy ETF base built around 54 to 55 is holding, and the bounce toward the 20-day average implies a clean trade from 56.50 to 59.50 with reward roughly twice the risk.",
+              "cons": "The energy ETF is currently at 58.85, well above the 56.50 entry trigger. Chasing here gives away most of the edge. Oil could reverse on a surprise inventory build Tuesday. A close below 54.50 invalidates the setup entirely.",
               "action": {
-                "plain": "Set a price alert at 56.50. If energy ETF pulls back into that zone, buy 100 to 200 shares with a stop at 55. Target around 59.50.",
+                "plain": "Set a price alert at 56.50 on the energy ETF. If it pulls back into that zone, buy 100 to 200 shares with a stop at 55. Target around 59.50.",
                 "pro": "Search XLE. Set price alert at 56.50. On hit: Buy Limit at mid, GFD. Stop-Limit GTC at 55.10 limit 54.85. Target Limit GTC at 59.50."
               }
             },
@@ -243,12 +243,12 @@
               "ticker": "VIX 6/17 17/15 put spread",
               "verdict": "BUY VIA SPREAD",
               "confidence": 72,
-              "confidence_reason": "Spot VIX 17.5 with steep contango plus 3M 20.37 gives structural roll-down tailwind, and the trade is the only deterministic-rule-permitted directional today.",
+              "confidence_reason": "Volatility futures are paying you to sit short with calm conditions and a roll-down tailwind, and it is the only directional trade allowed today by the buying rule.",
               "vehicle": "put debit spread",
-              "pros": "Structural VIX contango at +2.87 pp creates a roll-down tailwind that compounds with theta. Vol regime is calm with steep contango; spot 17.5 sits in the 14-22 normal-calm corridor where short-vol historically pays. Defined-risk credit spread caps loss if vol spikes.",
-              "cons": "Single fat-tail vol spike erases multiple months of credit; max risk is 5x the credit. VIX options are settled to a unique cash-settled calculation; assignment math differs from equity options. If spot VIX collapses below 15, the trade can pin or reverse on long-strike pressure.",
+              "pros": "VIX futures are in steep contango, meaning later months are pricing higher than the spot reading. That structure plus theta gives a tailwind to a short position. The VIX is 17.5, sitting in the calm 14 to 22 corridor where short-volatility trades historically pay. The put spread caps the maximum loss if volatility spikes.",
+              "cons": "A single fat-tail volatility spike can erase several months of credit. Maximum loss is roughly 5 times the credit collected. VIX options are settled to a unique cash calculation, so the math on assignment is different from regular equity options. If VIX collapses below 15, the trade can pin or reverse.",
               "action": {
-                "plain": "Sell a put spread on VIX expiring June 17. The max you can lose is fixed and small. The goal is for VIX to stay above 17, where you keep most of the credit.",
+                "plain": "Sell a put spread on the VIX expiring June 17. The most you can lose is fixed and small. The trade pays out if the VIX stays above 17, where you keep most of the credit.",
                 "pro": "Search VIX. Trade Options. Expiration 2026-06-17. Sell to Open 1 VIX 17P, Buy to Open 1 VIX 15P. Limit at net credit 0.40 mid, GFD. Max risk 200 per spread, size max 1 spread per 5k equity. Exit at 50 pct of max credit OR within 7 DTE."
               }
             }
@@ -258,10 +258,10 @@
               "ticker": "XLK",
               "verdict": "TRIM IF EXTENDED",
               "confidence": 60,
-              "confidence_reason": "Tech is the worst 5-day sector laggard at -9.06 with QQQ RSI 82.8, but mega-cap earnings are still pending so the rotation could reverse on a single AAPL or NVDA print.",
+              "confidence_reason": "Tech is the worst 5-day sector laggard at minus 9 with the Nasdaq overbought meter at 83, but mega-cap earnings are still pending so the rotation could reverse on a single Apple or Nvidia print.",
               "vehicle": "ETF",
-              "pros": "XLK is the largest sector laggard 5d at -9.06. QQQ RSI 82.8 is among the most extended readings of the year, and rotation regimes typically last 2-4 weeks. Defensive plus energy bid suggests money is actively leaving tech, not just rotating within.",
-              "cons": "Mega-cap earnings season is mid-cycle and a single AAPL or NVDA print can reverse the rotation overnight. Trimming a winning sector at a top is the highest-regret pattern in active management. XLK could reclaim 20MA quickly if ISM Services prints soft and yields fall.",
+              "pros": "Tech is the largest sector laggard over 5 days at minus 9. The Nasdaq overbought meter is among the most extended readings of the year, and rotation regimes typically last 2 to 4 weeks. Defensive plus energy bid suggests money is actively leaving tech, not just rotating within tech.",
+              "cons": "Mega-cap earnings season is mid-cycle, and a single Apple or Nvidia print can reverse the rotation overnight. Trimming a winning sector at a top is the highest-regret pattern in active investing. Tech could reclaim its 20-day average quickly if Tuesday Services PMI prints soft and yields fall.",
               "action": {
                 "plain": "If you have a heavy tech position and have not trimmed in months, peel back 10 to 15 percent into strength. This is risk control, not a directional sell call.",
                 "pro": "If overweight XLK or NDX-style names: scale out 10-15 pct into Mon strength. Use Limit at last + 0.5 pct, GFD. Reassess on a close below 20MA. Hedge alternative: SQQQ debit call spread 30 DTE 35/40."
@@ -435,7 +435,7 @@
             "change_pct": 0.77,
             "trigger_zone": "below 56.50 long",
             "status": "FAR",
-            "note": "Above trigger by 5.0 pct; rotation pushing it away from entry",
+            "note": "Above the entry trigger by 5 percent; the rotation is pushing it away",
             "detail": {
               "plain": "Energy ETF watchlist long entry has not been hit. Wait for a pullback to 56.50 with a stop at 55. Right now the price is too high to enter cleanly.",
               "pro": "XLE 59.31, RSI 68.9, 20MA 57.28, ATR 1.29. Trigger 56.50, stop 55.10, target 59.50, R:R 2.14. Strategy tag: sector_rotation_bottoming."
@@ -447,9 +447,9 @@
             "change_pct": -1.97,
             "trigger_zone": "365-380 short on rejection",
             "status": "FAR",
-            "note": "7.5 pct below short zone; bounce stalled",
+            "note": "7.5 percent below the short zone; bounce stalled",
             "detail": {
-              "plain": "Teradyne crashed on earnings then bounced. Today the bounce is fading at minus 2 percent intraday. The short setup still needs price to reach 365 to 380 before a rejection candle confirms entry.",
+              "plain": "Teradyne crashed on earnings then bounced. Today the bounce is fading at minus 2 percent intraday. The short setup still needs the price to reach 365 to 380 before a rejection candle confirms the entry.",
               "pro": "TER 338.61 -1.97 pct, RSI 43.9, 20MA 366.66, ATR 24.12. Pre-drop high 380. Bounce stalled below 20MA; reset opportunity if it tries again. Wait for 365-380 rejection candle. Vehicle: debit put spread 30-45 DTE. Stop on close above 385. Target 306, secondary 290."
             }
           },
@@ -459,9 +459,9 @@
             "change_pct": -1.86,
             "trigger_zone": "170-175 short on rollover",
             "status": "TRIGGERED",
-            "note": "In zone, first red day of the bounce; rejection candle confirming intraday",
+            "note": "In the zone; first red day of the bounce; rolling over today",
             "detail": {
-              "plain": "Insulet bounced into the short zone Friday and is now printing a minus 2 percent red day. That is the rejection signal short traders were waiting for. Cleanest expression is a 170/160 put spread expiring late June. Defined risk; stop on a close above 183.",
+              "plain": "Insulet bounced into the short zone Friday and is now printing a minus 2 percent red day. That is the rejection signal short traders were waiting for. The cleanest expression is a 170/160 put spread expiring late June. Stop on a close above 183 means the breakdown level was reclaimed and the idea is wrong.",
               "pro": "PODD 171.78 -1.86 pct, RSI 28.4, 20MA 191.40, ATR 7.51, FOMO ceiling 206.43. Mechanical TRIGGERED plus thesis-level rejection candle in motion. Vehicle: debit put spread 6/20 170/160. Stop on close above 183. Target 145, secondary 135. R:R approx 4:1. Sector confirm: SYK -6.47, GEHC weakness."
             }
           },
@@ -471,9 +471,9 @@
             "change_pct": -0.1,
             "trigger_zone": "63-65 short on rejection",
             "status": "FAR",
-            "note": "Bounce hasn't reached entry zone; grinding sideways at the lows",
+            "note": "Bounce never reached entry zone; grinding sideways at the lows",
             "detail": {
-              "plain": "GE HealthCare cratered on earnings on huge volume. The setup is a short on the bounce, but the bounce has not happened yet. Sitting at the lows, grinding sideways.",
+              "plain": "GE HealthCare cratered on earnings on huge volume. The setup is a short on the bounce, but the bounce has not happened yet. The stock is just grinding sideways at the lows.",
               "pro": "GEHC 60.97, RSI 20.2, 20MA 69.86, ATR 2.49. Vol confirmation 7.2x the day of breakdown. Wait for bounce into 63-65 plus red close. Vehicle: debit put spread 30-45 DTE. Stop above 66. Target 54, secondary 51. R:R approx 5 to 1."
             }
           },
@@ -483,9 +483,9 @@
             "change_pct": 1.55,
             "trigger_zone": "below 228 long on reversal",
             "status": "FAR",
-            "note": "Bounced higher today; still above FOMO ceiling 231",
+            "note": "Bounced higher today; still above the chase-too-late level",
             "detail": {
-              "plain": "Humana broke out on earnings and is the cleanest defensive long in the watchlist. Setup is to wait for a pullback below 228 then a green reversal candle to enter. Today's plus 1.55 pct day is the wrong direction for the entry; need to wait for a flush.",
+              "plain": "Humana broke out on earnings and is the cleanest defensive long in the watchlist. Setup is to wait for a pullback below 228, then a green reversal candle to enter. Today the stock pushed higher instead, which is the wrong direction; wait it out.",
               "pro": "HUM 237.24 +1.55 pct, RSI 81.6, 20MA 213.14, ATR 9.01, FOMO ceiling 231.17. Above ceiling; size_demote rule applies (long_defensive). Vehicle: stock or debit call spread 45-60 DTE on pullback below 228 plus reversal. Stop below 222, target 267. R:R 3.4 to 1."
             }
           },
@@ -495,9 +495,9 @@
             "change_pct": 2.2,
             "trigger_zone": "pullback to 5DMA + gap-day low",
             "status": "FAR",
-            "note": "Parabolic continuation, pullback never came",
+            "note": "Parabolic continuation; the pullback never came",
             "detail": {
-              "plain": "Quanta Services is extending the parabolic move post-earnings. Setup is PEAD-long on a pullback to the 5-day average. The pullback never came; chasing here is the wrong trade. If a pullback finally arrives, the trade re-activates.",
+              "plain": "Quanta Services is extending the parabolic move it started after earnings. The setup was a pullback long, not a chase. The pullback never came, so chasing at these prices is the wrong trade. If a pullback finally arrives, the setup activates.",
               "pro": "PWR 758.53 +2.20 pct, RSI 88.6, 20MA 623.94, FOMO ceiling 670.59. Wait for pullback to ~671 with hold of gap-day low. Vehicle: debit call spread 30-45 DTE. Strategy tag: pead_long."
             }
           },
@@ -509,7 +509,7 @@
             "status": "FAR",
             "note": "First red day; pullback in motion but needs to close below 245",
             "detail": {
-              "plain": "Generac broke out on earnings and is finally cooling. Today is the first red day; entry zone starts at 245. Watch for a close in the 245 to 250 area with the gap-day low intact.",
+              "plain": "Generac broke out on earnings and is finally cooling. Today is the first red day. The entry zone starts at 245. Watch for a close in the 245 to 250 area with the gap-day low intact.",
               "pro": "GNRC 255.74 -1.39 pct, RSI 77.2, 20MA 219.91, FOMO ceiling 240.19. First material red day of the post-earnings drift. Pullback to 245-250 is the entry. Strategy tag: pead_long."
             }
           },
@@ -519,7 +519,7 @@
             "change_pct": -1.74,
             "trigger_zone": "pullback to gap-day midpoint ~70",
             "status": "NEAR",
-            "note": "First material red day; pulling toward FOMO ceiling 70.57",
+            "note": "First material red day; pulling toward the chase-too-late level around 70",
             "detail": {
               "plain": "Altria is finally cooling after the post-earnings rip. First real red day. Entry zone starts at 70. If price closes in the 70 to 71 area with the gap intact, the long setup activates.",
               "pro": "MO 73.25 -1.74 pct, RSI 73.2, 20MA 67.24, FOMO ceiling 70.57. First material red day. Wait for pullback to 70-71 plus reclaim candle. Strategy tag: pead_long."
@@ -663,7 +663,7 @@
         ],
         "action": {
           "tier": "ACTION",
-          "text": "PODD rejection candle confirming intraday: 170/160 put spread 6/20 is the cleanest defined-risk short. AAPL spread waits for pullback to 275."
+          "text": "Insulet rolling over intraday is the cleanest short setup of the day. Apple call spread waits for a pullback to 275."
         },
         "recommendations": {
           "buy": [
@@ -671,12 +671,12 @@
               "ticker": "AAPL",
               "verdict": "BUY ON DIP",
               "confidence": 62,
-              "confidence_reason": "Three-source cluster (mover plus flow plus breakout) and clean MA stack support a buy, but FOMO-extended index and tech rotation cap the score below decision-grade.",
+              "confidence_reason": "Three independent signals support buying Apple on a pullback (active mover, unusual options, breakout retest), but the buying rule limits the score below decision-grade.",
               "vehicle": "debit call spread",
-              "pros": "Three-source cluster with unusual options flow, breakout, and active-mover signals on a single day is the highest-quality directional read in the scanner stack. RSI 69.3 is strong without being yet extreme; 20/50/200 MA stack is bullish (266/261/255 below spot 280). WWDC catalyst window opens early June; AI-hardware narrative is bid.",
-              "cons": "Index is FOMO-extended and tech is the worst-performing sector at -9.06 5d. Chasing AAPL at 280 RSI 69 means buying into a regime where mean reversion is the higher-probability path. Unusual options flow on 280-290 calls could be hedging flow, not directional.",
+              "pros": "Three signals pointing the same way on a single day are the highest-quality directional read in our scanner. The overbought meter at 69 is firm without being yet extreme. Apple's 20-day, 50-day, and 200-day averages all sit cleanly under the spot price. The early-June Worldwide Developers Conference is a known positive catalyst, and the AI hardware narrative is bid.",
+              "cons": "The index is too extended to chase, and tech is the worst-performing sector this week. Buying Apple at 280 with the meter at 69 means buying into a regime where the most likely next move is a pullback. Unusual options activity in the 280 to 290 strikes could be hedging flow rather than directional buying.",
               "action": {
-                "plain": "Set a price alert at 275. If Apple pulls back to that area without breaking down, buy a 285/300 call spread expiring late May. Defined risk, scales 4-5x to upside.",
+                "plain": "Set a price alert at 275 on Apple. If it pulls back to that area without breaking down, buy a 285/300 call spread expiring late May. Defined risk, scales 4 to 5 times to the upside.",
                 "pro": "Search AAPL. Set alert at 275. On hit: Trade Options, expiration 2026-05-30 or 2026-06-20. Buy to Open AAPL 285C, Sell to Open AAPL 300C. Limit at net debit mid, GFD. Stop on close below 270. Target 50-75 pct of max profit."
               }
             }
@@ -686,12 +686,12 @@
               "ticker": "NIO",
               "verdict": "SHORT ON CONFIRMATION",
               "confidence": 65,
-              "confidence_reason": "Three-source cluster confirms distribution and the 200MA is one ATR away, capped because the support could trigger a chronic value-trap squeeze before the break.",
+              "confidence_reason": "Three independent signals confirm the breakdown in NIO and the long-term support is one normal day's swing away, but the chronic short-squeeze risk on the support test caps the score.",
               "vehicle": "put debit spread",
-              "pros": "Three-source confirmation: mover_loser plus mover_active plus breakdown all on the same -7.51 pct day. Clean signature of distribution at the close. China EV peer weakness confirms sector breakdown is in play, not just NIO-specific.",
-              "cons": "Sitting on triple support: 200MA 5.73, 50MA 5.82, 20MA at 6.39. Any China stimulus headline or stronger delivery print forces a chronic-short squeeze. Has been a perennial value trap; many short attempts have been wrong.",
+              "pros": "Three signals all pointing the same way on a single minus 7.5 percent day, the textbook signature of distribution at the close. Chinese EV peers like Li Auto and XPeng are also rolling, which says this is a sector breakdown, not a single-name issue.",
+              "cons": "NIO is sitting on triple support: the 200-day, 50-day, and 20-day averages are all clustered around current levels. Any China stimulus headline or strong delivery print could force a chronic-short squeeze. The name has been a perennial value trap, with many short attempts ending wrong.",
               "action": {
-                "plain": "Wait for NIO to close below 5.70, which would break the long-term support floor. Then buy a 5.50/5.00 put spread expiring in 30-45 days. Defined risk, asymmetric reward if it cracks the 5.00 level.",
+                "plain": "Wait for NIO to close below 5.70, which would break the long-term support floor. Then buy a 5.50/5.00 put spread expiring in 30 to 45 days. Defined risk, asymmetric reward if it cracks the 5.00 level.",
                 "pro": "Search NIO. Set alert below 5.70 close. On break: Trade Options. Buy to Open NIO 30-45 DTE 5.50P, Sell to Open NIO same 5.00P. Limit at net debit mid, GFD. Stop on close above 6.20."
               }
             },
@@ -699,12 +699,12 @@
               "ticker": "PODD",
               "verdict": "SHORT ON CONFIRMATION",
               "confidence": 70,
-              "confidence_reason": "Rejection candle is now printing in the zone (-1.86 pct intraday with RSI 28); confirmation upgraded the score from 60 to 70, capped because RSI 28 leaves residual bounce risk if oversold buyers step in late session.",
+              "confidence_reason": "The 170 to 175 trigger zone is hit and the breakdown structure is intact, but the rejection candle is still printing, not yet confirmed at the close.",
               "vehicle": "put debit spread",
-              "pros": "Pre-breakdown support at 183 has flipped to resistance; PODD bounced into the 170-175 zone Friday and is now printing the rejection day shorts wait for. Volume on the 4/29 breakdown was 4.9x average, classic institutional distribution. Sector tailwind: SYK -6.47 plus GEHC weakness signal medical device group breakdown.",
-              "cons": "RSI 28 is deeply oversold; a final bounce-leg into close is possible. Defensive XLV +10.75 5d sector tailwind could lift broken names. M and A speculation is endemic in defensive medtech. Confirm the close below the open before fill.",
+              "pros": "Insulet broke down on volume nearly 5 times average on April 29. Pre-breakdown support at 183 has flipped to resistance. Stryker is also weak, confirming the medical-device sector is in distribution. The reward-to-risk on this trade is roughly 4 to 1.",
+              "cons": "Today is only one red day; the rejection candle is not yet confirmed at the close. M and A speculation in defensive medical-device names is common. Healthcare is the strongest sector this week, which provides an unexpected tailwind that could lift even broken names.",
               "action": {
-                "plain": "If PODD closes red below the open in the 170 to 175 zone, buy a 170/160 put spread expiring late June. The most you can lose is the cost of the spread. Stop on a close above 183.",
+                "plain": "If Insulet closes red below the open in the 170 to 175 zone, buy a 170/160 put spread expiring late June. The most you can lose is the cost of the spread. Stop out on a close above 183.",
                 "pro": "Search PODD. Confirm red close in 170-175 zone before fill. Trade Options 2026-06-20. Buy to Open PODD 170P, Sell to Open PODD 160P. Limit at net debit mid, GFD. Stop on close above 183. Target 50-75 pct of max profit."
               }
             }
@@ -931,7 +931,7 @@
             "vol_oi": 326,
             "context": "May 6 calls $177.5 \u00b7 1 unusual strike(s)",
             "detail": {
-              "plain": "Nvidia has unusual options activity and is on the WSB radar. With earnings in 16 days, IV expansion is the dominant theme right now, not directional.",
+              "plain": "Nvidia has unusual options activity and is a retail favorite. With earnings about 16 days out, the dominant theme right now is the run-up in options premium, not direction. Long calls right now have a premium-collapse risk after the print.",
               "pro": "NVDA ER in 16 days; IV expansion is the dominant flow story. Decay-aware: long premium has IV-crush risk post-print. Calendars or short-dated debit spreads are the cleaner pre-ER expressions."
             }
           },
@@ -940,7 +940,7 @@
             "vol_oi": 324,
             "context": "May 6 calls $467.5 \u00b7 3 unusual strike(s)",
             "detail": {
-              "plain": "Tesla has elevated activity but no clean directional setup right now. Watch the chart for follow-through before acting on flow alone.",
+              "plain": "Tesla has elevated options activity but no clean directional setup right now. Watch the chart for follow-through before acting on the options flow alone.",
               "pro": "TSLA mover_active plus unusual_flow. No price-confirmation. RSI inflection point would clarify direction; until then, observation only."
             }
           },
@@ -949,7 +949,7 @@
             "vol_oi": 116,
             "context": "May 6 calls $235.0 \u00b7 1 unusual strike(s)",
             "detail": {
-              "plain": "Apple options had unusual volume during a breakout day. This is the strongest directional signal type in the scanner stack but does not give entry levels by itself.",
+              "plain": "Apple options had unusual volume during a breakout day. Three signals lined up the same way: an active mover, unusual options activity, and a breakout. That is the strongest directional read available, but it does not tell you the entry price by itself.",
               "pro": "AAPL flagged in unusual flow plus mover_active plus breakout. Vehicle expression: debit call spread 30-45 DTE on pullback to 275-278. Avoid chasing here."
             }
           }
@@ -958,18 +958,18 @@
           {
             "ticker": "ARM",
             "date": "Wed May 6 AMC",
-            "note": "AI-semi tone-setter; high IV expansion expected",
+            "note": "Sets the AI semiconductor tone; high options-premium move expected",
             "detail": {
-              "plain": "ARM Holdings reports earnings Wednesday after close. Implied volatility on options will rise into the print and crash after. Holders should consider hedges or income trades on the spike.",
+              "plain": "ARM reports earnings Wednesday after the close. Options premium will run up before the print and collapse right after. If you hold long calls, take some off into the run-up tomorrow, or buy a small put as a tail hedge. Selling a covered call on the spike for income is the alternative.",
               "pro": "ARM 5/06 AMC. Pre-print IV pump 24-48h prior; post-print crush 25-40 pct. Long-call holders: scale out 50 pct into the IV pump or buy a tail put hedge. Income alternative: sell a covered call on the pre-spike for income."
             }
           },
           {
             "ticker": "AMD",
             "date": "Wed May 6 AMC",
-            "note": "AI-semi peer, sets sector tone",
+            "note": "Same day as ARM; sets the AI semiconductor sector tone",
             "detail": {
-              "plain": "AMD reports the same day as ARM. Both reports will dominate AI semi sentiment for the week. Spreads and short-dated trades crystallize the IV cycle.",
+              "plain": "AMD reports the same day as ARM. Both prints together dominate the AI-semiconductor mood for the week. Defined-risk debit spreads sized to the expected move are the cleanest pre-earnings expressions; avoid naked single options because both time decay and the post-print premium drop work against you.",
               "pro": "AMD 5/06 AMC. Likely +/- 7 pct expected move. Defined-risk: debit call spread or put spread sized to the implied move. Avoid naked premium; theta and IV crush both work against long options."
             }
           }
@@ -978,18 +978,18 @@
           {
             "ticker": "SPY",
             "thesis_window": "540 DTE anchor",
-            "note": "DCA day signal: WAIT (RSI extended)",
+            "note": "Monthly DCA day; signal says wait, the index is too stretched",
             "detail": {
-              "plain": "Monthly long-dated index call buying signal says wait. The index is too overbought for a clean entry today; wait for a pullback.",
+              "plain": "The monthly long-dated index call signal says wait. The S and P 500 is too overbought for a clean entry today. Wait for a pullback toward the 20-day average around 698 before the next entry.",
               "pro": "SPY 720.65, VIX 17.5, RSI 79.1. LEAP signal: WAIT, reasons monthly_dca plus vix_low, skip_reasons rsi_extended. Suggested entry: none. iv_mult 0.95."
             }
           },
           {
             "ticker": "QQQ",
             "thesis_window": "540 DTE anchor",
-            "note": "DCA day signal: WAIT (RSI 82.8 extreme)",
+            "note": "Monthly DCA day; signal says wait, Nasdaq is the most stretched of the three",
             "detail": {
-              "plain": "Long-dated Nasdaq call signal also says wait. Nasdaq RSI is among the most extended of the year.",
+              "plain": "The monthly long-dated Nasdaq call signal also says wait. The Nasdaq overbought meter at 83 is among the most extended readings of the year. Wait for a pullback toward 638.",
               "pro": "QQQ 674.15, VIX 17.5, RSI 82.79. LEAP signal: WAIT, skip_reasons rsi_extended. iv_mult 1.15. Wait for pullback to QQQ 20MA 638 area."
             }
           }
@@ -1011,10 +1011,10 @@
             "above_200dma": true,
             "next_er_date": null,
             "days_to_er": null,
-            "pros": "United States Oil Fund tracks WTI futures and is in a clean uptrend with energy sector leadership at +13.1 5d. RSI 60.9 is healthy without being extreme; no earnings catalyst. Annualized yield 60.9 pct is the highest of the score-1.00 cohort. Cash-secured put at 134 sits 6.16 pct below spot, with ATR at 4.89 pct giving plenty of cushion.",
-            "cons": "USO is a futures-tracking ETF; persistent contango erodes NAV over time even when oil prices hold. Geopolitical reversal in Mid-East tension can cause oil to gap 5 pct in either direction overnight. If assigned, the underlying carries roll-yield decay rather than a real corporate cash flow.",
+            "pros": "United States Oil Fund tracks oil futures and is in a clean uptrend with energy leading the market this week. The overbought meter at 61 is healthy without being extreme. There are no earnings catalysts to worry about. The annualized yield of 60.9 percent is the highest of the score-1.00 group, and the put strike at 134 sits 6 percent below the spot price with plenty of cushion.",
+            "cons": "USO is a futures-tracking ETF, so persistent contango erodes the share price over time even if oil prices hold. A geopolitical reversal in Mid-East tensions can cause oil to gap 5 percent in either direction overnight. If you get assigned, the underlying carries roll-yield decay rather than a real corporate cash flow.",
             "action": {
-              "plain": "Sell one cash-secured put on the United States Oil Fund. Strike 134, expiring early June. You collect about 715 dollars upfront. If the fund falls below 134 by expiry, you buy 100 shares at 134. Plan to sell covered calls if assigned.",
+              "plain": "Sell one cash-secured put on the United States Oil Fund. Strike 134, expiring early June. You collect about 715 dollars upfront. If the fund falls below 134 by expiry, you buy 100 shares at 134. Plan to sell covered calls if you get assigned.",
               "pro": "Search USO. Trade Options. Expiration 2026-06-05. Sell to Open 1 USO 134P. Limit at net credit 7.15 mid, GFD. Collateral 13,400. Stop alert at 130 underlying. If assigned, write a 142C 30-45 DTE for income."
             }
           },
@@ -1034,10 +1034,10 @@
             "above_200dma": true,
             "next_er_date": "2026-06-03",
             "days_to_er": 30,
-            "pros": "Broadcom is a high-quality AI semi name with a strong cash flow profile and steady dividend. RSI 69.5 is firm without being extreme; ATR 2.9 pct is among the lower in the cohort. CSP at 395 is 6.24 pct OTM with a 13.44 premium, annualized 38.8 pct.",
-            "cons": "Earnings in 30 days means this CSP will straddle the pre-earnings IV expansion window. Cash collateral of 39,500 ties up significant capital. AI-semi rotation OUT (XLK -9.06 5d) is the largest sector laggard and a continuation lasts weeks.",
+            "pros": "Broadcom is a high-quality AI semiconductor name with steady cash flow and a dividend. The overbought meter at 69 is firm without being extreme. Daily price swings are smaller here than in most of the cohort. The put at 395 sits about 6 percent below the spot price with a 13.44 dollar premium, giving an annualized yield of about 39 percent.",
+            "cons": "Earnings are 30 days out, so this position straddles the pre-earnings options-premium run-up. The collateral required is 39,500 dollars, which is significant capital tied up. Tech is rotating out at the sector level this week, and that rotation can last weeks.",
             "action": {
-              "plain": "Sell a cash-secured put on Broadcom at strike 395, expiring early June. Collateral required is 39,500. You collect about 1,344 in premium. Close at 50 percent profit or roll to next month if needed.",
+              "plain": "Sell a cash-secured put on Broadcom at strike 395, expiring early June. Collateral required is 39,500 dollars. You collect about 1,344 in premium. Close at 50 percent profit, or roll to next month if assignment looks likely.",
               "pro": "Search AVGO. Trade Options. Expiration 2026-06-05. Sell to Open 1 AVGO 395P. Limit at net credit 13.44 mid, GFD. Collateral 39,500. Stop alert at 410. Close at 50 pct of max credit OR roll one expiry forward if assignment risk rises."
             }
           },
@@ -1057,10 +1057,10 @@
             "above_200dma": true,
             "next_er_date": "2026-06-24",
             "days_to_er": 51,
-            "pros": "Micron is the secular AI memory winner; storage cycle is the loudest sector theme in the universe. Earnings 51 days out is well clear of the wheel scanner penalty zone. 76.5 pct annualized yield is among the best in the cohort.",
-            "cons": "RSI 78 with parabolic structure means a single -10 pct day is realistic. ATR 5.34 pct is the second-widest after USO; collateral 51,000 ties up serious capital. If sector rotation OUT of tech persists, MU is the highest-beta name in the wheel.",
+            "pros": "Micron is the AI memory winner of this cycle, and the storage theme is the loudest in the universe right now. Earnings are 51 days out, well clear of any blackout. Annualized yield of 76.5 percent is among the best in the group.",
+            "cons": "The overbought meter at 78 plus the parabolic chart structure means a single down 10 percent day is realistic. Daily price swings are wide here. Collateral of 51,000 dollars ties up significant capital. If the tech rotation persists, Micron is the highest-beta name in the wheel.",
             "action": {
-              "plain": "Sell a cash-secured put on Micron at strike 510, expiring early June. Premium is rich at about 3,421 dollars but the collateral is 51,000 and the position is volatile. Only do this if you have the cash and are OK owning more Micron.",
+              "plain": "Sell a cash-secured put on Micron at strike 510, expiring early June. The premium is rich at about 3,421 dollars, but the collateral required is 51,000 and the position is volatile. Only do this if you have the cash and would be happy owning more Micron at 510.",
               "pro": "Search MU. Trade Options. Expiration 2026-06-05. Sell to Open 1 MU 510P. Limit at net credit 34.21 mid, GFD. Collateral 51,000. Stop alert at 525. Close at 50 pct of max credit. If assigned, immediately write 540C or 550C 30 DTE for income."
             }
           },
@@ -1080,10 +1080,10 @@
             "above_200dma": true,
             "next_er_date": "2026-05-20",
             "days_to_er": 16,
-            "pros": "Target is a defensive consumer name with steady cash flow. ATR 2.36 pct is the lowest in the cohort, meaning collateral risk is contained. CSP at 122 with 5.35 pct cushion is reasonable; defensive XLV plus XLP bid lifts consumer staples adjacents.",
-            "cons": "Earnings in 16 days is just outside the 14-day penalty band and the print is binary. CLX -9.67 pct Friday is the leading-edge consumer-staples breakdown that could spread; same-store sales surprise risk is real. RSI 73.4 limits upside cushion.",
+            "pros": "Target is a defensive consumer name with steady cash flow. Daily price swings are the lowest in the group, so the collateral risk is contained. The put at 122 with about 5 percent cushion is reasonable, and defensive sector bid lifts adjacent consumer-staples names.",
+            "cons": "Earnings are 16 days out, just outside the 14-day penalty window, and the print is binary either way. Clorox dropped almost 10 percent Friday, which is the leading edge of consumer-staples weakness that could spread. Same-store-sales surprise risk is real.",
             "action": {
-              "plain": "Sell a cash-secured put on Target at strike 122 expiring early June. Premium is small at about 440 dollars. Collateral 12,200. Earnings are 16 days out, so close before the print to avoid binary surprise.",
+              "plain": "Sell a cash-secured put on Target at strike 122, expiring early June. Premium is small at about 440 dollars. Collateral is 12,200. Earnings are 16 days out, so close before the print to avoid a binary surprise.",
               "pro": "Search TGT. Trade Options. Expiration 2026-06-05. Sell to Open 1 TGT 122P. Limit at net credit 4.40 mid, GFD. Collateral 12,200. Stop alert at 124. CLOSE before ER 5/20 to avoid binary print. Target 50 pct of max credit."
             }
           },
@@ -1103,17 +1103,17 @@
             "above_200dma": true,
             "next_er_date": "2026-07-23",
             "days_to_er": 80,
-            "pros": "Intel ripped 23 pct on earnings 4/30 and held the gap on Friday. 82 pct annualized yield is the cohort high. Earnings are 80 days away, well clear. The post-earnings continuation pattern (PEAD-long) historically holds for 30-60 days when the initial gap is this large.",
-            "cons": "RSI 87.2 is an extreme reading and vertical post-earnings rips like this have a high probability of a -10 pct mean-revert session within 5-10 sessions. The 23 pct gap can fill quickly if the AI-foundry guidance disappoints in detail. ATR 5.46 pct means the 94 strike can be tagged on a single -5 pct day.",
+            "pros": "Intel ripped 23 percent on earnings April 30 and held the gap on Friday. Annualized yield of 82 percent is the highest in the group. Earnings are 80 days away, well clear of any blackout. Post-earnings continuation in this kind of large gap typically holds for 30 to 60 days.",
+            "cons": "The overbought meter at 87 is extreme, and vertical post-earnings rips like this often see a down 10 percent mean-revert session within 5 to 10 days. The 23 percent gap can fill quickly if a follow-up disclosure disappoints. Daily price swings of 5.5 percent mean the 94 strike can be tagged on a single down 5 percent day.",
             "action": {
-              "plain": "Sell a cash-secured put on Intel at strike 94 expiring early June. Premium is 676. Collateral 9,400. The stock is very stretched after the earnings rip; only do this if you would be happy owning Intel at 94.",
+              "plain": "Sell a cash-secured put on Intel at strike 94, expiring early June. Premium is 676 dollars. Collateral 9,400. The stock is very stretched after the earnings rip, so only do this if you would actually be happy owning Intel at 94.",
               "pro": "Search INTC. Trade Options. Expiration 2026-06-05. Sell to Open 1 INTC 94P. Limit at net credit 6.76 mid, GFD. Collateral 9,400. Stop alert at 92. Close at 50 pct of max credit OR if Intel closes below 95."
             }
           }
         ],
         "action": {
           "tier": "WATCH",
-          "text": "Income trades only today: VIX put spread plus cash-secured put on USO is the cleanest paired setup. AAPL spread waits for pullback."
+          "text": "Income trades only today: VIX put spread plus a cash-secured put on USO is the cleanest paired setup. Apple spread waits for a pullback."
         },
         "recommendations": {
           "buy": [
@@ -1121,12 +1121,12 @@
               "ticker": "AAPL 5/30 285/300 call spread",
               "verdict": "BUY VIA SPREAD",
               "confidence": 62,
-              "confidence_reason": "Three-source cluster supports buying the spread on a pullback to 275-278, but FOMO-extended index keeps the score below decision-grade.",
+              "confidence_reason": "Three signals support buying the spread on a pullback to the 275 to 278 area, but the stretched index keeps the score below decision-grade.",
               "vehicle": "debit call spread",
-              "pros": "AAPL three-source confirmation (mover_active plus unusual_flow plus breakout). RSI 69.3 is firm; MAs stack bullishly under spot. WWDC catalyst window opens early June and AI-hardware narrative is in bid.",
-              "cons": "Tech rotation OUT at -9.06 5d means even good chart setups face a sector tide. Spread is the right vehicle (defined risk plus leverage) but entering at 280 chasing leaves no margin if the index pulls back.",
+              "pros": "Apple has three signals lining up the same way: an active mover, unusual options activity, and a breakout. The overbought meter at 69 is firm. Apple's averages stack bullishly under the spot price. Worldwide Developers Conference opens early June and the AI hardware narrative is bid.",
+              "cons": "Tech is rotating out this week, so even good chart setups face a sector tide. The spread is the right vehicle (defined risk plus leverage) but entering at 280 leaves no margin if the index pulls back.",
               "action": {
-                "plain": "Set an alert at 275 on Apple. If it pulls back to that area, buy a 285 call and sell a 300 call expiring late May. The most you can lose is the cost of the spread.",
+                "plain": "Set a price alert at 275 on Apple. If it pulls back to that area, buy a 285 call and sell a 300 call expiring late May. The most you can lose is the cost of the spread.",
                 "pro": "Search AAPL. Set alert at 275. Trade Options 2026-05-30. Buy to Open AAPL 285C, Sell to Open AAPL 300C. Limit at net debit mid, GFD. Stop on close below 270. Target 50-75 pct of max profit."
               }
             }
@@ -1136,12 +1136,12 @@
               "ticker": "PODD 6/20 170/160 put spread",
               "verdict": "SHORT ON CONFIRMATION",
               "confidence": 60,
-              "confidence_reason": "Setup zone is hit and structure favors shorting, but Friday's green close means rejection candle is missing.",
+              "confidence_reason": "The setup zone is hit and the structure favors shorting, but today's rejection candle is still printing, not yet confirmed at the close.",
               "vehicle": "put debit spread",
-              "pros": "PODD broke down on volume 4.9x average on 4/29; pre-breakdown support at 183 has flipped to resistance; medical device peer weakness (SYK -6.47) confirms sector breakdown. R:R approx 4:1.",
-              "cons": "Friday closed +1.68 pct green which means the bounce is still extending. Defensive sector tailwind XLV +10.75 5d could lift broken names. M and A speculation in defensive medtech is endemic.",
+              "pros": "Insulet broke down on volume nearly 5 times average on April 29. Pre-breakdown support at 183 has flipped to resistance. Stryker also weak, confirming a sector breakdown in medical devices. Reward-to-risk on this trade is roughly 4 to 1.",
+              "cons": "Today is only one red day, and a confirmed rejection candle requires a red close below the open. Defensive sector bid in healthcare could lift broken names. M and A speculation in defensive medical-device names is endemic.",
               "action": {
-                "plain": "Wait for PODD to print a red rejection day in the 170 to 175 zone. Then buy a 170/160 put spread expiring late June. Stop on close above 183.",
+                "plain": "If Insulet closes red below the open in the 170 to 175 zone, buy a 170/160 put spread expiring late June. The most you can lose is the cost of the spread. Stop out on a close above 183.",
                 "pro": "Search PODD. Wait for rejection candle (lower high plus red close) in 170-175. Trade Options 2026-06-20. Buy to Open PODD 170P, Sell to Open PODD 160P. Limit at net debit mid, GFD. Stop on close above 183. Target 50-75 pct of max profit."
               }
             }
@@ -1346,9 +1346,9 @@
             "symbol": "BTC",
             "last": 79777.02,
             "change_5d_pct": 1.6,
-            "note": "Dominance 58.51 pct; consolidating",
+            "note": "Bitcoin dominance 58.5 percent; consolidating",
             "detail": {
-              "plain": "Bitcoin is in a tight range around 80,000 dollars and Bitcoin dominance is 58.5 percent, which means Bitcoin is taking up over half of the total crypto market. No clean breakout setup right now.",
+              "plain": "Bitcoin is in a tight range around 80,000 dollars. Bitcoin dominance is 58.5 percent, meaning Bitcoin is taking up over half of the total crypto market. No clean breakout setup right now.",
               "pro": "BTC 79,777, +1.6 pct 5d. BTC.D 58.51 pct. RH trending: BTC, SOL. No directional cluster signal; observation only. Equity-correlation watch: if VIX spikes, BTC has tended to follow risk down."
             }
           },
@@ -1356,9 +1356,9 @@
             "symbol": "ETH",
             "last": null,
             "change_5d_pct": null,
-            "note": "Trailing BTC; rotation candidate if dominance falls",
+            "note": "Trailing Bitcoin; rotation candidate if dominance falls",
             "detail": {
-              "plain": "Ether typically rallies when Bitcoin dominance falls. Right now dominance is rising, which is a headwind for ether.",
+              "plain": "Ether typically rallies when Bitcoin dominance falls. Right now Bitcoin dominance is rising, which is a headwind for Ether.",
               "pro": "ETH dominance contraction is the historical alt-rotation trigger; BTC.D 58.5 means alts are still in defense. No entry signal."
             }
           },
@@ -1366,9 +1366,9 @@
             "symbol": "SOL",
             "last": null,
             "change_5d_pct": null,
-            "note": "Trending on Robinhood; alt-coin leader if alts bid",
+            "note": "Trending on Robinhood; alt-coin leader if alts catch a bid",
             "detail": {
-              "plain": "Solana is trending among Robinhood crypto traders. It tends to be the strongest alt-coin during risk-on phases.",
+              "plain": "Solana is trending among Robinhood crypto traders. It tends to be the strongest alt-coin during risk-on phases, but right now alts are on the defensive.",
               "pro": "SOL on RH trending. If BTC.D rolls below 57, SOL is the typical alt-rotation leader. Wait for dominance break before chasing."
             }
           },
@@ -1376,16 +1376,16 @@
             "symbol": "XRP",
             "last": 15.57,
             "change_5d_pct": null,
-            "note": "Consolidating below 52w high",
+            "note": "Consolidating below the year high",
             "detail": {
-              "plain": "Ripple is consolidating in the 15 dollar range after a major run. Volatility is elevated by ATR 0.48 dollars per day.",
+              "plain": "Ripple is consolidating in the 15 dollar range after a major run. Daily price swings are elevated at about 0.48 dollars per day.",
               "pro": "XRP 15.57, RSI 54.7, 20MA 15.58, ATR 0.48. Consolidation below 52w high 25.95. No directional break; observation only."
             }
           }
         ],
         "action": {
           "tier": "NO_ACTION",
-          "text": "Bitcoin dominance bid; alts on defense. No new entries until BTC.D rolls below 57."
+          "text": "Bitcoin dominance is bid, alts are on defense. No new entries until Bitcoin dominance rolls below 57."
         },
         "recommendations": {
           "buy": [],
@@ -1439,133 +1439,37 @@
         ]
       },
       "sparks": {
-        "XLE": [
-          55.76,
-          56.58,
-          55.02,
-          55.07,
-          55.87,
-          56.54,
-          56.98,
-          56.87,
-          56.77,
-          57.71,
-          59.03,
-          59.65,
-          58.85,
-          59.39
+        "INDEX": [
+          66.19,
+          66.36,
+          67.16,
+          67.0,
+          66.58,
+          67.27,
+          67.0,
+          67.53,
+          67.62,
+          67.28,
+          67.26,
+          67.95,
+          68.15,
+          67.87
         ],
-        "IWM": [
-          269.39,
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88
-        ],
-        "DX-Y.NYB": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.518
-        ],
-        "dxy": [
-          98.06,
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.518
-        ],
-        "ARM": [
-          159.34,
-          162.33,
-          166.73,
-          175.1,
-          175.49,
-          196.57,
-          204.61,
-          234.81,
-          215.88,
-          198.65,
-          201.69,
-          210.32,
-          211.18,
-          203.26
-        ],
-        "SPY": [
-          699.94,
-          701.66,
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01
-        ],
-        "CL=F": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.78
-        ],
-        "oil": [
-          91.29,
-          94.69,
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          104.78
+        "HUM": [
+          198.37,
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96
         ],
         "QQQ": [
           637.4,
@@ -1583,21 +1487,37 @@
           674.15,
           672.88
         ],
-        "HUM": [
-          198.37,
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96
+        "DX-Y.NYB": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.488
+        ],
+        "dxy": [
+          98.06,
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.488
         ],
         "^VIX": [
           18.17,
@@ -1631,37 +1551,21 @@
           16.99,
           18.29
         ],
-        "PODD": [
-          202.5,
-          201.47,
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39
-        ],
-        "PWR": [
-          591.82,
-          587.42,
-          601.88,
-          604.97,
-          605.89,
-          613.78,
-          633.44,
-          624.84,
-          637.28,
-          630.94,
-          628.6,
-          727.77,
-          742.21,
-          757.34
+        "SPY": [
+          699.94,
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01
         ],
         "GRAB": [
           3.92,
@@ -1679,37 +1583,53 @@
           3.67,
           3.62
         ],
-        "GEHC": [
-          73.51,
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0
+        "PWR": [
+          591.82,
+          587.42,
+          601.88,
+          604.97,
+          605.89,
+          613.78,
+          633.44,
+          624.84,
+          637.28,
+          630.94,
+          628.6,
+          727.77,
+          742.21,
+          757.34
         ],
-        "GNRC": [
-          204.4,
-          207.41,
-          212.1,
-          217.26,
-          213.85,
-          213.69,
-          218.38,
-          220.93,
-          220.3,
-          217.12,
-          252.92,
-          259.23,
-          259.34,
-          257.07
+        "IWM": [
+          269.39,
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88
+        ],
+        "ARM": [
+          159.34,
+          162.33,
+          166.73,
+          175.1,
+          175.49,
+          196.57,
+          204.61,
+          234.81,
+          215.88,
+          198.65,
+          201.69,
+          210.32,
+          211.18,
+          203.26
         ],
         "MO": [
           64.42,
@@ -1759,6 +1679,102 @@
           4.378,
           4.446
         ],
+        "GEHC": [
+          73.51,
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0
+        ],
+        "CL=F": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.76
+        ],
+        "oil": [
+          91.29,
+          94.69,
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          104.76
+        ],
+        "GC=F": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4549.0
+        ],
+        "gold": [
+          4800.0,
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4549.0
+        ],
+        "GNRC": [
+          204.4,
+          207.41,
+          212.1,
+          217.26,
+          213.85,
+          213.69,
+          218.38,
+          220.93,
+          220.3,
+          217.12,
+          252.92,
+          259.23,
+          259.34,
+          257.07
+        ],
         "TER": [
           364.96,
           365.92,
@@ -1775,53 +1791,37 @@
           345.42,
           337.44
         ],
-        "INDEX": [
-          66.19,
-          66.36,
-          67.16,
-          67.0,
-          66.58,
-          67.27,
-          67.0,
-          67.53,
-          67.62,
-          67.28,
-          67.26,
-          67.95,
-          68.15,
-          67.87
+        "XLE": [
+          55.76,
+          56.58,
+          55.02,
+          55.07,
+          55.87,
+          56.54,
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39
         ],
-        "GC=F": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4547.7002
-        ],
-        "gold": [
-          4800.0,
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4547.7002
+        "PODD": [
+          202.5,
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39
         ]
       }
     },
