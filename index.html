@@ -75,7 +75,7 @@ const GLOSSARY_HTML = (function() {
 // ============================================================
 let DATA = null;
 let ACTIVE_BRIEF = null;
-let TAB = "macro";
+let TAB = "stocks";
 let OPEN_ID = null;
 let MODAL = null;
 let MODE = (function() {
@@ -1506,7 +1506,7 @@ function selectArchive(date) {
   if (!found) return;
   ACTIVE_BRIEF = found;
   closeModal();
-  TAB = "macro";
+  TAB = "stocks";
   OPEN_ID = null;
   // Brief changed -> normalize cache invalidates -> pane cache clears in getNormalized
   const b = getNormalized();
