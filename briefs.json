@@ -3,7 +3,7 @@
   "briefs": [
     {
       "date": "2026-05-05",
-      "updated_at": "2026-05-05T14:10:00-07:00",
+      "updated_at": "2026-05-05T15:10:00-07:00",
       "regime": "BULL",
       "regime_note": "ATH break-out held into close. SPY 723, QQQ 681. FOMO rule still pauses entries. AMD beat Q1 already today (+4.0 pct on close). ARM print is tomorrow Wed AMC. PODD short trigger lived all session below the zone.",
       "vix_bucket": "normal",
@@ -342,7 +342,7 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 789,
+            "mentions": 800,
             "sources": [
               "all_stocks",
               "options",
@@ -356,38 +356,37 @@
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 123,
+                "score": 127,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
-                "sub": "thetagang",
-                "title": "March Short Put Verticals",
+                "sub": "TheRaceTo1Million",
+                "title": "Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels",
                 "score": 13,
-                "flair": "",
-                "body_excerpt": "Another month of results from running low delta\u00a0**Short Put Verticals**\u00a0aka Bull Put Credit Spreads!\n\nI finished the month up $ 34,383 in profit closing out 300 SPVs.\n\nHere are the highlights:\n\n*  **Top 3 in profit: SNDK - $12,696 ( 37%)**\n..."
+                "flair": "DD",
+                "body_excerpt": "What's up fellow degens and $1M racers.\n\nI've been meaning to write this up for a while now. With the incredible volatility in the markets recently (the VIX broke above 20 and into the highest level in 3 months,  and many SaaS companies got..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today. Tone leans bearish. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and playing defined-risk spreads. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "789 mentions across 5 communities, +5% vs prior session. Sentiment bearish. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; playing defined-risk spreads. Top thesis: \"Time to Make Some Bearish Bets\"."
+              "plain": "Heavy chatter today. Tone leans bearish. The loudest take is: \"Time to Make Some Bearish Bets\".",
+              "pro": "800 mentions across 5 communities, +7% vs prior session. Sentiment bearish. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           },
           {
             "ticker": "QQQ",
-            "mentions": 121,
+            "mentions": 10,
             "sources": [
               "options",
               "race1m",
-              "thetagang",
-              "wallstreetbets"
+              "thetagang"
             ],
             "sentiment": "BEARISH",
             "summary": "",
@@ -395,33 +394,33 @@
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 123,
+                "score": 127,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 73,
+                "score": 75,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "thetagang",
                 "title": "Why is it that I can fully use my available margin  when holding the shares and selling covered calls, but can't when selling puts?  Does that mean it is better to  sell covered calls on this case?  With margin i can use $122,000 to buy QQQ stock, but I can only use $56,000 to sell puts.",
-                "score": 19,
+                "score": 20,
                 "flair": "Covered Call",
                 "body_excerpt": ""
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bearish. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "121 mentions across 4 communities, +173% vs prior session. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
+              "plain": "Heavy chatter today. Tone leans bearish. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"Time to Make Some Bearish Bets\".",
+              "pro": "10 mentions across 3 communities. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           },
           {
             "ticker": "VOO",
-            "mentions": 11,
+            "mentions": 10,
             "sources": [
               "stocks"
             ],
@@ -430,7 +429,7 @@
             "top_posts": [],
             "detail": {
               "plain": "VOO is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
-              "pro": "11 mentions across 1 communities, -15% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
+              "pro": "10 mentions across 1 communities, -33% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
             }
           },
           {
@@ -445,14 +444,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 43,
+                "score": 46,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               },
@@ -467,28 +466,6 @@
             "detail": {
               "plain": "Moderate chatter today. Tone reads neutral. The loudest take is: \"A 1/4 of the way there. 26yo\".",
               "pro": "3 mentions across 1 communities. Sentiment neutral. Top thesis: \"A 1/4 of the way there. 26yo\"."
-            }
-          },
-          {
-            "ticker": "XLY",
-            "mentions": 1,
-            "sources": [
-              "options"
-            ],
-            "sentiment": "BEARISH",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "options",
-                "title": "Time to Make Some Bearish Bets...",
-                "score": 123,
-                "flair": "",
-                "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today. Tone leans bearish. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "1 mentions across 1 communities. Sentiment bearish. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           }
         ]
@@ -931,62 +908,62 @@
         "wsb_top": [
           {
             "ticker": "AMD",
-            "score": 1047,
+            "score": 1082,
             "rank": 1,
             "rank_prev": 8,
-            "delta_pct": 699.2,
+            "delta_pct": 695.6,
             "name": "AMD",
             "detail": {
-              "plain": "AMD (AMD) has 1047 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 699 percent versus 24 hours ago, and the name jumped up from rank 8 to rank 1. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "AMD WSB rank 1 (1047 mentions), prior rank 8, mentions delta +699 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "AMD (AMD) has 1082 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 696 percent versus 24 hours ago, and the name jumped up from rank 8 to rank 1. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "AMD WSB rank 1 (1082 mentions), prior rank 8, mentions delta +696 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "MU",
-            "score": 775,
+            "score": 789,
             "rank": 2,
-            "rank_prev": 2,
-            "delta_pct": 246.0,
+            "rank_prev": 3,
+            "delta_pct": 243.0,
             "name": "Micron Technology",
             "detail": {
-              "plain": "Micron Technology (MU) has 775 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 246 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "MU WSB rank 2 (775 mentions), prior rank 2, mentions delta +246 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Micron Technology (MU) has 789 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 243 percent versus 24 hours ago, and the name jumped up from rank 3 to rank 2. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 2 (789 mentions), prior rank 3, mentions delta +243 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "SNDK",
-            "score": 477,
+            "score": 488,
             "rank": 3,
-            "rank_prev": 3,
-            "delta_pct": 122.9,
+            "rank_prev": 4,
+            "delta_pct": 127.0,
             "name": "Sandisk",
             "detail": {
-              "plain": "Sandisk (SNDK) has 477 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 123 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SNDK WSB rank 3 (477 mentions), prior rank 3, mentions delta +123 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Sandisk (SNDK) has 488 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 127 percent versus 24 hours ago, and the name jumped up from rank 4 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SNDK WSB rank 3 (488 mentions), prior rank 4, mentions delta +127 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "NVDA",
-            "score": 426,
+            "score": 429,
             "rank": 4,
             "rank_prev": 6,
-            "delta_pct": 166.2,
+            "delta_pct": 158.4,
             "name": "NVIDIA",
             "detail": {
-              "plain": "NVIDIA (NVDA) has 426 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 166 percent versus 24 hours ago, and the name jumped up from rank 6 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "NVDA WSB rank 4 (426 mentions), prior rank 6, mentions delta +166 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "NVIDIA (NVDA) has 429 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 158 percent versus 24 hours ago, and the name jumped up from rank 6 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "NVDA WSB rank 4 (429 mentions), prior rank 6, mentions delta +158 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "SPY",
-            "score": 371,
+            "score": 377,
             "rank": 5,
             "rank_prev": 1,
-            "delta_pct": 5.1,
+            "delta_pct": 6.8,
             "name": "SPDR S&P 500 ETF Trust",
             "detail": {
-              "plain": "SPDR S&P 500 ETF Trust (SPY) has 371 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 5 percent versus 24 hours ago, and the name jumped down from rank 1 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SPY WSB rank 5 (371 mentions), prior rank 1, mentions delta +5 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 377 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 7 percent versus 24 hours ago, and the name jumped down from rank 1 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 5 (377 mentions), prior rank 1, mentions delta +7 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           }
         ],
@@ -1103,7 +1080,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 1627,
+            "mentions": 1656,
             "sources": [
               "all_stocks",
               "options",
@@ -1116,38 +1093,38 @@
               "wallstreetbets"
             ],
             "sentiment": "BULLISH",
-            "summary": "Micron Technology is seeing intense investor focus as it hits all-time highs, fueled by an insatiable demand for HBM and enterprise SSDs amidst a persistent ...",
+            "summary": "Micron Technology is trending as traders speculate on a potential supply chain intervention while the stock continues a massive, news-driven rally fueled by ...",
             "top_posts": [
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "Hit $1m last week and racing to $10m",
-                "score": 231,
+                "score": 234,
                 "flair": "",
                 "body_excerpt": "I have been full port, 2x margin into MU since September of 2025.  This is my brokerage, but I also have 1100 shares in a 401k that are free and clear.\n\nGoal is to ride the margin through $2k per share.  Any questions?"
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week.",
-                "score": 85,
+                "score": 91,
                 "flair": "News",
                 "body_excerpt": "\\+11% today. New ATH.\n\nMicron started shipping a 245TB SSD. Uses 82% fewer racks than hard drives.\n\nFitch upgraded their debt rating. Hyperscalers are now signing long-term supply deals just to lock in capacity.\n\nThen Meta, Microsoft, and A..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and a fresh breakout. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "1627 mentions across 9 communities, +246% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "1656 mentions across 9 communities, +243% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 2258,
+            "mentions": 2329,
             "sources": [
               "all_stocks",
               "options",
@@ -1159,38 +1136,38 @@
               "wallstreetbets"
             ],
             "sentiment": "NEUTRAL",
-            "summary": "AMD is experiencing a massive, sentiment-driven rally following an earnings report that the community is viewing as a landmark moment for its AI data center ...",
+            "summary": "AMD shares are surging following a significant earnings beat and improved guidance, with community discussions buzzing over massive after-hours gains and the...",
             "top_posts": [
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 73,
+                "score": 75,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 16,
+                "score": 13,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. Traders are running the wheel. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "2258 mentions across 8 communities, +699% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "pro": "2329 mentions across 8 communities, +696% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 915,
+            "mentions": 921,
             "sources": [
               "all_stocks",
               "options",
@@ -1202,12 +1179,12 @@
               "wallstreetbets"
             ],
             "sentiment": "BULLISH",
-            "summary": "NVIDIA is currently facing intense retail frustration and downward price pressure as investors rotate capital into other semiconductor stocks, despite the co...",
+            "summary": "Nvidia is trending as investors weigh its dominance in the AI infrastructure market against the surging performance of competitors like AMD. While the commun...",
             "top_posts": [
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
@@ -1221,25 +1198,24 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 43,
+                "score": 46,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and the earnings reaction. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "915 mentions across 8 communities, +166% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "921 mentions across 8 communities, +158% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "SNDK",
-            "mentions": 988,
+            "mentions": 1010,
             "sources": [
               "all_stocks",
               "race10m",
               "race1m",
               "stocks",
-              "stocktwits",
               "thetagang",
               "wallstreetbets"
             ],
@@ -1249,33 +1225,33 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "Got killed on SNDK today",
-                "score": 20,
+                "score": 23,
                 "flair": "",
                 "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "988 mentions across 7 communities, +175% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "1010 mentions across 6 communities, +175% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "PLTR",
-            "mentions": 311,
+            "mentions": 300,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1304,14 +1280,14 @@
               {
                 "sub": "options",
                 "title": "Palantir ($PLTR) Earnings Vol Trade Post-mortem - Patience is the Key",
-                "score": 8,
+                "score": 7,
                 "flair": "",
                 "body_excerpt": "Yesterday I posted my thesis for going long vol into $PLTR EA.\n\n[https://www.reddit.com/r/options/comments/1t4135r/palantir\\_pltr\\_earnings\\_vol\\_setup\\_are\\_traders/](https://www.reddit.com/r/options/comments/1t4135r/palantir_pltr_earnings..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, cooler than yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "311 mentions across 6 communities, -49% vs prior session. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "300 mentions across 6 communities, -50% vs prior session. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           }
         ]
@@ -1626,7 +1602,7 @@
         "social": [
           {
             "ticker": "MU",
-            "mentions": 1627,
+            "mentions": 1656,
             "sources": [
               "all_stocks",
               "options",
@@ -1639,38 +1615,38 @@
               "wallstreetbets"
             ],
             "sentiment": "BULLISH",
-            "summary": "Micron Technology is seeing intense investor focus as it hits all-time highs, fueled by an insatiable demand for HBM and enterprise SSDs amidst a persistent ...",
+            "summary": "Micron Technology is trending as traders speculate on a potential supply chain intervention while the stock continues a massive, news-driven rally fueled by ...",
             "top_posts": [
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "Hit $1m last week and racing to $10m",
-                "score": 231,
+                "score": 234,
                 "flair": "",
                 "body_excerpt": "I have been full port, 2x margin into MU since September of 2025.  This is my brokerage, but I also have 1100 shares in a 401k that are free and clear.\n\nGoal is to ride the margin through $2k per share.  Any questions?"
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week.",
-                "score": 85,
+                "score": 91,
                 "flair": "News",
                 "body_excerpt": "\\+11% today. New ATH.\n\nMicron started shipping a 245TB SSD. Uses 82% fewer racks than hard drives.\n\nFitch upgraded their debt rating. Hyperscalers are now signing long-term supply deals just to lock in capacity.\n\nThen Meta, Microsoft, and A..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and a fresh breakout. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "1627 mentions across 9 communities, +246% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "1656 mentions across 9 communities, +243% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "AMD",
-            "mentions": 2258,
+            "mentions": 2329,
             "sources": [
               "all_stocks",
               "options",
@@ -1682,38 +1658,38 @@
               "wallstreetbets"
             ],
             "sentiment": "NEUTRAL",
-            "summary": "AMD is experiencing a massive, sentiment-driven rally following an earnings report that the community is viewing as a landmark moment for its AI data center ...",
+            "summary": "AMD shares are surging following a significant earnings beat and improved guidance, with community discussions buzzing over massive after-hours gains and the...",
             "top_posts": [
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 73,
+                "score": 75,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 16,
+                "score": 13,
                 "flair": "Discussion",
                 "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. Traders are running the wheel. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "2258 mentions across 8 communities, +699% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "pro": "2329 mentions across 8 communities, +696% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 915,
+            "mentions": 921,
             "sources": [
               "all_stocks",
               "options",
@@ -1725,12 +1701,12 @@
               "wallstreetbets"
             ],
             "sentiment": "BULLISH",
-            "summary": "NVIDIA is currently facing intense retail frustration and downward price pressure as investors rotate capital into other semiconductor stocks, despite the co...",
+            "summary": "Nvidia is trending as investors weigh its dominance in the AI infrastructure market against the surging performance of competitors like AMD. While the commun...",
             "top_posts": [
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
@@ -1744,25 +1720,24 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 43,
+                "score": 46,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and the earnings reaction. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "915 mentions across 8 communities, +166% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "921 mentions across 8 communities, +158% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "SNDK",
-            "mentions": 988,
+            "mentions": 1010,
             "sources": [
               "all_stocks",
               "race10m",
               "race1m",
               "stocks",
-              "stocktwits",
               "thetagang",
               "wallstreetbets"
             ],
@@ -1772,33 +1747,33 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How to find next MU, SNDK, NVDA, ASTS , RKLB,",
-                "score": 301,
+                "score": 298,
                 "flair": "",
                 "body_excerpt": "I see here there are lot of people who bought shaees very early and have been doing well, Curious how you all get to know about this high potential stockd ahead in the game and to enter early. I am always late to the party and will apprecia..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "A 1/4 of the way there. 26yo",
-                "score": 66,
+                "score": 63,
                 "flair": "UPDATE",
                 "body_excerpt": "$22k in ROTH ira not shown in this balance puts me at $256k. Started investing $150/m at 18. Started with AMD/Nvidia since I've been building gaming pcs since I was 15yo and they were companies I was familiar with. About a year ago I divers..."
               },
               {
                 "sub": "thetagang",
                 "title": "Got killed on SNDK today",
-                "score": 20,
+                "score": 23,
                 "flair": "",
                 "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. The loudest take is: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\".",
-              "pro": "988 mentions across 7 communities, +175% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
+              "pro": "1010 mentions across 6 communities, +175% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Top thesis: \"How to find next MU, SNDK, NVDA, ASTS , RKLB,\"."
             }
           },
           {
             "ticker": "PLTR",
-            "mentions": 311,
+            "mentions": 300,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1827,14 +1802,14 @@
               {
                 "sub": "options",
                 "title": "Palantir ($PLTR) Earnings Vol Trade Post-mortem - Patience is the Key",
-                "score": 8,
+                "score": 7,
                 "flair": "",
                 "body_excerpt": "Yesterday I posted my thesis for going long vol into $PLTR EA.\n\n[https://www.reddit.com/r/options/comments/1t4135r/palantir\\_pltr\\_earnings\\_vol\\_setup\\_are\\_traders/](https://www.reddit.com/r/options/comments/1t4135r/palantir_pltr_earnings..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, cooler than yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "311 mentions across 6 communities, -49% vs prior session. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "300 mentions across 6 communities, -50% vs prior session. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           }
         ]
@@ -1910,8 +1885,8 @@
         "tab_intro": {
           "bullets": [
             {
-              "plain": "Bitcoin is consolidating near 81,000 dollars after the 80k bounce. Pre-market has been open 1.5 hours. Risk-on read for Tuesday cash open is intact as long as 80,000 holds.",
-              "pro": "BTC 80,937, +1.39 pct 24h, +6.07 pct 5d, RSI14 68.8. Chop range 80,800-81,200 after 80k bounce. Risk-on read for QQQ + semis at Tue cash open intact."
+              "plain": "Bitcoin broke below 80,000 in the after-hours session. Down to 79,828 dollars with momentum cooling. Risk-on bias for tomorrow's cash open is now compromised.",
+              "pro": "BTC 79,828, +1.64 pct 24h, +5.35 pct 5d, RSI14 67.1 (cooling). 80k line broke this afternoon. Reclaim of 80k overnight needed to keep risk-on bias alive for QQQ + semis at Wed open."
             },
             {
               "plain": "Bitcoin dominance is rising toward 59 percent, which keeps alt coins on the defensive. Wait for dominance to roll below 57 before considering alt rotations.",
@@ -1922,8 +1897,8 @@
               "pro": "DOGE RSI14 95.1, +4.88 pct 5d. Extreme overbought flagged by scanner. Mean-revert candidate; not RH-shortable. Observation only."
             },
             {
-              "plain": "Chainlink leadership continues: up 3.9 percent in 24 hours and 6.8 percent in 5 days. Three consecutive hours of outperformance confirm the alt-coin breakout.",
-              "pro": "LINK 9.72, +3.92 pct 24h, +6.76 pct 5d, RSI14 60.9. Three-hour leadership trend (9.56 \u2192 9.66 \u2192 9.70 \u2192 9.72). Gate entry on BTC.D < 57 still in place."
+              "plain": "Chainlink leadership unwound this afternoon. Down to 9.35, giving back most of the session gains. The alt-leadership read I flagged earlier is no longer in play.",
+              "pro": "LINK 9.35, +2.43 pct 24h (faded), +2.58 pct 5d (was +6.55). RSI14 52.6 (cooled from 60.4). Earlier alt-leadership thesis broke; back to neutral observation."
             }
           ]
         },
@@ -1931,10 +1906,10 @@
           {
             "verb": "WATCH",
             "target": "BTC",
-            "text": "Bitcoin consolidating near 81,000 after the 80k bounce. Risk-on read for Tuesday cash open is intact.",
+            "text": "Bitcoin broke below 80,000 in the AH session. Risk-on bias for tomorrow's open is compromised; reclaim of 80k overnight needed.",
             "detail": {
-              "plain": "Bitcoin is consolidating near 81,000 dollars after bouncing off the 80,000 line. Pre-market has been open 1.5 hours. The risk-on read for Tuesday cash open is intact as long as 80,000 holds. Chainlink continues leading the alt complex, the cleanest crypto setup right now.",
-              "pro": "BTC 80,937, +1.39 pct 24h, +6.07 pct 5d, RSI14 68.8. Consolidating 80,800-81,200 after 80k bounce. Pre-market open 1.5h; QQQ + semi continuation bid the base case at Tue cash open. LINK +3.92 pct 24h leadership extending over 3 hours."
+              "plain": "Bitcoin broke below the 80,000 line we flagged as the swing factor for tomorrow's equity open. The afternoon move down to 79,828 erases the morning's risk-on bid setup. If Bitcoin reclaims 80,000 overnight, the read flips back. If it stays below, expect a softer open in tech and high-beta equity tomorrow.",
+              "pro": "BTC 79,828, +1.64 pct 24h, +5.35 pct 5d, RSI14 67.1. 80k line broke in PM session. Risk-on bias for Wed equity open compromised. Need 80k reclaim overnight; if it fails, expect QQQ + semis to gap-down on Wed open. LINK leadership unwound (+2.58 pct 5d, was +6.55)."
             }
           }
         ],
@@ -1946,7 +1921,7 @@
               "stocktwits"
             ],
             "sentiment": "NEUTRAL",
-            "summary": "MicroStrategy is experiencing heightened community engagement as investors debate the impact of the company's aggressive Bitcoin acquisition strategy ahead o...",
+            "summary": "MicroStrategy is driving intense community debate as investors weigh the company's Q1 earnings report, which highlighted a shift in strategy including potent...",
             "top_posts": [],
             "detail": {
               "plain": "Light chatter today. Tone reads neutral.",
@@ -1956,6 +1931,166 @@
         ]
       },
       "sparks": {
+        "TER": [
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1
+        ],
+        "IWM": [
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56
+        ],
+        "NCLH": [
+          20.03,
+          20.99,
+          20.26,
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94
+        ],
+        "MO": [
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79
+        ],
+        "GC=F": [
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4635.1001
+        ],
+        "gold": [
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4635.1001
+        ],
+        "PODD": [
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53
+        ],
+        "^TNX": [
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416
+        ],
+        "ten_year": [
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416
+        ],
+        "QQQ": [
+          640.47,
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61
+        ],
         "SPY": [
           701.66,
           710.14,
@@ -1972,69 +2107,21 @@
           718.01,
           723.77
         ],
-        "GEHC": [
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0,
-          61.04
-        ],
-        "DX-Y.NYB": [
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.318
-        ],
-        "dxy": [
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.318
-        ],
-        "HUM": [
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96,
-          239.53
+        "TEAM": [
+          68.73,
+          66.94,
+          71.48,
+          71.22,
+          74.01,
+          67.62,
+          71.55,
+          69.22,
+          69.71,
+          70.49,
+          68.59,
+          88.88,
+          93.16,
+          92.35
         ],
         "^VIX": [
           17.94,
@@ -2068,69 +2155,21 @@
           18.29,
           17.38
         ],
-        "TEAM": [
-          68.73,
-          66.94,
-          71.48,
-          71.22,
-          74.01,
-          67.62,
-          71.55,
-          69.22,
-          69.71,
-          70.49,
-          68.59,
-          88.88,
-          93.16,
-          92.35
-        ],
-        "IWM": [
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56
-        ],
-        "PODD": [
-          201.47,
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53
-        ],
-        "MO": [
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79
+        "GEHC": [
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04
         ],
         "CL=F": [
           94.69,
@@ -2146,7 +2185,7 @@
           105.07,
           101.94,
           106.42,
-          101.35
+          100.97
         ],
         "oil": [
           94.69,
@@ -2162,119 +2201,55 @@
           105.07,
           101.94,
           106.42,
-          101.35
+          100.97
         ],
-        "NCLH": [
-          20.03,
-          20.99,
-          20.26,
-          19.33,
-          19.03,
-          18.42,
-          18.51,
-          18.19,
-          17.79,
-          17.77,
-          18.18,
-          18.81,
-          17.2,
-          16.94
+        "HUM": [
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53
         ],
-        "GC=F": [
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4614.2002
+        "DX-Y.NYB": [
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.249
         ],
-        "gold": [
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4614.2002
-        ],
-        "TER": [
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1
-        ],
-        "QQQ": [
-          640.47,
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61
-        ],
-        "^TNX": [
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416
-        ],
-        "ten_year": [
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416
+        "dxy": [
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.249
         ]
       }
     },
