@@ -3,25 +3,25 @@
   "briefs": [
     {
       "date": "2026-05-06",
-      "updated_at": "2026-05-06T03:10:00-07:00",
+      "updated_at": "2026-05-06T04:10:00-07:00",
       "regime": "BULL",
-      "regime_note": "FOMO-extended, but VIX cooling to 17.1 and breadth improving. ARM prints tonight AMC. AMD beat lifted XLK back to leadership.",
+      "regime_note": "Pre-market ripping: AI-semi gapping up hard, ARM +12 on sympathy ahead of tonight's print. SPY +1.1, QQQ +1.5 in pre-market. TEAM hit long entry, PODD gapped down -8.",
       "vix_bucket": "normal",
       "market_status": {
         "tier": "MARKET OPEN",
-        "text": "Regular session. Closing bell in 4h 24m at 16:00 ET."
+        "text": "Regular session. Closing bell in 4h 21m at 16:00 ET."
       },
       "headline": {
-        "plain": "Indexes still at record highs but the system blocks new long entries. ARM reports tonight, expected move 11 percent. Bitcoin reclaimed 80,000.",
-        "pro": "SPY 723.77 RSI 79 ATH plus QQQ 681.61 RSI 78.9. FOMO block active. ARM ER 5/06 AMC, exp move +/- 11.3 pct. AMD beat lifted XLK to leadership. BTC 80,927 reclaimed 80k overnight."
+        "plain": "AI-semi names rip in pre-market: ARM up 12, AMD up 17, INTC up 2.4, all ahead of ARM print tonight. TEAM hit the long entry zone.",
+        "pro": "Pre-market: SPY 731.72 +1.10 pct, QQQ 691.82 +1.50 pct ATH+. ARM 234.24 +12.16 pct (sympathy, not print). AMD 415.82 +17.05 pct. TEAM 87.34 in long zone. PODD 153.77 -8.21 pct (short in profit)."
       },
       "macro": {
         "indices": [
           {
             "ticker": "SPY",
-            "last": 723.77,
-            "rsi": 72.1,
-            "note": "Holding the ATH break at 723.77 (+0.80 pct on Tue close)",
+            "last": 731.72,
+            "rsi": 75.0,
+            "note": "Gapped up to 731.72 in pre-market (+1.10 pct), new ATH on AI-semi rip",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -48,9 +48,9 @@
           },
           {
             "ticker": "QQQ",
-            "last": 681.61,
-            "rsi": 78.9,
-            "note": "Holding the ATH break at 681.61 (+1.30 pct on Tue close); XLK back to sector leader",
+            "last": 691.82,
+            "rsi": 80.7,
+            "note": "Gapped up to 691.82 in pre-market (+1.50 pct), new ATH; XLK leadership extending",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -77,9 +77,9 @@
           },
           {
             "ticker": "IWM",
-            "last": 282.56,
-            "rsi": 69.5,
-            "note": "Led Tuesday at +1.68 pct; less stretched than tech",
+            "last": 285.48,
+            "rsi": 71.5,
+            "note": "Pre-market +1.03 pct to 285.48; small caps participating in the rip",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -492,11 +492,11 @@
         "watchlist": [
           {
             "ticker": "PODD",
-            "last": 167.53,
-            "change_pct": -2.25,
+            "last": 153.77,
+            "change_pct": -8.21,
             "trigger_zone": "170-175 short on rollover",
             "status": "TRIGGERED",
-            "note": "Broke below the zone Tue and held; setup intact for Wed open fill",
+            "note": "GAPPED DOWN -8.21 pct in pre-market to 153.77; short trade massively in profit at the open",
             "thesis": {
               "stance": "WATCH",
               "why": {
@@ -523,11 +523,11 @@
           },
           {
             "ticker": "TEAM",
-            "last": 92.35,
-            "change_pct": -0.87,
+            "last": 87.34,
+            "change_pct": -5.43,
             "trigger_zone": "pullback to 5DMA 87 long",
-            "status": "NEAR",
-            "note": "Bounced off 90.93 intraday low; pullback to 87 didn't hit; setup may lapse",
+            "status": "TRIGGERED",
+            "note": "Hit the 87 entry zone in pre-market (-5.43 pct); long setup is LIVE on green reversal confirm",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -676,7 +676,7 @@
                 151.65,
                 154.08,
                 157.04,
-                188.08
+                187.84
               ],
               "detail": {
                 "plain": "DVA closed up 19.89 percent at 188.27 today. Headline: Davita, Bloomin' Brands, Compass And Other Big Stocks Moving Higher On Wednesday",
@@ -699,7 +699,7 @@
                 136.03,
                 135.3,
                 136.8,
-                108.48
+                108.88
               ],
               "detail": {
                 "plain": "CDW closed down 20.64 percent at 108.56 on volume of 2.5M shares today. Headline: AI Infrastructure Demand and Commercial Growth Drive CDW\u2019s Q1 Revenue Increase",
@@ -720,7 +720,7 @@
                 172.7,
                 172.62,
                 170.22,
-                143.27
+                142.55
               ],
               "detail": {
                 "plain": "ANET closed down 15.74 percent at 143.43 on volume of 14.9M shares today. Headline: Potential Middle East Peace Agreement, Oil Price Declines Drive US Equity Futures Higher Pre-Bell",
@@ -741,7 +741,7 @@
                 304.0,
                 303.66,
                 305.9,
-                261.88
+                263.02
               ],
               "detail": {
                 "plain": "COR closed down 14.40 percent at 261.88 on volume of 3.0M shares today. Headline: Cencora (COR) Misses Q2 Earnings and Revenue Estimates",
@@ -762,7 +762,7 @@
                 55.02,
                 54.74,
                 56.68,
-                49.43
+                49.22
               ],
               "detail": {
                 "plain": "TECH closed down 12.54 percent at 49.57 on volume of 2.9M shares today. Headline: Bio-Techne (NASDAQ:TECH) Reports Sales Below Analyst Estimates In Q1 CY2026 Earnings",
@@ -1136,10 +1136,11 @@
           },
           {
             "ticker": "NVDA",
-            "mentions": 1200,
+            "mentions": 1201,
             "sources": [
               "all_stocks",
               "race10m",
+              "race1m",
               "stocks",
               "vitards",
               "wallstreetbets"
@@ -1155,23 +1156,23 @@
                 "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
               },
               {
+                "sub": "TheRaceTo1Million",
+                "title": "1m Goal: Cinco De Mayo 2027",
+                "score": 55,
+                "flair": "",
+                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
+              },
+              {
                 "sub": "TheRaceTo10Million",
                 "title": "I\u2019m gonna have a red day tomorrow, won\u2019t I? Up 14% today.",
                 "score": 17,
                 "flair": "GAIN$",
                 "body_excerpt": "$MU +15%  \n$AMD +18%  \n$LCRX +7%  \n$GOOGL +2%  \n$SNDK +3.5% (entered in late today)  \n$AMZN -0.25%  \n$MSFT -1.1%  \n$NVDA -1.1%  \n$META -1.2%  \n$TSM -0.9%  \n$KTOS -4.7%"
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "Nokia DD (with positions)",
-                "score": 4,
-                "flair": "Due Diligence",
-                "body_excerpt": "# Why Nokia\n\nNokia has made a shift from a legacy hardware manufacturer to an AI and Defence player. The stock price has began correcting, but still lags behind.\n\n# PE Valuation\n\nNokias current PE is sitting at 26 with the price of $13.4. I..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "1200 mentions across 5 communities, +583% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "1201 mentions across 6 communities, +583% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
@@ -1220,12 +1221,12 @@
         "unusual": [
           {
             "ticker": "QQQ",
-            "vol_oi": 14141,
+            "vol_oi": 15756,
             "context": "May 6 puts $692.0 \u00b7 9 unusual strike(s)"
           },
           {
             "ticker": "SPY",
-            "vol_oi": 6646,
+            "vol_oi": 7532,
             "context": "May 6 puts $734.0 \u00b7 11 unusual strike(s)",
             "detail": {
               "plain": "S and P 500 ETF flow is heavy into the ARM print tonight and Fed Hammack today. Hedging flow rather than directional.",
@@ -1862,21 +1863,101 @@
         ]
       },
       "sparks": {
-        "NCLH": [
-          20.99,
-          20.26,
-          19.33,
-          19.03,
-          18.42,
-          18.51,
-          18.19,
-          17.79,
-          17.77,
-          18.18,
-          18.81,
-          17.2,
-          16.94,
-          17.51
+        "DX-Y.NYB": [
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          97.975
+        ],
+        "dxy": [
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          97.975
+        ],
+        "CL=F": [
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.09
+        ],
+        "oil": [
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.09
+        ],
+        "IWM": [
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          285.25
+        ],
+        "QQQ": [
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          691.65
         ],
         "SPY": [
           710.14,
@@ -1892,7 +1973,119 @@
           720.65,
           718.01,
           723.77,
-          731.89
+          731.4771
+        ],
+        "GC=F": [
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4706.7998
+        ],
+        "gold": [
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4706.7998
+        ],
+        "HUM": [
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53,
+          249.65
+        ],
+        "TER": [
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          376.23
+        ],
+        "TEAM": [
+          66.94,
+          71.48,
+          71.22,
+          74.01,
+          67.62,
+          71.55,
+          69.22,
+          69.71,
+          70.49,
+          68.59,
+          88.88,
+          93.16,
+          92.35,
+          87.43
+        ],
+        "MO": [
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.73
+        ],
+        "NCLH": [
+          20.99,
+          20.26,
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94,
+          17.54
         ],
         "PODD": [
           203.73,
@@ -1908,7 +2101,39 @@
           175.04,
           171.39,
           167.53,
-          153.555
+          153.84
+        ],
+        "^VIX": [
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.13
+        ],
+        "vix": [
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.13
         ],
         "^TNX": [
           4.246,
@@ -1941,230 +2166,6 @@
           4.446,
           4.416,
           4.35
-        ],
-        "QQQ": [
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          692.12
-        ],
-        "GC=F": [
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4708.7002
-        ],
-        "gold": [
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4708.7002
-        ],
-        "CL=F": [
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.01
-        ],
-        "oil": [
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.01
-        ],
-        "HUM": [
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96,
-          239.53,
-          249.425
-        ],
-        "^VIX": [
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.12
-        ],
-        "vix": [
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.12
-        ],
-        "MO": [
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.77
-        ],
-        "DX-Y.NYB": [
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          97.99
-        ],
-        "dxy": [
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          97.99
-        ],
-        "TER": [
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1,
-          376.7
-        ],
-        "TEAM": [
-          66.94,
-          71.48,
-          71.22,
-          74.01,
-          67.62,
-          71.55,
-          69.22,
-          69.71,
-          70.49,
-          68.59,
-          88.88,
-          93.16,
-          92.35,
-          87.62
-        ],
-        "IWM": [
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          285.745
         ]
       }
     },
