@@ -155,6 +155,31 @@ Single file, public, served as static asset. Versioned via `version` integer.
     "coins": [{ "symbol": "BTC", "last": 95000, "change_5d_pct": 1.2,
                 "note": "...", "detail": {"plain":"...","pro":"..."} }],
     "recommendations": { "buy": [...], "sell": [...] }
+  },
+
+  "emerging": {
+    "tab_intro": { "bullets": [{ "plain": "...", "pro": "..." }, ... 3 to 5 items, IN PRIORITY ORDER] },
+    "actions": [/* per-tab Today's Actions; can be empty on quiet days */],
+    "accumulation": [
+      // "Rising stars": names showing insider buys + technically un-extended.
+      // Sourced from accumulation_scanner.py (Finnhub Form-4 + RSI/MA filters).
+      { "ticker": "ALLE", "last": 132.29, "score": 55,
+        "buys_60d": 3, "sells_60d": 0, "net_value": 524248,
+        "rsi14": 34, "dist_50ma_pct": -9.4,
+        "note": "3 insider buys, zero sells, RSI cold.",
+        "detail": {"plain":"...","pro":"..."},
+        "thesis": { "stance": "WATCH", "why": {"plain":"...","pro":"..."},
+                    "waiting_for": {"plain":"...","pro":"..."},
+                    "expecting": {"plain":"...","pro":"..."} } }
+    ],
+    "themes": [
+      // Secular long-game themes with LEAP-bias horizon. Weekly review (Sun brief).
+      { "theme": "AI memory cycle", "names": ["MU", "SNDK", "WDC", "STX"],
+        "horizon": "12-24 months", "vehicle_bias": "LEAP call",
+        "note": "Memory pricing recovery into 2027 capex cycle.",
+        "detail": {"plain":"...","pro":"..."} }
+    ],
+    "recommendations": { "buy": [...], "sell": [...] }
   }
 }
 ```

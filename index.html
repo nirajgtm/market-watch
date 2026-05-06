@@ -850,13 +850,15 @@ const TAB_ICONS = {
   stocks: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="4" height="7"/><rect x="10" y="9" width="4" height="11"/><rect x="17" y="5" width="4" height="15"/></svg>`,
   options: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>`,
   crypto: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8h5a2.5 2.5 0 0 1 0 5H9zM9 13h5.5a2.5 2.5 0 0 1 0 5H9zM10 6v2M10 18v2M14 6v2M14 18v2"/></svg>`,
+  emerging: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M12 21V8"/><path d="M12 8c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 8c3 0 5-2 5-5-3 0-5 2-5 5z"/><polyline points="6 14 12 10 18 14"/></svg>`,
 };
 
 const TABS = [
-  { id: "macro",   label: "Macro" },
-  { id: "stocks",  label: "Stocks" },
-  { id: "options", label: "Options" },
-  { id: "crypto",  label: "Crypto" },
+  { id: "macro",    label: "Macro" },
+  { id: "stocks",   label: "Stocks" },
+  { id: "options",  label: "Options" },
+  { id: "crypto",   label: "Crypto" },
+  { id: "emerging", label: "Emerging" },
 ];
 
 function renderTabs(active) {
@@ -1440,6 +1442,61 @@ function renderCryptoPane(b) {
   return `${intro}${actions}${recs}<div class="mw-grid">${card({ title: "Crypto · levels", span: "3", body: rows })}${social}</div>`;
 }
 
+// ──────────────── EMERGING ────────────────
+function renderEmergingPane(b) {
+  const e = b.emerging || {};
+  const sparks = b.sparks || {};
+
+  const accumRows = (e.accumulation || []).map(a => {
+    const id = `accum-${a.ticker}`;
+    const distFmt = a.dist_50ma_pct != null
+      ? `<span class="mw-dim mw-mono">${a.dist_50ma_pct >= 0 ? "+" : ""}${fmtNum(a.dist_50ma_pct)}%</span>` : "";
+    const cells = `
+      <td>${tickerPill(a.ticker, null, {withLogo: true, chgPct: chgPctFromSparks(sparks, a.ticker)})}</td>
+      <td>${sparkSvg(sparks[a.ticker] || [])}</td>
+      <td class="mw-mono r">${fmtNum(a.last)}</td>
+      <td class="mw-mono r"><strong>${a.score}</strong></td>
+      <td class="mw-mono r">${a.buys_60d}/${a.sells_60d}</td>
+      <td class="mw-mono r">${a.rsi14}</td>
+      <td class="mw-dim">${escHtml(a.note || "")}${caret(hasDetail(a))}</td>`;
+    return expandRow(id, cells, renderDetail(a), 7);
+  }).join("");
+  const accumCard = card({
+    title: "Accumulation · rising stars",
+    count: (e.accumulation || []).length, span: "3",
+    body: (e.accumulation || []).length ? `<table class="mw-table">
+      <thead><tr><th>Ticker</th><th>14d</th><th class="r">Last</th><th class="r">Score</th><th class="r">B/S 60d</th><th class="r">RSI</th><th>Note</th></tr></thead>
+      <tbody>${accumRows}</tbody>
+    </table>` : `<p class="mw-empty">No accumulation candidates today.</p>`
+  });
+
+  const themeRows = (e.themes || []).map((t, i) => {
+    const id = `theme-${i}`;
+    const namePills = (t.names || []).map(n => tickerPill(n, "sm")).join(" ");
+    const summary = `<div style="display:flex;flex-direction:column;gap:4px;padding:8px 0">
+      <div style="display:flex;align-items:baseline;gap:8px">
+        <span class="mw-cal-event"><strong>${escHtml(t.theme || "")}</strong></span>
+        <span class="mw-dim mw-mono" style="font-size:11px">${escHtml(t.horizon || "")} · ${escHtml(t.vehicle_bias || "")}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        ${namePills}
+        <span class="mw-cal-event mw-dim" style="margin-left:auto">${escHtml(t.note || "")}${caret(hasDetail(t))}</span>
+      </div>
+    </div>`;
+    return expandLi(id, summary, renderDetail(t));
+  }).join("");
+  const themeCard = card({
+    title: "Themes · long game", count: (e.themes || []).length, span: "3",
+    body: (e.themes || []).length ? `<ul class="mw-cal">${themeRows}</ul>` : `<p class="mw-empty">No theme focus this week.</p>`
+  });
+
+  const recs = renderRecommendations(e.recommendations || {}, "emerging", sparks);
+  const intro = renderTabIntro(e.tab_intro, "emerging");
+  const actions = renderPerTabActions(e.actions);
+  return `${intro}${actions}${recs}<div class="mw-grid">${accumCard}${themeCard}</div>`;
+}
+
+
 // ──────────────── MODALS ────────────────
 function renderModal() {
   if (!MODAL) return "";
@@ -1595,10 +1652,11 @@ function paneHtmlFor(tab) {
   let html = PANE_CACHE.get(key);
   if (html === undefined) {
     const b = getNormalized();
-    if (tab === "macro")        html = renderMacroPane(b);
-    else if (tab === "stocks")  html = renderStocksPane(b);
-    else if (tab === "options") html = renderOptionsPane(b);
-    else if (tab === "crypto")  html = renderCryptoPane(b);
+    if (tab === "macro")          html = renderMacroPane(b);
+    else if (tab === "stocks")    html = renderStocksPane(b);
+    else if (tab === "options")   html = renderOptionsPane(b);
+    else if (tab === "crypto")    html = renderCryptoPane(b);
+    else if (tab === "emerging")  html = renderEmergingPane(b);
     else html = "";
     PANE_CACHE.set(key, html);
   }
