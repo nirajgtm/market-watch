@@ -420,16 +420,25 @@
           },
           {
             "ticker": "VOO",
-            "mentions": 10,
+            "mentions": 11,
             "sources": [
+              "race1m",
               "stocks"
             ],
-            "sentiment": "MIXED",
+            "sentiment": "NEUTRAL",
             "summary": "",
-            "top_posts": [],
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "1m Goal: Cinco De Mayo 2027",
+                "score": 46,
+                "flair": "",
+                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
+              }
+            ],
             "detail": {
-              "plain": "VOO is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
-              "pro": "10 mentions across 1 communities, -33% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
+              "plain": "Light chatter today, cooler than yesterday. Tone reads neutral. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
+              "pro": "11 mentions across 2 communities, -33% vs prior session. Sentiment neutral. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
             }
           },
           {
@@ -466,6 +475,28 @@
             "detail": {
               "plain": "Moderate chatter today. Tone reads neutral. The loudest take is: \"A 1/4 of the way there. 26yo\".",
               "pro": "3 mentions across 1 communities. Sentiment neutral. Top thesis: \"A 1/4 of the way there. 26yo\"."
+            }
+          },
+          {
+            "ticker": "XLP",
+            "mentions": 1,
+            "sources": [
+              "options"
+            ],
+            "sentiment": "BEARISH",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "options",
+                "title": "Time to Make Some Bearish Bets...",
+                "score": 127,
+                "flair": "",
+                "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today. Tone leans bearish. The loudest take is: \"Time to Make Some Bearish Bets\".",
+              "pro": "1 mentions across 1 communities. Sentiment bearish. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           }
         ]
@@ -795,10 +826,10 @@
                 326.13
               ],
               "detail": {
-                "plain": "HII closed down 10.25 percent at 326.13 on volume of 1.6M shares today. Headline: A Look At Huntington Ingalls (HII) Valuation After Q1 Earnings Beat And Backlog Growth",
-                "pro": "HII -10.25 pct, close 326.13, vol 1.6M. Headline: A Look At Huntington Ingalls (HII) Valuation After Q1 Earnings Beat And Backlog Growth"
+                "plain": "HII closed down 10.25 percent at 326.13 on volume of 1.6M shares today. Headline: Review & Preview: Earnings in Focus",
+                "pro": "HII -10.25 pct, close 326.13, vol 1.6M. Headline: Review & Preview: Earnings in Focus"
               },
-              "note": "A Look At Huntington Ingalls (HII) Valuation After Q1 Earnings Beat And Backlog Growth"
+              "note": "Review & Preview: Earnings in Focus"
             },
             {
               "ticker": "FISV",
@@ -1819,22 +1850,22 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 80937.36,
-            "change_5d_pct": 6.07,
-            "note": "Consolidating near 81,000 after the 80k bounce; risk-on read intact",
+            "last": 79827.91,
+            "change_5d_pct": 5.35,
+            "note": "Broke below 80,000 in the AH session; risk-on read for tomorrow's open in question",
             "detail": {
-              "plain": "Bitcoin is consolidating near 81,000 dollars after the bounce off 80,000. The overbought meter at 69 is steady. Pre-market has been open for 1.5 hours; risk-on read for Tuesday cash open is intact as long as Bitcoin holds 80,000.",
-              "pro": "BTC 80,937, +1.39 pct 24h, +6.07 pct 5d. RSI14 68.8 (steady after bounce sequence 67.9 \u2192 68.3 \u2192 69.0 \u2192 68.8). BTC.D 58.82 pct (up-tick: alt rotation still gated). Chop 80,800-81,200 around 80k base. Cash open in 23 min."
+              "plain": "Bitcoin broke below the 80,000 line we flagged as the swing factor for tomorrow's equity open. Now at 79,828 dollars with the overbought meter cooling to 67. Risk-on bias for Wednesday is now compromised; reclaim of 80,000 overnight is the swing factor.",
+              "pro": "BTC 79,828, +1.64 pct 24h (faded), +5.35 pct 5d, RSI14 67.1 (cooling from 69.2 peak). BTC.D 58.68 pct. 80k line broke after holding all session; risk-on read for Wed equity open compromised. 80k reclaim overnight needed."
             }
           },
           {
             "symbol": "ETH",
-            "last": 2376.99,
-            "change_5d_pct": 5.35,
-            "note": "Drifting flat with Bitcoin; alt-defensive regime intact",
+            "last": 2346.4,
+            "change_5d_pct": 4.13,
+            "note": "Following Bitcoin lower; alt-defensive regime intact",
             "detail": {
-              "plain": "Ether is up 1.3 percent in 24 hours to 2,377, drifting flat with Bitcoin. As long as Bitcoin dominance stays near 59 percent, Ether and alt coins remain on defense.",
-              "pro": "ETH 2376.99, +1.30 pct 24h, +5.35 pct 5d, RSI14 56.1. Above 20MA, below 200MA. Wait for BTC.D below 57 before alt entries."
+              "plain": "Ether faded with Bitcoin to 2,346 dollars, down from 2,380 earlier today. The alt-defensive regime is unchanged with Bitcoin dominance still around 59 percent.",
+              "pro": "ETH 2346.40, +1.07 pct 24h (faded), +4.13 pct 5d, RSI14 54.1. Above 20MA, below 200MA. Wait for BTC.D below 57 before alt entries."
             }
           },
           {
@@ -1869,12 +1900,12 @@
           },
           {
             "symbol": "LINK",
-            "last": 9.72,
-            "change_5d_pct": 6.76,
-            "note": "Leadership continuing: up 3.9 percent in 24 hours, 6.8 percent over 5 days",
+            "last": 9.35,
+            "change_5d_pct": 2.58,
+            "note": "Leadership unwound this afternoon; gave back morning gains",
             "detail": {
-              "plain": "Chainlink continues leading the alt complex, up 3.9 percent in 24 hours and 6.8 percent over 5 days. Overbought meter at 61 is healthy. Three-hour leadership trend keeps building. Watch Bitcoin dominance for the rotation green light.",
-              "pro": "LINK 9.72, +3.92 pct 24h, +6.76 pct 5d, RSI14 60.9. Three-hour leadership trend (9.56 \u2192 9.66 \u2192 9.70 \u2192 9.72). RSI grinding higher with price. Gate entry on BTC.D < 57 still; size opportunity scaling on confirmation."
+              "plain": "Chainlink leadership unwound this afternoon. Down to 9.35 dollars, giving back most of the session gains. The alt-leadership read I flagged earlier today is no longer in play.",
+              "pro": "LINK 9.35, +2.43 pct 24h (faded from +3.92), +2.58 pct 5d (was +6.55). RSI14 52.6 (cooled from 60.4). Above 20MA still but momentum unwound; back to neutral observation."
             }
           }
         ],
@@ -1931,149 +1962,53 @@
         ]
       },
       "sparks": {
-        "TER": [
-          365.92,
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1
+        "GEHC": [
+          73.2,
+          74.66,
+          74.15,
+          72.26,
+          71.38,
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04
         ],
-        "IWM": [
-          269.95,
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56
+        "TEAM": [
+          68.73,
+          66.94,
+          71.48,
+          71.22,
+          74.01,
+          67.62,
+          71.55,
+          69.22,
+          69.71,
+          70.49,
+          68.59,
+          88.88,
+          93.16,
+          92.35
         ],
-        "NCLH": [
-          20.03,
-          20.99,
-          20.26,
-          19.33,
-          19.03,
-          18.42,
-          18.51,
-          18.19,
-          17.79,
-          17.77,
-          18.18,
-          18.81,
-          17.2,
-          16.94
-        ],
-        "MO": [
-          64.94,
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79
-        ],
-        "GC=F": [
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4635.1001
-        ],
-        "gold": [
-          4785.3999,
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4635.1001
-        ],
-        "PODD": [
-          201.47,
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53
-        ],
-        "^TNX": [
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416
-        ],
-        "ten_year": [
-          4.309,
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416
+        "HUM": [
+          200.76,
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53
         ],
         "QQQ": [
           640.47,
@@ -2091,37 +2026,21 @@
           672.88,
           681.61
         ],
-        "SPY": [
-          701.66,
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01,
-          723.77
-        ],
-        "TEAM": [
-          68.73,
-          66.94,
-          71.48,
-          71.22,
-          74.01,
-          67.62,
-          71.55,
-          69.22,
-          69.71,
-          70.49,
-          68.59,
-          88.88,
-          93.16,
-          92.35
+        "NCLH": [
+          20.03,
+          20.99,
+          20.26,
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94
         ],
         "^VIX": [
           17.94,
@@ -2155,21 +2074,133 @@
           18.29,
           17.38
         ],
-        "GEHC": [
-          73.2,
-          74.66,
-          74.15,
-          72.26,
-          71.38,
-          69.89,
-          68.83,
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0,
-          61.04
+        "MO": [
+          64.94,
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79
+        ],
+        "IWM": [
+          269.95,
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56
+        ],
+        "DX-Y.NYB": [
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.251
+        ],
+        "dxy": [
+          98.22,
+          98.1,
+          98.05,
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.251
+        ],
+        "TER": [
+          365.92,
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1
+        ],
+        "^TNX": [
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416
+        ],
+        "ten_year": [
+          4.309,
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416
+        ],
+        "PODD": [
+          201.47,
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53
         ],
         "CL=F": [
           94.69,
@@ -2203,53 +2234,53 @@
           106.42,
           100.97
         ],
-        "HUM": [
-          200.76,
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96,
-          239.53
+        "GC=F": [
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4635.7998
         ],
-        "DX-Y.NYB": [
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.249
+        "gold": [
+          4785.3999,
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4635.7998
         ],
-        "dxy": [
-          98.22,
-          98.1,
-          98.05,
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.249
+        "SPY": [
+          701.66,
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01,
+          723.77
         ]
       }
     },
