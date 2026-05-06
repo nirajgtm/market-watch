@@ -3,17 +3,17 @@
   "briefs": [
     {
       "date": "2026-05-06",
-      "updated_at": "2026-05-06T13:31:00-07:00",
+      "updated_at": "2026-05-06T14:40:00-07:00",
       "regime": "BULL",
-      "regime_note": "Cash session closed at ATH+: SPY 733.86, QQQ 695.77. ARM closed 237.30 near peak heading into ER. PODD closed at intraday lows -9.7. ARM and APP report in the next 3 hours.",
+      "regime_note": "ER prints out: ARM 224.00 in after-hours (-5.6 pct from session close), APP 494.91 in after-hours (+5.6 pct). Cash session itself closed at ATH+ on broad strength.",
       "vix_bucket": "normal",
       "market_status": {
         "tier": "AFTER-HOURS",
         "text": "After-hours trading. Session closes 20:00 ET."
       },
       "headline": {
-        "plain": "Cash session closed at all-time highs. ARM and AppLovin both report earnings in the next 3 hours. The board is set.",
-        "pro": "Close: SPY 733.86 +1.39 pct, QQQ 695.77 +2.08 pct ATH. ARM 237.30 +13.63 pct (IV peak intact). AMD 421.39 +18.61 pct. MU 666.59 +4.12 pct RSI 87 (no mean-rev). PODD 151.28 -9.70 pct (closed at lows). ARM + APP ER tonight AMC ~1:05 PT."
+        "plain": "ARM falls 5.6 percent after earnings, AppLovin jumps 5.6 percent. Mixed prints set up a divergent open Thursday.",
+        "pro": "After-hours: ARM 224.00 -5.61 pct from session close (well within -11.3 pct expected move). APP 494.91 +5.56 pct. Session: SPY 733.86 +1.39 pct ATH, QQQ 695.77 +2.08 pct ATH. AI-semi sympathy names sustained gains: AMD +18.61, MU +4.12 RSI 87."
       },
       "macro": {
         "indices": [
@@ -1126,11 +1126,10 @@
           },
           {
             "ticker": "NVDA",
-            "mentions": 1065,
+            "mentions": 1064,
             "sources": [
               "all_stocks",
               "options",
-              "race1m",
               "stocks",
               "vitards",
               "wallstreetbets"
@@ -1146,23 +1145,23 @@
                 "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
               },
               {
-                "sub": "TheRaceTo1Million",
-                "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 55,
-                "flair": "",
-                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
-              },
-              {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
                 "score": 11,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
+              },
+              {
+                "sub": "options",
+                "title": "Margin loan at 13% (E*TRADE) vs SPX box spread financing \u2014 worth it?",
+                "score": 1,
+                "flair": "",
+                "body_excerpt": "Hey all,\n\nI recently took out a \\~$83K margin loan with E\\*TRADE to invest in NVDA LEAP calls and shares. I\u2019m currently in a small profit and planning to hold most of the position until 2028. I might trim about half earlier if NVDA hits \\~$..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "1065 mentions across 6 communities, +543% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and a sector comparison trade. Traders are trimming or taking profit. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "1064 mentions across 5 communities, +543% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
@@ -1640,11 +1639,10 @@
           },
           {
             "ticker": "NVDA",
-            "mentions": 1065,
+            "mentions": 1064,
             "sources": [
               "all_stocks",
               "options",
-              "race1m",
               "stocks",
               "vitards",
               "wallstreetbets"
@@ -1660,23 +1658,23 @@
                 "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
               },
               {
-                "sub": "TheRaceTo1Million",
-                "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 55,
-                "flair": "",
-                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
-              },
-              {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
                 "score": 11,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
+              },
+              {
+                "sub": "options",
+                "title": "Margin loan at 13% (E*TRADE) vs SPX box spread financing \u2014 worth it?",
+                "score": 1,
+                "flair": "",
+                "body_excerpt": "Hey all,\n\nI recently took out a \\~$83K margin loan with E\\*TRADE to invest in NVDA LEAP calls and shares. I\u2019m currently in a small profit and planning to hold most of the position until 2028. I might trim about half earlier if NVDA hits \\~$..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "1065 mentions across 6 communities, +543% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and a sector comparison trade. Traders are trimming or taking profit. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "1064 mentions across 5 communities, +543% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
@@ -1719,41 +1717,41 @@
             }
           },
           {
-            "ticker": "PLTR",
-            "mentions": 6,
+            "ticker": "GOOG",
+            "mentions": 19,
             "sources": [
-              "options",
-              "thetagang",
-              "vitards"
+              "race1m",
+              "stocks",
+              "thetagang"
             ],
-            "sentiment": "BULLISH",
+            "sentiment": "NEUTRAL",
             "summary": "",
             "top_posts": [
               {
-                "sub": "Vitards",
-                "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
-                "score": 97,
-                "flair": "YOLO",
-                "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
+                "sub": "TheRaceTo1Million",
+                "title": "1m Goal: Cinco De Mayo 2027",
+                "score": 55,
+                "flair": "",
+                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               },
               {
                 "sub": "thetagang",
-                "title": "PLTR Puts",
+                "title": "Down $150k on CC's. What's the risk of exercise on deep ITM CC?",
                 "score": 19,
-                "flair": "",
-                "body_excerpt": "I sold PLTR puts before the earnings hoping for an IV crush and not much movement. When to buy them back?\n\nEDIT: Bought them back for around 60% profit"
+                "flair": "Discussion",
+                "body_excerpt": "I can't roll out of these deep ITMs into OTM CCs unless I roll like 3 years out, which I'm not sure I want to do.\n\nIf i continue rolling into basically the same strike, one month out at a time, hoping for a pull-back to exit my CC (or roll ..."
               },
               {
-                "sub": "options",
-                "title": "Palantir ($PLTR) Earnings Vol Trade Post-mortem - Patience is the Key",
-                "score": 8,
-                "flair": "",
-                "body_excerpt": "Yesterday I posted my thesis for going long vol into $PLTR EA.\n\n[https://www.reddit.com/r/options/comments/1t4135r/palantir\\_pltr\\_earnings\\_vol\\_setup\\_are\\_traders/](https://www.reddit.com/r/options/comments/1t4135r/palantir_pltr_earnings..."
+                "sub": "thetagang",
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 17,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "6 mentions across 3 communities. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. Traders are running the wheel. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
+              "pro": "19 mentions across 3 communities, +129% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
             }
           }
         ]
@@ -1890,53 +1888,117 @@
         ]
       },
       "sparks": {
-        "GC=F": [
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4703.1001
+        "^TNX": [
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356
         ],
-        "gold": [
-          4857.6001,
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4703.1001
+        "ten_year": [
+          4.246,
+          4.25,
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356
         ],
-        "IWM": [
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          286.8
+        "HUM": [
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53,
+          246.33
+        ],
+        "PODD": [
+          203.73,
+          200.87,
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28
+        ],
+        "TER": [
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          382.48
+        ],
+        "QQQ": [
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77
+        ],
+        "SPY": [
+          710.14,
+          708.72,
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01,
+          723.77,
+          733.83
         ],
         "NCLH": [
           20.99,
@@ -1986,38 +2048,6 @@
           102.27,
           96.21
         ],
-        "MO": [
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17
-        ],
-        "SPY": [
-          710.14,
-          708.72,
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01,
-          723.77,
-          733.83
-        ],
         "DX-Y.NYB": [
           98.1,
           98.05,
@@ -2032,7 +2062,7 @@
           98.21,
           98.47,
           98.48,
-          98.016
+          98.015
         ],
         "dxy": [
           98.1,
@@ -2048,7 +2078,7 @@
           98.21,
           98.47,
           98.48,
-          98.016
+          98.015
         ],
         "TEAM": [
           66.94,
@@ -2066,85 +2096,21 @@
           92.35,
           88.8
         ],
-        "^TNX": [
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356
-        ],
-        "ten_year": [
-          4.246,
-          4.25,
-          4.292,
-          4.294,
-          4.323,
-          4.31,
-          4.336,
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356
-        ],
-        "TER": [
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1,
-          382.48
-        ],
-        "QQQ": [
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77
-        ],
-        "HUM": [
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96,
-          239.53,
-          246.33
+        "IWM": [
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8
         ],
         "^VIX": [
           17.48,
@@ -2178,21 +2144,53 @@
           17.38,
           17.39
         ],
-        "PODD": [
-          203.73,
-          200.87,
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53,
-          151.28
+        "GC=F": [
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4703.1001
+        ],
+        "gold": [
+          4857.6001,
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4703.1001
+        ],
+        "MO": [
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17
         ]
       }
     },
