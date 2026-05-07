@@ -3,25 +3,25 @@
   "briefs": [
     {
       "date": "2026-05-07",
-      "updated_at": "2026-05-07T06:39:00-07:00",
+      "updated_at": "2026-05-07T09:38:00-07:00",
       "regime": "BULL",
-      "regime_note": "Cash open 7 min in: APP collapsed from pre-market +3.4 pct to -4.8 pct (gap-and-fade reversal). ARM bouncing off AH lows on short-cover (-4.4 vs -6.7 pre-mkt). ISRG +1.5 catching a bid.",
+      "regime_note": "Cash 3h in: ARM lost the bounce (-10.25 pct), APP holding +7.8 pct, ISRG green. MO triggered the 70 pullback long entry. PODD bouncing 6.6 pct from yesterday lows.",
       "vix_bucket": "normal",
       "market_status": {
         "tier": "MARKET OPEN",
-        "text": "Regular session. Closing bell in 3h 30m at 16:00 ET."
+        "text": "Regular session. Closing bell in 3h 21m at 16:00 ET."
       },
       "headline": {
-        "plain": "AppLovin reverses sharply at the open: pre-market gain of 3 percent flips to a 5 percent loss. ARM bounces off lows on short-covering.",
-        "pro": "Cash open: APP 446.25 -4.82 pct (gap-and-fade from pre-market peak +3.44). ARM 226.86 -4.40 (bounce off AH lows -6.7). ISRG 458.57 +1.51. SPY/QQQ flat ATH+. AMGN -0.49 post-print, MCD +0.07."
+        "plain": "ARM extends down 10 percent as the post-earnings bounce fails. AppLovin holds plus 8 percent. MO defensive long entry triggered at 69.",
+        "pro": "Cash 3h: ARM 212.98 -10.25 (lost short-cover bounce). APP 505.20 +7.76 holding. ISRG 456.52 +1.06 green T1. MO 69.15 in 70-pullback long zone TRIGGERED. SPY 733.42 -0.06, QQQ 696.67 +0.13 ATH."
       },
       "macro": {
         "indices": [
           {
             "ticker": "SPY",
-            "last": 733.34,
+            "last": 733.42,
             "rsi": 75.5,
-            "note": "Cash open 734.35 (+0.07 pct), flat ATH+. RSI 75 still extreme.",
+            "note": "Cash 733.42 (-0.06 pct), drifted lower from open; ATH+ levels intact.",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -48,9 +48,9 @@
           },
           {
             "ticker": "QQQ",
-            "last": 696.12,
+            "last": 696.67,
             "rsi": 81.6,
-            "note": "Cash open 696.79 (+0.15 pct), small green ATH+. RSI 81 stretched.",
+            "note": "Cash 696.67 (+0.13 pct), holding ATH+; XLK leadership intact.",
             "thesis": {
               "stance": "WAIT",
               "why": {
@@ -77,7 +77,7 @@
           },
           {
             "ticker": "IWM",
-            "last": 283.4,
+            "last": 285.48,
             "rsi": 71.5,
             "note": "Pre-market +1.03 pct to 285.48; small caps participating in the rip",
             "thesis": {
@@ -102,12 +102,12 @@
           }
         ],
         "vol_yields": {
-          "vix": 17.46,
+          "vix": 17.1,
           "vix_term": "STEEP_CONTANGO",
-          "ten_year": 4.37,
-          "dxy": 98.0,
-          "oil": 94.84,
-          "gold": 4717.0,
+          "ten_year": 4.38,
+          "dxy": 98.25,
+          "oil": 103.3,
+          "gold": 4593.0,
           "details": {
             "vix": {
               "plain": "Volatility cooled to 17.1 from 17.93 yesterday. Calm regime with futures still in steep contango. Short-vol income trades continue to pay.",
@@ -225,20 +225,20 @@
           },
           {
             "ticker": "ARM",
-            "date": "Wed May 6 (REPORTED, bouncing off AH lows -4.4 pct)",
-            "note": "ARM bouncing off the after-hours lows on short-covering at the open.",
+            "date": "Wed May 6 (REPORTED, -10.25 pct intraday now)",
+            "note": "ARM extending lower in cash session; lost the early short-cover bounce.",
             "detail": {
-              "plain": "ARM was down 6.7 percent in pre-market but bounced to down 4.4 percent in the first 7 minutes of the session. Short-covering buying after the print.",
-              "pro": "ARM 226.86 -4.40 pct cash open (bounced from pre-market 221.40 -6.7 pct). WSB squeeze flag confirmed: short interest unwinding into the bell."
+              "plain": "ARM was bouncing in pre-market at minus 6 percent, but the cash session has driven it down to minus 10 percent. The post-earnings drift is now decisively negative.",
+              "pro": "ARM 212.98 -10.25 pct cash 3h. Lost the pre-market 4 pct bounce; now at fresh intraday lows. PEAD signal: post-print drift negative, watch for continuation over 5-30d."
             }
           },
           {
             "ticker": "APP",
-            "date": "Wed May 6 (REPORTED, COLLAPSED -4.8 pct from pre-market +3.4)",
-            "note": "AppLovin gap-and-fade reversal. Pre-market plus 3 percent flipped to minus 5 percent at the open.",
+            "date": "Wed May 6 (REPORTED, +7.76 pct cash, holding print)",
+            "note": "AppLovin holding the gap-up post-print despite slight intraday give-back.",
             "detail": {
-              "plain": "AppLovin was UP 3 percent in pre-market, then immediately collapsed to DOWN 5 percent in the first 10 minutes of trading. Classic gap-and-fade: speculator buying that fades once real flow hits the tape.",
-              "pro": "APP 446.25 -4.82 pct cash open. Pre-market peak 484.97 +3.44 pct. Net move: -8.0 pct from pre-market peak. Gap-and-fade pattern. ER print not well-received once analysts dug in."
+              "plain": "AppLovin opened at plus 9 percent and is now plus 8 percent, holding most of the gain. The print is being well-received as institutions absorb the news.",
+              "pro": "APP 505.20 +7.76 pct cash 3h (gave back 1.4 pct from peak +9.11). Print well-received; PEAD long bias confirming. RSI 57.5 neutral, room to run."
             }
           }
         ],
@@ -334,10 +334,9 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 1187,
+            "mentions": 1170,
             "sources": [
               "all_stocks",
-              "daytrading",
               "options",
               "race10m",
               "race1m",
@@ -350,37 +349,36 @@
               {
                 "sub": "options",
                 "title": "The 24/7 workflow I run for earnings IV crush trades",
-                "score": 233,
+                "score": 246,
                 "flair": "",
                 "body_excerpt": "TL;DR: I created an alert system with AI that finds overpriced options right before earnings, and then I trade a short straddle setup betting on the IV crush. I'm averaging \\~84.74 % annual returns.\n\nImportant: A lot of the ideas for this s..."
               },
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 143,
+                "score": 144,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "How am I doing? Started with $62k in 2021, feels like I'm not making the progress I should be",
-                "score": 12,
+                "score": 21,
                 "flair": "",
                 "body_excerpt": "In 5 or so years I've only made $35k, a 57% increase. It feels like I'm not leveraging the amount of money I'm fortunate to have at this point in my life (26yo).\n\nI read a comment on here that said if a 25 year old had $100k he could retire..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bearish. The conversation is centered on AI and data-center demand, the earnings reaction, and rich option premium. The loudest take is: \"The 24/7 workflow I run for earnings IV crush trades\".",
-              "pro": "1187 mentions across 7 communities, +46% vs prior session. Sentiment bearish. Themes: AI and data-center demand; the earnings reaction; rich option premium. Top thesis: \"The 24/7 workflow I run for earnings IV crush trades\"."
+              "plain": "Heavy chatter today, cooler than yesterday. Tone leans bearish. The conversation is centered on AI and data-center demand, the earnings reaction, and rich option premium. The loudest take is: \"The 24/7 workflow I run for earnings IV crush trades\".",
+              "pro": "1170 mentions across 6 communities, -27% vs prior session. Sentiment bearish. Themes: AI and data-center demand; the earnings reaction; rich option premium. Top thesis: \"The 24/7 workflow I run for earnings IV crush trades\"."
             }
           },
           {
             "ticker": "QQQ",
-            "mentions": 347,
+            "mentions": 500,
             "sources": [
               "all_stocks",
               "options",
-              "race1m",
               "stocks",
               "thetagang",
               "wallstreetbets"
@@ -391,33 +389,33 @@
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 143,
+                "score": 144,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
-                "sub": "TheRaceTo1Million",
-                "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 111,
-                "flair": "",
-                "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
-              },
-              {
                 "sub": "thetagang",
                 "title": "Why is it that I can fully use my available margin  when holding the shares and selling covered calls, but can't when selling puts?  Does that mean it is better to  sell covered calls on this case?  With margin i can use $122,000 to buy QQQ stock, but I can only use $56,000 to sell puts.",
-                "score": 19,
+                "score": 20,
                 "flair": "Covered Call",
                 "body_excerpt": ""
+              },
+              {
+                "sub": "options",
+                "title": "Free tool to catch the 'someone knows something' flow before the move",
+                "score": 10,
+                "flair": "",
+                "body_excerpt": "There's been a ton of insider trading in the market. Made some posts recently about the ones I've caught,   \n  \nThe [flow before eBays acquisition news](https://www.reddit.com/r/options/comments/1t2x7le/tell_me_this_ebay_flow_isnt_criminal/..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bearish. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "347 mentions across 6 communities, +50% vs prior session. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone leans bearish. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"Time to Make Some Bearish Bets\".",
+              "pro": "500 mentions across 5 communities, +64% vs prior session. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           },
           {
             "ticker": "VOO",
-            "mentions": 12,
+            "mentions": 16,
             "sources": [
               "stocks"
             ],
@@ -426,36 +424,7 @@
             "top_posts": [],
             "detail": {
               "plain": "VOO is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
-              "pro": "12 mentions across 1 communities, -20% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
-            }
-          },
-          {
-            "ticker": "VTI",
-            "mentions": 2,
-            "sources": [
-              "race10m"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "31m, just crossed 100k. What next?",
-                "score": 20,
-                "flair": "",
-                "body_excerpt": "31M, married, just crossed $100k in my taxable brokerage today, so figured I\u2019d share the setup.  \nCurrent brokerage portfolio:\n\nVTI  \nVXUS  \nGOOG  \nASTS  \nRKLB\n\nCurrent auto-invests:  \n$65/day VTI  \n$35/day VXUS  \n$20/day GOOG  \n$20/day AST..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "Started my first true investment Portfolio + Roth IRA @23 years old in February and up almost 32% in 3 Months",
-                "score": 4,
-                "flair": "",
-                "body_excerpt": "Small victory but so happy to finally take some financial responsibility to make sure I\u2019m set for my future and it finally feels like it\u2019s paying off. Any advice for a young investor like myself? I have an itch to sell since I\u2019ve never gain..."
-              }
-            ],
-            "detail": {
-              "plain": "Light chatter today. Tone reads neutral. The loudest take is: \"31m, just crossed 100k. What next?\".",
-              "pro": "2 mentions across 1 communities. Sentiment neutral. Top thesis: \"31m, just crossed 100k. What next?\"."
+              "pro": "16 mentions across 1 communities, +23% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
             }
           }
         ]
@@ -464,11 +433,11 @@
         "watchlist": [
           {
             "ticker": "PODD",
-            "last": 162.24,
-            "change_pct": 6.71,
+            "last": 161.23,
+            "change_pct": 6.58,
             "trigger_zone": "170-175 short on rollover",
-            "status": "CLOSED",
-            "note": "Closed at intraday lows 151.28 (-9.70 pct); short trade booked max profit on the day yesterday",
+            "status": "BOUNCE",
+            "note": "Bouncing 6.58 pct from yesterday's lows; short trade window may be closing if anyone got in",
             "thesis": {
               "stance": "WATCH",
               "why": {
@@ -495,8 +464,8 @@
           },
           {
             "ticker": "TEAM",
-            "last": 93.46,
-            "change_pct": 4.95,
+            "last": 88.8,
+            "change_pct": -3.84,
             "trigger_zone": "pullback to 5DMA 87 long",
             "status": "NEAR",
             "note": "Bounced off 87.34 intraday low to 88.97; entry zone may have triggered the bottom",
@@ -526,8 +495,8 @@
           },
           {
             "ticker": "NCLH",
-            "last": 17.34,
-            "change_pct": -1.44,
+            "last": 17.2,
+            "change_pct": -1.1,
             "trigger_zone": "bounce-and-fail to 18-19 short",
             "status": "FAR",
             "note": "Drifting LOWER not bouncing; short-on-bounce setup may never fire",
@@ -553,8 +522,8 @@
           },
           {
             "ticker": "HUM",
-            "last": 246.0,
-            "change_pct": 0.43,
+            "last": 242.1,
+            "change_pct": 1.74,
             "trigger_zone": "below 228 long on reversal",
             "status": "FAR",
             "note": "Pushing higher; entry zone getting further away above the chase-too-late level",
@@ -580,24 +549,28 @@
           },
           {
             "ticker": "MO",
-            "last": 69.29,
-            "change_pct": -1.31,
+            "last": 69.15,
+            "change_pct": -1.45,
             "trigger_zone": "pullback to gap-day midpoint 70 long",
-            "status": "NEAR",
-            "note": "Drifting toward 70-71 entry zone; close watch",
+            "status": "TRIGGERED",
+            "note": "In the 70-pullback entry zone at 69.15; defensive PEAD long setup live",
             "thesis": {
               "stance": "WAIT",
               "why": {
-                "plain": "Altria is drifting toward the 70 to 71 entry zone. The first red day post-print pullback is in motion.",
-                "pro": "MO 72.93 -0.65 pct, RSI 77.2. Above FOMO ceiling 70.57 but cooling toward entry zone."
+                "plain": "Altria pulled back below 70 to 69 dollars and is now in the long entry zone. Defensive name catching a bid as the broader tape softens.",
+                "pro": "MO 69.15 in entry zone. RSI 63.8 (not yet oversold). 20MA 67.24, FOMO ceiling 70.57. Defensive bid likely as XLP rotation candidate."
               },
               "waiting_for": {
-                "plain": "A close in the 70 to 71 area with the gap-day low intact, plus a green reclaim candle.",
-                "pro": "Pullback close 70-71 + gap-day low intact + reclaim candle. Vehicle: stock or 6/20 70/77.5 debit call spread."
+                "plain": "A green daily close above 69, ideally with a higher-low intraday print to confirm the entry.",
+                "pro": "Trigger: green close > 69 + higher-low intraday vs prior session low; confirm vol > 5d MA on the bounce candle."
+              },
+              "watching": {
+                "plain": "The overbought-oversold meter at 64 is neutral-positive; not a deep oversold bounce, more of a consolidation entry.",
+                "pro": "RSI14 63.8 mid-range. ATR14 1.67 = 2.4 pct daily swing baseline. XLP sector tone."
               },
               "expecting": {
-                "plain": "Base case: MO chops 71 to 73 for 2 to 3 sessions before reclaim candle.",
-                "pro": "Base case: range 71-73 for 2-3 sessions, target 78-80 over 21-35d. Strategy: pead_long."
+                "plain": "Base case: MO chops 68-72 over the next 5 days as the post-earnings drift plays out; defensive bid intact.",
+                "pro": "Base case range 68-72 for 5d. PEAD long bias intact while XLP rotation tone holds."
               }
             },
             "detail": {
@@ -607,8 +580,8 @@
           },
           {
             "ticker": "TER",
-            "last": 351.9,
-            "change_pct": -7.27,
+            "last": 338.61,
+            "change_pct": -1.97,
             "trigger_zone": "365-380 short on rejection",
             "status": "FAR",
             "note": "Bounce stalled; reset gated on rip to 365",
@@ -634,8 +607,8 @@
           },
           {
             "ticker": "ISRG",
-            "last": 457.08,
-            "change_pct": 1.21,
+            "last": 456.52,
+            "change_pct": 1.06,
             "trigger_zone": "451 long T1, 427-430 long T2, 499 long T3 (scale-in)",
             "status": "TRIGGERED",
             "note": "Quality compounder 25 pct off ATH; multi-tranche scale-in long",
@@ -668,8 +641,8 @@
           "gainers": [
             {
               "ticker": "FTNT",
-              "last": 108.87,
-              "chg": 21.04,
+              "last": 107.78,
+              "chg": 19.82,
               "vol": 0,
               "spark": [
                 85.72,
@@ -679,42 +652,21 @@
                 89.24,
                 89.92,
                 89.95,
-                108.72
+                107.75
               ],
               "detail": {
-                "plain": "FTNT closed up 21.04 percent at 108.87 today. Headline: Top S&P500 movers in Thursday's pre-market session",
-                "pro": "FTNT +21.04 pct, close 108.87. Headline: Top S&P500 movers in Thursday's pre-market session"
+                "plain": "FTNT closed up 19.82 percent at 107.78 today. Headline: What's going on in today's session: S&P500 gap up and gap down stocks",
+                "pro": "FTNT +19.82 pct, close 107.78. Headline: What's going on in today's session: S&P500 gap up and gap down stocks"
               },
-              "note": "Top S&P500 movers in Thursday's pre-market session"
+              "note": "What's going on in today's session: S&P500 gap up and gap down stocks"
             }
           ],
           "losers": [
             {
-              "ticker": "ZTS",
-              "last": 90.2,
-              "chg": -18.86,
-              "vol": 4320902,
-              "spark": [
-                116.65,
-                113.83,
-                114.97,
-                114.16,
-                112.68,
-                112.54,
-                111.22,
-                90.16
-              ],
-              "detail": {
-                "plain": "ZTS closed down 18.86 percent at 90.20 on volume of 4.3M shares today. Headline: Zoetis Crashes As Even Slashed Guidance Appears To Be A 'Heavy Lift'",
-                "pro": "ZTS -18.86 pct, close 90.20, vol 4.3M. Headline: Zoetis Crashes As Even Slashed Guidance Appears To Be A 'Heavy Lift'"
-              },
-              "note": "Zoetis Crashes As Even Slashed Guidance Appears To Be A 'Heavy Lift'"
-            },
-            {
               "ticker": "INSM",
-              "last": 125.0,
-              "chg": -8.82,
-              "vol": 981541,
+              "last": 105.01,
+              "chg": -23.4,
+              "vol": 6418574,
               "spark": [
                 134.94,
                 135.03,
@@ -723,39 +675,61 @@
                 140.01,
                 139.44,
                 137.09,
-                124.93
+                105.0
               ],
               "detail": {
-                "plain": "INSM closed down 8.82 percent at 125.00 on volume of 982K shares today.",
-                "pro": "INSM -8.82 pct, close 125.00, vol 982K."
-              }
+                "plain": "INSM closed down 23.40 percent at 105.01 on volume of 6.4M shares today. Headline: Insmed Tanks On Its Most Important Launch; Why Analysts Remain Bullish",
+                "pro": "INSM -23.40 pct, close 105.01, vol 6.4M. Headline: Insmed Tanks On Its Most Important Launch; Why Analysts Remain Bullish"
+              },
+              "note": "Insmed Tanks On Its Most Important Launch; Why Analysts Remain Bullish"
             },
             {
-              "ticker": "CTRA",
-              "last": 32.56,
-              "chg": -8.62,
-              "vol": 73317709,
+              "ticker": "ZTS",
+              "last": 88.32,
+              "chg": -20.59,
+              "vol": 18728541,
               "spark": [
-                33.67,
-                34.63,
-                35.68,
-                35.91,
-                35.38,
-                35.86,
-                35.63,
-                32.56
+                116.65,
+                113.83,
+                114.97,
+                114.16,
+                112.68,
+                112.54,
+                111.22,
+                88.41
               ],
               "detail": {
-                "plain": "CTRA closed down 8.62 percent at 32.56 on volume of 73.3M shares today. Headline: Here\u2019s Why Aristotle Value Equity Strategy Sold Coterra Energy (CTRA) in Q1",
-                "pro": "CTRA -8.62 pct, close 32.56, vol 73.3M. Headline: Here\u2019s Why Aristotle Value Equity Strategy Sold Coterra Energy (CTRA) in Q1"
+                "plain": "ZTS closed down 20.59 percent at 88.32 on volume of 18.7M shares today. Headline: Why Zoetis' Slashed 2026 Guidance Still Appears To Be A 'Heavy Lift'",
+                "pro": "ZTS -20.59 pct, close 88.32, vol 18.7M. Headline: Why Zoetis' Slashed 2026 Guidance Still Appears To Be A 'Heavy Lift'"
               },
-              "note": "Here\u2019s Why Aristotle Value Equity Strategy Sold Coterra Energy (CTRA) in Q1"
+              "note": "Why Zoetis' Slashed 2026 Guidance Still Appears To Be A 'Heavy Lift'"
+            },
+            {
+              "ticker": "TPR",
+              "last": 131.16,
+              "chg": -11.87,
+              "vol": 3319306,
+              "spark": [
+                143.84,
+                141.6,
+                145.04,
+                142.74,
+                139.74,
+                141.39,
+                148.83,
+                131.13
+              ],
+              "detail": {
+                "plain": "TPR closed down 11.87 percent at 131.16 on volume of 3.3M shares today. Headline: Coach Is Hitting the Right Price Point\u2014Heard on the Street",
+                "pro": "TPR -11.87 pct, close 131.16, vol 3.3M. Headline: Coach Is Hitting the Right Price Point\u2014Heard on the Street"
+              },
+              "note": "Coach Is Hitting the Right Price Point\u2014Heard on the Street"
             },
             {
               "ticker": "HUT",
-              "last": 99.7,
-              "chg": -8.48,
-              "vol": 1028938,
+              "last": 96.73,
+              "chg": -11.21,
+              "vol": 5475325,
               "spark": [
                 72.11,
                 71.0,
@@ -764,13 +738,13 @@
                 78.08,
                 80.51,
                 108.94,
-                99.45
+                96.73
               ],
               "detail": {
-                "plain": "HUT closed down 8.48 percent at 99.70 on volume of 1.0M shares today. Headline: Hut 8 Soars 35% On $9.8 Billion AI Lease Deal",
-                "pro": "HUT -8.48 pct, close 99.70, vol 1.0M. Headline: Hut 8 Soars 35% On $9.8 Billion AI Lease Deal"
+                "plain": "HUT closed down 11.21 percent at 96.73 on volume of 5.5M shares today. Headline: Canaccord Just Nearly Doubled Hut 8 Price Target to $130 on AI Data Center Pivot",
+                "pro": "HUT -11.21 pct, close 96.73, vol 5.5M. Headline: Canaccord Just Nearly Doubled Hut 8 Price Target to $130 on AI Data Center Pivot"
               },
-              "note": "Hut 8 Soars 35% On $9.8 Billion AI Lease Deal"
+              "note": "Canaccord Just Nearly Doubled Hut 8 Price Target to $130 on AI Data Center Pivot"
             }
           ]
         },
@@ -838,62 +812,62 @@
         "wsb_top": [
           {
             "ticker": "SPY",
-            "score": 560,
+            "score": 553,
             "rank": 1,
             "rank_prev": 5,
-            "delta_pct": 24.2,
+            "delta_pct": 11.3,
             "name": "SPDR S&P 500 ETF Trust",
             "detail": {
-              "plain": "SPDR S&P 500 ETF Trust (SPY) has 560 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 24 percent versus 24 hours ago, and the name jumped up from rank 5 to rank 1. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SPY WSB rank 1 (560 mentions), prior rank 5, mentions delta +24 pct. Retail attention only; pair with price/flow before treating as actionable."
-            }
-          },
-          {
-            "ticker": "AMD",
-            "score": 454,
-            "rank": 2,
-            "rank_prev": 1,
-            "delta_pct": -67.6,
-            "name": "AMD",
-            "detail": {
-              "plain": "AMD (AMD) has 454 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -68 percent versus 24 hours ago, and the name jumped down from rank 1 to rank 2. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "AMD WSB rank 2 (454 mentions), prior rank 1, mentions delta -68 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 553 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 11 percent versus 24 hours ago, and the name jumped up from rank 5 to rank 1. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 1 (553 mentions), prior rank 5, mentions delta +11 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "MU",
-            "score": 399,
-            "rank": 3,
+            "score": 383,
+            "rank": 2,
             "rank_prev": 2,
-            "delta_pct": -55.1,
+            "delta_pct": -51.3,
             "name": "Micron Technology",
             "detail": {
-              "plain": "Micron Technology (MU) has 399 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -55 percent versus 24 hours ago, and the name jumped down from rank 2 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "MU WSB rank 3 (399 mentions), prior rank 2, mentions delta -55 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Micron Technology (MU) has 383 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -51 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 2 (383 mentions), prior rank 2, mentions delta -51 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "score": 356,
+            "rank": 3,
+            "rank_prev": 1,
+            "delta_pct": -76.3,
+            "name": "AMD",
+            "detail": {
+              "plain": "AMD (AMD) has 356 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -76 percent versus 24 hours ago, and the name jumped down from rank 1 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "AMD WSB rank 3 (356 mentions), prior rank 1, mentions delta -76 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "ARM",
-            "score": 311,
+            "score": 298,
             "rank": 4,
-            "rank_prev": 26,
-            "delta_pct": 409.8,
+            "rank_prev": 21,
+            "delta_pct": 250.6,
             "name": "Arm Holdings",
             "detail": {
-              "plain": "Arm Holdings (ARM) has 311 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 410 percent versus 24 hours ago, and the name jumped up from rank 26 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "ARM WSB rank 4 (311 mentions), prior rank 26, mentions delta +410 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Arm Holdings (ARM) has 298 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 251 percent versus 24 hours ago, and the name jumped up from rank 21 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "ARM WSB rank 4 (298 mentions), prior rank 21, mentions delta +251 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
-            "ticker": "SNDK",
-            "score": 270,
+            "ticker": "NVDA",
+            "score": 235,
             "rank": 5,
-            "rank_prev": 3,
-            "delta_pct": -56.9,
-            "name": "Sandisk",
+            "rank_prev": 4,
+            "delta_pct": -57.4,
+            "name": "NVIDIA",
             "detail": {
-              "plain": "Sandisk (SNDK) has 270 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -57 percent versus 24 hours ago, and the name jumped down from rank 3 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SNDK WSB rank 5 (270 mentions), prior rank 3, mentions delta -57 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "NVIDIA (NVDA) has 235 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -57 percent versus 24 hours ago, and the name jumped down from rank 4 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "NVDA WSB rank 5 (235 mentions), prior rank 4, mentions delta -57 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           }
         ],
@@ -1005,55 +979,12 @@
         ],
         "action": {
           "tier": "ACTION",
-          "text": "CAVA still flagged for closure (-33 pct, ER 5/19); MO watchlist near entry; ISRG scale-in T1 added."
+          "text": "MO defensive long entry TRIGGERED at 69 zone; ISRG T1 holding green. ARM bounce failed, APP holding print."
         },
         "social": [
           {
-            "ticker": "AMD",
-            "mentions": 1052,
-            "sources": [
-              "all_stocks",
-              "daytrading",
-              "options",
-              "race10m",
-              "race1m",
-              "stocks",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "TheRaceTo1Million",
-                "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 111,
-                "flair": "",
-                "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "Watched AMD go up 20% overnight because I didn't pull the trigger before earnings. Is it too late to jump on the train?",
-                "score": 92,
-                "flair": "",
-                "body_excerpt": "I knew the earnings were coming. I did my research. I had the buy order ready.\n\nI didn't press confirm.\n\n[AMD](https://www.stoxcraft.com/stocks/amd) just reported Q1 2026 and the stock is up over 20% since the bell. I'm sitting here watchin..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "$AMD above $400 for the first time ever. Server CPU TAM seen growing &gt;35% annually to $120B+ by 2030. Still a buy?",
-                "score": 23,
-                "flair": "",
-                "body_excerpt": ""
-              }
-            ],
-            "detail": {
-              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "1052 mentions across 8 communities, -68% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
-            }
-          },
-          {
             "ticker": "MU",
-            "mentions": 834,
+            "mentions": 801,
             "sources": [
               "all_stocks",
               "options",
@@ -1068,38 +999,40 @@
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo1Million",
-                "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 111,
-                "flair": "",
-                "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
-              },
-              {
                 "sub": "TheRaceTo10Million",
                 "title": "$4K to $700K - positions posted, mainly from MU",
-                "score": 34,
+                "score": 32,
                 "flair": "GAIN$",
                 "body_excerpt": ""
               },
               {
                 "sub": "Vitards",
                 "title": "MU has been hitting new highs, so I decided to cash out and lock in my profits.",
-                "score": 14,
+                "score": 15,
                 "flair": "Discussion",
                 "body_excerpt": "On April 7, I purchased 30 MU 400C call options as part of a long-term strategy. These options expire on May 1. As the expiration date approached and MU\u2019s stock price continued to hit new highs, I began to feel a bit nervous. I decided to l..."
+              },
+              {
+                "sub": "options",
+                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
+                "score": 11,
+                "flair": "",
+                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "834 mentions across 8 communities, -69% vs prior session. Sentiment neutral. Themes: a fresh breakout. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. The loudest take is: \"$4K to $700K - positions posted, mainly from MU\".",
+              "pro": "801 mentions across 8 communities, -69% vs prior session. Sentiment neutral. Themes: a fresh breakout. Top thesis: \"$4K to $700K - positions posted, mainly from MU\"."
             }
           },
           {
-            "ticker": "SNDK",
-            "mentions": 572,
+            "ticker": "AMD",
+            "mentions": 819,
             "sources": [
               "all_stocks",
-              "race10m",
+              "daytrading",
+              "options",
+              "race1m",
               "stocks",
               "thetagang",
               "wallstreetbets"
@@ -1108,35 +1041,35 @@
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo10Million",
-                "title": "What is the next Sandisk?",
-                "score": 41,
-                "flair": "Due Diligence",
-                "body_excerpt": "Anyone who has bought and held SNDK in the last months or years has made money! For some, it has been and continues to be a life changing investment. Let\u2019s enjoy the profits ( for those taking profits in part of whole) and position for the ..."
+                "sub": "thetagang",
+                "title": "AMD Gains - $340 CSP",
+                "score": 19,
+                "flair": "Cash Secured Put",
+                "body_excerpt": "Pretty new to options trading but I made another fat gain on AMD. I should\u2019ve done it ATM but it\u2019s earnings, who knows what\u2019s going to happen."
               },
               {
                 "sub": "thetagang",
-                "title": "Got killed on SNDK today",
-                "score": 37,
-                "flair": "",
-                "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 15,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               },
               {
-                "sub": "thetagang",
-                "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
-                "score": 10,
+                "sub": "options",
+                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
+                "score": 11,
                 "flair": "",
-                "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
+                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"What is the next Sandisk?\".",
-              "pro": "572 mentions across 5 communities, -57% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"What is the next Sandisk?\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"AMD Gains - $340 CSP\".",
+              "pro": "819 mentions across 7 communities, -76% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: writing puts to collect premium; running the wheel. Top thesis: \"AMD Gains - $340 CSP\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 556,
+            "mentions": 531,
             "sources": [
               "all_stocks",
               "options",
@@ -1157,26 +1090,66 @@
               {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 12,
+                "score": 11,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               },
               {
                 "sub": "options",
                 "title": "Margin loan at 13% (E*TRADE) vs SPX box spread financing \u2014 worth it?",
-                "score": 1,
+                "score": 2,
                 "flair": "",
                 "body_excerpt": "Hey all,\n\nI recently took out a \\~$83K margin loan with E\\*TRADE to invest in NVDA LEAP calls and shares. I\u2019m currently in a small profit and planning to hold most of the position until 2028. I might trim about half earlier if NVDA hits \\~$..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and a sector comparison trade. Traders are trimming or taking profit. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "556 mentions across 5 communities, -56% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "pro": "531 mentions across 5 communities, -57% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+            }
+          },
+          {
+            "ticker": "SNDK",
+            "mentions": 397,
+            "sources": [
+              "all_stocks",
+              "race10m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "What is the next Sandisk?",
+                "score": 70,
+                "flair": "Due Diligence",
+                "body_excerpt": "Anyone who has bought and held SNDK in the last months or years has made money! For some, it has been and continues to be a life changing investment. Let\u2019s enjoy the profits ( for those taking profits in part of whole) and position for the ..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Got killed on SNDK today",
+                "score": 34,
+                "flair": "",
+                "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
+              },
+              {
+                "sub": "thetagang",
+                "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
+                "score": 9,
+                "flair": "",
+                "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"What is the next Sandisk?\".",
+              "pro": "397 mentions across 5 communities, -70% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"What is the next Sandisk?\"."
             }
           },
           {
             "ticker": "MSFT",
-            "mentions": 489,
+            "mentions": 395,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1203,8 +1176,8 @@
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. The loudest take is: \"Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels\".",
-              "pro": "489 mentions across 5 communities, +142% vs prior session. Sentiment neutral. Top thesis: \"Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels\"."
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The loudest take is: \"Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels\".",
+              "pro": "395 mentions across 5 communities, -51% vs prior session. Sentiment neutral. Top thesis: \"Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels\"."
             }
           }
         ]
@@ -1212,33 +1185,14 @@
       "options": {
         "unusual": [
           {
-            "ticker": "GOOGL",
-            "vol_oi": 92,
-            "context": "May 11 puts $422.5 \u00b7 5 unusual strike(s)"
-          },
-          {
-            "ticker": "IWM",
-            "vol_oi": 76,
-            "context": "May 8 puts $170.0 \u00b7 1 unusual strike(s)"
-          },
-          {
-            "ticker": "META",
-            "vol_oi": 64,
-            "context": "May 8 puts $715.0 \u00b7 2 unusual strike(s)"
-          },
-          {
-            "ticker": "NVDA",
-            "vol_oi": 51,
-            "context": "May 8 puts $240.0 \u00b7 1 unusual strike(s)",
-            "detail": {
-              "plain": "Nvidia options had massive activity with volume to open-interest of 163,416. With earnings about 2 weeks out, this is mostly options-premium run-up rather than directional.",
-              "pro": "NVDA V/OI 163416, ER ~14d. IV expansion dominant. Long-premium has crush risk post-print. Calendars or short-dated debit spreads cleaner pre-ER expressions."
-            }
+            "ticker": "QQQ",
+            "vol_oi": 894,
+            "context": "May 7 puts $699.0 \u00b7 12 unusual strike(s)"
           },
           {
             "ticker": "SPY",
-            "vol_oi": 32,
-            "context": "May 8 puts $750.0 \u00b7 4 unusual strike(s)",
+            "vol_oi": 871,
+            "context": "May 7 puts $744.0 \u00b7 4 unusual strike(s)",
             "detail": {
               "plain": "S and P 500 ETF flow is heavy into the ARM print tonight and Fed Hammack today. Hedging flow rather than directional.",
               "pro": "SPY flow heavy into Hammack + ARM ER. Hedging flow dominant. No single-name expression."
@@ -1246,12 +1200,17 @@
           },
           {
             "ticker": "TSLA",
-            "vol_oi": 15,
-            "context": "May 11 calls $380.0 \u00b7 5 unusual strike(s)",
+            "vol_oi": 232,
+            "context": "May 11 puts $417.5 \u00b7 3 unusual strike(s)",
             "detail": {
               "plain": "Tesla has elevated options activity but no clean directional setup. Watch chart for follow-through.",
               "pro": "TSLA mover_active + unusual_flow. RSI inflection point would clarify direction; observation only."
             }
+          },
+          {
+            "ticker": "MSFT",
+            "vol_oi": 204,
+            "context": "May 8 calls $522.5 \u00b7 1 unusual strike(s)"
           }
         ],
         "earnings_iv": [
@@ -1554,51 +1513,8 @@
         },
         "social": [
           {
-            "ticker": "AMD",
-            "mentions": 1052,
-            "sources": [
-              "all_stocks",
-              "daytrading",
-              "options",
-              "race10m",
-              "race1m",
-              "stocks",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "TheRaceTo1Million",
-                "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 111,
-                "flair": "",
-                "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "Watched AMD go up 20% overnight because I didn't pull the trigger before earnings. Is it too late to jump on the train?",
-                "score": 92,
-                "flair": "",
-                "body_excerpt": "I knew the earnings were coming. I did my research. I had the buy order ready.\n\nI didn't press confirm.\n\n[AMD](https://www.stoxcraft.com/stocks/amd) just reported Q1 2026 and the stock is up over 20% since the bell. I'm sitting here watchin..."
-              },
-              {
-                "sub": "TheRaceTo10Million",
-                "title": "$AMD above $400 for the first time ever. Server CPU TAM seen growing &gt;35% annually to $120B+ by 2030. Still a buy?",
-                "score": 23,
-                "flair": "",
-                "body_excerpt": ""
-              }
-            ],
-            "detail": {
-              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "1052 mentions across 8 communities, -68% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
-            }
-          },
-          {
             "ticker": "MU",
-            "mentions": 834,
+            "mentions": 801,
             "sources": [
               "all_stocks",
               "options",
@@ -1613,38 +1529,40 @@
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo1Million",
-                "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 111,
-                "flair": "",
-                "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
-              },
-              {
                 "sub": "TheRaceTo10Million",
                 "title": "$4K to $700K - positions posted, mainly from MU",
-                "score": 34,
+                "score": 32,
                 "flair": "GAIN$",
                 "body_excerpt": ""
               },
               {
                 "sub": "Vitards",
                 "title": "MU has been hitting new highs, so I decided to cash out and lock in my profits.",
-                "score": 14,
+                "score": 15,
                 "flair": "Discussion",
                 "body_excerpt": "On April 7, I purchased 30 MU 400C call options as part of a long-term strategy. These options expire on May 1. As the expiration date approached and MU\u2019s stock price continued to hit new highs, I began to feel a bit nervous. I decided to l..."
+              },
+              {
+                "sub": "options",
+                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
+                "score": 11,
+                "flair": "",
+                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "834 mentions across 8 communities, -69% vs prior session. Sentiment neutral. Themes: a fresh breakout. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. The loudest take is: \"$4K to $700K - positions posted, mainly from MU\".",
+              "pro": "801 mentions across 8 communities, -69% vs prior session. Sentiment neutral. Themes: a fresh breakout. Top thesis: \"$4K to $700K - positions posted, mainly from MU\"."
             }
           },
           {
-            "ticker": "SNDK",
-            "mentions": 572,
+            "ticker": "AMD",
+            "mentions": 819,
             "sources": [
               "all_stocks",
-              "race10m",
+              "daytrading",
+              "options",
+              "race1m",
               "stocks",
               "thetagang",
               "wallstreetbets"
@@ -1653,35 +1571,35 @@
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo10Million",
-                "title": "What is the next Sandisk?",
-                "score": 41,
-                "flair": "Due Diligence",
-                "body_excerpt": "Anyone who has bought and held SNDK in the last months or years has made money! For some, it has been and continues to be a life changing investment. Let\u2019s enjoy the profits ( for those taking profits in part of whole) and position for the ..."
+                "sub": "thetagang",
+                "title": "AMD Gains - $340 CSP",
+                "score": 19,
+                "flair": "Cash Secured Put",
+                "body_excerpt": "Pretty new to options trading but I made another fat gain on AMD. I should\u2019ve done it ATM but it\u2019s earnings, who knows what\u2019s going to happen."
               },
               {
                 "sub": "thetagang",
-                "title": "Got killed on SNDK today",
-                "score": 37,
-                "flair": "",
-                "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 15,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
               },
               {
-                "sub": "thetagang",
-                "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
-                "score": 10,
+                "sub": "options",
+                "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
+                "score": 11,
                 "flair": "",
-                "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
+                "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"What is the next Sandisk?\".",
-              "pro": "572 mentions across 5 communities, -57% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"What is the next Sandisk?\"."
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"AMD Gains - $340 CSP\".",
+              "pro": "819 mentions across 7 communities, -76% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: writing puts to collect premium; running the wheel. Top thesis: \"AMD Gains - $340 CSP\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 556,
+            "mentions": 531,
             "sources": [
               "all_stocks",
               "options",
@@ -1702,26 +1620,66 @@
               {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 12,
+                "score": 11,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               },
               {
                 "sub": "options",
                 "title": "Margin loan at 13% (E*TRADE) vs SPX box spread financing \u2014 worth it?",
-                "score": 1,
+                "score": 2,
                 "flair": "",
                 "body_excerpt": "Hey all,\n\nI recently took out a \\~$83K margin loan with E\\*TRADE to invest in NVDA LEAP calls and shares. I\u2019m currently in a small profit and planning to hold most of the position until 2028. I might trim about half earlier if NVDA hits \\~$..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on the earnings reaction and a sector comparison trade. Traders are trimming or taking profit. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "556 mentions across 5 communities, -56% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "pro": "531 mentions across 5 communities, -57% vs prior session. Sentiment bullish. Themes: the earnings reaction; a sector comparison trade. Strategy mix: trimming or taking profit. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+            }
+          },
+          {
+            "ticker": "SNDK",
+            "mentions": 397,
+            "sources": [
+              "all_stocks",
+              "race10m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "What is the next Sandisk?",
+                "score": 70,
+                "flair": "Due Diligence",
+                "body_excerpt": "Anyone who has bought and held SNDK in the last months or years has made money! For some, it has been and continues to be a life changing investment. Let\u2019s enjoy the profits ( for those taking profits in part of whole) and position for the ..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Got killed on SNDK today",
+                "score": 34,
+                "flair": "",
+                "body_excerpt": "Sold some calls, down $19K now... 3.3% of my portfolio FML"
+              },
+              {
+                "sub": "thetagang",
+                "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
+                "score": 9,
+                "flair": "",
+                "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on memory and storage upcycle. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"What is the next Sandisk?\".",
+              "pro": "397 mentions across 5 communities, -70% vs prior session. Sentiment neutral. Themes: memory and storage upcycle. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"What is the next Sandisk?\"."
             }
           },
           {
             "ticker": "INTC",
-            "mentions": 215,
+            "mentions": 199,
             "sources": [
               "all_stocks",
               "options",
@@ -1734,21 +1692,21 @@
               {
                 "sub": "options",
                 "title": "Sold INTC $100 covered call 05/29",
-                "score": 16,
+                "score": 26,
                 "flair": "",
                 "body_excerpt": "&amp;#x200B;\n\nI sold 10 $100 covered call that expires on 05/29 for 1k premium week ago. The stock has rallied since then and I feel guilty and don't want to miss out on the profit. What should I do now? Just accept mv fate and wait for it ..."
               },
               {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 12,
+                "score": 11,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are selling covered calls. The loudest take is: \"Sold INTC $100 covered call 05/29\".",
-              "pro": "215 mentions across 4 communities, -70% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Sold INTC $100 covered call 05/29\"."
+              "pro": "199 mentions across 4 communities, -55% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Sold INTC $100 covered call 05/29\"."
             }
           }
         ]
@@ -1758,7 +1716,7 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 79972.75,
+            "last": 80927.05,
             "change_5d_pct": 5.42,
             "note": "Reclaimed 80,000 line overnight; risk-on read for today's open back in play",
             "detail": {
@@ -1768,7 +1726,7 @@
           },
           {
             "symbol": "ETH",
-            "last": 2296.9,
+            "last": 2380.0,
             "change_5d_pct": 4.5,
             "note": "Recovering with Bitcoin; alt-defensive regime intact",
             "detail": {
@@ -1778,7 +1736,7 @@
           },
           {
             "symbol": "SOL",
-            "last": 88.68,
+            "last": 85.0,
             "change_5d_pct": 2.0,
             "note": "Quiet; alt-rotation gated on Bitcoin dominance",
             "detail": {
@@ -1788,7 +1746,7 @@
           },
           {
             "symbol": "XRP",
-            "last": 1.39,
+            "last": 1.4,
             "change_5d_pct": 2.5,
             "note": "Quiet drift with the alt complex",
             "detail": {
@@ -1808,7 +1766,7 @@
           },
           {
             "symbol": "LINK",
-            "last": 9.94,
+            "last": 9.77,
             "change_5d_pct": 4.5,
             "note": "Leadership returning overnight: up 4.4 percent in 24 hours, RSI back to 62",
             "detail": {
@@ -1854,7 +1812,7 @@
         },
         "social": [
           {
-            "ticker": "COIN",
+            "ticker": "MSTR",
             "mentions": 1,
             "sources": [
               "race1m"
@@ -1876,7 +1834,7 @@
             }
           },
           {
-            "ticker": "MSTR",
+            "ticker": "COIN",
             "mentions": 1,
             "sources": [
               "race1m"
@@ -1914,7 +1872,7 @@
           237.96,
           239.53,
           246.33,
-          246.0
+          245.95
         ],
         "MO": [
           64.61,
@@ -1930,103 +1888,7 @@
           73.41,
           72.79,
           70.17,
-          69.29
-        ],
-        "CL=F": [
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.8
-        ],
-        "oil": [
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.8
-        ],
-        "ISRG": [
-          465.6,
-          451.29,
-          483.62,
-          478.82,
-          482.22,
-          470.99,
-          466.64,
-          453.83,
-          457.61,
-          457.78,
-          452.35,
-          451.38,
-          451.73,
-          456.903
-        ],
-        "TER": [
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1,
-          382.48,
-          351.9
-        ],
-        "GC=F": [
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4719.0
-        ],
-        "gold": [
-          4806.6001,
-          4698.3999,
-          4732.5,
-          4705.1001,
-          4722.2998,
-          4675.3999,
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4719.0
+          69.19
         ],
         "TEAM": [
           71.48,
@@ -2042,7 +1904,23 @@
           93.16,
           92.35,
           88.8,
-          93.46
+          93.85
+        ],
+        "TER": [
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          382.48,
+          352.0
         ],
         "PODD": [
           200.87,
@@ -2058,7 +1936,39 @@
           171.39,
           167.53,
           151.28,
-          162.245
+          161.93
+        ],
+        "ISRG": [
+          465.6,
+          451.29,
+          483.62,
+          478.82,
+          482.22,
+          470.99,
+          466.64,
+          453.83,
+          457.61,
+          457.78,
+          452.35,
+          451.38,
+          451.73,
+          456.28
+        ],
+        "NCLH": [
+          20.26,
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94,
+          17.75,
+          17.295
         ],
         "^TNX": [
           4.25,
@@ -2092,22 +2002,6 @@
           4.356,
           4.374
         ],
-        "NCLH": [
-          20.26,
-          19.33,
-          19.03,
-          18.42,
-          18.51,
-          18.19,
-          17.79,
-          17.77,
-          18.18,
-          18.81,
-          17.2,
-          16.94,
-          17.75,
-          17.3479
-        ],
         "SPY": [
           708.72,
           704.08,
@@ -2122,7 +2016,7 @@
           718.01,
           723.77,
           733.83,
-          733.3
+          732.93
         ],
         "DX-Y.NYB": [
           98.05,
@@ -2138,7 +2032,7 @@
           98.47,
           98.48,
           98.02,
-          97.996
+          97.952
         ],
         "dxy": [
           98.05,
@@ -2154,7 +2048,71 @@
           98.47,
           98.48,
           98.02,
-          97.996
+          97.952
+        ],
+        "GC=F": [
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4730.7998
+        ],
+        "gold": [
+          4806.6001,
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4730.7998
+        ],
+        "CL=F": [
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          93.95
+        ],
+        "oil": [
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          93.95
         ],
         "IWM": [
           277.35,
@@ -2170,7 +2128,7 @@
           277.88,
           282.56,
           286.8,
-          283.34
+          283.02
         ],
         "QQQ": [
           646.79,
@@ -2186,7 +2144,7 @@
           672.88,
           681.61,
           695.77,
-          696.16
+          696.0098
         ],
         "^VIX": [
           18.87,
@@ -2202,7 +2160,7 @@
           18.29,
           17.38,
           17.39,
-          17.46
+          17.42
         ],
         "vix": [
           18.87,
@@ -2218,10 +2176,9 @@
           18.29,
           17.38,
           17.39,
-          17.46
+          17.42
         ]
-      },
-      "last_refreshed_at": "2026-05-07T09:30:08-07:00"
+      }
     },
     {
       "date": "2026-05-06",
