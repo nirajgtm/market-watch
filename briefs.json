@@ -3,7 +3,7 @@
   "briefs": [
     {
       "date": "2026-05-06",
-      "updated_at": "2026-05-06T17:39:00-07:00",
+      "updated_at": "2026-05-06T18:38:00-07:00",
       "regime": "BULL",
       "regime_note": "AH session closed: ARM 222.12 -6.4 pct, APP 467.18 -0.35 pct. AI-semi sympathy chain finished modestly red, indices flat. Tomorrow's open prices in a small gap-down on chip names.",
       "vix_bucket": "normal",
@@ -334,7 +334,7 @@
         "social": [
           {
             "ticker": "QQQ",
-            "mentions": 395,
+            "mentions": 391,
             "sources": [
               "all_stocks",
               "options",
@@ -350,33 +350,33 @@
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 134,
+                "score": 136,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 107,
+                "score": 108,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "thetagang",
                 "title": "Why is it that I can fully use my available margin  when holding the shares and selling covered calls, but can't when selling puts?  Does that mean it is better to  sell covered calls on this case?  With margin i can use $122,000 to buy QQQ stock, but I can only use $56,000 to sell puts.",
-                "score": 19,
+                "score": 18,
                 "flair": "Covered Call",
                 "body_excerpt": ""
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bearish. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"Time to Make Some Bearish Bets\".",
-              "pro": "395 mentions across 7 communities, +550% vs prior session. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
+              "pro": "391 mentions across 7 communities, +575% vs prior session. Sentiment bearish. Strategy mix: writing puts to collect premium; buying calls for upside; selling covered calls. Top thesis: \"Time to Make Some Bearish Bets\"."
             }
           },
           {
             "ticker": "SPY",
-            "mentions": 1164,
+            "mentions": 1159,
             "sources": [
               "all_stocks",
               "options",
@@ -390,33 +390,33 @@
               {
                 "sub": "options",
                 "title": "The 24/7 workflow I run for earnings IV crush trades",
-                "score": 182,
+                "score": 187,
                 "flair": "",
                 "body_excerpt": "TL;DR: I created an alert system with AI that finds overpriced options right before earnings, and then I trade a short straddle setup betting on the IV crush. I'm averaging \\~84.74 % annual returns.\n\nImportant: A lot of the ideas for this s..."
               },
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 134,
+                "score": 136,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               },
               {
                 "sub": "thetagang",
                 "title": "I open put credit spread , and a few call credit spread to hedge , on a rotating basis. Various tech stocks, NVDA, MU, SNDK, SPY, QQQ, MSFT etc. I open 1 a day for a credit of $100 to $200.  My account is mostly 60% cash and only 40%  on risk .",
-                "score": 10,
+                "score": 11,
                 "flair": "",
                 "body_excerpt": "Is this a good strategy or my account is at risk losing 40% on a market downturn? I also have put credit on oil stocks like SHL for a hedge. \n\nSince i am 60% cash, on a market downturn I will double down for a credit of $200 to $400."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bearish. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. Traders are writing puts to collect premium and selling covered calls. The loudest take is: \"The 24/7 workflow I run for earnings IV crush trades\".",
-              "pro": "1164 mentions across 5 communities, +64% vs prior session. Sentiment bearish. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"The 24/7 workflow I run for earnings IV crush trades\"."
+              "pro": "1159 mentions across 5 communities, +90% vs prior session. Sentiment bearish. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: writing puts to collect premium; selling covered calls; playing defined-risk spreads. Top thesis: \"The 24/7 workflow I run for earnings IV crush trades\"."
             }
           },
           {
             "ticker": "VOO",
-            "mentions": 15,
+            "mentions": 16,
             "sources": [
               "race1m",
               "stocks"
@@ -427,14 +427,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 57,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               }
             ],
             "detail": {
-              "plain": "Light chatter today. Tone reads neutral. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
-              "pro": "15 mentions across 2 communities, +17% vs prior session. Sentiment neutral. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
+              "plain": "Light chatter today, running hotter than yesterday. Tone reads neutral. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
+              "pro": "16 mentions across 2 communities, +50% vs prior session. Sentiment neutral. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
             }
           },
           {
@@ -450,14 +450,14 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 57,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "Started my first true investment Portfolio + Roth IRA @23 years old in February and up almost 32% in 3 Months",
-                "score": 4,
+                "score": 5,
                 "flair": "",
                 "body_excerpt": "Small victory but so happy to finally take some financial responsibility to make sure I\u2019m set for my future and it finally feels like it\u2019s paying off. Any advice for a young investor like myself? I have an itch to sell since I\u2019ve never gain..."
               }
@@ -468,7 +468,7 @@
             }
           },
           {
-            "ticker": "XLY",
+            "ticker": "XLP",
             "mentions": 1,
             "sources": [
               "options"
@@ -479,7 +479,7 @@
               {
                 "sub": "options",
                 "title": "Time to Make Some Bearish Bets...",
-                "score": 134,
+                "score": 136,
                 "flair": "",
                 "body_excerpt": "Last October, when the market was racing higher, I published a piece called \u201cAre We on a Ticking Time Bomb?\u201d where I laid out exactly where I thought the market would top. At the time, the major indexes were ripping and everybody was all-in..."
               }
@@ -860,62 +860,62 @@
         "wsb_top": [
           {
             "ticker": "AMD",
-            "score": 804,
+            "score": 776,
             "rank": 1,
             "rank_prev": 1,
-            "delta_pct": -21.5,
+            "delta_pct": -26.9,
             "name": "AMD",
             "detail": {
-              "plain": "AMD (AMD) has 804 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -22 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "AMD WSB rank 1 (804 mentions), prior rank 1, mentions delta -22 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "AMD (AMD) has 776 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -27 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "AMD WSB rank 1 (776 mentions), prior rank 1, mentions delta -27 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "MU",
-            "score": 564,
+            "score": 547,
             "rank": 2,
             "rank_prev": 2,
-            "delta_pct": -27.0,
+            "delta_pct": -30.7,
             "name": "Micron Technology",
             "detail": {
-              "plain": "Micron Technology (MU) has 564 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -27 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "MU WSB rank 2 (564 mentions), prior rank 2, mentions delta -27 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Micron Technology (MU) has 547 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -31 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 2 (547 mentions), prior rank 2, mentions delta -31 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "SPY",
-            "score": 552,
+            "score": 545,
             "rank": 3,
             "rank_prev": 4,
-            "delta_pct": 47.6,
+            "delta_pct": 43.8,
             "name": "SPDR S&P 500 ETF Trust",
             "detail": {
-              "plain": "SPDR S&P 500 ETF Trust (SPY) has 552 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 48 percent versus 24 hours ago, and the name jumped up from rank 4 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SPY WSB rank 3 (552 mentions), prior rank 4, mentions delta +48 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 545 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 44 percent versus 24 hours ago, and the name jumped up from rank 4 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 3 (545 mentions), prior rank 4, mentions delta +44 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "SNDK",
-            "score": 416,
+            "score": 402,
             "rank": 4,
             "rank_prev": 3,
-            "delta_pct": -11.7,
+            "delta_pct": -16.9,
             "name": "Sandisk",
             "detail": {
-              "plain": "Sandisk (SNDK) has 416 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -12 percent versus 24 hours ago, and the name jumped down from rank 3 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SNDK WSB rank 4 (416 mentions), prior rank 3, mentions delta -12 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Sandisk (SNDK) has 402 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -17 percent versus 24 hours ago, and the name jumped down from rank 3 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SNDK WSB rank 4 (402 mentions), prior rank 3, mentions delta -17 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "NVDA",
-            "score": 391,
+            "score": 383,
             "rank": 5,
             "rank_prev": 5,
-            "delta_pct": -7.1,
+            "delta_pct": -10.9,
             "name": "NVIDIA",
             "detail": {
-              "plain": "NVIDIA (NVDA) has 391 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -7 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "NVDA WSB rank 5 (391 mentions), prior rank 5, mentions delta -7 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "NVIDIA (NVDA) has 383 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -11 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "NVDA WSB rank 5 (383 mentions), prior rank 5, mentions delta -11 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           }
         ],
@@ -1032,7 +1032,7 @@
         "social": [
           {
             "ticker": "AMD",
-            "mentions": 1857,
+            "mentions": 1788,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1049,33 +1049,33 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 107,
+                "score": 108,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "Watched AMD go up 20% overnight because I didn't pull the trigger before earnings. Is it too late to jump on the train?",
-                "score": 87,
+                "score": 86,
                 "flair": "",
                 "body_excerpt": "I knew the earnings were coming. I did my research. I had the buy order ready.\n\nI didn't press confirm.\n\n[AMD](https://www.stoxcraft.com/stocks/amd) just reported Q1 2026 and the stock is up over 20% since the bell. I'm sitting here watchin..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "$AMD above $400 for the first time ever. Server CPU TAM seen growing &gt;35% annually to $120B+ by 2030. Still a buy?",
-                "score": 23,
+                "score": 20,
                 "flair": "",
                 "body_excerpt": ""
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "1857 mentions across 8 communities, +57% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "pro": "1788 mentions across 8 communities, +35% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
             }
           },
           {
             "ticker": "MU",
-            "mentions": 1209,
+            "mentions": 1173,
             "sources": [
               "all_stocks",
               "options",
@@ -1092,33 +1092,33 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week.",
-                "score": 124,
+                "score": 129,
                 "flair": "News",
                 "body_excerpt": "\\+11% today. New ATH.\n\nMicron started shipping a 245TB SSD. Uses 82% fewer racks than hard drives.\n\nFitch upgraded their debt rating. Hyperscalers are now signing long-term supply deals just to lock in capacity.\n\nThen Meta, Microsoft, and A..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU right now is messing with everyone\u2019s head",
-                "score": 121,
+                "score": 120,
                 "flair": "",
                 "body_excerpt": "MU is in that spot where nobody feels comfortable\n\nIf you\u2019re in, you\u2019re thinking about trimming  \nIf you\u2019re out, you don\u2019t want to chase\n\nThat\u2019s usually where the real move sets up\n\nI\u2019ve been trading it the last few sessions and there are a..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 107,
+                "score": 108,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and a fresh breakout. Traders are trimming or taking profit. The loudest take is: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\".",
-              "pro": "1209 mentions across 8 communities, +32% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Strategy mix: trimming or taking profit. Top thesis: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\"."
+              "pro": "1173 mentions across 8 communities, +36% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Strategy mix: trimming or taking profit. Top thesis: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 865,
+            "mentions": 849,
             "sources": [
               "all_stocks",
               "options",
@@ -1140,26 +1140,66 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 57,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               },
               {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 12,
+                "score": 10,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "865 mentions across 6 communities, +78% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "pro": "849 mentions across 6 communities, +60% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+            }
+          },
+          {
+            "ticker": "PLTR",
+            "mentions": 8,
+            "sources": [
+              "daytrading",
+              "options",
+              "race10m",
+              "thetagang",
+              "vitards"
+            ],
+            "sentiment": "BULLISH",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "Vitards",
+                "title": "[YOLO Update] (No Longer) Going All In On Steel (+\ud83c\udff4\u200d\u2620\ufe0f) Update #91. 2026 1st Quarter Report.",
+                "score": 95,
+                "flair": "YOLO",
+                "body_excerpt": "# General Update\n\nThe\u00a0[last update](https://www.reddit.com/r/Vitards/comments/1pxcvth/yolo_update_no_longer_going_all_in_on_steel/)\u00a0was the end of 2025 update where I went risk-off into long duration bonds and avoided an instinct to go all-..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "PLTR Puts",
+                "score": 17,
+                "flair": "",
+                "body_excerpt": "I sold PLTR puts before the earnings hoping for an IV crush and not much movement. When to buy them back?\n\nEDIT: Bought them back for around 60% profit"
+              },
+              {
+                "sub": "options",
+                "title": "Palantir ($PLTR) Earnings Vol Trade Post-mortem - Patience is the Key",
+                "score": 9,
+                "flair": "",
+                "body_excerpt": "Yesterday I posted my thesis for going long vol into $PLTR EA.\n\n[https://www.reddit.com/r/options/comments/1t4135r/palantir\\_pltr\\_earnings\\_vol\\_setup\\_are\\_traders/](https://www.reddit.com/r/options/comments/1t4135r/palantir_pltr_earnings..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
+              "pro": "8 mentions across 5 communities. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
             "ticker": "MSFT",
-            "mentions": 626,
+            "mentions": 618,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1172,39 +1212,14 @@
               {
                 "sub": "Daytrading",
                 "title": "First 5 days trading",
-                "score": 2,
+                "score": 3,
                 "flair": "Advice",
                 "body_excerpt": "https://preview.redd.it/j4t39gws7lzg1.jpg?width=1170&amp;format=pjpg&amp;auto=webp&amp;s=6a547c302831b582f22dea0d72372f3ef0941e4a\n\n[P\\/L for 5 days](https://preview.redd.it/8oaxv2vs7lzg1.jpg?width=1170&amp;format=pjpg&amp;auto=webp&amp;s=ef..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. The loudest take is: \"First 5 days trading\".",
-              "pro": "626 mentions across 4 communities, +150% vs prior session. Sentiment neutral. Top thesis: \"First 5 days trading\"."
-            }
-          },
-          {
-            "ticker": "INTC",
-            "mentions": 288,
-            "sources": [
-              "all_stocks",
-              "daytrading",
-              "stocks",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "Daytrading",
-                "title": "Could Be Time To Trade Robotic Stocks \ud83e\udd16 Musk &amp; Jenson view them as bigger than Ai/LLM",
-                "score": 4,
-                "flair": "Trade Idea",
-                "body_excerpt": "Elon Musk has been banging on the table about Robotics, Jensen Huang views robotics as the next massive growth Frontier after Ai, which will integrate into every industry.  \n  \nJenson recent said \"billions of robots, hundreds of millions of..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. The loudest take is: \"Could Be Time To Trade Robotic Stocks  Musk &amp; Jenson view them as bigger than Ai/LLM\".",
-              "pro": "288 mentions across 4 communities, +130% vs prior session. Sentiment neutral. Top thesis: \"Could Be Time To Trade Robotic Stocks  Musk &amp; Jenson view them as bigger than Ai/LLM\"."
+              "pro": "618 mentions across 4 communities, +200% vs prior session. Sentiment neutral. Top thesis: \"First 5 days trading\"."
             }
           }
         ]
@@ -1537,7 +1552,7 @@
         "social": [
           {
             "ticker": "AMD",
-            "mentions": 1857,
+            "mentions": 1788,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -1554,33 +1569,33 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 107,
+                "score": 108,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "Watched AMD go up 20% overnight because I didn't pull the trigger before earnings. Is it too late to jump on the train?",
-                "score": 87,
+                "score": 86,
                 "flair": "",
                 "body_excerpt": "I knew the earnings were coming. I did my research. I had the buy order ready.\n\nI didn't press confirm.\n\n[AMD](https://www.stoxcraft.com/stocks/amd) just reported Q1 2026 and the stock is up over 20% since the bell. I'm sitting here watchin..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "$AMD above $400 for the first time ever. Server CPU TAM seen growing &gt;35% annually to $120B+ by 2030. Still a buy?",
-                "score": 23,
+                "score": 20,
                 "flair": "",
                 "body_excerpt": ""
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. The loudest take is: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\".",
-              "pro": "1857 mentions across 8 communities, +57% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
+              "pro": "1788 mentions across 8 communities, +35% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong\"."
             }
           },
           {
             "ticker": "MU",
-            "mentions": 1209,
+            "mentions": 1173,
             "sources": [
               "all_stocks",
               "options",
@@ -1597,33 +1612,33 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week.",
-                "score": 124,
+                "score": 129,
                 "flair": "News",
                 "body_excerpt": "\\+11% today. New ATH.\n\nMicron started shipping a 245TB SSD. Uses 82% fewer racks than hard drives.\n\nFitch upgraded their debt rating. Hyperscalers are now signing long-term supply deals just to lock in capacity.\n\nThen Meta, Microsoft, and A..."
               },
               {
                 "sub": "TheRaceTo10Million",
                 "title": "MU right now is messing with everyone\u2019s head",
-                "score": 121,
+                "score": 120,
                 "flair": "",
                 "body_excerpt": "MU is in that spot where nobody feels comfortable\n\nIf you\u2019re in, you\u2019re thinking about trimming  \nIf you\u2019re out, you don\u2019t want to chase\n\nThat\u2019s usually where the real move sets up\n\nI\u2019ve been trading it the last few sessions and there are a..."
               },
               {
                 "sub": "TheRaceTo1Million",
                 "title": "MU Is Quietly Carrying the Weight of My Portfolio... I Never Expected Its Performance to Be This Strong.",
-                "score": 107,
+                "score": 108,
                 "flair": "",
                 "body_excerpt": "While reviewing my account today, I had a sudden epiphany: just as everyone else was buzzing about the usual \"hot stocks\" those market darlings we all know by heart Micron Technology has been quietly shouldering the bulk of the \"heavy lifti..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bullish. The conversation is centered on memory and storage upcycle and a fresh breakout. Traders are trimming or taking profit. The loudest take is: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\".",
-              "pro": "1209 mentions across 8 communities, +32% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Strategy mix: trimming or taking profit. Top thesis: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\"."
+              "pro": "1173 mentions across 8 communities, +36% vs prior session. Sentiment bullish. Themes: memory and storage upcycle; a fresh breakout. Strategy mix: trimming or taking profit. Top thesis: \"MU just hit all-time highs. Meta, Microsoft, and Apple all flagged rising memory costs last week\"."
             }
           },
           {
             "ticker": "NVDA",
-            "mentions": 865,
+            "mentions": 849,
             "sources": [
               "all_stocks",
               "options",
@@ -1645,68 +1660,30 @@
               {
                 "sub": "TheRaceTo1Million",
                 "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 57,
+                "score": 54,
                 "flair": "",
                 "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
               },
               {
                 "sub": "options",
                 "title": "I followed unusual option flow signals for all of April. Here are the actual trades, wins and losses",
-                "score": 12,
+                "score": 10,
                 "flair": "",
                 "body_excerpt": "For the past two months I have been tracking institutional options flow and actually trading the setups it generates. Not paper trading. Real entries with real size.\n\nApril is now fully closed out so I can share the complete picture.\n\nThe i..."
               }
             ],
             "detail": {
               "plain": "Heavy chatter today, running hotter than yesterday. Tone leans bullish. The conversation is centered on the earnings reaction. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "865 mentions across 6 communities, +78% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
-            }
-          },
-          {
-            "ticker": "GOOG",
-            "mentions": 20,
-            "sources": [
-              "daytrading",
-              "race1m",
-              "stocks",
-              "thetagang"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "",
-            "top_posts": [
-              {
-                "sub": "TheRaceTo1Million",
-                "title": "1m Goal: Cinco De Mayo 2027",
-                "score": 57,
-                "flair": "",
-                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "Down $150k on CC's. What's the risk of exercise on deep ITM CC?",
-                "score": 30,
-                "flair": "Discussion",
-                "body_excerpt": "I can't roll out of these deep ITMs into OTM CCs unless I roll like 3 years out, which I'm not sure I want to do.\n\nIf i continue rolling into basically the same strike, one month out at a time, hoping for a pull-back to exit my CC (or roll ..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "GOOG and IBIT wheel are smooth as butter",
-                "score": 15,
-                "flair": "Discussion",
-                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. Traders are running the wheel. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
-              "pro": "20 mentions across 4 communities, +100% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
+              "pro": "849 mentions across 6 communities, +60% vs prior session. Sentiment bullish. Themes: the earnings reaction. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
             }
           },
           {
             "ticker": "PLTR",
-            "mentions": 7,
+            "mentions": 8,
             "sources": [
               "daytrading",
               "options",
+              "race10m",
               "thetagang",
               "vitards"
             ],
@@ -1723,21 +1700,60 @@
               {
                 "sub": "thetagang",
                 "title": "PLTR Puts",
-                "score": 19,
+                "score": 17,
                 "flair": "",
                 "body_excerpt": "I sold PLTR puts before the earnings hoping for an IV crush and not much movement. When to buy them back?\n\nEDIT: Bought them back for around 60% profit"
               },
               {
                 "sub": "options",
                 "title": "Palantir ($PLTR) Earnings Vol Trade Post-mortem - Patience is the Key",
-                "score": 10,
+                "score": 9,
                 "flair": "",
                 "body_excerpt": "Yesterday I posted my thesis for going long vol into $PLTR EA.\n\n[https://www.reddit.com/r/options/comments/1t4135r/palantir\\_pltr\\_earnings\\_vol\\_setup\\_are\\_traders/](https://www.reddit.com/r/options/comments/1t4135r/palantir_pltr_earnings..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today. Tone leans bullish. The conversation is centered on the earnings reaction and rich option premium. The loudest take is: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\".",
-              "pro": "7 mentions across 4 communities. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+              "pro": "8 mentions across 5 communities. Sentiment bullish. Themes: the earnings reaction; rich option premium. Top thesis: \"[YOLO Update] (No Longer) Going All In On Steel (+) Update #91. 2026 1st Quarter Report\"."
+            }
+          },
+          {
+            "ticker": "GOOG",
+            "mentions": 21,
+            "sources": [
+              "daytrading",
+              "race1m",
+              "stocks",
+              "thetagang"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "1m Goal: Cinco De Mayo 2027",
+                "score": 54,
+                "flair": "",
+                "body_excerpt": "Giving myself a challenge. Next year I want to be pounding a Corona extra in a can while shoving my face with quesabirria to celebrate 1m.\n\nStarted a business in with $500 2018. Went ok till 2020. Had $0 in my personal and business accounts..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Down $150k on CC's. What's the risk of exercise on deep ITM CC?",
+                "score": 36,
+                "flair": "Discussion",
+                "body_excerpt": "I can't roll out of these deep ITMs into OTM CCs unless I roll like 3 years out, which I'm not sure I want to do.\n\nIf i continue rolling into basically the same strike, one month out at a time, hoping for a pull-back to exit my CC (or roll ..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "GOOG and IBIT wheel are smooth as butter",
+                "score": 15,
+                "flair": "Discussion",
+                "body_excerpt": "https://preview.redd.it/r1sm09tuatyg1.png?width=2400&amp;format=png&amp;auto=webp&amp;s=ba1e31145b15debf5319cb1a6ce47a92fd0e734b\n\n  \nI haven't had nice visuals like this until now, but recently checked this out and realized that GOOG and IB..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. Traders are running the wheel. The loudest take is: \"1m Goal: Cinco De Mayo 2027\".",
+              "pro": "21 mentions across 4 communities, +112% vs prior session. Sentiment neutral. Strategy mix: running the wheel. Top thesis: \"1m Goal: Cinco De Mayo 2027\"."
             }
           }
         ]
@@ -1854,7 +1870,7 @@
               {
                 "sub": "thetagang",
                 "title": "I\u2019m getting decent at this",
-                "score": 90,
+                "score": 91,
                 "flair": "Wheel",
                 "body_excerpt": "Kept the win rate pretty high over last year. I usually like to sell covered calls on tech and puts on risk reversal zones. I also mess with selling leap puts on things like UNH. Not too bad considering all the bs in the markets lately.\n\ned..."
               },
@@ -1874,54 +1890,6 @@
         ]
       },
       "sparks": {
-        "IWM": [
-          275.78,
-          277.35,
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          286.8
-        ],
-        "^VIX": [
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39
-        ],
-        "vix": [
-          17.48,
-          18.87,
-          19.5,
-          18.92,
-          19.31,
-          18.71,
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39
-        ],
         "DX-Y.NYB": [
           98.1,
           98.05,
@@ -1936,7 +1904,7 @@
           98.21,
           98.47,
           98.48,
-          98.047
+          97.958
         ],
         "dxy": [
           98.1,
@@ -1952,7 +1920,7 @@
           98.21,
           98.47,
           98.48,
-          98.047
+          97.958
         ],
         "TEAM": [
           66.94,
@@ -1970,54 +1938,6 @@
           92.35,
           88.8
         ],
-        "HUM": [
-          205.14,
-          210.34,
-          217.36,
-          217.4,
-          214.95,
-          215.23,
-          223.62,
-          229.72,
-          243.12,
-          236.44,
-          233.63,
-          237.96,
-          239.53,
-          246.33
-        ],
-        "CL=F": [
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          96.23
-        ],
-        "oil": [
-          83.85,
-          89.61,
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          96.23
-        ],
         "GC=F": [
           4857.6001,
           4806.6001,
@@ -2032,7 +1952,7 @@
           4629.8999,
           4519.5,
           4555.7998,
-          4701.8999
+          4713.3999
         ],
         "gold": [
           4857.6001,
@@ -2048,23 +1968,39 @@
           4629.8999,
           4519.5,
           4555.7998,
-          4701.8999
+          4713.3999
         ],
-        "QQQ": [
-          648.85,
-          646.79,
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77
+        "MO": [
+          64.17,
+          64.61,
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17
+        ],
+        "IWM": [
+          275.78,
+          277.35,
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8
         ],
         "^TNX": [
           4.246,
@@ -2098,22 +2034,6 @@
           4.416,
           4.356
         ],
-        "TER": [
-          380.38,
-          375.21,
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1,
-          382.48
-        ],
         "PODD": [
           203.73,
           200.87,
@@ -2129,6 +2049,22 @@
           171.39,
           167.53,
           151.28
+        ],
+        "HUM": [
+          205.14,
+          210.34,
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53,
+          246.33
         ],
         "NCLH": [
           20.99,
@@ -2146,6 +2082,38 @@
           16.94,
           17.75
         ],
+        "^VIX": [
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39
+        ],
+        "vix": [
+          17.48,
+          18.87,
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39
+        ],
         "SPY": [
           710.14,
           708.72,
@@ -2162,21 +2130,69 @@
           723.77,
           733.83
         ],
-        "MO": [
-          64.17,
-          64.61,
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17
+        "CL=F": [
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.66
+        ],
+        "oil": [
+          83.85,
+          89.61,
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.66
+        ],
+        "TER": [
+          380.38,
+          375.21,
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          382.48
+        ],
+        "QQQ": [
+          648.85,
+          646.79,
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77
         ]
       }
     },
