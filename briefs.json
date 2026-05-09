@@ -2,6 +2,2308 @@
   "version": 1,
   "briefs": [
     {
+      "date": "2026-05-09",
+      "updated_at": "2026-05-09T12:04:56-07:00",
+      "regime": "BULL",
+      "regime_note": "Day 016 closed: AI-semi rally MU +15.52, AMD +11.44 closed at highs. SPY/QQQ ATH+. APP day-2 fade -6.08 confirmed. CRWV day-2 -11.40 trending lower. BTC reclaimed 80K to 80,328.",
+      "vix_bucket": "normal",
+      "market_status": {
+        "tier": "MARKET CLOSED",
+        "text": "Weekend. Next live session Monday, May 11 at 09:30 ET."
+      },
+      "headline": {
+        "plain": "Bitcoin grinding higher to 80,634 while alt rotation cools. Equity market closed, watch Monday open.",
+        "pro": "BTC 80,634 +1.0 pct 5d, BTC.D 58.30 absorbing alt outflows; UNI/ETC/AVAX RSI bleeding 80->70s. Cash market closed Sat/Sun, equity reads Mon 5/11 06:30 PT."
+      },
+      "macro": {
+        "indices": [
+          {
+            "ticker": "SPY",
+            "last": 737.62,
+            "rsi": 75.5,
+            "note": "Closed 737.62 (+0.83 pct), fresh ATH+ on AI-semi rally extension.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "S and P 500 ETF sits at record highs with the overbought meter at 72. The system pauses new long entries above this stretch.",
+                "pro": "SPY ATH 723.77, RSI14 72.1, +0.80 pct Tue close. FOMO rule active above 20MA + 2 ATR."
+              },
+              "waiting_for": {
+                "plain": "A pullback toward the 20-day average around 700, or a daily close that resets the meter under 70.",
+                "pro": "Pullback to 20MA ~700 OR daily close RSI14 < 70."
+              },
+              "watching": {
+                "plain": "Fed Hammack speech today and ARM earnings tonight after the close. Either could break the calm tape.",
+                "pro": "Fed Hammack speech today. ARM ER 5/06 AMC, exp move +/- 11.3 pct. AMD beat already a positive sympathy tailwind."
+              },
+              "expecting": {
+                "plain": "Base case is a 1 to 3 percent pullback into Thursday once ARM is in the rearview mirror.",
+                "pro": "Base case 1-3 pct pullback into Thu post-ARM. Mean-revert tape favored over breakout chase."
+              }
+            },
+            "detail": {
+              "plain": "S and P 500 ETF closed Tuesday at a record high. The overbought meter is at 72, well past the 70 line traders watch as overheated. Pullbacks of 3 to 5 percent are typical pull-back from this kind of stretch.",
+              "pro": "SPY 723.77 +0.80 pct Tue close, RSI14 72.1, ATR14 6.64. 20MA ~700, 1 ATR pullback target 717. FOMO rule active above 20MA + 2 ATR."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "last": 711.23,
+            "rsi": 81.6,
+            "note": "Closed 711.23 (+2.34 pct), fresh ATH+ on biggest tech rally in weeks.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Nasdaq 100 ETF held the breakout into Tuesday close. Tech sector flipped from worst to leader on AMD's beat. The system still blocks new long entries.",
+                "pro": "QQQ ATH 681.61, RSI14 78.9. XLK back to 5d sector leader after AMD print. FOMO rule still active above 20MA + 2 ATR."
+              },
+              "waiting_for": {
+                "plain": "A pullback to the 20-day average around 645, or a daily close that resets the meter under 70.",
+                "pro": "Pullback to 20MA ~645 OR daily close RSI14 < 70."
+              },
+              "watching": {
+                "plain": "ARM tonight, Fed Hammack today. AMD already beat which is a sentiment tailwind.",
+                "pro": "ARM ER 5/06 AMC. AMD beat 5/05 sympathy lift continues. Pre-print IV pump in AAPL/AVGO/SNDK chains likely."
+              },
+              "expecting": {
+                "plain": "Base case is a 2 to 4 percent pullback into Thursday or Friday, gated on the ARM print quality.",
+                "pro": "Base case mean-revert 2-4 pct into Thu/Fri post-ARM. Direction gated on print quality + Hammack tone."
+              }
+            },
+            "detail": {
+              "plain": "Nasdaq 100 ETF held its ATH break, with tech sector flipping from worst to leader after AMD's beat earlier this week. The setup is mean-revert tape into the ARM print tonight.",
+              "pro": "QQQ 681.61 +1.30 pct Tue close, RSI14 78.9, ATR14 9.0. 20MA 638-645. XLK 5d back to leadership post-AMD."
+            }
+          },
+          {
+            "ticker": "IWM",
+            "last": 285.48,
+            "rsi": 71.5,
+            "note": "Pre-market +1.03 pct to 285.48; small caps participating in the rip",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Russell 2000 ETF led the session at +1.68 percent. Less stretched than tech, the meter at 69 is just below overbought.",
+                "pro": "IWM 282.56, RSI14 69.5, +1.68 pct Tue close. Yield-sensitive: 10Y 4.38."
+              },
+              "waiting_for": {
+                "plain": "Fed Hammack tone today. Hawkish surprise = yields up = small caps roll over. Dovish = bid back.",
+                "pro": "Fed Hammack speech today. Hawkish = yields up = IWM roll. Dovish = bond rally + small-cap bid."
+              },
+              "expecting": {
+                "plain": "Base case is a quiet open then a directional move on Hammack tone.",
+                "pro": "Base case quiet open, Hammack defines direction. Range 278-285 outside surprise."
+              }
+            },
+            "detail": {
+              "plain": "Russell 2000 ETF led Tuesday at +1.68 percent. Small caps are less stretched than tech with the meter at 69. Yield-sensitive into Hammack.",
+              "pro": "IWM 282.56, +1.68 pct Tue, RSI14 69.5, ATR14 4.17. 10Y 4.38; Hammack swing factor."
+            }
+          }
+        ],
+        "vol_yields": {
+          "vix": 17.1,
+          "vix_term": "STEEP_CONTANGO",
+          "ten_year": 4.38,
+          "dxy": 98.25,
+          "oil": 103.3,
+          "gold": 4593.0,
+          "details": {
+            "vix": {
+              "plain": "Volatility cooled to 17.1 from 17.93 yesterday. Calm regime with futures still in steep contango. Short-vol income trades continue to pay.",
+              "pro": "VIX 17.1, VIX/VIX3M 0.821 (STEEP_CONTANGO). Cooled from 17.93. Short-vol structure with theta + roll-down tailwind intact."
+            },
+            "ten_year": {
+              "plain": "10-year yield at 4.38, mid-range. Hammack speech today is the swing factor.",
+              "pro": "US10Y 4.38, mid-range. Fed Hammack today; tone-dependent direction."
+            },
+            "dxy": {
+              "plain": "Dollar steady at 98.25, no directional break.",
+              "pro": "DXY 98.25, range-bound 97.50-99.00."
+            },
+            "oil": {
+              "plain": "Oil at 103.30, up 7 percent in 5 days. Energy still leading.",
+              "pro": "WTI 103.30, +7.19 pct 5d. XLE rotation +12.3 5d still leader."
+            },
+            "gold": {
+              "plain": "Gold at 4593, record. Defensive bid intact alongside risk-on equity.",
+              "pro": "Gold 4593, ATH. Real rates flat + central-bank flow."
+            }
+          }
+        },
+        "sector_rotation": {
+          "leaders_5d": [
+            {
+              "etf": "XLK",
+              "score": 8.5,
+              "detail": {
+                "plain": "Tech flipped from worst sector last week to leader this week after AMD's beat. The whole AI-semi chain is bid.",
+                "pro": "XLK 5d +8.5 (was -9.06 last week), AMD print drove the flip. AI-semi chain (NVDA, AVGO, ARM, MU) all participating."
+              }
+            },
+            {
+              "etf": "XLE",
+              "score": 12.3,
+              "detail": {
+                "plain": "Energy still leading the market with oil up 7 percent over 5 days. Watchlist long entry below 56.50 still hasn't been hit.",
+                "pro": "XLE rotation +12.3 5d, oil +7.19 pct 5d. Watchlist long entry below 56.50 still pending; trigger far above current 59-ish."
+              }
+            },
+            {
+              "etf": "XLP",
+              "score": 7.8,
+              "detail": {
+                "plain": "Consumer staples defensive bid is intact. Money still rotating into stable cash-flow names.",
+                "pro": "XLP rotation +7.8 5d. Defensive bid persists alongside XLU and XLRE."
+              }
+            }
+          ],
+          "laggards_5d": [
+            {
+              "etf": "XLY",
+              "score": -1.5,
+              "detail": {
+                "plain": "Consumer discretionary is the worst sector this week, dragged by retail breakdown names like SHOP and POOL.",
+                "pro": "XLY -1.5 5d. SHOP -15.62, POOL -7.97 weighing the sector. Cruise + EV breakdowns still intact."
+              }
+            },
+            {
+              "etf": "XLI",
+              "score": -0.4,
+              "detail": {
+                "plain": "Industrials slightly negative, with HII (-10.25) being the standout drag.",
+                "pro": "XLI -0.4 5d. HII -10.25 vol x3.87 individual breakdown. Sector otherwise neutral."
+              }
+            }
+          ],
+          "read": "Tech is back to leadership on AMD beat, while consumer discretionary and industrials see name-specific breakdowns. The bid is broadening from energy/defensives back toward AI-semi."
+        },
+        "events_14d": [
+          {
+            "label": "Fed Williams speech",
+            "date": "2026-05-07",
+            "detail": {
+              "plain": "NY Fed President John Williams gives a scheduled speech today. Markets read his tone for any shift in the rate-path narrative.",
+              "pro": "Williams speech 2026-05-07. Voting member of FOMC. Tone read drives 2-yr/10-yr yield reaction; affects USD basket and rate-sensitive sectors (XLF, XLU, XLRE)."
+            }
+          },
+          {
+            "label": "CPI (April release)",
+            "date": "2026-05-13",
+            "detail": {
+              "plain": "April Consumer Price Index releases next Wednesday. Headline expectation around 2.7 percent, core around 3.0 percent.",
+              "pro": "CPI Apr release 2026-05-13. Cons headline ~2.7, core ~3.0. Any beat/miss drives front-end yields and USD basket."
+            }
+          },
+          {
+            "label": "Jobless claims",
+            "date": "2026-05-07",
+            "detail": {
+              "plain": "Weekly initial jobless claims release this morning. A measure of labor-market softness.",
+              "pro": "Jobless claims weekly release 2026-05-07 5:30 AM PT. Cons ~225K. Above 240K = labor softening flag for September Fed cut path."
+            }
+          }
+        ],
+        "earnings_7d": [
+          {
+            "ticker": "AMGN",
+            "date": "Thu May 7 BMO (REPORTED, -0.5 pct)",
+            "note": "Amgen reported BMO. Flat to slight red post-print, no major tone shift.",
+            "detail": {
+              "plain": "Amgen reported earnings before the open. The stock is essentially flat post-print, no big move.",
+              "pro": "AMGN ER 5/07 BMO. Post-print 329.49 -0.49 pct. No material XLV tone shift; sector continues quiet."
+            }
+          },
+          {
+            "ticker": "MCD",
+            "date": "Thu May 7 BMO (REPORTED, flat)",
+            "note": "McDonald's reported BMO. Flat post-print, no consumer panic signal.",
+            "detail": {
+              "plain": "McDonald's reported earnings before the open. The stock is flat post-print, suggesting no panic about consumer spending.",
+              "pro": "MCD ER 5/07 BMO. Post-print 284.23 +0.07 pct. Consumer health bellwether: neutral-to-positive read for XLY/XLP tone."
+            }
+          },
+          {
+            "ticker": "ARM",
+            "date": "Wed May 6 (REPORTED, day-2 close 213, drift continuing)",
+            "note": "ARM closed flat at 213 day-2; PEAD short drift 5-30d window active.",
+            "detail": {
+              "plain": "ARM closed flat at 213 today, neither bouncing nor extending lower. The post-earnings drift is in its mid-window.",
+              "pro": "ARM 213.27 -0.03 day-2 close. Drift continuation through 5-30d window. Watch 200 zone for support test next week."
+            }
+          },
+          {
+            "ticker": "APP",
+            "date": "Wed May 6 (REPORTED, day-2 fade -6.08 close)",
+            "note": "APP day-2 fade confirmed; Mon day-3 trend resumption decision pending.",
+            "detail": {
+              "plain": "AppLovin closed down 6 percent on day-2 of its post-earnings move. Day-3 (Monday) is the trend-resumption decision.",
+              "pro": "APP 468.55 -6.08 day-2 close. Day-3 Mon: trend resumption (long bias intact) vs continued breakdown. Position-hold thesis intact pending Mon close action."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "VIX 6/17 17/15 put spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 72,
+              "confidence_reason": "Volatility futures pay you to sit short with steep contango still intact and a roll-down tailwind, and it remains the only directional trade allowed by the buying rule.",
+              "vehicle": "put debit spread",
+              "pros": "VIX futures still in steep contango with later months priced higher than spot 17.1. The defined-risk spread caps loss if vol spikes on ARM print. Theta + roll-down provide tailwind regardless of direction.",
+              "cons": "ARM print tonight could pump VIX briefly. A single fat-tail spike erases several months of credit. Max loss is roughly 5x credit.",
+              "action": {
+                "plain": "Sell a put spread on the VIX expiring June 17. The most you can lose is fixed and small. Trade pays out if VIX stays above 17.",
+                "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit 0.39 mid, GFD. Max risk 200 per spread. Exit at 50 pct of credit OR within 7 DTE."
+              }
+            },
+            {
+              "ticker": "AMD CSP 6/5 335P",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 70,
+              "confidence_reason": "Post-print, IV-crushed AMD with no near catalyst and 62 percent annualized yield is the cleanest income setup of the week, capped by the 4 percent gap above the 200MA needing follow-through.",
+              "vehicle": "put option",
+              "pros": "AMD already beat earnings and IV is crushed. No earnings catalyst inside the 31-day expiry. RSI 75 cooling. The 335 strike sits 5.7 percent below spot with $1,720 premium = 62.5 percent annualized yield. Highest-quality post-print income setup in the wheel scan.",
+              "cons": "AMD 5d return is 4 percent into the print rally; the ER mean-revert risk is real and the gap-fill scenario takes the underlying to 340-345. AI-semi sympathy could fade if ARM disappoints tonight.",
+              "action": {
+                "plain": "Sell a cash-secured put on AMD at strike 335, expiring June 5. You collect 1,720 dollars upfront. Collateral required is 33,500 dollars. Close at 50 percent profit.",
+                "pro": "Search AMD. Trade Options. Expiration 2026-06-05. Sell to Open 1 AMD 335P. Limit at net credit 17.20 mid, GFD. Collateral 33,500. Stop alert at 340. Close at 50 pct of max credit. If assigned, write 360C 30-45 DTE."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "XLK",
+              "verdict": "TRIM IF EXTENDED",
+              "confidence": 50,
+              "confidence_reason": "XLK flipped from -9 last week to +8.5 this week on AMD beat which makes the trim signal weaker, but the index remains stretched against history.",
+              "vehicle": "ETF",
+              "pros": "Tech rallied hard back to leadership on AMD beat but the Nasdaq overbought meter is still 79. ARM tonight could mark the local top if the print disappoints. Trim into strength is the regret-minimizer here.",
+              "cons": "AMD beat reset the rotation; tech leadership could extend for weeks. ARM beat would extend the rip further. Trimming now misses the second leg.",
+              "action": {
+                "plain": "If you have a heavy tech position, trim 5 to 10 percent into the ARM print to bank some gains. This is risk control, not a directional sell.",
+                "pro": "If overweight XLK or NDX names: STC 5-10 pct into IV peak Wed AM ahead of ARM print. Limit at last + 0.3 pct, GFD. Reassess on a close below 20MA."
+              }
+            }
+          ]
+        },
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Indices ripping in pre-market: SPY up half a percent, QQQ up almost three quarters. AI-semi names rebounding strongly.",
+              "pro": "Pre-mkt: SPY 735.10 +0.48, QQQ 699.84 +0.71. AMD +1.60, MU +2.55. Risk-on tape reversal of Thu close."
+            },
+            {
+              "plain": "CoreWeave broke below the swing-entry stop level after Thursday's earnings, now down 6 percent pre-market on day-2.",
+              "pro": "CRWV 120.90 -6.16 pre-mkt. Broke yesterday's 123 stop. Day-2 PEAD short signal confirming. No bounce setup until base forms."
+            },
+            {
+              "plain": "Bitcoin bouncing back toward 80 thousand at 79,970. The bear thesis on crypto-beta names is partially softening.",
+              "pro": "BTC 79,969 -0.92 pct 24h. Testing 80K reclaim. COIN gap-down -2.87 still happening but MSTR holding +0.62. Mixed signal."
+            },
+            {
+              "plain": "Friday is a light catalyst day. Position-management focus, watch for the post-earnings drift on ARM (down) and APP (up) to play out.",
+              "pro": "Fri 5/08 light: no FOMC, no top-tier ER. Day-2 PEAD: ARM short drift, APP long drift in chop pattern. CPI Apr next Wed 5/13."
+            }
+          ]
+        },
+        "actions": [],
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "Saturday, US equity market closed. Next session Mon 5/11. CPI Wed 5/13 is the binary catalyst."
+        },
+        "social": [
+          {
+            "ticker": "SPY",
+            "mentions": 350,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "options",
+                "title": "The 24/7 workflow I run for earnings IV crush trades",
+                "score": 263,
+                "flair": "",
+                "body_excerpt": "TL;DR: I created an alert system with AI that finds overpriced options right before earnings, and then I trade a short straddle setup betting on the IV crush. I'm averaging \\~84.74 % annual returns.\n\nImportant: A lot of the ideas for this s..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "ODTE Credit Spread Progress - 88% Win Rate",
+                "score": 35,
+                "flair": "Discussion",
+                "body_excerpt": "So far my credit spread progress has done pretty well and continue to see a high rate while stopping out early on losers as to not eat up my collateral. \n\nSo far 16/18 trades have been profitable and i am up $1,311 across SPX and SPY. Also ..."
+              },
+              {
+                "sub": "Daytrading",
+                "title": "0DTE options or futures for scalping?",
+                "score": 9,
+                "flair": "Advice",
+                "body_excerpt": "Curious to hear pros/cons from the scalpers in here. What is the preferred instrument for scalping? I personally do well with both. Trying to justify sticking with one though. It seems like ES or NQ futures is the way to go. Rather than 0DT..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, the earnings reaction, and a fresh breakout. Traders are playing defined-risk spreads. The loudest take is: \"The 24/7 workflow I run for earnings IV crush trades\".",
+              "pro": "350 mentions across 5 communities, -71% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction; a fresh breakout. Strategy mix: playing defined-risk spreads. Top thesis: \"The 24/7 workflow I run for earnings IV crush trades\"."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "mentions": 212,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race1m",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32F, 1M Invested",
+                "score": 95,
+                "flair": "",
+                "body_excerpt": "Celebrating a small milestone today as my 33 birthday is coming up soon.\n\nSingle and I rent in a VHCOL city. Certainly don\u2019t feel rich given the concentration of millionaires around me but achieved this milestone without family help so want..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "31F, getting close!",
+                "score": 85,
+                "flair": "",
+                "body_excerpt": "31F working in tech as a UI designer the past 10 years ( holy shit, just in time as AI can nearly replicate my job entirely now ). I\u2019ve been investing as much as I could over these years in VOO and QQQ.\n\nI\u2019m only about 250k off from reachin..."
+              },
+              {
+                "sub": "Daytrading",
+                "title": "0DTE options or futures for scalping?",
+                "score": 9,
+                "flair": "Advice",
+                "body_excerpt": "Curious to hear pros/cons from the scalpers in here. What is the preferred instrument for scalping? I personally do well with both. Trying to justify sticking with one though. It seems like ES or NQ futures is the way to go. Rather than 0DT..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and a fresh breakout. The loudest take is: \"32F, 1M Invested\".",
+              "pro": "212 mentions across 5 communities, -60% vs prior session. Sentiment neutral. Themes: AI and data-center demand; a fresh breakout. Top thesis: \"32F, 1M Invested\"."
+            }
+          },
+          {
+            "ticker": "VOO",
+            "mentions": 26,
+            "sources": [
+              "race1m",
+              "stocks"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "31F, getting close!",
+                "score": 85,
+                "flair": "",
+                "body_excerpt": "31F working in tech as a UI designer the past 10 years ( holy shit, just in time as AI can nearly replicate my job entirely now ). I\u2019ve been investing as much as I could over these years in VOO and QQQ.\n\nI\u2019m only about 250k off from reachin..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "[29M] almost 40% there",
+                "score": 33,
+                "flair": "UPDATE",
+                "body_excerpt": "Brought 50/50 MSFT and Google around April last year with my VOO positions, sold my MSFT shares at 500-ish and went full Google sometime sometimes around September. Been holding it steady since. \n\nHonestly I can't justify my purchase. It wa..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "Am I crazy for staying this concentrated in tech and semis?",
+                "score": 5,
+                "flair": "",
+                "body_excerpt": "Started investing seriously about 2 years ago with essentially zero stock market experience, so I\u2019ve mostly stayed with ETFs instead of individual stocks. Still kind of shocked by how far things have come already.\n\nCurrent portfolio value i..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand. Traders are holding through the noise. The loudest take is: \"31F, getting close!\".",
+              "pro": "26 mentions across 2 communities, +340% vs prior session. Sentiment neutral. Themes: AI and data-center demand. Strategy mix: holding through the noise. Top thesis: \"31F, getting close!\"."
+            }
+          },
+          {
+            "ticker": "IWM",
+            "mentions": 5,
+            "sources": [
+              "daytrading",
+              "options"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "options",
+                "title": "Advice for a Steady Cash Flow Strategy?",
+                "score": 4,
+                "flair": "",
+                "body_excerpt": "So I have been doing a bunch of research over the past 3 to 4 months and trading some paper accounts. I also have an investment account holding long-term blue chips and ETFs, along with a Roth IRA and a Roth 401k setup through work. \n\nMy go..."
+              },
+              {
+                "sub": "options",
+                "title": "Short vol tickers",
+                "score": 2,
+                "flair": "",
+                "body_excerpt": "What tickers do you prefer for short vol strategies and why?\n\nBeen mostly trading SPY, QQQ, and IWM for IC setups \u2014 good liquidity, tight spreads, and reliable IV behavior.\n\nCurious what tickers the community prefers and why. Individual nam..."
+              },
+              {
+                "sub": "options",
+                "title": "Tickers of short vol",
+                "score": 2,
+                "flair": "",
+                "body_excerpt": "What are your go-to tickers for short vol?\n\nPersonally running IC and spreads on SPY, QQQ and IWM mostly. Curious what the community is trading.\n\nDrop your top 3 below \ud83d\udc47\n\n\\#thetagang #shortvol #optionstrading"
+              }
+            ],
+            "detail": {
+              "plain": "Light chatter today. Tone reads neutral. Traders are holding through the noise. The loudest take is: \"Advice for a Steady Cash Flow Strategy?\".",
+              "pro": "5 mentions across 2 communities. Sentiment neutral. Strategy mix: holding through the noise. Top thesis: \"Advice for a Steady Cash Flow Strategy?\"."
+            }
+          },
+          {
+            "ticker": "VTI",
+            "mentions": 2,
+            "sources": [
+              "race1m"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "29M Mech Eng - $986K - Portfolio Advice?",
+                "score": 32,
+                "flair": "",
+                "body_excerpt": "$200K+ income. i recognize that i\u2019m tech heavy with tons of overlap between indexes. i don\u2019t want to sell my overlap and small positions because i don\u2019t want to get taxed lol. any advice? chatgpt says a financial advisor / manager is not ne..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "Is Keeping 42% of $1.13 Mil Portfolio as Individual Stocks Too Risky?",
+                "score": 1,
+                "flair": "",
+                "body_excerpt": "Yesterday I sold $300k of a single stock with a 300+% gains and turned it into VTI. (Set aside a hefty amount of it to pay IRS gains tax)\n\nDespite the sale, it turns out that 42% of the new balance is still a series of individual stocks. Am..."
+              }
+            ],
+            "detail": {
+              "plain": "Light chatter today. Tone reads neutral. The loudest take is: \"29M Mech Eng - $986K - Portfolio Advice?\".",
+              "pro": "2 mentions across 1 communities. Sentiment neutral. Top thesis: \"29M Mech Eng - $986K - Portfolio Advice?\"."
+            }
+          }
+        ]
+      },
+      "stocks": {
+        "watchlist": [
+          {
+            "ticker": "PODD",
+            "last": 161.23,
+            "change_pct": 6.58,
+            "trigger_zone": "170-175 short on rollover",
+            "status": "BOUNCE",
+            "note": "Bouncing 6.58 pct from yesterday's lows; short trade window may be closing if anyone got in",
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Insulet broke below the 170 to 175 short-trigger zone Tuesday and stayed below it all session. The structural breakdown is intact.",
+                "pro": "PODD 167.53 -2.25 pct Tue close, RSI14 25.8 (oversold but breakdown structure intact). Below 20MA 191.38."
+              },
+              "waiting_for": {
+                "plain": "A red day-1 candle Wed below 170, ideally with volume above the 5-day average, to fill the 170/160 put spread.",
+                "pro": "Wed open below 170 + vol >= 5d MA on rejection. Vehicle: 6/20 170/160 put spread."
+              },
+              "watching": {
+                "plain": "Stryker and GE HealthCare for sector continuation. Healthcare sector tailwind would slow the breakdown.",
+                "pro": "SYK and GEHC for sector confirm. XLV +9.2 5d defensive bid is the chronic counter-tailwind."
+              },
+              "expecting": {
+                "plain": "Base case: PODD breaks to 145-150 over 14 to 20 days if the rejection candle prints Wed.",
+                "pro": "Base case: target 145, secondary 135 over 14-20d. R:R 4-5:1 from 167.50. Stop on close above 183."
+              }
+            },
+            "detail": {
+              "plain": "Insulet broke below the 170-175 short-trigger zone Tuesday and held. The setup is live for a Wed open fill if the day prints red below 170 with confirming volume.",
+              "pro": "PODD 167.53 -2.25 pct Tue, RSI 25.8 oversold, 20MA 191.38, ATR 7.52. Vehicle: 6/20 170/160 put spread. Stop close > 183. Target 145, secondary 135."
+            }
+          },
+          {
+            "ticker": "TEAM",
+            "last": 88.8,
+            "change_pct": -3.84,
+            "trigger_zone": "pullback to 5DMA 87 long",
+            "status": "NEAR",
+            "note": "Bounced off 87.34 intraday low to 88.97; entry zone may have triggered the bottom",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Atlassian's pullback bounced off 90.93 instead of reaching the 87 entry zone. The setup is at risk of lapsing without ever hitting entry.",
+                "pro": "TEAM 92.35 -0.87 pct Tue, intraday low 90.93. 5 pct above 87 entry. PEAD continuation may have priced in without the deeper pullback."
+              },
+              "waiting_for": {
+                "plain": "A pullback to the 5-day average around 87 plus a green reversal candle on volume.",
+                "pro": "Pullback to 5DMA ~87 with reversal candle on >5d-MA vol. Vehicle: 6/20 95/110 debit call spread."
+              },
+              "watching": {
+                "plain": "Software peers like CRM and NOW. If software fades the gap broadly, the PEAD setup weakens.",
+                "pro": "CRM/NOW/ADBE for sector confirm. Software was the only green corner of XLK before AMD beat; XLK now broadly bid."
+              },
+              "expecting": {
+                "plain": "Base case: TEAM resumes higher to 105 to 110 over 30 to 45 days WITHOUT the deeper pullback.",
+                "pro": "Base case: PEAD continuation 105-110 over 30-45d, 87 entry may not trigger. Shadow chase trade `s_523fe9` opened Tue at 91.33 is the counterfactual."
+              }
+            },
+            "detail": {
+              "plain": "Atlassian bounced off 90.93 intraday Tuesday instead of reaching the 87 entry zone. The pullback long setup is at risk of never triggering.",
+              "pro": "TEAM 92.35 -0.87 pct Tue, RSI 74.7. Pullback bounced 5 pct above 87 entry. Vehicle: 6/20 95/110 debit call spread on 87 hold."
+            }
+          },
+          {
+            "ticker": "NCLH",
+            "last": 17.2,
+            "change_pct": -1.1,
+            "trigger_zone": "bounce-and-fail to 18-19 short",
+            "status": "FAR",
+            "note": "Drifting LOWER not bouncing; short-on-bounce setup may never fire",
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Norwegian Cruise dropped sharply Mon and continued drifting lower Tue rather than bouncing. The short-on-bounce setup may never trigger.",
+                "pro": "NCLH 17.20, RSI 26.1 oversold but no relief bounce. Setup gated on rip to 18-19."
+              },
+              "waiting_for": {
+                "plain": "A relief bounce to the 18 to 19 area, then a red rejection candle on volume above 5d average.",
+                "pro": "Bounce-and-fail trigger: 18-19 + rejection candle + vol >= 5d MA. Vehicle: 6/20 17/15 put spread."
+              },
+              "expecting": {
+                "plain": "Base case: NCLH breaks to 15-16 without the bounce, the short setup expires unfilled.",
+                "pro": "Base case: continuation lower without bounce; setup may never fire. Memorial Day bookings news risk-event in 2-3 weeks."
+              }
+            },
+            "detail": {
+              "plain": "Norwegian Cruise broke down hard Mon and continued lower Tue rather than bouncing. Watching for the relief bounce to 18-19 to short.",
+              "pro": "NCLH 17.20, RSI 25.0, all MAs above. Vehicle: 6/20 17/15 put spread on bounce-and-fail. Stop close > 18.20."
+            }
+          },
+          {
+            "ticker": "HUM",
+            "last": 242.1,
+            "change_pct": 1.74,
+            "trigger_zone": "below 228 long on reversal",
+            "status": "FAR",
+            "note": "Pushing higher; entry zone getting further away above the chase-too-late level",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Humana keeps pushing higher away from the 228 entry. The chase-too-late level was already breached on Monday's close.",
+                "pro": "HUM 242.10 +1.74 pct, RSI 81.6, 14 pct above FOMO ceiling 231. System blocks new long entry."
+              },
+              "waiting_for": {
+                "plain": "A pullback below 228 plus a green reversal candle on volume.",
+                "pro": "Pullback < 228 + reversal candle. Vehicle: stock or 6/20 230/250 debit call spread."
+              },
+              "expecting": {
+                "plain": "Base case: HUM consolidates 240 to 250 for 1 to 2 weeks before any pullback. The setup is dormant.",
+                "pro": "Base case: chop 240-250 for 1-2w, deeper pullback unlikely without sector cooling."
+              }
+            },
+            "detail": {
+              "plain": "Humana keeps pushing higher to 242. The 228 entry is now 6 percent below current price; the long setup is dormant.",
+              "pro": "HUM 242.10 +1.74 pct, RSI 81.6. 14 pct above FOMO ceiling 231. Setup dormant; reset on pullback < 228."
+            }
+          },
+          {
+            "ticker": "MO",
+            "last": 68.12,
+            "change_pct": -1.33,
+            "trigger_zone": "pullback to gap-day midpoint 70 long",
+            "status": "NEAR",
+            "note": "Drifted further red into close to 68.29; entry push to Monday open",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Altria pulled back below 70 to 69 dollars and is now in the long entry zone. Defensive name catching a bid as the broader tape softens.",
+                "pro": "MO 69.15 in entry zone. RSI 63.8 (not yet oversold). 20MA 67.24, FOMO ceiling 70.57. Defensive bid likely as XLP rotation candidate."
+              },
+              "waiting_for": {
+                "plain": "A green daily close above 69, ideally with a higher-low intraday print to confirm the entry.",
+                "pro": "Trigger: green close > 69 + higher-low intraday vs prior session low; confirm vol > 5d MA on the bounce candle."
+              },
+              "watching": {
+                "plain": "The overbought-oversold meter at 64 is neutral-positive; not a deep oversold bounce, more of a consolidation entry.",
+                "pro": "RSI14 63.8 mid-range. ATR14 1.67 = 2.4 pct daily swing baseline. XLP sector tone."
+              },
+              "expecting": {
+                "plain": "Base case: MO chops 68-72 over the next 5 days as the post-earnings drift plays out; defensive bid intact.",
+                "pro": "Base case range 68-72 for 5d. PEAD long bias intact while XLP rotation tone holds."
+              }
+            },
+            "detail": {
+              "plain": "Altria is drifting lower toward the 70-71 entry zone. Two more days of drift would put price into entry territory.",
+              "pro": "MO 72.93 -0.65 pct, RSI 77.2. Pullback in motion. Vehicle: stock or debit call spread on reclaim."
+            }
+          },
+          {
+            "ticker": "TER",
+            "last": 338.61,
+            "change_pct": -1.97,
+            "trigger_zone": "365-380 short on rejection",
+            "status": "FAR",
+            "note": "Bounce stalled; reset gated on rip to 365",
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Teradyne bounced and stalled. The short-trigger zone at 365-380 needs to be re-tested.",
+                "pro": "TER 338.61 -1.97 pct, RSI 43.9, 20MA 366.66. Bounce stalled below 20MA. Reset opportunity if 365-380 retests."
+              },
+              "waiting_for": {
+                "plain": "A rip to 365 to 380 on lower volume than the breakdown day plus a rejection candle.",
+                "pro": "Bounce to 365-380 on vol < breakdown-day, rejection candle. Vehicle: 6/20 350/300 put spread on confirm."
+              },
+              "expecting": {
+                "plain": "Base case: TER chops 320 to 360 for 1 to 2 weeks; trigger may stay dormant.",
+                "pro": "Base case: range 320-360 for 1-2w; trigger may stay dormant until next ER catalyst."
+              }
+            },
+            "detail": {
+              "plain": "Teradyne bounce stalled below 20MA. Short setup is dormant unless 365 retests.",
+              "pro": "TER 338.61, RSI 43.9, 20MA 366.66. Vehicle: 6/20 350/300 put spread on 365-380 rejection."
+            }
+          },
+          {
+            "ticker": "ISRG",
+            "last": 456.52,
+            "change_pct": 1.06,
+            "trigger_zone": "451 long T1, 427-430 long T2, 499 long T3 (scale-in)",
+            "status": "TRIGGERED",
+            "note": "Quality compounder 25 pct off ATH; multi-tranche scale-in long",
+            "thesis": {
+              "stance": "HOLD",
+              "why": {
+                "plain": "Intuitive Surgical owns the surgical-robotics market with 31 percent operating margin, no debt, and 23 percent revenue growth. The stock is 25 percent off its year high with no earnings risk for 75 days. First scale-in tranche is live.",
+                "pro": "ISRG 451.73, RSI14 47.1 neutral. Tranche 1 entered at 451 zone. T2 add at 427-430 (52w low test) if it holds; T3 add on 200MA reclaim (499). Stop 420 (decisive break of 52w low). No ER risk: next print 2026-07-21."
+              },
+              "waiting_for": {
+                "plain": "For tranche 2: a test of 427 to 430 that holds with a higher-low. For tranche 3: a daily close back above 499.",
+                "pro": "T2 trigger: test of 427-430 with daily close hold + lower-wick rejection. T3 trigger: daily close above 200MA 499.18 on green volume."
+              },
+              "watching": {
+                "plain": "The overbought-oversold meter at 47 is neutral. Price is below the 20-day, 50-day, and 200-day averages, so the trend is still down despite the buy.",
+                "pro": "RSI14 47.1 (no oversold bounce signal yet). Price below 20MA 462.56, 50MA 472.29, 200MA 499.18. ATR14 14.71 = 3.3 pct daily swing. Beta 1.51."
+              },
+              "expecting": {
+                "plain": "Base case: chop between 427 and 480 over the next 2 to 4 weeks while the AI-semi rotation cools, then trend reversal once the 200-day average reclaim prints.",
+                "pro": "Base case: range 427-480 for 2-4w consolidation. Trend reversal confirmed on close above 200MA 499. Targets in order: 499 (T1 scale-out), 577 (analyst mean), 603 (prior ATH)."
+              }
+            },
+            "detail": {
+              "plain": "Intuitive Surgical (ISRG) is the dominant maker of robotic surgery systems (the da Vinci platform). The stock has pulled back 25 percent from its year high, leaving a high-quality compounder on sale. The setup is a 3-tranche scale-in long with the first tranche live around 451, second on a test of 427 to 430, and third on a reclaim of the 200-day average at 499. Stop is 420 (a decisive break of the year low).",
+              "pro": "ISRG 451.73, RSI14 47.1, 20MA 462.56, 50MA 472.29, 200MA 499.18. ATR14 14.71. 52w range 427.84-603.88. Scale-in: T1 451, T2 427-430 retest, T3 499 reclaim. Stop 420. Targets 499, 577, 603. No ER risk for 75d (ER 2026-07-21). Quality: 31 pct op margin, 0 debt, 4.5B cash, 23 pct rev growth."
+            }
+          }
+        ],
+        "movers": {
+          "gainers": [],
+          "losers": [
+            {
+              "ticker": "TOST",
+              "last": 25.05,
+              "chg": -14.74,
+              "vol": 30956295,
+              "spark": [
+                28.62,
+                28.52,
+                29.11,
+                29.41,
+                28.54,
+                28.31,
+                29.38,
+                25.05
+              ],
+              "detail": {
+                "plain": "TOST closed down 14.74 percent at 25.05 on volume of 31.0M shares today.",
+                "pro": "TOST -14.74 pct, close 25.05, vol 31.0M."
+              }
+            }
+          ]
+        },
+        "smart_money_clusters": [
+          {
+            "ticker": "MU",
+            "signals": [
+              "mover_active",
+              "breakout",
+              "social_breakout",
+              "wsb_squeeze"
+            ],
+            "detail": {
+              "plain": "Micron is the loudest 4-source cluster of the week with WSB mentions up 344 percent. AMD's beat is direct sympathy fuel for the AI memory chain. Already extended; covered-call income is the play, not a chase.",
+              "pro": "MU 4-source: mover_active + breakout + social_breakout + wsb_squeeze. WSB #2 (875, +344 pct delta). RSI 85.9 extreme. Covered-call income trade only; no new entry."
+            }
+          },
+          {
+            "ticker": "PINS",
+            "signals": [
+              "mover_active",
+              "breakout",
+              "pead"
+            ],
+            "detail": {
+              "plain": "Pinterest gapped 18.5 percent up on its earnings print on volume 4 times average. Cleanest PEAD continuation candidate in the digest.",
+              "pro": "PINS 3-source: mover_active + breakout + pead (gap +18.51 pct vol x4.17). PEAD long on pullback to 5DMA. Vehicle: 6/20 22/25 debit call spread on pullback."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "signals": [
+              "unusual_flow",
+              "social_breakout",
+              "wsb_squeeze"
+            ],
+            "detail": {
+              "plain": "Nvidia options activity is huge with V/OI 163,416. WSB #4 with mentions up 198 percent. Pre-earnings IV expansion is the dominant flow story.",
+              "pro": "NVDA 3-source: unusual_flow (V/OI 163416) + social_breakout + wsb_squeeze. WSB #4 (494, +197.6 pct delta). ER ~14d; IV expansion dominant. Long-premium has crush risk; calendars or short-dated debit spreads cleaner."
+            }
+          },
+          {
+            "ticker": "SHOP",
+            "signals": [
+              "mover_loser",
+              "breakdown"
+            ],
+            "detail": {
+              "plain": "Shopify capitulation on -15.6 percent volume 5x average. Bounce-and-fail short setup candidate when relief bounce prints.",
+              "pro": "SHOP 2-source: mover_loser + breakdown. -15.62 pct vol x5.15. Bounce target ~115-120; rejection candle = short trigger."
+            }
+          },
+          {
+            "ticker": "HII",
+            "signals": [
+              "mover_loser",
+              "breakdown"
+            ],
+            "detail": {
+              "plain": "Huntington Ingalls -10 percent on volume 4x average, RSI 12 extreme oversold. Defense sector breakdown.",
+              "pro": "HII 2-source: mover_loser + breakdown. -10.25 pct vol x3.87. RSI 12.4 extreme. Bounce candidate; no entry signal yet."
+            }
+          }
+        ],
+        "wsb_top": [
+          {
+            "ticker": "MU",
+            "score": 404,
+            "rank": 1,
+            "rank_prev": 2,
+            "delta_pct": -31.4,
+            "name": "Micron Technology",
+            "detail": {
+              "plain": "Micron Technology (MU) has 404 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -31 percent versus 24 hours ago, and the name jumped up from rank 2 to rank 1. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 1 (404 mentions), prior rank 2, mentions delta -31 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "score": 181,
+            "rank": 2,
+            "rank_prev": 10,
+            "delta_pct": 0.6,
+            "name": "AMD",
+            "detail": {
+              "plain": "AMD (AMD) has 181 mentions on r/wallstreetbets in the last 24 hours., and the name jumped up from rank 10 to rank 2. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "AMD WSB rank 2 (181 mentions), prior rank 10, mentions delta +1 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "RKLB",
+            "score": 177,
+            "rank": 3,
+            "rank_prev": 3,
+            "delta_pct": -47.8,
+            "name": "Rocket Lab USA",
+            "detail": {
+              "plain": "Rocket Lab USA (RKLB) has 177 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -48 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "RKLB WSB rank 3 (177 mentions), prior rank 3, mentions delta -48 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "SNDK",
+            "score": 177,
+            "rank": 4,
+            "rank_prev": 7,
+            "delta_pct": -24.4,
+            "name": "Sandisk",
+            "detail": {
+              "plain": "Sandisk (SNDK) has 177 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -24 percent versus 24 hours ago, and the name jumped up from rank 7 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SNDK WSB rank 4 (177 mentions), prior rank 7, mentions delta -24 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "SPY",
+            "score": 152,
+            "rank": 5,
+            "rank_prev": 1,
+            "delta_pct": -70.9,
+            "name": "SPDR S&P 500 ETF Trust",
+            "detail": {
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 152 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -71 percent versus 24 hours ago, and the name jumped down from rank 1 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 5 (152 mentions), prior rank 1, mentions delta -71 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "PINS 6/20 22/25 call spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 68,
+              "confidence_reason": "Score reflects the cleanest PEAD signature in the digest (+18.5 pct gap on 4x volume, 3-source cluster), capped because the gap is already cooked and entry needs a pullback that may not come.",
+              "vehicle": "debit call spread",
+              "pros": "Pinterest gapped 18.5 percent up on its earnings print on volume 4 times average. Three independent scanner sources confirm. PEAD continuation pattern typically runs 30 to 60 days; a clean pullback to the 5-day average around 19-20 sets up an asymmetric long.",
+              "cons": "Single-day +18 percent gap means buyers got their reward; chasers become exit liquidity. Consumer discretionary sector is rolling at -1.5 percent 5d. Pinterest has chronic monetization headwinds.",
+              "action": {
+                "plain": "Set a price alert at 20 on Pinterest. If it pulls back to that area, buy a 22 call and sell a 25 call expiring late June.",
+                "pro": "Search PINS. Set alert at 20. On pullback hold of 5DMA: Trade Options 2026-06-20. BTO PINS 22C, STO PINS 25C. Limit at net debit mid, GFD. Stop close < 19. Target 50-75 pct of max profit."
+              }
+            },
+            {
+              "ticker": "VIX 6/17 17/15 put spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 72,
+              "confidence_reason": "Volatility futures pay you to sit short with steep contango still intact and a roll-down tailwind, capped by ARM-print spike risk tonight.",
+              "vehicle": "put debit spread",
+              "pros": "VIX futures still in steep contango with later months priced higher than spot 17.1. The defined-risk spread caps loss if vol spikes on ARM print. Theta + roll-down provide tailwind regardless of direction.",
+              "cons": "ARM print tonight could pump VIX briefly. A single fat-tail spike erases several months of credit. Max loss is roughly 5x credit.",
+              "action": {
+                "plain": "Sell a put spread on the VIX expiring June 17. The most you can lose is fixed and small. Trade pays out if VIX stays above 17.",
+                "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit 0.39 mid, GFD. Max risk 200 per spread. Exit at 50 pct of credit OR within 7 DTE."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "PODD 6/20 170/160 put spread",
+              "verdict": "SHORT ON CONFIRMATION",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the clean breakdown structure plus second-day-below-zone confirmation, capped by oversold RSI 26 risking a short-squeeze relief bounce.",
+              "vehicle": "put debit spread",
+              "pros": "Insulet broke below the 170-175 zone on Mon and held below it Tue. Pre-breakdown support 183 has flipped to resistance. Stryker and GE HealthCare also weak, confirming sector breakdown. Reward to risk is roughly 4 to 1.",
+              "cons": "RSI 26 deeply oversold; relief bounce risk is real. M and A speculation in defensive medical-device names is endemic. Healthcare is the strongest sector this week, providing a counter-tailwind.",
+              "action": {
+                "plain": "If Insulet opens red below 170 with volume Wednesday, buy a 170/160 put spread expiring late June. Stop on close above 183.",
+                "pro": "Wait for Wed open red close < 170 + vol >= 5d MA. Search PODD. Trade Options 2026-06-20. BTO PODD 170P, STO PODD 160P. Limit at net debit mid, GFD. Stop close > 183. Target 50-75 pct of max profit."
+              }
+            },
+            {
+              "ticker": "SHOP 6/20 100/95 put spread",
+              "verdict": "SHORT ON BOUNCE",
+              "confidence": 60,
+              "confidence_reason": "Capitulation -15.6 pct on 5x volume is structural sell, but RSI 32 oversold needs a relief bounce before short entry is clean.",
+              "vehicle": "put debit spread",
+              "pros": "Shopify dropped 15.6 percent on volume 5 times average, the cleanest single-name capitulation in the digest. Two independent scanner sources confirm. Consumer discretionary peer rotation is bearish.",
+              "cons": "RSI 31.7 oversold. Bounces from this level are sharp and fast. SHOP has a chronic short-squeeze profile. Cloud commerce thesis remains structurally intact long-term.",
+              "action": {
+                "plain": "Wait for SHOP to bounce to 115-120 with a red rejection candle. Then buy a 100/95 put spread expiring late June.",
+                "pro": "Wait for bounce to 115-120 + rejection candle on >5d-MA vol. Search SHOP. Trade Options 2026-06-20. BTO SHOP 100P, STO SHOP 95P. Limit at net debit mid, GFD. Stop close > 122."
+              }
+            }
+          ]
+        },
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Micron held the 14 percent rip into the close, AMD held 10 percent. The AI-semi rally is the day's headline.",
+              "pro": "MU 738.49 +14.21 RSI 87.7 (full-day rip held). AMD 447.59 +9.58 RSI 80. Magnitude rare; watch for follow-through Mon or distribution risk on parabolic stretch."
+            },
+            {
+              "plain": "AppLovin extended its day-2 fade to minus 6.5 percent into the close. Day-3 (Monday) is the trend resumption decision.",
+              "pro": "APP 466.67 -6.45 day-2 close fade. Day-3 decision Mon: trend resumption (long bias intact) vs continued breakdown (re-evaluate hold)."
+            },
+            {
+              "plain": "CoreWeave bounced slightly off the 110 base zone to 113 dollars. Bounce setup forming over the weekend.",
+              "pro": "CRWV 113.39 -11.99. Small bounce off 111 low. Watch Mon open for green confirmation > 115 with vol = swing-long re-entry. Stop 110."
+            },
+            {
+              "plain": "MO drifted further red into the close to 68.29. The defensive long entry is pushed to Monday open.",
+              "pro": "MO 68.29 -1.09 close. Entry push to Mon 5/11. Re-evaluate at the open with fresh price action; setup invalidates on close < 67."
+            }
+          ]
+        },
+        "actions": [],
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "Saturday, equity closed. Mon watch list: APP day-3 trend resumption, MO entry trigger, CRWV bounce setup, RGTI ER BMO."
+        },
+        "social": [
+          {
+            "ticker": "AMD",
+            "mentions": 494,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Hit $3.3M mostly from just holding AMD and NVDA",
+                "score": 440,
+                "flair": "GAIN$",
+                "body_excerpt": "Account hit $3.3M today.\n\nMost of it came from just sitting on AMD and NVDA through all the AI noise.\n\nAMD alone is up around 540% for me now.\n\nFunny part is every few months people kept saying:  \n\u201cAI bubble\u201d  \n\u201cSemis are dead\u201d  \n\u201cTake prof..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32M Time is Money and Money is Time",
+                "score": 233,
+                "flair": "",
+                "body_excerpt": "Hit 1,000,000 earlier last month after aggressive saving over the years. I still drive an old beat up Nissan from 2012, still rent with no house in VHCOL. My assets are a mix of my individual stock accounts and company 401Ks\n\nNever thought ..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and the earnings reaction. Traders are holding through the noise. The loudest take is: \"Hit $3.3M mostly from just holding AMD and NVDA\".",
+              "pro": "494 mentions across 8 communities, +105% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction. Strategy mix: holding through the noise. Top thesis: \"Hit $3.3M mostly from just holding AMD and NVDA\"."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "mentions": 253,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "vitards",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Hit $3.3M mostly from just holding AMD and NVDA",
+                "score": 440,
+                "flair": "GAIN$",
+                "body_excerpt": "Account hit $3.3M today.\n\nMost of it came from just sitting on AMD and NVDA through all the AI noise.\n\nAMD alone is up around 540% for me now.\n\nFunny part is every few months people kept saying:  \n\u201cAI bubble\u201d  \n\u201cSemis are dead\u201d  \n\u201cTake prof..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32F, 1M Invested",
+                "score": 95,
+                "flair": "",
+                "body_excerpt": "Celebrating a small milestone today as my 33 birthday is coming up soon.\n\nSingle and I rent in a VHCOL city. Certainly don\u2019t feel rich given the concentration of millionaires around me but achieved this milestone without family help so want..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, cooler than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and the earnings reaction. Traders are holding through the noise. The loudest take is: \"Hit $3.3M mostly from just holding AMD and NVDA\".",
+              "pro": "253 mentions across 8 communities, -49% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction. Strategy mix: holding through the noise. Top thesis: \"Hit $3.3M mostly from just holding AMD and NVDA\"."
+            }
+          },
+          {
+            "ticker": "MU",
+            "mentions": 957,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "stocks",
+              "vitards",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Update portfolio made $1m in the past month. (Full portfolio 2x MU!)",
+                "score": 415,
+                "flair": "",
+                "body_excerpt": "I only hit the $1m threshold recently.  When I was $400k, many people didn\u2019t think I\u2019d hit the $1m by June (that was my goal).  I am full port MU with 2x margin.  Going to sell out at $2k.  Wish me luck!"
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Update on my MU position",
+                "score": 366,
+                "flair": "GAIN$",
+                "body_excerpt": "Update on my Micron position. Unfortunately I sold a call option on all my shares and it\u2019s about to hit, so the fun is coming to an end, but it\u2019s been a wild and fun ride and I think it\u2019s going to hit $1,000 later this year. The call option..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Micron $MU is absolutely insane right now",
+                "score": 136,
+                "flair": "",
+                "body_excerpt": "Up huge again today and honestly I\u2019m starting to think Wall Street is still underestimating how massive the AI memory cycle could be. HBM demand is exploding, supply is tight, forward P/E still looks attractive compared to other major semic..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and a sector comparison trade. The loudest take is: \"Update portfolio made $1m in the past month. (Full portfolio 2x MU!)\".",
+              "pro": "957 mentions across 7 communities, +110% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; a sector comparison trade. Top thesis: \"Update portfolio made $1m in the past month. (Full portfolio 2x MU!)\"."
+            }
+          },
+          {
+            "ticker": "INTC",
+            "mentions": 321,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "stocks",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              },
+              {
+                "sub": "options",
+                "title": "Sold INTC $100 covered call 05/29",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "&amp;#x200B;\n\nI sold 10 $100 covered call that expires on 05/29 for 1k premium week ago. The stock has rallied since then and I feel guilty and don't want to miss out on the profit. What should I do now? Just accept mv fate and wait for it ..."
+              },
+              {
+                "sub": "options",
+                "title": "if u had to pick one INTC or AMD puts?",
+                "score": 24,
+                "flair": "",
+                "body_excerpt": "currently debating between 8/21 expirations to play for a 10-20% pullback. Intel ran up harder and feels more susceptible to FOMO from the 24/7 recycled headlines of potential partnerships but at the same time they are already worth a third..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are selling covered calls. The loudest take is: \"Intel just surged 15% on a single report. $INTC is back\".",
+              "pro": "321 mentions across 6 communities, +36% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Intel just surged 15% on a single report. $INTC is back\"."
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "mentions": 251,
+            "sources": [
+              "all_stocks",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "[29M] almost 40% there",
+                "score": 33,
+                "flair": "UPDATE",
+                "body_excerpt": "Brought 50/50 MSFT and Google around April last year with my VOO positions, sold my MSFT shares at 500-ish and went full Google sometime sometimes around September. Been holding it steady since. \n\nHonestly I can't justify my purchase. It wa..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 21,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels",
+                "score": 12,
+                "flair": "DD",
+                "body_excerpt": "What's up fellow degens and $1M racers.\n\nI've been meaning to write this up for a while now. With the incredible volatility in the markets recently (the VIX broke above 20 and into the highest level in 3 months,  and many SaaS companies got..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, cooler than yesterday. Tone reads neutral. Traders are writing puts to collect premium and playing defined-risk spreads. The loudest take is: \"[29M] almost 40% there\".",
+              "pro": "251 mentions across 5 communities, -46% vs prior session. Sentiment neutral. Strategy mix: writing puts to collect premium; playing defined-risk spreads; holding through the noise. Top thesis: \"[29M] almost 40% there\"."
+            }
+          }
+        ]
+      },
+      "options": {
+        "unusual": [
+          {
+            "ticker": "QQQ",
+            "vol_oi": 7665,
+            "context": "May 11 puts $711.0 \u00b7 6 unusual strike(s)"
+          },
+          {
+            "ticker": "META",
+            "vol_oi": 1200,
+            "context": "May 11 calls $810.0 \u00b7 2 unusual strike(s)"
+          },
+          {
+            "ticker": "SPY",
+            "vol_oi": 945,
+            "context": "May 11 puts $746.0 \u00b7 3 unusual strike(s)",
+            "detail": {
+              "plain": "S and P 500 ETF flow is heavy into the ARM print tonight and Fed Hammack today. Hedging flow rather than directional.",
+              "pro": "SPY flow heavy into Hammack + ARM ER. Hedging flow dominant. No single-name expression."
+            }
+          },
+          {
+            "ticker": "TSLA",
+            "vol_oi": 893,
+            "context": "May 13 puts $425.0 \u00b7 8 unusual strike(s)",
+            "detail": {
+              "plain": "Tesla has elevated options activity but no clean directional setup. Watch chart for follow-through.",
+              "pro": "TSLA mover_active + unusual_flow. RSI inflection point would clarify direction; observation only."
+            }
+          },
+          {
+            "ticker": "AAPL",
+            "vol_oi": 354,
+            "context": "May 11 puts $302.5 \u00b7 1 unusual strike(s)",
+            "detail": {
+              "plain": "Apple options activity is heavy with sympathy IV from AMD's beat. Wait for a pullback to 275 area before any spread entry.",
+              "pro": "AAPL flow continues post-AMD sympathy. Vehicle expression: 6/20 285/300 debit call spread on pullback to 275. Avoid chasing here."
+            }
+          }
+        ],
+        "earnings_iv": [
+          {
+            "ticker": "ARM",
+            "date": "Wed May 6 AMC (TONIGHT)",
+            "note": "Implied move +/- 11.3 percent. AMD-beat sympathy is in but not direct read.",
+            "detail": {
+              "plain": "ARM reports earnings tonight after the close. The options market is pricing about an 11 percent move either way. AMD's beat is positive sentiment but not direct on ARM. Long-call holders should scale out half into the morning IV pump.",
+              "pro": "ARM ER 5/06 AMC, expected move +/- 11.3 pct. IV pump 6h pre-print typical, peaks ~12 PM ET. Long-call holders: STC 50 pct into IV peak. Stock holders: trim into strength or buy short-dated put hedge."
+            }
+          },
+          {
+            "ticker": "APP",
+            "date": "Wed May 6 AMC (TONIGHT)",
+            "note": "IV pumped pre-print; calendar/iron condor candidate post-print on IV crush.",
+            "detail": {
+              "plain": "AppLovin options are pricing in a roughly 12 percent move tonight. After the print, options premium typically collapses 50 percent or more, which can be sold via short straddles or iron condors if you have a directional view.",
+              "pro": "APP exp move ~12 pct on print. Post-print IV crush 50-70 pct typical. Short premium plays viable post-print: iron condor or short strangle if directional view is range-bound. Avoid pre-print long premium chase."
+            }
+          },
+          {
+            "ticker": "MCD",
+            "date": "Thu May 7",
+            "note": "Bellwether read on the global consumer",
+            "detail": {
+              "plain": "McDonalds gives the consumer read Thursday. Same-store sales and US traffic are the swing numbers.",
+              "pro": "MCD ER Thu. Same-store-sales surprise drives XLY; defined-risk debit spreads sized to implied move."
+            }
+          },
+          {
+            "ticker": "ALB",
+            "date": "Wed May 6 AMC",
+            "note": "Lithium read-through; watch RIVN and TSLA for sympathy",
+            "detail": {
+              "plain": "Albemarle prints alongside ARM tonight. Lithium guidance reads through to the EV-supplier basket.",
+              "pro": "ALB cyclical lithium proxy. Watch RIVN/TSLA aftermarket for sympathy through XLB."
+            }
+          }
+        ],
+        "leaps": [
+          {
+            "ticker": "SPY",
+            "thesis_window": "540 DTE anchor",
+            "note": "Monthly DCA day; signal still says wait, RSI extended",
+            "detail": {
+              "plain": "The monthly long-dated index call signal still says wait. The S and P 500 is too overbought for a clean entry today. Wait for a pullback toward the 20-day average around 700.",
+              "pro": "SPY 723.77, VIX 17.1, RSI 72.1. LEAP signal: WAIT, skip rsi_extended. iv_mult ~0.95."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "thesis_window": "540 DTE anchor",
+            "note": "Monthly DCA day; signal says wait, Nasdaq still stretched",
+            "detail": {
+              "plain": "The monthly long-dated Nasdaq call signal also says wait. The overbought meter at 79 is among the most extended readings of the year.",
+              "pro": "QQQ 681.61, VIX 17.1, RSI 78.9. LEAP signal: WAIT, skip rsi_extended. iv_mult ~1.05. Pullback to 20MA 645 needed."
+            }
+          }
+        ],
+        "wheel_candidates": [
+          {
+            "ticker": "USO",
+            "verdict": "STRONG WHEEL",
+            "confidence": 72,
+            "confidence_reason": "Highest score in the cohort with 78.3 percent annualized yield, no earnings catalyst, and energy sector leadership backing it; capped because USO is a futures-tracking ETF with structural roll-yield drag.",
+            "spot": 144.17,
+            "csp_strike": 136.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 31,
+            "csp_premium": 8.75,
+            "csp_otm_pct": 5.7,
+            "annualized_yield_pct": 78.3,
+            "rsi14": 65.8,
+            "above_200dma": true,
+            "next_er_date": null,
+            "days_to_er": null,
+            "pros": "United States Oil Fund tracks oil futures and is in a clean uptrend with energy leading the market this week at plus 12.3 rotation score. The overbought meter at 66 is healthy. There are no earnings catalysts. Annualized yield of 78.3 percent is the cohort high.",
+            "cons": "USO is futures-tracking, so persistent contango erodes share price even if oil holds. A geopolitical reversal can gap oil 5 percent overnight. EIA crude inventories are a binary near-term catalyst.",
+            "action": {
+              "plain": "Sell one cash-secured put on the United States Oil Fund. Strike 136, expiring early June. You collect 875 dollars upfront. Collateral 13,600.",
+              "pro": "Search USO. Trade Options. Expiration 2026-06-05. Sell to Open 1 USO 136P. Limit at net credit 8.75 mid, GFD. Collateral 13,600. Stop alert at 132. If assigned, write 145C 30-45 DTE."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "verdict": "STRONG WHEEL",
+            "confidence": 70,
+            "confidence_reason": "Just-printed AMD with IV crushed, no near catalyst inside expiry, and 62.5 percent annualized yield is the cleanest post-ER income setup of the week, capped by the 4 percent gap above 200MA needing follow-through.",
+            "spot": 355.26,
+            "csp_strike": 335.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 31,
+            "csp_premium": 17.2,
+            "csp_otm_pct": 5.7,
+            "annualized_yield_pct": 62.5,
+            "rsi14": 75.4,
+            "above_200dma": true,
+            "next_er_date": null,
+            "days_to_er": null,
+            "pros": "AMD just beat earnings and IV is crushed post-print. No earnings catalyst inside the 31-day expiry. RSI 75 is cooling. The 335 strike sits 5.7 percent below spot with 1,720 dollar premium = 62.5 percent annualized yield.",
+            "cons": "AMD 5d return is 4 percent into the print rally; mean-revert risk is real. AI-semi sympathy could fade if ARM disappoints tonight. RSI 75 is on the warm side of the wheel sweet spot.",
+            "action": {
+              "plain": "Sell a cash-secured put on AMD at strike 335, expiring early June. You collect 1,720 dollars. Collateral required is 33,500.",
+              "pro": "Search AMD. Trade Options. Expiration 2026-06-05. Sell to Open 1 AMD 335P. Limit at net credit 17.20 mid, GFD. Collateral 33,500. Stop alert at 340. Close at 50 pct of max credit. If assigned, write 360C 30-45 DTE."
+            }
+          },
+          {
+            "ticker": "TGT",
+            "verdict": "HIGH-PREMIUM RISKY",
+            "confidence": 50,
+            "confidence_reason": "Solid 43.9 percent yield with defensive setup, but earnings 14 days out sits on the boundary of the penalty band and is binary inside the trade window.",
+            "spot": 128.82,
+            "csp_strike": 122.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 31,
+            "csp_premium": 4.4,
+            "csp_otm_pct": 5.3,
+            "annualized_yield_pct": 43.9,
+            "rsi14": 64.3,
+            "above_200dma": true,
+            "next_er_date": "2026-05-20",
+            "days_to_er": 14,
+            "pros": "Target is a defensive consumer name with steady cash flow. Daily price swings are the lowest in the cohort. The 122 strike with 5.3 percent cushion is reasonable. Defensive sector bid lifts adjacent staples.",
+            "cons": "Earnings are 14 days out exactly on the penalty boundary. SHOP and POOL just broke down on consumer-discretionary weakness. Same-store-sales surprise risk is real.",
+            "action": {
+              "plain": "Sell a cash-secured put on Target at strike 122, expiring early June. Premium 440. Collateral 12,200. Close before the 5/20 print.",
+              "pro": "Search TGT. Trade Options. Expiration 2026-06-05. Sell to Open 1 TGT 122P. Limit at net credit 4.40 mid, GFD. Collateral 12,200. CLOSE before ER 5/20."
+            }
+          },
+          {
+            "ticker": "AVGO",
+            "verdict": "OK WHEEL",
+            "confidence": 60,
+            "confidence_reason": "Solid 42.9 percent annualized yield with no current ER blackout (28 days out), but starting position straddles pre-earnings IV runup and may need to close before 6/3 print.",
+            "spot": 427.36,
+            "csp_strike": 400.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 31,
+            "csp_premium": 14.1,
+            "csp_otm_pct": 6.4,
+            "annualized_yield_pct": 42.9,
+            "rsi14": 64.5,
+            "above_200dma": true,
+            "next_er_date": "2026-06-03",
+            "days_to_er": 28,
+            "pros": "Broadcom is a high-quality AI-semi name with steady cash flow. The overbought meter at 65 is firm. Daily swings smaller than cohort. The 400 strike sits 6.4 percent below spot.",
+            "cons": "Earnings are 28 days out, so position straddles pre-ER IV pump. Collateral 40,000 ties up significant capital. Tech rotation back to leadership is fragile (post-AMD).",
+            "action": {
+              "plain": "Sell a cash-secured put on Broadcom at strike 400, expiring early June. Premium 1,410. Collateral 40,000. Close before 6/3 print.",
+              "pro": "Search AVGO. Trade Options. Expiration 2026-06-05. Sell to Open 1 AVGO 400P. Limit at net credit 14.10 mid, GFD. Collateral 40,000. Close before ER 6/3."
+            }
+          },
+          {
+            "ticker": "QCOM",
+            "verdict": "OK WHEEL",
+            "confidence": 55,
+            "confidence_reason": "44.8 percent yield with no near-term ER, but RSI 81 extreme reflects the AMD-sympathy rip and high mean-revert probability.",
+            "spot": 186.55,
+            "csp_strike": 175.0,
+            "csp_expiry": "2026-06-05",
+            "csp_dte": 31,
+            "csp_premium": 6.45,
+            "csp_otm_pct": 6.2,
+            "annualized_yield_pct": 44.8,
+            "rsi14": 81.6,
+            "above_200dma": true,
+            "next_er_date": "2026-07-29",
+            "days_to_er": 84,
+            "pros": "Qualcomm is a chip name benefiting from AMD-beat sympathy. Earnings 84 days away, well clear of any blackout. The 175 strike with 6.2 percent cushion is reasonable.",
+            "cons": "RSI 81.6 is extreme. AMD-sympathy rip already priced in; ARM disappointment tonight could pull QCOM down 3-5 percent. Mean-revert risk is real.",
+            "action": {
+              "plain": "Sell a cash-secured put on Qualcomm at strike 175, expiring early June. Premium 645. Collateral 17,500. Close at 50 percent profit.",
+              "pro": "Search QCOM. Trade Options. Expiration 2026-06-05. Sell to Open 1 QCOM 175P. Limit at net credit 6.45 mid, GFD. Collateral 17,500. Stop alert at 178. Close at 50 pct of max credit."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "AMD 6/5 335P (CSP)",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the just-printed AMD with IV crushed, no near catalyst, and 62 percent annualized yield, capped by the 4 percent gap above 200MA needing follow-through.",
+              "vehicle": "put option",
+              "pros": "AMD just beat earnings and IV is crushed post-print. No earnings catalyst inside the 31-day expiry. The 335 strike sits 5.7 percent below spot with 1,720 dollar premium = 62.5 percent annualized yield. Highest-quality post-print income setup of the week.",
+              "cons": "AMD 5d return is 4 percent into the print rally; mean-revert risk is real. AI-semi sympathy could fade if ARM disappoints tonight.",
+              "action": {
+                "plain": "Sell a cash-secured put on AMD at strike 335, expiring early June. You collect 1,720 dollars. Collateral 33,500.",
+                "pro": "Search AMD. Trade Options. Expiration 2026-06-05. Sell to Open 1 AMD 335P. Limit at net credit 17.20 mid, GFD. Collateral 33,500. Stop alert at 340. Close at 50 pct of max credit."
+              }
+            },
+            {
+              "ticker": "PINS 6/20 22/25 call spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 68,
+              "confidence_reason": "Cleanest PEAD signature in the digest at +18.5 pct gap on 4x volume, capped because the gap is already cooked and entry needs a pullback to 5DMA that may not come.",
+              "vehicle": "debit call spread",
+              "pros": "Pinterest gapped 18.5 percent up on its earnings print on volume 4x average. Three independent scanner sources. PEAD continuation typically runs 30-60 days; pullback to 5DMA ~20 sets up an asymmetric long.",
+              "cons": "Single-day +18 pct gap means buyers got their reward; chasers become exit liquidity. Consumer discretionary -1.5 5d sector weakness. Pinterest has chronic monetization headwinds.",
+              "action": {
+                "plain": "Set a price alert at 20 on Pinterest. If it pulls back to that area, buy a 22 call and sell a 25 call expiring late June.",
+                "pro": "Search PINS. Set alert at 20. On 5DMA hold: Trade Options 2026-06-20. BTO 22C, STO 25C. Limit at net debit mid, GFD. Stop close < 19."
+              }
+            },
+            {
+              "ticker": "VIX 6/17 17/15 put spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 72,
+              "confidence_reason": "Volatility futures pay you to sit short with steep contango still intact, capped by ARM-print spike risk tonight.",
+              "vehicle": "put debit spread",
+              "pros": "VIX futures still in steep contango with later months priced higher than spot 17.1. Defined-risk spread caps loss if vol spikes on ARM print. Theta + roll-down provide tailwind.",
+              "cons": "ARM print tonight could pump VIX briefly. Single fat-tail spike erases several months of credit. Max loss is roughly 5x credit.",
+              "action": {
+                "plain": "Sell a put spread on the VIX expiring June 17. The most you can lose is fixed and small. Trade pays out if VIX stays above 17.",
+                "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit 0.39 mid, GFD. Max risk 200 per spread. Exit at 50 pct of credit OR within 7 DTE."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "PODD 6/20 170/160 put spread",
+              "verdict": "SHORT ON CONFIRMATION",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the breakdown structure plus second-day-below-zone confirmation, capped by oversold RSI 26 risking a short-squeeze relief bounce.",
+              "vehicle": "put debit spread",
+              "pros": "Insulet broke below the 170-175 zone on Mon and held below it Tue. Pre-breakdown support 183 has flipped to resistance. Stryker and GE HealthCare also weak, confirming sector breakdown.",
+              "cons": "RSI 26 deeply oversold; relief bounce risk. Healthcare is the strongest sector this week, providing a counter-tailwind.",
+              "action": {
+                "plain": "If Insulet opens red below 170 with volume Wednesday, buy a 170/160 put spread expiring late June. Stop on close above 183.",
+                "pro": "Wait for Wed open red close < 170 + vol >= 5d MA. Search PODD. Trade Options 2026-06-20. BTO 170P, STO 160P. Limit at net debit mid, GFD. Stop close > 183."
+              }
+            },
+            {
+              "ticker": "SHOP 6/20 100/95 put spread",
+              "verdict": "SHORT ON BOUNCE",
+              "confidence": 60,
+              "confidence_reason": "Capitulation -15.6 pct on 5x volume is structural sell, but RSI 32 oversold needs a relief bounce before short entry is clean.",
+              "vehicle": "put debit spread",
+              "pros": "Shopify dropped 15.6 percent on volume 5 times average. Two independent scanner sources confirm. Consumer discretionary peer rotation is bearish.",
+              "cons": "RSI 31.7 oversold. Bounces from this level are sharp and fast. SHOP has chronic short-squeeze profile.",
+              "action": {
+                "plain": "Wait for SHOP to bounce to 115-120 with a red rejection candle. Then buy a 100/95 put spread expiring late June.",
+                "pro": "Wait for bounce to 115-120 + rejection candle on >5d-MA vol. Search SHOP. Trade Options 2026-06-20. BTO 100P, STO 95P. Limit at net debit mid, GFD. Stop close > 122."
+              }
+            }
+          ]
+        },
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "AMD cash-secured put premium is now at the IV-reset sweet spot. AMD bouncing back to 415 means the 335 strike is even safer.",
+              "pro": "AMD CSP 6/5 335P. Stock 415.00 +1.60 pre-mkt. Strike 335 = 19 pct OTM. Premium reduced from yest but safety margin improved."
+            },
+            {
+              "plain": "CoreWeave options post-print: stock breaking down means the 110 cash-secured put is closer to assignment risk.",
+              "pro": "CRWV 120.90 -6.16. CSP 6/20 110P closer to ITM if continuation extends. Skip until base forms."
+            },
+            {
+              "plain": "APLD covered call setup unchanged. Stock flat at 41.50 pre-market means the 50 strike is still well out of the money.",
+              "pro": "APLD CC 6/20 50C valid. Stock 41.48 -0.12 pre-mkt. Strike 50 = 20 pct OTM. Premium decay favorable to seller."
+            }
+          ]
+        },
+        "actions": [],
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "Saturday, options closed. Wheel candidates and IV setups refresh on Mon AM brief."
+        },
+        "social": [
+          {
+            "ticker": "AMD",
+            "mentions": 494,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Hit $3.3M mostly from just holding AMD and NVDA",
+                "score": 440,
+                "flair": "GAIN$",
+                "body_excerpt": "Account hit $3.3M today.\n\nMost of it came from just sitting on AMD and NVDA through all the AI noise.\n\nAMD alone is up around 540% for me now.\n\nFunny part is every few months people kept saying:  \n\u201cAI bubble\u201d  \n\u201cSemis are dead\u201d  \n\u201cTake prof..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32M Time is Money and Money is Time",
+                "score": 233,
+                "flair": "",
+                "body_excerpt": "Hit 1,000,000 earlier last month after aggressive saving over the years. I still drive an old beat up Nissan from 2012, still rent with no house in VHCOL. My assets are a mix of my individual stock accounts and company 401Ks\n\nNever thought ..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and the earnings reaction. Traders are holding through the noise. The loudest take is: \"Hit $3.3M mostly from just holding AMD and NVDA\".",
+              "pro": "494 mentions across 8 communities, +105% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction. Strategy mix: holding through the noise. Top thesis: \"Hit $3.3M mostly from just holding AMD and NVDA\"."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "mentions": 253,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "vitards",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Hit $3.3M mostly from just holding AMD and NVDA",
+                "score": 440,
+                "flair": "GAIN$",
+                "body_excerpt": "Account hit $3.3M today.\n\nMost of it came from just sitting on AMD and NVDA through all the AI noise.\n\nAMD alone is up around 540% for me now.\n\nFunny part is every few months people kept saying:  \n\u201cAI bubble\u201d  \n\u201cSemis are dead\u201d  \n\u201cTake prof..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32F, 1M Invested",
+                "score": 95,
+                "flair": "",
+                "body_excerpt": "Celebrating a small milestone today as my 33 birthday is coming up soon.\n\nSingle and I rent in a VHCOL city. Certainly don\u2019t feel rich given the concentration of millionaires around me but achieved this milestone without family help so want..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, cooler than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and the earnings reaction. Traders are holding through the noise. The loudest take is: \"Hit $3.3M mostly from just holding AMD and NVDA\".",
+              "pro": "253 mentions across 8 communities, -49% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction. Strategy mix: holding through the noise. Top thesis: \"Hit $3.3M mostly from just holding AMD and NVDA\"."
+            }
+          },
+          {
+            "ticker": "MU",
+            "mentions": 957,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "stocks",
+              "vitards",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Update portfolio made $1m in the past month. (Full portfolio 2x MU!)",
+                "score": 415,
+                "flair": "",
+                "body_excerpt": "I only hit the $1m threshold recently.  When I was $400k, many people didn\u2019t think I\u2019d hit the $1m by June (that was my goal).  I am full port MU with 2x margin.  Going to sell out at $2k.  Wish me luck!"
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Update on my MU position",
+                "score": 366,
+                "flair": "GAIN$",
+                "body_excerpt": "Update on my Micron position. Unfortunately I sold a call option on all my shares and it\u2019s about to hit, so the fun is coming to an end, but it\u2019s been a wild and fun ride and I think it\u2019s going to hit $1,000 later this year. The call option..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Micron $MU is absolutely insane right now",
+                "score": 136,
+                "flair": "",
+                "body_excerpt": "Up huge again today and honestly I\u2019m starting to think Wall Street is still underestimating how massive the AI memory cycle could be. HBM demand is exploding, supply is tight, forward P/E still looks attractive compared to other major semic..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and a sector comparison trade. The loudest take is: \"Update portfolio made $1m in the past month. (Full portfolio 2x MU!)\".",
+              "pro": "957 mentions across 7 communities, +110% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; a sector comparison trade. Top thesis: \"Update portfolio made $1m in the past month. (Full portfolio 2x MU!)\"."
+            }
+          },
+          {
+            "ticker": "INTC",
+            "mentions": 321,
+            "sources": [
+              "all_stocks",
+              "daytrading",
+              "options",
+              "race10m",
+              "stocks",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Intel just surged 15% on a single report. $INTC is back.",
+                "score": 222,
+                "flair": "",
+                "body_excerpt": "Apple is reportedly making Intel its chip manufacturer for future devices.\n\n$INTC went from $117 to $126+ in a single candle. Nearly vertical.\n\nThis stock was dead. Completely forgotten while NVDA and AMD took everything.\n\nThen this headlin..."
+              },
+              {
+                "sub": "options",
+                "title": "Sold INTC $100 covered call 05/29",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "&amp;#x200B;\n\nI sold 10 $100 covered call that expires on 05/29 for 1k premium week ago. The stock has rallied since then and I feel guilty and don't want to miss out on the profit. What should I do now? Just accept mv fate and wait for it ..."
+              },
+              {
+                "sub": "options",
+                "title": "if u had to pick one INTC or AMD puts?",
+                "score": 24,
+                "flair": "",
+                "body_excerpt": "currently debating between 8/21 expirations to play for a 10-20% pullback. Intel ran up harder and feels more susceptible to FOMO from the 24/7 recycled headlines of potential partnerships but at the same time they are already worth a third..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are selling covered calls. The loudest take is: \"Intel just surged 15% on a single report. $INTC is back\".",
+              "pro": "321 mentions across 6 communities, +36% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Intel just surged 15% on a single report. $INTC is back\"."
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "mentions": 251,
+            "sources": [
+              "all_stocks",
+              "race1m",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "[29M] almost 40% there",
+                "score": 33,
+                "flair": "UPDATE",
+                "body_excerpt": "Brought 50/50 MSFT and Google around April last year with my VOO positions, sold my MSFT shares at 500-ish and went full Google sometime sometimes around September. Been holding it steady since. \n\nHonestly I can't justify my purchase. It wa..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 21,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels",
+                "score": 12,
+                "flair": "DD",
+                "body_excerpt": "What's up fellow degens and $1M racers.\n\nI've been meaning to write this up for a while now. With the incredible volatility in the markets recently (the VIX broke above 20 and into the highest level in 3 months,  and many SaaS companies got..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, cooler than yesterday. Tone reads neutral. Traders are writing puts to collect premium and playing defined-risk spreads. The loudest take is: \"[29M] almost 40% there\".",
+              "pro": "251 mentions across 5 communities, -46% vs prior session. Sentiment neutral. Strategy mix: writing puts to collect premium; playing defined-risk spreads; holding through the noise. Top thesis: \"[29M] almost 40% there\"."
+            }
+          }
+        ]
+      },
+      "crypto": {
+        "status": "live",
+        "coins": [
+          {
+            "symbol": "BTC",
+            "last": 80634.49,
+            "change_5d_pct": 1.01,
+            "note": "Pushed above 80,400 zone; BTC.D 58.3 absorbing alt outflows",
+            "detail": {
+              "plain": "Bitcoin is grinding higher over the weekend, now above 80,600 after reclaiming the 80,000 level Friday. Money is rotating from smaller coins back into bitcoin, which usually sets up crypto-linked stocks like COIN and MSTR for a green Monday open.",
+              "pro": "BTC 80,634 +0.56 pct 24h, +1.01 pct 5d, RSI14 62.7, above MA20. Dominance 58.30 pct ticking up. Bullish divergence vs alts. If BTC holds > 80.5K through Sun close, COIN/MSTR Mon open relief setup is firming."
+            }
+          },
+          {
+            "symbol": "ETH",
+            "last": 2321.12,
+            "change_5d_pct": -1.08,
+            "note": "Reclaimed MA20, lagging BTC",
+            "detail": {
+              "plain": "Ethereum is up slightly, just back above its 20-day average price. It is lagging bitcoin badly which is the main story in crypto this week.",
+              "pro": "ETH 2,321 +0.61 pct 24h, RSI14 50.3, just reclaimed MA20. Underperforming BTC by 200+ bps over 5d. ETH/BTC ratio breaking down. No setup."
+            }
+          },
+          {
+            "symbol": "SOL",
+            "last": 92.87,
+            "change_5d_pct": 10.44,
+            "note": "Up 10 pct 5d, momentum cooling 24h",
+            "detail": {
+              "plain": "Solana is up 10 percent over five days but the momentum is fading: today it is only up 1 percent versus yesterday. Stocks this hot usually pull back before the next leg.",
+              "pro": "SOL 92.87 +1.0 pct 24h (down from +5.5 pct yesterday), 5d +10.4. RSI14 69.9 cooling from 71.5. Above MA20, below MA200. Wait for pullback to 88-90 zone before entry."
+            }
+          },
+          {
+            "symbol": "LINK",
+            "last": 10.33,
+            "change_5d_pct": 10.46,
+            "note": "Hot last week, RSI 73 cooling",
+            "detail": {
+              "plain": "Chainlink had the hottest week of the major coins, up over 10 percent. Today it is flat while bitcoin grinds higher, suggesting the fast money is rotating out.",
+              "pro": "LINK 10.33 flat 24h, 5d +10.46, RSI14 72.8 (peak 74.5 yesterday). Leadership-overbought name in cooling phase. Wait for retest of $9.80 zone before re-add."
+            }
+          },
+          {
+            "symbol": "XRP",
+            "last": 1.42,
+            "change_5d_pct": 1.84,
+            "note": "Range-bound, no setup",
+            "detail": {
+              "plain": "XRP is sitting in its weekly range with no clear direction. Up a small amount over five days, no setup either way.",
+              "pro": "XRP 1.42 flat 24h, 5d +1.84, RSI14 48.4 neutral. Trapped between MA20 and MA50. No setup."
+            }
+          },
+          {
+            "symbol": "DOGE",
+            "last": 0.11,
+            "change_5d_pct": -1.18,
+            "note": "Drifting lower with no flow",
+            "detail": {
+              "plain": "Dogecoin is drifting lower over the past week with no real catalyst. Retail attention has rotated to other coins.",
+              "pro": "DOGE 0.11 -0.54 pct 24h, 5d -1.18, RSI14 70.0 (mid-band). Below MA200. No flow, no setup."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [],
+          "sell": []
+        },
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Bitcoin reclaimed 80,000 on Friday and has been grinding higher all weekend, now above 80,600. The bear thesis from earlier in the week is off the table for now.",
+              "pro": "BTC 80,634 +1.01 pct 5d, +0.56 pct 24h, RSI14 62.7. Sub-80K break invalidated. Above MA20, below MA200. Dominance 58.30 pct ticking up."
+            },
+            {
+              "plain": "Smaller coins like UNI, ETC, and AVAX had a hot Friday but have been cooling all weekend. Money is rotating back from alts into bitcoin, which usually sets up crypto-linked stocks for a green Monday.",
+              "pro": "Alt rotation cool extending: UNI -1.78 pct 24h (RSI 81 -> 73), ETC -2.92 (RSI 80 -> 71), AVAX -0.58 (RSI 67 -> 63). Bullish divergence: BTC up + alts down + dominance up."
+            },
+            {
+              "plain": "Ethereum is up slightly but lagging bitcoin badly. Solana is up 10 percent over five days but the momentum is fading.",
+              "pro": "ETH 2,321 +0.61 pct 24h, just reclaimed MA20. ETH/BTC ratio breaking down. SOL 92.87 +10.44 5d but 24h slowing to +1.0."
+            },
+            {
+              "plain": "No equity tape this weekend. The next session opens Monday May 11. CPI prints Wednesday, which is the binary catalyst for the week.",
+              "pro": "Equity closed Sat/Sun. Mon 5/11 06:30 PT cash open. CPI Wed 5/13 BMO; positioning into print is the dominant equity-side decision Mon-Tue."
+            }
+          ]
+        },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "COIN, MSTR",
+            "text": "Mon open relief-bounce setup: contingent on BTC holding > 80.5K through Sun close.",
+            "detail": {
+              "plain": "COIN and MSTR are crypto-linked stocks that move with bitcoin. Bitcoin has been grinding higher all weekend, so if it holds over 80,500 through Sunday close, both names should gap up at Monday cash open. If bitcoin breaks back below 79,000 over Sunday, the setup voids and they likely gap down instead.",
+              "pro": "COIN/MSTR long-bias contingent on BTC > 80.5K Sun 23:59 UTC. If trigger holds, expect 1-3 pct gap up Mon open. Stop on Mon close back below pre-market low. Invalidation: BTC < 79K sustained."
+            }
+          }
+        ],
+        "action": {
+          "tier": "WATCH",
+          "text": "BTC > 80.5K through Sun close sets up COIN/MSTR Mon-open relief; sustained break < 79K voids the setup."
+        }
+      },
+      "emerging": {
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Three names showing insider buying into deeply oversold prices, where the company stays under most retail radar: Lemonade, Rivian, and SoFi.",
+              "pro": "Accumulation candidates: LMND RSI 22 (insider buys 2 / 0 sells, 8.5 pct below 50MA), RIVN RSI 26 (Volkswagen \\$3.3B buy), SOFI RSI 25 (CEO Noto buys). All RSI < 30 + dist_50ma 8-9 pct below."
+            },
+            {
+              "plain": "These are slow-burn ideas, not day trades. Look for a green close above the 50-day average plus a confirmation candle before sizing in.",
+              "pro": "Entry trigger: green daily close > 50MA + higher-low intraday. Vehicle bias: stock for size < \\$5k, LEAP call (Jan-2027 ATM) for size \\$5k+. Scale-in over 2-3 weeks, not all-at-once."
+            },
+            {
+              "plain": "Two long-game themes: AI memory cycle (Micron, SanDisk, Western Digital) and surgical robotics (Intuitive Surgical, Stryker). 12 to 24 month horizons.",
+              "pro": "Themes: AI memory MU/SNDK/WDC/STX (memory pricing recovery into 2027 capex); surgical robotics ISRG/SYK (procedure volume + da Vinci 5 ramp). LEAP-bias horizon 12-24m."
+            },
+            {
+              "plain": "This tab gets a fresh accumulation scan every brief and a manual theme curation every Sunday.",
+              "pro": "Refresh cadence: accumulation_scanner.py auto-pulls per cron fire, themes manually reviewed Sun brief. New themes promoted on insider cluster + sector tailwind cluster."
+            }
+          ]
+        },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "LMND",
+            "text": "Wait for green close above 50-day average ($60) before sizing into the long.",
+            "detail": {
+              "plain": "Lemonade is at $55 with insider buying and the overbought-oversold meter at 22 (deeply oversold). Wait for a green close above the 50-day average around $60 with higher-low intraday before entering.",
+              "pro": "LMND 55.01 +1.07 close. RSI14 22.1, dist 50MA -8.5 pct. Trigger: daily close > 60 + higher-low. Stop 50.50, target 65-70, R:R 2.5:1. Vehicle: stock or 6/20 60C debit spread."
+            }
+          }
+        ],
+        "accumulation": [
+          {
+            "ticker": "LMND",
+            "last": 55.01,
+            "score": 51,
+            "buys_60d": 2,
+            "sells_60d": 0,
+            "net_value": 2992930,
+            "rsi14": 22.1,
+            "dist_50ma_pct": -8.5,
+            "note": "2 insider buys, zero sells, RSI 22 deeply oversold, 8.5 pct below 50MA",
+            "detail": {
+              "plain": "Lemonade is the AI insurance disrupter at 55 dollars. Two insider buys in the last 60 days with no sells, the overbought-oversold meter is at 22 (deeply oversold), and the stock is 8.5 percent below its 50-day average. The insiders are signaling confidence at a beaten-down level.",
+              "pro": "LMND 55.01. Score 51. 2 buys / 0 sells last 60d, net buyer-side $2.99M. RSI14 22.1 (extreme oversold), dist 50MA -8.5 pct. Long-bias accumulation thesis intact while RSI < 35 and no insider sells."
+            },
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Insiders are buying at a beaten-down level with no sells. The setup is real but needs a green close to confirm momentum is turning.",
+                "pro": "Insider net-buying signal + RSI14 22.1 oversold + 8.5 pct below 50MA. Setup intact; entry pending confirmation candle."
+              },
+              "waiting_for": {
+                "plain": "A green daily close above 60 dollars with a higher-low intraday print versus the prior day.",
+                "pro": "Green close > 60 (50MA) + higher-low intraday vs prior session. Vol > 5d MA on the bounce candle."
+              },
+              "expecting": {
+                "plain": "Base case: chops 52 to 58 over the next 1 to 2 weeks, then bases for an attempt at the 60 reclaim.",
+                "pro": "Base case range 52-58 for 1-2w consolidation; reclaim attempt at 60 within 3w if RSI grinds back to 35-45."
+              }
+            }
+          },
+          {
+            "ticker": "RIVN",
+            "last": 14.22,
+            "score": 47,
+            "buys_60d": 1,
+            "sells_60d": 4,
+            "net_value": 3270498488,
+            "rsi14": 26.2,
+            "dist_50ma_pct": -8.97,
+            "note": "Volkswagen $3.3B strategic buy; RSI 26 oversold; 9 pct below 50MA",
+            "detail": {
+              "plain": "Rivian is the EV pure-play at 14 dollars. Volkswagen made a 3.3 billion dollar strategic buy in the last 60 days, far outweighing four insider sells. The overbought-oversold meter is at 26 (deeply oversold) and the stock is 9 percent below its 50-day average.",
+              "pro": "RIVN 14.22. Score 47. Net buyer 3.27B (VW strategic stake). RSI14 26.2 oversold, dist 50MA -8.97 pct. The 4 sells are likely planned 10b5-1 dispositions; the VW buy is the dominant signal."
+            },
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Volkswagen made a 3 billion dollar strategic stake, which is a major institutional vote of confidence. RSI 26 is deeply oversold.",
+                "pro": "VW \\$3.3B strategic buy = high-quality institutional signal. RSI14 26.2 + dist 50MA -9 pct = oversold setup."
+              },
+              "waiting_for": {
+                "plain": "A green close above the 50-day average around 15.60 with volume above the 5-day average.",
+                "pro": "Green close > 15.60 (50MA) + vol > 5d MA. Stop 13.50."
+              },
+              "expecting": {
+                "plain": "Base case: 13 to 15 chop for 1 to 2 weeks while the EV demand narrative stabilizes.",
+                "pro": "Base case range 13-15 for 1-2w. EV demand narrative + Q1 ER risk = chop. Trigger long bias on green confirmation, target 17-18."
+              }
+            }
+          },
+          {
+            "ticker": "SOFI",
+            "last": 15.75,
+            "score": 47,
+            "buys_60d": 1,
+            "sells_60d": 3,
+            "net_value": 175843096,
+            "rsi14": 24.9,
+            "dist_50ma_pct": -9.07,
+            "note": "CEO Noto buy $176M net; RSI 25 deeply oversold",
+            "detail": {
+              "plain": "SoFi is the digital bank platform at 15.75 dollars. CEO Anthony Noto bought 176 million dollars net in the last 60 days, the overbought-oversold meter is at 25 (deeply oversold), and the stock is 9 percent below its 50-day average. CEO buys are a high-quality signal.",
+              "pro": "SOFI 15.75. Score 47. CEO Noto net buy $175.8M. RSI14 24.9 oversold, dist 50MA -9.07 pct. CEO-as-net-buyer is the highest-quality insider signal in the playbook."
+            },
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "The CEO is buying with his own money at a beaten-down level. That is the cleanest insider signal you can get.",
+                "pro": "Noto CEO net-buy \\$176M + RSI 25 + dist 50MA -9 pct. CEO-buy beats vague \"insider activity\" \u2014 same person whose decisions move the company."
+              },
+              "waiting_for": {
+                "plain": "A green close above 17 dollars with volume confirmation, or a base formation with three green daily closes in a row.",
+                "pro": "Green close > 17.32 (50MA) + vol > 5d MA, OR 3-consecutive-green-close base formation. Stop 14.50."
+              },
+              "expecting": {
+                "plain": "Base case: chops 14 to 17 over the next 2 to 4 weeks while LEAP holders accumulate.",
+                "pro": "Base case range 14-17 for 2-4w consolidation. LEAP-bias setup: 1/15/27 18C debit spread for 12-month thesis."
+              }
+            }
+          }
+        ],
+        "themes": [
+          {
+            "theme": "AI memory cycle",
+            "names": [
+              "MU",
+              "SNDK",
+              "WDC",
+              "STX"
+            ],
+            "horizon": "12-24 months",
+            "vehicle_bias": "LEAP call",
+            "note": "Memory pricing recovery into 2027 capex cycle; MU just ripped 15 pct on this thesis",
+            "detail": {
+              "plain": "Memory chips are entering a multi-year pricing recovery cycle as AI servers and data centers buy up DRAM and NAND. The names: Micron, SanDisk, Western Digital, Seagate. Long-game holding 12 to 24 months via LEAP calls.",
+              "pro": "AI memory cycle 2027 thesis. MU/SNDK/WDC/STX on the radar. LEAP bias: 1/15/27 ATM calls or 6/18/26 30-delta calls for shorter horizons. MU +15.52 today validates the thesis directionally."
+            }
+          },
+          {
+            "theme": "Surgical robotics",
+            "names": [
+              "ISRG",
+              "SYK"
+            ],
+            "horizon": "12-24 months",
+            "vehicle_bias": "LEAP call or stock",
+            "note": "Procedure volume recovery + da Vinci 5 ramp; ISRG already a position (T1 entered 5/07)",
+            "detail": {
+              "plain": "Surgical robotics is in a multi-year growth phase as procedure volumes recover post-pandemic and Intuitive Surgical rolls out the da Vinci 5 platform. Stryker is the second player. LEAP-bias 12 to 24 month thesis.",
+              "pro": "Surgical robotics secular thesis. ISRG (da Vinci 5 ramp) + SYK (Mako platform). LEAP bias: 1/15/27 ATM calls. ISRG already a position (T1 5/07 \\$452); T2 add at \\$427-430 retest, T3 at 200MA \\$499 reclaim."
+            }
+          },
+          {
+            "theme": "Crypto-equity beta",
+            "names": [
+              "COIN",
+              "MSTR",
+              "RIOT",
+              "MARA"
+            ],
+            "horizon": "6-12 months",
+            "vehicle_bias": "stock or short-DTE call",
+            "note": "Tracks BTC; sub-80K break softened today on 80K reclaim",
+            "detail": {
+              "plain": "Crypto-related stocks like Coinbase, MicroStrategy, and the bitcoin miners track Bitcoin closely. Bitcoin reclaimed 80 thousand today, softening the bear case from yesterday. Watch Monday open for direction.",
+              "pro": "Crypto-equity beta theme. COIN/MSTR/RIOT/MARA. BTC 80,328 reclaimed 80K. Mon open watch: sustained > 80K = long bias re-engages, sustained < 78K = short continuation. Vehicle: short-DTE long calls if breakout, inverse exposure (none direct) if breakdown."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "LMND",
+              "verdict": "BUY ON BREAKOUT",
+              "confidence": 65,
+              "confidence_reason": "Score reflects insider 2 buys / 0 sells + RSI 22 oversold + 8.5 pct below 50MA, capped by lack of green-close confirmation today.",
+              "vehicle": "stock",
+              "pros": "Insider conviction is strong: two buys, zero sells, in a beaten-down setup. Lemonade is an AI-driven insurance disrupter with structural growth tailwinds. Oversold meter at 22 plus distance below the 50-day average creates an asymmetric entry zone.",
+              "cons": "Sentiment is broadly negative on insurtech; the macro insurance cycle is mid-pack at best. The stock has been in a downtrend for 6 months and a green close above the 50-day average is required before momentum confirms.",
+              "action": {
+                "plain": "Set a price alert at 60 dollars. Buy on a green daily close above that level with the stop at 50.50.",
+                "pro": "Search LMND, set alert > 60. Buy stock on close > 60 + higher-low. Stop-Limit @ 50.50 GTC. Target 65 (T1) / 70 (T2). Limit at mid for entry."
+              }
+            },
+            {
+              "ticker": "SOFI",
+              "verdict": "BUY ON BREAKOUT",
+              "confidence": 70,
+              "confidence_reason": "CEO Noto net-buy \\$176M is the highest-quality insider signal; RSI 25 oversold supports it; capped only by the broader fintech sector tape.",
+              "vehicle": "stock",
+              "pros": "CEO Anthony Noto bought 176 million dollars net in 60 days. CEO-as-net-buyer is the cleanest insider signal because the same person whose decisions drive the business is putting personal money in. RSI 25 plus 9 percent below the 50-day average is a classic asymmetric setup.",
+              "cons": "Fintech sector has been weak overall and SoFi is sensitive to credit cycle and rate path. The 10 year yield trajectory determines when banks come out of consolidation; that is not yet clear.",
+              "action": {
+                "plain": "Set a price alert at 17 dollars. Buy on a green daily close above that level or after three green closes in a row.",
+                "pro": "Search SOFI, set alert > 17. Buy on close > 17.32 (50MA) + vol confirm. Stop-Limit @ 14.50 GTC. Target 19 (T1) / 22 (T2). Limit at mid."
+              }
+            }
+          ],
+          "sell": []
+        },
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "Saturday, equity closed. LMND/SOFI breakout watch resumes Mon open."
+        }
+      },
+      "sparks": {
+        "GC=F": [
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999
+        ],
+        "gold": [
+          4698.3999,
+          4732.5,
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999
+        ],
+        "TEAM": [
+          71.22,
+          74.01,
+          67.62,
+          71.55,
+          69.22,
+          69.71,
+          70.49,
+          68.59,
+          88.88,
+          93.16,
+          92.35,
+          88.8,
+          92.37,
+          91.6
+        ],
+        "CL=F": [
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42
+        ],
+        "oil": [
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42
+        ],
+        "HUM": [
+          217.36,
+          217.4,
+          214.95,
+          215.23,
+          223.62,
+          229.72,
+          243.12,
+          236.44,
+          233.63,
+          237.96,
+          239.53,
+          246.33,
+          247.12,
+          274.96
+        ],
+        "^TNX": [
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364
+        ],
+        "ten_year": [
+          4.292,
+          4.294,
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364
+        ],
+        "IWM": [
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8,
+          282.26,
+          284.17
+        ],
+        "ISRG": [
+          451.29,
+          483.62,
+          478.82,
+          482.22,
+          470.99,
+          466.64,
+          453.83,
+          457.61,
+          457.78,
+          452.35,
+          451.38,
+          451.73,
+          453.49,
+          450.06
+        ],
+        "MO": [
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12
+        ],
+        "SPY": [
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01,
+          723.77,
+          733.83,
+          731.58,
+          737.62
+        ],
+        "DX-Y.NYB": [
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84
+        ],
+        "dxy": [
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84
+        ],
+        "PODD": [
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28,
+          160.4,
+          154.16
+        ],
+        "TER": [
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          382.48,
+          354.11,
+          359.77
+        ],
+        "QQQ": [
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23
+        ],
+        "NCLH": [
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94,
+          17.75,
+          17.22,
+          17.08
+        ],
+        "^VIX": [
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19
+        ],
+        "vix": [
+          19.5,
+          18.92,
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19
+        ]
+      }
+    },
+    {
       "date": "2026-05-08",
       "updated_at": "2026-05-08T15:39:00-07:00",
       "regime": "BULL",
