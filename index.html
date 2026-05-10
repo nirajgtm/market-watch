@@ -682,6 +682,15 @@ function normalize(brief) {
       actions:   brief.crypto?.actions || [],
       ...(brief.crypto || { status: "coming_soon" }),
       social: brief.crypto?.social || []
+    },
+    emerging: {
+      tab_intro:       brief.emerging?.tab_intro || null,
+      actions:         brief.emerging?.actions || [],
+      accumulation:    brief.emerging?.accumulation || [],
+      themes:          brief.emerging?.themes || [],
+      recommendations: brief.emerging?.recommendations,
+      action:          brief.emerging?.action,
+      social:          brief.emerging?.social || []
     }
   };
 }
