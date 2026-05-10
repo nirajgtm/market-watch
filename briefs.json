@@ -1105,42 +1105,42 @@
             }
           },
           {
-            "ticker": "INTC",
-            "mentions": 112,
+            "ticker": "MSFT",
+            "mentions": 42,
             "sources": [
               "all_stocks",
-              "options",
-              "race10m",
-              "wallstreetbets"
+              "race1m",
+              "stocks",
+              "thetagang"
             ],
             "sentiment": "NEUTRAL",
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo10Million",
-                "title": "Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals",
-                "score": 104,
-                "flair": "General",
-                "body_excerpt": "Looking at the parabolic run of Semis and AI infra stocks, and thinking where to invest next in the AI infra build out. What would you pick at the current level:\n\nMU, SNDK, ARM, QCOM, INTC, AMD, DELL, GLW, AAOI, LITE, COHR, AEHR, MRVL, NOK,..."
+                "sub": "TheRaceTo1Million",
+                "title": "[29M] almost 40% there",
+                "score": 39,
+                "flair": "UPDATE",
+                "body_excerpt": "Brought 50/50 MSFT and Google around April last year with my VOO positions, sold my MSFT shares at 500-ish and went full Google sometime sometimes around September. Been holding it steady since. \n\nHonestly I can't justify my purchase. It wa..."
               },
               {
-                "sub": "options",
-                "title": "Sold INTC $100 covered call 05/29",
-                "score": 27,
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
                 "flair": "",
-                "body_excerpt": "&amp;#x200B;\n\nI sold 10 $100 covered call that expires on 05/29 for 1k premium week ago. The stock has rallied since then and I feel guilty and don't want to miss out on the profit. What should I do now? Just accept mv fate and wait for it ..."
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
               },
               {
-                "sub": "options",
-                "title": "if u had to pick one INTC or AMD puts?",
-                "score": 25,
+                "sub": "thetagang",
+                "title": "CSP premiums dried up on my core names this week - what do you do when IV compresses after a run",
+                "score": 16,
                 "flair": "",
-                "body_excerpt": "currently debating between 8/21 expirations to play for a 10-20% pullback. Intel ran up harder and feels more susceptible to FOMO from the 24/7 recycled headlines of potential partnerships but at the same time they are already worth a third..."
+                "body_excerpt": "NVDA and MSFT near ATHs and the put credit at strikes i'd actually want to own them is about half what it was in early April. running MSFT 380 puts at 3 weeks, getting maybe 0.8% on cash. not terrible but not why i run the wheel either.\n\n  ..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. Traders are selling covered calls. The loudest take is: \"Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals\".",
-              "pro": "112 mentions across 4 communities, -73% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals\"."
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"[29M] almost 40% there\".",
+              "pro": "42 mentions across 4 communities, -82% vs prior session. Sentiment neutral. Themes: a fresh breakout. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"[29M] almost 40% there\"."
             }
           }
         ]
@@ -1622,42 +1622,42 @@
             }
           },
           {
-            "ticker": "INTC",
-            "mentions": 112,
+            "ticker": "MSFT",
+            "mentions": 42,
             "sources": [
               "all_stocks",
-              "options",
-              "race10m",
-              "wallstreetbets"
+              "race1m",
+              "stocks",
+              "thetagang"
             ],
             "sentiment": "NEUTRAL",
             "summary": "",
             "top_posts": [
               {
-                "sub": "TheRaceTo10Million",
-                "title": "Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals",
-                "score": 104,
-                "flair": "General",
-                "body_excerpt": "Looking at the parabolic run of Semis and AI infra stocks, and thinking where to invest next in the AI infra build out. What would you pick at the current level:\n\nMU, SNDK, ARM, QCOM, INTC, AMD, DELL, GLW, AAOI, LITE, COHR, AEHR, MRVL, NOK,..."
+                "sub": "TheRaceTo1Million",
+                "title": "[29M] almost 40% there",
+                "score": 39,
+                "flair": "UPDATE",
+                "body_excerpt": "Brought 50/50 MSFT and Google around April last year with my VOO positions, sold my MSFT shares at 500-ish and went full Google sometime sometimes around September. Been holding it steady since. \n\nHonestly I can't justify my purchase. It wa..."
               },
               {
-                "sub": "options",
-                "title": "Sold INTC $100 covered call 05/29",
-                "score": 27,
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
                 "flair": "",
-                "body_excerpt": "&amp;#x200B;\n\nI sold 10 $100 covered call that expires on 05/29 for 1k premium week ago. The stock has rallied since then and I feel guilty and don't want to miss out on the profit. What should I do now? Just accept mv fate and wait for it ..."
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
               },
               {
-                "sub": "options",
-                "title": "if u had to pick one INTC or AMD puts?",
-                "score": 25,
+                "sub": "thetagang",
+                "title": "CSP premiums dried up on my core names this week - what do you do when IV compresses after a run",
+                "score": 16,
                 "flair": "",
-                "body_excerpt": "currently debating between 8/21 expirations to play for a 10-20% pullback. Intel ran up harder and feels more susceptible to FOMO from the 24/7 recycled headlines of potential partnerships but at the same time they are already worth a third..."
+                "body_excerpt": "NVDA and MSFT near ATHs and the put credit at strikes i'd actually want to own them is about half what it was in early April. running MSFT 380 puts at 3 weeks, getting maybe 0.8% on cash. not terrible but not why i run the wheel either.\n\n  ..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. Traders are selling covered calls. The loudest take is: \"Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals\".",
-              "pro": "112 mentions across 4 communities, -73% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: selling covered calls. Top thesis: \"Where will you invest next in the AI Infra Build out - Memory, Photonics, CPUs, Power, Metals\"."
+              "plain": "Moderate chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"[29M] almost 40% there\".",
+              "pro": "42 mentions across 4 communities, -82% vs prior session. Sentiment neutral. Themes: a fresh breakout. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"[29M] almost 40% there\"."
             }
           }
         ]
@@ -1975,37 +1975,85 @@
         }
       },
       "sparks": {
-        "CL=F": [
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42
+        "NCLH": [
+          19.33,
+          19.03,
+          18.42,
+          18.51,
+          18.19,
+          17.79,
+          17.77,
+          18.18,
+          18.81,
+          17.2,
+          16.94,
+          17.75,
+          17.22,
+          17.08
         ],
-        "oil": [
-          92.13,
-          92.96,
-          95.85,
-          94.4,
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42
+        "TEAM": [
+          71.22,
+          74.01,
+          67.62,
+          71.55,
+          69.22,
+          69.71,
+          70.49,
+          68.59,
+          88.88,
+          93.16,
+          92.35,
+          88.8,
+          92.37,
+          91.6
+        ],
+        "SPY": [
+          704.08,
+          711.21,
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01,
+          723.77,
+          733.83,
+          731.58,
+          737.62
+        ],
+        "PODD": [
+          192.33,
+          193.62,
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28,
+          160.4,
+          154.16
+        ],
+        "IWM": [
+          274.51,
+          276.48,
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8,
+          282.26,
+          284.17
         ],
         "GC=F": [
           4698.3999,
@@ -2039,53 +2087,37 @@
           4699.7998,
           4730.7002
         ],
-        "TER": [
-          379.93,
-          385.18,
-          400.99,
-          418.08,
-          402.0,
-          380.13,
-          306.33,
-          343.47,
-          345.42,
-          337.44,
-          357.1,
-          382.48,
-          354.11,
-          359.77
+        "DX-Y.NYB": [
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84
         ],
-        "QQQ": [
-          644.33,
-          655.11,
-          651.42,
-          663.88,
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77,
-          694.94,
-          711.23
-        ],
-        "SPY": [
-          704.08,
-          711.21,
-          708.45,
-          713.94,
-          715.17,
-          711.69,
-          711.58,
-          718.66,
-          720.65,
-          718.01,
-          723.77,
-          733.83,
-          731.58,
-          737.62
+        "dxy": [
+          98.41,
+          98.59,
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84
         ],
         "HUM": [
           217.36,
@@ -2135,38 +2167,6 @@
           17.08,
           17.19
         ],
-        "PODD": [
-          192.33,
-          193.62,
-          192.21,
-          189.56,
-          188.31,
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53,
-          151.28,
-          160.4,
-          154.16
-        ],
-        "MO": [
-          64.65,
-          65.18,
-          67.15,
-          66.88,
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17,
-          69.04,
-          68.12
-        ],
         "ISRG": [
           451.29,
           483.62,
@@ -2215,85 +2215,85 @@
           4.392,
           4.364
         ],
-        "TEAM": [
-          71.22,
-          74.01,
-          67.62,
-          71.55,
-          69.22,
-          69.71,
-          70.49,
-          68.59,
-          88.88,
-          93.16,
-          92.35,
-          88.8,
-          92.37,
-          91.6
+        "MO": [
+          64.65,
+          65.18,
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12
         ],
-        "DX-Y.NYB": [
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          98.02,
-          98.25,
-          97.84
+        "QQQ": [
+          644.33,
+          655.11,
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23
         ],
-        "dxy": [
-          98.41,
-          98.59,
-          98.8,
-          98.51,
-          98.48,
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          98.02,
-          98.25,
-          97.84
+        "CL=F": [
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42
         ],
-        "IWM": [
-          274.51,
-          276.48,
-          275.52,
-          276.65,
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          286.8,
-          282.26,
-          284.17
+        "oil": [
+          92.13,
+          92.96,
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42
         ],
-        "NCLH": [
-          19.33,
-          19.03,
-          18.42,
-          18.51,
-          18.19,
-          17.79,
-          17.77,
-          18.18,
-          18.81,
-          17.2,
-          16.94,
-          17.75,
-          17.22,
-          17.08
+        "TER": [
+          379.93,
+          385.18,
+          400.99,
+          418.08,
+          402.0,
+          380.13,
+          306.33,
+          343.47,
+          345.42,
+          337.44,
+          357.1,
+          382.48,
+          354.11,
+          359.77
         ]
       }
     },
