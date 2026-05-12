@@ -2,6 +2,1841 @@
   "version": 1,
   "briefs": [
     {
+      "date": "2026-05-12",
+      "updated_at": "2026-05-12T08:45:00-07:00",
+      "regime": "BULL",
+      "regime_note": "Tech selling off into CPI: SPY -0.8, QQQ -1.8, semis crushed (AMD -4.8, MU -7.9). XLK rotation -8.2, deepening defensive rotation. CPI Apr prints Wednesday.",
+      "vix_bucket": "normal",
+      "headline": {
+        "plain": "Tech is selling off ahead of tomorrow's inflation report. Chip stocks got hit hardest. Defensive sectors holding up.",
+        "pro": "Risk-off pre-CPI: SPY 733.37 -0.80, QQQ 700.76 -1.76, semis hammered (AMD -4.77, MU -7.93, SOXS +16.4). XLK 5d -8.2 worst sector, XLV +6.65 lead. 10Y 4.45 rising. CPI Apr Wed 5/13."
+      },
+      "macro": {
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "April inflation data comes out tomorrow morning. This is the single biggest event of the week, and the market is selling off going in. A hot number would push interest rates higher and pressure tech further.",
+              "pro": "CPI Apr Wed 5/13 5:30 AM PT. Cons headline 2.7 YoY, core 3.0. Market de-risking into it: SPY -0.80, QQQ -1.76, IWM -2.13. 10Y at 4.45 (up from 4.39 Mon). Hot print = front-end yields rip, tech down; cool print = relief bid."
+            },
+            {
+              "plain": "Chip stocks took the biggest hit today. AMD down nearly 5 percent, Micron down 8 percent, and the leveraged short-chip fund jumped 16 percent. The parabolic AI rally is correcting.",
+              "pro": "Semis lead the selloff: AMD -4.77, MU -7.93, SOXS +16.4 pct. XLK 5d rotation -8.2 (worst sector, deepening from -7.56 Mon). Parabolic mean-revert finally underway. NVDA holding better at -1.08."
+            },
+            {
+              "plain": "Defensive sectors are the only green on the board. Health Care, Materials, and Communications are leading. Telehealth and crypto-miner stocks got crushed: Hims down 14 percent, Marathon Digital down 11 percent.",
+              "pro": "5d sector leaders: XLV +6.65, XLB +5.2, XLC +5.08. Laggards: XLP +1.08, XLE -1.76, XLK -8.2. HIMS -13.88, MARA -11.13, CLSK -12.03 on the loser board (telehealth + BTC-miner specific blowups)."
+            },
+            {
+              "plain": "Volatility ticked up to 19. Still calm by historical standards, and the futures curve still pays you to bet against a vol collapse. The VIX put spread setup is still the only buying-rule-allowed trade.",
+              "pro": "VIX 19.02, VIX/VIX3M 0.88 STEEP_CONTANGO. SHORT_PUT_SPREAD signal active (6/17 17/15). VVIX 102.9 elevated. FOMO rule still blocks new index longs (QQQ above 20MA+2ATR, SPY barely above)."
+            }
+          ]
+        },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "CPI",
+            "text": "April CPI prints Wednesday 5:30 AM PT, the dominant catalyst. Do not open new positions Tuesday afternoon into the print.",
+            "detail": {
+              "plain": "April Consumer Price Index releases Wednesday morning. Consensus is headline 2.7 percent year-over-year, core 3.0 percent. A hot print pushes interest rates higher and pressures growth stocks; a cool print could spark a relief rally.",
+              "pro": "CPI Apr Wed 5/13 5:30 AM PT. Cons headline 2.7 YoY, core 3.0 YoY. Beat = front-end yields rip, USD up, growth bid down, defensive bid. Miss = rate-cut narrative revives, growth + small-cap bid. Market already pricing caution: SPY/QQQ/IWM all down 0.8-2.1 pct today."
+            }
+          },
+          {
+            "verb": "WATCH",
+            "target": "VIX",
+            "text": "VIX 6/17 17/15 put spread setup remains the only buying-rule-allowed trade. Steep contango pays the seller.",
+            "detail": {
+              "plain": "Volatility at 19, still calm. The futures curve slopes up to 21.6 on the 3-month, so betting that VIX stays above 17 by mid-June still has a tailwind from the curve rolling down. Max loss on the spread is fixed and small.",
+              "pro": "VIX 19.02, VIX/VIX3M 0.88 STEEP_CONTANGO. 6/17 17/15 put credit spread, ~0.30-0.35 credit, max risk ~$170/spread. Roll-down + theta tailwind. CPI Wed is the spike risk; a spike helps the trade (stays above 17). Exit at 50 pct max profit."
+            },
+            "robinhood": {
+              "plain": "Sell a put spread on the VIX. Strike 17 short, strike 15 long, expiring June 17. Limit at the middle of the bid-ask, Good for day. Max loss about 170 dollars per spread.",
+              "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit ~0.32 mid, GFD. Max risk ~$170/spread. Exit at 50 pct of credit or within 7 DTE."
+            }
+          }
+        ],
+        "indices": [
+          {
+            "ticker": "SPY",
+            "last": 733.37,
+            "rsi": 69.6,
+            "note": "Down 0.8 pct, slipped just under the chase-too-late level at 731. Overbought meter cooled to 70 from 80.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "S and P 500 ETF is pulling back from record highs, down 0.8 percent. The overbought meter cooled to 70, right at the line. Still no clean entry while CPI risk is bracketing everything tomorrow.",
+                "pro": "SPY 733.37 -0.80, RSI14 69.6 (cooled from 80.4). FOMO ceiling 731.15, price marginally above. CPI Wed binary; no entry into it."
+              },
+              "waiting_for": {
+                "plain": "A pullback to the 20-day average around 718, or a post-CPI flush that resets the meter under 60.",
+                "pro": "Pullback to 20MA 717.67 OR post-CPI RSI14 < 60 reset."
+              },
+              "watching": {
+                "plain": "Wednesday's CPI is the dominant variable. Also watching whether the chip-stock selloff drags the broader index down.",
+                "pro": "CPI Apr Wed 5/13. Semis-led drawdown contagion risk (XLK -8.2 5d). Breadth: RSP/SPY narrowing."
+              },
+              "expecting": {
+                "plain": "Base case: SPY chops 728-735 into Wednesday, then a directional move on the CPI print.",
+                "pro": "Base case range 728-735 through Wed AM CPI. Directional resolution on the print; gamma-pinned until then."
+              }
+            },
+            "detail": {
+              "plain": "S and P 500 ETF closed Tuesday down 0.8 percent at 733, pulling back from the record. The overbought meter cooled to 70, off the extreme 80 reading from Monday. The market is de-risking ahead of Wednesday's inflation data.",
+              "pro": "SPY 733.37 -0.80 pct, RSI14 69.6, ATR14 6.74. 20MA 717.67, 50MA 686.29. FOMO ceiling 731.15. CPI Wed 5/13 the binary; 1-ATR pullback target 727, 20MA pullback 718."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "last": 700.76,
+            "rsi": 73.9,
+            "note": "Down 1.76 pct, the chip-stock selloff hitting tech hardest. Overbought meter still elevated at 74.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Nasdaq 100 ETF down 1.76 percent, the chip-stock crash dragging it down. The overbought meter cooled to 74 but is still in stretched territory. New tech longs still blocked.",
+                "pro": "QQQ 700.76 -1.76, RSI14 73.9. FOMO ceiling 689.29, price above. Semis-led drawdown (AMD -4.77, MU -7.93). Entry ban active."
+              },
+              "waiting_for": {
+                "plain": "A pullback to the 20-day average around 669, or a deeper flush below the 689 chase-too-late line on a CPI shock.",
+                "pro": "Pullback to 20MA 669.20 OR break below FOMO ceiling 689.29 on CPI shock + RSI < 60 reset."
+              },
+              "watching": {
+                "plain": "Semiconductor stocks specifically. The XLK sector is the worst performer over 5 days and the gap is widening. If chips keep falling, QQQ catches down further.",
+                "pro": "XLK 5d -8.2 (worst, deepening). AMD/MU/AVGO chain rolling over. SOXS +16.4 pct confirms semis selloff. Catch-down risk to 20MA 669."
+              },
+              "expecting": {
+                "plain": "Base case: QQQ pulls back another 2 to 4 percent toward 680 as the parabolic chip rally unwinds, faster if CPI runs hot.",
+                "pro": "Base case 2-4 pct pullback to 680-690 over 3-7 sessions. CPI hot accelerates to 20MA 669. Mean-revert tape now in force."
+              }
+            },
+            "detail": {
+              "plain": "Nasdaq 100 ETF dropped 1.76 percent to 701, with chip stocks doing the most damage (AMD down 5 percent, Micron down 8 percent). The parabolic AI rally is now correcting. The overbought meter at 74 is still stretched.",
+              "pro": "QQQ 700.76 -1.76 pct, RSI14 73.9, ATR14 10.05. 20MA 669.20, 50MA 624.88. FOMO ceiling 689.29. XLK 5d -8.2. 1-ATR pullback 691, 20MA pullback 669."
+            }
+          },
+          {
+            "ticker": "IWM",
+            "last": 279.24,
+            "rsi": 53.6,
+            "note": "Down 2.13 pct, small caps hit hardest in the de-risking. Overbought meter at 54, washed out.",
+            "thesis": {
+              "stance": "WATCH",
+              "why": {
+                "plain": "Russell 2000 ETF fell 2.13 percent, the most of the major indices in today's de-risking. The overbought meter at 54 is now neutral, not stretched. Small caps usually flush hardest going into a binary event.",
+                "pro": "IWM 279.24 -2.13, RSI14 53.6 (washed from 66.2). Below FOMO ceiling 286.67. Pre-CPI de-risking; small caps lead the downside."
+              },
+              "waiting_for": {
+                "plain": "A hold at the 20-day average around 278, or a cool CPI print that sparks a small-cap relief bounce.",
+                "pro": "Hold at 20MA 277.71 OR cool CPI catalyst. Buy on close back above FOMO ceiling 286.67 with volume."
+              },
+              "watching": {
+                "plain": "The 20-day average at 278 as support, and Wednesday's CPI. Small caps are the most rate-sensitive group, so a hot print hurts them most.",
+                "pro": "20MA 277.71 support test. CPI Wed binary; small caps most rate-sensitive. RSP/SPY breadth narrowing is a headwind."
+              },
+              "expecting": {
+                "plain": "Base case: IWM tests 278 support, holds or breaks depending entirely on Wednesday's CPI print.",
+                "pro": "Base case 277-282 into Wed CPI. CPI-binary: cool print = bounce to 286, hot print = break below 277 toward 270."
+              }
+            },
+            "detail": {
+              "plain": "Russell 2000 ETF dropped 2.13 percent to 279, the worst of the major indices in today's de-risking. The overbought meter at 54 is now neutral. It's testing its 20-day average at 278 as support going into Wednesday's CPI.",
+              "pro": "IWM 279.24 -2.13 pct, RSI14 53.6, ATR14 4.48. 20MA 277.71, 50MA 262.43. FOMO ceiling 286.67. Support test at 20MA; CPI Wed decides direction."
+            }
+          }
+        ],
+        "vol_yields": {
+          "vix": 19.02,
+          "vix_term": "STEEP_CONTANGO",
+          "ten_year": 4.45,
+          "dxy": 98.38,
+          "oil": 101.54,
+          "gold": 4673.5,
+          "details": {
+            "vix": {
+              "plain": "Volatility ticked up to 19, off Monday's 18. Still in the calm zone but rising as the market de-risks into Wednesday's inflation data. The futures curve still slopes up, so short-vol trades still pay.",
+              "pro": "VIX 19.02 (up from 18.06 Mon), VIX/VIX3M 0.88 STEEP_CONTANGO, VVIX 102.9 elevated. Normal regime, rising into CPI. SHORT_PUT_SPREAD signal still active; roll-down tailwind intact."
+            },
+            "ten_year": {
+              "plain": "10-year yield rose to 4.45 from 4.39 Monday. Rising yields are part of why tech sold off today. Wednesday's CPI is the swing factor.",
+              "pro": "US10Y 4.45 (up from 4.39 Mon), rising into CPI. Above 4.50 risks more growth-stock pressure. CPI Apr Wed the binary driver."
+            },
+            "dxy": {
+              "plain": "Dollar firmed slightly to 98.38. No directional break, but the bid is consistent with the risk-off tone.",
+              "pro": "DXY 98.38 (up from 97.86 Mon), range-bound 97-99. Mild firming on the risk-off de-risking. CPI-reactive."
+            },
+            "oil": {
+              "plain": "WTI oil at 101.54, holding above 100. Energy sector flat-to-down this week, no longer leading.",
+              "pro": "WTI 101.54, holding above 100. XLE 5d -1.76 (faded from leadership). Watchlist XLE long trigger 56.50 NOT_TRIGGERED at 57.51."
+            },
+            "gold": {
+              "plain": "Gold futures at 4673, holding near record. The defensive bid is intact alongside the risk-off equity tape.",
+              "pro": "GC=F 4673, near ATH. Defensive bid persists alongside risk-off equities. Real-rate flat + central-bank flow."
+            }
+          }
+        },
+        "sector_rotation": {
+          "leaders_5d": [
+            {
+              "etf": "XLV",
+              "score": 6.65,
+              "detail": {
+                "plain": "Health Care is still the leading sector and the defensive rotation play of the week. GE HealthCare keeps dipping near its long-trigger zone.",
+                "pro": "XLV rotation +6.65 5d (lead). Defensive rotation persists. GEHC near $63 trigger zone (last $62.07). Money rotating from AI-semi into stable cash-flow healthcare."
+              }
+            },
+            {
+              "etf": "XLB",
+              "score": 5.2,
+              "detail": {
+                "plain": "Materials holding second place, with copper and mining names continuing to bid. Classic late-cycle rotation behavior.",
+                "pro": "XLB rotation +5.2 5d. Copper-mining beneficiaries (FCX, NUE) leading. Late-cycle defensive-cyclical rotation continues."
+              }
+            },
+            {
+              "etf": "XLC",
+              "score": 5.08,
+              "detail": {
+                "plain": "Communications jumped into the leadership group, helped by Alphabet and Meta holding up better than the semis.",
+                "pro": "XLC rotation +5.08 5d (new to leaders). GOOGL/META relative strength vs semis. Megacap-comm shelter from the AI-semi selloff."
+              }
+            }
+          ],
+          "laggards_5d": [
+            {
+              "etf": "XLK",
+              "score": -8.2,
+              "detail": {
+                "plain": "Technology is the worst sector and the gap is widening. The parabolic AI-chip rally is unwinding fast, with AMD down 5 percent and Micron down 8 percent today.",
+                "pro": "XLK rotation -8.2 5d (worst, deepening from -7.56 Mon). AMD -4.77, MU -7.93 today. SOXS +16.4 confirms. Parabolic mean-revert in force; catch-down risk."
+              }
+            },
+            {
+              "etf": "XLE",
+              "score": -1.76,
+              "detail": {
+                "plain": "Energy faded from leadership to negative this week despite oil holding above 100. Watchlist long entry below 56.50 hasn't hit.",
+                "pro": "XLE -1.76 5d (faded from +12.3 two weeks ago). WTI 101.54 holding. Watchlist long 56.50 NOT_TRIGGERED at 57.51."
+              }
+            }
+          ],
+          "read": "Aggressive defensive rotation deepening: Tech keeps shedding relative strength as the parabolic AI-chip rally unwinds, while Health Care, Materials, and Communications absorb the flows. The market is de-risking into Wednesday's CPI print, with semis taking the brunt."
+        },
+        "events_14d": [
+          {
+            "label": "CPI April",
+            "date": "2026-05-13",
+            "detail": {
+              "plain": "April Consumer Price Index releases Wednesday morning. Consensus is headline 2.7 percent year-over-year, core 3.0 percent. The dominant catalyst this week and the reason the market is selling off going in.",
+              "pro": "CPI Apr Wed 5/13 5:30 AM PT. Cons headline 2.7 YoY, core 3.0 YoY. Beat = front-end yields rip, USD up, growth bid down. Miss = rate-cut narrative revives, growth + small-cap bid. Market already de-risked: SPY/QQQ/IWM down 0.8-2.1 pct."
+            }
+          },
+          {
+            "label": "Retail Sales April",
+            "date": "2026-05-15",
+            "detail": {
+              "plain": "April retail sales data releases Friday morning, a consumer-strength check after the CPI binary.",
+              "pro": "Retail Sales Apr Fri 5/15 5:30 AM PT. Cons +0.3 pct MoM. Strong print supports XLY, weak print supports defensive bid (XLP, XLU, XLV)."
+            }
+          }
+        ],
+        "earnings_7d": [],
+        "action": {
+          "tier": "WATCH",
+          "text": "Tech selling off into Wednesday's CPI; defensive sectors leading. No buying-rule-allowed trades except the VIX put spread. Wait for the CPI print."
+        },
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "VIX 6/17 17/15 put spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the steep contango roll-down tailwind and that this is the only buying-rule-allowed trade, capped by CPI Wednesday single-print fat-tail risk and VVIX at 103.",
+              "vehicle": "put debit spread",
+              "pros": "Selling a put spread on VIX is a defined-risk way to earn the steep-contango premium. With VIX at 19 and the curve at 21.6 on the 3-month, theta plus roll-down both tailwind. A CPI spike would help, not hurt, this trade since it needs VIX above 17.",
+              "cons": "VVIX at 103 signals options are pricing in vol-of-vol. A cool CPI print could crater VIX toward 15 in a relief rally, which is the loss scenario. Max loss is roughly 5x credit.",
+              "action": {
+                "plain": "Sell a put spread on the VIX expiring June 17. Strike 17 short, strike 15 long. Collect about 32 dollars per spread, max loss about 170 dollars per spread.",
+                "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit ~0.32 mid, GFD. Max risk ~$170/spread. Exit at 50 pct credit OR within 7 DTE."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "XLK",
+              "verdict": "AVOID",
+              "confidence": 68,
+              "confidence_reason": "Score reflects the worst-and-deepening 5d sector rotation at -8.2 plus the semis crash, capped because the index level is still in an uptrend and a cool CPI could spark a relief bounce.",
+              "vehicle": "ETF",
+              "pros": "Tech sector relative strength is the worst on the board at minus 8.2 over 5 days and the gap is widening. The parabolic AI-chip rally is unwinding with AMD down 5 percent and Micron down 8 percent today. CPI hot print would accelerate the unwind.",
+              "cons": "The longer-term trend is still up; shorting a sector mid-correction is timing-dependent. A cool CPI Wednesday could spark a sharp relief bounce in the most-sold names.",
+              "action": {
+                "plain": "Do not buy tech sector ETFs or chip stocks here. If you hold chip names, consider trimming into any bounce and waiting for the correction to find a base.",
+                "pro": "XLK / SOXX avoid. AMD/MU/AVGO trim into bounces, no new entries. Watch for 20MA reclaim on QQQ (669) as the all-clear. Inverse-ETF expression (SOXS) only for experienced traders with tight stops."
+              }
+            }
+          ]
+        },
+        "social": [
+          {
+            "ticker": "SPY",
+            "mentions": 770,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race1m",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "ODTE Credit Spread Progress - 88% Win Rate",
+                "score": 34,
+                "flair": "Discussion",
+                "body_excerpt": "So far my credit spread progress has done pretty well and continue to see a high rate while stopping out early on losers as to not eat up my collateral. \n\nSo far 16/18 trades have been profitable and i am up $1,311 across SPX and SPY. Also ..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May projected option premium $8512. Slow and steady update.",
+                "score": 24,
+                "flair": "",
+                "body_excerpt": "Locked in $5173 premium profit for April. Already locked in $3477 premiums for May. \n\nHave another $5k of profit that I already sold for May. There's a good chance I will let all of it expire or get assigned. \n\nHave already sold $3885 of pr..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "Unlocking 10-100x Returns: The Power of Options on High Dollar Stocks at Big Psych Levels",
+                "score": 12,
+                "flair": "DD",
+                "body_excerpt": "What's up fellow degens and $1M racers.\n\nI've been meaning to write this up for a while now. With the incredible volatility in the markets recently (the VIX broke above 20 and into the highest level in 3 months,  and many SaaS companies got..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. Traders are playing defined-risk spreads. The loudest take is: \"ODTE Credit Spread Progress - 88% Win Rate\".",
+              "pro": "770 mentions across 5 communities, +61% vs prior session. Sentiment neutral. Strategy mix: playing defined-risk spreads. Top thesis: \"ODTE Credit Spread Progress - 88% Win Rate\"."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "mentions": 293,
+            "sources": [
+              "all_stocks",
+              "race1m",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "31F, getting close!",
+                "score": 697,
+                "flair": "",
+                "body_excerpt": "31F working in tech as a UI designer the past 10 years ( holy shit, just in time as AI can nearly replicate my job entirely now ). I\u2019ve been investing as much as I could over these years in VOO and QQQ.\n\nI\u2019m only about 250k off from reachin..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "32F, 1M Invested",
+                "score": 220,
+                "flair": "",
+                "body_excerpt": "Celebrating a small milestone today as my 33 birthday is coming up soon.\n\nSingle and I rent in a VHCOL city. Certainly don\u2019t feel rich given the concentration of millionaires around me but achieved this milestone without family help so want..."
+              },
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "what are the chances my robinhood investment will double in 10 years? i need it to double so i can retire at 42 yo with a million lol.",
+                "score": 1,
+                "flair": "",
+                "body_excerpt": "I made some .. non optimal investing decisions when i was younger and reckless (buying CCL, NIO, SPCE) and lost a bunch of money/potential gains. i estimate i would have at least 500K by now if i just bought QQQ/SPY. now im contributing abo..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand. The loudest take is: \"31F, getting close!\".",
+              "pro": "293 mentions across 3 communities, +33% vs prior session. Sentiment neutral. Themes: AI and data-center demand. Top thesis: \"31F, getting close!\"."
+            }
+          },
+          {
+            "ticker": "VOO",
+            "mentions": 16,
+            "sources": [
+              "race1m",
+              "stocks"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo1Million",
+                "title": "31F, getting close!",
+                "score": 697,
+                "flair": "",
+                "body_excerpt": "31F working in tech as a UI designer the past 10 years ( holy shit, just in time as AI can nearly replicate my job entirely now ). I\u2019ve been investing as much as I could over these years in VOO and QQQ.\n\nI\u2019m only about 250k off from reachin..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, fading versus yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand. The loudest take is: \"31F, getting close!\".",
+              "pro": "16 mentions across 2 communities, -62% vs prior session. Sentiment neutral. Themes: AI and data-center demand. Top thesis: \"31F, getting close!\"."
+            }
+          }
+        ]
+      },
+      "stocks": {
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Chip stocks crashed today: AMD down 5 percent, Micron down 8 percent. The parabolic AI rally that ran for weeks is now correcting. If you hold these names, expect more downside before they stabilize.",
+              "pro": "Semis selloff: AMD 436.89 -4.77 RSI 73, MU 732.30 -7.93 RSI 76, SOXS +16.4 pct. XLK 5d -8.2 worst. Parabolic mean-revert; trim into bounces, no chase. NVDA holding better at -1.08."
+            },
+            {
+              "plain": "Telehealth and crypto-miner stocks blew up: Hims down 14 percent, Marathon Digital down 11 percent, CleanSpark down 12 percent. These were earnings-driven and crypto-correlated, not sector-wide.",
+              "pro": "HIMS 25.10 -13.88 (post-ER guide miss), MARA 11.90 -11.13, CLSK 12.58 -12.03 (BTC-miner beta, BTC -1.8 pct 24h). Name-specific blowups, not contagion. HIMS RSI 39.7 oversold but no reversal signal."
+            },
+            {
+              "plain": "Altria hit its long-trigger zone at 70 dollars. A defensive tobacco income name with a 5 percent dividend, holding up while tech sells off. The system would buy here on a confirmed close.",
+              "pro": "MO 69.98 +2.0, NEAR trigger 70.00. RSI 62, above 20MA 68.17 and 50MA 67.08. Defensive Staples bid. Buy on close > 70 + vol confirm. Stop 67, target 74."
+            },
+            {
+              "plain": "GE HealthCare keeps dipping near its long-trigger zone at 63. At 62 with the overbought meter at 29 deeply oversold, it's a defensive Health Care name with the sector tailwind.",
+              "pro": "GEHC 62.07 +0.6, NOT_TRIGGERED (trigger 63.00, dipped below). RSI14 29.0 deeply oversold. XLV +6.65 5d lead. Watchlist long re-arm at $63 reclaim. Mean analyst target $81.64."
+            }
+          ]
+        },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "MO",
+            "text": "Altria at $70.00, exactly at the long-trigger zone. Defensive tobacco income setup; buy on a confirmed close above 70.",
+            "detail": {
+              "plain": "Altria sits at 70.00, right at the long-trigger level. The overbought meter at 62 is mid-range, the stock is above its 20-day average, and it's a defensive name holding up while tech sells off. A 5 percent dividend provides income ballast.",
+              "pro": "MO 69.98 +2.0, NEAR trigger 70.00. RSI 62, 20MA 68.17, 50MA 67.08. Wait for daily close > 70 + vol >= 5d MA. Stop 67, target 74. Defensive Staples income hold + 5 pct yield."
+            },
+            "robinhood": {
+              "plain": "Set a buy alert on Altria at 70 dollars. After a confirmed close above 70, buy with a limit order, then set a stop at 67 and a target at 74.",
+              "pro": "Search MO. Set alert at 70.00. On close > 70: Buy limit 70.00 GFD. Stop Limit 67.00/66.80 GTC. Sell limit GTC 74.00. R:R 1.3:1, defensive income hold."
+            }
+          },
+          {
+            "verb": "WATCH",
+            "target": "GEHC",
+            "text": "GE HealthCare at $62, deeply oversold near its $63 long-trigger. Re-arms on a close back above 63 with the Health Care sector tailwind.",
+            "detail": {
+              "plain": "GE HealthCare dipped to 62, just below its 63 long-trigger zone. The overbought meter at 29 is deeply oversold. Health Care is the leading sector this week. The setup re-arms on a green close back above 63.",
+              "pro": "GEHC 62.07 +0.6, trigger 63.00 (dipped below to NOT_TRIGGERED). RSI14 29.0 oversold. XLV +6.65 5d lead. Re-arm on close > 63 + vol. Stop 59.50, target 70 first, 81 (analyst mean) second. Next ER 7/29."
+            }
+          }
+        ],
+        "watchlist": [
+          {
+            "ticker": "MO",
+            "last": 69.98,
+            "change_pct": 2.0,
+            "trigger_zone": "70.00 long",
+            "status": "NEAR",
+            "note": "At the trigger level, up 2 pct on the day. Defensive Staples bid while tech sells off.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Altria sits at exactly 70.00, the long-trigger level. The overbought meter at 62 is mid-range and the stock is above its 20-day average. It's a defensive name holding up while tech corrects.",
+                "pro": "MO 69.98 +2.0, NEAR trigger 70.00. RSI14 62.0, MA20 68.17, MA50 67.08. Defensive Staples bid. ATR 1.88."
+              },
+              "waiting_for": {
+                "plain": "A daily close above 70 on volume above the 5-day average for trigger confirmation.",
+                "pro": "Daily close > 70.00 + vol >= 5d MA. Stop 67.00 on confirmation."
+              },
+              "watching": {
+                "plain": "Tobacco and consumer staples peers for broad sector confirmation.",
+                "pro": "PM, KO, PG for sector breadth confirm. XLP defensive bid persistence (+1.08 5d, modest)."
+              },
+              "expecting": {
+                "plain": "Base case: defensive income hold to 74 over 20 to 30 days, with the 5 percent dividend as ballast.",
+                "pro": "Base case 70-74 over 20-30d. R:R 1.3:1 from 70.00. Income + capital appreciation defensive trade. CPI hot print could flush rate-sensitive tobacco briefly."
+              }
+            },
+            "detail": {
+              "plain": "Altria at 70.00, exactly at the long-trigger zone. The mid-range overbought meter and defensive Staples sector backdrop make this an income-and-capital-appreciation setup once it confirms with a close above 70.",
+              "pro": "MO 69.98 RSI 62.0, MA20 68.17. Wait for close > 70 + vol confirm. Stop 67, target 74. Defensive income hold + 5 pct yield. NEAR status, $0.02 from trigger."
+            }
+          },
+          {
+            "ticker": "GEHC",
+            "last": 62.07,
+            "change_pct": 0.6,
+            "trigger_zone": "63.00 long",
+            "status": "NOT_TRIGGERED",
+            "note": "Dipped below the 63 trigger to 62. RSI 29 deeply oversold; re-arms on a close back above 63.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "GE HealthCare dipped to 62, just below the 63 long-trigger zone, after briefly touching it Monday. The overbought meter at 29 is deeply oversold. Health Care is the leading sector this week.",
+                "pro": "GEHC 62.07 +0.6, trigger 63.00 (dipped below). RSI14 29.0 oversold. XLV +6.65 5d lead. ATR 2.36. MA20 66.53, MA50 70.05."
+              },
+              "waiting_for": {
+                "plain": "A green close back above 63 with volume above the 5-day average to re-arm the long setup.",
+                "pro": "Close > 63.00 + vol >= 5d MA to re-trigger. Mean-revert setup: oversold + sector rotation tailwind + defensive bid."
+              },
+              "watching": {
+                "plain": "Stryker and Boston Scientific for sector continuation. If health-care devices are broadly bid, the trade strengthens.",
+                "pro": "SYK, BSX for sector confirm. XLV 5d +6.65 leadership; broad MedTech bid extends the setup."
+              },
+              "expecting": {
+                "plain": "Base case: GEHC chops 60-64 until it either reclaims 63 cleanly or breaks the 58.75 post-earnings low.",
+                "pro": "Base case range 60-64. Reclaim 63 = re-arm long; break 58.75 = thesis re-evaluation. R:R 2.2:1 from 63 entry to 59.50 stop to 70 target."
+              }
+            },
+            "detail": {
+              "plain": "GE HealthCare dipped to 62, just below its 63 long-trigger zone. The overbought meter at 29 is deeply oversold. With Health Care leading sectors this week, the setup re-arms on a green close back above 63 dollars.",
+              "pro": "GEHC 62.07 RSI 29.0, MA20 66.53, MA50 70.05, ATR 2.36. Re-arm on close > 63 + vol. Stop 59.50 (below 4/29 flush low 58.75). Target 70 first, 81 (analyst mean) second. Next ER 2026-07-29."
+            }
+          },
+          {
+            "ticker": "XLE",
+            "last": 57.51,
+            "change_pct": 0.59,
+            "trigger_zone": "56.50 long",
+            "status": "NOT_TRIGGERED",
+            "note": "1.53 pct above the trigger. Energy sector faded from leadership; oil holding above 100.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Energy ETF at 57.51, above its 56.50 long-trigger. The sector faded from leadership this week despite oil holding above 100. No clean entry until it pulls back to the zone.",
+                "pro": "XLE 57.51 +0.59, trigger 56.50 (1.53 pct above). RSI 54.6 mid-range. XLE 5d rotation -1.76 (faded). WTI 101.54 holding."
+              },
+              "waiting_for": {
+                "plain": "A pullback into the 56.30 to 56.60 zone with a green close and volume above the 5-day average.",
+                "pro": "Pullback + close inside 56.30-56.60 + vol >= 5d MA. Buy alert at 56.50."
+              },
+              "watching": {
+                "plain": "WTI oil futures and weekly inventory data. A sustained move above 105 would strengthen the trade.",
+                "pro": "WTI 101.54, EIA crude inventories weekly. WTI > 105 = trade strengthens, < 95 = sector breakdown risk."
+              },
+              "expecting": {
+                "plain": "Base case: XLE range trades 56 to 59 over 10 to 20 days unless oil makes a decisive move.",
+                "pro": "Base case range 56-59 over 10-20d. Decisive WTI break drives directional move. R:R 1.5:1 from 56.50."
+              }
+            },
+            "detail": {
+              "plain": "Energy ETF at 57.51, above its 56.50 long-trigger zone. The sector faded from leadership this week, but oil is holding above 100. Wait for a pullback to the zone with volume confirmation.",
+              "pro": "XLE 57.51 RSI 54.6, MA20 57.14, MA50 57.96, MA200 48.97. Buy alert at 56.50. Stop 55, target 59-60. Oil-tied setup; sector faded to -1.76 5d."
+            }
+          },
+          {
+            "ticker": "PODD",
+            "last": 158.09,
+            "change_pct": 2.54,
+            "trigger_zone": "170-175 short",
+            "status": "NOT_TRIGGERED",
+            "note": "At 158, well below the 170-175 short-trigger zone. The short window has closed for now.",
+            "thesis": {
+              "stance": "WAIT",
+              "why": {
+                "plain": "Insulet bounced 2.5 percent to 158, still well below the 170-175 short-trigger zone. The breakdown has played out; the short trade window has closed.",
+                "pro": "PODD 158.09 +2.54, trigger 170-175 short. RSI14 30.6 oversold. Below MA20 178.58, MA50 203.56, MA200 278.31."
+              },
+              "waiting_for": {
+                "plain": "A short-covering bounce back to the 170-175 zone for a fresh re-entry, or wait for the structural setup to reset entirely.",
+                "pro": "Bounce-back to 170-175 zone for fresh short re-entry, OR INVALIDATE if recovery above 200MA 278."
+              },
+              "watching": {
+                "plain": "Medical-device peers for confirmation of the broader breakdown theme.",
+                "pro": "MedTech peers for sector breakdown confirm. ISRG (also struggling), DXCM. XLV sector bid is a counter-tailwind for the short."
+              },
+              "expecting": {
+                "plain": "Base case: chop 150-165 for 2 to 4 weeks before any directional resolution.",
+                "pro": "Base case range 150-165 over 2-4 weeks. Lower-high structure intact. Oversold bounce risk near-term."
+              }
+            },
+            "detail": {
+              "plain": "Insulet bounced 2.5 percent to 158, still well below the 170-175 short-trigger zone. The breakdown has played out and the trade window has closed for now. Wait for a bounce back to the zone for a fresh short.",
+              "pro": "PODD 158.09 +2.54, RSI 30.6 oversold. Below all MAs. ATR 9.22. Wait for bounce to 170-175 zone OR invalidate above 200MA reclaim 278."
+            }
+          }
+        ],
+        "smart_money_clusters": [
+          {
+            "ticker": "SOFI",
+            "signals": [
+              "mover_active",
+              "accumulation"
+            ],
+            "detail": {
+              "plain": "SoFi shows in both the active mover scanner and the accumulation scanner, with 3 institutional buys this month, up from 2 last week. Still in a multi-month base, holding up while tech sells off.",
+              "pro": "SOFI 2-source cluster (mover_active + accumulation, score 55, 3 buys). RSI ~31 oversold. Below MA20 17.55. No breakout yet; watchlist add candidate. Q1 was a record; CEO insider buying 5/9."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "signals": [
+              "unusual_flow",
+              "social_breakout"
+            ],
+            "detail": {
+              "plain": "Nasdaq 100 ETF triggered heavy unusual options flow (volume 122 times open contracts) plus rising social mentions. With tech selling off, this flow is likely hedging or speculative downside protection.",
+              "pro": "QQQ 2-source (unusual_flow V/OI=121.8 + social_breakout #3). At RSI 73.9, down 1.76 pct. Flow read: defensive hedging into CPI Wed, not bullish chase. FOMO rule blocks new long entries."
+            }
+          },
+          {
+            "ticker": "HIMS",
+            "signals": [
+              "mover_loser",
+              "mover_active"
+            ],
+            "detail": {
+              "plain": "Hims and Hers crashed 14 percent today on a post-earnings guidance miss. The overbought meter at 40 shows it's washed out but there's no reversal signal yet. Not a buy until it bases.",
+              "pro": "HIMS 25.10 -13.88, RSI 39.7 oversold, post-ER guide miss. Below 20MA 27.77, above 50MA 23.66. No reversal candle yet. Avoid until base forms above 25-26."
+            }
+          }
+        ],
+        "movers": {
+          "gainers": [
+            {
+              "ticker": "SOXS",
+              "last": 9.54,
+              "chg": 16.4,
+              "vol": 0,
+              "spark": [
+                12.98,
+                13.26,
+                11.51,
+                9.81,
+                10.6,
+                8.85,
+                8.2,
+                9.66
+              ],
+              "detail": {
+                "plain": "SOXS closed up 16.40 percent at 9.54 today.",
+                "pro": "SOXS +16.40 pct, close 9.54."
+              }
+            }
+          ],
+          "losers": [
+            {
+              "ticker": "HIMS",
+              "last": 24.97,
+              "chg": -14.31,
+              "vol": 32296957,
+              "spark": [
+                27.41,
+                27.27,
+                26.33,
+                26.88,
+                25.65,
+                28.27,
+                29.14,
+                25.2
+              ],
+              "detail": {
+                "plain": "HIMS closed down 14.31 percent at 24.97 on volume of 32.3M shares today. Headline: Hims & Hers shares plummet on first quarter earnings miss",
+                "pro": "HIMS -14.31 pct, close 24.97, vol 32.3M. Headline: Hims & Hers shares plummet on first quarter earnings miss"
+              },
+              "note": "Hims & Hers shares plummet on first quarter earnings miss"
+            },
+            {
+              "ticker": "CLSK",
+              "last": 12.58,
+              "chg": -12.03,
+              "vol": 17009031,
+              "spark": [
+                12.17,
+                12.82,
+                13.41,
+                14.5,
+                13.98,
+                14.2,
+                14.3,
+                12.47
+              ],
+              "detail": {
+                "plain": "CLSK closed down 12.03 percent at 12.58 on volume of 17.0M shares today. Headline: Small-Cap Crypto Miner CleanSpark Posts Disappointing Earnings",
+                "pro": "CLSK -12.03 pct, close 12.58, vol 17.0M. Headline: Small-Cap Crypto Miner CleanSpark Posts Disappointing Earnings"
+              },
+              "note": "Small-Cap Crypto Miner CleanSpark Posts Disappointing Earnings"
+            },
+            {
+              "ticker": "MARA",
+              "last": 11.93,
+              "chg": -10.94,
+              "vol": 25883065,
+              "spark": [
+                11.46,
+                11.83,
+                12.16,
+                13.03,
+                12.7,
+                12.94,
+                13.39,
+                11.82
+              ],
+              "detail": {
+                "plain": "MARA closed down 10.94 percent at 11.93 on volume of 25.9M shares today. Headline: MARA Holdings Sells $1.5 Billion Bitcoin As It Pushes Into A.I. Data Centres",
+                "pro": "MARA -10.94 pct, close 11.93, vol 25.9M. Headline: MARA Holdings Sells $1.5 Billion Bitcoin As It Pushes Into A.I. Data Centres"
+              },
+              "note": "MARA Holdings Sells $1.5 Billion Bitcoin As It Pushes Into A.I. Data Centres"
+            }
+          ]
+        },
+        "wsb_top": [
+          {
+            "ticker": "MU",
+            "score": 1143,
+            "rank": 1,
+            "rank_prev": 1,
+            "delta_pct": 29.0,
+            "name": "Micron Technology",
+            "detail": {
+              "plain": "Micron Technology (MU) has 1143 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 29 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 1 (1143 mentions), prior rank 1, mentions delta +29 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "ASTS",
+            "score": 578,
+            "rank": 2,
+            "rank_prev": 4,
+            "delta_pct": 246.1,
+            "name": "AST SpaceMobile",
+            "detail": {
+              "plain": "AST SpaceMobile (ASTS) has 578 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 246 percent versus 24 hours ago, and the name jumped up from rank 4 to rank 2. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "ASTS WSB rank 2 (578 mentions), prior rank 4, mentions delta +246 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "SPY",
+            "score": 367,
+            "rank": 3,
+            "rank_prev": 3,
+            "delta_pct": 61.0,
+            "name": "SPDR S&P 500 ETF Trust",
+            "detail": {
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 367 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 61 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 3 (367 mentions), prior rank 3, mentions delta +61 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "score": 229,
+            "rank": 4,
+            "rank_prev": 9,
+            "delta_pct": 57.9,
+            "name": "Microsoft",
+            "detail": {
+              "plain": "Microsoft (MSFT) has 229 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 58 percent versus 24 hours ago, and the name jumped up from rank 9 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MSFT WSB rank 4 (229 mentions), prior rank 9, mentions delta +58 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "RKLB",
+            "score": 190,
+            "rank": 5,
+            "rank_prev": 7,
+            "delta_pct": 29.3,
+            "name": "Rocket Lab USA",
+            "detail": {
+              "plain": "Rocket Lab USA (RKLB) has 190 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 29 percent versus 24 hours ago, and the name jumped up from rank 7 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "RKLB WSB rank 5 (190 mentions), prior rank 7, mentions delta +29 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          }
+        ],
+        "action": {
+          "tier": "WATCH",
+          "text": "MO at $70.00 trigger (needs confirmed close); GEHC dipped below $63, re-arms on reclaim. Chip stocks crashing, telehealth + miners blew up. Wait for CPI before new entries."
+        },
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "MO",
+              "verdict": "BUY ON BREAKOUT",
+              "confidence": 60,
+              "confidence_reason": "Score reflects the defensive Staples backdrop and the at-trigger position holding up while tech sells off, capped by the modest R:R 1.3:1 and CPI hot-print flush risk.",
+              "vehicle": "stock",
+              "pros": "Altria at exactly the 70 long-trigger, up 2 percent while tech sells off. Defensive Staples rotation is the active theme. Five percent dividend yield provides income ballast on a hold.",
+              "cons": "The 1.3:1 R:R is below the usual 2:1 minimum. A hot CPI Wednesday could briefly flush all rate-sensitive names including tobacco. Defensive income trade, not a growth thesis.",
+              "action": {
+                "plain": "Set a buy alert for Altria at 70 dollars. Confirm a daily close above 70 with volume before entering. Stop 67, target 74.",
+                "pro": "Search MO. Set alert at 70.00. Buy limit 70.00 GFD on close > 70 + vol. Stop Limit 67.00/66.80 GTC. Sell limit GTC 74.00. Income hold + 5 pct yield."
+              }
+            },
+            {
+              "ticker": "GEHC",
+              "verdict": "BUY ON BREAKOUT",
+              "confidence": 58,
+              "confidence_reason": "Score reflects the deeply oversold RSI 29 in the leading sector, capped because the stock dipped below the $63 trigger and needs to reclaim it before re-arming.",
+              "vehicle": "stock",
+              "pros": "GE HealthCare at 62 with the overbought meter at 29 deeply oversold, in the leading Health Care sector. The fundamentals beat last quarter; the drawdown is tariff-driven and transitory. Mean analyst target $81.64, roughly 30 percent above current.",
+              "cons": "The stock dropped back below its 63 trigger and the longer-term trend is broken (below all moving averages). A break of the 58.75 post-earnings low would invalidate the bounce thesis. CPI volatility could flush it lower first.",
+              "action": {
+                "plain": "Set a buy alert for GE HealthCare at 63 dollars. Buy on a green close back above 63 with volume. Stop 59.50, target 70 first then 81.",
+                "pro": "Search GEHC. Set alert at 63.00. Buy limit 63.00-63.50 GFD on close > 63 + vol. Stop Limit 59.50/59.20 GTC. Sell limit GTC 70.00 (trim half), 81.00 (rest). R:R 2.2:1."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "MU",
+              "verdict": "TRIM IF EXTENDED",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the parabolic RSI 76 plus the 8 percent drop today as the AI-chip rally unwinds, capped because HBM4 fundamentals remain strong and the 6/24 earnings could re-ignite it.",
+              "vehicle": "stock",
+              "pros": "Micron dropped 8 percent today to 732 as the parabolic AI-memory rally corrects. The overbought meter at 76 is still stretched and XLK is the worst sector. The unwind from a 720-percent-gain run is underway.",
+              "cons": "HBM4 capacity is contractually sold out through 2026, last quarter revenue grew 196 percent, and hyperscaler deals are locked in. The 6/24 earnings could re-ignite the rally. Fundamentals are real, not GameStop hype.",
+              "action": {
+                "plain": "If you hold Micron, consider trimming partway here as the chip rally corrects. Keep a core position for the AI-memory cycle into the June 24 earnings.",
+                "pro": "MU 732.30 -7.93, RSI 76.3. Trim 25-30 pct if held; keep core into 6/24 ER. Trailing stop $85 below any peak is the protect-while-running approach. No new long entries; FOMO rule active."
+              }
+            },
+            {
+              "ticker": "AMD",
+              "verdict": "AVOID",
+              "confidence": 65,
+              "confidence_reason": "Score reflects the 5 percent drop today and RSI 73 still extended in the worst sector, capped because AMD's structural AI thesis is intact and a cool CPI could spark a relief bounce.",
+              "vehicle": "stock",
+              "pros": "AMD dropped 5 percent today to 437 as semiconductors lead the market lower. The overbought meter at 73 is still stretched. XLK is the worst sector and the correction is widening.",
+              "cons": "AMD's data-center AI thesis is structurally intact, IVR is high (good for premium-selling), and the stock is 19 percent off its highs already. A cool CPI Wednesday could spark a sharp relief bounce in the most-sold semis.",
+              "action": {
+                "plain": "Do not buy AMD here. If you hold, consider trimming into any bounce. The chip correction needs to find a base before fresh entries.",
+                "pro": "AMD 436.89 -4.77, RSI 73.0. Avoid new entries. Hold/trim into bounces. Watch QQQ 20MA reclaim (669) as all-clear. CSP 6/12 410P (6 pct OTM, 58 pct ann yield, IVR 71) is the income expression for those wanting exposure on a pullback."
+              }
+            }
+          ]
+        },
+        "social": [
+          {
+            "ticker": "MU",
+            "mentions": 2366,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "stocktwits",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "Micron Technology is seeing intense volatility as retail investors debate whether the current rally is a structural re-rating driven by AI-fueled memory dema...",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Too late to buy $NBIS and $BE?",
+                "score": 35,
+                "flair": "General",
+                "body_excerpt": "I\u2019ve only recently gotten into stock market (been VTI and chilling for past two years) but now I\u2019m looking at these three stocks - MU, NBIS, BE. Already put some $ into MU, is it too late for NBIS and BE?"
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Is Micron $MU Still Early\u2026 or Already Too Late?",
+                "score": 31,
+                "flair": "",
+                "body_excerpt": "MU keeps ripping, AI memory demand is exploding, and HBM growth looks stronger every week\n\nWhat\u2019s crazy is even after this run, valuation still seems attractive compared to other major AI names\n\nSo I\u2019m curious\n\nAre you still buying MU here?..."
+              },
+              {
+                "sub": "options",
+                "title": "Long-term MU shareholder, first time considering calls \u2014 framework advice?",
+                "score": 31,
+                "flair": "",
+                "body_excerpt": "Long-term MU holder with a big position. Strong conviction the stock crosses $1,000, just can\u2019t say exactly when. Could be by June earnings, could be after June earnings.   \nI am considering buying call options for the first time to add lev..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. Traders are buying calls for upside. The loudest take is: \"Too late to buy $NBIS and $BE?\".",
+              "pro": "2366 mentions across 6 communities, +29% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: buying calls for upside. Top thesis: \"Too late to buy $NBIS and $BE?\"."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "mentions": 441,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Reddit's top stocks from January are up 55% on average. SPY is up 7%.",
+                "score": 404,
+                "flair": "",
+                "body_excerpt": "Was curious whether the most mentioned stocks on Reddit actually went anywhere, or if it's all just noise / hype.\n\nPulled the top 15 most-mentioned individual stocks from January (excluded ETFs), then looked at how each one performed from J..."
+              },
+              {
+                "sub": "options",
+                "title": "Should I sell my deep ITM call options or exercise?",
+                "score": 91,
+                "flair": "",
+                "body_excerpt": "I have five 12/18/26 deep ITM AMD $200 calls that I bought for $28,743 and they're now worth $133,170 (+$104K gain). If I sell the calls I would pay STCG on these, so I'm leaning towards exercising the option as I intend to hold shares for ..."
+              },
+              {
+                "sub": "options",
+                "title": "AMD Covered Call damage limitations on the runaway stock price?",
+                "score": 42,
+                "flair": "",
+                "body_excerpt": "Curious what everyone's play would be on damage limitation for my worst trade in history.  \n\nI have actually never had a run on an option this large go against me.  Taxable account, bought shares at $12.\n\n  \nI sold 2 AMD covered calls: when..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. Traders are selling covered calls. The loudest take is: \"Reddit's top stocks from January are up 55% on average. SPY is up 7%\".",
+              "pro": "441 mentions across 5 communities, +164% vs prior session. Sentiment neutral. Strategy mix: selling covered calls. Top thesis: \"Reddit's top stocks from January are up 55% on average. SPY is up 7%\"."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "mentions": 437,
+            "sources": [
+              "all_stocks",
+              "options",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "options",
+                "title": "ASTS earnings?",
+                "score": 33,
+                "flair": "",
+                "body_excerpt": "After RKLB's earnings things look good for space stocks i'm thinking that the SpaceX IPO hype is going to also drag the other space stocks up with it.  I sold 2 NVDA $200 May 29th puts that i'm now up 70% on i'm tempted to close those and s..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Made $1800 selling NVDA CSPs in the last week",
+                "score": 26,
+                "flair": "",
+                "body_excerpt": "I didn't really want to be assigned and I'm too much of a pussy to buy calls so here I am picking up pennies in front of the steamroller.\n\nhttps://preview.redd.it/eb6oe02myrzg1.png?width=608&amp;format=png&amp;auto=webp&amp;s=033ee7f978d706..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"ASTS earnings?\".",
+              "pro": "437 mentions across 5 communities, +86% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: writing puts to collect premium; buying calls for upside; playing defined-risk spreads. Top thesis: \"ASTS earnings?\"."
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "mentions": 517,
+            "sources": [
+              "all_stocks",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "CSP premiums dried up on my core names this week - what do you do when IV compresses after a run",
+                "score": 19,
+                "flair": "",
+                "body_excerpt": "NVDA and MSFT near ATHs and the put credit at strikes i'd actually want to own them is about half what it was in early April. running MSFT 380 puts at 3 weeks, getting maybe 0.8% on cash. not terrible but not why i run the wheel either.\n\n  ..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"May Short Put Vertical Results\".",
+              "pro": "517 mentions across 4 communities, +58% vs prior session. Sentiment neutral. Themes: a fresh breakout. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"May Short Put Vertical Results\"."
+            }
+          },
+          {
+            "ticker": "RKLB",
+            "mentions": 424,
+            "sources": [
+              "all_stocks",
+              "race10m",
+              "stocks",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "29M I finally hit 500K!",
+                "score": 191,
+                "flair": "",
+                "body_excerpt": "Started my investment account around two and a half years ago after saving up 40K. Most of my growth has been from RKLB after I invested around 20K when it was near $5 a share. I\u2019ve been since diversifying into different positions and proud..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Market looked mixed today with big tech dragging indexes lower overall",
+                "score": 29,
+                "flair": "General",
+                "body_excerpt": "Market looked mixed today with big tech dragging indexes lower overall, especially Apple Inc. (AAPL), Microsoft Corporation (MSFT), Alphabet Inc. (GOOGL), and Meta Platforms, Inc. (META) in the red. \n\nSemis and AI-related names stayed stron..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "This RKLB Callout Yesterday Delivered Well...",
+                "score": 2,
+                "flair": "GAIN$",
+                "body_excerpt": "This started as a pretty risky week-out lotto idea at Monday open.\n\nRKLB 135C 5/15 @ 1.58 from @MIC.\n\nOriginally the idea was to potentially swing it for a few days if momentum kept building\u2026 but the move came way faster than expected.\n\nSta..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The loudest take is: \"29M I finally hit 500K!\".",
+              "pro": "424 mentions across 4 communities, +183% vs prior session. Sentiment neutral. Top thesis: \"29M I finally hit 500K!\"."
+            }
+          }
+        ]
+      },
+      "options": {
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "The VIX put spread setup is the only buying-rule-allowed trade today. Volatility at 19, the futures curve still pays you to bet against a vol collapse, and a CPI spike would help the trade.",
+              "pro": "VIX 19.02, STEEP_CONTANGO (0.88 ratio), VVIX 102.9. SHORT_PUT_SPREAD signal active: 6/17 17/15, ~0.32 credit, max risk ~$170. Roll-down + theta tailwind. CPI Wed is the spike risk and the trade benefits from a spike."
+            },
+            {
+              "plain": "Heavy unusual options activity in QQQ, SPY, NVDA, META, AMZN, AAPL. With tech selling off, this flow leans toward downside hedging ahead of Wednesday's inflation data.",
+              "pro": "20 unusual strikes today. Flow flagged: AAPL, NVDA, META, AMZN, QQQ, SPY. QQQ V/OI 121.8 near-the-money puts; institutional hedging into CPI Wed. Defensive flow tone."
+            },
+            {
+              "plain": "Silver fund SLV is the top wheel candidate. Strike 71.50 cash-secured put paying 2.72 dollars expires in 31 days, 6 percent below current price, no earnings risk.",
+              "pro": "SLV CSP 6/12 71.5P. Spot 76.10, 6.04 pct OTM, premium 2.72, ann yield 44.8 pct, IVR 41.4, RSI 60.9. No ER. Score 0.845, cohort high."
+            },
+            {
+              "plain": "Long-dated index call signals still say wait. Both S and P 500 and Nasdaq are still too overbought for a clean monthly entry, even after today's pullback.",
+              "pro": "LEAP signal: HOLD/WAIT for SPY (RSI 69.6) and QQQ (RSI 73.9). Today's pullback not enough; need 20MA pullback or RSI < 60 reset. iv_mult acceptable."
+            }
+          ]
+        },
+        "actions": [
+          {
+            "verb": "WATCH",
+            "target": "VIX",
+            "text": "VIX 6/17 17/15 put spread is the only buying-rule-allowed trade. Steep contango pays; a CPI spike helps the trade.",
+            "detail": {
+              "plain": "Volatility at 19, the calm-to-normal zone. The futures curve slopes up to 21.6 on the 3-month, so betting VIX stays above 17 by mid-June has a roll-down tailwind. Max loss is fixed at about 170 dollars per spread.",
+              "pro": "VIX 19.02, VIX/VIX3M 0.88 STEEP_CONTANGO, VVIX 102.9. 6/17 17/15 put credit spread, ~0.32 credit, max risk ~$170. Roll-down + theta tailwind. CPI Wed spike helps (needs VIX > 17)."
+            },
+            "robinhood": {
+              "plain": "Sell a VIX put spread. Strike 17 short, strike 15 long, expiring June 17. Limit at the middle of the bid-ask, Good for day.",
+              "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit ~0.32 mid, GFD. Max risk ~$170/spread. Exit at 50 pct credit or within 7 DTE."
+            }
+          }
+        ],
+        "unusual": [
+          {
+            "ticker": "AAPL",
+            "vol_oi": 2107,
+            "context": "May 15 calls $215.0 \u00b7 14 unusual strike(s)"
+          },
+          {
+            "ticker": "NVDA",
+            "vol_oi": 405,
+            "context": "May 15 puts $17.5 \u00b7 1 unusual strike(s)",
+            "detail": {
+              "plain": "Nvidia triggered multiple unusual flow strikes. NVDA held up better than AMD and Micron today (down only 1 percent), so the flow read is mixed.",
+              "pro": "NVDA multi-strike flow. Stock -1.08 pct, RSI 61.2 (less extended than AMD/MU). Mixed call/put read; relative-strength holdup in the semis selloff."
+            }
+          },
+          {
+            "ticker": "META",
+            "vol_oi": 250,
+            "context": "May 15 puts $840.0 \u00b7 2 unusual strike(s)",
+            "detail": {
+              "plain": "Meta Platforms call activity flagged. Meta is in the leading Communications sector and holding up better than the semis, so this leans bullish.",
+              "pro": "META call flow. XLC +5.08 5d (Comm sector leadership). META relative strength vs semis. Bullish-leaning flow tone in a megacap shelter name."
+            }
+          },
+          {
+            "ticker": "AMZN",
+            "vol_oi": 230,
+            "context": "May 15 puts $315.0 \u00b7 1 unusual strike(s)"
+          },
+          {
+            "ticker": "QQQ",
+            "vol_oi": 121,
+            "context": "May 13 puts $580.0 \u00b7 1 unusual strike(s)",
+            "detail": {
+              "plain": "Massive unusual options flow on QQQ near-the-money puts. With tech down 1.76 percent today, this is institutional hedging ahead of Wednesday's CPI print, or speculative downside protection.",
+              "pro": "QQQ V/OI 121.8 ATM puts. Defensive hedge flow into CPI Wed 5/13. Confirms the risk-off de-risking. Watch for follow-through if CPI runs hot."
+            }
+          },
+          {
+            "ticker": "SPY",
+            "vol_oi": 93,
+            "context": "May 12 calls $734.0 \u00b7 1 unusual strike(s)"
+          }
+        ],
+        "earnings_iv": [],
+        "leaps": [
+          {
+            "ticker": "SPY",
+            "thesis_window": "540 DTE anchor",
+            "note": "Monthly DCA day; signal still says wait, even after today's pullback.",
+            "detail": {
+              "plain": "Monthly long-dated S and P 500 call signal still says wait. Even with today's 0.8 percent pullback, the overbought meter at 70 is right at the line, not below it. Wait for a deeper reset.",
+              "pro": "SPY 733.37 RSI14 69.6. LEAP signal: HOLD/WAIT, no_trigger. Today's -0.80 not enough; need 20MA 718 pullback or RSI < 60. iv_mult acceptable."
+            }
+          },
+          {
+            "ticker": "QQQ",
+            "thesis_window": "540 DTE anchor",
+            "note": "Monthly DCA day; signal says wait, Nasdaq still stretched despite the semis selloff.",
+            "detail": {
+              "plain": "Monthly long-dated Nasdaq call signal also waits. Even after today's 1.76 percent drop, the overbought meter at 74 is still stretched. Wait for a pullback toward the 20-day average around 669.",
+              "pro": "QQQ 700.76 RSI14 73.9. LEAP signal: HOLD/WAIT, no_trigger. Today's -1.76 not enough; need 20MA 669 pullback or RSI < 60. iv_mult acceptable."
+            }
+          }
+        ],
+        "wheel_candidates": [
+          {
+            "ticker": "SLV",
+            "verdict": "STRONG WHEEL",
+            "confidence": 70,
+            "confidence_reason": "Score reflects the cohort-highest composite 0.845 with no earnings risk and IVR 41 in a usable range, capped because silver is a commodity proxy that can gap on geopolitical or dollar moves.",
+            "spot": 76.1,
+            "csp_strike": 71.5,
+            "csp_expiry": "2026-06-12",
+            "csp_dte": 31,
+            "csp_premium": 2.72,
+            "csp_otm_pct": 6.04,
+            "annualized_yield_pct": 44.8,
+            "rsi14": 60.9,
+            "above_200dma": true,
+            "next_er_date": null,
+            "days_to_er": null,
+            "pros": "Silver fund SLV at 76.10 with healthy RSI 60.9 and clean technicals above its 50-day and 200-day averages. No earnings risk, IVR 41 in a usable range, manageable daily volatility. Annualized yield 44.8 percent at a strike 6 percent below current price.",
+            "cons": "Silver is a commodity proxy that can gap 5 percent overnight on geopolitical or dollar moves. Assignment at 71.50 means owning silver near recent highs. A risk-off CPI reaction could pressure metals briefly even with the defensive bid.",
+            "action": {
+              "plain": "Sell one cash-secured put on Silver fund SLV. Strike 71.50, expiring June 12. Collect 272 dollars upfront. Collateral 7,150.",
+              "pro": "Search SLV. Trade Options. Expiration 2026-06-12. STO 1 SLV 71.5P. Limit at net credit 2.72 mid, GFD. Collateral 7,150. Stop alert at 70. If assigned, write 78C 30-45 DTE."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "verdict": "HIGH-PREMIUM RISKY",
+            "confidence": 52,
+            "confidence_reason": "Score reflects rich IVR 71 and 6 percent OTM cushion, capped because RSI 73 is still extended and the stock dropped 5 percent today as the chip rally unwinds.",
+            "spot": 436.39,
+            "csp_strike": 410.0,
+            "csp_expiry": "2026-06-12",
+            "csp_dte": 31,
+            "csp_premium": 20.32,
+            "csp_otm_pct": 6.05,
+            "annualized_yield_pct": 58.4,
+            "rsi14": 72.9,
+            "above_200dma": true,
+            "next_er_date": "2026-08-04",
+            "days_to_er": 84,
+            "pros": "AMD with IVR 71 means premium is rich. The strike 6 percent below current gives reasonable cushion. No earnings risk for 84 days. Annualized yield 58 percent. Today's 5 percent drop already reduced the entry price.",
+            "cons": "RSI 72.9 is still extended even after the drop. XLK is the worst sector and the AI-chip correction is widening. A continued mean-revert could breach the 410 strike fast. The selloff may not be done.",
+            "action": {
+              "plain": "Risky entry today. If you want it, sell one cash-secured put on AMD, strike 410, expiring June 12. Collect 2,032 dollars upfront. Collateral 41,000. Wait for the correction to base first if you can.",
+              "pro": "Search AMD. Trade Options. Expiration 2026-06-12. STO 1 AMD 410P. Limit at net credit 20.32 mid, GFD. Collateral 41,000. Stop alert at 405. Prefer waiting for RSI < 60 or a base above 420 before entry."
+            }
+          },
+          {
+            "ticker": "USO",
+            "verdict": "HIGH-PREMIUM RISKY",
+            "confidence": 58,
+            "confidence_reason": "Score reflects 64.5 pct annualized yield and IVR 79 with oil holding above 100, capped because USO is a futures-tracking ETF with structural roll-yield drag and energy faded from leadership.",
+            "spot": 143.51,
+            "csp_strike": 135.0,
+            "csp_expiry": "2026-06-12",
+            "csp_dte": 31,
+            "csp_premium": 7.4,
+            "csp_otm_pct": 5.93,
+            "annualized_yield_pct": 64.5,
+            "rsi14": 60.9,
+            "above_200dma": true,
+            "next_er_date": null,
+            "days_to_er": null,
+            "pros": "Oil fund USO with 64.5 percent annualized yield. Oil holding above 100, RSI 60.9 healthy, above all moving averages. IVR 79 means premium is rich. Strike 6 percent below current.",
+            "cons": "USO tracks oil futures and has structural roll-yield drag in contango. Energy faded from sector leadership this week. Oil can gap 5 percent on inventory data or geopolitical news. EIA crude inventories are a binary near-term catalyst.",
+            "action": {
+              "plain": "Sell one cash-secured put on Oil fund USO. Strike 135, expiring June 12. Collect 740 dollars. Collateral 13,500.",
+              "pro": "Search USO. Trade Options. Expiration 2026-06-12. STO 1 USO 135P. Limit at net credit 7.40 mid, GFD. Collateral 13,500. Stop alert at 130. If assigned, write 145C 30-45 DTE. Watch EIA inventories."
+            }
+          },
+          {
+            "ticker": "HOOD",
+            "verdict": "OK WHEEL",
+            "confidence": 50,
+            "confidence_reason": "Score reflects RSI 35 oversold with IVR 49 mid-range premium, capped because the stock sits below its 200-day average so the longer-term trend is broken.",
+            "spot": 77.01,
+            "csp_strike": 72.0,
+            "csp_expiry": "2026-06-12",
+            "csp_dte": 31,
+            "csp_premium": 2.87,
+            "csp_otm_pct": 6.51,
+            "annualized_yield_pct": 46.9,
+            "rsi14": 35.2,
+            "above_200dma": false,
+            "next_er_date": "2026-07-29",
+            "days_to_er": 78,
+            "pros": "Robinhood at 77 with RSI 35 oversold, a decent mean-revert setup. IVR 49 is mid-range premium. Strike 6.5 percent below current. Crypto-beta tailwind if BTC stabilizes.",
+            "cons": "Stock below its 200-day average at 105.78 means the longer-term trend is broken. Assignment could mean owning HOOD into a structural downtrend. Crypto weakness today (BTC -1.8 pct) is a near-term headwind.",
+            "action": {
+              "plain": "Sell one cash-secured put on Robinhood. Strike 72, expiring June 12. Collect 287 dollars. Collateral 7,200.",
+              "pro": "Search HOOD. Trade Options. Expiration 2026-06-12. STO 1 HOOD 72P. Limit at net credit 2.87 mid, GFD. Collateral 7,200. Stop alert at 70. If assigned, write 80C 30-45 DTE."
+            }
+          },
+          {
+            "ticker": "ORCL",
+            "verdict": "RICH PREMIUM HIGH RISK",
+            "confidence": 45,
+            "confidence_reason": "Score reflects 65.8 pct annualized yield with IVR 71, capped by earnings 29 days out creating blackout risk and the stock sitting below its 200-day average.",
+            "spot": 184.24,
+            "csp_strike": 175.0,
+            "csp_expiry": "2026-06-12",
+            "csp_dte": 31,
+            "csp_premium": 9.77,
+            "csp_otm_pct": 5.02,
+            "annualized_yield_pct": 65.8,
+            "rsi14": 47.7,
+            "above_200dma": false,
+            "next_er_date": "2026-06-10",
+            "days_to_er": 29,
+            "pros": "Oracle with 65.8 percent annualized yield and rich IVR 71. RSI 47.7 neutral, not extended. Cloud-infrastructure name with strong AI-data-center demand narrative.",
+            "cons": "Earnings June 10, only 29 days out, sits inside the option's life and creates a blackout-risk problem. The stock is below its 200-day average. The 175 strike is only 5 percent OTM, so assignment risk is real, especially around the print.",
+            "action": {
+              "plain": "Risky because earnings fall inside the option's life. If you do it, sell one cash-secured put on Oracle, strike 175, expiring June 12, and plan to close before the June 10 earnings. Collect 977 dollars. Collateral 17,500.",
+              "pro": "Search ORCL. Trade Options. Expiration 2026-06-12. STO 1 ORCL 175P. Limit at net credit 9.77 mid, GFD. Collateral 17,500. CLOSE BEFORE 2026-06-10 ER. Stop alert at 172. Skip if you can't actively manage the ER blackout."
+            }
+          }
+        ],
+        "action": {
+          "tier": "WATCH",
+          "text": "VIX put spread is the only buying-rule-allowed trade. SLV wheel CSP is the cleanest income setup. Avoid QQQ/SPY long calls; LEAP signal still WAIT."
+        },
+        "recommendations": {
+          "buy": [
+            {
+              "ticker": "VIX 6/17 17/15 put spread",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 70,
+              "confidence_reason": "Score reflects the steep contango roll-down tailwind and that this is the only buying-rule-allowed trade, capped by CPI Wednesday fat-tail risk and VVIX at 103.",
+              "vehicle": "put debit spread",
+              "pros": "Selling a put spread on VIX is a defined-risk way to earn the steep-contango premium. With VIX at 19 and the curve at 21.6 on the 3-month, theta plus roll-down both tailwind the trade. A CPI spike helps since it needs VIX above 17.",
+              "cons": "VVIX at 103 signals options are pricing in vol-of-vol. A cool CPI print could crater VIX toward 15 in a relief rally, the loss scenario. Max loss is roughly 5x credit.",
+              "action": {
+                "plain": "Sell a put spread on the VIX expiring June 17. Strike 17 short, strike 15 long. Collect about 32 dollars per spread, max loss about 170 dollars per spread.",
+                "pro": "Search VIX. Trade Options. Expiration 2026-06-17. STO 1 VIX 17P, BTO 1 VIX 15P. Limit at net credit ~0.32 mid, GFD. Max risk ~$170/spread. Exit at 50 pct credit OR within 7 DTE."
+              }
+            },
+            {
+              "ticker": "SLV 6/12 71.5P CSP",
+              "verdict": "BUY VIA SPREAD",
+              "confidence": 68,
+              "confidence_reason": "Score reflects the cohort-highest wheel composite 0.845 with no earnings risk and IVR 41 in a usable range, capped because silver can gap on geopolitical or dollar moves.",
+              "vehicle": "cash-secured put",
+              "pros": "Silver fund SLV at 76.10 with healthy RSI 60.9 and clean technicals above its 50-day and 200-day averages. No earnings risk. Annualized yield 44.8 percent at a strike 6 percent below current.",
+              "cons": "Silver is a commodity proxy that can gap 5 percent overnight. Assignment at 71.50 means owning silver near recent highs. A risk-off CPI reaction could pressure metals briefly.",
+              "action": {
+                "plain": "Sell one cash-secured put on Silver fund SLV. Strike 71.50, expiring June 12. Collect 272 dollars upfront. Collateral 7,150.",
+                "pro": "Search SLV. Trade Options. Expiration 2026-06-12. STO 1 SLV 71.5P. Limit at net credit 2.72 mid, GFD. Collateral 7,150. Stop alert at 70."
+              }
+            }
+          ],
+          "sell": [
+            {
+              "ticker": "QQQ long calls / LEAPs",
+              "verdict": "AVOID",
+              "confidence": 68,
+              "confidence_reason": "Score reflects QQQ RSI 73.9 still elevated after a 1.76 pct drop in the worst sector, capped because the index level is still in an uptrend and a cool CPI could spark a relief bounce.",
+              "vehicle": "long call / LEAP",
+              "pros": "QQQ at RSI 73.9 even after today's drop is still the wrong time to buy long calls. The chip-stock crash is dragging tech and the correction is widening. IV is elevated which makes premium expensive.",
+              "cons": "Long-dated calls have time on their side; if the AI thesis resumes after CPI, a 2-year call survives the dip. The index level is still in trend.",
+              "action": {
+                "plain": "Do not buy Nasdaq long calls or LEAPs today. Wait for a pullback to 669 or the overbought meter under 60.",
+                "pro": "QQQ 700.76 RSI 73.9. LEAP signal WAIT. iv_mult acceptable but rsi-elevated blocks. Wait for 20MA pullback (669) or RSI < 60 reset."
+              }
+            }
+          ]
+        },
+        "social": [
+          {
+            "ticker": "MU",
+            "mentions": 2366,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "stocktwits",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "Micron Technology is seeing intense volatility as retail investors debate whether the current rally is a structural re-rating driven by AI-fueled memory dema...",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Too late to buy $NBIS and $BE?",
+                "score": 35,
+                "flair": "General",
+                "body_excerpt": "I\u2019ve only recently gotten into stock market (been VTI and chilling for past two years) but now I\u2019m looking at these three stocks - MU, NBIS, BE. Already put some $ into MU, is it too late for NBIS and BE?"
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Is Micron $MU Still Early\u2026 or Already Too Late?",
+                "score": 31,
+                "flair": "",
+                "body_excerpt": "MU keeps ripping, AI memory demand is exploding, and HBM growth looks stronger every week\n\nWhat\u2019s crazy is even after this run, valuation still seems attractive compared to other major AI names\n\nSo I\u2019m curious\n\nAre you still buying MU here?..."
+              },
+              {
+                "sub": "options",
+                "title": "Long-term MU shareholder, first time considering calls \u2014 framework advice?",
+                "score": 31,
+                "flair": "",
+                "body_excerpt": "Long-term MU holder with a big position. Strong conviction the stock crosses $1,000, just can\u2019t say exactly when. Could be by June earnings, could be after June earnings.   \nI am considering buying call options for the first time to add lev..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today. Tone reads neutral. The conversation is centered on AI and data-center demand, memory and storage upcycle, and the earnings reaction. Traders are buying calls for upside. The loudest take is: \"Too late to buy $NBIS and $BE?\".",
+              "pro": "2366 mentions across 6 communities, +29% vs prior session. Sentiment neutral. Themes: AI and data-center demand; memory and storage upcycle; the earnings reaction. Strategy mix: buying calls for upside. Top thesis: \"Too late to buy $NBIS and $BE?\"."
+            }
+          },
+          {
+            "ticker": "AMD",
+            "mentions": 441,
+            "sources": [
+              "all_stocks",
+              "options",
+              "race10m",
+              "stocks",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Reddit's top stocks from January are up 55% on average. SPY is up 7%.",
+                "score": 404,
+                "flair": "",
+                "body_excerpt": "Was curious whether the most mentioned stocks on Reddit actually went anywhere, or if it's all just noise / hype.\n\nPulled the top 15 most-mentioned individual stocks from January (excluded ETFs), then looked at how each one performed from J..."
+              },
+              {
+                "sub": "options",
+                "title": "Should I sell my deep ITM call options or exercise?",
+                "score": 91,
+                "flair": "",
+                "body_excerpt": "I have five 12/18/26 deep ITM AMD $200 calls that I bought for $28,743 and they're now worth $133,170 (+$104K gain). If I sell the calls I would pay STCG on these, so I'm leaning towards exercising the option as I intend to hold shares for ..."
+              },
+              {
+                "sub": "options",
+                "title": "AMD Covered Call damage limitations on the runaway stock price?",
+                "score": 42,
+                "flair": "",
+                "body_excerpt": "Curious what everyone's play would be on damage limitation for my worst trade in history.  \n\nI have actually never had a run on an option this large go against me.  Taxable account, bought shares at $12.\n\n  \nI sold 2 AMD covered calls: when..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. Traders are selling covered calls. The loudest take is: \"Reddit's top stocks from January are up 55% on average. SPY is up 7%\".",
+              "pro": "441 mentions across 5 communities, +164% vs prior session. Sentiment neutral. Strategy mix: selling covered calls. Top thesis: \"Reddit's top stocks from January are up 55% on average. SPY is up 7%\"."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "mentions": 437,
+            "sources": [
+              "all_stocks",
+              "options",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "options",
+                "title": "ASTS earnings?",
+                "score": 33,
+                "flair": "",
+                "body_excerpt": "After RKLB's earnings things look good for space stocks i'm thinking that the SpaceX IPO hype is going to also drag the other space stocks up with it.  I sold 2 NVDA $200 May 29th puts that i'm now up 70% on i'm tempted to close those and s..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Made $1800 selling NVDA CSPs in the last week",
+                "score": 26,
+                "flair": "",
+                "body_excerpt": "I didn't really want to be assigned and I'm too much of a pussy to buy calls so here I am picking up pennies in front of the steamroller.\n\nhttps://preview.redd.it/eb6oe02myrzg1.png?width=608&amp;format=png&amp;auto=webp&amp;s=033ee7f978d706..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on the earnings reaction. Traders are writing puts to collect premium and buying calls for upside. The loudest take is: \"ASTS earnings?\".",
+              "pro": "437 mentions across 5 communities, +86% vs prior session. Sentiment neutral. Themes: the earnings reaction. Strategy mix: writing puts to collect premium; buying calls for upside; playing defined-risk spreads. Top thesis: \"ASTS earnings?\"."
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "mentions": 517,
+            "sources": [
+              "all_stocks",
+              "stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "CSP premiums dried up on my core names this week - what do you do when IV compresses after a run",
+                "score": 19,
+                "flair": "",
+                "body_excerpt": "NVDA and MSFT near ATHs and the put credit at strikes i'd actually want to own them is about half what it was in early April. running MSFT 380 puts at 3 weeks, getting maybe 0.8% on cash. not terrible but not why i run the wheel either.\n\n  ..."
+              }
+            ],
+            "detail": {
+              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on a fresh breakout. Traders are writing puts to collect premium and running the wheel. The loudest take is: \"May Short Put Vertical Results\".",
+              "pro": "517 mentions across 4 communities, +58% vs prior session. Sentiment neutral. Themes: a fresh breakout. Strategy mix: writing puts to collect premium; running the wheel; playing defined-risk spreads. Top thesis: \"May Short Put Vertical Results\"."
+            }
+          },
+          {
+            "ticker": "ASTS",
+            "mentions": 1172,
+            "sources": [
+              "all_stocks",
+              "thetagang",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "May Short Put Vertical Results",
+                "score": 30,
+                "flair": "",
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "May projected option premium $8512. Slow and steady update.",
+                "score": 24,
+                "flair": "",
+                "body_excerpt": "Locked in $5173 premium profit for April. Already locked in $3477 premiums for May. \n\nHave another $5k of profit that I already sold for May. There's a good chance I will let all of it expire or get assigned. \n\nHave already sold $3885 of pr..."
+              }
+            ],
+            "detail": {
+              "plain": "Light chatter today, up sharply versus yesterday. Tone reads neutral. Traders are writing puts to collect premium and playing defined-risk spreads. The loudest take is: \"May Short Put Vertical Results\".",
+              "pro": "1172 mentions across 3 communities, +246% vs prior session. Sentiment neutral. Strategy mix: writing puts to collect premium; playing defined-risk spreads. Top thesis: \"May Short Put Vertical Results\"."
+            }
+          }
+        ]
+      },
+      "crypto": {
+        "status": "live",
+        "tab_intro": {
+          "bullets": [
+            {
+              "plain": "Bitcoin slipped to 80,243, down 1.8 percent in 24 hours, holding the 80,000 line. Smaller coins are red across the board. If you hold crypto-related stocks like Coinbase or the Bitcoin miners, they fell hard today.",
+              "pro": "BTC 80,243 -1.82 pct 24h, +0.29 pct 5d, RSI14 66.3, above MA20. BTC.D 58.39 stable. Alts broadly red. MARA -11, CLSK -12 (miner beta amplification). COIN weak."
+            },
+            {
+              "plain": "Smaller coins are taking the broader market's risk-off mood. Solana, Ethereum, Avalanche, Chainlink all down 3 to 5 percent. The momentum cohort is cooling alongside the equity selloff.",
+              "pro": "SOL 93.85 -3.6, ETH 2,259.60 -3.41, AVAX 9.73 -4.01, LINK 10.15 -4.2, AAVE 95.10 -6.11, ETC 9.29 -5.04. RSI cooling across; risk-off contagion from equities. ETH below MA20 (weakest major)."
+            },
+            {
+              "plain": "Uniswap is still up 8 percent over 5 days but pulled back 4.75 percent today. The overbought meter cooled to 69, off the parabolic 86 from last week. Less extended but no clean entry yet.",
+              "pro": "UNI 3.71 -4.75 24h, +8.06 5d, RSI14 68.7 (cooled from 85.7). Trim half > 4.00 if held, re-add 3.40. Mean-revert pressure but not parabolic anymore."
+            },
+            {
+              "plain": "No clean crypto setup today. The whole space is following equities lower into the inflation print. Wait for stabilization above current levels or a deeper flush that resets the overbought meters.",
+              "pro": "No tradable crypto setup. Risk-off contagion from equities into CPI Wed. Wait for BTC to hold > 79K or alts to base. ETH below MA20 is the canary. Re-evaluate post-CPI."
+            }
+          ]
+        },
+        "actions": [],
+        "coins": [
+          {
+            "symbol": "BTC",
+            "last": 80242.95,
+            "change_5d_pct": 0.29,
+            "note": "Down 1.8 pct in 24h, holding 80K with the broader risk-off mood.",
+            "detail": {
+              "plain": "Bitcoin slipped to 80,243, down 1.8 percent in the past day, holding the 80,000 line. It's following the equity market lower ahead of Wednesday's inflation data. If you hold Bitcoin or crypto-related stocks like Coinbase and the miners, those fell harder today. The level to watch is 79,000: holding above it through Wednesday keeps the structure intact. If it breaks 79,000 on a hot CPI print, expect more downside.",
+              "pro": "BTC 80,243 -1.82 pct 24h, +0.29 pct 5d, RSI14 66.3, above MA20. BTC.D 58.39 stable. Risk-off contagion from equities into CPI Wed. Hold > 79K = structure intact, < 77K = trend break. COIN/MARA/CLSK miner beta amplifying."
+            }
+          },
+          {
+            "symbol": "ETH",
+            "last": 2259.6,
+            "change_5d_pct": -1.38,
+            "note": "Down 3.41 pct in 24h, dropped below its 20-day average. Weakest major.",
+            "detail": {
+              "plain": "Ethereum dropped 3.4 percent to 2,260 and slipped below its 20-day average price, making it the weakest of the major coins. It's down 1.4 percent over 5 days while Bitcoin is flat. If you hold Ethereum, the 20-day average around 2,300 is now resistance, not support. Wait for a reclaim of that level before adding.",
+              "pro": "ETH 2,259.60 -3.41 pct 24h, -1.38 pct 5d, RSI14 46.3 neutral. Below MA20 (~2,300). ETH/BTC ratio sliding. Weakest major; wait for MA20 reclaim before entry. Canary for the alt cohort."
+            }
+          },
+          {
+            "symbol": "SOL",
+            "last": 93.85,
+            "change_5d_pct": 6.16,
+            "note": "Down 3.6 pct in 24h, cooling from RSI 75 but still the best 5-day performer.",
+            "detail": {
+              "plain": "Solana dropped 3.6 percent today to 94 but is still up 6 percent over 5 days, the best of the majors over that window. The overbought meter at 73 is still stretched. If you hold Solana, this is a normal pullback within the uptrend, but wait for it to settle before adding more. The level to watch is 88 as support.",
+              "pro": "SOL 93.85 -3.6 pct 24h, +6.16 pct 5d, RSI14 73.3, above MA20. Cooling from stretched read; mean-revert phase. Add target ~88. Best 5d performer in the cohort but extended."
+            }
+          },
+          {
+            "symbol": "XRP",
+            "last": 1.42,
+            "change_5d_pct": 2.54,
+            "note": "Down 3.68 pct in 24h, holding above its 20-day average. Less stretched than the alt cohort.",
+            "detail": {
+              "plain": "XRP dropped 3.7 percent to 1.42 in the risk-off move, but it's still up 2.5 percent over 5 days and holding above its 20-day average. The overbought meter at 58 is mid-range, less stretched than the rest of the alt cohort. If you hold XRP, no action needed; the structure is still intact above 1.38.",
+              "pro": "XRP 1.42 -3.68 pct 24h, +2.54 pct 5d, RSI14 57.9 healthy. Above MA20. Hold structure intact > 1.38. Less extended than alt cohort; risk-off pullback within range."
+            }
+          },
+          {
+            "symbol": "AAVE",
+            "last": 95.1,
+            "change_5d_pct": 2.88,
+            "note": "Down 6.11 pct in 24h, the worst alt move today. RSI cooled to 47.",
+            "detail": {
+              "plain": "AAVE dropped 6 percent today to 95, the biggest decline among the alts, after breaking 99 last week. The overbought meter cooled all the way to 47, neutral now. If you don't own AAVE, this is closer to a buy zone than it was last week, but wait for it to stop falling first: a hold above 92 through Wednesday is the confirmation. If you bought the 99 break, you're underwater; consider whether 92 is your stop.",
+              "pro": "AAVE 95.10 -6.11 pct 24h, +2.88 pct 5d, RSI14 47.4 (cooled from 63). Above MA20 still. Hold > 92 = base forming, < 90 = invalidation of the 99-break thesis. Closer to value vs last week but no reversal signal yet."
+            }
+          },
+          {
+            "symbol": "UNI",
+            "last": 3.71,
+            "change_5d_pct": 8.06,
+            "note": "Down 4.75 pct in 24h, cooled from parabolic. RSI 69 from 86 last week.",
+            "detail": {
+              "plain": "Uniswap dropped 4.75 percent today to 3.71 but is still up 8 percent over 5 days. The overbought meter cooled to 69, off the dangerous 86 reading from last week, so it's much less stretched now. If you own UNI, consider trimming half above 4.00. If you don't, wait for a pullback to 3.40, the old breakout level, for a cleaner entry; chasing here still risks buying near a short-term top.",
+              "pro": "UNI 3.71 -4.75 pct 24h, +8.06 pct 5d, RSI14 68.7 (cooled from 85.7). Above MA20. Trim half > 4.00 if held, re-add 3.40 (old breakout level). Mean-revert pressure but no longer parabolic."
+            }
+          }
+        ],
+        "recommendations": {
+          "buy": [],
+          "sell": [
+            {
+              "ticker": "UNI spot",
+              "verdict": "TRIM IF EXTENDED",
+              "confidence": 52,
+              "confidence_reason": "Score reflects the 8 pct 5d move with RSI 69 still above-neutral, capped because the stretch already cooled significantly from 86 last week and today's 4.75 pct drop reset some of it.",
+              "vehicle": "crypto",
+              "pros": "UNI at 3.71 still up 8 percent over 5 days. RSI 69 is above neutral, and crypto is broadly risk-off following equities lower into CPI. Mean-revert pressure persists.",
+              "cons": "RSI cooled from 86 last week to 69 now, so the parabolic extreme is gone. Today's 4.75 percent drop already reset some of the stretch. A cool CPI could spark a relief bounce across the alt cohort.",
+              "action": {
+                "plain": "If you own Uniswap, consider trimming half above 4.00. Wait for 3.40 to add back. If you don't own it, no rush to buy into the risk-off tape.",
+                "pro": "UNI 3.71 RSI 68.7. Trim half > 4.00 if held, re-add 3.40 (old breakout). Mean-revert pressure but not parabolic. Risk-off contagion is the near-term headwind."
+              }
+            }
+          ]
+        },
+        "action": {
+          "tier": "NO_ACTION",
+          "text": "No clean crypto setup. Whole space following equities lower into CPI Wednesday. Wait for BTC to hold above 79K or alts to base; re-evaluate post-CPI."
+        }
+      },
+      "sparks": {
+        "IWM": [
+          275.52,
+          276.65,
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8,
+          282.26,
+          284.17,
+          285.33,
+          279.03
+        ],
+        "^TNX": [
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.451
+        ],
+        "ten_year": [
+          4.323,
+          4.31,
+          4.336,
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.451
+        ],
+        "GC=F": [
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4673.2998
+        ],
+        "gold": [
+          4705.1001,
+          4722.2998,
+          4675.3999,
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4673.2998
+        ],
+        "QQQ": [
+          651.42,
+          663.88,
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23,
+          713.29,
+          699.92
+        ],
+        "SPY": [
+          708.45,
+          713.94,
+          715.17,
+          711.69,
+          711.58,
+          718.66,
+          720.65,
+          718.01,
+          723.77,
+          733.83,
+          731.58,
+          737.62,
+          739.3,
+          733.17
+        ],
+        "^VIX": [
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          18.89
+        ],
+        "vix": [
+          19.31,
+          18.71,
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          18.89
+        ],
+        "MO": [
+          67.15,
+          66.88,
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12,
+          68.61,
+          70.12
+        ],
+        "GEHC": [
+          69.89,
+          68.83,
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04,
+          61.735,
+          61.34,
+          63.47,
+          61.7,
+          62.19
+        ],
+        "DX-Y.NYB": [
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84,
+          97.94,
+          98.377
+        ],
+        "dxy": [
+          98.8,
+          98.51,
+          98.48,
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84,
+          97.94,
+          98.377
+        ],
+        "PODD": [
+          192.21,
+          189.56,
+          188.31,
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28,
+          160.4,
+          154.16,
+          154.17,
+          158.49
+        ],
+        "CL=F": [
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          101.27
+        ],
+        "oil": [
+          95.85,
+          94.4,
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          101.27
+        ],
+        "XLE": [
+          56.98,
+          56.87,
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39,
+          59.45,
+          57.0,
+          55.95,
+          55.7,
+          57.17,
+          57.535
+        ]
+      },
+      "market_status": {
+        "tier": "MARKET OPEN",
+        "text": "Regular session. Closing bell in 4h 06m at 16:00 ET."
+      }
+    },
+    {
       "date": "2026-05-11",
       "updated_at": "2026-05-11T21:35:00-07:00",
       "regime": "BULL",
