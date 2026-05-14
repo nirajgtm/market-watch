@@ -64,7 +64,7 @@
         "indices": [
           {
             "ticker": "SPY",
-            "last": 747.14,
+            "last": 748.45,
             "rsi": 80.7,
             "note": "Fresh all-time high at 744 in quiet pre-market, up 0.31 pct. Overbought meter still extreme at 81.",
             "thesis": {
@@ -93,7 +93,7 @@
           },
           {
             "ticker": "QQQ",
-            "last": 719.42,
+            "last": 721.3,
             "rsi": 81.9,
             "note": "Fresh all-time high at 716, up 0.23 pct. Overbought meter still extreme at 82. Tech-heavy index pushing higher even as XLK sector relative-strength is the worst on the board.",
             "thesis": {
@@ -122,7 +122,7 @@
           },
           {
             "ticker": "IWM",
-            "last": 284.03,
+            "last": 284.36,
             "rsi": 59.4,
             "note": "Up 0.11 pct, still lagging large caps. Overbought meter at 59 is neutral, small caps not joining the index push to highs.",
             "thesis": {
@@ -151,11 +151,11 @@
           }
         ],
         "vol_yields": {
-          "vix": 17.95,
+          "vix": 17.87,
           "vix_term": "STEEP_CONTANGO",
           "ten_year": 4.45,
-          "dxy": 98.61,
-          "oil": 100.83,
+          "dxy": 98.77,
+          "oil": 100.55,
           "gold": 4693.6,
           "details": {
             "vix": {
@@ -399,8 +399,8 @@
         "watchlist": [
           {
             "ticker": "MO",
-            "last": 72.21,
-            "change_pct": 0.82,
+            "last": 72.31,
+            "change_pct": 0.94,
             "trigger_zone": "70.00 long",
             "status": "TRIGGERED",
             "note": "Holding above the $70 trigger at 71.54. Two days now above 70. Defensive Staples bid intact.",
@@ -430,8 +430,8 @@
           },
           {
             "ticker": "GEHC",
-            "last": 62.87,
-            "change_pct": 1.96,
+            "last": 62.68,
+            "change_pct": 1.65,
             "trigger_zone": "63.00 long",
             "status": "NEAR",
             "note": "Recovered to 62.44, fewer than 1 percent below the $63 trigger. Re-arms on a green close back above 63 with volume.",
@@ -461,8 +461,8 @@
           },
           {
             "ticker": "XLE",
-            "last": 57.6,
-            "change_pct": 0.15,
+            "last": 57.74,
+            "change_pct": 0.41,
             "trigger_zone": "56.50 long",
             "status": "NOT_TRIGGERED",
             "note": "1.6 pct above the trigger. Energy still negative on 5d rotation despite oil at $103.",
@@ -492,8 +492,8 @@
           },
           {
             "ticker": "PODD",
-            "last": 150.74,
-            "change_pct": 1.13,
+            "last": 150.24,
+            "change_pct": 0.8,
             "trigger_zone": "170-175 short",
             "status": "NOT_TRIGGERED",
             "note": "At 158, well below the 170-175 short-trigger zone. Short window closed.",
@@ -1324,7 +1324,7 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 80954.09,
+            "last": 80988.02,
             "change_5d_pct": -0.52,
             "note": "Slipped below 80K despite equity relief. Down 0.88 pct in 24h.",
             "detail": {
@@ -1334,7 +1334,7 @@
           },
           {
             "symbol": "ETH",
-            "last": 2287.45,
+            "last": 2287.93,
             "change_5d_pct": -1.79,
             "note": "Down 0.39 pct in 24h, still below 20-day average. Weakest major.",
             "detail": {
@@ -1344,7 +1344,7 @@
           },
           {
             "symbol": "SOL",
-            "last": 92.27,
+            "last": 92.45,
             "change_5d_pct": 0.15,
             "note": "Down 2.33 pct in 24h, cooling from RSI 75 stretch.",
             "detail": {
@@ -1364,7 +1364,7 @@
           },
           {
             "symbol": "DOGE",
-            "last": 0.12,
+            "last": 0.11,
             "change_5d_pct": 1.83,
             "note": "Up 1.31 pct in 24h, one of the few greens. Lottery-cohort lifting.",
             "detail": {
@@ -1374,7 +1374,7 @@
           },
           {
             "symbol": "AAVE",
-            "last": 99.12,
+            "last": 99.02,
             "change_5d_pct": 2.88,
             "note": "Flat today (no fresh data), still cleanest alt RSI profile.",
             "detail": {
@@ -1393,6 +1393,38 @@
         }
       },
       "sparks": {
+        "GEHC": [
+          70.48,
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04,
+          61.735,
+          61.34,
+          63.47,
+          61.7,
+          62.29,
+          61.89,
+          62.68
+        ],
+        "XLE": [
+          56.77,
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39,
+          59.45,
+          57.0,
+          55.95,
+          55.7,
+          57.17,
+          57.57,
+          57.63,
+          57.745
+        ],
         "DX-Y.NYB": [
           98.48,
           98.62,
@@ -1407,7 +1439,7 @@
           97.94,
           98.29,
           98.48,
-          98.611
+          98.77
         ],
         "dxy": [
           98.48,
@@ -1423,23 +1455,55 @@
           97.94,
           98.29,
           98.48,
-          98.611
+          98.77
         ],
-        "IWM": [
-          277.14,
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          286.8,
-          282.26,
-          284.17,
-          285.33,
-          282.57,
-          282.67,
-          284.0501
+        "CL=F": [
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          102.18,
+          101.02,
+          100.58
+        ],
+        "oil": [
+          96.37,
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          102.18,
+          101.02,
+          100.58
+        ],
+        "MO": [
+          66.0,
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12,
+          68.61,
+          69.89,
+          71.54,
+          72.3
         ],
         "^TNX": [
           4.336,
@@ -1455,7 +1519,7 @@
           4.41,
           4.463,
           4.481,
-          4.451
+          4.453
         ],
         "ten_year": [
           4.336,
@@ -1471,39 +1535,7 @@
           4.41,
           4.463,
           4.481,
-          4.451
-        ],
-        "^VIX": [
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.95
-        ],
-        "vix": [
-          18.02,
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.95
+          4.453
         ],
         "GC=F": [
           4675.3999,
@@ -1537,86 +1569,6 @@
           4697.7002,
           4693.1001
         ],
-        "QQQ": [
-          664.23,
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77,
-          694.94,
-          711.23,
-          713.29,
-          707.24,
-          714.71,
-          719.245
-        ],
-        "XLE": [
-          56.77,
-          57.71,
-          59.03,
-          59.65,
-          58.85,
-          59.39,
-          59.45,
-          57.0,
-          55.95,
-          55.7,
-          57.17,
-          57.57,
-          57.63,
-          57.6
-        ],
-        "CL=F": [
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42,
-          98.07,
-          102.18,
-          101.02,
-          100.83
-        ],
-        "oil": [
-          96.37,
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42,
-          98.07,
-          102.18,
-          101.02,
-          100.83
-        ],
-        "GEHC": [
-          70.48,
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0,
-          61.04,
-          61.735,
-          61.34,
-          63.47,
-          61.7,
-          62.29,
-          61.89,
-          62.89
-        ],
         "PODD": [
           188.31,
           182.87,
@@ -1631,7 +1583,71 @@
           154.17,
           158.35,
           148.84,
-          150.74
+          150.245
+        ],
+        "^VIX": [
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.87
+        ],
+        "vix": [
+          18.02,
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.87
+        ],
+        "IWM": [
+          277.14,
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8,
+          282.26,
+          284.17,
+          285.33,
+          282.57,
+          282.67,
+          284.37
+        ],
+        "QQQ": [
+          664.23,
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23,
+          713.29,
+          707.24,
+          714.71,
+          721.394
         ],
         "SPY": [
           715.17,
@@ -1647,30 +1663,14 @@
           739.3,
           738.18,
           742.31,
-          747.1205
-        ],
-        "MO": [
-          66.0,
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17,
-          69.04,
-          68.12,
-          68.61,
-          69.89,
-          71.54,
-          72.24
+          748.5
         ]
       },
       "market_status": {
         "tier": "MARKET OPEN",
-        "text": "Regular session. Closing bell in 5h 00m at 16:00 ET."
+        "text": "Regular session. Closing bell in 4h 30m at 16:00 ET."
       },
-      "last_refreshed_at": "2026-05-14T08:00:06-07:00"
+      "last_refreshed_at": "2026-05-14T08:30:06-07:00"
     },
     {
       "date": "2026-05-13",
