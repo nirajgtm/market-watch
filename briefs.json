@@ -3,13 +3,13 @@
   "briefs": [
     {
       "date": "2026-05-15",
-      "updated_at": "2026-05-15T08:30:00-07:00",
+      "updated_at": "2026-05-15T15:35:00-07:00",
       "regime": "BULL",
-      "regime_note": "Retail Sales April printed and yields jumped 13 bps to 4.57. Indices pulling back from yesterday's all-time highs, volatility ticking up to 18.45. Tech still the worst sector at -9.93 over 5 days, defensive rotation deepening. NVDA earnings next week.",
+      "regime_note": "Friday close: 10Y broke 4.60 (the tech-pain threshold), SPY closed -1.2 and QQQ -1.5. VIX +6.78 percent on the day. Tech worst sector at -9.93. NVDA earnings next week and PCE on 5/29 are the two catalysts that decide the next leg.",
       "vix_bucket": "normal",
       "headline": {
-        "plain": "Stocks pulled back from yesterday's highs after retail sales data pushed bond yields up sharply. Volatility ticked up, tech is still the weakest sector. Nvidia earnings next week is the next big catalyst.",
-        "pro": "Post-Retail-Sales tape: SPY 740.34 RSI 71 (off ATH 744.81), QQQ 709.47 RSI 73.7, IWM 277.65 5d -2.29 (below 20MA). VIX 18.45 5d +7.33. 10Y 4.57 (+13bps). DXY 99.24. Sectors XLV/XLU/XLF lead; XLK -9.93 5d worst. NVDA ER within 7d. PCE Apr 5/29."
+        "plain": "Stocks closed red on Friday after hot retail sales pushed bond yields to the 4.60 pain threshold. Volatility jumped 7 percent on the day. Nvidia earnings next week is the next big catalyst.",
+        "pro": "EOD Fri 5/15: SPY 739.17 -1.20, QQQ 708.93 -1.51, IWM ~278 (laggard). VIX 18.43 +6.78 (close hit threshold). 10Y 4.60 (+14 bps on day, broke pain level). Sectors XLV +7.52 / XLU +6.98 / XLF +6.16 lead; XLK -9.93 worst. NVDA ER within 7d. PCE Apr 5/29."
       },
       "macro": {
         "tab_intro": {
@@ -63,7 +63,7 @@
         "indices": [
           {
             "ticker": "SPY",
-            "last": 739.17,
+            "last": 740.34,
             "rsi": 71.0,
             "note": "Pulled back from yesterday's ATH 744.81 after retail sales pushed yields up. Overbought meter cooled from 81 to 71, less stretched but still above the 70 line.",
             "thesis": {
@@ -92,7 +92,7 @@
           },
           {
             "ticker": "QQQ",
-            "last": 708.93,
+            "last": 709.47,
             "rsi": 73.7,
             "note": "Down from yesterday's ATH after the yield spike hit growth multiples hardest. Overbought meter cooled from 82 to 74 but still above the 70 line. Tech the most exposed to the higher-rate scare.",
             "thesis": {
@@ -121,7 +121,7 @@
           },
           {
             "ticker": "IWM",
-            "last": 277.6,
+            "last": 277.65,
             "rsi": 50.6,
             "note": "Broke below the 20-day average after the yield jump. Small caps the most rate-sensitive segment, down 2.29 percent over 5 days. Overbought meter at 51 is neutral.",
             "thesis": {
@@ -153,17 +153,17 @@
           "vix": 18.43,
           "vix_term": "STEEP_CONTANGO",
           "ten_year": 4.6,
-          "dxy": 99.27,
-          "oil": 101.16,
-          "gold": 4543.6,
+          "dxy": 99.24,
+          "oil": 103.35,
+          "gold": 4685.4,
           "details": {
             "vix": {
               "plain": "Volatility ticked up to 18.45 from 17.89 yesterday and is now up 7 percent over 5 days. The bond-market scare from hot retail sales fed into stock vol. The futures curve still slopes up to 21 on the 3-month, so short-vol trades still work but the entry is now slightly worse than Thursday.",
               "pro": "VIX 18.45 (up from 17.89), 5d +7.33 (vix_5d_rising flag). VIX/VIX3M 0.86 STEEP_CONTANGO. VVIX 96.25. SHORT_PUT_SPREAD signal active. Near-term vol bid is the Retail-Sales yield-spike feeding into equity vol."
             },
             "ten_year": {
-              "plain": "10-year yield jumped to 4.57 from 4.44 yesterday, up 13 basis points in one session. Hot April retail sales means the consumer is stronger than expected, which means the Fed has less room to cut. Above 4.60 starts hitting growth stocks hard.",
-              "pro": "US10Y 4.57 (+13 bps post-Retail Sales). 5d +4.84. Hot consumer reduces Fed cut probability; growth multiples re-rate. 4.60 is the next pain threshold; 4.75 the panic level."
+              "plain": "10-year yield closed at 4.60 on Friday, up 14 basis points on the day and now exactly at the tech-pain threshold we'd been watching. Hot retail sales means the Fed has less room to cut. Above 4.70 the growth-stock pressure intensifies materially.",
+              "pro": "US10Y 4.60 EOD Fri (+14 bps on day, +5 pct 5d). At the pain threshold; 4.70 is the next step, 4.75 panic. Direct hit on duration-sensitive growth multiples; XLK -9.93 5d already reflecting it."
             },
             "dxy": {
               "plain": "Dollar firmed to 99.24 from 98.51 yesterday, now breaking the upper end of its recent range. The yield jump pulled foreign money into dollar assets. A stronger dollar pressures multinationals and commodities.",
@@ -257,7 +257,7 @@
         ],
         "action": {
           "tier": "WATCH",
-          "text": "Hot retail sales pushed yields up 13 bps and stocks off the highs. Defensive rotation deepening, tech still worst. VIX put spread still active. No new index entries while indices cool from extreme overbought."
+          "text": "Friday close: 10Y broke the 4.60 pain threshold, indices closed red, VIX up 7 percent. No new index entries. Watch for 10Y 4.70 next pain step and NVDA earnings next week as the two catalysts that decide the next leg."
         },
         "recommendations": {
           "buy": [
@@ -294,7 +294,7 @@
         "social": [
           {
             "ticker": "SPY",
-            "mentions": 1370,
+            "mentions": 1076,
             "sources": [
               "all_stocks",
               "daytrading",
@@ -308,33 +308,33 @@
               {
                 "sub": "Daytrading",
                 "title": "I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended.",
-                "score": 71,
+                "score": 242,
                 "flair": "Algos",
                 "body_excerpt": "This literally just happened and I am shaking typing this. I have been testing these AI trading tools everyone raves about, you know the ones promising to spot patterns and execute better than humans. Figured it was hype but thought why not..."
               },
               {
                 "sub": "thetagang",
                 "title": "Anyone getting absolutely wrecked from selling calls this year?",
-                "score": 51,
+                "score": 58,
                 "flair": "Discussion",
                 "body_excerpt": "I just about broke even this year. Which is really shitty if you consider that I bought MU at 400 and NBIS at 86 with about 60% of my portfolio at the start of the year.\n\nBut both of these positions are also attached with a riskless(almost)..."
               },
               {
-                "sub": "options",
-                "title": "800% on SPY Calls Today",
-                "score": 28,
+                "sub": "thetagang",
+                "title": "May projected option premium $8512. Slow and steady update.",
+                "score": 26,
                 "flair": "",
-                "body_excerpt": "Wish I could understand how the market has been so resilient as of late. Was extremely patient this morning waiting for a test of the 200ma which we bounced right off of. \n\nPre-empted the move and bought calls fairly early then got a signal..."
+                "body_excerpt": "Locked in $5173 premium profit for April. Already locked in $3477 premiums for May. \n\nHave another $5k of profit that I already sold for May. There's a good chance I will let all of it expire or get assigned. \n\nHave already sold $3885 of pr..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, running hotter than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand. The loudest take is: \"I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended\".",
-              "pro": "1370 mentions across 5 communities, +32% vs prior session. Sentiment neutral. Themes: AI and data-center demand. Top thesis: \"I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended\"."
+              "plain": "Heavy chatter today. Tone reads neutral. The conversation is centered on AI and data-center demand. The loudest take is: \"I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended\".",
+              "pro": "1076 mentions across 5 communities, -17% vs prior session. Sentiment neutral. Themes: AI and data-center demand. Top thesis: \"I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended\"."
             }
           },
           {
             "ticker": "QQQ",
-            "mentions": 280,
+            "mentions": 218,
             "sources": [
               "all_stocks",
               "wallstreetbets"
@@ -344,12 +344,26 @@
             "top_posts": [],
             "detail": {
               "plain": "QQQ is showing up across 2 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
-              "pro": "280 mentions across 2 communities, +11% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
+              "pro": "218 mentions across 2 communities, -26% vs prior session. Sentiment mixed. No post content cached; treat as a ranking, not a thesis."
             }
           },
           {
             "ticker": "VOO",
-            "mentions": 15,
+            "mentions": 13,
+            "sources": [
+              "stocks"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [],
+            "detail": {
+              "plain": "VOO is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
+              "pro": "13 mentions across 1 communities, +0% vs prior session. Sentiment neutral. No post content cached; treat as a ranking, not a thesis."
+            }
+          },
+          {
+            "ticker": "SMH",
+            "mentions": 9,
             "sources": [
               "stocks"
             ],
@@ -357,22 +371,8 @@
             "summary": "",
             "top_posts": [],
             "detail": {
-              "plain": "VOO is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
-              "pro": "15 mentions across 1 communities, +150% vs prior session. Sentiment bullish. No post content cached; treat as a ranking, not a thesis."
-            }
-          },
-          {
-            "ticker": "SLV",
-            "mentions": 0,
-            "sources": [
-              "stocktwits"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "The iShares Silver Trust is experiencing significant volatility and trading interest, driven by a combination of industrial demand for AI infrastructure and ...",
-            "top_posts": [],
-            "detail": {
-              "plain": "Light chatter today. Tone reads neutral.",
-              "pro": "0 mentions across 1 communities. Sentiment neutral."
+              "plain": "SMH is showing up across 1 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
+              "pro": "9 mentions across 1 communities, +200% vs prior session. Sentiment bullish. No post content cached; treat as a ranking, not a thesis."
             }
           }
         ]
@@ -425,8 +425,8 @@
         "watchlist": [
           {
             "ticker": "MO",
-            "last": 73.09,
-            "change_pct": 1.37,
+            "last": 72.43,
+            "change_pct": 1.24,
             "trigger_zone": "70.00 long",
             "status": "TRIGGERED",
             "note": "Holding above the $70 trigger at 72.43, third day green. Defensive Staples and tobacco names catching extra bid on the yield scare.",
@@ -456,8 +456,8 @@
           },
           {
             "ticker": "GEHC",
-            "last": 60.76,
-            "change_pct": -3.26,
+            "last": 61.58,
+            "change_pct": -1.37,
             "trigger_zone": "63.00 long",
             "status": "NOT_TRIGGERED",
             "note": "Pulled back to 61.58 today, 2.25 percent below the $63 trigger. Re-arms on a green close back above 63 with volume.",
@@ -487,8 +487,8 @@
           },
           {
             "ticker": "XLE",
-            "last": 59.44,
-            "change_pct": 2.27,
+            "last": 57.4,
+            "change_pct": -0.29,
             "trigger_zone": "56.50 long",
             "status": "NOT_TRIGGERED",
             "note": "1.6 pct above the trigger. Energy still negative on 5d rotation despite oil at $103.",
@@ -518,8 +518,8 @@
           },
           {
             "ticker": "PODD",
-            "last": 147.46,
-            "change_pct": -0.82,
+            "last": 158.51,
+            "change_pct": 0.1,
             "trigger_zone": "170-175 short",
             "status": "NOT_TRIGGERED",
             "note": "At 158, well below the 170-175 short-trigger zone. Short window closed.",
@@ -576,87 +576,106 @@
           "gainers": [],
           "losers": [
             {
-              "ticker": "COIN",
-              "last": 192.91,
-              "chg": -9.01,
-              "vol": 6209683,
+              "ticker": "SOFI",
+              "last": 15.61,
+              "chg": -2.56,
+              "vol": 49790347,
               "spark": [
-                197.96,
-                192.96,
-                201.16,
-                216.6,
-                207.64,
-                201.8,
-                212.01,
-                193.2
+                16.3,
+                16.0,
+                15.75,
+                16.26,
+                15.9,
+                15.31,
+                16.02,
+                15.61
               ],
               "detail": {
-                "plain": "COIN closed down 9.01 percent at 192.91 on volume of 6.2M shares today. Headline: Friday's session: gap up and gap down stock in the S&P500 index",
-                "pro": "COIN -9.01 pct, close 192.91, vol 6.2M. Headline: Friday's session: gap up and gap down stock in the S&P500 index"
-              },
-              "note": "Friday's session: gap up and gap down stock in the S&P500 index"
+                "plain": "SOFI closed down 2.56 percent at 15.61 on volume of 49.8M shares today.",
+                "pro": "SOFI -2.56 pct, close 15.61, vol 49.8M."
+              }
+            },
+            {
+              "ticker": "RIVN",
+              "last": 13.79,
+              "chg": -5.03,
+              "vol": 42023897,
+              "spark": [
+                14.48,
+                14.18,
+                14.22,
+                14.08,
+                13.95,
+                14.27,
+                14.52,
+                13.79
+              ],
+              "detail": {
+                "plain": "RIVN closed down 5.03 percent at 13.79 on volume of 42.0M shares today.",
+                "pro": "RIVN -5.03 pct, close 13.79, vol 42.0M."
+              }
             }
           ]
         },
         "wsb_top": [
           {
             "ticker": "MU",
-            "score": 967,
+            "score": 719,
             "rank": 1,
             "rank_prev": 1,
-            "delta_pct": 1.2,
+            "delta_pct": -27.7,
             "name": "Micron Technology",
             "detail": {
-              "plain": "Micron Technology (MU) has 967 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 1 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "MU WSB rank 1 (967 mentions), prior rank 1, mentions delta +1 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Micron Technology (MU) has 719 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -28 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MU WSB rank 1 (719 mentions), prior rank 1, mentions delta -28 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "SPY",
-            "score": 664,
+            "score": 519,
             "rank": 2,
             "rank_prev": 2,
-            "delta_pct": 31.5,
+            "delta_pct": -16.6,
             "name": "SPDR S&P 500 ETF Trust",
             "detail": {
-              "plain": "SPDR S&P 500 ETF Trust (SPY) has 664 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 32 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "SPY WSB rank 2 (664 mentions), prior rank 2, mentions delta +32 pct. Retail attention only; pair with price/flow before treating as actionable."
-            }
-          },
-          {
-            "ticker": "NVDA",
-            "score": 425,
-            "rank": 3,
-            "rank_prev": 4,
-            "delta_pct": 10.1,
-            "name": "NVIDIA",
-            "detail": {
-              "plain": "NVIDIA (NVDA) has 425 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 10 percent versus 24 hours ago, and the name jumped up from rank 4 to rank 3. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "NVDA WSB rank 3 (425 mentions), prior rank 4, mentions delta +10 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "SPDR S&P 500 ETF Trust (SPY) has 519 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -17 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "SPY WSB rank 2 (519 mentions), prior rank 2, mentions delta -17 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "MSFT",
-            "score": 398,
-            "rank": 4,
+            "score": 482,
+            "rank": 3,
             "rank_prev": 3,
-            "delta_pct": -11.4,
+            "delta_pct": 12.1,
             "name": "Microsoft",
             "detail": {
-              "plain": "Microsoft (MSFT) has 398 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -11 percent versus 24 hours ago, and the name jumped down from rank 3 to rank 4. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "MSFT WSB rank 4 (398 mentions), prior rank 3, mentions delta -11 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "Microsoft (MSFT) has 482 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 12 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "MSFT WSB rank 3 (482 mentions), prior rank 3, mentions delta +12 pct. Retail attention only; pair with price/flow before treating as actionable."
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "score": 414,
+            "rank": 4,
+            "rank_prev": 4,
+            "delta_pct": -9.4,
+            "name": "NVIDIA",
+            "detail": {
+              "plain": "NVIDIA (NVDA) has 414 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -9 percent versus 24 hours ago. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "NVDA WSB rank 4 (414 mentions), prior rank 4, mentions delta -9 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           },
           {
             "ticker": "POET",
-            "score": 339,
+            "score": 224,
             "rank": 5,
-            "rank_prev": 16,
-            "delta_pct": 137.1,
+            "rank_prev": 6,
+            "delta_pct": -27.0,
             "name": "POET Technologies",
             "detail": {
-              "plain": "POET Technologies (POET) has 339 mentions on r/wallstreetbets in the last 24 hours. Mentions are up 137 percent versus 24 hours ago, and the name jumped up from rank 16 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
-              "pro": "POET WSB rank 5 (339 mentions), prior rank 16, mentions delta +137 pct. Retail attention only; pair with price/flow before treating as actionable."
+              "plain": "POET Technologies (POET) has 224 mentions on r/wallstreetbets in the last 24 hours. Mentions are up -27 percent versus 24 hours ago, and the name jumped up from rank 6 to rank 5. This is a retail-attention signal, not a directional thesis on its own.",
+              "pro": "POET WSB rank 5 (224 mentions), prior rank 6, mentions delta -27 pct. Retail attention only; pair with price/flow before treating as actionable."
             }
           }
         ],
@@ -712,48 +731,49 @@
         "social": [
           {
             "ticker": "NVDA",
-            "mentions": 983,
+            "mentions": 963,
             "sources": [
               "all_stocks",
+              "daytrading",
               "options",
               "stocks",
               "thetagang",
               "uw",
               "wallstreetbets"
             ],
-            "sentiment": "NEUTRAL",
+            "sentiment": "BULLISH",
             "summary": "",
             "top_posts": [
               {
                 "sub": "unusual_whales",
                 "title": "Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China.",
-                "score": 462,
+                "score": 461,
                 "flair": "",
                 "body_excerpt": ""
               },
               {
                 "sub": "unusual_whales",
-                "title": "BREAKING: Unusual Whales just released the FULL REPORT on Congress Trading in 2025!",
-                "score": 95,
-                "flair": "\ud83c\udfdb Senate \ud83c\udfdb",
-                "body_excerpt": "I just released the full report on Congress trading in 2025: [https://unusualwhales.com/congress-trading-report-2025](https://unusualwhales.com/congress-trading-report-2025)\n\nHere on Reddit, I've placed a preview (as much as I could fit wit..."
+                "title": "Trump literally insider traded with Nvidia",
+                "score": 454,
+                "flair": "",
+                "body_excerpt": "BREAKING: Trump purchased up to a $1 million worth of Nvidia, $NVDA, stock on January 6, 2026.\n\nThis is a week before the Commerce Department officially approved the sale of Nvidia chips to China."
               },
               {
-                "sub": "unusual_whales",
-                "title": "Trump bought stocks as the market collapsed in March from his Iran war",
-                "score": 72,
-                "flair": "",
-                "body_excerpt": "BREAKING: Trump has disclosed thousand of transactions.\n\nHe owns more than a million of $NVDA, for example.\n\nHe also owns, $TSLA, $ADBE, $NOW, $AMZN, $AAPL, and much more.\n\nThe transactions are from 2026, and most are up to $50,000 purchase..."
+                "sub": "Daytrading",
+                "title": "I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended.",
+                "score": 242,
+                "flair": "Algos",
+                "body_excerpt": "This literally just happened and I am shaking typing this. I have been testing these AI trading tools everyone raves about, you know the ones promising to spot patterns and execute better than humans. Figured it was hype but thought why not..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction.",
-              "pro": "983 mentions across 6 communities, +171% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China\"."
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand.",
+              "pro": "963 mentions across 7 communities, +108% vs prior session. Sentiment bullish. Themes: AI and data-center demand. Top thesis: \"Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China\"."
             }
           },
           {
             "ticker": "MU",
-            "mentions": 1993,
+            "mentions": 1512,
             "sources": [
               "all_stocks",
               "race10m",
@@ -767,110 +787,107 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar",
-                "score": 81,
+                "score": 95,
                 "flair": "",
                 "body_excerpt": "After diving deep into MU and the HBM/AI memory boom lately, I\u2019m starting to look past the obvious big names to find the next set of plays that could ride the same tailwind\n\nI know we\u2019re all hyped on Micron, SK Hynix, and Samsung right now ..."
               },
               {
                 "sub": "thetagang",
                 "title": "Anyone getting absolutely wrecked from selling calls this year?",
-                "score": 51,
+                "score": 58,
                 "flair": "Discussion",
                 "body_excerpt": "I just about broke even this year. Which is really shitty if you consider that I bought MU at 400 and NBIS at 86 with about 60% of my portfolio at the start of the year.\n\nBut both of these positions are also attached with a riskless(almost)..."
               },
               {
-                "sub": "thetagang",
-                "title": "May Short Put Vertical Results",
-                "score": 28,
+                "sub": "TheRaceTo10Million",
+                "title": "$MU",
+                "score": 47,
                 "flair": "",
-                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+                "body_excerpt": "Thoughts on MU long term?"
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand and memory and storage upcycle. Traders are writing puts to collect premium and playing defined-risk spreads.",
-              "pro": "1993 mentions across 5 communities, -56% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle. Strategy mix: writing puts to collect premium; playing defined-risk spreads. Top thesis: \"If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar\"."
+              "plain": "Heavy chatter today, cooler than yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand and memory and storage upcycle.",
+              "pro": "1512 mentions across 5 communities, -36% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle. Top thesis: \"If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar\"."
             }
           },
           {
             "ticker": "MSFT",
-            "mentions": 870,
+            "mentions": 1030,
             "sources": [
               "all_stocks",
               "options",
               "stocks",
-              "stocktwits",
               "wallstreetbets"
             ],
             "sentiment": "BEARISH",
-            "summary": "Microsoft is trending as investors digest news of the company exploring new AI startup acquisitions to diversify its strategy beyond OpenAI, while the commun...",
+            "summary": "",
             "top_posts": [
               {
                 "sub": "options",
                 "title": "VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)",
-                "score": 102,
+                "score": 101,
                 "flair": "",
                 "body_excerpt": "TL;DR\n\nMacro cooked, inflation immortal, multiples pricing in the singularity = short.\n\nVertiv ($VRT) is a \\~90x trailing P/E electrical equipment company servicing AI capex build. Business is real (+30% YoY revenue, 42% ROE). The\u00a0multiple\u00a0..."
               },
               {
                 "sub": "options",
                 "title": "Arista Networks OTM calls?",
-                "score": 1,
+                "score": 2,
                 "flair": "",
                 "body_excerpt": "Hi everyone,\n\nas this AI rally keeps going (even if the last two days slowed down), it\u00b4s hard to find stocks that are not above the price targets\u00a0by analysts or options where the greeks and IV don\u00b4t eat all the potential gains. While it\u00b4s t..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bearish. The conversation is centered on AI and data-center demand. Traders are buying puts for downside and playing defined-risk spreads. The loudest take is: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\".",
-              "pro": "870 mentions across 5 communities, +200% vs prior session. Sentiment bearish. Themes: AI and data-center demand. Strategy mix: buying puts for downside; playing defined-risk spreads. Top thesis: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\"."
+              "pro": "1030 mentions across 4 communities, +100% vs prior session. Sentiment bearish. Themes: AI and data-center demand. Strategy mix: buying puts for downside; playing defined-risk spreads. Top thesis: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\"."
+            }
+          },
+          {
+            "ticker": "POET",
+            "mentions": 459,
+            "sources": [
+              "all_stocks",
+              "race10m",
+              "wallstreetbets"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "Missed my Rocket",
+                "score": 247,
+                "flair": "",
+                "body_excerpt": "I had been sitting on 10,000 shares of POET for over a year. Accumulating here and there, average share price $4.23. Three weeks ago POET was riding at $15 a share and I was feeling like my patience finally paid off. Then the news came out ..."
+              },
+              {
+                "sub": "TheRaceTo10Million",
+                "title": "I got $POET ry for you.",
+                "score": 2,
+                "flair": "",
+                "body_excerpt": "There once was a boy called $POET.\n\nHe convinced everyone his interposers will revolutionize AI chip interconnects.\n\nEveryone believed him until they realize that photonics is hard and they started losing money.\n\nOne day, $POET decided to m..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today, cooler than yesterday. Tone reads neutral. The conversation is centered on AI and data-center demand and the earnings reaction. The loudest take is: \"Missed my Rocket\".",
+              "pro": "459 mentions across 3 communities, -27% vs prior session. Sentiment neutral. Themes: AI and data-center demand; the earnings reaction. Top thesis: \"Missed my Rocket\"."
             }
           },
           {
             "ticker": "NBIS",
-            "mentions": 245,
+            "mentions": 200,
             "sources": [
               "all_stocks",
               "stocks",
-              "stocktwits",
-              "thetagang",
               "wallstreetbets"
             ],
-            "sentiment": "NEUTRAL",
-            "summary": "Nebius Group is trending as institutional investors and the community react to blowout earnings and a series of major price target upgrades from analysts, fu...",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "Anyone getting absolutely wrecked from selling calls this year?",
-                "score": 51,
-                "flair": "Discussion",
-                "body_excerpt": "I just about broke even this year. Which is really shitty if you consider that I bought MU at 400 and NBIS at 86 with about 60% of my portfolio at the start of the year.\n\nBut both of these positions are also attached with a riskless(almost)..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "Taking opinions",
-                "score": 18,
-                "flair": "Discussion",
-                "body_excerpt": "Story: Sold these this year for 13.55 each expiring EOY. Didn\u2019t think NBIS would be worth 200 this year. \n\nGoal: I want to keep my shares or roll them and sell them at higher than 200 if I have to.\n\nThe move: I know I want to roll and I\u2019m t..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today. Tone reads neutral. The loudest take is: \"Anyone getting absolutely wrecked from selling calls this year?\".",
-              "pro": "245 mentions across 5 communities, -19% vs prior session. Sentiment neutral. Top thesis: \"Anyone getting absolutely wrecked from selling calls this year?\"."
-            }
-          },
-          {
-            "ticker": "FIG",
-            "mentions": 316,
-            "sources": [
-              "all_stocks",
-              "stocktwits",
-              "wallstreetbets"
-            ],
-            "sentiment": "BULLISH",
-            "summary": "Figma is trending following a strong quarterly earnings report featuring revenue growth that beat analyst expectations and raised full-year guidance, fueled ...",
+            "sentiment": "BEARISH",
+            "summary": "",
             "top_posts": [],
             "detail": {
-              "plain": "Light chatter today, up sharply versus yesterday. Tone leans bullish.",
-              "pro": "316 mentions across 3 communities, +652% vs prior session. Sentiment bullish."
+              "plain": "NBIS is showing up across 3 communities but no specific discussion content surfaced. Treat as observation, not a signal.",
+              "pro": "200 mentions across 3 communities, -53% vs prior session. Sentiment bearish. No post content cached; treat as a ranking, not a thesis."
             }
           }
         ]
@@ -913,34 +930,34 @@
         ],
         "unusual": [
           {
+            "ticker": "TSLA",
+            "vol_oi": 2253,
+            "context": "May 18 calls $800.0 \u00b7 7 unusual strike(s)"
+          },
+          {
+            "ticker": "AMZN",
+            "vol_oi": 2035,
+            "context": "May 18 puts $210.0 \u00b7 3 unusual strike(s)"
+          },
+          {
+            "ticker": "QQQ",
+            "vol_oi": 1583,
+            "context": "May 18 puts $525.0 \u00b7 2 unusual strike(s)"
+          },
+          {
             "ticker": "DIA",
             "vol_oi": 912,
-            "context": "May 15 calls $465.0 \u00b7 11 unusual strike(s)"
+            "context": "May 15 calls $465.0 \u00b7 3 unusual strike(s)"
           },
           {
             "ticker": "NVDA",
-            "vol_oi": 405,
-            "context": "May 15 puts $17.5 \u00b7 1 unusual strike(s)"
+            "vol_oi": 660,
+            "context": "May 18 calls $280.0 \u00b7 3 unusual strike(s)"
           },
           {
             "ticker": "META",
             "vol_oi": 250,
-            "context": "May 15 puts $840.0 \u00b7 2 unusual strike(s)"
-          },
-          {
-            "ticker": "AMZN",
-            "vol_oi": 230,
-            "context": "May 15 puts $315.0 \u00b7 1 unusual strike(s)"
-          },
-          {
-            "ticker": "TSLA",
-            "vol_oi": 140,
-            "context": "May 15 puts $485.0 \u00b7 1 unusual strike(s)"
-          },
-          {
-            "ticker": "GOOGL",
-            "vol_oi": 112,
-            "context": "May 15 puts $430.0 \u00b7 1 unusual strike(s)"
+            "context": "May 15 puts $840.0 \u00b7 1 unusual strike(s)"
           }
         ],
         "earnings_iv": [
@@ -1130,48 +1147,49 @@
         "social": [
           {
             "ticker": "NVDA",
-            "mentions": 983,
+            "mentions": 963,
             "sources": [
               "all_stocks",
+              "daytrading",
               "options",
               "stocks",
               "thetagang",
               "uw",
               "wallstreetbets"
             ],
-            "sentiment": "NEUTRAL",
+            "sentiment": "BULLISH",
             "summary": "",
             "top_posts": [
               {
                 "sub": "unusual_whales",
                 "title": "Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China.",
-                "score": 462,
+                "score": 461,
                 "flair": "",
                 "body_excerpt": ""
               },
               {
                 "sub": "unusual_whales",
-                "title": "BREAKING: Unusual Whales just released the FULL REPORT on Congress Trading in 2025!",
-                "score": 95,
-                "flair": "\ud83c\udfdb Senate \ud83c\udfdb",
-                "body_excerpt": "I just released the full report on Congress trading in 2025: [https://unusualwhales.com/congress-trading-report-2025](https://unusualwhales.com/congress-trading-report-2025)\n\nHere on Reddit, I've placed a preview (as much as I could fit wit..."
+                "title": "Trump literally insider traded with Nvidia",
+                "score": 454,
+                "flair": "",
+                "body_excerpt": "BREAKING: Trump purchased up to a $1 million worth of Nvidia, $NVDA, stock on January 6, 2026.\n\nThis is a week before the Commerce Department officially approved the sale of Nvidia chips to China."
               },
               {
-                "sub": "unusual_whales",
-                "title": "Trump bought stocks as the market collapsed in March from his Iran war",
-                "score": 72,
-                "flair": "",
-                "body_excerpt": "BREAKING: Trump has disclosed thousand of transactions.\n\nHe owns more than a million of $NVDA, for example.\n\nHe also owns, $TSLA, $ADBE, $NOW, $AMZN, $AAPL, and much more.\n\nThe transactions are from 2026, and most are up to $50,000 purchase..."
+                "sub": "Daytrading",
+                "title": "I let an AI trading tool run my portfolio overnight and woke up to a 25k position I never intended.",
+                "score": 242,
+                "flair": "Algos",
+                "body_excerpt": "This literally just happened and I am shaking typing this. I have been testing these AI trading tools everyone raves about, you know the ones promising to spot patterns and execute better than humans. Figured it was hype but thought why not..."
               }
             ],
             "detail": {
-              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. The conversation is centered on the earnings reaction.",
-              "pro": "983 mentions across 6 communities, +171% vs prior session. Sentiment neutral. Themes: the earnings reaction. Top thesis: \"Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China\"."
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand.",
+              "pro": "963 mentions across 7 communities, +108% vs prior session. Sentiment bullish. Themes: AI and data-center demand. Top thesis: \"Nvidia\u2019s, $NVDA, market value now exceeds the combined stock market capitalization of every country outside the U.S. and China\"."
             }
           },
           {
             "ticker": "MU",
-            "mentions": 1993,
+            "mentions": 1512,
             "sources": [
               "all_stocks",
               "race10m",
@@ -1185,99 +1203,65 @@
               {
                 "sub": "TheRaceTo10Million",
                 "title": "If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar",
-                "score": 81,
+                "score": 95,
                 "flair": "",
                 "body_excerpt": "After diving deep into MU and the HBM/AI memory boom lately, I\u2019m starting to look past the obvious big names to find the next set of plays that could ride the same tailwind\n\nI know we\u2019re all hyped on Micron, SK Hynix, and Samsung right now ..."
               },
               {
                 "sub": "thetagang",
                 "title": "Anyone getting absolutely wrecked from selling calls this year?",
-                "score": 51,
+                "score": 58,
                 "flair": "Discussion",
                 "body_excerpt": "I just about broke even this year. Which is really shitty if you consider that I bought MU at 400 and NBIS at 86 with about 60% of my portfolio at the start of the year.\n\nBut both of these positions are also attached with a riskless(almost)..."
               },
               {
-                "sub": "thetagang",
-                "title": "May Short Put Vertical Results",
-                "score": 28,
+                "sub": "TheRaceTo10Million",
+                "title": "$MU",
+                "score": 47,
                 "flair": "",
-                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
+                "body_excerpt": "Thoughts on MU long term?"
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, fading versus yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand and memory and storage upcycle. Traders are writing puts to collect premium and playing defined-risk spreads.",
-              "pro": "1993 mentions across 5 communities, -56% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle. Strategy mix: writing puts to collect premium; playing defined-risk spreads. Top thesis: \"If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar\"."
+              "plain": "Heavy chatter today, cooler than yesterday. Tone leans bullish. The conversation is centered on AI and data-center demand and memory and storage upcycle.",
+              "pro": "1512 mentions across 5 communities, -36% vs prior session. Sentiment bullish. Themes: AI and data-center demand; memory and storage upcycle. Top thesis: \"If you\u2019re bullish on MU, what\u2019s your next tier memory play? Looking for underrated names flying under the radar\"."
             }
           },
           {
             "ticker": "MSFT",
-            "mentions": 870,
+            "mentions": 1030,
             "sources": [
               "all_stocks",
               "options",
               "stocks",
-              "stocktwits",
               "wallstreetbets"
             ],
             "sentiment": "BEARISH",
-            "summary": "Microsoft is trending as investors digest news of the company exploring new AI startup acquisitions to diversify its strategy beyond OpenAI, while the commun...",
+            "summary": "",
             "top_posts": [
               {
                 "sub": "options",
                 "title": "VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)",
-                "score": 102,
+                "score": 101,
                 "flair": "",
                 "body_excerpt": "TL;DR\n\nMacro cooked, inflation immortal, multiples pricing in the singularity = short.\n\nVertiv ($VRT) is a \\~90x trailing P/E electrical equipment company servicing AI capex build. Business is real (+30% YoY revenue, 42% ROE). The\u00a0multiple\u00a0..."
               },
               {
                 "sub": "options",
                 "title": "Arista Networks OTM calls?",
-                "score": 1,
+                "score": 2,
                 "flair": "",
                 "body_excerpt": "Hi everyone,\n\nas this AI rally keeps going (even if the last two days slowed down), it\u00b4s hard to find stocks that are not above the price targets\u00a0by analysts or options where the greeks and IV don\u00b4t eat all the potential gains. While it\u00b4s t..."
               }
             ],
             "detail": {
               "plain": "Moderate chatter today, up sharply versus yesterday. Tone leans bearish. The conversation is centered on AI and data-center demand. Traders are buying puts for downside and playing defined-risk spreads. The loudest take is: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\".",
-              "pro": "870 mentions across 5 communities, +200% vs prior session. Sentiment bearish. Themes: AI and data-center demand. Strategy mix: buying puts for downside; playing defined-risk spreads. Top thesis: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\"."
-            }
-          },
-          {
-            "ticker": "NBIS",
-            "mentions": 245,
-            "sources": [
-              "all_stocks",
-              "stocks",
-              "stocktwits",
-              "thetagang",
-              "wallstreetbets"
-            ],
-            "sentiment": "NEUTRAL",
-            "summary": "Nebius Group is trending as institutional investors and the community react to blowout earnings and a series of major price target upgrades from analysts, fu...",
-            "top_posts": [
-              {
-                "sub": "thetagang",
-                "title": "Anyone getting absolutely wrecked from selling calls this year?",
-                "score": 51,
-                "flair": "Discussion",
-                "body_excerpt": "I just about broke even this year. Which is really shitty if you consider that I bought MU at 400 and NBIS at 86 with about 60% of my portfolio at the start of the year.\n\nBut both of these positions are also attached with a riskless(almost)..."
-              },
-              {
-                "sub": "thetagang",
-                "title": "Taking opinions",
-                "score": 18,
-                "flair": "Discussion",
-                "body_excerpt": "Story: Sold these this year for 13.55 each expiring EOY. Didn\u2019t think NBIS would be worth 200 this year. \n\nGoal: I want to keep my shares or roll them and sell them at higher than 200 if I have to.\n\nThe move: I know I want to roll and I\u2019m t..."
-              }
-            ],
-            "detail": {
-              "plain": "Moderate chatter today. Tone reads neutral. The loudest take is: \"Anyone getting absolutely wrecked from selling calls this year?\".",
-              "pro": "245 mentions across 5 communities, -19% vs prior session. Sentiment neutral. Top thesis: \"Anyone getting absolutely wrecked from selling calls this year?\"."
+              "pro": "1030 mentions across 4 communities, +100% vs prior session. Sentiment bearish. Themes: AI and data-center demand. Strategy mix: buying puts for downside; playing defined-risk spreads. Top thesis: \"VRT: Buying Puts On AI Infrastructure (Jan'27 340/260 Put Debit Spread)\"."
             }
           },
           {
             "ticker": "AMZN",
-            "mentions": 15,
+            "mentions": 14,
             "sources": [
               "stocks",
               "thetagang",
@@ -1289,28 +1273,65 @@
               {
                 "sub": "unusual_whales",
                 "title": "Amazon, $AMZN, has announced another round of layoffs in its selling partner services division after cutting nearly 30,000 jobs in recent months.",
-                "score": 92,
+                "score": 99,
                 "flair": "",
                 "body_excerpt": ""
               },
               {
                 "sub": "unusual_whales",
                 "title": "Trump bought stocks as the market collapsed in March from his Iran war",
-                "score": 72,
+                "score": 78,
                 "flair": "",
                 "body_excerpt": "BREAKING: Trump has disclosed thousand of transactions.\n\nHe owns more than a million of $NVDA, for example.\n\nHe also owns, $TSLA, $ADBE, $NOW, $AMZN, $AAPL, and much more.\n\nThe transactions are from 2026, and most are up to $50,000 purchase..."
               },
               {
                 "sub": "thetagang",
-                "title": "Week 19 $1,051 in premium",
+                "title": "May Short Put Vertical Results",
                 "score": 29,
                 "flair": "",
-                "body_excerpt": "I will post a separate comment with a link to the detail behind each option sold this week.  \n  \nAfter week 19, the average premium per week is $749 with an annual projection of $38,958.  \n  \nAll things considered, the portfolio is down $11..."
+                "body_excerpt": "Here are results from the second week in May  of running low delta Short Put Verticals aka Bull Put Credit Spreads!\n\nI closed 100 Trades on 26 tickers for a profit of\u00a0**$ 12,456.**\n\nHere are the highlights:\n\n* **5 losing trade this week out..."
               }
             ],
             "detail": {
-              "plain": "Moderate chatter today, up sharply versus yesterday. Tone reads neutral.",
-              "pro": "15 mentions across 3 communities, +900% vs prior session. Sentiment neutral."
+              "plain": "Heavy chatter today, up sharply versus yesterday. Tone reads neutral. Traders are writing puts to collect premium and playing defined-risk spreads.",
+              "pro": "14 mentions across 3 communities, +200% vs prior session. Sentiment neutral. Strategy mix: writing puts to collect premium; playing defined-risk spreads."
+            }
+          },
+          {
+            "ticker": "CC",
+            "mentions": 6,
+            "sources": [
+              "options",
+              "thetagang"
+            ],
+            "sentiment": "NEUTRAL",
+            "summary": "",
+            "top_posts": [
+              {
+                "sub": "thetagang",
+                "title": "There is actually NO WAY you guys are complaining about getting assigned on your CC...",
+                "score": 133,
+                "flair": "Question",
+                "body_excerpt": "You're telling me that while we were anticipating an **end-of-war bull market**, you somehow tricked yourself into selling CCs against your **long position**, which you should've had **conviction** in in the first place, and now that the bu..."
+              },
+              {
+                "sub": "thetagang",
+                "title": "Thank you theta gang and thank f*xking god for delta.",
+                "score": 58,
+                "flair": "",
+                "body_excerpt": "So originally I sold some RDDT  puts and took assignment on 3/24 at $132 (+ 2.21 premium collected so my average price per shares ended up under $130)\n\n* I turned around and sold the 5/15 $150cc for\u00a0\u00a0\u00a0$6.45\n\nThis turned out to be a massive ..."
+              },
+              {
+                "sub": "options",
+                "title": "Deep ITM NVDA Cover calls, Roll, Hold or accept assignment ?",
+                "score": 15,
+                "flair": "",
+                "body_excerpt": "I\u2019m in a covered-call mess and want to hear how experienced CC traders would manage it.\n\nI own 609 shares of NVDA. Current short calls expiring 05/13/26:\n\n\\- Short 4x NVDA $172.50C  \n\\- Short 2x NVDA $185C\n\nFor context, I sold/rolled these ..."
+              }
+            ],
+            "detail": {
+              "plain": "Heavy chatter today. Tone reads neutral. The loudest take is: \"There is actually NO WAY you guys are complaining about getting assigned on your CC\".",
+              "pro": "6 mentions across 2 communities. Sentiment neutral. Top thesis: \"There is actually NO WAY you guys are complaining about getting assigned on your CC\"."
             }
           }
         ]
@@ -1337,7 +1358,7 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 79050.81,
+            "last": 79770.27,
             "change_5d_pct": -0.52,
             "note": "Slipped below 80K despite equity relief. Down 0.88 pct in 24h.",
             "detail": {
@@ -1347,7 +1368,7 @@
           },
           {
             "symbol": "ETH",
-            "last": 2219.79,
+            "last": 2265.72,
             "change_5d_pct": -1.79,
             "note": "Down 0.39 pct in 24h, still below 20-day average. Weakest major.",
             "detail": {
@@ -1357,7 +1378,7 @@
           },
           {
             "symbol": "SOL",
-            "last": 89.17,
+            "last": 92.09,
             "change_5d_pct": 0.15,
             "note": "Down 2.33 pct in 24h, cooling from RSI 75 stretch.",
             "detail": {
@@ -1387,7 +1408,7 @@
           },
           {
             "symbol": "AAVE",
-            "last": 92.71,
+            "last": 95.1,
             "change_5d_pct": 2.88,
             "note": "Flat today (no fresh data), still cleanest alt RSI profile.",
             "detail": {
@@ -1406,86 +1427,6 @@
         }
       },
       "sparks": {
-        "CL=F": [
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42,
-          98.07,
-          102.18,
-          101.02,
-          101.17,
-          101.16
-        ],
-        "oil": [
-          99.93,
-          106.88,
-          105.07,
-          101.94,
-          106.42,
-          102.27,
-          95.08,
-          94.81,
-          95.42,
-          98.07,
-          102.18,
-          101.02,
-          101.17,
-          101.16
-        ],
-        "^TNX": [
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356,
-          4.392,
-          4.364,
-          4.41,
-          4.463,
-          4.481,
-          4.461,
-          4.595
-        ],
-        "ten_year": [
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356,
-          4.392,
-          4.364,
-          4.41,
-          4.463,
-          4.481,
-          4.461,
-          4.595
-        ],
-        "MO": [
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17,
-          69.04,
-          68.12,
-          68.61,
-          69.89,
-          71.54,
-          72.41,
-          73.09
-        ],
         "IWM": [
           273.91,
           272.08,
@@ -1518,85 +1459,37 @@
           748.17,
           739.17
         ],
-        "GEHC": [
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0,
-          61.04,
-          61.735,
-          61.34,
-          63.47,
-          61.7,
-          62.29,
-          61.89,
-          62.67,
-          60.76
+        "CL=F": [
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          102.18,
+          101.02,
+          101.17,
+          101.16
         ],
-        "PODD": [
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53,
-          151.28,
-          160.4,
-          154.16,
-          154.17,
-          158.35,
-          148.84,
-          148.68,
-          147.46
-        ],
-        "^VIX": [
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.26,
-          18.43
-        ],
-        "vix": [
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.26,
-          18.43
-        ],
-        "XLE": [
-          57.71,
-          59.03,
-          59.65,
-          58.85,
-          59.39,
-          59.45,
-          57.0,
-          55.95,
-          55.7,
-          57.17,
-          57.57,
-          57.63,
-          58.07,
-          59.44
+        "oil": [
+          99.93,
+          106.88,
+          105.07,
+          101.94,
+          106.42,
+          102.27,
+          95.08,
+          94.81,
+          95.42,
+          98.07,
+          102.18,
+          101.02,
+          101.17,
+          101.16
         ],
         "DX-Y.NYB": [
           98.62,
@@ -1630,21 +1523,53 @@
           98.88,
           99.27
         ],
-        "QQQ": [
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77,
-          694.94,
-          711.23,
-          713.29,
-          707.24,
-          714.71,
-          719.79,
-          708.93
+        "PODD": [
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28,
+          160.4,
+          154.16,
+          154.17,
+          158.35,
+          148.84,
+          148.68,
+          147.46
+        ],
+        "^TNX": [
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.463,
+          4.481,
+          4.461,
+          4.595
+        ],
+        "ten_year": [
+          4.354,
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.463,
+          4.481,
+          4.461,
+          4.595
         ],
         "GC=F": [
           4591.5,
@@ -1677,13 +1602,108 @@
           4697.7002,
           4678.1001,
           4543.6001
+        ],
+        "GEHC": [
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04,
+          61.735,
+          61.34,
+          63.47,
+          61.7,
+          62.29,
+          61.89,
+          62.67,
+          60.76
+        ],
+        "MO": [
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12,
+          68.61,
+          69.89,
+          71.54,
+          72.41,
+          73.09
+        ],
+        "QQQ": [
+          657.55,
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23,
+          713.29,
+          707.24,
+          714.71,
+          719.79,
+          708.93
+        ],
+        "XLE": [
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39,
+          59.45,
+          57.0,
+          55.95,
+          55.7,
+          57.17,
+          57.57,
+          57.63,
+          58.07,
+          59.44
+        ],
+        "^VIX": [
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.26,
+          18.43
+        ],
+        "vix": [
+          17.83,
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.26,
+          18.43
         ]
       },
       "market_status": {
         "tier": "AFTER-HOURS",
         "text": "After-hours trading. Session closes 20:00 ET."
-      },
-      "last_refreshed_at": "2026-05-15T15:30:06-07:00"
+      }
     },
     {
       "date": "2026-05-14",
