@@ -63,7 +63,7 @@
         "indices": [
           {
             "ticker": "SPY",
-            "last": 743.11,
+            "last": 741.78,
             "rsi": 71.0,
             "note": "Pulled back from yesterday's ATH 744.81 after retail sales pushed yields up. Overbought meter cooled from 81 to 71, less stretched but still above the 70 line.",
             "thesis": {
@@ -92,7 +92,7 @@
           },
           {
             "ticker": "QQQ",
-            "last": 714.39,
+            "last": 712.69,
             "rsi": 73.7,
             "note": "Down from yesterday's ATH after the yield spike hit growth multiples hardest. Overbought meter cooled from 82 to 74 but still above the 70 line. Tech the most exposed to the higher-rate scare.",
             "thesis": {
@@ -121,7 +121,7 @@
           },
           {
             "ticker": "IWM",
-            "last": 278.77,
+            "last": 278.13,
             "rsi": 50.6,
             "note": "Broke below the 20-day average after the yield jump. Small caps the most rate-sensitive segment, down 2.29 percent over 5 days. Overbought meter at 51 is neutral.",
             "thesis": {
@@ -150,12 +150,12 @@
           }
         ],
         "vol_yields": {
-          "vix": 17.93,
+          "vix": 18.05,
           "vix_term": "STEEP_CONTANGO",
           "ten_year": 4.59,
-          "dxy": 99.22,
-          "oil": 100.74,
-          "gold": 4564.7,
+          "dxy": 99.29,
+          "oil": 100.98,
+          "gold": 4559.4,
           "details": {
             "vix": {
               "plain": "Volatility ticked up to 18.45 from 17.89 yesterday and is now up 7 percent over 5 days. The bond-market scare from hot retail sales fed into stock vol. The futures curve still slopes up to 21 on the 3-month, so short-vol trades still work but the entry is now slightly worse than Thursday.",
@@ -425,8 +425,8 @@
         "watchlist": [
           {
             "ticker": "MO",
-            "last": 72.7,
-            "change_pct": 0.83,
+            "last": 72.85,
+            "change_pct": 1.04,
             "trigger_zone": "70.00 long",
             "status": "TRIGGERED",
             "note": "Holding above the $70 trigger at 72.43, third day green. Defensive Staples and tobacco names catching extra bid on the yield scare.",
@@ -456,8 +456,8 @@
           },
           {
             "ticker": "GEHC",
-            "last": 61.29,
-            "change_pct": -2.42,
+            "last": 61.15,
+            "change_pct": -2.63,
             "trigger_zone": "63.00 long",
             "status": "NOT_TRIGGERED",
             "note": "Pulled back to 61.58 today, 2.25 percent below the $63 trigger. Re-arms on a green close back above 63 with volume.",
@@ -487,8 +487,8 @@
           },
           {
             "ticker": "XLE",
-            "last": 59.03,
-            "change_pct": 1.56,
+            "last": 59.19,
+            "change_pct": 1.83,
             "trigger_zone": "56.50 long",
             "status": "NOT_TRIGGERED",
             "note": "1.6 pct above the trigger. Energy still negative on 5d rotation despite oil at $103.",
@@ -518,8 +518,8 @@
           },
           {
             "ticker": "PODD",
-            "last": 148.95,
-            "change_pct": 0.18,
+            "last": 147.96,
+            "change_pct": -0.48,
             "trigger_zone": "170-175 short",
             "status": "NOT_TRIGGERED",
             "note": "At 158, well below the 170-175 short-trigger zone. Short window closed.",
@@ -1337,7 +1337,7 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 79425.13,
+            "last": 79232.8,
             "change_5d_pct": -0.52,
             "note": "Slipped below 80K despite equity relief. Down 0.88 pct in 24h.",
             "detail": {
@@ -1347,7 +1347,7 @@
           },
           {
             "symbol": "ETH",
-            "last": 2228.1,
+            "last": 2227.89,
             "change_5d_pct": -1.79,
             "note": "Down 0.39 pct in 24h, still below 20-day average. Weakest major.",
             "detail": {
@@ -1357,7 +1357,7 @@
           },
           {
             "symbol": "SOL",
-            "last": 89.78,
+            "last": 89.72,
             "change_5d_pct": 0.15,
             "note": "Down 2.33 pct in 24h, cooling from RSI 75 stretch.",
             "detail": {
@@ -1367,7 +1367,7 @@
           },
           {
             "symbol": "XRP",
-            "last": 1.45,
+            "last": 1.44,
             "change_5d_pct": 0.73,
             "note": "Down 0.52 pct in 24h, holding above 20-day average. Less stretched.",
             "detail": {
@@ -1387,7 +1387,7 @@
           },
           {
             "symbol": "AAVE",
-            "last": 93.87,
+            "last": 93.66,
             "change_5d_pct": 2.88,
             "note": "Flat today (no fresh data), still cleanest alt RSI profile.",
             "detail": {
@@ -1420,151 +1420,7 @@
           707.24,
           714.71,
           719.79,
-          714.47
-        ],
-        "PODD": [
-          182.87,
-          160.02,
-          172.14,
-          175.04,
-          171.39,
-          167.53,
-          151.28,
-          160.4,
-          154.16,
-          154.17,
-          158.35,
-          148.84,
-          148.68,
-          148.95
-        ],
-        "XLE": [
-          57.71,
-          59.03,
-          59.65,
-          58.85,
-          59.39,
-          59.45,
-          57.0,
-          55.95,
-          55.7,
-          57.17,
-          57.57,
-          57.63,
-          58.07,
-          59.02
-        ],
-        "GC=F": [
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4699.7998,
-          4720.3999,
-          4718.7002,
-          4677.6001,
-          4697.7002,
-          4678.1001,
-          4564.0
-        ],
-        "gold": [
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4699.7998,
-          4720.3999,
-          4718.7002,
-          4677.6001,
-          4697.7002,
-          4678.1001,
-          4564.0
-        ],
-        "IWM": [
-          273.91,
-          272.08,
-          277.97,
-          279.28,
-          277.88,
-          282.56,
-          286.8,
-          282.26,
-          284.17,
-          285.33,
-          282.57,
-          282.67,
-          284.45,
-          278.79
-        ],
-        "DX-Y.NYB": [
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          98.02,
-          98.25,
-          97.84,
-          97.94,
-          98.29,
-          98.48,
-          98.88,
-          99.227
-        ],
-        "dxy": [
-          98.62,
-          98.92,
-          98.08,
-          98.21,
-          98.47,
-          98.48,
-          98.02,
-          98.25,
-          97.84,
-          97.94,
-          98.29,
-          98.48,
-          98.88,
-          99.227
-        ],
-        "MO": [
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17,
-          69.04,
-          68.12,
-          68.61,
-          69.89,
-          71.54,
-          72.41,
-          72.7
-        ],
-        "GEHC": [
-          68.5,
-          59.485,
-          60.84,
-          61.03,
-          61.0,
-          61.04,
-          61.735,
-          61.34,
-          63.47,
-          61.7,
-          62.29,
-          61.89,
-          62.67,
-          61.2801
+          712.76
         ],
         "^TNX": [
           4.354,
@@ -1580,7 +1436,7 @@
           4.463,
           4.481,
           4.461,
-          4.587
+          4.593
         ],
         "ten_year": [
           4.354,
@@ -1596,7 +1452,23 @@
           4.463,
           4.481,
           4.461,
-          4.587
+          4.593
+        ],
+        "MO": [
+          67.8,
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12,
+          68.61,
+          69.89,
+          71.54,
+          72.41,
+          72.85
         ],
         "^VIX": [
           17.83,
@@ -1612,7 +1484,7 @@
           17.99,
           17.87,
           17.26,
-          17.93
+          18.05
         ],
         "vix": [
           17.83,
@@ -1628,7 +1500,55 @@
           17.99,
           17.87,
           17.26,
-          17.93
+          18.05
+        ],
+        "DX-Y.NYB": [
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84,
+          97.94,
+          98.29,
+          98.48,
+          98.88,
+          99.29
+        ],
+        "dxy": [
+          98.62,
+          98.92,
+          98.08,
+          98.21,
+          98.47,
+          98.48,
+          98.02,
+          98.25,
+          97.84,
+          97.94,
+          98.29,
+          98.48,
+          98.88,
+          99.29
+        ],
+        "PODD": [
+          182.87,
+          160.02,
+          172.14,
+          175.04,
+          171.39,
+          167.53,
+          151.28,
+          160.4,
+          154.16,
+          154.17,
+          158.35,
+          148.84,
+          148.68,
+          147.965
         ],
         "SPY": [
           711.69,
@@ -1644,7 +1564,71 @@
           738.18,
           742.31,
           748.17,
-          743.155
+          741.77
+        ],
+        "IWM": [
+          273.91,
+          272.08,
+          277.97,
+          279.28,
+          277.88,
+          282.56,
+          286.8,
+          282.26,
+          284.17,
+          285.33,
+          282.57,
+          282.67,
+          284.45,
+          278.09
+        ],
+        "GEHC": [
+          68.5,
+          59.485,
+          60.84,
+          61.03,
+          61.0,
+          61.04,
+          61.735,
+          61.34,
+          63.47,
+          61.7,
+          62.29,
+          61.89,
+          62.67,
+          61.15
+        ],
+        "GC=F": [
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4677.6001,
+          4697.7002,
+          4678.1001,
+          4559.3999
+        ],
+        "gold": [
+          4591.5,
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4677.6001,
+          4697.7002,
+          4678.1001,
+          4559.3999
         ],
         "CL=F": [
           99.93,
@@ -1660,7 +1644,7 @@
           102.18,
           101.02,
           101.17,
-          100.74
+          100.98
         ],
         "oil": [
           99.93,
@@ -1676,14 +1660,30 @@
           102.18,
           101.02,
           101.17,
-          100.74
+          100.98
+        ],
+        "XLE": [
+          57.71,
+          59.03,
+          59.65,
+          58.85,
+          59.39,
+          59.45,
+          57.0,
+          55.95,
+          55.7,
+          57.17,
+          57.57,
+          57.63,
+          58.07,
+          59.185
         ]
       },
       "market_status": {
         "tier": "MARKET OPEN",
-        "text": "Regular session. Closing bell in 2h 00m at 16:00 ET."
+        "text": "Regular session. Closing bell in 1h 30m at 16:00 ET."
       },
-      "last_refreshed_at": "2026-05-15T11:00:07-07:00"
+      "last_refreshed_at": "2026-05-15T11:30:06-07:00"
     },
     {
       "date": "2026-05-14",
