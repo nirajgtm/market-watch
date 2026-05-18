@@ -63,7 +63,7 @@
         "indices": [
           {
             "ticker": "SPY",
-            "last": 739.17,
+            "last": 736.46,
             "rsi": 71.0,
             "note": "Pulled back from yesterday's ATH 744.81 after retail sales pushed yields up. Overbought meter cooled from 81 to 71, less stretched but still above the 70 line.",
             "thesis": {
@@ -92,7 +92,7 @@
           },
           {
             "ticker": "QQQ",
-            "last": 708.93,
+            "last": 700.82,
             "rsi": 73.7,
             "note": "Down from yesterday's ATH after the yield spike hit growth multiples hardest. Overbought meter cooled from 82 to 74 but still above the 70 line. Tech the most exposed to the higher-rate scare.",
             "thesis": {
@@ -121,7 +121,7 @@
           },
           {
             "ticker": "IWM",
-            "last": 277.6,
+            "last": 274.58,
             "rsi": 50.6,
             "note": "Broke below the 20-day average after the yield jump. Small caps the most rate-sensitive segment, down 2.29 percent over 5 days. Overbought meter at 51 is neutral.",
             "thesis": {
@@ -150,12 +150,12 @@
           }
         ],
         "vol_yields": {
-          "vix": 18.43,
+          "vix": 18.78,
           "vix_term": "STEEP_CONTANGO",
-          "ten_year": 4.6,
-          "dxy": 99.27,
-          "oil": 101.16,
-          "gold": 4543.6,
+          "ten_year": 4.62,
+          "dxy": 99.14,
+          "oil": 104.41,
+          "gold": 4544.7,
           "details": {
             "vix": {
               "plain": "Volatility ticked up to 18.45 from 17.89 yesterday and is now up 7 percent over 5 days. The bond-market scare from hot retail sales fed into stock vol. The futures curve still slopes up to 21 on the 3-month, so short-vol trades still work but the entry is now slightly worse than Thursday.",
@@ -425,8 +425,8 @@
         "watchlist": [
           {
             "ticker": "MO",
-            "last": 73.09,
-            "change_pct": 1.37,
+            "last": 73.47,
+            "change_pct": 0.59,
             "trigger_zone": "70.00 long",
             "status": "TRIGGERED",
             "note": "Holding above the $70 trigger at 72.43, third day green. Defensive Staples and tobacco names catching extra bid on the yield scare.",
@@ -456,8 +456,8 @@
           },
           {
             "ticker": "GEHC",
-            "last": 60.76,
-            "change_pct": -3.26,
+            "last": 61.34,
+            "change_pct": 0.95,
             "trigger_zone": "63.00 long",
             "status": "NOT_TRIGGERED",
             "note": "Pulled back to 61.58 today, 2.25 percent below the $63 trigger. Re-arms on a green close back above 63 with volume.",
@@ -487,8 +487,8 @@
           },
           {
             "ticker": "XLE",
-            "last": 59.44,
-            "change_pct": 2.27,
+            "last": 60.19,
+            "change_pct": 1.25,
             "trigger_zone": "56.50 long",
             "status": "NOT_TRIGGERED",
             "note": "1.6 pct above the trigger. Energy still negative on 5d rotation despite oil at $103.",
@@ -518,8 +518,8 @@
           },
           {
             "ticker": "PODD",
-            "last": 147.46,
-            "change_pct": -0.82,
+            "last": 152.52,
+            "change_pct": 3.48,
             "trigger_zone": "170-175 short",
             "status": "NOT_TRIGGERED",
             "note": "At 158, well below the 170-175 short-trigger zone. Short window closed.",
@@ -1358,7 +1358,7 @@
         "coins": [
           {
             "symbol": "BTC",
-            "last": 79058.51,
+            "last": 76261.95,
             "change_5d_pct": -0.52,
             "note": "Slipped below 80K despite equity relief. Down 0.88 pct in 24h.",
             "detail": {
@@ -1368,7 +1368,7 @@
           },
           {
             "symbol": "ETH",
-            "last": 2223.01,
+            "last": 2082.76,
             "change_5d_pct": -1.79,
             "note": "Down 0.39 pct in 24h, still below 20-day average. Weakest major.",
             "detail": {
@@ -1388,7 +1388,7 @@
           },
           {
             "symbol": "XRP",
-            "last": 1.43,
+            "last": 1.38,
             "change_5d_pct": 0.73,
             "note": "Down 0.52 pct in 24h, holding above 20-day average. Less stretched.",
             "detail": {
@@ -1398,7 +1398,7 @@
           },
           {
             "symbol": "DOGE",
-            "last": 0.11,
+            "last": 0.1,
             "change_5d_pct": 1.83,
             "note": "Up 1.31 pct in 24h, one of the few greens. Lottery-cohort lifting.",
             "detail": {
@@ -1408,7 +1408,7 @@
           },
           {
             "symbol": "AAVE",
-            "last": 92.84,
+            "last": 87.3,
             "change_5d_pct": 2.88,
             "note": "Flat today (no fresh data), still cleanest alt RSI profile.",
             "detail": {
@@ -1427,88 +1427,39 @@
         }
       },
       "sparks": {
-        "^TNX": [
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356,
-          4.392,
-          4.364,
-          4.41,
-          4.463,
-          4.481,
-          4.461,
-          4.595
+        "GC=F": [
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4677.6001,
+          4697.7002,
+          4678.1001,
+          4555.7998,
+          4543.8999
         ],
-        "ten_year": [
-          4.354,
-          4.418,
-          4.39,
-          4.378,
-          4.446,
-          4.416,
-          4.356,
-          4.392,
-          4.364,
-          4.41,
-          4.463,
-          4.481,
-          4.461,
-          4.595
-        ],
-        "^VIX": [
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.26,
-          18.43
-        ],
-        "vix": [
-          17.83,
-          18.81,
-          16.89,
-          16.99,
-          18.29,
-          17.38,
-          17.39,
-          17.08,
-          17.19,
-          18.38,
-          17.99,
-          17.87,
-          17.26,
-          18.43
-        ],
-        "MO": [
-          67.8,
-          68.2,
-          72.65,
-          74.55,
-          73.41,
-          72.79,
-          70.17,
-          69.04,
-          68.12,
-          68.61,
-          69.89,
-          71.54,
-          72.41,
-          73.09
+        "gold": [
+          4545.2002,
+          4614.7002,
+          4629.8999,
+          4519.5,
+          4555.7998,
+          4681.8999,
+          4699.7998,
+          4720.3999,
+          4718.7002,
+          4677.6001,
+          4697.7002,
+          4678.1001,
+          4555.7998,
+          4543.8999
         ],
         "SPY": [
-          711.69,
           711.58,
           718.66,
           720.65,
@@ -1521,26 +1472,10 @@
           738.18,
           742.31,
           748.17,
-          739.17
-        ],
-        "QQQ": [
-          657.55,
-          661.57,
-          667.74,
-          674.15,
-          672.88,
-          681.61,
-          695.77,
-          694.94,
-          711.23,
-          713.29,
-          707.24,
-          714.71,
-          719.79,
-          708.93
+          739.17,
+          736.43
         ],
         "CL=F": [
-          99.93,
           106.88,
           105.07,
           101.94,
@@ -1553,10 +1488,10 @@
           102.18,
           101.02,
           101.17,
-          101.16
+          105.42,
+          104.59
         ],
         "oil": [
-          99.93,
           106.88,
           105.07,
           101.94,
@@ -1569,10 +1504,10 @@
           102.18,
           101.02,
           101.17,
-          101.16
+          105.42,
+          104.59
         ],
         "IWM": [
-          273.91,
           272.08,
           277.97,
           279.28,
@@ -1585,10 +1520,42 @@
           282.57,
           282.67,
           284.45,
-          277.6
+          277.6,
+          275.65
+        ],
+        "^VIX": [
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.26,
+          18.43,
+          18.78
+        ],
+        "vix": [
+          18.81,
+          16.89,
+          16.99,
+          18.29,
+          17.38,
+          17.39,
+          17.08,
+          17.19,
+          18.38,
+          17.99,
+          17.87,
+          17.26,
+          18.43,
+          18.78
         ],
         "GEHC": [
-          68.5,
           59.485,
           60.84,
           61.03,
@@ -1601,10 +1568,10 @@
           62.29,
           61.89,
           62.67,
-          60.76
+          60.76,
+          61.62
         ],
         "PODD": [
-          182.87,
           160.02,
           172.14,
           175.04,
@@ -1617,10 +1584,26 @@
           158.35,
           148.84,
           148.68,
-          147.46
+          147.46,
+          153.26
+        ],
+        "QQQ": [
+          661.57,
+          667.74,
+          674.15,
+          672.88,
+          681.61,
+          695.77,
+          694.94,
+          711.23,
+          713.29,
+          707.24,
+          714.71,
+          719.79,
+          708.93,
+          702.9872
         ],
         "DX-Y.NYB": [
-          98.62,
           98.92,
           98.08,
           98.21,
@@ -1633,10 +1616,10 @@
           98.29,
           98.48,
           98.88,
-          99.27
+          99.27,
+          99.147
         ],
         "dxy": [
-          98.62,
           98.92,
           98.08,
           98.21,
@@ -1649,42 +1632,10 @@
           98.29,
           98.48,
           98.88,
-          99.27
-        ],
-        "GC=F": [
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4699.7998,
-          4720.3999,
-          4718.7002,
-          4677.6001,
-          4697.7002,
-          4678.1001,
-          4543.6001
-        ],
-        "gold": [
-          4591.5,
-          4545.2002,
-          4614.7002,
-          4629.8999,
-          4519.5,
-          4555.7998,
-          4681.8999,
-          4699.7998,
-          4720.3999,
-          4718.7002,
-          4677.6001,
-          4697.7002,
-          4678.1001,
-          4543.6001
+          99.27,
+          99.147
         ],
         "XLE": [
-          57.71,
           59.03,
           59.65,
           58.85,
@@ -1697,14 +1648,63 @@
           57.57,
           57.63,
           58.07,
-          59.44
+          59.44,
+          60.18
+        ],
+        "^TNX": [
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.463,
+          4.481,
+          4.461,
+          4.595,
+          4.617
+        ],
+        "ten_year": [
+          4.418,
+          4.39,
+          4.378,
+          4.446,
+          4.416,
+          4.356,
+          4.392,
+          4.364,
+          4.41,
+          4.463,
+          4.481,
+          4.461,
+          4.595,
+          4.617
+        ],
+        "MO": [
+          68.2,
+          72.65,
+          74.55,
+          73.41,
+          72.79,
+          70.17,
+          69.04,
+          68.12,
+          68.61,
+          69.89,
+          71.54,
+          72.41,
+          73.09,
+          73.455
         ]
       },
       "market_status": {
-        "tier": "MARKET CLOSED",
-        "text": "After-hours over. Next pre-market opens Monday, May 18 at 04:00 ET."
+        "tier": "MARKET OPEN",
+        "text": "Regular session. Closing bell in 0h 55m at 16:00 ET."
       },
-      "last_refreshed_at": "2026-05-15T17:00:06-07:00"
+      "last_refreshed_at": "2026-05-18T12:05:41-07:00"
     },
     {
       "date": "2026-05-14",
